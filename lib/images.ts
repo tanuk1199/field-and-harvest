@@ -23,7 +23,7 @@ export const images = {
   iconPouch: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/7.png?v=1769840199",                // Backpack / pouch — 20-lb capacity
 
   // ── TESTIMONIAL CUSTOMER PHOTOS (4:3 aspect ratio) ────────
-  testimonial1: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20260121_2324_Image_Generation_remix_01kfhz3qcjezetk4scgbsz0ax0_1.png?v=1769841867",             // Customer photo — Margaret S.
+  testimonial1: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20260121_2324_Image_Generation_remix_01kfhz3qcjezetk4scgbsz0ax0_1.png?v=1769841867&t=2",             // Customer photo — Margaret S.
   testimonial2: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20260131_0250_Image_Generation_remix_01kg9gfanrf0btzsefp8w0ppdz.png?v=1769845941",             // Customer photo — Robert T.
   testimonial3: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20260131_0250_Image_Generation_remix_01kg9gfanteecvmhdpzbgb9k0y.png?v=1769845944",             // Customer photo — David K.
   testimonial4: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20260121_2324_Image_Generation_remix_01kfhz3qcjezetk4scgbsz0ax0_1.png?v=1769841867",             // Customer photo — Linda M.
