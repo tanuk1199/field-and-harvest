@@ -3,7 +3,6 @@ import { Button } from '@/components/ui/button'
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext, CarouselDots } from '@/components/ui/carousel'
 import { Menu, ArrowRight, CheckCircle2 } from 'lucide-react'
 import { Asset } from '@/components/asset'
-import { CountdownTimer } from '@/components/countdown-timer'
 
 const PDP_URL = "https://fieldandharvestco.com/products/the-grange-carrier"
 
@@ -27,19 +26,6 @@ export default function LandingPage() {
           <div className="w-10" />
         </div>
       </header>
-
-      {/* SECTION: Promotional Banner - Time-sensitive sale banner with countdown */}
-      <div className="bg-[#3D2E1E] text-white py-2">
-        <div className="container mx-auto px-2 md:px-4">
-          <div className="flex items-center justify-center gap-3 md:gap-6">
-            <span className="text-[10px] md:text-sm font-bold tracking-wider uppercase whitespace-nowrap">VALENTINE&apos;S DAY SALE</span>
-            <span className="text-[10px] md:text-xs text-white/70 hidden sm:inline whitespace-nowrap">SAVE UP TO 40% + FREE GIFTS</span>
-
-            {/* Compact Countdown Timer */}
-            <CountdownTimer hours={1} minutes={14} seconds={0} />
-          </div>
-        </div>
-      </div>
 
       {/* SECTION 1: Hero - Main product showcase with split layout (text + image) */}
       <section className="container mx-auto px-4 py-8 md:py-12 lg:py-20">
@@ -713,11 +699,6 @@ export default function LandingPage() {
               </div>
             </div>
 
-            {/* Sale Badge */}
-            <div className="bg-[#4A7C59] text-white text-sm font-bold uppercase px-3 py-1 rounded inline-block">
-              VALENTINE&apos;S DAY SALE
-            </div>
-
             {/* Pricing */}
             <div className="space-y-2">
               <div className="flex items-baseline gap-3">
@@ -728,13 +709,6 @@ export default function LandingPage() {
                 </span>
               </div>
               <p className="text-sm text-[#666666]">Less than the cost of 3 cheap baskets you&apos;d replace every year</p>
-            </div>
-
-            {/* Countdown Timer for Sale */}
-            <div className="flex items-center gap-2 text-sm">
-              <span className="text-[#C86F4C]">⏱</span>
-              <span className="text-[#666666]">Valentine&apos;s Day pricing ends in</span>
-              <CountdownTimer hours={1} minutes={14} seconds={0} className="text-[#C86F4C]" />
             </div>
 
             {/* Discount Auto-Applied Badge */}
