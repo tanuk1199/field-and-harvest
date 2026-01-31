@@ -52,7 +52,7 @@ export const images = {
   includedGuide2: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20251216_1649_HarvestGuideDisplay_simple_compose_01kcmj6ptjeb3afvd79hez40np.png?v=1765922044",           // Harvest Keeper cover, square
 
   // ── GUARANTEE SECTION ─────────────────────────────────────
-  guaranteeProduct: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20251214_2218_Gardener_sHarvestApron_remix_01kcg05f7af32v9ys9cm3atcct.png?v=1765769323",         // Angled product shot on dark bg (~256x320)
+  guaranteeProduct: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/Screenshot_2026-01-31_at_12.31.08_PM.png?v=1769880807",         // Angled product shot on dark bg (~256x320)
 
 } as const
 
