@@ -1,5 +1,5 @@
 // ============================================================
-// IMAGE ASSET MAP — Grange Carrier Landing Page
+// IMAGE ASSET MAP — Grange Carrier Landing Pages
 // ============================================================
 // Upload images to /public/images/ then update the path here.
 // Empty string ("") = emoji fallback shown on page.
@@ -13,6 +13,10 @@ export const images = {
 
   // ── HERO SECTION ──────────────────────────────────────────
   heroProduct: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/Grange_hero_image_1_1.png?v=1769839875",              // Product shot, transparent/cream bg, blends with #F4EFE3
+  heroImage: "https://cdn.shopify.com/s/files/1/0736/5279/7743/files/20260131_1316_Image_Generation_remix_01kgam7xv8fkavdabc3nxxhjh7.png?v=1769974800",  // Listicle hero image
+
+  // ── TRUST BADGE ICON ──────────────────────────────────────
+  trustBadgeIcon: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/4.png?v=1769840199",                // Shield icon
 
   // ── FEATURE ICONS (used in hero bullets + benefits grid) ──
   iconLightning: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/2.png?v=1769840199",            // Lightning bolt — speed / Drop-Chute release
@@ -21,6 +25,20 @@ export const images = {
   iconWaterDrop: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/5.png?v=1769840199",            // Water droplet — Dry-Wear barrier
   iconWeave: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/6.png?v=1769840199",                // Bolt or weave — thorn-proof canvas durability
   iconPouch: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/7.png?v=1769840199",                // Backpack / pouch — 20-lb capacity
+
+  // ── LISTICLE REASON IMAGES (square aspect ratio) ─────────
+  reason1Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20251215_0105_Quick-ReleaseBadgeDesign_remix_01kcg9qjyre8psjsmn24ardmhq.png?v=1766034098",             // Drop-Chute / convenience
+  reason2Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20260201_1633_Image_Generation_remix_01kgdhykz1e4pb8gg9pyx1231h.png?v=1769981766",             // Zero-Gravity harness / comfort
+  reason3Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20260201_1633_Image_Generation_remix_01kgdhzb5nf1g8wz6q6eymvv6m.png?v=1769981770",             // Field-Weave canvas / durability
+  reason4Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/Grange_hero_image_1_6.png?v=1769981762",             // Capacity / hands-free
+  reason5Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20260201_1641_Image_Generation_remix_01kgdjcqnee5d9w8721g22c54a.png?v=1769982157",             // Water resistance / cleanability
+  reason6Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20260201_1643_Image_Generation_remix_01kgdjgd8deat9ykzt5zkedtsn.png?v=1769982391",             // Lifetime warranty / guarantee
+
+  // ── PRODUCT BENEFIT ICONS (listicle) ────────────────────
+  benefitIcon1: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/2.png?v=1769840199",    // Lightning — Drop-Chute
+  benefitIcon2: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/3.png?v=1769840199",    // Feather — Zero-Gravity
+  benefitIcon3: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/4.png?v=1769840199",    // Shield — durability
+  benefitIcon4: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/5.png?v=1769840199",    // Water drop — Dry-Wear
 
   // ── TESTIMONIAL CUSTOMER PHOTOS (4:3 aspect ratio) ────────
   testimonial1: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20260131_0250_Image_Generation_remix_01kg9gezb4e74bq8gx2nv8dj3a.png?v=1769845938",             // Customer photo — Margaret S.
@@ -41,6 +59,8 @@ export const images = {
   productThumb2: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20251217_2356_Abundant_Harvest_Apron_remix_01kcqx1s10fbm81vz1t5emcq6y_9faf4a7b-ae01-41f0-b66a-f4a91ed7c7c2.png?v=1766034113",            // Thumbnail — harness / back detail
   productThumb3: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20251214_2351_ApronwithGardenBackground_remix_01kcg5gbwne8eb5pketsv0ckyj.png?v=1766034057",            // Thumbnail — Drop-Chute close-up
   productThumb4: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20251217_2356_Gardening_Apron_Wearer_remix_01kcqx0s6rf4w87w4te5qkwqx4.png?v=1767689308",            // Thumbnail — loaded with produce
+  productThumb5: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/Grange_hero_image_1_1.png?v=1769839875",            // Thumbnail — hero angle
+  productThumb6: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20260131_0256_Gardener_with_Harvest_Apron_remix_01kg9gtw3ce2br6v2wc968yx68_1.png?v=1769846433",            // Thumbnail — in garden
 
   // ── INCLUDED ITEMS (inline thumbnails in product details) ─
   guideEndlessHarvest: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/Screenshot2025-12-16at4.44.33PM.png?v=1765921684",      // The Endless Harvest guide cover
@@ -64,12 +84,27 @@ export const fallbacks = {
 
   logo: "FIELD & HARVEST CO.",
   heroProduct: "🌿",
+  heroImage: "🌿",
+  trustBadgeIcon: "🛡️",
+
   iconLightning: "⚡",
   iconFeather: "🪶",
   iconShield: "🛡️",
   iconWaterDrop: "💧",
   iconWeave: "🔩",
   iconPouch: "🎒",
+
+  reason1Image: "⚡",
+  reason2Image: "🪶",
+  reason3Image: "🔩",
+  reason4Image: "🎒",
+  reason5Image: "💧",
+  reason6Image: "🛡️",
+
+  benefitIcon1: "⚡",
+  benefitIcon2: "🪶",
+  benefitIcon3: "🛡️",
+  benefitIcon4: "💧",
 
   testimonial1: "📸",
   testimonial2: "📸",
@@ -85,6 +120,8 @@ export const fallbacks = {
   productThumb2: "2",
   productThumb3: "3",
   productThumb4: "4",
+  productThumb5: "5",
+  productThumb6: "6",
 
   guideEndlessHarvest: "📘",
   guideHarvestKeeper: "📗",
