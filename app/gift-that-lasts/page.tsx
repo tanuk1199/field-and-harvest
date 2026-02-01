@@ -1,7 +1,7 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { Button } from '@/components/ui/button'
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext, CarouselDots } from '@/components/ui/carousel'
-import { Menu, ArrowRight, CheckCircle2 } from 'lucide-react'
+import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import { Asset } from '@/components/asset'
 
 const PDP_URL = "https://fieldandharvestco.com/products/the-grange-carrier"
@@ -16,14 +16,8 @@ export default function LandingPage() {
 
       {/* SECTION: Header/Navigation - Main site navigation */}
       <header className="bg-[#F4EFE3] border-b border-[#D4C4B0]">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <button className="p-2 hover:bg-[#D4C4B0] rounded-md transition-colors" aria-label="Menu">
-            <Menu className="h-6 w-6 text-[#4A3F35]" />
-          </button>
-
+        <div className="container mx-auto px-4 py-4 flex items-center justify-center">
           <Asset name="logo" alt="Field & Harvest Co." className="h-8 md:h-10 w-auto object-contain" fallbackClassName="text-2xl font-light tracking-wider text-[#4A3F35]" />
-
-          <div className="w-10" />
         </div>
       </header>
 
