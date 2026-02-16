@@ -20,7 +20,7 @@ export default function GiftListiclePage() {
       <div className="bg-primary text-center py-3 px-4 shadow-sm">
         <p className="text-sm md:text-base font-medium">
           <span className="text-[#DDA15E] font-bold uppercase tracking-wide">GET 39% OFF</span>{" "}
-          <span className="text-primary-foreground uppercase tracking-wide">+ 2 FREE GARDENING GUIDES — GIFT-READY IN DAYS</span>
+          <span className="text-primary-foreground uppercase tracking-wide">+ 2 FREE GARDENING GUIDES</span>
         </p>
       </div>
 
@@ -50,7 +50,7 @@ export default function GiftListiclePage() {
             6 Reasons This Is the Gift Your <span className="text-[#C86F4C]">Gardener Won&apos;t Stop</span> Talking About
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground mt-4 leading-relaxed text-pretty max-w-md mx-auto">
-            Seeds get forgotten. Gloves wear out by June. The Grange Carrier is the one garden gift 22,000+ people use every single harvest — and the one they actually thank you for.
+            Seeds get forgotten. Gloves wear out by June. The Grange Carrier is the one garden gift 22,000+ people use every single harvest, and the one they actually thank you for.
           </p>
         </div>
 
@@ -81,7 +81,7 @@ export default function GiftListiclePage() {
           LISTICLE SECTIONS - Feature/benefit cards
           ============================================ */}
       <section className="max-w-lg mx-auto px-4 py-12 space-y-10">
-        {/* Reason 1 — Drop-Chute / Thoughtful */}
+        {/* Reason 1 - Drop-Chute / Thoughtful */}
         <div className="bg-card rounded-2xl p-8 border border-border shadow-sm">
           <div className="flex items-center justify-between mb-4">
             <Badge variant="secondary" className="text-xs uppercase tracking-wider font-bold bg-transparent">
@@ -90,7 +90,7 @@ export default function GiftListiclePage() {
             <span className="text-xs font-bold text-muted-foreground">01</span>
           </div>
           <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-6 text-balance leading-tight">
-            They&apos;ll empty a full harvest in one second — and think of you every time
+            They&apos;ll empty a full harvest in one second, and think of you every time
           </h3>
 
           <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
@@ -98,11 +98,11 @@ export default function GiftListiclePage() {
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
-            Most gardeners finish a session by bending over a bucket, scooping out tomatoes one handful at a time. The Quick-Release Drop-Chute changes that. One pinch of the industrial-grade buckles and the entire harvest slides out in a single motion. <span className="font-bold text-foreground">Gift-givers tell us this is the moment it clicks — the first time they use the Drop-Chute, they text you about it.</span>
+            Most gardeners finish a session by bending over a bucket, scooping out tomatoes one handful at a time. The Quick-Release Drop-Chute changes that. One pinch of the industrial-grade buckles and the entire harvest slides out in a single motion. <span className="font-bold text-foreground">Gift-givers tell us this is the moment it clicks. The first time they use the Drop-Chute, they text you about it.</span>
           </p>
         </div>
 
-        {/* Reason 2 — Harness / Comfort */}
+        {/* Reason 2 - Harness / Comfort */}
         <div className="bg-card rounded-2xl p-8 border border-border shadow-sm">
           <div className="flex items-center justify-between mb-4">
             <Badge variant="secondary" className="text-xs uppercase tracking-wider font-bold bg-transparent">
@@ -119,11 +119,11 @@ export default function GiftListiclePage() {
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
-            If they&apos;re over 50, their current carrier probably hangs everything from their neck. By noon, they&apos;re done — not because the garden is, but because their body is. The Zero-Gravity Cross-Back Harness distributes 20 pounds across the shoulders and back like a hiking pack. <span className="font-bold text-foreground">Gardeners in their 60s and 70s say this is the reason they&apos;re still out there every morning.</span>
+            If they&apos;re over 50, their current carrier probably hangs everything from their neck. By noon, they&apos;re done. Not because the garden is, but because their body is. The Zero-Gravity Cross-Back Harness distributes 20 pounds across the shoulders and back like a hiking pack. <span className="font-bold text-foreground">Gardeners in their 60s and 70s say this is the reason they&apos;re still out there every morning.</span>
           </p>
         </div>
 
-        {/* Reason 3 — Canvas / Lasting */}
+        {/* Reason 3 - Canvas / Lasting */}
         <div className="bg-card rounded-2xl p-8 border border-border shadow-sm">
           <div className="flex items-center justify-between mb-4">
             <Badge variant="secondary" className="text-xs uppercase tracking-wider font-bold bg-transparent">
@@ -132,7 +132,7 @@ export default function GiftListiclePage() {
             <span className="text-xs font-bold text-muted-foreground">03</span>
           </div>
           <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-6 text-balance leading-tight">
-            Built from the same fabric as premium hiking packs — this gift ages like leather boots
+            Built from the same fabric as premium hiking packs. This gift ages like leather boots
           </h3>
 
           <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
@@ -144,7 +144,7 @@ export default function GiftListiclePage() {
           </p>
         </div>
 
-        {/* Reason 4 — Capacity / Practical */}
+        {/* Reason 4 - Capacity / Practical */}
         <div className="bg-card rounded-2xl p-8 border border-border shadow-sm">
           <div className="flex items-center justify-between mb-4">
             <Badge variant="secondary" className="text-xs uppercase tracking-wider font-bold bg-transparent">
@@ -165,7 +165,7 @@ export default function GiftListiclePage() {
           </p>
         </div>
 
-        {/* Reason 5 — Water Resistance / Clean */}
+        {/* Reason 5 - Water Resistance / Clean */}
         <div className="bg-card rounded-2xl p-8 border border-border shadow-sm">
           <div className="flex items-center justify-between mb-4">
             <Badge variant="secondary" className="text-xs uppercase tracking-wider font-bold bg-transparent">
@@ -182,11 +182,11 @@ export default function GiftListiclePage() {
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
-            Dew, tomato juice, wet soil — cotton aprons soak through in minutes and transfer everything to the clothes underneath. The Dry-Wear barrier lines the entire pouch and blocks moisture on contact. A quick wipe-down and the carrier is ready for the next session. <span className="font-bold text-foreground">Their clothes stay clean. Your gift stays in rotation every harvest.</span>
+            Dew, tomato juice, wet soil. Cotton aprons soak through in minutes and transfer everything to the clothes underneath. The Dry-Wear barrier lines the entire pouch and blocks moisture on contact. A quick wipe-down and the carrier is ready for the next session. <span className="font-bold text-foreground">Their clothes stay clean. Your gift stays in rotation every harvest.</span>
           </p>
         </div>
 
-        {/* Reason 6 — Guarantee / Risk-Free */}
+        {/* Reason 6 - Guarantee / Risk-Free */}
         <div className="bg-card rounded-2xl p-8 border border-border shadow-sm">
           <div className="flex items-center justify-between mb-4">
             <Badge variant="secondary" className="text-xs uppercase tracking-wider font-bold bg-transparent">
@@ -195,7 +195,7 @@ export default function GiftListiclePage() {
             <span className="text-xs font-bold text-muted-foreground">06</span>
           </div>
           <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-6 text-balance leading-tight">
-            Lifetime warranty. 60-day trial. If they don&apos;t love it, full refund — no questions.
+            Lifetime warranty. 60-day trial. If they don&apos;t love it, full refund. No questions.
           </h3>
 
           <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
@@ -220,7 +220,7 @@ export default function GiftListiclePage() {
             The Gift 22,000+ Gardeners Wish They&apos;d Gotten Sooner
           </h2>
           <p className="text-lg text-muted-foreground mb-6 text-pretty leading-relaxed max-w-md mx-auto">
-            One carrier. Two free guides. A lifetime warranty. And the knowledge that you gave them something they&apos;ll reach for every single season — not something that ends up in a drawer.
+            One carrier. Two free guides. A lifetime warranty. And the knowledge that you gave them something they&apos;ll reach for every single season, not something that ends up in a drawer.
           </p>
 
           {/* Social proof */}
@@ -264,25 +264,25 @@ export default function GiftListiclePage() {
                 <div className="w-5 h-5 flex-shrink-0 mt-0.5">
                   <Asset name="benefitIcon1" alt="Lightning" className="w-5 h-5 object-contain" fallbackClassName="text-base" />
                 </div>
-                <p className="text-xs text-foreground font-semibold leading-snug">1-Second Drop-Chute — they&apos;ll empty a full harvest instantly</p>
+                <p className="text-xs text-foreground font-semibold leading-snug">1-Second Drop-Chute empties a full harvest instantly</p>
               </div>
               <div className="bg-[#F4EFE3] rounded-lg p-3.5 flex items-start gap-2.5">
                 <div className="w-5 h-5 flex-shrink-0 mt-0.5">
                   <Asset name="benefitIcon2" alt="Feather" className="w-5 h-5 object-contain" fallbackClassName="text-base" />
                 </div>
-                <p className="text-xs text-foreground font-semibold leading-snug">Zero-Gravity Harness — carries 20 lbs pain-free, even at 70</p>
+                <p className="text-xs text-foreground font-semibold leading-snug">Zero-Gravity Harness carries 20 lbs pain-free</p>
               </div>
               <div className="bg-[#F4EFE3] rounded-lg p-3.5 flex items-start gap-2.5">
                 <div className="w-5 h-5 flex-shrink-0 mt-0.5">
                   <Asset name="benefitIcon3" alt="Shield" className="w-5 h-5 object-contain" fallbackClassName="text-base" />
                 </div>
-                <p className="text-xs text-foreground font-semibold leading-snug">600D Canvas — thorn-proof and built to last decades</p>
+                <p className="text-xs text-foreground font-semibold leading-snug">600D Canvas, thorn-proof and built for decades</p>
               </div>
               <div className="bg-[#F4EFE3] rounded-lg p-3.5 flex items-start gap-2.5">
                 <div className="w-5 h-5 flex-shrink-0 mt-0.5">
                   <Asset name="benefitIcon4" alt="Water drop" className="w-5 h-5 object-contain" fallbackClassName="text-base" />
                 </div>
-                <p className="text-xs text-foreground font-semibold leading-snug">Water-resistant lining — keeps their clothes clean every session</p>
+                <p className="text-xs text-foreground font-semibold leading-snug">Water-resistant lining keeps their clothes clean</p>
               </div>
             </div>
 
@@ -406,7 +406,7 @@ export default function GiftListiclePage() {
               Will this fit them? I don&apos;t know their size.
             </AccordionTrigger>
             <AccordionContent className="text-foreground/80 leading-relaxed pb-5">
-              The Cross-Back Harness is fully adjustable and fits most body types — men, women, petite, broad-shouldered. The straps adjust in seconds and distribute weight evenly whether they&apos;re picking herbs or hauling 20 pounds of tomatoes. Gardeners from their 30s through their 80s wear it comfortably. And if it doesn&apos;t fit, the 60-day guarantee covers you.
+              The Cross-Back Harness is fully adjustable and fits most body types. Men, women, petite, broad-shouldered. The straps adjust in seconds and distribute weight evenly whether they&apos;re picking herbs or hauling 20 pounds of tomatoes. Gardeners from their 30s through their 80s wear it comfortably. And if it doesn&apos;t fit, the 60-day guarantee covers you.
             </AccordionContent>
           </AccordionItem>
 
@@ -433,7 +433,7 @@ export default function GiftListiclePage() {
               Is $49 the right price range for a garden gift?
             </AccordionTrigger>
             <AccordionContent className="text-foreground/80 leading-relaxed pb-5">
-              At $49 (normally $80), it hits the sweet spot — premium enough to feel like a real gift, practical enough that it won&apos;t feel wasteful. They also get two gardening guides ($33 value) and a lifetime warranty. Compare that to a $20 pair of gloves that wears out by July.
+              At $49 (normally $80), it hits the sweet spot. Premium enough to feel like a real gift, practical enough that it won&apos;t feel wasteful. They also get two gardening guides ($33 value) and a lifetime warranty. Compare that to a $20 pair of gloves that wears out by July.
             </AccordionContent>
           </AccordionItem>
 
@@ -467,7 +467,7 @@ export default function GiftListiclePage() {
               size="lg"
               className="w-full bg-[#C86F4C] hover:bg-[#C86F4C]/90 text-white font-bold py-7 text-lg rounded-lg mb-2.5 shadow-lg transition-all hover:shadow-xl"
             >
-              Give 39% Off + 2 Free Guides
+              Get 39% Off + 2 Free Guides
             </Button>
           </a>
           <div className="flex items-center justify-center gap-3 flex-wrap">
