@@ -10,21 +10,8 @@ export const metadata: Metadata = {
   title: 'The Grange Carrier™ — The Last Harvest Carrier You\'ll Ever Buy | Field & Harvest Co.',
   description: 'Stop replacing flimsy carriers every season. The Grange Carrier is built from 600D Field-Weave™ canvas with a lifetime warranty. Trusted by 22,000+ gardeners.',
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: 'https://cdn.shopify.com/s/files/1/0651/8299/0379/files/Untitled_design_81.png?v=1765838127',
+    apple: 'https://cdn.shopify.com/s/files/1/0651/8299/0379/files/Untitled_design_81.png?v=1765838127',
   },
 }
 
