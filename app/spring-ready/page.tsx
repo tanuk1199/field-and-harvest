@@ -415,7 +415,7 @@ export default function SpringReadyListiclePage() {
               When will it arrive if I order today?
             </AccordionTrigger>
             <AccordionContent className="text-foreground/80 leading-relaxed pb-5">
-              Orders ship within 1 business day. Standard delivery is 3-5 business days. Order now and you&apos;ll have it in your hands well before planting season kicks off.
+              Orders are processed within 2 business days. Standard shipping is 7-9 business days. Order now and you&apos;ll have it in your hands well before planting season kicks off.
             </AccordionContent>
           </AccordionItem>
 

@@ -451,7 +451,7 @@ export default function GiftListiclePage() {
               How fast will it ship?
             </AccordionTrigger>
             <AccordionContent className="text-foreground/80 leading-relaxed pb-5">
-              Orders are processed within 1 business day. Standard shipping is 3-5 business days. If you&apos;re ordering for a specific occasion, we recommend ordering at least 7 days in advance.
+              Orders are processed within 2 business days. Standard shipping is 7-9 business days. If you&apos;re ordering for a specific occasion, we recommend ordering at least 14 days in advance.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

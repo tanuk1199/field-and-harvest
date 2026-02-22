@@ -953,7 +953,7 @@ export default function LandingPage() {
                 Will it arrive quickly?
               </AccordionTrigger>
               <AccordionContent className="text-[#666666] pb-5">
-                We process all orders within 1 business day. Standard shipping is 3-5 business days.
+                We process all orders within 2 business days. Standard shipping is 7-9 business days.
               </AccordionContent>
             </AccordionItem>
 
