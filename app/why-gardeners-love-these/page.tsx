@@ -7,7 +7,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { Asset } from "@/components/asset"
-import { GroveAsset } from "@/components/grove-asset"
+import { WglAsset } from "@/components/wgl-asset"
 import { GroveProductCard } from "@/components/grove-product-card"
 import type { Metadata } from "next"
 
@@ -44,7 +44,7 @@ export default function WhyGardenersLoveThesePage() {
           ============================================ */}
       <section className="max-w-lg mx-auto px-4 py-10">
         <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-xl bg-muted">
-          <GroveAsset name="heroImage" alt="The Grove Starter Set" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+          <WglAsset name="heroImage" alt="The Grove Starter Set" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
         </div>
 
         {/* Sale badge */}
@@ -93,7 +93,7 @@ export default function WhyGardenersLoveThesePage() {
         {/* Reason 1 — LIGHT */}
         <div className="bg-white rounded-xl overflow-hidden shadow-md border-l-4 border-[#C86F4C]">
           <div className="relative w-full aspect-[3/2] bg-muted">
-            <GroveAsset name="reason3Image" alt="Built-in LED grow lights on the Grove Starter Set" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+            <WglAsset name="reason1Image" alt="Built-in LED grow lights on the Grove Starter Set" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
           </div>
           <div className="p-7 relative">
             <div className="absolute -top-8 right-6 text-[80px] font-black text-[#C86F4C]/[0.06] leading-none select-none pointer-events-none">01</div>
@@ -110,7 +110,7 @@ export default function WhyGardenersLoveThesePage() {
         {/* Reason 2 — CAPACITY */}
         <div className="bg-white rounded-xl overflow-hidden shadow-md">
           <div className="relative w-full aspect-[3/2] bg-muted">
-            <GroveAsset name="reason6Image" alt="80 cells across 2 trays — complete seed starting system" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+            <WglAsset name="reason2Image" alt="80 cells across 2 trays — complete seed starting system" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
           </div>
           <div className="p-7 relative">
             <div className="absolute -top-8 right-6 text-[80px] font-black text-[#DDA15E]/[0.08] leading-none select-none pointer-events-none">02</div>
@@ -127,7 +127,7 @@ export default function WhyGardenersLoveThesePage() {
         {/* Reason 3 — CONTROL */}
         <div className="bg-white rounded-xl overflow-hidden shadow-md border-l-4 border-[#C86F4C]">
           <div className="relative w-full aspect-[3/2] bg-muted">
-            <GroveAsset name="reason2Image" alt="Humidity domes with adjustable vents for controlled germination" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+            <WglAsset name="reason3Image" alt="Humidity domes with adjustable vents for controlled germination" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
           </div>
           <div className="p-7 relative">
             <div className="absolute -top-8 right-6 text-[80px] font-black text-[#C86F4C]/[0.06] leading-none select-none pointer-events-none">03</div>
@@ -144,7 +144,7 @@ export default function WhyGardenersLoveThesePage() {
         {/* Reason 4 — REUSABLE */}
         <div className="bg-white rounded-xl overflow-hidden shadow-md">
           <div className="relative w-full aspect-[3/2] bg-muted">
-            <GroveAsset name="reason5Image" alt="Reusable silicone seed starting trays, season after season" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+            <WglAsset name="reason4Image" alt="Reusable silicone seed starting trays, season after season" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
           </div>
           <div className="p-7 relative">
             <div className="absolute -top-8 right-6 text-[80px] font-black text-[#DDA15E]/[0.08] leading-none select-none pointer-events-none">04</div>
@@ -161,7 +161,7 @@ export default function WhyGardenersLoveThesePage() {
         {/* Reason 5 — TIMING */}
         <div className="bg-white rounded-xl overflow-hidden shadow-md border-l-4 border-[#C86F4C]">
           <div className="relative w-full aspect-[3/2] bg-muted">
-            <GroveAsset name="reason4Image" alt="Seedlings growing indoors weeks before spring" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+            <WglAsset name="reason5Image" alt="Seedlings growing indoors weeks before spring" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
           </div>
           <div className="p-7 relative">
             <div className="absolute -top-8 right-6 text-[80px] font-black text-[#C86F4C]/[0.06] leading-none select-none pointer-events-none">05</div>
