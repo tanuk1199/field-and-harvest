@@ -88,110 +88,108 @@ export default function WhyGardenersLoveThesePage() {
       {/* ============================================
           LISTICLE SECTIONS — 6 Reasons
           ============================================ */}
-      <section className="max-w-lg mx-auto px-4 py-8 space-y-8">
+      <section className="max-w-lg mx-auto px-4 py-12 space-y-10">
 
         {/* Reason 1 — LIGHT */}
-        <div className="bg-white rounded-xl overflow-hidden shadow-md border-l-4 border-[#C86F4C]">
-          <div className="relative w-full aspect-[3/2] bg-muted">
+        <div className="bg-card rounded-2xl p-8 border border-border shadow-sm">
+          <div className="flex items-center justify-between mb-4">
+            <span className="text-xs uppercase tracking-wider font-bold text-muted-foreground">Light</span>
+            <span className="text-xs font-bold text-muted-foreground">01</span>
+          </div>
+          <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-6 text-balance leading-tight">
+            Built-in LED grow lights. Nothing else to buy.
+          </h3>
+          <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
             <WglAsset name="reason1Image" alt="Built-in LED grow lights on the Grove Starter Set" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
           </div>
-          <div className="p-7 relative">
-            <div className="absolute -top-8 right-6 text-[80px] font-black text-[#C86F4C]/[0.06] leading-none select-none pointer-events-none">01</div>
-            <span className="inline-block bg-[#C86F4C]/10 text-[#C86F4C] text-[11px] font-bold uppercase tracking-widest rounded-full px-3 py-1 mb-4">Light</span>
-            <h3 className="text-2xl md:text-3xl font-bold text-[#2D2118] mb-4 text-balance leading-snug">
-              Built-in LED grow lights. Nothing else to buy.
-            </h3>
-            <p className="text-[#6B5D4F] text-pretty leading-relaxed text-[15px]">
-              Most seed starting setups need a separate grow light, a timer, and a power strip before you&apos;ve planted a single seed. The Grove Starter has full-spectrum LED lights built right into the dome. Set your trays on the counter, plug in, and your seedlings get the light they need from day one. <span className="font-semibold text-[#2D2118]">No clamp lamps. No cord tangles. No extra trip to the store.</span>
-            </p>
-          </div>
+          <p className="text-foreground/80 text-pretty leading-relaxed text-base">
+            Most seed starting setups need a separate grow light, a timer, and a power strip before you&apos;ve planted a single seed. The Grove Starter has full-spectrum LED lights built right into the dome. Set your trays on the counter, plug in, and your seedlings get the light they need from day one. <span className="font-bold text-foreground">No clamp lamps. No cord tangles. No extra trip to the store.</span>
+          </p>
         </div>
 
         {/* Reason 2 — CAPACITY */}
-        <div className="bg-white rounded-xl overflow-hidden shadow-md">
-          <div className="relative w-full aspect-[3/2] bg-muted">
+        <div className="bg-card rounded-2xl p-8 border border-border shadow-sm">
+          <div className="flex items-center justify-between mb-4">
+            <span className="text-xs uppercase tracking-wider font-bold text-muted-foreground">Capacity</span>
+            <span className="text-xs font-bold text-muted-foreground">02</span>
+          </div>
+          <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-6 text-balance leading-tight">
+            80 cells. Your whole garden, started in one round.
+          </h3>
+          <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
             <WglAsset name="reason2Image" alt="80 cells across 2 trays — complete seed starting system" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
           </div>
-          <div className="p-7 relative">
-            <div className="absolute -top-8 right-6 text-[80px] font-black text-[#DDA15E]/[0.08] leading-none select-none pointer-events-none">02</div>
-            <span className="inline-block bg-[#DDA15E]/15 text-[#8B6914] text-[11px] font-bold uppercase tracking-widest rounded-full px-3 py-1 mb-4">Capacity</span>
-            <h3 className="text-2xl md:text-3xl font-bold text-[#2D2118] mb-4 text-balance leading-snug">
-              80 cells. Your whole garden, started in one round.
-            </h3>
-            <p className="text-[#6B5D4F] text-pretty leading-relaxed text-[15px]">
-              Two trays, 40 cells each. Tomatoes, peppers, herbs, greens, flowers — start everything at once instead of staggering batches and waiting for tray space. Most home gardeners plant 40-80 seedlings per season. One Grove Starter Set covers that in a single weekend. <span className="font-semibold text-[#2D2118]">One setup. One round. Your entire season, handled.</span>
-            </p>
-          </div>
+          <p className="text-foreground/80 text-pretty leading-relaxed text-base">
+            Two trays, 40 cells each. Tomatoes, peppers, herbs, greens, flowers — start everything at once instead of staggering batches and waiting for tray space. Most home gardeners plant 40-80 seedlings per season. One Grove Starter Set covers that in a single weekend. <span className="font-bold text-foreground">One setup. One round. Your entire season, handled.</span>
+          </p>
         </div>
 
         {/* Reason 3 — CONTROL */}
-        <div className="bg-white rounded-xl overflow-hidden shadow-md border-l-4 border-[#C86F4C]">
-          <div className="relative w-full aspect-[3/2] bg-muted">
+        <div className="bg-card rounded-2xl p-8 border border-border shadow-sm">
+          <div className="flex items-center justify-between mb-4">
+            <span className="text-xs uppercase tracking-wider font-bold text-muted-foreground">Control</span>
+            <span className="text-xs font-bold text-muted-foreground">03</span>
+          </div>
+          <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-6 text-balance leading-tight">
+            Humidity domes you actually adjust. Not just a plastic lid.
+          </h3>
+          <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
             <WglAsset name="reason3Image" alt="Humidity domes with adjustable vents for controlled germination" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
           </div>
-          <div className="p-7 relative">
-            <div className="absolute -top-8 right-6 text-[80px] font-black text-[#C86F4C]/[0.06] leading-none select-none pointer-events-none">03</div>
-            <span className="inline-block bg-[#C86F4C]/10 text-[#C86F4C] text-[11px] font-bold uppercase tracking-widest rounded-full px-3 py-1 mb-4">Control</span>
-            <h3 className="text-2xl md:text-3xl font-bold text-[#2D2118] mb-4 text-balance leading-snug">
-              Humidity domes you actually adjust. Not just a plastic lid.
-            </h3>
-            <p className="text-[#6B5D4F] text-pretty leading-relaxed text-[15px]">
-              Seeds need consistent moisture to germinate. Open-air trays dry out too fast. Sealed domes trap too much moisture and invite mold. The Grove Starter&apos;s humidity domes have adjustable vents so you control airflow as your seedlings develop. Close them for germination. Open them as sprouts emerge. <span className="font-semibold text-[#2D2118]">The difference between &ldquo;a few came up&rdquo; and &ldquo;almost everything germinated&rdquo; is usually just humidity.</span>
-            </p>
-          </div>
+          <p className="text-foreground/80 text-pretty leading-relaxed text-base">
+            Seeds need consistent moisture to germinate. Open-air trays dry out too fast. Sealed domes trap too much moisture and invite mold. The Grove Starter&apos;s humidity domes have adjustable vents so you control airflow as your seedlings develop. Close them for germination. Open them as sprouts emerge. <span className="font-bold text-foreground">The difference between &ldquo;a few came up&rdquo; and &ldquo;almost everything germinated&rdquo; is usually just humidity.</span>
+          </p>
         </div>
 
         {/* Reason 4 — REUSABLE */}
-        <div className="bg-white rounded-xl overflow-hidden shadow-md">
-          <div className="relative w-full aspect-[3/2] bg-muted">
+        <div className="bg-card rounded-2xl p-8 border border-border shadow-sm">
+          <div className="flex items-center justify-between mb-4">
+            <span className="text-xs uppercase tracking-wider font-bold text-muted-foreground">Reusable</span>
+            <span className="text-xs font-bold text-muted-foreground">04</span>
+          </div>
+          <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-6 text-balance leading-tight">
+            Silicone trays that come back every season. No cracks. No replacements.
+          </h3>
+          <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
             <WglAsset name="reason4Image" alt="Reusable silicone seed starting trays, season after season" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
           </div>
-          <div className="p-7 relative">
-            <div className="absolute -top-8 right-6 text-[80px] font-black text-[#DDA15E]/[0.08] leading-none select-none pointer-events-none">04</div>
-            <span className="inline-block bg-[#DDA15E]/15 text-[#8B6914] text-[11px] font-bold uppercase tracking-widest rounded-full px-3 py-1 mb-4">Reusable</span>
-            <h3 className="text-2xl md:text-3xl font-bold text-[#2D2118] mb-4 text-balance leading-snug">
-              Silicone trays that come back every season. No cracks. No replacements.
-            </h3>
-            <p className="text-[#6B5D4F] text-pretty leading-relaxed text-[15px]">
-              Cheap plastic trays crack after a season or two. The cells get brittle, the edges split, and you&apos;re back at the store buying the same thing again. The Grove Starter Set is silicone. It flexes for easy seedling removal, cleans up in minutes, and holds its shape year after year. <span className="font-semibold text-[#2D2118]">The longer you use it, the less each season costs.</span>
-            </p>
-          </div>
+          <p className="text-foreground/80 text-pretty leading-relaxed text-base">
+            Cheap plastic trays crack after a season or two. The cells get brittle, the edges split, and you&apos;re back at the store buying the same thing again. The Grove Starter Set is silicone. It flexes for easy seedling removal, cleans up in minutes, and holds its shape year after year. <span className="font-bold text-foreground">The longer you use it, the less each season costs.</span>
+          </p>
         </div>
 
         {/* Reason 5 — TIMING */}
-        <div className="bg-white rounded-xl overflow-hidden shadow-md border-l-4 border-[#C86F4C]">
-          <div className="relative w-full aspect-[3/2] bg-muted">
+        <div className="bg-card rounded-2xl p-8 border border-border shadow-sm">
+          <div className="flex items-center justify-between mb-4">
+            <span className="text-xs uppercase tracking-wider font-bold text-muted-foreground">Timing</span>
+            <span className="text-xs font-bold text-muted-foreground">05</span>
+          </div>
+          <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-6 text-balance leading-tight">
+            Start 6 weeks early. Be transplant-ready when spring arrives.
+          </h3>
+          <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
             <WglAsset name="reason5Image" alt="Seedlings growing indoors weeks before spring" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
           </div>
-          <div className="p-7 relative">
-            <div className="absolute -top-8 right-6 text-[80px] font-black text-[#C86F4C]/[0.06] leading-none select-none pointer-events-none">05</div>
-            <span className="inline-block bg-[#C86F4C]/10 text-[#C86F4C] text-[11px] font-bold uppercase tracking-widest rounded-full px-3 py-1 mb-4">Timing</span>
-            <h3 className="text-2xl md:text-3xl font-bold text-[#2D2118] mb-4 text-balance leading-snug">
-              Start 6 weeks early. Be transplant-ready when spring arrives.
-            </h3>
-            <p className="text-[#6B5D4F] text-pretty leading-relaxed text-[15px]">
-              Indoor seed starting gives you a 4-8 week head start on the growing season. By the time the ground thaws, your seedlings are already established and ready to go in the soil. More growing time from the same beds, the same space. <span className="font-semibold text-[#2D2118]">While everyone else is buying nursery seedlings, yours are already in the ground and growing.</span>
-            </p>
-          </div>
+          <p className="text-foreground/80 text-pretty leading-relaxed text-base">
+            Indoor seed starting gives you a 4-8 week head start on the growing season. By the time the ground thaws, your seedlings are already established and ready to go in the soil. More growing time from the same beds, the same space. <span className="font-bold text-foreground">While everyone else is buying nursery seedlings, yours are already in the ground and growing.</span>
+          </p>
         </div>
 
         {/* Reason 6 — OFFER */}
-        <div className="bg-white rounded-xl overflow-hidden shadow-md border-2 border-[#C86F4C]/30">
-          <div className="bg-[#C86F4C]/[0.06] px-7 py-5 border-b border-[#C86F4C]/10">
-            <div className="flex items-center gap-3">
-              <ShieldCheck className="w-6 h-6 text-[#C86F4C] flex-shrink-0" />
-              <span className="text-[11px] font-bold uppercase tracking-widest text-[#C86F4C]">Risk-Free Offer</span>
+        <div className="bg-card rounded-2xl p-8 border border-border shadow-sm">
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-2">
+              <ShieldCheck className="w-4 h-4 text-[#C86F4C]" />
+              <span className="text-xs uppercase tracking-wider font-bold text-muted-foreground">Risk-Free Offer</span>
             </div>
+            <span className="text-xs font-bold text-muted-foreground">06</span>
           </div>
-          <div className="p-7 relative">
-            <div className="absolute -top-4 right-6 text-[80px] font-black text-[#C86F4C]/[0.06] leading-none select-none pointer-events-none">06</div>
-            <h3 className="text-2xl md:text-3xl font-bold text-[#2D2118] mb-4 text-balance leading-snug">
-              21% off. 2 free guides. 60-day guarantee. Lifetime warranty.
-            </h3>
-            <p className="text-[#6B5D4F] text-pretty leading-relaxed text-[15px]">
-              Right now the Grove Starter Set comes with 21% off and 2 free gardening guides. Try it for a full 60 days. Use it through an entire seed starting round. If it doesn&apos;t change the way you start your garden, send it back for a full refund. And if anything fails — ever — the lifetime warranty covers it. <span className="font-semibold text-[#2D2118]">No risk. No rush. Just a better way to start your seeds.</span>
-            </p>
-          </div>
+          <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-6 text-balance leading-tight">
+            21% off. 2 free guides. 60-day guarantee. Lifetime warranty.
+          </h3>
+          <p className="text-foreground/80 text-pretty leading-relaxed text-base">
+            Right now the Grove Starter Set comes with 21% off and 2 free gardening guides. Try it for a full 60 days. Use it through an entire seed starting round. If it doesn&apos;t change the way you start your garden, send it back for a full refund. And if anything fails — ever — the lifetime warranty covers it. <span className="font-bold text-foreground">No risk. No rush. Just a better way to start your seeds.</span>
+          </p>
         </div>
 
       </section>
