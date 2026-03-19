@@ -44,7 +44,7 @@ export default function DitchingBucketsPage() {
           HERO SECTION - Editorial, story-driven
           No CTA, no social proof above the fold.
           ============================================ */}
-      <section className="max-w-lg mx-auto px-4 py-8">
+      <section className="max-w-lg mx-auto px-6 py-8">
         {/* Lifestyle image — matches ad aesthetic */}
         <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg bg-muted">
           <DbAsset name="heroImage" alt="Gardener harvesting with ease" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
@@ -75,7 +75,7 @@ export default function DitchingBucketsPage() {
           LISTICLE SECTIONS - Problem-first cards
           Lead with pain they recognize, then reveal solution
           ============================================ */}
-      <section className="max-w-lg mx-auto px-4 py-12 space-y-10">
+      <section className="max-w-lg mx-auto px-6 py-12 space-y-10">
         {/* Reason 1 — The bending problem */}
         <div className="bg-card rounded-2xl p-8 border border-border shadow-sm">
           <div className="flex items-center justify-between mb-4">
@@ -258,7 +258,7 @@ export default function DitchingBucketsPage() {
           PRODUCT SECTION - Full showcase with offer
           Now they know the product — show the deal
           ============================================ */}
-      <section className="max-w-lg mx-auto px-4 pt-12 pb-4">
+      <section className="max-w-lg mx-auto px-6 pt-12 pb-4">
         <div className="text-center mb-8">
           <Badge className="bg-[#F4EFE3] text-[#4A3F35] hover:bg-[#F4EFE3] border border-[#D4C4B0] text-xs font-bold mb-5 px-4 py-1.5">
             Lifetime Warranty + 60-Day Guarantee
@@ -349,7 +349,7 @@ export default function DitchingBucketsPage() {
       {/* ============================================
           REVIEWS SECTION - Customer testimonials
           ============================================ */}
-      <section className="max-w-lg mx-auto px-4 py-12">
+      <section className="max-w-lg mx-auto px-6 py-12">
         <div className="text-center mb-8">
           <div className="flex items-center justify-center gap-1 mb-3">
             {[...Array(5)].map((_, i) => (
@@ -436,7 +436,7 @@ export default function DitchingBucketsPage() {
       {/* ============================================
           FAQ SECTION - Frequently Asked Questions
           ============================================ */}
-      <section className="max-w-lg mx-auto px-4 pt-8 pb-32">
+      <section className="max-w-lg mx-auto px-6 pt-8 pb-32">
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance leading-tight">
             Common Questions
