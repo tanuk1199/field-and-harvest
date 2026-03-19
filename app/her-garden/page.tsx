@@ -92,7 +92,7 @@ export default function HerGardenPage() {
           STEP 2 — Walking and picking
           ============================================ */}
       <section className="max-w-lg mx-auto px-6 py-4">
-        <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-[#e8e0d4] shadow-md mb-5">
+        <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-[#e8e0d4] shadow-md mb-5">
           <GardenAsset name="storyPicking" alt="Walking through garden rows, picking with both hands" className="w-full h-full object-cover" fallbackClassName="w-full h-full" />
         </div>
         <div className="space-y-4 text-[#2D2118]" style={{ fontSize: "1.0625rem", lineHeight: 1.85 }}>
@@ -108,7 +108,7 @@ export default function HerGardenPage() {
           STEP 3 — Full pouch
           ============================================ */}
       <section className="max-w-lg mx-auto px-6 py-4">
-        <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-[#e8e0d4] shadow-md mb-5">
+        <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-[#e8e0d4] shadow-md mb-5">
           <GardenAsset name="storyFullPouch" alt="Full pouch of produce" className="w-full h-full object-cover" fallbackClassName="w-full h-full" />
         </div>
         <div className="space-y-4 text-[#2D2118]" style={{ fontSize: "1.0625rem", lineHeight: 1.85 }}>
@@ -166,7 +166,7 @@ export default function HerGardenPage() {
         <div className="space-y-4 text-[#2D2118]" style={{ fontSize: "1.0625rem", lineHeight: 1.85 }}>
           <p>It&apos;s called <strong>The Grange Carrier</strong>. I didn&apos;t find it from an ad or a store. My friend Kathy had one and I asked her what it was. That was two years ago. I&apos;ve used it every single harvest since.</p>
 
-          <p>From what I can tell, a lot of gardeners my age have found it the same way — someone else was using it and they asked. 22,000 of us now, apparently.</p>
+          <p>From what I can tell, a lot of gardeners my age have found it the same way — someone else was using it and they asked. Turns out there are a lot of us.</p>
         </div>
 
         <div className="mt-4 flex items-center gap-3 flex-wrap">
@@ -182,64 +182,48 @@ export default function HerGardenPage() {
       </section>
 
       {/* ============================================
-          PRODUCT SHOWCASE
+          PRODUCT — Simple, stays in Margaret's world
           ============================================ */}
       <section className="max-w-lg mx-auto px-6 pb-4">
-        <div className="bg-white border-2 border-[#e8e0d4] rounded-2xl overflow-hidden shadow-lg">
-          <div className="bg-[#4A3F35] text-white text-center py-3 px-4">
-            <p className="text-sm font-bold tracking-wide">TODAY: 39% OFF + 2 FREE GARDENING GUIDES</p>
-          </div>
-
-          <div className="p-5">
-            <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-[#e8e0d4] mb-4">
-              <GardenAsset name="productMain" alt="The Grange Carrier" className="w-full h-full object-cover" fallbackClassName="w-full h-full" />
-            </div>
-
-            <div className="grid grid-cols-6 gap-1.5 mb-5">
-              {(["productThumb1", "productThumb2", "productThumb3", "productThumb4", "productThumb5", "productThumb6"] as const).map((name, i) => (
-                <div key={i} className="relative aspect-square rounded-md border-2 border-[#e8e0d4] bg-[#F4EFE3] hover:border-[#C86F4C] transition-colors cursor-pointer overflow-hidden">
-                  <GardenAsset name={name} alt={`Product view ${i + 1}`} className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-[10px] text-[#6B5D4F] font-bold" />
-                </div>
-              ))}
-            </div>
-
-            <div className="grid grid-cols-2 gap-3 mb-5">
-              <div className="bg-[#F4EFE3] rounded-lg p-3.5 flex items-start gap-2.5">
-                <div className="w-5 h-5 flex-shrink-0 mt-0.5">
-                  <GardenAsset name="benefitIcon1" alt="Lightning" className="w-5 h-5 object-contain" fallbackClassName="text-base" />
-                </div>
-                <p className="text-xs text-[#2D2118] font-semibold leading-snug">1-Second Drop-Chute empties instantly</p>
-              </div>
-              <div className="bg-[#F4EFE3] rounded-lg p-3.5 flex items-start gap-2.5">
-                <div className="w-5 h-5 flex-shrink-0 mt-0.5">
-                  <GardenAsset name="benefitIcon2" alt="Feather" className="w-5 h-5 object-contain" fallbackClassName="text-base" />
-                </div>
-                <p className="text-xs text-[#2D2118] font-semibold leading-snug">Zero-Gravity Harness carries 20 lbs pain-free</p>
-              </div>
-              <div className="bg-[#F4EFE3] rounded-lg p-3.5 flex items-start gap-2.5">
-                <div className="w-5 h-5 flex-shrink-0 mt-0.5">
-                  <GardenAsset name="benefitIcon3" alt="Shield" className="w-5 h-5 object-contain" fallbackClassName="text-base" />
-                </div>
-                <p className="text-xs text-[#2D2118] font-semibold leading-snug">600D Canvas, thorn-proof, built for decades</p>
-              </div>
-              <div className="bg-[#F4EFE3] rounded-lg p-3.5 flex items-start gap-2.5">
-                <div className="w-5 h-5 flex-shrink-0 mt-0.5">
-                  <GardenAsset name="benefitIcon4" alt="Water drop" className="w-5 h-5 object-contain" fallbackClassName="text-base" />
-                </div>
-                <p className="text-xs text-[#2D2118] font-semibold leading-snug">Water-resistant lining keeps clothes clean</p>
-              </div>
-            </div>
-
-            <a href={PDP_URL}>
-              <Button
-                size="lg"
-                className="w-full bg-[#C86F4C] hover:bg-[#C86F4C]/90 text-white font-bold py-7 text-lg rounded-lg shadow-lg transition-all hover:shadow-xl"
-              >
-                Get 39% Off + 2 Free Guides
-              </Button>
-            </a>
-          </div>
+        <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-[#e8e0d4] shadow-md mb-5">
+          <GardenAsset name="productMain" alt="The Grange Carrier" className="w-full h-full object-cover" fallbackClassName="w-full h-full" />
         </div>
+
+        <div className="bg-[#F4EFE3] border border-[#d4c9ba] rounded-xl p-6 mb-5">
+          <h3 className="text-lg font-bold text-[#2D2118] mb-3">The Grange Carrier</h3>
+          <ul className="space-y-2 text-sm text-[#6B5D4F]">
+            <li className="flex items-start gap-2">
+              <span className="text-[#C86F4C] font-bold mt-0.5">•</span>
+              Cross-back harness — carries 20 lbs across shoulders and hips
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-[#C86F4C] font-bold mt-0.5">•</span>
+              Drop-chute — empties your entire harvest in one second
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-[#C86F4C] font-bold mt-0.5">•</span>
+              600D canvas — thorn-proof, water-resistant, built for decades
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-[#C86F4C] font-bold mt-0.5">•</span>
+              Tool sheaths + zippered phone pocket — everything stays on you
+            </li>
+          </ul>
+        </div>
+
+        <div className="bg-[#4A3F35] rounded-xl p-5 text-center mb-5">
+          <p className="text-sm font-bold text-white tracking-wide mb-1">TODAY: 39% OFF + 2 FREE GARDENING GUIDES</p>
+          <p className="text-xs text-white/60">Lifetime warranty &bull; 60-day trial &bull; Free return shipping</p>
+        </div>
+
+        <a href={PDP_URL}>
+          <Button
+            size="lg"
+            className="w-full bg-[#C86F4C] hover:bg-[#C86F4C]/90 text-white font-bold py-7 text-lg rounded-lg shadow-lg transition-all hover:shadow-xl"
+          >
+            Get 39% Off + 2 Free Guides
+          </Button>
+        </a>
       </section>
 
       {/* ============================================
