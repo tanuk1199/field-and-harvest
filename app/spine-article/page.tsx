@@ -124,9 +124,9 @@ export default function SpineArticlePage() {
                 HERO IMAGE
                 ============================================ */}
             <figure className="my-8 rounded-xl overflow-hidden">
-              <SpineAsset name="heroImage" alt="Gardener harvesting vegetables while wearing The Grange Carrier" className="w-full h-auto object-cover max-h-[480px]" fallbackClassName="w-full h-[320px]" />
+              <SpineAsset name="heroImage" alt="Gardener carrying a heavy bucket through the garden" className="w-full h-auto object-cover max-h-[480px]" fallbackClassName="w-full h-[320px]" />
               <figcaption className="text-xs text-center text-[#6B5D4F] mt-2">
-                The Grange Carrier distributes harvest weight across your shoulders, core, and hips.
+                The routine most gardeners never question — until their back does.
               </figcaption>
             </figure>
 

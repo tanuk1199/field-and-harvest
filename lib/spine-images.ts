@@ -8,7 +8,8 @@
 export const spineImages = {
 
   // ── HERO IMAGE ─────────────────────────────────────────────
-  // Wide lifestyle shot of gardener wearing Grange Carrier while harvesting.
+  // Wide lifestyle shot of gardener carrying buckets/baskets in garden.
+  // Do NOT show the product here — this is the "problem" image.
   // Aspect: wide (max-h ~480px, full width). Editorial feel.
   heroImage: "",
 
