@@ -160,10 +160,16 @@ export default function SpineArticlePage() {
               <p className="font-medium">It accumulates. Slowly. Silently.</p>
               <p>This is what orthopedic specialists call <strong>&ldquo;micro-trauma.&rdquo;</strong> Small, repeated stresses that individually seem harmless — but over months and years, they compress discs, inflame joints, and lock your spine into positions it was never meant to hold.</p>
 
-              {/* Bold callout block */}
+              {/* Research citation */}
               <div className="border-l-4 border-[#C86F4C] bg-[#F4EFE3] pl-5 py-4 rounded-r-lg my-6 space-y-2">
                 <p className="font-semibold text-[#2D2118]">
-                  The bucket you&apos;re carrying isn&apos;t just heavy. It&apos;s aging your back faster than it should be aging.
+                  Research from Ohio State University&apos;s Spine Research Institute found that carrying weight in one hand creates up to 57% more compressive force on your lower back than distributing it evenly.
+                </p>
+                <p className="text-[#6B5D4F] text-sm">
+                  The heavier the load, the worse it gets. At 30 pounds, one-handed carries pushed lumbar compression past dangerous thresholds — while splitting the same weight between both sides cut that force nearly in half.
+                </p>
+                <p className="text-[#6B5D4F] text-xs mt-1 italic">
+                  Source: <a href="https://pubmed.ncbi.nlm.nih.gov/23384188/" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#C86F4C]">Ergonomics, 2013 — &ldquo;Low back loads while walking and carrying&rdquo;</a>
                 </p>
               </div>
 
@@ -177,10 +183,10 @@ export default function SpineArticlePage() {
                 </a>
               </div>
 
-              <p className="font-semibold text-[#2D2118]">But here&apos;s what thousands of gardeners have figured out.</p>
-              <p>You don&apos;t have to carry the weight at all. What if instead of holding 20 pounds in one hand, forcing your body to twist and compensate — that weight was distributed evenly across your shoulders, your core, your hips?</p>
-              <p className="font-medium">The way your body was designed to carry load.</p>
-              <p>This isn&apos;t about making gardening easier. <span className="font-semibold">It&apos;s about making sure you still can.</span></p>
+              <p>But here&apos;s what thousands of gardeners have figured out: you don&apos;t have to carry the weight at all.</p>
+              <p>What if instead of holding 20 pounds in one hand — creating that 57% spike in spinal compression — the weight was distributed evenly across your shoulders, your core, your hips? The way your body was designed to carry load.</p>
+              <p>Your spine stays straight. Your hands stay free. And instead of accumulating damage with every harvest, you&apos;re protecting the one body you have.</p>
+              <p>That&apos;s exactly what a growing number of gardeners are doing. And the tool they&apos;re using wasn&apos;t designed to make gardening easier — <span className="font-semibold">it was designed to make sure they can keep doing it.</span></p>
             </div>
 
             {/* ============================================
@@ -191,33 +197,30 @@ export default function SpineArticlePage() {
             </figure>
 
             {/* ============================================
-                PRODUCT SECTION
+                PRODUCT SECTION — Flows from article narrative
+                No "The Solution" header. Continues the story.
                 ============================================ */}
-            <section className="mt-12 mb-8">
-              {/* Section intro */}
-              <div className="bg-[#F4EFE3] border border-[#d4c9ba] rounded-xl px-6 py-8 mb-10 text-center">
-                <p className="text-xs font-semibold tracking-widest uppercase text-[#C86F4C] mb-3">
-                  The Solution
-                </p>
-                <h2 className="text-2xl sm:text-3xl md:text-[2rem] text-[#2D2118] leading-snug text-balance mb-4" style={{ fontFamily: "'Lora', Georgia, serif" }}>
-                  The Wearable Harvest System That Puts This Into Practice
-                </h2>
-                <p className="text-[#6B5D4F] text-sm sm:text-base leading-relaxed max-w-xl mx-auto mb-6">
-                  There&apos;s a reason over <strong className="text-[#2D2118]">22,000 gardeners</strong> have made the switch from buckets to{" "}
-                  <strong className="text-[#2D2118]">The Grange Carrier</strong>. It&apos;s not an apron. It&apos;s a weight distribution system you wear.
-                </p>
-                {/* Product hero image */}
-                <div className="rounded-lg overflow-hidden mb-5 max-w-lg mx-auto">
-                  <SpineAsset name="productHero" alt="The Grange Carrier wearable harvest system" className="w-full h-auto object-cover" fallbackClassName="w-full h-[280px]" />
-                </div>
-                <p className="text-[#6B5D4F] text-sm sm:text-base leading-relaxed max-w-xl mx-auto">
-                  Cross-back straps distribute up to <strong className="text-[#2D2118]">20 pounds</strong> across your shoulders and core. The weight sits on your body the way it&apos;s supposed to. Evenly. Balanced. Your spine stays neutral.
-                </p>
+            <section className="mt-8 mb-8">
+              <div className="space-y-5 text-[#2D2118] leading-relaxed" style={{ fontSize: "1.0625rem", lineHeight: 1.75 }}>
+                <p>It&apos;s called <strong>The Grange Carrier</strong>, and over 22,000 gardeners have quietly made the switch from buckets to wearing it.</p>
+                <p>It&apos;s not an apron. It&apos;s a weight distribution system you wear. Cross-back straps route up to <strong>20 pounds</strong> of harvest across your shoulders and core — not hanging from your neck like traditional aprons, and not concentrated in one hand like a bucket. Your spine stays neutral.</p>
               </div>
 
-              {/* How it works header */}
+              {/* Product image — inline with article flow */}
+              <figure className="my-8 rounded-xl overflow-hidden">
+                <SpineAsset name="productHero" alt="The Grange Carrier wearable harvest system" className="w-full h-auto object-cover max-h-[480px]" fallbackClassName="w-full h-[280px]" />
+                <figcaption className="text-xs text-center text-[#6B5D4F] mt-2">
+                  The Grange Carrier — weight distributed across shoulders, core, and hips.
+                </figcaption>
+              </figure>
+
+              <div className="space-y-5 text-[#2D2118] leading-relaxed mb-8" style={{ fontSize: "1.0625rem", lineHeight: 1.75 }}>
+                <p>Here&apos;s how it addresses each of the spinal risks we covered above:</p>
+              </div>
+
+              {/* How it works — no "The Solution" box, just a subheading */}
               <h2 className="text-xl sm:text-2xl md:text-3xl text-[#2D2118] mb-2 text-balance" style={{ fontFamily: "'Lora', Georgia, serif" }}>
-                How It Protects Your Spine: 3 Systems Working Together
+                3 Systems That Protect Your Spine
               </h2>
               <div className="w-12 h-1 bg-[#C86F4C] rounded mb-8" />
 
