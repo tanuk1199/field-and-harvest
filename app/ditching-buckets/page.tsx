@@ -1,3 +1,6 @@
+"use client"
+
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Star } from "lucide-react"
@@ -8,10 +11,25 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { Asset } from "@/components/asset"
+import { DbAsset } from "@/components/db-asset"
 
 const PDP_URL = "https://fieldandharvestco.com/products/the-grange-carrier"
 
 export default function DitchingBucketsPage() {
+  const [showSticky, setShowSticky] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show sticky bar when user reaches the product reveal section
+      // (~40% scroll depth — past the first 2 reason cards + reveal)
+      const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)
+      setShowSticky(scrollPercent > 0.25)
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   return (
     <div className="min-h-screen bg-background">
       {/* ============================================
@@ -24,12 +42,12 @@ export default function DitchingBucketsPage() {
 
       {/* ============================================
           HERO SECTION - Editorial, story-driven
-          No CTA above the fold. Continue the ad's story.
+          No CTA, no social proof above the fold.
           ============================================ */}
       <section className="max-w-lg mx-auto px-4 py-8">
         {/* Lifestyle image — matches ad aesthetic */}
         <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg bg-muted">
-          <Asset name="heroImage" alt="Gardener harvesting with ease" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+          <DbAsset name="heroImage" alt="Gardener harvesting with ease" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
         </div>
 
         {/* Editorial headline */}
@@ -51,18 +69,6 @@ export default function DitchingBucketsPage() {
             </p>
           </div>
         </div>
-
-        {/* Social proof — subtle, no CTA */}
-        <div className="mt-6 flex items-center justify-center gap-3 flex-wrap">
-          <div className="flex gap-0.5">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-4 h-4 fill-[#FDB913] text-[#FDB913]" />
-            ))}
-          </div>
-          <p className="text-sm text-muted-foreground font-medium">
-            Trusted by 22,000+ gardeners
-          </p>
-        </div>
       </section>
 
       {/* ============================================
@@ -83,7 +89,7 @@ export default function DitchingBucketsPage() {
           </h3>
 
           <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
-            <Asset name="reason1Image" alt="Quick-Release Drop-Chute" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+            <DbAsset name="reason1Image" alt="Quick-Release Drop-Chute" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
@@ -107,7 +113,7 @@ export default function DitchingBucketsPage() {
           </h3>
 
           <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
-            <Asset name="reason2Image" alt="Zero-Gravity Cross-Back Harness" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+            <DbAsset name="reason2Image" alt="Zero-Gravity Cross-Back Harness" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
@@ -125,7 +131,7 @@ export default function DitchingBucketsPage() {
         <div className="bg-[#F4EFE3] rounded-2xl p-8 text-center">
           <p className="text-sm font-bold text-[#6B5D4F] uppercase tracking-wider mb-4">What they switched to</p>
           <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-muted mb-5 shadow-md max-w-sm mx-auto">
-            <Asset name="productMain" alt="The Grange Carrier" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+            <DbAsset name="productReveal" alt="The Grange Carrier" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
           </div>
           <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2">The Grange Carrier</h3>
           <p className="text-base text-foreground/70 leading-relaxed max-w-sm mx-auto">
@@ -156,7 +162,7 @@ export default function DitchingBucketsPage() {
           </h3>
 
           <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
-            <Asset name="reason4Image" alt="20-pound hands-free pouch" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+            <DbAsset name="reason3Image" alt="20-pound hands-free pouch" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
@@ -188,7 +194,7 @@ export default function DitchingBucketsPage() {
           </h3>
 
           <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
-            <Asset name="reason3Image" alt="Field-Weave 600D Canvas" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+            <DbAsset name="reason4Image" alt="Field-Weave 600D Canvas" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
@@ -212,7 +218,7 @@ export default function DitchingBucketsPage() {
           </h3>
 
           <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
-            <Asset name="reason5Image" alt="Dry-Wear water-resistant barrier" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+            <DbAsset name="reason5Image" alt="Dry-Wear water-resistant barrier" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
@@ -236,7 +242,7 @@ export default function DitchingBucketsPage() {
           </h3>
 
           <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
-            <Asset name="reason6Image" alt="Lifetime warranty guarantee" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+            <DbAsset name="reason6Image" alt="Lifetime warranty guarantee" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
@@ -287,14 +293,14 @@ export default function DitchingBucketsPage() {
           <div className="p-5">
             {/* Product image */}
             <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-4">
-              <Asset name="productMain" alt="The Grange Carrier" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+              <DbAsset name="productMain" alt="The Grange Carrier" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
             </div>
 
             {/* Product thumbnails */}
             <div className="grid grid-cols-6 gap-1.5 mb-5">
               {(["productThumb1", "productThumb2", "productThumb3", "productThumb4", "productThumb5", "productThumb6"] as const).map((name, i) => (
                 <div key={i} className="relative aspect-square rounded-md border-2 border-border bg-muted hover:border-primary transition-colors cursor-pointer overflow-hidden">
-                  <Asset name={name} alt={`Product view ${i + 1}`} className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-[10px] text-muted-foreground font-bold" />
+                  <DbAsset name={name} alt={`Product view ${i + 1}`} className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-[10px] text-muted-foreground font-bold" />
                 </div>
               ))}
             </div>
@@ -303,25 +309,25 @@ export default function DitchingBucketsPage() {
             <div className="grid grid-cols-2 gap-3 mb-5">
               <div className="bg-[#F4EFE3] rounded-lg p-3.5 flex items-start gap-2.5">
                 <div className="w-5 h-5 flex-shrink-0 mt-0.5">
-                  <Asset name="benefitIcon1" alt="Lightning" className="w-5 h-5 object-contain" fallbackClassName="text-base" />
+                  <DbAsset name="benefitIcon1" alt="Lightning" className="w-5 h-5 object-contain" fallbackClassName="text-base" />
                 </div>
                 <p className="text-xs text-foreground font-semibold leading-snug">1-Second Drop-Chute empties your harvest instantly</p>
               </div>
               <div className="bg-[#F4EFE3] rounded-lg p-3.5 flex items-start gap-2.5">
                 <div className="w-5 h-5 flex-shrink-0 mt-0.5">
-                  <Asset name="benefitIcon2" alt="Feather" className="w-5 h-5 object-contain" fallbackClassName="text-base" />
+                  <DbAsset name="benefitIcon2" alt="Feather" className="w-5 h-5 object-contain" fallbackClassName="text-base" />
                 </div>
                 <p className="text-xs text-foreground font-semibold leading-snug">Zero-Gravity Harness carries 20 lbs pain-free</p>
               </div>
               <div className="bg-[#F4EFE3] rounded-lg p-3.5 flex items-start gap-2.5">
                 <div className="w-5 h-5 flex-shrink-0 mt-0.5">
-                  <Asset name="benefitIcon3" alt="Shield" className="w-5 h-5 object-contain" fallbackClassName="text-base" />
+                  <DbAsset name="benefitIcon3" alt="Shield" className="w-5 h-5 object-contain" fallbackClassName="text-base" />
                 </div>
                 <p className="text-xs text-foreground font-semibold leading-snug">600D Canvas, thorn-proof and built for decades</p>
               </div>
               <div className="bg-[#F4EFE3] rounded-lg p-3.5 flex items-start gap-2.5">
                 <div className="w-5 h-5 flex-shrink-0 mt-0.5">
-                  <Asset name="benefitIcon4" alt="Water drop" className="w-5 h-5 object-contain" fallbackClassName="text-base" />
+                  <DbAsset name="benefitIcon4" alt="Water drop" className="w-5 h-5 object-contain" fallbackClassName="text-base" />
                 </div>
                 <p className="text-xs text-foreground font-semibold leading-snug">Water-resistant lining keeps your clothes clean</p>
               </div>
@@ -498,9 +504,14 @@ export default function DitchingBucketsPage() {
       </section>
 
       {/* ============================================
-          STICKY CTA - Bottom fixed purchase button
+          STICKY CTA - Appears after 25% scroll depth
+          Hidden until user has read past product reveal
           ============================================ */}
-      <div className="fixed bottom-0 left-0 right-0 bg-[#4A3F35]/95 backdrop-blur-md border-t-2 border-[#4A3F35] py-4 px-4 z-50 shadow-2xl">
+      <div
+        className={`fixed bottom-0 left-0 right-0 bg-[#4A3F35]/95 backdrop-blur-md border-t-2 border-[#4A3F35] py-4 px-4 z-50 shadow-2xl transition-all duration-500 ${
+          showSticky ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
+        }`}
+      >
         <div className="max-w-lg mx-auto">
           <a href={PDP_URL}>
             <Button
