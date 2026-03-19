@@ -44,7 +44,7 @@ export default function DitchingBucketsPage() {
           HERO SECTION - Editorial, story-driven
           No CTA, no social proof above the fold.
           ============================================ */}
-      <section className="max-w-lg mx-auto px-6 py-8">
+      <section className="max-w-lg mx-auto px-4 py-8">
         {/* Lifestyle image — matches ad aesthetic */}
         <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg bg-muted">
           <DbAsset name="heroImage" alt="Gardener harvesting with ease" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
@@ -55,19 +55,19 @@ export default function DitchingBucketsPage() {
           <h1 className="text-4xl md:text-5xl font-bold text-foreground leading-tight text-balance tracking-tight">
             6 Reasons Gardeners Are <span className="text-[#C86F4C]">Throwing Out</span> Their Buckets, Baskets, and Crates
           </h1>
+        </div>
 
-          {/* Narrative bridge — pays off ad curiosity */}
-          <div className="mt-5 text-left space-y-4">
-            <p className="text-lg text-foreground/80 leading-relaxed text-pretty">
-              If you&apos;ve been gardening for any length of time, you know the routine: grab a bucket, fill it up, lug it inside, come back out, repeat. Your back knows it too.
-            </p>
-            <p className="text-lg text-foreground/80 leading-relaxed text-pretty">
-              But something&apos;s been shifting. Thousands of home gardeners — many in their 60s and 70s — have quietly switched to a completely different method. No buckets. No baskets. No crates. And they&apos;re saying they&apos;ll never go back.
-            </p>
-            <p className="text-base text-muted-foreground leading-relaxed text-pretty">
-              Here&apos;s what they figured out:
-            </p>
-          </div>
+        {/* First-person narrative bridge — continues the ad's voice */}
+        <div className="mt-5 px-2 space-y-4">
+          <p className="text-lg text-foreground/80 leading-relaxed text-pretty">
+            I&apos;ve been gardening for over 20 years, and for most of that time I did the same thing everyone does — grabbed a bucket, filled it up, lugged it inside, came back out, and repeated until my back told me to stop.
+          </p>
+          <p className="text-lg text-foreground/80 leading-relaxed text-pretty">
+            Then last spring, my neighbor showed me what she&apos;d been using instead. She&apos;s 72, gardens twice as long as I do, and hasn&apos;t touched a bucket in two years. I was skeptical. But after trying it myself, I threw out every basket and crate I owned.
+          </p>
+          <p className="text-lg text-foreground/80 leading-relaxed text-pretty">
+            Turns out, I&apos;m not the only one. Thousands of gardeners have quietly made the same switch. Here are the 6 things that convinced me to ditch my bucket for good:
+          </p>
         </div>
       </section>
 
