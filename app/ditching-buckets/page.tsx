@@ -130,7 +130,7 @@ export default function DitchingBucketsPage() {
             ============================================ */}
         <div className="bg-[#F4EFE3] rounded-2xl p-8 text-center">
           <p className="text-sm font-bold text-[#6B5D4F] uppercase tracking-wider mb-4">What they switched to</p>
-          <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-muted mb-5 shadow-md max-w-sm mx-auto">
+          <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-muted mb-5 shadow-md max-w-sm mx-auto">
             <DbAsset name="productReveal" alt="The Grange Carrier" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
           </div>
           <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2">The Grange Carrier</h3>
