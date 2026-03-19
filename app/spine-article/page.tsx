@@ -226,10 +226,10 @@ export default function SpineArticlePage() {
                 {features.map((feature) => (
                   <div
                     key={feature.number}
-                    className="flex flex-col md:flex-row gap-0 border border-[#d4c9ba] rounded-xl overflow-hidden bg-[#F4EFE3]"
+                    className="border border-[#d4c9ba] rounded-xl overflow-hidden bg-[#F4EFE3]"
                   >
-                    <div className="md:w-72 lg:w-80 shrink-0">
-                      <SpineAsset name={feature.imageKey} alt={feature.title} className="w-full h-52 md:h-full object-cover" fallbackClassName="w-full h-52 md:h-full" />
+                    <div className="w-full aspect-square">
+                      <SpineAsset name={feature.imageKey} alt={feature.title} className="w-full h-full object-cover" fallbackClassName="w-full h-full" />
                     </div>
                     <div className="flex flex-col justify-center px-6 py-6 gap-3">
                       <div className="flex items-center gap-3">
