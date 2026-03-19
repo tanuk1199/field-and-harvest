@@ -13,6 +13,13 @@ export const spineImages = {
   // Aspect: wide (max-h ~480px, full width). Editorial feel.
   heroImage: "",
 
+  // ── SPINAL COMPENSATION IMAGE ───────────────────────────────
+  // Horizontal image showing how the body compensates when
+  // carrying uneven weight (tilted spine, dropped shoulder).
+  // Goes between "your neck tilts to keep you balanced" and
+  // "you do this 30, 40, 50 times". Wide/landscape aspect.
+  spinalCompensation: "",
+
   // ── SPINE COMPARISON DIAGRAM ───────────────────────────────
   // Side-by-side showing spinal load: bucket (curved spine)
   // vs Grange Carrier (straight spine). The "before/after" visual.
@@ -51,6 +58,7 @@ export const spineImages = {
 
 export const spineFallbacks = {
   heroImage: "🌿",
+  spinalCompensation: "🦴",
   spineComparison: "🦴",
   productHero: "📦",
   featureCrossBack: "🎒",

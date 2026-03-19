@@ -148,6 +148,14 @@ export default function SpineArticlePage() {
               </div>
 
               <p>Every time you carry 10, 15, 20 pounds in one hand, your spine curves slightly to the opposite side. Your shoulder drops. Your neck tilts to keep you balanced.</p>
+            </div>
+
+            {/* Mid-article image — spinal compensation visual */}
+            <figure className="my-8 rounded-xl overflow-hidden">
+              <SpineAsset name="spinalCompensation" alt="How your spine compensates when carrying uneven weight" className="w-full h-auto object-cover max-h-[360px]" fallbackClassName="w-full h-[240px]" />
+            </figure>
+
+            <div className="space-y-5 text-[#2D2118] leading-relaxed" style={{ fontSize: "1.0625rem", lineHeight: 1.75 }}>
               <p>You do this 30, 40, 50 times a harvest. Twice a week during peak season. For years.</p>
               <p className="font-medium">It accumulates. Slowly. Silently.</p>
               <p>This is what orthopedic specialists call <strong>&ldquo;micro-trauma.&rdquo;</strong> Small, repeated stresses that individually seem harmless — but over months and years, they compress discs, inflame joints, and lock your spine into positions it was never meant to hold.</p>
