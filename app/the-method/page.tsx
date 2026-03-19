@@ -23,14 +23,14 @@ export default function TheMethodPage() {
   return (
     <div className="min-h-screen bg-[#FAF7F2]">
       {/* ============================================
-          HEADER — Logo only, editorial feel
+          HEADER
           ============================================ */}
       <header className="py-3 px-4 flex items-center justify-center bg-white/80 border-b border-[#e8e0d4]">
         <Asset name="logo" alt="Field & Harvest Co." className="h-7 md:h-10 w-auto object-contain" fallbackClassName="text-2xl md:text-3xl font-bold text-[#4A3F35] tracking-tight" />
       </header>
 
       {/* ============================================
-          HERO — Continues the ad story
+          HERO — First-person hook mirrors the ad
           ============================================ */}
       <section className="max-w-lg mx-auto px-4 py-8">
         <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg bg-[#e8e0d4]">
@@ -45,16 +45,16 @@ export default function TheMethodPage() {
 
         <div className="mt-5 px-1 space-y-4">
           <p className="text-lg text-[#2D2118]/80 leading-relaxed">
-            Most gardeners harvest the same way they always have: grab a bucket, fill it up, carry it inside, come back out, repeat. It works. But it&apos;s slow, it&apos;s hard on your body, and it hasn&apos;t changed in decades.
+            My neighbor is 72 and finishes her entire garden in 20 minutes. When I asked her secret, she showed me something I&apos;d never seen before — and I&apos;ve been gardening for over 20 years.
           </p>
           <p className="text-lg text-[#2D2118]/80 leading-relaxed">
-            Then a growing number of gardeners — many in their 60s and 70s — switched to a completely different method. Here&apos;s the difference:
+            Turns out, the difference isn&apos;t skill or speed. It&apos;s the method. Here&apos;s what she changed:
           </p>
         </div>
       </section>
 
       {/* ============================================
-          THE WRONG METHOD
+          THE OLD METHOD — Trimmed to 3 core steps
           ============================================ */}
       <section className="max-w-lg mx-auto px-6 py-8">
         <div className="flex items-center gap-3 mb-6">
@@ -70,41 +70,27 @@ export default function TheMethodPage() {
           <div className="flex gap-4 items-start">
             <span className="text-[#C86F4C] font-bold text-lg mt-0.5">1.</span>
             <div>
-              <p className="font-bold text-[#2D2118]">Grab a bucket or basket</p>
-              <p className="text-sm text-[#6B5D4F]">One hand on the handle. One hand free to pick.</p>
+              <p className="font-bold text-[#2D2118]">Carry a bucket one-handed, fill it up</p>
+              <p className="text-sm text-[#6B5D4F]">10-20 pounds pulling from one side. Your spine compensates every step.</p>
             </div>
           </div>
           <div className="flex gap-4 items-start">
             <span className="text-[#C86F4C] font-bold text-lg mt-0.5">2.</span>
             <div>
-              <p className="font-bold text-[#2D2118]">Fill it up, carry it inside</p>
-              <p className="text-sm text-[#6B5D4F]">10-20 pounds in one hand. Your spine compensates every step.</p>
+              <p className="font-bold text-[#2D2118]">Carry it inside, walk back out, repeat</p>
+              <p className="text-sm text-[#6B5D4F]">5-7 trips per session. 30-45 minutes just hauling.</p>
             </div>
           </div>
           <div className="flex gap-4 items-start">
             <span className="text-[#C86F4C] font-bold text-lg mt-0.5">3.</span>
             <div>
-              <p className="font-bold text-[#2D2118]">Walk back out, repeat</p>
-              <p className="text-sm text-[#6B5D4F]">5-7 trips per session. 30-45 minutes of carrying.</p>
-            </div>
-          </div>
-          <div className="flex gap-4 items-start">
-            <span className="text-[#C86F4C] font-bold text-lg mt-0.5">4.</span>
-            <div>
-              <p className="font-bold text-[#2D2118]">Bend over to empty</p>
-              <p className="text-sm text-[#6B5D4F]">Scoop everything out by hand. 30+ bends per harvest.</p>
-            </div>
-          </div>
-          <div className="flex gap-4 items-start">
-            <span className="text-[#C86F4C] font-bold text-lg mt-0.5">5.</span>
-            <div>
-              <p className="font-bold text-[#2D2118]">Come inside sore</p>
-              <p className="text-sm text-[#6B5D4F]">Back aches. Shoulders tight. Clothes stained. Done early.</p>
+              <p className="font-bold text-[#2D2118]">Bend over to empty, come inside sore</p>
+              <p className="text-sm text-[#6B5D4F]">30+ bends per harvest. Back aches. Shoulders tight. Done early.</p>
             </div>
           </div>
         </div>
 
-        {/* Time + toll summary */}
+        {/* Stats bar */}
         <div className="mt-6 bg-[#2D2118] rounded-xl p-5 text-center">
           <div className="flex justify-center gap-8">
             <div>
@@ -135,7 +121,7 @@ export default function TheMethodPage() {
       </div>
 
       {/* ============================================
-          THE RIGHT METHOD
+          THE NEW METHOD
           ============================================ */}
       <section className="max-w-lg mx-auto px-6 py-8">
         <div className="flex items-center gap-3 mb-6">
@@ -143,7 +129,8 @@ export default function TheMethodPage() {
           <h2 className="text-2xl font-bold text-[#2D2118]">The New Method</h2>
         </div>
 
-        <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-[#e8e0d4] mb-6 shadow-md">
+        {/* Square product reveal */}
+        <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-[#e8e0d4] mb-6 shadow-md">
           <MethodAsset name="rightWearing" alt="Gardener wearing The Grange Carrier hands-free" className="w-full h-full object-cover" fallbackClassName="w-full h-full" />
         </div>
 
@@ -159,33 +146,19 @@ export default function TheMethodPage() {
             <span className="text-[#C86F4C] font-bold text-lg mt-0.5">2.</span>
             <div>
               <p className="font-bold text-[#2D2118]">Walk the rows and pick</p>
-              <p className="text-sm text-[#6B5D4F]">Everything goes straight into the 20-lb kangaroo pouch. Tools in the built-in sheaths. Phone in the zippered pocket.</p>
+              <p className="text-sm text-[#6B5D4F]">Everything goes into the 20-lb kangaroo pouch. Tools in the sheaths. Phone in the zippered pocket.</p>
             </div>
           </div>
           <div className="flex gap-4 items-start">
             <span className="text-[#C86F4C] font-bold text-lg mt-0.5">3.</span>
             <div>
-              <p className="font-bold text-[#2D2118]">Walk inside once</p>
-              <p className="text-sm text-[#6B5D4F]">One trip. Full harvest on your body, weight evenly distributed. No lopsided carrying.</p>
-            </div>
-          </div>
-          <div className="flex gap-4 items-start">
-            <span className="text-[#C86F4C] font-bold text-lg mt-0.5">4.</span>
-            <div>
-              <p className="font-bold text-[#2D2118]">Unlatch and dump</p>
-              <p className="text-sm text-[#6B5D4F]">Quick-release drop-chute. Pinch the buckles, everything slides out in one second. Standing upright.</p>
-            </div>
-          </div>
-          <div className="flex gap-4 items-start">
-            <span className="text-[#C86F4C] font-bold text-lg mt-0.5">5.</span>
-            <div>
-              <p className="font-bold text-[#2D2118]">Done. 20 minutes.</p>
-              <p className="text-sm text-[#6B5D4F]">No back pain. No dirty clothes (water-resistant lining). No wasted time.</p>
+              <p className="font-bold text-[#2D2118]">Walk inside once, unlatch, done</p>
+              <p className="text-sm text-[#6B5D4F]">One trip. Pinch the buckles — everything slides out in one second. Standing upright. 20 minutes.</p>
             </div>
           </div>
         </div>
 
-        {/* Time + toll summary */}
+        {/* Stats bar */}
         <div className="mt-6 bg-[#C86F4C] rounded-xl p-5 text-center">
           <div className="flex justify-center gap-8">
             <div>
@@ -215,14 +188,13 @@ export default function TheMethodPage() {
       </section>
 
       {/* ============================================
-          WHAT IT IS — Product intro (natural transition)
+          PRODUCT INTRO — Natural transition
           ============================================ */}
       <section className="max-w-lg mx-auto px-6 py-10">
         <p className="text-lg text-[#2D2118]/80 leading-relaxed">
           It&apos;s called <strong className="text-[#2D2118]">The Grange Carrier</strong>. A wearable harvest system that replaces every bucket, basket, and crate you own. 22,000+ gardeners have made the switch — most of them in their 60s and 70s.
         </p>
 
-        {/* Social proof */}
         <div className="mt-4 flex items-center gap-3 flex-wrap">
           <div className="flex gap-0.5">
             {[...Array(5)].map((_, i) => (
@@ -240,18 +212,15 @@ export default function TheMethodPage() {
           ============================================ */}
       <section className="max-w-lg mx-auto px-6 pb-4">
         <div className="bg-white border-2 border-[#e8e0d4] rounded-2xl overflow-hidden shadow-lg">
-          {/* Offer banner */}
           <div className="bg-[#4A3F35] text-white text-center py-3 px-4">
             <p className="text-sm font-bold tracking-wide">TODAY: 39% OFF + 2 FREE GARDENING GUIDES</p>
           </div>
 
           <div className="p-5">
-            {/* Product image */}
             <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-[#e8e0d4] mb-4">
               <MethodAsset name="productMain" alt="The Grange Carrier" className="w-full h-full object-cover" fallbackClassName="w-full h-full" />
             </div>
 
-            {/* Thumbnails */}
             <div className="grid grid-cols-6 gap-1.5 mb-5">
               {(["productThumb1", "productThumb2", "productThumb3", "productThumb4", "productThumb5", "productThumb6"] as const).map((name, i) => (
                 <div key={i} className="relative aspect-square rounded-md border-2 border-[#e8e0d4] bg-[#F4EFE3] hover:border-[#C86F4C] transition-colors cursor-pointer overflow-hidden">
@@ -260,7 +229,6 @@ export default function TheMethodPage() {
               ))}
             </div>
 
-            {/* Benefits grid */}
             <div className="grid grid-cols-2 gap-3 mb-5">
               <div className="bg-[#F4EFE3] rounded-lg p-3.5 flex items-start gap-2.5">
                 <div className="w-5 h-5 flex-shrink-0 mt-0.5">
@@ -288,7 +256,6 @@ export default function TheMethodPage() {
               </div>
             </div>
 
-            {/* CTA */}
             <a href={PDP_URL}>
               <Button
                 size="lg"
@@ -302,7 +269,8 @@ export default function TheMethodPage() {
       </section>
 
       {/* ============================================
-          REVIEWS — 3 reviews, stacked
+          REVIEWS — James first (neighbor = ad story),
+          then Linda (drop chute = method payoff)
           ============================================ */}
       <section className="max-w-lg mx-auto px-6 py-12">
         <h2 className="text-2xl font-bold text-[#2D2118] mb-6 text-center">What Gardeners Are Saying</h2>
@@ -314,25 +282,9 @@ export default function TheMethodPage() {
                 <Star key={i} className="w-3.5 h-3.5 fill-[#DDA15E] text-[#DDA15E]" />
               ))}
             </div>
-            <p className="text-sm font-bold text-[#2D2118] mb-2">&ldquo;I harvest my whole garden in one trip now.&rdquo;</p>
-            <p className="text-sm text-[#6B5D4F] leading-relaxed mb-3">
-              I was making six, seven trips with a 5-gallon bucket. My tomatoes alone took three trips during peak season. Now I load everything into the pouch, walk back once, and dump it all out. I don&apos;t understand how I did it the old way for so long.
-            </p>
-            <div className="flex items-center gap-2">
-              <span className="text-xs font-bold text-[#2D2118]">Liz H.</span>
-              <span className="text-[10px] uppercase tracking-wider font-bold text-[#C86F4C] bg-[#C86F4C]/10 px-2 py-0.5 rounded">Verified Buyer</span>
-            </div>
-          </div>
-
-          <div className="bg-white border border-[#e8e0d4] rounded-lg p-5">
-            <div className="flex items-center gap-1 mb-2">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-3.5 h-3.5 fill-[#DDA15E] text-[#DDA15E]" />
-              ))}
-            </div>
             <p className="text-sm font-bold text-[#2D2118] mb-2">&ldquo;My neighbor saw mine and ordered one the same day.&rdquo;</p>
             <p className="text-sm text-[#6B5D4F] leading-relaxed mb-3">
-              She saw me using mine and asked where I got it. We garden together most mornings and now we both just walk through the rows hands-free, fill up, and dump everything at the potting bench in seconds.
+              She saw me using mine and asked where I got it. We garden together most mornings and now we both just walk through the rows hands-free, fill up, and dump everything at the potting bench in seconds. Ordered the two-pack for my daughter and son-in-law as well.
             </p>
             <div className="flex items-center gap-2">
               <span className="text-xs font-bold text-[#2D2118]">James W.</span>
@@ -355,6 +307,22 @@ export default function TheMethodPage() {
               <span className="text-[10px] uppercase tracking-wider font-bold text-[#C86F4C] bg-[#C86F4C]/10 px-2 py-0.5 rounded">Verified Buyer</span>
             </div>
           </div>
+
+          <div className="bg-white border border-[#e8e0d4] rounded-lg p-5">
+            <div className="flex items-center gap-1 mb-2">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-3.5 h-3.5 fill-[#DDA15E] text-[#DDA15E]" />
+              ))}
+            </div>
+            <p className="text-sm font-bold text-[#2D2118] mb-2">&ldquo;My neck and shoulders don&apos;t hurt anymore.&rdquo;</p>
+            <p className="text-sm text-[#6B5D4F] leading-relaxed mb-3">
+              I&apos;m 68 and garden every morning. My old apron hung everything from my neck and I&apos;d be sore by noon. The cross-back straps distribute the weight completely differently. That alone was worth the price.
+            </p>
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-bold text-[#2D2118]">Robert K.</span>
+              <span className="text-[10px] uppercase tracking-wider font-bold text-[#C86F4C] bg-[#C86F4C]/10 px-2 py-0.5 rounded">Verified Buyer</span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -370,7 +338,7 @@ export default function TheMethodPage() {
             Try the new method risk-free
           </h3>
           <p className="text-[#6B5D4F] text-sm leading-relaxed mb-6 max-w-sm mx-auto">
-            60 days to try it. Full refund if it doesn&apos;t change how you harvest. We pay return shipping. Lifetime warranty on materials and craftsmanship.
+            60 days to try it. Full refund if it doesn&apos;t change how you harvest. We pay return shipping.
           </p>
           <a href={PDP_URL}>
             <Button
