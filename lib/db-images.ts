@@ -1,70 +1,60 @@
 // ============================================================
 // IMAGE ASSET MAP — Ditching Buckets (Cold-Traffic Listicle)
 // ============================================================
-// This page gets its own image file so you can use different
-// photos that match the Facebook ad aesthetic (lifestyle,
-// garden scenes, older gardeners) without affecting other pages.
-//
-// Replace empty strings with Shopify CDN URLs or /public paths.
-// Empty string ("") = emoji fallback shown on page.
+// Pre-filled with existing images from the shared library.
+// Replace any URLs you want to change for this page specifically.
+// This file is isolated — changes here won't affect other pages.
 // ============================================================
 
 export const dbImages = {
 
   // ── HERO ───────────────────────────────────────────────────
-  // Lifestyle garden image matching ad aesthetic (older gardener
-  // harvesting, warm light, bucket/basket visible in scene).
-  // Aspect: 4:3. Should feel editorial, not product-forward.
-  heroImage: "",
+  // SWAP CANDIDATE: current is a product shot. For cold traffic,
+  // a lifestyle garden scene (older gardener, warm light, buckets
+  // visible) would match the ad aesthetic better. Aspect: 4:3.
+  heroImage: "https://cdn.shopify.com/s/files/1/0736/5279/7743/files/20260131_1316_Image_Generation_remix_01kgam7xv8fkavdabc3nxxhjh7.png?v=1769974800",
 
   // ── REASON CARD IMAGES (1:1 aspect ratio) ──────────────────
 
-  // 01 — THE BENDING PROBLEM
-  // Show: someone bending over bucket, or the drop-chute feature
-  reason1Image: "",
+  // 01 — THE BENDING PROBLEM (Drop-Chute)
+  reason1Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20251215_0105_Quick-ReleaseBadgeDesign_remix_01kcg9qjyre8psjsmn24ardmhq.png?v=1766034098",
 
-  // 02 — THE WEIGHT PROBLEM
-  // Show: cross-back harness on a gardener, weight distribution
-  reason2Image: "",
+  // 02 — THE WEIGHT PROBLEM (Cross-Back Harness)
+  reason2Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20260201_1633_Image_Generation_remix_01kgdhykz1e4pb8gg9pyx1231h.png?v=1769981766",
 
-  // 03 — THE TRIPS PROBLEM
-  // Show: hands-free harvesting, full pouch, both hands picking
-  reason3Image: "",
+  // 03 — THE TRIPS PROBLEM (Capacity / hands-free)
+  reason3Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/Grange_hero_image_1_6.png?v=1769981762",
 
-  // 04 — THE REPLACEMENT CYCLE
-  // Show: canvas close-up, durability, worn-out old tools contrast
-  reason4Image: "",
+  // 04 — THE REPLACEMENT CYCLE (Canvas durability)
+  reason4Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20260201_1633_Image_Generation_remix_01kgdhzb5nf1g8wz6q6eymvv6m.png?v=1769981770",
 
-  // 05 — THE MESS PROBLEM
-  // Show: clean clothes after gardening, water-resistant lining
-  reason5Image: "",
+  // 05 — THE MESS PROBLEM (Water resistance)
+  reason5Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20260201_1641_Image_Generation_remix_01kgdjcqnee5d9w8721g22c54a.png?v=1769982157",
 
-  // 06 — THE RISK QUESTION
-  // Show: warranty/guarantee badge, or happy gardener with product
-  reason6Image: "",
+  // 06 — THE RISK QUESTION (Warranty / guarantee)
+  reason6Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20260201_1643_Image_Generation_remix_01kgdjgd8deat9ykzt5zkedtsn.png?v=1769982391",
 
   // ── PRODUCT REVEAL (between cards 2 & 3) ───────────────────
-  // Main product shot for the "What they switched to" section.
-  // Aspect: 4:3. Clean product photo on neutral background.
-  productReveal: "",
+  // SWAP CANDIDATE: this is the "What they switched to" moment.
+  // A clean, neutral-background product photo would work best here.
+  // Aspect: 4:3.
+  productReveal: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20251217_2358_Garden_Harvest_Portrait_remix_01kcqx5km5f8cst2nx2pyssx0q.png?v=1767094820",
 
   // ── PRODUCT SHOWCASE SECTION ───────────────────────────────
-  // Main product image (1:1) for the buy section lower on page
-  productMain: "",
+  productMain: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20251217_2358_Garden_Harvest_Portrait_remix_01kcqx5km5f8cst2nx2pyssx0q.png?v=1767094820",
 
-  // 6 thumbnail images for the product gallery grid
-  productThumb1: "",
-  productThumb2: "",
-  productThumb3: "",
-  productThumb4: "",
-  productThumb5: "",
-  productThumb6: "",
+  productThumb1: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20251215_0105_Quick-ReleaseBadgeDesign_remix_01kcg9qjyre8psjsmn24ardmhq.png?v=1766034098",
+  productThumb2: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20251217_2356_Abundant_Harvest_Apron_remix_01kcqx1s10fbm81vz1t5emcq6y_9faf4a7b-ae01-41f0-b66a-f4a91ed7c7c2.png?v=1766034113",
+  productThumb3: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20251214_2351_ApronwithGardenBackground_remix_01kcg5gbwne8eb5pketsv0ckyj.png?v=1766034057",
+  productThumb4: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20251217_2356_Gardening_Apron_Wearer_remix_01kcqx0s6rf4w87w4te5qkwqx4.png?v=1767689308",
+  productThumb5: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/Grange_hero_image_1_1.png?v=1769839875",
+  productThumb6: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20260131_0256_Gardener_with_Harvest_Apron_remix_01kg9gtw3ce2br6v2wc968yx68_1.png?v=1769846433",
 
   // ── BENEFIT ICONS (small, ~20x20px) ────────────────────────
-  benefitIcon1: "",    // Lightning — Drop-Chute
-  benefitIcon2: "",    // Feather — Zero-Gravity
-  benefitIcon3: "",    // Shield — durability
-  benefitIcon4: "",    // Water drop — Dry-Wear
+  benefitIcon1: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/2.png?v=1769840199",    // Lightning — Drop-Chute
+  benefitIcon2: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/3.png?v=1769840199",    // Feather — Zero-Gravity
+  benefitIcon3: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/4.png?v=1769840199",    // Shield — durability
+  benefitIcon4: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/5.png?v=1769840199",    // Water drop — Dry-Wear
 
 } as const
 
