@@ -11,21 +11,21 @@ export const dbImages = {
   // ── AUTHOR AVATAR ───────────────────────────────────────────
   // Small circular photo of the "writer". Friendly, older gardener.
   // Aspect: 1:1 square (displayed as circle via rounded-full).
-  authorAvatar: "",
+  authorAvatar: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/ChatGPT_Image_Mar_19_2026_01_04_57_AM.png?v=1773896717",
 
   // ── HERO ───────────────────────────────────────────────────
   // SWAP CANDIDATE: current is a product shot. For cold traffic,
   // a lifestyle garden scene (older gardener, warm light, buckets
   // visible) would match the ad aesthetic better. Aspect: 4:3.
-  heroImage: "https://cdn.shopify.com/s/files/1/0736/5279/7743/files/20260131_1316_Image_Generation_remix_01kgam7xv8fkavdabc3nxxhjh7.png?v=1769974800",
+  heroImage: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/Screenshot_2026-01-22_at_12.36.58_AM.webp?v=1773897633",
 
   // ── REASON CARD IMAGES (1:1 aspect ratio) ──────────────────
 
   // 01 — THE BENDING PROBLEM (Drop-Chute)
-  reason1Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20251215_0105_Quick-ReleaseBadgeDesign_remix_01kcg9qjyre8psjsmn24ardmhq.png?v=1766034098",
+  reason1Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20260110_0229_Image_Generation_remix_01kekcxm85e55r27t3d3aa56w8_1.png?v=1773896982",
 
   // 02 — THE WEIGHT PROBLEM (Cross-Back Harness)
-  reason2Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20260201_1633_Image_Generation_remix_01kgdhykz1e4pb8gg9pyx1231h.png?v=1769981766",
+  reason2Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/ChatGPT_Image_Mar_19_2026_01_22_35_AM.png?v=1773897770",
 
   // 03 — THE TRIPS PROBLEM (Capacity / hands-free)
   reason3Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/Grange_hero_image_1_6.png?v=1769981762",
@@ -43,7 +43,7 @@ export const dbImages = {
   // SWAP CANDIDATE: this is the "What they switched to" moment.
   // A clean, neutral-background product photo would work best here.
   // Aspect: 4:3.
-  productReveal: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20251217_2358_Garden_Harvest_Portrait_remix_01kcqx5km5f8cst2nx2pyssx0q.png?v=1767094820",
+  productReveal: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20260121_2324_Image_Generation_remix_01kfhz3qcjezetk4scgbsz0ax0.png?v=1769055934",
 
   // ── PRODUCT SHOWCASE SECTION ───────────────────────────────
   productMain: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20251217_2358_Garden_Harvest_Portrait_remix_01kcqx5km5f8cst2nx2pyssx0q.png?v=1767094820",
