@@ -57,6 +57,17 @@ export default function DitchingBucketsPage() {
           </h1>
         </div>
 
+        {/* Byline — sells the article framing */}
+        <div className="mt-6 flex items-center gap-3 px-2">
+          <div className="w-11 h-11 rounded-full overflow-hidden bg-muted flex-shrink-0 border-2 border-border">
+            <DbAsset name="authorAvatar" alt="Nancy M." className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-lg" />
+          </div>
+          <div>
+            <p className="text-sm font-bold text-foreground">Nancy M.</p>
+            <p className="text-xs text-muted-foreground">Home gardener of 20+ years &middot; March 14, 2026</p>
+          </div>
+        </div>
+
         {/* First-person narrative bridge — continues the ad's voice */}
         <div className="mt-5 px-2 space-y-4">
           <p className="text-lg text-foreground/80 leading-relaxed text-pretty">

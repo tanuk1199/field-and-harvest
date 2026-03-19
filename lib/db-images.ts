@@ -8,6 +8,11 @@
 
 export const dbImages = {
 
+  // ── AUTHOR AVATAR ───────────────────────────────────────────
+  // Small circular photo of the "writer". Friendly, older gardener.
+  // Aspect: 1:1 square (displayed as circle via rounded-full).
+  authorAvatar: "",
+
   // ── HERO ───────────────────────────────────────────────────
   // SWAP CANDIDATE: current is a product shot. For cold traffic,
   // a lifestyle garden scene (older gardener, warm light, buckets
@@ -62,6 +67,7 @@ export const dbImages = {
 
 export const dbFallbacks = {
 
+  authorAvatar: "👩‍🌾",
   heroImage: "🌿",
 
   reason1Image: "⚡",
