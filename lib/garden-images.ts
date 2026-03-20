@@ -10,7 +10,7 @@ export const gardenImages = {
   // ── HERO ───────────────────────────────────────────────────
   // Wide shot of an older woman in her garden, early morning light.
   // Candid, warm, editorial. Aspect: 4:3.
-  heroImage: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/Screenshot_2026-01-22_at_12.36.58_AM.webp?v=1773897633",
+  heroImage: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/un-potager-pour-2-a-3-personnes.jpg?v=1773975541",
 
   // ── AUTHOR AVATAR ──────────────────────────────────────────
   // Circular photo of "Margaret" — the neighbor character.
@@ -19,16 +19,16 @@ export const gardenImages = {
   // ── STORY IMAGES (placed between paragraphs) ───────────────
 
   // Putting on the carrier in the morning — getting ready
-  storyPutOn: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20260121_2336_Image_Generation_remix_01kfhzrp1yexc83w9xykv2809a.png?v=1769056680",
+  storyPutOn: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/danielle_1_caption_2.gif?v=1773975139",
 
   // Walking through rows, hands-free picking
-  storyPicking: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/Screenshot_2026-01-31_at_12.31.08_PM.png?v=1769880807",
+  storyPicking: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/danielle_1_caption_4.gif?v=1773975427",
 
   // Full pouch loaded with produce
   storyFullPouch: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/Screenshot_2026-01-21_at_11.40.36_PM.png?v=1769056845",
 
   // Drop-chute dumping harvest
-  storyDump: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20251215_0105_Quick-ReleaseBadgeDesign_remix_01kcg9qjyre8psjsmn24ardmhq.webp?v=1769057601",
+  storyDump: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/danielle_1_caption_3.gif?v=1773975255",
 
   // ── PRODUCT SECTION ────────────────────────────────────────
   productMain: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20260121_2324_Image_Generation_remix_01kfhz3qcjezetk4scgbsz0ax0.png?v=1769055934",
