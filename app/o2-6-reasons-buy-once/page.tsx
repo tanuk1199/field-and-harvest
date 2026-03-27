@@ -41,7 +41,7 @@ export default function O2BuyOnceListiclePage() {
 
         {/* Sale badge */}
         <div className="mt-5 text-center">
-          <span className="inline-block bg-[#DDA15E]/20 rounded-md py-2 px-4 font-bold text-sm text-foreground whitespace-nowrap">Early Spring Sale: Buy 1, Get 1 FREE — While Supplies Last</span>
+          <span className="inline-block bg-[#DDA15E]/20 rounded-md py-2 px-4 font-bold text-sm text-foreground">Early Spring Sale: Buy 1, Get 1 FREE</span>
         </div>
 
         {/* Main headline */}
@@ -467,7 +467,7 @@ export default function O2BuyOnceListiclePage() {
               size="lg"
               className="w-full bg-[#C86F4C] hover:bg-[#C86F4C]/90 text-white font-bold py-7 text-lg rounded-lg mb-2.5 shadow-lg transition-all hover:shadow-xl"
             >
-              Buy 1 Get 1 Free — While Supplies Last
+              Claim Your BOGO — Limited Time
             </Button>
           </a>
           <div className="flex items-center justify-center gap-3 flex-wrap">

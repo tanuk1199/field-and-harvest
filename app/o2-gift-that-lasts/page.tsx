@@ -975,7 +975,7 @@ export default function O2GiftThatLastsPage() {
                 size="lg"
                 className="bg-[#C86F4C] hover:bg-[#B5603F] text-white px-10 py-7 text-lg rounded font-semibold group"
               >
-                Buy 1 Get 1 Free — While Supplies Last
+                Claim Your BOGO — Limited Time
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </a>
