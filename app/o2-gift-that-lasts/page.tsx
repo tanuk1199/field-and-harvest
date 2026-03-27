@@ -11,7 +11,7 @@ export default function O2GiftThatLastsPage() {
     <div className="min-h-screen bg-[#F4EFE3]">
       {/* SECTION: Announcement Bar - Top promotional banner */}
       <div className="bg-[#4A3F35] text-white text-center py-2 px-4 text-sm font-bold tracking-wider uppercase">
-        Early Spring Sale: Buy 1, Get 1 Free — While Supplies Last
+        Early Spring Sale: Buy 1, Get 1 Free
       </div>
 
       {/* SECTION: Header/Navigation - Main site navigation */}
