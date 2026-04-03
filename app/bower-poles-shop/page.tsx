@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button'
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext, CarouselDots } from '@/components/ui/carousel'
 import { ArrowRight, CheckCircle2, Star } from 'lucide-react'
 import { Asset } from '@/components/asset'
-import { BowerAsset } from '@/components/bower-asset'
+import { BowerShopAsset } from '@/components/bower-shop-asset'
 import type { Metadata } from 'next'
 
 const PDP_URL = "https://fieldandharvestco.com/products/bower-poles"
@@ -14,12 +14,12 @@ export const metadata: Metadata = {
     "The bendable plant support that follows your plant's natural growth. Coir wrap, metal core, stackable. 35% off + 2 free plant guides. 60-day guarantee.",
 }
 
-export default function BowerPolesHeroPage() {
+export default function BowerPolesShopPage() {
   return (
     <div className="min-h-screen bg-[#F4EFE3]">
       {/* SECTION: Announcement Bar */}
       <div className="bg-[#4A3F35] text-white text-center py-2 px-4 text-sm font-bold tracking-wider uppercase">
-        35% Off + 2 Free Plant Guides With Every Order
+        35% OFF + 2 Free Monstera Guides
       </div>
 
       {/* SECTION: Header */}
@@ -127,7 +127,7 @@ export default function BowerPolesHeroPage() {
           {/* Hero Image */}
           <div className="relative lg:order-2">
             <div className="aspect-square flex items-center justify-center rounded-2xl overflow-hidden">
-              <BowerAsset name="heroImage" alt="Bower Poles Flexible Plant Support" className="w-full h-full object-cover" fallbackClassName="text-6xl" />
+              <BowerShopAsset name="heroImage" alt="Bower Poles Flexible Plant Support" className="w-full h-full object-cover" fallbackClassName="text-6xl" />
             </div>
           </div>
 
@@ -191,7 +191,7 @@ export default function BowerPolesHeroPage() {
                 <CarouselItem className="pl-4 md:pl-6 basis-[90%] md:basis-1/3">
                   <div className="bg-[#F4EFE3] rounded-2xl overflow-hidden h-full">
                     <div className="aspect-[4/3] bg-[#D4C4B0] flex items-center justify-center overflow-hidden">
-                      <BowerAsset name="reason1Image" alt="Monstera with Bower Pole" className="w-full h-full object-cover" fallbackClassName="text-5xl" />
+                      <BowerShopAsset name="review1Image" alt="Monstera with Bower Pole" className="w-full h-full object-cover" fallbackClassName="text-5xl" />
                     </div>
                     <div className="p-5 md:p-6">
                       <div className="flex items-center gap-2 text-[#FDB913] mb-2">
@@ -217,7 +217,7 @@ export default function BowerPolesHeroPage() {
                 <CarouselItem className="pl-4 md:pl-6 basis-[90%] md:basis-1/3">
                   <div className="bg-[#F4EFE3] rounded-2xl overflow-hidden h-full">
                     <div className="aspect-[4/3] bg-[#D4C4B0] flex items-center justify-center overflow-hidden">
-                      <BowerAsset name="reason2Image" alt="Roots grabbing coir" className="w-full h-full object-cover" fallbackClassName="text-5xl" />
+                      <BowerShopAsset name="review2Image" alt="Roots grabbing coir" className="w-full h-full object-cover" fallbackClassName="text-5xl" />
                     </div>
                     <div className="p-5 md:p-6">
                       <div className="flex items-center gap-2 text-[#FDB913] mb-2">
@@ -243,7 +243,7 @@ export default function BowerPolesHeroPage() {
                 <CarouselItem className="pl-4 md:pl-6 basis-[90%] md:basis-1/3">
                   <div className="bg-[#F4EFE3] rounded-2xl overflow-hidden h-full">
                     <div className="aspect-[4/3] bg-[#D4C4B0] flex items-center justify-center overflow-hidden">
-                      <BowerAsset name="reason4Image" alt="Low maintenance coir" className="w-full h-full object-cover" fallbackClassName="text-5xl" />
+                      <BowerShopAsset name="review3Image" alt="Low maintenance coir" className="w-full h-full object-cover" fallbackClassName="text-5xl" />
                     </div>
                     <div className="p-5 md:p-6">
                       <div className="flex items-center gap-2 text-[#FDB913] mb-2">
@@ -269,7 +269,7 @@ export default function BowerPolesHeroPage() {
                 <CarouselItem className="pl-4 md:pl-6 basis-[90%] md:basis-1/3">
                   <div className="bg-[#F4EFE3] rounded-2xl overflow-hidden h-full">
                     <div className="aspect-[4/3] bg-[#D4C4B0] flex items-center justify-center overflow-hidden">
-                      <BowerAsset name="productReveal" alt="Bower Poles product" className="w-full h-full object-cover" fallbackClassName="text-5xl" />
+                      <BowerShopAsset name="review4Image" alt="Bower Poles product" className="w-full h-full object-cover" fallbackClassName="text-5xl" />
                     </div>
                     <div className="p-5 md:p-6">
                       <div className="flex items-center gap-2 text-[#FDB913] mb-2">
@@ -311,7 +311,7 @@ export default function BowerPolesHeroPage() {
             </a>
             <div className="flex items-center justify-center gap-2 text-sm text-white/70 mt-4">
               <CheckCircle2 className="h-4 w-4 text-[#C86F4C]" />
-              <span>60-Day Guarantee + Lifetime Warranty</span>
+              <span>60-Day Money-Back Guarantee</span>
             </div>
           </div>
         </div>
@@ -391,7 +391,7 @@ export default function BowerPolesHeroPage() {
               </div>
             </div>
             <h3 className="text-base font-bold text-[#1A1814] mb-1">60-Day Guarantee</h3>
-            <p className="text-xs text-[#666666]">Full refund if you don&apos;t love it. Plus lifetime warranty.</p>
+            <p className="text-xs text-[#666666]">Full refund if you don&apos;t love it. No questions asked.</p>
           </div>
         </div>
 
@@ -431,7 +431,7 @@ export default function BowerPolesHeroPage() {
 
           <div className="flex items-center justify-center">
             <div className="w-72 h-96 bg-gradient-to-br from-[#5A4A3A] to-[#3A2A1A] rounded-3xl flex items-center justify-center shadow-2xl overflow-hidden">
-              <BowerAsset name="productReveal" alt="Bower Poles" className="w-full h-full object-cover" fallbackClassName="text-6xl" />
+              <BowerShopAsset name="benefitsCenterImage" alt="Bower Poles" className="w-full h-full object-cover" fallbackClassName="text-6xl" />
             </div>
           </div>
 
@@ -463,7 +463,7 @@ export default function BowerPolesHeroPage() {
                 </div>
               </div>
               <h3 className="text-xl font-bold text-[#1A1814] mb-2">60-Day Guarantee</h3>
-              <p className="text-sm text-[#666666]">If the roots don&apos;t grab, if the shape doesn&apos;t hold, full refund. No questions. Plus lifetime warranty on materials.</p>
+              <p className="text-sm text-[#666666]">If the roots don&apos;t grab, if the shape doesn&apos;t hold, full refund. No questions asked.</p>
             </div>
           </div>
         </div>
@@ -525,7 +525,7 @@ export default function BowerPolesHeroPage() {
         </div>
 
         <div className="h-48 md:h-64 bg-gradient-to-r from-[#1A1814] to-[#4A3F35] flex items-center justify-center overflow-hidden">
-          <BowerAsset name="reason1Image" alt="Plant climbing Bower Pole" className="w-full h-full object-cover" fallbackClassName="text-6xl" />
+          <BowerShopAsset name="lifestyleImage" alt="Plant climbing Bower Pole" className="w-full h-full object-cover" fallbackClassName="text-6xl" />
         </div>
       </section>
 
@@ -533,7 +533,7 @@ export default function BowerPolesHeroPage() {
       <section className="max-w-lg mx-auto px-4 pt-12 pb-4">
         <div className="text-center mb-8">
           <div className="inline-block bg-[#F4EFE3] text-[#4A3F35] border border-[#D4C4B0] text-xs font-bold mb-5 px-4 py-1.5 rounded-full">
-            Lifetime Warranty + 60-Day Guarantee
+            60-Day Money-Back Guarantee
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-[#1A1814] mb-4 text-balance leading-tight">
             Bower Poles&#8482; Flexible Plant Support
@@ -561,13 +561,13 @@ export default function BowerPolesHeroPage() {
 
           <div className="p-5">
             <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-[#f0ece6] mb-4">
-              <BowerAsset name="productMain" alt="Bower Poles" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+              <BowerShopAsset name="productMain" alt="Bower Poles" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
             </div>
 
             <div className="grid grid-cols-6 gap-1.5 mb-5">
               {(["productThumb1", "productThumb2", "productThumb3", "productThumb4", "productThumb5", "productThumb6"] as const).map((name, i) => (
                 <div key={i} className="relative aspect-square rounded-md border-2 border-[#D4C4B0] bg-[#f0ece6] overflow-hidden">
-                  <BowerAsset name={name} alt={`Product view ${i + 1}`} className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-[10px] text-[#666666] font-bold" />
+                  <BowerShopAsset name={name} alt={`Product view ${i + 1}`} className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-[10px] text-[#666666] font-bold" />
                 </div>
               ))}
             </div>
@@ -587,7 +587,7 @@ export default function BowerPolesHeroPage() {
               </div>
               <div className="bg-[#F4EFE3] rounded-lg p-3.5 flex items-start gap-2.5">
                 <span className="text-base mt-0.5">🛡️</span>
-                <p className="text-xs text-[#1A1814] font-semibold leading-snug">60-day guarantee + lifetime warranty</p>
+                <p className="text-xs text-[#1A1814] font-semibold leading-snug">60-day money-back guarantee</p>
               </div>
             </div>
 
@@ -638,7 +638,7 @@ export default function BowerPolesHeroPage() {
 
               <div className="relative p-6 md:p-8">
                 <div className="aspect-[3/4] rounded-2xl overflow-hidden">
-                  <BowerAsset name="reason2Image" alt="Bower Poles in use" className="w-full h-full object-cover" fallbackClassName="text-6xl flex items-center justify-center w-full h-full bg-gradient-to-br from-[#5A4A3A] to-[#3A2A1A]" />
+                  <BowerShopAsset name="guaranteeImage" alt="Bower Poles in use" className="w-full h-full object-cover" fallbackClassName="text-6xl flex items-center justify-center w-full h-full bg-gradient-to-br from-[#5A4A3A] to-[#3A2A1A]" />
                 </div>
                 <div className="absolute top-2 right-2 md:top-4 md:right-4 w-20 h-20 md:w-24 md:h-24 bg-[#C86F4C] rounded-full flex items-center justify-center text-center shadow-lg">
                   <div className="text-white">
