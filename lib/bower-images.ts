@@ -10,10 +10,10 @@ const bowerImages: Record<string, { src: string; fallback: string }> = {
   // Reason card images
   reason1Image: { src: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/ChatGPTImageMar28_2026_06_26_12PM.png?v=1774738367", fallback: "🪴" },
   reason2Image: { src: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/ChatGPT_Image_Apr_2_2026_04_58_08_AM.png?v=1775120309", fallback: "🌱" },
-  reason3Image: { src: "", fallback: "📏" },
+  reason3Image: { src: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/Monstera_in_a_bright_living_room.png?v=1775182648", fallback: "📏" },
   reason4Image: { src: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/ChatGPT_Image_Apr_2_2026_04_58_37_AM.png?v=1775120442", fallback: "💧" },
-  reason5Image: { src: "", fallback: "♻️" },
-  reason6Image: { src: "", fallback: "✅" },
+  reason5Image: { src: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/ChatGPT_Image_Apr_2_2026_08_17_48_PM.png?v=1775175482", fallback: "♻️" },
+  reason6Image: { src: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/ChatGPT_Image_Apr_2_2026_08_31_50_PM.png?v=1775176341", fallback: "✅" },
 
   // Product reveal
   productReveal: { src: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/ChatGPTImageMar28_2026_06_52_31PM.png?v=1774738367", fallback: "📦" },
