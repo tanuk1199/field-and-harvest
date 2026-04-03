@@ -126,7 +126,7 @@ export default function BowerPolesListiclePage() {
           </div>
           <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2">Bower Poles&trade;</h3>
           <p className="text-base text-foreground/70 leading-relaxed max-w-sm mx-auto">
-            Bendable metal core. Premium coir wrap. Velcro ties included. Shape it by hand, stack for more height, and watch your plant climb the way it was meant to.
+            Bendable metal core. Premium coir wrap. Shape it by hand, stack for more height, and watch your plant climb the way it was meant to.
           </p>
           <div className="mt-4 flex items-center justify-center gap-3 flex-wrap">
             <div className="flex gap-0.5">
@@ -157,7 +157,7 @@ export default function BowerPolesListiclePage() {
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
-            Your plant will outgrow it. That&apos;s the point. <span className="font-bold text-foreground">Stack another Bower Pole on top</span>, secure it with the included Velcro ties, and keep climbing. No connectors, no height limit.
+            Your plant will outgrow it. That&apos;s the point. <span className="font-bold text-foreground">Stack another Bower Pole on top</span>, secure it with tape, and keep climbing. No connectors, no height limit.
           </p>
         </div>
 
@@ -358,7 +358,7 @@ export default function BowerPolesListiclePage() {
             </div>
             <p className="text-sm font-bold text-foreground mb-2">&ldquo;Finally, a pole that doesn&apos;t shed everywhere&rdquo;</p>
             <p className="text-sm text-foreground/75 leading-relaxed mb-3">
-              I&apos;ve tried three different moss poles. They all left coir dust on my shelf. This one stays put. And the Velcro ties are way better than twist ties.
+              I&apos;ve tried three different moss poles. They all left coir dust on my shelf. This one stays put. And it doesn&apos;t need constant misting like my old sphagnum one.
             </p>
             <div className="flex items-center gap-2">
               <span className="text-xs font-bold text-foreground">Jamie R.</span>
@@ -434,7 +434,7 @@ export default function BowerPolesListiclePage() {
               How do I stack them for more height?
             </AccordionTrigger>
             <AccordionContent className="text-foreground/80 leading-relaxed pb-5">
-              Place a second pole next to the first, overlap them by a few inches, and wrap the included Velcro tie around both. The coir surfaces create a continuous climbing path.
+              Place a second pole next to the first, overlap them by a few inches, and secure with tape. The coir surfaces create a continuous climbing path.
             </AccordionContent>
           </AccordionItem>
 
