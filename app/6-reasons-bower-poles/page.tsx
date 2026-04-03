@@ -13,7 +13,7 @@ import {
 import { Asset } from "@/components/asset"
 import { BowerAsset } from "@/components/bower-asset"
 
-const PDP_URL = "https://fieldandharvestco.com/products/the-bendable-moss-pole-flexible-plant-support"
+const PDP_URL = "https://fieldandharvestco.com/products/bower-poles"
 
 export default function BowerPolesListiclePage() {
   const [showSticky, setShowSticky] = useState(false)
