@@ -15,7 +15,7 @@ const PLEDGE_GREEN = "#4A5D3A"
 
 export default function GiftThatServesPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-x-hidden">
       {/* ============================================
           PROMOTIONAL BANNER - Top announcement bar
           ============================================ */}
@@ -30,12 +30,12 @@ export default function GiftThatServesPage() {
           PLEDGE BANNER - The cause hook, immediately visible
           ============================================ */}
       <div
-        className="text-center py-2.5 px-4 border-b-2 border-[#3a4a2d]"
+        className="text-center py-2.5 px-3 border-b-2 border-[#3a4a2d]"
         style={{ backgroundColor: PLEDGE_GREEN }}
       >
-        <p className="text-xs md:text-sm font-bold tracking-wide text-white uppercase">
+        <p className="text-[11px] sm:text-xs md:text-sm font-bold tracking-wide text-white uppercase leading-snug">
           <span className="inline-block mr-1.5">★</span>
-          10% of every order on this page is donated to the Farmer Veteran Coalition
+          The Veteran Pledge — 10% of your order is donated to Farmer Veteran Coalition
           <span className="inline-block ml-1.5">★</span>
         </p>
       </div>
@@ -57,7 +57,7 @@ export default function GiftThatServesPage() {
 
         {/* Sale badge */}
         <div className="mt-5 text-center">
-          <span className="inline-block bg-[#DDA15E]/20 rounded-md py-2 px-4 font-bold text-sm text-foreground whitespace-nowrap">Save 39% OFF + 2 Free Gardening Guides Included</span>
+          <span className="inline-block bg-[#DDA15E]/20 rounded-md py-2 px-4 font-bold text-xs sm:text-sm text-foreground">Save 39% OFF + 2 Free Gardening Guides Included</span>
         </div>
 
         {/* Main headline */}
@@ -66,7 +66,7 @@ export default function GiftThatServesPage() {
             The Garden Gift That <span className="text-[#C86F4C]">Serves Twice</span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground mt-4 leading-relaxed text-pretty max-w-md mx-auto">
-            One gift puts a heritage-grade carrier in the hands of someone who lives in their garden — and 10% of what you pay puts a returning veteran one step closer to a farm of their own.
+            One gift puts a heritage-grade carrier in the hands of someone who lives in their garden — and 10% of your order puts a returning veteran one step closer to a farm of their own.
           </p>
         </div>
 
@@ -107,7 +107,7 @@ export default function GiftThatServesPage() {
             style={{ backgroundColor: PLEDGE_GREEN }}
           >
             <p className="text-xs font-bold tracking-widest text-white uppercase">
-              Our Pledge to America&apos;s Veteran Farmers
+              The Veteran Pledge
             </p>
           </div>
 
@@ -119,12 +119,12 @@ export default function GiftThatServesPage() {
               >
                 10%
               </div>
-              <div className="flex-1">
-                <h3 className="text-xl md:text-2xl font-bold text-foreground leading-tight mb-1">
-                  Of every order on this page goes directly to Farmer Veteran Coalition.
+              <div className="flex-1 min-w-0">
+                <h3 className="text-xl md:text-2xl font-bold text-foreground leading-tight mb-1 text-balance">
+                  Of your order goes directly to Farmer Veteran Coalition.
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  The largest nonprofit assisting U.S. military veterans build careers in agriculture.
+                  The largest nonprofit helping U.S. military veterans build careers in agriculture.
                 </p>
               </div>
             </div>
@@ -133,7 +133,7 @@ export default function GiftThatServesPage() {
               When veterans come home, many of them don&apos;t want a desk. They want land. They want their hands in soil and a horizon line that&apos;s their own. Farmer Veteran Coalition helps them get there — with training, equipment grants, and a community of farmers who&apos;ve served.
             </p>
             <p className="text-foreground/85 text-pretty leading-relaxed text-base mb-5">
-              We make heritage farm tools. They put veterans on heritage farms. It just fits. <span className="font-bold text-foreground">10% of every dollar you spend on this page is donated through farmvetco.org — no minimums, no caps, no fine print.</span>
+              We make heritage farm tools. They put veterans on heritage farms. It just fits. <span className="font-bold text-foreground">10% of your order is donated to Farmer Veteran Coalition through farmvetco.org — no minimums, no caps, no fine print.</span>
             </p>
 
             <div className="flex flex-col sm:flex-row gap-2 text-xs text-muted-foreground border-t border-border pt-4">
@@ -143,7 +143,7 @@ export default function GiftThatServesPage() {
               </div>
               <div className="flex-1">
                 <p className="font-bold text-foreground uppercase tracking-wider mb-1">Donation</p>
-                <p>10% of order revenue</p>
+                <p>10% of your order</p>
               </div>
               <div className="flex-1">
                 <p className="font-bold text-foreground uppercase tracking-wider mb-1">Verified at</p>
@@ -184,7 +184,7 @@ export default function GiftThatServesPage() {
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
-            Most garden gifts give once. This one gives twice. The gardener you&apos;re shopping for gets a heritage-grade harvest carrier they&apos;ll reach for every morning. And 10% of what you spend goes directly to Farmer Veteran Coalition — funding training, land access, and equipment for the men and women who served and now want to farm. <span className="font-bold text-foreground">You&apos;re not just buying a gift. You&apos;re putting a veteran one step closer to their own field.</span>
+            Most garden gifts give once. This one gives twice. The gardener you&apos;re shopping for gets a heritage-grade harvest carrier they&apos;ll reach for every morning. And 10% of your order goes directly to Farmer Veteran Coalition — funding training, land access, and equipment for the men and women who served and now want to farm. <span className="font-bold text-foreground">You&apos;re not just buying a gift. You&apos;re putting a veteran one step closer to their own field.</span>
           </p>
         </div>
 
@@ -299,8 +299,8 @@ export default function GiftThatServesPage() {
           ============================================ */}
       <section className="max-w-lg mx-auto px-4 pt-12 pb-4">
         <div className="text-center mb-8">
-          <Badge className="bg-[#F4EFE3] text-[#4A3F35] hover:bg-[#F4EFE3] border border-[#D4C4B0] text-xs font-bold mb-5 px-4 py-1.5">
-            Lifetime Warranty + 60-Day Guarantee + 10% to Veteran Farmers
+          <Badge className="bg-[#F4EFE3] text-[#4A3F35] hover:bg-[#F4EFE3] border border-[#D4C4B0] text-[10px] sm:text-xs font-bold mb-5 px-3 py-1.5 whitespace-normal text-center leading-snug">
+            Lifetime Warranty + 60-Day Guarantee + The Veteran Pledge
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance leading-tight">
             A Heritage Tool for Them. A Step Forward for a Veteran.
@@ -326,7 +326,7 @@ export default function GiftThatServesPage() {
         <div className="bg-card border-2 border-border rounded-2xl overflow-hidden shadow-lg">
           {/* Limited offer banner */}
           <div className="bg-gradient-to-r from-primary to-primary/90 text-primary-foreground text-center py-3 px-4">
-            <p className="text-sm font-bold tracking-wide">39% OFF + 2 FREE GUIDES + 10% TO FARMVETCO.ORG</p>
+            <p className="text-[11px] sm:text-sm font-bold tracking-wide leading-snug">39% OFF + 2 FREE GUIDES + THE VETERAN PLEDGE</p>
           </div>
 
           <div className="p-5">
@@ -369,7 +369,7 @@ export default function GiftThatServesPage() {
                 style={{ backgroundColor: "#EEF1E8", borderColor: PLEDGE_GREEN }}
               >
                 <div className="w-5 h-5 flex-shrink-0 mt-0.5 flex items-center justify-center text-base font-black" style={{ color: PLEDGE_GREEN }}>★</div>
-                <p className="text-xs font-semibold leading-snug" style={{ color: PLEDGE_GREEN }}>10% of this order goes to Farmer Veteran Coalition</p>
+                <p className="text-xs font-semibold leading-snug" style={{ color: PLEDGE_GREEN }}>10% of your order goes to Farmer Veteran Coalition</p>
               </div>
             </div>
 
@@ -493,7 +493,7 @@ export default function GiftThatServesPage() {
               How does the 10% donation actually work?
             </AccordionTrigger>
             <AccordionContent className="text-foreground/80 leading-relaxed pb-5">
-              For every order placed through this page, we set aside 10% of the gross order revenue and donate it directly to Farmer Veteran Coalition through farmvetco.org. No middleman. No marketing carve-outs. We send a single check (or online donation) covering all orders from this page each month. If you want a record of the donation, email us and we&apos;ll forward the receipt for your order&apos;s share.
+              The Veteran Pledge is a campaign we&apos;re running through this offer. When you click through and check out, your order is tagged to this campaign on our end. Each month we add up every order tied to The Veteran Pledge and donate 10% of the total directly to Farmer Veteran Coalition through farmvetco.org. No middleman, no marketing carve-outs. The donation is tied to your order, not to which page on our site you happened to land on at checkout — so even though our regular product page doesn&apos;t mention the pledge yet, your order still counts. If you want a record, email us and we&apos;ll forward the receipt for your order&apos;s share.
             </AccordionContent>
           </AccordionItem>
 
@@ -538,7 +538,7 @@ export default function GiftThatServesPage() {
               What exactly is included?
             </AccordionTrigger>
             <AccordionContent className="text-foreground/80 leading-relaxed pb-5">
-              The Grange Carrier with Zero-Gravity Cross-Back Harness and Quick-Release Drop-Chute, deep tool sheaths for pruning shears, a hidden waterproof phone pocket, The Endless Harvest gardening guide ($18 value), the Harvest Keeper&apos;s Handbook for produce storage ($15 value), and a lifetime warranty on all materials and craftsmanship — plus the 10% donation to Farmer Veteran Coalition.
+              The Grange Carrier with Zero-Gravity Cross-Back Harness and Quick-Release Drop-Chute, deep tool sheaths for pruning shears, a hidden waterproof phone pocket, The Endless Harvest gardening guide ($18 value), the Harvest Keeper&apos;s Handbook for produce storage ($15 value), and a lifetime warranty on all materials and craftsmanship — plus 10% of your order donated to Farmer Veteran Coalition through The Veteran Pledge.
             </AccordionContent>
           </AccordionItem>
 
