@@ -35,7 +35,7 @@ export default function EveryGardenGivesBackPage() {
       >
         <p className="text-[11px] sm:text-xs md:text-sm font-bold tracking-wide text-white uppercase leading-snug">
           <span className="inline-block mr-1.5">★</span>
-          The Community Garden Pledge — 10% of your order is donated to the American Community Gardening Association
+          The Community Garden Pledge — 10% of your order builds community gardens
           <span className="inline-block ml-1.5">★</span>
         </p>
       </div>
@@ -66,7 +66,7 @@ export default function EveryGardenGivesBackPage() {
             The Garden Gift That <span className="text-[#C86F4C]">Grows Two Gardens</span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground mt-4 leading-relaxed text-pretty max-w-md mx-auto">
-            One gift puts a heritage-grade carrier in the hands of someone who lives in their garden — and 10% of your order helps a neighborhood that doesn&apos;t have one yet grow theirs.
+            A heritage-grade carrier for the gardener you love. 10% of your order helps a neighborhood grow theirs.
           </p>
         </div>
 
@@ -124,16 +124,13 @@ export default function EveryGardenGivesBackPage() {
                   Of your order goes directly to the American Community Gardening Association.
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  The leading nonprofit building community gardens in lower-income neighborhoods, senior centers, and food-insecure communities across the U.S. and Canada.
+                  Building community gardens in underserved neighborhoods since 1979.
                 </p>
               </div>
             </div>
 
-            <p className="text-foreground/85 text-pretty leading-relaxed text-base mb-4">
-              Not every neighborhood has a patch of dirt to grow food on. For families on a tight grocery budget, for seniors who can no longer afford fresh produce, for kids who&apos;ve never seen a tomato grow on a vine — a community garden is the difference between a bag of wilted lettuce and a meal they helped make. The ACGA has been building these gardens for 45+ years.
-            </p>
             <p className="text-foreground/85 text-pretty leading-relaxed text-base mb-5">
-              We make heritage tools for gardeners lucky enough to have their own plot. It only feels right to help the people who don&apos;t. <span className="font-bold text-foreground">10% of your order is donated to the American Community Gardening Association through communitygarden.org — no minimums, no caps, no fine print.</span>
+              Not every neighborhood has a patch of dirt to grow food on. We make heritage tools for gardeners lucky enough to have their own plot — and help ACGA build gardens for the families that don&apos;t. <span className="font-bold text-foreground">10% of your order. No minimums, no caps, no fine print.</span>
             </p>
 
             <div className="flex flex-col sm:flex-row gap-2 text-xs text-muted-foreground border-t border-border pt-4">
@@ -184,7 +181,7 @@ export default function EveryGardenGivesBackPage() {
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
-            Most garden gifts grow one garden. This one grows two. The gardener you&apos;re shopping for gets a heritage-grade harvest carrier they&apos;ll reach for every morning. And 10% of your order goes directly to the American Community Gardening Association — funding raised beds, seedlings, and tools for neighborhoods where the nearest fresh tomato is two bus rides away. <span className="font-bold text-foreground">You&apos;re not just buying a gift. You&apos;re putting a plot of soil in the hands of a family that doesn&apos;t have one.</span>
+            Most garden gifts grow one garden. This one grows two. Your gardener gets a heritage-grade carrier they&apos;ll reach for every morning. And 10% of your order funds raised beds, seedlings, and tools for neighborhoods where the nearest fresh tomato is two bus rides away. <span className="font-bold text-foreground">A gift for them. A plot of soil for a family that doesn&apos;t have one.</span>
           </p>
         </div>
 
@@ -289,7 +286,7 @@ export default function EveryGardenGivesBackPage() {
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
-            Lifetime warranty covers the fabric, stitching, and buckles against defects. Not sure they&apos;ll love it? Give it anyway. They have 60 full days to try it. If it&apos;s not right, you get a complete refund and we cover return shipping. <span className="font-bold text-foreground">And the 10% donation to the American Community Gardening Association? That goes through either way. The neighborhoods waiting on that raised bed don&apos;t lose a dollar because the gift wasn&apos;t a fit.</span>
+            Lifetime warranty on fabric, stitching, and buckles. 60-day trial — if it&apos;s not right, full refund and we cover return shipping. <span className="font-bold text-foreground">And the 10% donation to ACGA? Goes through either way. The gardens don&apos;t lose a dollar if the gift wasn&apos;t a fit.</span>
           </p>
         </div>
       </section>
@@ -306,7 +303,7 @@ export default function EveryGardenGivesBackPage() {
             A Heritage Tool for Them. A Growing Plot for a Neighborhood.
           </h2>
           <p className="text-lg text-muted-foreground mb-6 text-pretty leading-relaxed max-w-md mx-auto">
-            One carrier. Two free guides. A lifetime warranty. And a real, traceable contribution to the community gardens feeding the families who need them most.
+            One carrier. Two free guides. A lifetime warranty. And a real contribution to the gardens feeding families who need them.
           </p>
 
           {/* Social proof */}
@@ -369,7 +366,7 @@ export default function EveryGardenGivesBackPage() {
                 style={{ backgroundColor: "#EEF1E8", borderColor: PLEDGE_GREEN }}
               >
                 <div className="w-5 h-5 flex-shrink-0 mt-0.5 flex items-center justify-center text-base font-black" style={{ color: PLEDGE_GREEN }}>★</div>
-                <p className="text-xs font-semibold leading-snug" style={{ color: PLEDGE_GREEN }}>10% of your order goes to the American Community Gardening Association</p>
+                <p className="text-xs font-semibold leading-snug" style={{ color: PLEDGE_GREEN }}>10% of your order builds community gardens</p>
               </div>
             </div>
 
@@ -493,7 +490,7 @@ export default function EveryGardenGivesBackPage() {
               How does the Community Garden Pledge actually work?
             </AccordionTrigger>
             <AccordionContent className="text-foreground/80 leading-relaxed pb-5">
-              The Community Garden Pledge is a campaign we&apos;re running through this offer. When you click through and check out, your order is tagged to this campaign on our end. Each month we add up every order tied to The Community Garden Pledge and donate 10% of the total directly to the American Community Gardening Association through communitygarden.org. No middleman, no marketing carve-outs. The donation is tied to your order, not to which page on our site you happened to land on at checkout — so even though our regular product page doesn&apos;t mention the pledge yet, your order still counts. If you want a record, email us and we&apos;ll forward the receipt for your order&apos;s share.
+              When you check out through this page, your order is tagged to The Community Garden Pledge. Each month we donate 10% of every tagged order directly to ACGA through communitygarden.org. The pledge follows your order through checkout — even though the regular product page doesn&apos;t mention it yet, your order still counts. Email us if you want a copy of the receipt.
             </AccordionContent>
           </AccordionItem>
 
@@ -502,7 +499,7 @@ export default function EveryGardenGivesBackPage() {
               What is the American Community Gardening Association?
             </AccordionTrigger>
             <AccordionContent className="text-foreground/80 leading-relaxed pb-5">
-              The American Community Gardening Association (ACGA) is a binational 501(c)(3) nonprofit that has been supporting and building community gardens across the U.S. and Canada since 1979. They fund raised beds, seedlings, tools, and training for community plots — most of which serve lower-income neighborhoods, seniors, and food-insecure families who don&apos;t have access to a backyard of their own. You can read more about their work at <a href={ACGA_URL} target="_blank" rel="noopener noreferrer" className="underline" style={{ color: PLEDGE_GREEN }}>communitygarden.org</a>.
+              A 501(c)(3) nonprofit building community gardens across the U.S. and Canada since 1979. They fund raised beds, seedlings, and tools for plots serving lower-income neighborhoods, seniors, and food-insecure families. More at <a href={ACGA_URL} target="_blank" rel="noopener noreferrer" className="underline" style={{ color: PLEDGE_GREEN }}>communitygarden.org</a>.
             </AccordionContent>
           </AccordionItem>
 
@@ -511,7 +508,7 @@ export default function EveryGardenGivesBackPage() {
               If I return the carrier, does the donation still happen?
             </AccordionTrigger>
             <AccordionContent className="text-foreground/80 leading-relaxed pb-5">
-              Yes. The 10% pledge is paid out of our share, not yours. If the gift doesn&apos;t work out and you take the 60-day refund, you get every dollar back — and we still send the donation to the American Community Gardening Association. The neighborhoods waiting on that raised bed don&apos;t lose anything because the carrier wasn&apos;t the right fit.
+              Yes. The 10% comes out of our share, not yours. Take the 60-day refund, get every dollar back — we still send the donation. The gardens don&apos;t lose anything because the gift wasn&apos;t a fit.
             </AccordionContent>
           </AccordionItem>
 
@@ -538,7 +535,7 @@ export default function EveryGardenGivesBackPage() {
               What exactly is included?
             </AccordionTrigger>
             <AccordionContent className="text-foreground/80 leading-relaxed pb-5">
-              The Grange Carrier with Zero-Gravity Cross-Back Harness and Quick-Release Drop-Chute, deep tool sheaths for pruning shears, a hidden waterproof phone pocket, The Endless Harvest gardening guide ($18 value), the Harvest Keeper&apos;s Handbook for produce storage ($15 value), and a lifetime warranty on all materials and craftsmanship — plus 10% of your order donated to the American Community Gardening Association through The Community Garden Pledge.
+              The Grange Carrier with Zero-Gravity Cross-Back Harness, Quick-Release Drop-Chute, tool sheaths, and a hidden waterproof phone pocket. Plus The Endless Harvest guide ($18), the Harvest Keeper&apos;s Handbook ($15), a lifetime warranty, and 10% of your order to ACGA.
             </AccordionContent>
           </AccordionItem>
 
