@@ -560,7 +560,7 @@ export default function EveryGardenGivesBackPage() {
               size="lg"
               className="w-full bg-[#C86F4C] hover:bg-[#C86F4C]/90 text-white font-bold py-7 text-lg rounded-lg mb-2.5 shadow-lg transition-all hover:shadow-xl"
             >
-              Get 39% Off + Grow a Community Garden
+              Get 39% Off + Give Back
             </Button>
           </a>
           <div className="flex items-center justify-center gap-3 flex-wrap">
