@@ -10,11 +10,11 @@ export const mihmImages = {
   // ── HERO SECTION ──────────────────────────────────────────
   // ⚠️ This is the ONE image being swapped for this angle.
   // Upload a warm/evocative image (older hands or Eleanor in garden) and paste the URL here.
-  heroImage: "",
+  heroImage: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/Sewing_with_love_and_care.png?v=1775711914",
 
   // ── STORY INTRO ───────────────────────────────────────────
   // Photo of "Eleanor" — older woman in garden, warm smile, morning light.
-  eleanorPortrait: "",
+  eleanorPortrait: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/Radiant_smile_in_a_cozy_home.png?v=1775711917",
 
   // ── LISTICLE REASON IMAGES (existing Grange Carrier assets) ──
   reason1Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20251215_0105_Quick-ReleaseBadgeDesign_remix_01kcg9qjyre8psjsmn24ardmhq.png?v=1766034098",
