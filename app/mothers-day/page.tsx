@@ -25,6 +25,20 @@ export default function LandingPage() {
       </div>
 
       {/* ============================================
+          MOTHER'S DAY BANNER - Holiday callout
+          ============================================ */}
+      <div
+        className="text-center py-2.5 px-3 border-b border-[#9B2D4E]"
+        style={{ backgroundColor: "#B83A5E" }}
+      >
+        <p className="text-[11px] sm:text-xs md:text-sm font-bold tracking-wide text-white uppercase leading-snug">
+          <span className="inline-block mr-1.5">&#10047;</span>
+          Mother&apos;s Day Special — Order by May 5th for Guaranteed Delivery
+          <span className="inline-block ml-1.5">&#10047;</span>
+        </p>
+      </div>
+
+      {/* ============================================
           HEADER - Logo section
           ============================================ */}
       <header className="py-3 px-4 flex items-center justify-center bg-card">
