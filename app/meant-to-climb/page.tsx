@@ -11,21 +11,21 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { Asset } from "@/components/asset"
-import { BowerAsset } from "@/components/bower-asset"
+import { MtcAsset } from "@/components/mtc-asset"
 
 const PDP_URL = "https://fieldandharvestco.com/products/bower-poles"
 
-// UGC-style grid tiles — reusing existing bower-images.ts keys
+// UGC-style grid tiles — keys in lib/mtc-images.ts
 const UGC_GRID = [
-  "reason1Image",
-  "reason2Image",
-  "reason3Image",
-  "productReveal",
-  "heroImage",
-  "reason4Image",
-  "reason5Image",
-  "reason6Image",
-  "productMain",
+  "ugc1",
+  "ugc2",
+  "ugc3",
+  "ugc4",
+  "ugc5",
+  "ugc6",
+  "ugc7",
+  "ugc8",
+  "ugc9",
 ] as const
 
 export default function MeantToClimbPage() {
@@ -77,7 +77,7 @@ export default function MeantToClimbPage() {
         </p>
 
         <div className="mt-6 relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg bg-muted">
-          <BowerAsset name="heroImage" alt="Monstera climbing a Bower Pole" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+          <MtcAsset name="heroImage" alt="Monstera climbing a Bower Pole" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
         </div>
 
         <a href={PDP_URL}>
@@ -128,7 +128,7 @@ export default function MeantToClimbPage() {
         <div className="grid grid-cols-3 gap-1.5 md:gap-2">
           {UGC_GRID.map((name, i) => (
             <div key={i} className="relative aspect-square rounded-md overflow-hidden bg-muted shadow-sm">
-              <BowerAsset name={name} alt={`Plant parent using Bower Poles ${i + 1}`} className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-3xl" />
+              <MtcAsset name={name} alt={`Plant parent using Bower Poles ${i + 1}`} className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-3xl" />
             </div>
           ))}
         </div>
@@ -154,16 +154,16 @@ export default function MeantToClimbPage() {
         <div className="grid grid-cols-2 gap-3">
           {/* BEFORE */}
           <div className="bg-[#F0EBE0] rounded-xl p-4 border border-[#D4C4B0]/60 relative overflow-hidden">
-            <div className="absolute top-2 right-2 text-[9px] uppercase tracking-wider font-bold bg-foreground/10 text-foreground/60 px-2 py-0.5 rounded">
+            <div className="absolute top-2 right-2 text-[9px] uppercase tracking-wider font-bold bg-foreground/10 text-foreground/60 px-2 py-0.5 rounded z-10">
               Before
             </div>
             <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-[#E8E0D2] mb-3 flex items-center justify-center">
-              <div className="text-center px-3 opacity-60">
-                <div className="text-4xl mb-2">&#127793;</div>
-                <p className="text-[10px] uppercase tracking-wider font-bold text-foreground/60">
-                  Sprawling &bull; No Support
-                </p>
-              </div>
+              <MtcAsset
+                name="beforeImage"
+                alt="Sprawling juvenile Monstera without a pole"
+                className="w-full h-full object-cover opacity-90"
+                fallbackClassName="text-5xl opacity-50"
+              />
             </div>
             <p className="text-xs font-bold text-foreground/70 mb-1.5">Your Monstera Now</p>
             <ul className="text-[11px] text-foreground/60 space-y-1 leading-snug">
@@ -175,11 +175,11 @@ export default function MeantToClimbPage() {
 
           {/* AFTER */}
           <div className="bg-card rounded-xl p-4 border-2 border-[#C86F4C] relative overflow-hidden shadow-md">
-            <div className="absolute top-2 right-2 text-[9px] uppercase tracking-wider font-bold bg-[#C86F4C] text-white px-2 py-0.5 rounded">
+            <div className="absolute top-2 right-2 text-[9px] uppercase tracking-wider font-bold bg-[#C86F4C] text-white px-2 py-0.5 rounded z-10">
               After
             </div>
             <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-3">
-              <BowerAsset name="reason3Image" alt="Monstera climbing with mature fenestrated leaves" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+              <MtcAsset name="afterImage" alt="Monstera climbing with mature fenestrated leaves" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
             </div>
             <p className="text-xs font-bold text-foreground mb-1.5">With Something to Climb</p>
             <ul className="text-[11px] text-foreground/80 space-y-1 leading-snug">
@@ -267,13 +267,13 @@ export default function MeantToClimbPage() {
 
           <div className="p-5">
             <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-4">
-              <BowerAsset name="productMain" alt="Bower Poles Flexible Plant Support" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+              <MtcAsset name="productMain" alt="Bower Poles Flexible Plant Support" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
             </div>
 
             <div className="grid grid-cols-6 gap-1.5 mb-5">
               {(["productThumb1", "productThumb2", "productThumb3", "productThumb4", "productThumb5", "productThumb6"] as const).map((name, i) => (
                 <div key={i} className="relative aspect-square rounded-md border-2 border-border bg-muted hover:border-primary transition-colors cursor-pointer overflow-hidden">
-                  <BowerAsset name={name} alt={`Product view ${i + 1}`} className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-[10px] text-muted-foreground font-bold" />
+                  <MtcAsset name={name} alt={`Product view ${i + 1}`} className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-[10px] text-muted-foreground font-bold" />
                 </div>
               ))}
             </div>
@@ -281,25 +281,25 @@ export default function MeantToClimbPage() {
             <div className="grid grid-cols-2 gap-3 mb-5">
               <div className="bg-[#F4EFE3] rounded-lg p-3.5 flex items-start gap-2.5">
                 <div className="w-5 h-5 flex-shrink-0 mt-0.5">
-                  <BowerAsset name="benefitIcon1" alt="Bendable" className="w-5 h-5 object-contain" fallbackClassName="text-base" />
+                  <MtcAsset name="benefitIcon1" alt="Bendable" className="w-5 h-5 object-contain" fallbackClassName="text-base" />
                 </div>
                 <p className="text-xs text-foreground font-semibold leading-snug">Bendable metal core holds any shape</p>
               </div>
               <div className="bg-[#F4EFE3] rounded-lg p-3.5 flex items-start gap-2.5">
                 <div className="w-5 h-5 flex-shrink-0 mt-0.5">
-                  <BowerAsset name="benefitIcon2" alt="Roots" className="w-5 h-5 object-contain" fallbackClassName="text-base" />
+                  <MtcAsset name="benefitIcon2" alt="Roots" className="w-5 h-5 object-contain" fallbackClassName="text-base" />
                 </div>
                 <p className="text-xs text-foreground font-semibold leading-snug">Coir surface roots latch onto naturally</p>
               </div>
               <div className="bg-[#F4EFE3] rounded-lg p-3.5 flex items-start gap-2.5">
                 <div className="w-5 h-5 flex-shrink-0 mt-0.5">
-                  <BowerAsset name="benefitIcon3" alt="Stackable" className="w-5 h-5 object-contain" fallbackClassName="text-base" />
+                  <MtcAsset name="benefitIcon3" alt="Stackable" className="w-5 h-5 object-contain" fallbackClassName="text-base" />
                 </div>
                 <p className="text-xs text-foreground font-semibold leading-snug">Stackable for unlimited plant height</p>
               </div>
               <div className="bg-[#F4EFE3] rounded-lg p-3.5 flex items-start gap-2.5">
                 <div className="w-5 h-5 flex-shrink-0 mt-0.5">
-                  <BowerAsset name="benefitIcon4" alt="Guarantee" className="w-5 h-5 object-contain" fallbackClassName="text-base" />
+                  <MtcAsset name="benefitIcon4" alt="Guarantee" className="w-5 h-5 object-contain" fallbackClassName="text-base" />
                 </div>
                 <p className="text-xs text-foreground font-semibold leading-snug">60-day guarantee + lifetime warranty</p>
               </div>
