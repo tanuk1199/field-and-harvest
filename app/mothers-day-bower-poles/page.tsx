@@ -47,10 +47,10 @@ export default function MothersDayBowerPolesPage() {
         className="text-center py-2.5 px-3 border-b border-[#9B2D4E]"
         style={{ backgroundColor: "#B83A5E" }}
       >
-        <p className="text-[11px] sm:text-xs md:text-sm font-bold tracking-wide text-white uppercase leading-snug">
-          <span className="inline-block mr-1.5">&#10047;</span>
-          Mother&apos;s Day Special <span className="mx-1.5 opacity-60">&bull;</span> Limited Time Sale &mdash; Ends Soon
-          <span className="inline-block ml-1.5">&#10047;</span>
+        <p className="text-[11px] sm:text-xs md:text-sm font-bold tracking-wide text-white uppercase leading-snug whitespace-nowrap">
+          <span className="inline-block mr-2">&#10047;</span>
+          The Mother&apos;s Day Sale Is Live
+          <span className="inline-block ml-2">&#10047;</span>
         </p>
       </div>
 
