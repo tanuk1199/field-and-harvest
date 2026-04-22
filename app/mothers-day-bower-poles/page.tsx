@@ -49,7 +49,7 @@ export default function MothersDayBowerPolesPage() {
       >
         <p className="text-[11px] sm:text-xs md:text-sm font-bold tracking-wide text-white uppercase leading-snug">
           <span className="inline-block mr-1.5">&#10047;</span>
-          Mother&apos;s Day Special &mdash; Order by May 5th for Guaranteed Delivery
+          Mother&apos;s Day Special <span className="mx-1.5 opacity-60">&bull;</span> Limited Time Sale &mdash; Ends Soon
           <span className="inline-block ml-1.5">&#10047;</span>
         </p>
       </div>
