@@ -28,7 +28,7 @@ const UGC_GRID = [
   "productMain",
 ] as const
 
-export default function PlantParentsUseThisPage() {
+export default function MeantToClimbPage() {
   const [showSticky, setShowSticky] = useState(false)
 
   useEffect(() => {
@@ -61,19 +61,19 @@ export default function PlantParentsUseThisPage() {
       </header>
 
       {/* ============================================
-          HERO SECTION - Identity + curiosity
+          HERO SECTION - Discovery / transformation
           ============================================ */}
       <section className="max-w-lg mx-auto px-4 pt-8 pb-6">
         <p className="text-xs md:text-sm font-bold tracking-wider text-[#C86F4C] uppercase text-center mb-3">
-          What Plant Parents Quietly Switched To
+          The Secret Life of Your Monstera
         </p>
 
         <h1 className="text-4xl md:text-5xl font-bold text-foreground leading-tight text-balance tracking-tight text-center">
-          What Thriving Monsteras Have in <span className="text-[#C86F4C]">Common</span>
+          Your Monstera Is <span className="text-[#C86F4C]">Meant to Climb</span>
         </h1>
 
         <p className="text-lg md:text-xl text-muted-foreground mt-4 leading-relaxed text-pretty max-w-md mx-auto text-center">
-          It&apos;s not more light, more water, or more fuss. It&apos;s what they&apos;re climbing on.
+          It&apos;s a jungle vine. In the wild it grabs onto trees with aerial roots and the leaves triple in size. In your living room, it&apos;s been waiting for something to climb.
         </p>
 
         <div className="mt-6 relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg bg-muted">
@@ -102,12 +102,12 @@ export default function PlantParentsUseThisPage() {
       </section>
 
       {/* ============================================
-          INSIGHT BLOCK - 3-line reframe (no listicle)
+          INSIGHT BLOCK - Teach the "meant to climb" idea
           ============================================ */}
       <section className="max-w-lg mx-auto px-4 pt-6 pb-10">
         <div className="bg-[#F4EFE3] rounded-2xl p-6 md:p-8 border border-[#D4C4B0]">
           <p className="text-base md:text-lg text-foreground/90 text-pretty leading-relaxed">
-            Your Monstera isn&apos;t failing because of you. It&apos;s failing because rigid poles force straight growth, plastic is slippery, and sphagnum moss sheds all over your shelf. <span className="font-bold text-foreground">Experienced plant parents quietly switched to bendable coir poles years ago.</span> You just hadn&apos;t heard about them yet.
+            Most Monsteras never become what they could be. They sprawl across shelves, stay juvenile, and never grow the deep splits Monsteras are famous for &mdash; because they have nothing to climb. <span className="font-bold text-foreground">In nature, aerial roots attach to tree bark and the whole plant transforms.</span> Give it the right support and it does the same thing in your living room.
           </p>
         </div>
       </section>
@@ -118,10 +118,10 @@ export default function PlantParentsUseThisPage() {
       <section className="max-w-lg lg:max-w-3xl mx-auto px-4 pb-10">
         <div className="text-center mb-6">
           <Badge variant="secondary" className="text-[10px] uppercase tracking-wider font-bold bg-transparent mb-2">
-            IN PLANT PARENTS&apos; HOMES
+            WHAT HAPPENS WHEN THEY FINALLY CLIMB
           </Badge>
           <h2 className="text-2xl md:text-3xl font-bold text-foreground text-balance leading-tight">
-            The Pole Behind 2,400+ Thriving Plants
+            This Is What a Monstera Is Supposed to Look Like
           </h2>
         </div>
 
@@ -222,9 +222,9 @@ export default function PlantParentsUseThisPage() {
                 <Star key={i} className="w-3 h-3 fill-[#FDB913] text-[#FDB913]" />
               ))}
             </div>
-            <p className="text-sm font-bold text-foreground mb-1">&ldquo;My Monstera looks incredible now.&rdquo;</p>
+            <p className="text-sm font-bold text-foreground mb-1">&ldquo;I had no idea my Monstera was supposed to climb.&rdquo;</p>
             <p className="text-xs text-foreground/75 leading-relaxed mb-2">
-              I was using a straight bamboo stick and zip ties. It looked terrible. Switched to Bower Poles and bent it to follow the curve of the stem. Night and day.
+              Mine was just sprawling off a shelf for two years. I thought that was normal. Got a Bower Pole, the aerial roots grabbed on, and the new leaves are three times bigger with splits for the first time. Wild.
             </p>
             <span className="text-xs font-bold text-foreground">Sarah M.</span>
             <span className="text-[10px] uppercase tracking-wider font-bold text-[#C86F4C] bg-[#C86F4C]/10 px-2 py-0.5 rounded ml-2">Verified Buyer</span>
@@ -271,6 +271,15 @@ export default function PlantParentsUseThisPage() {
         </div>
 
         <Accordion type="single" collapsible className="space-y-3">
+          <AccordionItem value="item-0" className="bg-card border-2 border-border rounded-lg px-5 shadow-sm">
+            <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline py-4 text-sm">
+              Why should my Monstera climb?
+            </AccordionTrigger>
+            <AccordionContent className="text-foreground/80 leading-relaxed pb-4 text-sm">
+              Monsteras are jungle vines. In the wild they attach to trees, grow massive fenestrated (split) leaves, and mature into the plant you see in photos. Without vertical support they stay juvenile &mdash; smaller leaves, no splits, sprawling growth. Giving them something to climb is how you unlock the plant&apos;s full form.
+            </AccordionContent>
+          </AccordionItem>
+
           <AccordionItem value="item-1" className="bg-card border-2 border-border rounded-lg px-5 shadow-sm">
             <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline py-4 text-sm">
               What plants does it work with?
