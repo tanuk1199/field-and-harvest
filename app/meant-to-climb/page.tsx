@@ -139,6 +139,124 @@ export default function MeantToClimbPage() {
       </section>
 
       {/* ============================================
+          BEFORE / AFTER - The transformation reveal
+          ============================================ */}
+      <section className="max-w-lg mx-auto px-4 pb-10">
+        <div className="text-center mb-6">
+          <Badge variant="secondary" className="text-[10px] uppercase tracking-wider font-bold bg-transparent mb-2">
+            THE SAME PLANT, 6 MONTHS APART
+          </Badge>
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground text-balance leading-tight">
+            The Difference a Pole Makes
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-2 gap-3">
+          {/* BEFORE */}
+          <div className="bg-[#F0EBE0] rounded-xl p-4 border border-[#D4C4B0]/60 relative overflow-hidden">
+            <div className="absolute top-2 right-2 text-[9px] uppercase tracking-wider font-bold bg-foreground/10 text-foreground/60 px-2 py-0.5 rounded">
+              Before
+            </div>
+            <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-[#E8E0D2] mb-3 flex items-center justify-center">
+              <div className="text-center px-3 opacity-60">
+                <div className="text-4xl mb-2">&#127793;</div>
+                <p className="text-[10px] uppercase tracking-wider font-bold text-foreground/60">
+                  Sprawling &bull; No Support
+                </p>
+              </div>
+            </div>
+            <p className="text-xs font-bold text-foreground/70 mb-1.5">Your Monstera Now</p>
+            <ul className="text-[11px] text-foreground/60 space-y-1 leading-snug">
+              <li>&bull; Small, unsplit juvenile leaves</li>
+              <li>&bull; Stem leans or trails sideways</li>
+              <li>&bull; Stays stuck at the same size</li>
+            </ul>
+          </div>
+
+          {/* AFTER */}
+          <div className="bg-card rounded-xl p-4 border-2 border-[#C86F4C] relative overflow-hidden shadow-md">
+            <div className="absolute top-2 right-2 text-[9px] uppercase tracking-wider font-bold bg-[#C86F4C] text-white px-2 py-0.5 rounded">
+              After
+            </div>
+            <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-3">
+              <BowerAsset name="reason3Image" alt="Monstera climbing with mature fenestrated leaves" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+            </div>
+            <p className="text-xs font-bold text-foreground mb-1.5">With Something to Climb</p>
+            <ul className="text-[11px] text-foreground/80 space-y-1 leading-snug">
+              <li>&bull; Leaves triple in size</li>
+              <li>&bull; Famous splits finally appear</li>
+              <li>&bull; Climbs 3&ndash;5 ft per year</li>
+            </ul>
+          </div>
+        </div>
+
+        <p className="text-sm text-center text-foreground/70 mt-5 italic text-pretty max-w-md mx-auto">
+          This isn&apos;t two different plants. It&apos;s the same plant, before and after it had something to climb.
+        </p>
+      </section>
+
+      {/* ============================================
+          3-STEP MECHANISM - How climbing transforms
+          ============================================ */}
+      <section className="max-w-lg mx-auto px-4 pb-10">
+        <div className="text-center mb-6">
+          <Badge variant="secondary" className="text-[10px] uppercase tracking-wider font-bold bg-transparent mb-2">
+            HOW IT ACTUALLY WORKS
+          </Badge>
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground text-balance leading-tight">
+            Why Climbing Changes Everything
+          </h2>
+        </div>
+
+        <div className="space-y-3">
+          <div className="bg-card rounded-xl p-4 border border-border flex items-start gap-4 shadow-sm">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#C86F4C] text-white font-bold text-base flex items-center justify-center">
+              1
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="font-bold text-foreground text-sm mb-0.5">Aerial roots attach to the coir</p>
+              <p className="text-xs text-foreground/70 leading-relaxed">
+                Monstera roots evolved to grip tree bark. The coir wrap has the same rough texture, so they latch on within weeks &mdash; no tying required.
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-card rounded-xl p-4 border border-border flex items-start gap-4 shadow-sm">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#C86F4C] text-white font-bold text-base flex items-center justify-center">
+              2
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="font-bold text-foreground text-sm mb-0.5">The plant hits maturity</p>
+              <p className="text-xs text-foreground/70 leading-relaxed">
+                Once it&apos;s climbing, your Monstera thinks it&apos;s reaching the canopy. That signal flips it from juvenile mode into its full adult form.
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-card rounded-xl p-4 border border-border flex items-start gap-4 shadow-sm">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#C86F4C] text-white font-bold text-base flex items-center justify-center">
+              3
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="font-bold text-foreground text-sm mb-0.5">Leaves triple and split open</p>
+              <p className="text-xs text-foreground/70 leading-relaxed">
+                The fenestrations Monsteras are famous for only appear on mature, climbing plants. Without vertical support, they never happen.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================
+          AUTHORITY LINE - Bridge to product card
+          ============================================ */}
+      <section className="max-w-lg mx-auto px-4 pb-6">
+        <p className="text-sm text-center text-foreground/80 italic text-pretty">
+          What plant collectors, Monstera hobbyists, and <span className="font-bold not-italic text-foreground">2,400+ owners</span> quietly switched to.
+        </p>
+      </section>
+
+      {/* ============================================
           PRODUCT CARD - Quick conversion
           ============================================ */}
       <section className="max-w-lg mx-auto px-4 pb-10">
