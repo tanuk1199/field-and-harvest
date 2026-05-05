@@ -74,7 +74,7 @@ export default function LandingPage() {
             size="lg"
             className="w-full mt-8 bg-[#C86F4C] hover:bg-[#C86F4C]/90 text-white font-bold py-7 text-lg rounded-lg shadow-lg transition-all hover:shadow-xl"
           >
-            Get the Wedding Gift They&apos;ll Actually Use &rarr;
+            The Gift They&apos;ll Actually Use &rarr;
           </Button>
         </a>
 
@@ -499,7 +499,7 @@ export default function LandingPage() {
               size="lg"
               className="w-full bg-[#C86F4C] hover:bg-[#C86F4C]/90 text-white font-bold py-7 text-lg rounded-lg mb-2.5 shadow-lg transition-all hover:shadow-xl"
             >
-              Get the Wedding Gift They&apos;ll Actually Use
+              The Gift They&apos;ll Actually Use
             </Button>
           </a>
           <div className="flex items-center justify-center gap-3 flex-wrap">
