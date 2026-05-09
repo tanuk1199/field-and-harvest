@@ -29,20 +29,24 @@ const VARIANTS = [
     compareAt: 160,
     badge: "Best Value — Save 44%",
   },
+  {
+    id: "44047033663531",
+    label: "3 Carriers",
+    price: 143,
+    compareAt: 240,
+    badge: "Family Stack — Save 40%",
+  },
 ] as const
 
-const QTY_OPTIONS = [1, 2, 3] as const
-
-const cartPermalink = (variantId: string, qty: number) =>
-  `https://fieldandharvestco.com/cart/${variantId}:${qty}?checkout`
+const cartPermalink = (variantId: string) =>
+  `https://fieldandharvestco.com/cart/${variantId}:1?checkout`
 
 export default function TheSaturdayToolPage() {
   const [variantIdx, setVariantIdx] = useState<number>(0)
-  const [qty, setQty] = useState<number>(1)
 
   const variant = VARIANTS[variantIdx]
-  const subtotal = variant.price * qty
-  const compareSubtotal = variant.compareAt * qty
+  const subtotal = variant.price
+  const compareSubtotal = variant.compareAt
   const savings = compareSubtotal - subtotal
   const savingsPct = Math.round(((compareSubtotal - subtotal) / compareSubtotal) * 100)
 
@@ -368,29 +372,6 @@ export default function TheSaturdayToolPage() {
                 </div>
               </div>
 
-              {/* Qty selector */}
-              <div>
-                <p className="text-xs uppercase tracking-wider font-bold text-muted-foreground mb-3">Quantity</p>
-                <div className="grid grid-cols-3 gap-2">
-                  {QTY_OPTIONS.map((q) => {
-                    const selected = q === qty
-                    return (
-                      <button
-                        key={q}
-                        onClick={() => setQty(q)}
-                        className={`py-3 rounded-lg border-2 font-bold text-base transition-all ${
-                          selected
-                            ? "border-[#C86F4C] bg-[#C86F4C] text-white shadow-md"
-                            : "border-border bg-background text-foreground hover:border-foreground/30"
-                        }`}
-                      >
-                        {q}
-                      </button>
-                    )
-                  })}
-                </div>
-              </div>
-
               {/* Free guides reminder */}
               <div className="bg-[#F4EFE3] rounded-lg p-4 flex items-start gap-3">
                 <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#DDA15E]/30 flex items-center justify-center text-base">
@@ -421,7 +402,7 @@ export default function TheSaturdayToolPage() {
 
               {/* Checkout CTA */}
               <a
-                href={cartPermalink(variant.id, qty)}
+                href={cartPermalink(variant.id)}
                 className="block"
               >
                 <Button
