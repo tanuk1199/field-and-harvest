@@ -10,9 +10,16 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import { Asset } from "@/components/asset"
+import { SatAsset } from "@/components/sat-asset"
+import { SAT_PRODUCT_GALLERY } from "@/lib/sat-images"
 
 const PDP_URL = "https://fieldandharvestco.com/products/grange-carrier-yard-garden-apron"
+
+// Ebook variant IDs — auto-added to checkout alongside the carrier (both $0).
+const EBOOK_VARIANTS = [
+  "42576239296555", // The Endless Harvest
+  "42576214949931", // Harvest Keeper's Handbook
+] as const
 
 const VARIANTS = [
   {
@@ -38,15 +45,17 @@ const VARIANTS = [
   },
 ] as const
 
-const EBOOK_ENDLESS_HARVEST = "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/Screenshot2025-12-16at4.44.33PM.png?v=1765921684"
-const EBOOK_HARVEST_KEEPERS = "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20251216_1649_HarvestGuideDisplay_simple_compose_01kcmj6ptjeb3afvd79hez40np.png?v=1765922044"
 const FREE_SHIPPING_THRESHOLD = 85
 
-const cartPermalink = (variantId: string) =>
-  `https://fieldandharvestco.com/cart/${variantId}:1?checkout`
+// Multi-line cart permalink — drops carrier + both free guides into checkout in one click.
+const cartPermalink = (variantId: string) => {
+  const items = [`${variantId}:1`, ...EBOOK_VARIANTS.map((id) => `${id}:1`)].join(",")
+  return `https://fieldandharvestco.com/cart/${items}?checkout`
+}
 
 export default function TheSaturdayToolPage() {
   const [variantIdx, setVariantIdx] = useState<number>(0)
+  const [galleryIdx, setGalleryIdx] = useState<number>(0)
   const [hideSticky, setHideSticky] = useState<boolean>(false)
   const buyRef = useRef<HTMLDivElement>(null)
 
@@ -86,7 +95,7 @@ export default function TheSaturdayToolPage() {
           HEADER
           ============================================ */}
       <header className="py-3 px-4 flex items-center justify-center bg-card">
-        <Asset name="logo" alt="Field & Harvest Co." className="h-7 md:h-10 w-auto object-contain" fallbackClassName="text-2xl md:text-3xl font-bold text-primary tracking-tight" />
+        <SatAsset name="logo" alt="Field & Harvest Co." className="h-7 md:h-10 w-auto object-contain" fallbackClassName="text-2xl md:text-3xl font-bold text-primary tracking-tight" />
       </header>
 
       {/* ============================================
@@ -94,7 +103,7 @@ export default function TheSaturdayToolPage() {
           ============================================ */}
       <section className="max-w-lg mx-auto px-4 py-8">
         <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg bg-muted">
-          <Asset name="heroImage" alt="The Grange Carrier hanging by the back door" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+          <SatAsset name="heroImage" alt="The Grange Carrier hanging by the back door" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
         </div>
 
         {/* Offer badge */}
@@ -152,7 +161,7 @@ export default function TheSaturdayToolPage() {
           </h3>
 
           <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
-            <Asset name="reason3Image" alt="Year-round canvas durability" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+            <SatAsset name="reason3Image" alt="Year-round canvas durability" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
@@ -173,7 +182,7 @@ export default function TheSaturdayToolPage() {
           </h3>
 
           <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
-            <Asset name="reason1Image" alt="Quick-Release Drop-Chute" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+            <SatAsset name="reason1Image" alt="Quick-Release Drop-Chute" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
@@ -194,7 +203,7 @@ export default function TheSaturdayToolPage() {
           </h3>
 
           <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
-            <Asset name="reason4Image" alt="Kangaroo-style pouch holds 20 pounds" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+            <SatAsset name="reason4Image" alt="Kangaroo-style pouch holds 20 pounds" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
@@ -215,7 +224,7 @@ export default function TheSaturdayToolPage() {
           </h3>
 
           <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
-            <Asset name="reason2Image" alt="Zero-Gravity Cross-Back Harness" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+            <SatAsset name="reason2Image" alt="Zero-Gravity Cross-Back Harness" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
@@ -236,7 +245,7 @@ export default function TheSaturdayToolPage() {
           </h3>
 
           <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
-            <Asset name="reason5Image" alt="Dry-Wear water-resistant lining" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+            <SatAsset name="reason5Image" alt="Dry-Wear water-resistant lining" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
@@ -257,7 +266,7 @@ export default function TheSaturdayToolPage() {
           </h3>
 
           <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
-            <Asset name="reason6Image" alt="Lifetime warranty guarantee" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+            <SatAsset name="reason6Image" alt="Lifetime warranty guarantee" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
@@ -301,43 +310,68 @@ export default function TheSaturdayToolPage() {
           </div>
 
           <div className="p-5">
-            {/* Product image */}
+            {/* Product image — driven by the selected gallery thumbnail */}
             <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-4">
-              <Asset name="productMain" alt="The Grange Carrier" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+              <SatAsset
+                key={SAT_PRODUCT_GALLERY[galleryIdx]}
+                name={SAT_PRODUCT_GALLERY[galleryIdx]}
+                alt="The Grange Carrier"
+                className="w-full h-full object-cover"
+                fallbackClassName="w-full h-full flex items-center justify-center text-4xl"
+              />
             </div>
 
-            {/* Product thumbnails */}
+            {/* Product thumbnails — click to swap the main image */}
             <div className="grid grid-cols-6 gap-1.5 mb-5">
-              {(["productThumb1", "productThumb2", "productThumb3", "productThumb4", "productThumb5", "productThumb6"] as const).map((name, i) => (
-                <div key={i} className="relative aspect-square rounded-md border-2 border-border bg-muted hover:border-primary transition-colors cursor-pointer overflow-hidden">
-                  <Asset name={name} alt={`Product view ${i + 1}`} className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-[10px] text-muted-foreground font-bold" />
-                </div>
-              ))}
+              {SAT_PRODUCT_GALLERY.map((name, i) => {
+                const selected = i === galleryIdx
+                return (
+                  <button
+                    key={name}
+                    type="button"
+                    onClick={() => setGalleryIdx(i)}
+                    aria-label={`Show product image ${i + 1}`}
+                    aria-pressed={selected}
+                    className={`relative aspect-square rounded-md border-2 bg-muted overflow-hidden transition-all ${
+                      selected
+                        ? "border-[#C86F4C] ring-2 ring-[#C86F4C]/30"
+                        : "border-border hover:border-foreground/40"
+                    }`}
+                  >
+                    <SatAsset
+                      name={name}
+                      alt={`Product view ${i + 1}`}
+                      className="w-full h-full object-cover"
+                      fallbackClassName="w-full h-full flex items-center justify-center text-[10px] text-muted-foreground font-bold"
+                    />
+                  </button>
+                )
+              })}
             </div>
 
             {/* Benefits grid */}
             <div className="grid grid-cols-2 gap-3 mb-6">
               <div className="bg-[#F4EFE3] rounded-lg p-3.5 flex items-start gap-2.5">
                 <div className="w-5 h-5 flex-shrink-0 mt-0.5">
-                  <Asset name="benefitIcon1" alt="Lightning" className="w-5 h-5 object-contain" fallbackClassName="text-base" />
+                  <SatAsset name="benefitIcon1" alt="Lightning" className="w-5 h-5 object-contain" fallbackClassName="text-base" />
                 </div>
                 <p className="text-xs text-foreground font-semibold leading-snug">1-Second Drop-Chute empties the load instantly</p>
               </div>
               <div className="bg-[#F4EFE3] rounded-lg p-3.5 flex items-start gap-2.5">
                 <div className="w-5 h-5 flex-shrink-0 mt-0.5">
-                  <Asset name="benefitIcon2" alt="Feather" className="w-5 h-5 object-contain" fallbackClassName="text-base" />
+                  <SatAsset name="benefitIcon2" alt="Feather" className="w-5 h-5 object-contain" fallbackClassName="text-base" />
                 </div>
                 <p className="text-xs text-foreground font-semibold leading-snug">Zero-Gravity Harness carries 20 lbs pain-free</p>
               </div>
               <div className="bg-[#F4EFE3] rounded-lg p-3.5 flex items-start gap-2.5">
                 <div className="w-5 h-5 flex-shrink-0 mt-0.5">
-                  <Asset name="benefitIcon3" alt="Shield" className="w-5 h-5 object-contain" fallbackClassName="text-base" />
+                  <SatAsset name="benefitIcon3" alt="Shield" className="w-5 h-5 object-contain" fallbackClassName="text-base" />
                 </div>
                 <p className="text-xs text-foreground font-semibold leading-snug">600D Canvas, thorn-proof and built for decades</p>
               </div>
               <div className="bg-[#F4EFE3] rounded-lg p-3.5 flex items-start gap-2.5">
                 <div className="w-5 h-5 flex-shrink-0 mt-0.5">
-                  <Asset name="benefitIcon4" alt="Water drop" className="w-5 h-5 object-contain" fallbackClassName="text-base" />
+                  <SatAsset name="benefitIcon4" alt="Water drop" className="w-5 h-5 object-contain" fallbackClassName="text-base" />
                 </div>
                 <p className="text-xs text-foreground font-semibold leading-snug">Water-resistant lining keeps your clothes clean</p>
               </div>
@@ -461,20 +495,22 @@ export default function TheSaturdayToolPage() {
                 {/* Image row — all 3 horizontally + vertically aligned */}
                 <div className="flex items-center gap-3">
                   <div className="relative flex-1 aspect-[3/4] rounded-md overflow-hidden bg-white shadow-md ring-1 ring-[#D4C4B0]">
-                    <img
-                      src={EBOOK_ENDLESS_HARVEST}
+                    <SatAsset
+                      name="ebookEndlessHarvest"
                       alt="The Endless Harvest gardening guide cover"
                       className="absolute inset-0 w-full h-full object-cover"
+                      fallbackClassName="absolute inset-0 w-full h-full flex items-center justify-center text-2xl"
                     />
                   </div>
                   <div className="flex-shrink-0 w-7 h-7 rounded-full bg-white shadow-sm border border-[#D4C4B0] flex items-center justify-center text-[#4A3F35] font-bold text-sm">
                     +
                   </div>
                   <div className="relative flex-1 aspect-[3/4] rounded-md overflow-hidden bg-white shadow-md ring-1 ring-[#D4C4B0]">
-                    <img
-                      src={EBOOK_HARVEST_KEEPERS}
+                    <SatAsset
+                      name="ebookHarvestKeepers"
                       alt="Harvest Keeper's Handbook cover"
                       className="absolute inset-0 w-full h-full object-cover"
+                      fallbackClassName="absolute inset-0 w-full h-full flex items-center justify-center text-2xl"
                     />
                   </div>
                 </div>
