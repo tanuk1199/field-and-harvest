@@ -395,54 +395,6 @@ export default function TheSaturdayToolPage() {
                 </div>
               </div>
 
-              {/* Two free guides — actual ebook covers */}
-              <div className="bg-[#F4EFE3] rounded-2xl border border-[#D4C4B0] p-4 md:p-5">
-                <div className="flex items-center justify-between gap-2 mb-3">
-                  <p className="text-[11px] uppercase tracking-wider font-bold text-[#4A3F35]">
-                    Two Free Guides
-                  </p>
-                  <span className="text-[10px] uppercase tracking-wider font-bold text-foreground/60">Ships with every order</span>
-                </div>
-
-                {/* Image row — all 3 horizontally + vertically aligned */}
-                <div className="flex items-center gap-3">
-                  <div className="relative flex-1 aspect-[3/4] rounded-md overflow-hidden bg-white shadow-md ring-1 ring-[#D4C4B0]">
-                    <img
-                      src={EBOOK_ENDLESS_HARVEST}
-                      alt="The Endless Harvest gardening guide cover"
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="flex-shrink-0 w-7 h-7 rounded-full bg-white shadow-sm border border-[#D4C4B0] flex items-center justify-center text-[#4A3F35] font-bold text-sm">
-                    +
-                  </div>
-                  <div className="relative flex-1 aspect-[3/4] rounded-md overflow-hidden bg-white shadow-md ring-1 ring-[#D4C4B0]">
-                    <img
-                      src={EBOOK_HARVEST_KEEPERS}
-                      alt="Harvest Keeper's Handbook cover"
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-
-                {/* Text row — mirrors the image flex so titles sit under the right covers */}
-                <div className="flex gap-3 mt-3">
-                  <div className="flex-1 px-2 text-center">
-                    <p className="text-[11px] font-bold text-foreground leading-tight">The Endless Harvest</p>
-                    <p className="text-[10px] text-muted-foreground leading-tight mt-0.5">$18 value</p>
-                  </div>
-                  <div className="flex-shrink-0 w-7" aria-hidden="true" />
-                  <div className="flex-1 px-2 text-center">
-                    <p className="text-[11px] font-bold text-foreground leading-tight">Harvest Keeper&apos;s Handbook</p>
-                    <p className="text-[10px] text-muted-foreground leading-tight mt-0.5">$15 value</p>
-                  </div>
-                </div>
-
-                <p className="text-[11px] text-foreground/70 mt-3 leading-relaxed text-center">
-                  Both digital guides auto-added at checkout. Yours to keep — even if you return.
-                </p>
-              </div>
-
               {/* Free shipping unlock — appears when subtotal hits $85+ */}
               {freeShippingUnlocked ? (
                 <div className="bg-[#E8F1E2] border-2 border-[#5A7A4A] rounded-lg p-3.5 flex items-center gap-3">
@@ -496,6 +448,54 @@ export default function TheSaturdayToolPage() {
                   Add to Cart — ${subtotal}
                 </Button>
               </a>
+
+              {/* Two free guides — bonus reinforcement after CTA */}
+              <div className="bg-[#F4EFE3] rounded-2xl border border-[#D4C4B0] p-4 md:p-5">
+                <div className="flex items-center justify-between gap-2 mb-3">
+                  <p className="text-[11px] uppercase tracking-wider font-bold text-[#4A3F35]">
+                    Two Free Guides
+                  </p>
+                  <span className="text-[10px] uppercase tracking-wider font-bold text-foreground/60">Ships with every order</span>
+                </div>
+
+                {/* Image row — all 3 horizontally + vertically aligned */}
+                <div className="flex items-center gap-3">
+                  <div className="relative flex-1 aspect-[3/4] rounded-md overflow-hidden bg-white shadow-md ring-1 ring-[#D4C4B0]">
+                    <img
+                      src={EBOOK_ENDLESS_HARVEST}
+                      alt="The Endless Harvest gardening guide cover"
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="flex-shrink-0 w-7 h-7 rounded-full bg-white shadow-sm border border-[#D4C4B0] flex items-center justify-center text-[#4A3F35] font-bold text-sm">
+                    +
+                  </div>
+                  <div className="relative flex-1 aspect-[3/4] rounded-md overflow-hidden bg-white shadow-md ring-1 ring-[#D4C4B0]">
+                    <img
+                      src={EBOOK_HARVEST_KEEPERS}
+                      alt="Harvest Keeper's Handbook cover"
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+
+                {/* Text row — mirrors the image flex so titles sit under the right covers */}
+                <div className="flex gap-3 mt-3">
+                  <div className="flex-1 px-2 text-center">
+                    <p className="text-[11px] font-bold text-foreground leading-tight">The Endless Harvest</p>
+                    <p className="text-[10px] text-muted-foreground leading-tight mt-0.5">$18 value</p>
+                  </div>
+                  <div className="flex-shrink-0 w-7" aria-hidden="true" />
+                  <div className="flex-1 px-2 text-center">
+                    <p className="text-[11px] font-bold text-foreground leading-tight">Harvest Keeper&apos;s Handbook</p>
+                    <p className="text-[10px] text-muted-foreground leading-tight mt-0.5">$15 value</p>
+                  </div>
+                </div>
+
+                <p className="text-[11px] text-foreground/70 mt-3 leading-relaxed text-center">
+                  Both digital guides auto-added at checkout. Yours to keep — even if you return.
+                </p>
+              </div>
 
               {/* Trust row */}
               <div className="flex items-center justify-center gap-3 flex-wrap text-[11px] text-muted-foreground font-medium">
