@@ -161,7 +161,7 @@ export default function TheSaturdayToolPage() {
           </h3>
 
           <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
-            <SatAsset name="reason3Image" alt="Year-round canvas durability" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+            <SatAsset name="reason1Image" alt="Year-round Saturday tool — January twigs, October leaves, July tomatoes" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
@@ -203,7 +203,7 @@ export default function TheSaturdayToolPage() {
           </h3>
 
           <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
-            <SatAsset name="reason4Image" alt="Kangaroo-style pouch holds 20 pounds" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+            <SatAsset name="reason3Image" alt="Pruners, leash, coffee, eggs — both hands stay free" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
@@ -224,7 +224,7 @@ export default function TheSaturdayToolPage() {
           </h3>
 
           <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
-            <SatAsset name="reason2Image" alt="Zero-Gravity Cross-Back Harness" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+            <SatAsset name="reason4Image" alt="Zero-Gravity Cross-Back Harness — 20 pounds across the shoulders" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
