@@ -86,7 +86,7 @@ export default function TheSaturdayToolPage() {
           ============================================ */}
       <div className="bg-primary text-center py-3 px-4 shadow-sm">
         <p className="text-sm md:text-base font-medium">
-          <span className="text-[#DDA15E] font-bold uppercase tracking-wide">SAVE 39%</span>{" "}
+          <span className="text-[#DDA15E] font-bold uppercase tracking-wide">SAVE UP TO 46%</span>{" "}
           <span className="text-primary-foreground uppercase tracking-wide">+ 2 FREE GARDENING GUIDES — LIMITED TIME</span>
         </p>
       </div>
@@ -108,7 +108,7 @@ export default function TheSaturdayToolPage() {
 
         {/* Offer badge */}
         <div className="mt-5 text-center">
-          <span className="inline-block bg-[#DDA15E]/20 rounded-md py-2 px-4 font-bold text-sm text-foreground">Save 39% + 2 Free Gardening Guides ($33 Value)</span>
+          <span className="inline-block bg-[#DDA15E]/20 rounded-md py-2 px-4 font-bold text-sm text-foreground">Save Up to 46% + 2 Free Gardening Guides ($33 Value)</span>
         </div>
 
         {/* Main headline */}
@@ -127,7 +127,7 @@ export default function TheSaturdayToolPage() {
             size="lg"
             className="w-full mt-8 bg-[#C86F4C] hover:bg-[#C86F4C]/90 text-white font-bold py-7 text-lg rounded-lg shadow-lg transition-all hover:shadow-xl"
           >
-            Save 39% + Get 2 Free Guides
+            Save Up to 46% + Get 2 Free Guides
           </Button>
         </a>
 
@@ -281,7 +281,7 @@ export default function TheSaturdayToolPage() {
       <section className="max-w-lg mx-auto px-4 pt-12 pb-4">
         <div className="text-center mb-8">
           <Badge className="bg-[#F4EFE3] text-[#4A3F35] hover:bg-[#F4EFE3] border border-[#D4C4B0] text-xs font-bold mb-5 px-4 py-1.5">
-            39% OFF + 2 Free Gardening Guides — Limited Time
+            Up to 46% OFF + 2 Free Gardening Guides — Limited Time
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance leading-tight">
             The Apron You&apos;ll Find Ten Years From Now Still Hanging Where You Left It
@@ -306,7 +306,7 @@ export default function TheSaturdayToolPage() {
         {/* Product card */}
         <div className="bg-card border-2 border-border rounded-2xl overflow-hidden shadow-lg">
           <div className="bg-gradient-to-r from-primary to-primary/90 text-primary-foreground text-center py-3 px-4">
-            <p className="text-sm font-bold tracking-wide">39% OFF + 2 FREE GARDENING GUIDES — WHILE SUPPLIES LAST</p>
+            <p className="text-sm font-bold tracking-wide">UP TO 46% OFF + 2 FREE GARDENING GUIDES — WHILE SUPPLIES LAST</p>
           </div>
 
           <div className="p-5">
@@ -669,10 +669,10 @@ export default function TheSaturdayToolPage() {
 
           <AccordionItem value="item-offer" className="bg-card border-2 border-border rounded-lg px-6 shadow-sm">
             <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline py-5">
-              How does the 39% off + 2 free guides offer work?
+              How does the discount + 2 free guides offer work?
             </AccordionTrigger>
             <AccordionContent className="text-foreground/80 leading-relaxed pb-5">
-              You get 39% off the Grange Carrier plus two free gardening guides — The Endless Harvest ($18 value) and the Harvest Keeper&apos;s Handbook for produce storage ($15 value). Total $33 in free guides, automatically applied at checkout. The discount is already reflected in the price below. The offer runs while supplies last on this season&apos;s inventory. Once it ends, pricing returns to standard.
+              You get up to 46% off the Grange Carrier (39% off a single, 44% off the 2-pack, 46% off the 3-pack) plus two free gardening guides — The Endless Harvest ($18 value) and the Harvest Keeper&apos;s Handbook for produce storage ($15 value). Total $33 in free guides, automatically added at checkout. The discount is already reflected in the price below. The offer runs while supplies last on this season&apos;s inventory. Once it ends, pricing returns to standard.
             </AccordionContent>
           </AccordionItem>
 
