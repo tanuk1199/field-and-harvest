@@ -243,9 +243,9 @@ export default function TheSaturdayToolPage() {
       </section>
 
       {/* ============================================
-          PRODUCT SECTION
+          PRODUCT + BUY SECTION (combined)
           ============================================ */}
-      <section className="max-w-lg mx-auto px-4 pt-12 pb-4">
+      <section id="buy" className="max-w-lg mx-auto px-4 pt-12 pb-4 scroll-mt-4">
         <div className="text-center mb-8">
           <Badge className="bg-[#F4EFE3] text-[#4A3F35] hover:bg-[#F4EFE3] border border-[#D4C4B0] text-xs font-bold mb-5 px-4 py-1.5">
             39% OFF + 2 Free Gardening Guides — Limited Time
@@ -292,7 +292,7 @@ export default function TheSaturdayToolPage() {
             </div>
 
             {/* Benefits grid */}
-            <div className="grid grid-cols-2 gap-3 mb-5">
+            <div className="grid grid-cols-2 gap-3 mb-6">
               <div className="bg-[#F4EFE3] rounded-lg p-3.5 flex items-start gap-2.5">
                 <div className="w-5 h-5 flex-shrink-0 mt-0.5">
                   <Asset name="benefitIcon1" alt="Lightning" className="w-5 h-5 object-contain" fallbackClassName="text-base" />
@@ -319,16 +319,139 @@ export default function TheSaturdayToolPage() {
               </div>
             </div>
 
-            {/* Secondary CTA — anchors to in-page buy section */}
-            <a href="#buy">
-              <Button
-                variant="outline"
-                size="lg"
-                className="w-full border-2 border-foreground text-foreground font-bold hover:bg-muted bg-transparent py-6 rounded-lg"
+            {/* Divider */}
+            <div className="border-t border-border mb-5" />
+
+            {/* ===== BUY INTERFACE ===== */}
+            <div className="space-y-5">
+              {/* Variant selector */}
+              <div>
+                <p className="text-xs uppercase tracking-wider font-bold text-muted-foreground mb-3">Choose Your Bundle</p>
+                <div className="space-y-2.5">
+                  {VARIANTS.map((v, i) => {
+                    const selected = i === variantIdx
+                    const pct = Math.round(((v.compareAt - v.price) / v.compareAt) * 100)
+                    return (
+                      <button
+                        key={v.id}
+                        onClick={() => setVariantIdx(i)}
+                        className={`w-full text-left rounded-lg border-2 transition-all p-4 flex items-center justify-between gap-3 ${
+                          selected
+                            ? "border-[#C86F4C] bg-[#C86F4C]/5 shadow-md"
+                            : "border-border bg-background hover:border-foreground/30"
+                        }`}
+                      >
+                        <div className="flex items-center gap-3 min-w-0">
+                          <span
+                            className={`flex-shrink-0 w-5 h-5 rounded-full border-2 transition-colors ${
+                              selected ? "border-[#C86F4C] bg-[#C86F4C]" : "border-border"
+                            }`}
+                            aria-hidden="true"
+                          >
+                            {selected && (
+                              <span className="block w-1.5 h-1.5 rounded-full bg-white mx-auto mt-[5px]" />
+                            )}
+                          </span>
+                          <div className="min-w-0">
+                            <p className="font-bold text-foreground text-base leading-tight">{v.label}</p>
+                            <p className="text-xs text-[#C86F4C] font-semibold mt-0.5 truncate">{v.badge}</p>
+                          </div>
+                        </div>
+                        <div className="text-right flex-shrink-0">
+                          <p className="font-bold text-foreground text-base leading-none">${v.price}</p>
+                          <p className="text-xs text-muted-foreground line-through leading-none mt-1">${v.compareAt}</p>
+                          <p className="text-[10px] uppercase tracking-wider font-bold text-[#C86F4C] mt-1">Save {pct}%</p>
+                        </div>
+                      </button>
+                    )
+                  })}
+                </div>
+              </div>
+
+              {/* Qty selector */}
+              <div>
+                <p className="text-xs uppercase tracking-wider font-bold text-muted-foreground mb-3">Quantity</p>
+                <div className="grid grid-cols-3 gap-2">
+                  {QTY_OPTIONS.map((q) => {
+                    const selected = q === qty
+                    return (
+                      <button
+                        key={q}
+                        onClick={() => setQty(q)}
+                        className={`py-3 rounded-lg border-2 font-bold text-base transition-all ${
+                          selected
+                            ? "border-[#C86F4C] bg-[#C86F4C] text-white shadow-md"
+                            : "border-border bg-background text-foreground hover:border-foreground/30"
+                        }`}
+                      >
+                        {q}
+                      </button>
+                    )
+                  })}
+                </div>
+              </div>
+
+              {/* Free guides reminder */}
+              <div className="bg-[#F4EFE3] rounded-lg p-4 flex items-start gap-3">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#DDA15E]/30 flex items-center justify-center text-base">
+                  🎁
+                </div>
+                <div className="min-w-0">
+                  <p className="text-sm font-bold text-foreground leading-tight">2 Free Gardening Guides Included</p>
+                  <p className="text-xs text-foreground/70 mt-1 leading-relaxed">
+                    The Endless Harvest ($18) + Harvest Keeper&apos;s Handbook ($15). Auto-added at checkout.
+                  </p>
+                </div>
+              </div>
+
+              {/* Subtotal + savings */}
+              <div className="border-t border-border pt-5">
+                <div className="flex items-center justify-between mb-1">
+                  <p className="text-sm font-medium text-muted-foreground">Subtotal</p>
+                  <div className="text-right">
+                    <span className="text-sm text-muted-foreground line-through mr-2">${compareSubtotal}</span>
+                    <span className="text-2xl font-bold text-foreground">${subtotal}</span>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between">
+                  <p className="text-xs text-muted-foreground">You save</p>
+                  <p className="text-sm font-bold text-[#C86F4C]">${savings} ({savingsPct}% off)</p>
+                </div>
+              </div>
+
+              {/* Checkout CTA */}
+              <a
+                href={cartPermalink(variant.id, qty)}
+                className="block"
               >
-                Pick Your Bundle Below
-              </Button>
-            </a>
+                <Button
+                  size="lg"
+                  className="w-full bg-[#C86F4C] hover:bg-[#C86F4C]/90 text-white font-bold py-7 text-lg rounded-lg shadow-lg transition-all hover:shadow-xl"
+                >
+                  Skip to Checkout — ${subtotal}
+                </Button>
+              </a>
+
+              {/* Trust row */}
+              <div className="flex items-center justify-center gap-3 flex-wrap text-[11px] text-muted-foreground font-medium">
+                <span className="flex items-center gap-1.5">
+                  <span className="text-[#C86F4C]">✓</span> 60-day trial
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <span className="text-[#C86F4C]">✓</span> Lifetime warranty
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <span className="text-[#C86F4C]">✓</span> Free shipping over $85
+                </span>
+              </div>
+
+              {/* PDP fallback link */}
+              <div className="text-center">
+                <a href={PDP_URL} className="text-xs text-muted-foreground underline hover:text-foreground">
+                  See full product details
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -423,7 +546,7 @@ export default function TheSaturdayToolPage() {
       {/* ============================================
           FAQ — Saturday-tool framed
           ============================================ */}
-      <section className="max-w-lg mx-auto px-4 pt-8 pb-16">
+      <section className="max-w-lg mx-auto px-4 pt-8 pb-32">
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance leading-tight">
             Common Questions
@@ -506,149 +629,6 @@ export default function TheSaturdayToolPage() {
             </AccordionContent>
           </AccordionItem>
         </Accordion>
-      </section>
-
-      {/* ============================================
-          BUY SECTION — variant + qty + skip-to-checkout
-          ============================================ */}
-      <section id="buy" className="max-w-lg mx-auto px-4 pt-4 pb-32 scroll-mt-4">
-        <div className="bg-card border-2 border-[#C86F4C] rounded-2xl overflow-hidden shadow-2xl">
-          {/* Header strip */}
-          <div className="bg-gradient-to-r from-primary to-primary/90 text-primary-foreground text-center py-4 px-4">
-            <p className="text-base md:text-lg font-bold tracking-wide uppercase">Hang It By The Back Door</p>
-            <p className="text-xs text-primary-foreground/80 mt-0.5">Save 39% + 2 Free Guides ($33 Value)</p>
-          </div>
-
-          <div className="p-5 md:p-6 space-y-6">
-            {/* Variant selector */}
-            <div>
-              <p className="text-xs uppercase tracking-wider font-bold text-muted-foreground mb-3">Choose Your Bundle</p>
-              <div className="space-y-2.5">
-                {VARIANTS.map((v, i) => {
-                  const selected = i === variantIdx
-                  const pct = Math.round(((v.compareAt - v.price) / v.compareAt) * 100)
-                  return (
-                    <button
-                      key={v.id}
-                      onClick={() => setVariantIdx(i)}
-                      className={`w-full text-left rounded-lg border-2 transition-all p-4 flex items-center justify-between gap-3 ${
-                        selected
-                          ? "border-[#C86F4C] bg-[#C86F4C]/5 shadow-md"
-                          : "border-border bg-background hover:border-foreground/30"
-                      }`}
-                    >
-                      <div className="flex items-center gap-3 min-w-0">
-                        <span
-                          className={`flex-shrink-0 w-5 h-5 rounded-full border-2 transition-colors ${
-                            selected ? "border-[#C86F4C] bg-[#C86F4C]" : "border-border"
-                          }`}
-                          aria-hidden="true"
-                        >
-                          {selected && (
-                            <span className="block w-1.5 h-1.5 rounded-full bg-white mx-auto mt-[5px]" />
-                          )}
-                        </span>
-                        <div className="min-w-0">
-                          <p className="font-bold text-foreground text-base leading-tight">{v.label}</p>
-                          <p className="text-xs text-[#C86F4C] font-semibold mt-0.5 truncate">{v.badge}</p>
-                        </div>
-                      </div>
-                      <div className="text-right flex-shrink-0">
-                        <p className="font-bold text-foreground text-base leading-none">${v.price}</p>
-                        <p className="text-xs text-muted-foreground line-through leading-none mt-1">${v.compareAt}</p>
-                        <p className="text-[10px] uppercase tracking-wider font-bold text-[#C86F4C] mt-1">Save {pct}%</p>
-                      </div>
-                    </button>
-                  )
-                })}
-              </div>
-            </div>
-
-            {/* Qty selector */}
-            <div>
-              <p className="text-xs uppercase tracking-wider font-bold text-muted-foreground mb-3">Quantity</p>
-              <div className="grid grid-cols-3 gap-2">
-                {QTY_OPTIONS.map((q) => {
-                  const selected = q === qty
-                  return (
-                    <button
-                      key={q}
-                      onClick={() => setQty(q)}
-                      className={`py-3 rounded-lg border-2 font-bold text-base transition-all ${
-                        selected
-                          ? "border-[#C86F4C] bg-[#C86F4C] text-white shadow-md"
-                          : "border-border bg-background text-foreground hover:border-foreground/30"
-                      }`}
-                    >
-                      {q}
-                    </button>
-                  )
-                })}
-              </div>
-            </div>
-
-            {/* Free guides reminder */}
-            <div className="bg-[#F4EFE3] rounded-lg p-4 flex items-start gap-3">
-              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#DDA15E]/30 flex items-center justify-center text-base">
-                🎁
-              </div>
-              <div className="min-w-0">
-                <p className="text-sm font-bold text-foreground leading-tight">2 Free Gardening Guides Included</p>
-                <p className="text-xs text-foreground/70 mt-1 leading-relaxed">
-                  The Endless Harvest ($18) + Harvest Keeper&apos;s Handbook ($15). Auto-added at checkout.
-                </p>
-              </div>
-            </div>
-
-            {/* Subtotal + savings */}
-            <div className="border-t border-border pt-5">
-              <div className="flex items-center justify-between mb-1">
-                <p className="text-sm font-medium text-muted-foreground">Subtotal</p>
-                <div className="text-right">
-                  <span className="text-sm text-muted-foreground line-through mr-2">${compareSubtotal}</span>
-                  <span className="text-2xl font-bold text-foreground">${subtotal}</span>
-                </div>
-              </div>
-              <div className="flex items-center justify-between">
-                <p className="text-xs text-muted-foreground">You save</p>
-                <p className="text-sm font-bold text-[#C86F4C]">${savings} ({savingsPct}% off)</p>
-              </div>
-            </div>
-
-            {/* Checkout CTA */}
-            <a
-              href={cartPermalink(variant.id, qty)}
-              className="block"
-            >
-              <Button
-                size="lg"
-                className="w-full bg-[#C86F4C] hover:bg-[#C86F4C]/90 text-white font-bold py-7 text-lg rounded-lg shadow-lg transition-all hover:shadow-xl"
-              >
-                Skip to Checkout — ${subtotal}
-              </Button>
-            </a>
-
-            {/* Trust row */}
-            <div className="flex items-center justify-center gap-3 flex-wrap text-[11px] text-muted-foreground font-medium pt-1">
-              <span className="flex items-center gap-1.5">
-                <span className="text-[#C86F4C]">✓</span> 60-day trial
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="text-[#C86F4C]">✓</span> Lifetime warranty
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="text-[#C86F4C]">✓</span> Free shipping over $85
-              </span>
-            </div>
-
-            {/* PDP fallback link */}
-            <div className="text-center">
-              <a href={PDP_URL} className="text-xs text-muted-foreground underline hover:text-foreground">
-                See full product details
-              </a>
-            </div>
-          </div>
-        </div>
       </section>
 
       {/* ============================================
