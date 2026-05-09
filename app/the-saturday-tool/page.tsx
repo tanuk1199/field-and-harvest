@@ -169,24 +169,24 @@ export default function TheSaturdayToolPage() {
           </p>
         </div>
 
-        {/* Reason 2 — ONE TRIP */}
+        {/* Reason 2 — DROP-CHUTE */}
         <div className="bg-card rounded-2xl p-8 border border-border shadow-sm">
           <div className="flex items-center justify-between mb-4">
             <Badge variant="secondary" className="text-xs uppercase tracking-wider font-bold bg-transparent">
-              ONE TRIP
+              DROP-CHUTE
             </Badge>
             <span className="text-xs font-bold text-muted-foreground">02</span>
           </div>
           <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-6 text-balance leading-tight">
-            Five trips around the yard becomes one
+            One pull. The whole load empties in a second.
           </h3>
 
           <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
-            <SatAsset name="reason1Image" alt="Quick-Release Drop-Chute" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+            <SatAsset name="reason2Image" alt="1-Second Quick-Release Drop-Chute" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
-            You go out to grab one thing. You come back with three weeds you pulled on the way, four twigs from the path, two deadheads, the trowel from yesterday, and whatever the kid handed you. Right now you&apos;re trying to do that with cargo pockets and a torn Whole Foods tote. The Grange Carrier holds a full peck without collapsing — and a 1-second Drop-Chute empties everything onto the compost pile or the kitchen counter in one motion. <span className="font-bold text-foreground">One trip. Hands free. Done in half the time.</span>
+            Most aprons turn into a small wrestling match every time you need to empty them. You squat, you crouch, you tip them out by hand. The Grange Carrier doesn&apos;t. The bottom is a Quick-Release Drop-Chute — pull the strap, the floor opens, the entire load drops in a second. Onto the compost pile. Onto the kitchen counter. Into the yard-waste bag. <span className="font-bold text-foreground">No bending. No tipping. No second trip.</span> It&apos;s the part of the apron everyone shows their friends first.
           </p>
         </div>
 
