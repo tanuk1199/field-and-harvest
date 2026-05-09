@@ -254,7 +254,7 @@ export default function TheSaturdayToolPage() {
       {/* ============================================
           PRODUCT + BUY SECTION (combined)
           ============================================ */}
-      <section id="buy" className="max-w-lg mx-auto px-4 pt-12 pb-4 scroll-mt-4">
+      <section className="max-w-lg mx-auto px-4 pt-12 pb-4">
         <div className="text-center mb-8">
           <Badge className="bg-[#F4EFE3] text-[#4A3F35] hover:bg-[#F4EFE3] border border-[#D4C4B0] text-xs font-bold mb-5 px-4 py-1.5">
             39% OFF + 2 Free Gardening Guides — Limited Time
@@ -331,8 +331,11 @@ export default function TheSaturdayToolPage() {
             {/* Divider */}
             <div className="border-t border-border mb-5" />
 
-            {/* ===== BUY INTERFACE ===== */}
-            <div className="space-y-5">
+            {/* ===== BUY INTERFACE =====
+                #buy anchor sits here so any CTA lands users with
+                the variant picker in focus and a sliver of the
+                gallery + benefits visible above the fold. */}
+            <div id="buy" className="space-y-5 scroll-mt-[280px] md:scroll-mt-[320px]">
               {/* Variant selector */}
               <div>
                 <p className="text-xs uppercase tracking-wider font-bold text-muted-foreground mb-3">Choose Your Bundle</p>
