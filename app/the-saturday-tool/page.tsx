@@ -32,9 +32,9 @@ const VARIANTS = [
   {
     id: "44047033663531",
     label: "3 Carriers",
-    price: 139,
+    price: 129,
     compareAt: 240,
-    badge: "Family Stack — Save 42%",
+    badge: "Family Stack — Save 46%",
   },
 ] as const
 
@@ -377,13 +377,13 @@ export default function TheSaturdayToolPage() {
                 </div>
               </div>
 
-              {/* Gift stack — actual ebook covers */}
+              {/* Two free guides — actual ebook covers */}
               <div className="bg-[#F4EFE3] rounded-2xl border border-[#D4C4B0] p-4 md:p-5">
                 <div className="flex items-center justify-between gap-2 mb-3">
                   <p className="text-[11px] uppercase tracking-wider font-bold text-[#4A3F35]">
-                    Free Gift Stack — $33 Value
+                    Two Free Guides
                   </p>
-                  <span className="text-[10px] uppercase tracking-wider font-bold text-white bg-[#C86F4C] px-2 py-0.5 rounded">Included</span>
+                  <span className="text-[10px] uppercase tracking-wider font-bold text-foreground/60">Ships with every order</span>
                 </div>
 
                 <div className="flex items-end gap-3">
