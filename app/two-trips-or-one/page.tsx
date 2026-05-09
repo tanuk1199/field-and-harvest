@@ -15,12 +15,12 @@ export default function TwoTripsOrOnePage() {
   return (
     <div className="min-h-screen bg-background">
       {/* ============================================
-          PROMOTIONAL BANNER — evergreen trust strip
+          PROMOTIONAL BANNER — offer-led
           ============================================ */}
       <div className="bg-primary text-center py-3 px-4 shadow-sm">
         <p className="text-sm md:text-base font-medium">
-          <span className="text-[#DDA15E] font-bold uppercase tracking-wide">LIFETIME WARRANTY</span>{" "}
-          <span className="text-primary-foreground uppercase tracking-wide">· 60-DAY TRIAL · FREE SHIPPING OVER $85</span>
+          <span className="text-[#DDA15E] font-bold uppercase tracking-wide">SAVE 39%</span>{" "}
+          <span className="text-primary-foreground uppercase tracking-wide">+ 2 FREE GARDENING GUIDES — LIMITED TIME</span>
         </p>
       </div>
 
@@ -39,9 +39,9 @@ export default function TwoTripsOrOnePage() {
           <Asset name="heroImage" alt="The Grange Carrier" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
         </div>
 
-        {/* Trust badge */}
+        {/* Offer badge */}
         <div className="mt-5 text-center">
-          <span className="inline-block bg-[#DDA15E]/20 rounded-md py-2 px-4 font-bold text-sm text-foreground">22,000+ Gardeners · 4.8 Stars · Lifetime Warranty</span>
+          <span className="inline-block bg-[#DDA15E]/20 rounded-md py-2 px-4 font-bold text-sm text-foreground">Save 39% + 2 Free Gardening Guides ($33 Value)</span>
         </div>
 
         {/* Main headline */}
@@ -50,7 +50,7 @@ export default function TwoTripsOrOnePage() {
             6 Reasons This Becomes the <span className="text-[#C86F4C]">Apron You&apos;ll Never Take Off</span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground mt-4 leading-relaxed text-pretty max-w-md mx-auto">
-            Five trips to the kitchen become one. Hands stay free. The Grange Carrier is the apron 22,000+ gardeners stopped putting away after they bought it. Built like a hiking pack, made for the work.
+            Five trips to the kitchen become one. Tomatoes, weeds, twigs, eggs, the deadheading you forgot to finish — both hands stay free for the work. The Grange Carrier is the apron 22,000+ gardeners stopped putting away after they bought it.
           </p>
         </div>
 
@@ -60,7 +60,7 @@ export default function TwoTripsOrOnePage() {
             size="lg"
             className="w-full mt-8 bg-[#C86F4C] hover:bg-[#C86F4C]/90 text-white font-bold py-7 text-lg rounded-lg shadow-lg transition-all hover:shadow-xl"
           >
-            Get the Grange Carrier
+            Save 39% + Get 2 Free Guides
           </Button>
         </a>
 
@@ -98,7 +98,7 @@ export default function TwoTripsOrOnePage() {
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
-            You go out for tomatoes. You come back with tomatoes, basil you forgot you had, three eggs, and the trowel you couldn&apos;t find yesterday. Right now you&apos;re trying to do that with a Whole Foods tote that&apos;s already torn open. The Grange Carrier holds a full peck without collapsing, and a 1-second Drop-Chute empties it onto the kitchen counter in one motion. <span className="font-bold text-foreground">One trip. Hands free. Done by 7 AM.</span>
+            You go out for tomatoes. You come back with tomatoes, basil you forgot you had, three eggs, the trowel from yesterday, a handful of weeds you pulled on the way, and a few twigs from the path. Right now you&apos;re trying to do that with a Whole Foods tote that&apos;s already torn open. The Grange Carrier holds a full peck without collapsing — and a 1-second Drop-Chute empties it onto the kitchen counter or the compost pile in one motion. <span className="font-bold text-foreground">One trip. Hands free. Done by 7 AM.</span>
           </p>
         </div>
 
@@ -111,7 +111,7 @@ export default function TwoTripsOrOnePage() {
             <span className="text-xs font-bold text-muted-foreground">02</span>
           </div>
           <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-6 text-balance leading-tight">
-            Tomatoes, basil, eggs, scissors. Both hands stay free.
+            Tomatoes, weeds, twigs, eggs. Both hands stay free.
           </h3>
 
           <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
@@ -119,7 +119,7 @@ export default function TwoTripsOrOnePage() {
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
-            The kangaroo-style pouch holds a full peck without collapsing. Built-in tool sheaths keep pruning shears within reach. A zippered vault pocket protects your phone from dirt and moisture. Both hands stay free for the gate, the dog, the kid, the second pass at the cherry tomatoes. <span className="font-bold text-foreground">No more juggling a basket, a bucket, and a phone in the same hand.</span>
+            The kangaroo-style pouch holds a full peck without collapsing. Built-in tool sheaths keep pruning shears and the weeder within reach. A zippered vault pocket protects your phone from dirt and moisture. Both hands stay free for the gate, the dog, the kid, the rocks you pull out of the bed, the deadheaded blooms on the way back. <span className="font-bold text-foreground">No more juggling a basket, a bucket, and a phone in the same hand.</span>
           </p>
         </div>
 
@@ -140,7 +140,7 @@ export default function TwoTripsOrOnePage() {
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
-            Cheap aprons fray, sag, and tear within a season. You&apos;ve probably watched it happen. Field-Weave 600D Canvas is the same fabric premium hiking packs are built from — thorn-proof, puncture-resistant, semi-rigid enough to hold its shape under a full load. It doesn&apos;t wear out. It breaks in. <span className="font-bold text-foreground">By July, gardeners stop putting it away. By August, they forget they owned anything else.</span>
+            Cheap aprons fray, sag, and tear within a season. You&apos;ve probably watched it happen. Field-Weave 600D Canvas is the same fabric premium hiking packs are built from — thorn-proof, puncture-resistant, semi-rigid enough to hold its shape under a full load. Sharp twigs, wet leaves, jagged rocks, sticky weeds. None of it wears it down. <span className="font-bold text-foreground">By July, gardeners stop putting it away. By August, they forget they owned anything else.</span>
           </p>
         </div>
 
@@ -174,7 +174,7 @@ export default function TwoTripsOrOnePage() {
             <span className="text-xs font-bold text-muted-foreground">05</span>
           </div>
           <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-6 text-balance leading-tight">
-            Garden to kitchen. Same shirt.
+            Garden, yard, kitchen. Same shirt.
           </h3>
 
           <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
@@ -182,7 +182,7 @@ export default function TwoTripsOrOnePage() {
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
-            Dew, tomato juice, wet soil. Cotton aprons soak through in minutes and transfer everything to the clothes underneath. The Dry-Wear barrier lines the entire pouch and blocks moisture on contact. A quick wipe-down and the apron is ready for the next session. <span className="font-bold text-foreground">Your favorite shirts stop dying in the garden.</span>
+            Mud, sap, wet leaves, tomato juice, sticky weed roots. Cotton aprons soak through in minutes and transfer everything to the clothes underneath. The Dry-Wear barrier lines the entire pouch and blocks moisture on contact. A quick wipe-down and the apron is ready for the next session — yard cleanup in the morning, harvest at noon, dinner at six. <span className="font-bold text-foreground">Your favorite shirts stop dying in the garden.</span>
           </p>
         </div>
 
@@ -214,13 +214,13 @@ export default function TwoTripsOrOnePage() {
       <section className="max-w-lg mx-auto px-4 pt-12 pb-4">
         <div className="text-center mb-8">
           <Badge className="bg-[#F4EFE3] text-[#4A3F35] hover:bg-[#F4EFE3] border border-[#D4C4B0] text-xs font-bold mb-5 px-4 py-1.5">
-            Lifetime Warranty · 60-Day Trial
+            39% OFF + 2 Free Gardening Guides — Limited Time
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance leading-tight">
             The Apron You&apos;ll Find Ten Years From Now Still Hanging Where You Left It
           </h2>
           <p className="text-lg text-muted-foreground mb-6 text-pretty leading-relaxed max-w-md mx-auto">
-            22,000+ gardeners stopped putting theirs away after they bought it. Built once. Used every harvest. Backed for life.
+            22,000+ gardeners stopped putting theirs away after they bought it. Used for harvest, weeding, yard cleanup, leaf hauls, pet runs. Built once. Backed for life.
           </p>
 
           {/* Social proof */}
@@ -239,7 +239,7 @@ export default function TwoTripsOrOnePage() {
         {/* Product card */}
         <div className="bg-card border-2 border-border rounded-2xl overflow-hidden shadow-lg">
           <div className="bg-gradient-to-r from-primary to-primary/90 text-primary-foreground text-center py-3 px-4">
-            <p className="text-sm font-bold tracking-wide">FREE SHIPPING OVER $85 · 60-DAY TRIAL · LIFETIME WARRANTY</p>
+            <p className="text-sm font-bold tracking-wide">39% OFF + 2 FREE GARDENING GUIDES — WHILE SUPPLIES LAST</p>
           </div>
 
           <div className="p-5">
@@ -400,6 +400,24 @@ export default function TwoTripsOrOnePage() {
         </div>
 
         <Accordion type="single" collapsible className="space-y-4">
+          <AccordionItem value="item-0" className="bg-card border-2 border-border rounded-lg px-6 shadow-sm">
+            <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline py-5">
+              Is this just for harvest, or can I use it year-round?
+            </AccordionTrigger>
+            <AccordionContent className="text-foreground/80 leading-relaxed pb-5">
+              Year-round. Most owners use it for far more than tomato runs — spring weeding, fall leaf and twig cleanup, hauling rocks out of new beds, deadheading, mulching, pet/chicken runs, even toolbelt duty for general yard work. The 600D canvas handles thorns, sap, mud, and wet leaves without flinching, and the Drop-Chute empties everything onto the compost pile in one motion. Gardeners who buy it in spring are still wearing it through fall cleanup.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-offer" className="bg-card border-2 border-border rounded-lg px-6 shadow-sm">
+            <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline py-5">
+              How does the 39% off + 2 free guides offer work?
+            </AccordionTrigger>
+            <AccordionContent className="text-foreground/80 leading-relaxed pb-5">
+              You get 39% off the Grange Carrier plus two free gardening guides — The Endless Harvest ($18 value) and the Harvest Keeper&apos;s Handbook for produce storage ($15 value). Total $33 in free guides, automatically applied at checkout. The offer runs while supplies last on this season&apos;s inventory. Once it ends, pricing returns to standard. If you&apos;re considering, this is the window.
+            </AccordionContent>
+          </AccordionItem>
+
           <AccordionItem value="item-1" className="bg-card border-2 border-border rounded-lg px-6 shadow-sm">
             <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline py-5">
               How long does this actually last?
@@ -466,7 +484,7 @@ export default function TwoTripsOrOnePage() {
               size="lg"
               className="w-full bg-[#C86F4C] hover:bg-[#C86F4C]/90 text-white font-bold py-7 text-lg rounded-lg mb-2.5 shadow-lg transition-all hover:shadow-xl"
             >
-              Get the Apron — Free Shipping Over $85
+              Save 39% + Get 2 Free Guides
             </Button>
           </a>
           <div className="flex items-center justify-center gap-3 flex-wrap">
