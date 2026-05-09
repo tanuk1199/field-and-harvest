@@ -747,7 +747,7 @@ export default function TheSaturdayToolPage() {
               size="lg"
               className="w-full bg-[#C86F4C] hover:bg-[#C86F4C]/90 text-white font-bold py-7 text-lg rounded-lg mb-2.5 shadow-lg transition-all hover:shadow-xl"
             >
-              Save 39% + Get 2 Free Guides
+              Save Up to 46% + Get 2 Free Guides
             </Button>
           </a>
           <div className="flex items-center justify-center gap-3 flex-wrap">
