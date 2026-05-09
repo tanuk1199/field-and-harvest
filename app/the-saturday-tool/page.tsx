@@ -389,36 +389,37 @@ export default function TheSaturdayToolPage() {
                   <span className="text-[10px] uppercase tracking-wider font-bold text-foreground/60">Ships with every order</span>
                 </div>
 
-                <div className="flex items-end gap-3">
-                  {/* Book 1 — Endless Harvest */}
-                  <div className="flex-1 flex flex-col items-center">
-                    <div className="relative w-full aspect-[3/4] rounded-md overflow-hidden bg-white shadow-md ring-1 ring-[#D4C4B0]">
-                      <img
-                        src={EBOOK_ENDLESS_HARVEST}
-                        alt="The Endless Harvest gardening guide cover"
-                        className="absolute inset-0 w-full h-full object-cover"
-                      />
-                    </div>
-                    <p className="text-[11px] font-bold text-foreground mt-2 leading-tight text-center">The Endless Harvest</p>
-                    <p className="text-[10px] text-muted-foreground leading-tight">$18 value</p>
+                {/* Image row — all 3 horizontally + vertically aligned */}
+                <div className="flex items-center gap-3">
+                  <div className="relative flex-1 aspect-[3/4] rounded-md overflow-hidden bg-white shadow-md ring-1 ring-[#D4C4B0]">
+                    <img
+                      src={EBOOK_ENDLESS_HARVEST}
+                      alt="The Endless Harvest gardening guide cover"
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
                   </div>
-
-                  {/* Plus */}
-                  <div className="flex-shrink-0 w-7 h-7 rounded-full bg-white shadow-sm border border-[#D4C4B0] flex items-center justify-center text-[#4A3F35] font-bold text-sm mb-7">
+                  <div className="flex-shrink-0 w-7 h-7 rounded-full bg-white shadow-sm border border-[#D4C4B0] flex items-center justify-center text-[#4A3F35] font-bold text-sm">
                     +
                   </div>
+                  <div className="relative flex-1 aspect-[3/4] rounded-md overflow-hidden bg-white shadow-md ring-1 ring-[#D4C4B0]">
+                    <img
+                      src={EBOOK_HARVEST_KEEPERS}
+                      alt="Harvest Keeper's Handbook cover"
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
 
-                  {/* Book 2 — Harvest Keeper's Handbook */}
-                  <div className="flex-1 flex flex-col items-center">
-                    <div className="relative w-full aspect-[3/4] rounded-md overflow-hidden bg-white shadow-md ring-1 ring-[#D4C4B0]">
-                      <img
-                        src={EBOOK_HARVEST_KEEPERS}
-                        alt="Harvest Keeper's Handbook cover"
-                        className="absolute inset-0 w-full h-full object-cover"
-                      />
-                    </div>
-                    <p className="text-[11px] font-bold text-foreground mt-2 leading-tight text-center">Harvest Keeper&apos;s Handbook</p>
-                    <p className="text-[10px] text-muted-foreground leading-tight">$15 value</p>
+                {/* Text row — mirrors the image flex so titles sit under the right covers */}
+                <div className="flex gap-3 mt-3">
+                  <div className="flex-1 px-2 text-center">
+                    <p className="text-[11px] font-bold text-foreground leading-tight">The Endless Harvest</p>
+                    <p className="text-[10px] text-muted-foreground leading-tight mt-0.5">$18 value</p>
+                  </div>
+                  <div className="flex-shrink-0 w-7" aria-hidden="true" />
+                  <div className="flex-1 px-2 text-center">
+                    <p className="text-[11px] font-bold text-foreground leading-tight">Harvest Keeper&apos;s Handbook</p>
+                    <p className="text-[10px] text-muted-foreground leading-tight mt-0.5">$15 value</p>
                   </div>
                 </div>
 
@@ -477,7 +478,7 @@ export default function TheSaturdayToolPage() {
                   size="lg"
                   className="w-full bg-[#C86F4C] hover:bg-[#C86F4C]/90 text-white font-bold py-7 text-lg rounded-lg shadow-lg transition-all hover:shadow-xl"
                 >
-                  Skip to Checkout — ${subtotal}
+                  Add to Cart — ${subtotal}
                 </Button>
               </a>
 
