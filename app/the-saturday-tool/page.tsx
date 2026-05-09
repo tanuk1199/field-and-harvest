@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Star } from "lucide-react"
@@ -47,6 +47,21 @@ const cartPermalink = (variantId: string) =>
 
 export default function TheSaturdayToolPage() {
   const [variantIdx, setVariantIdx] = useState<number>(0)
+  const [hideSticky, setHideSticky] = useState<boolean>(false)
+  const buyRef = useRef<HTMLDivElement>(null)
+
+  // Hide the sticky CTA whenever the in-page buy interface is in the viewport,
+  // so we don't show two competing CTAs at once. Comes back when the user
+  // scrolls past the buy section into the FAQ.
+  useEffect(() => {
+    if (!buyRef.current) return
+    const observer = new IntersectionObserver(
+      ([entry]) => setHideSticky(entry.isIntersecting),
+      { rootMargin: "0px 0px -120px 0px" }
+    )
+    observer.observe(buyRef.current)
+    return () => observer.disconnect()
+  }, [])
 
   const variant = VARIANTS[variantIdx]
   const subtotal = variant.price
@@ -335,7 +350,7 @@ export default function TheSaturdayToolPage() {
                 #buy anchor sits here so any CTA lands users with
                 the variant picker in focus and a sliver of the
                 gallery + benefits visible above the fold. */}
-            <div id="buy" className="space-y-5 scroll-mt-[280px] md:scroll-mt-[320px]">
+            <div ref={buyRef} id="buy" className="space-y-5 scroll-mt-[280px] md:scroll-mt-[320px]">
               {/* Variant selector */}
               <div>
                 <p className="text-xs uppercase tracking-wider font-bold text-muted-foreground mb-3">Choose Your Bundle</p>
@@ -684,7 +699,12 @@ export default function TheSaturdayToolPage() {
       {/* ============================================
           STICKY CTA — anchors to in-page buy section
           ============================================ */}
-      <div className="fixed bottom-0 left-0 right-0 bg-[#4A3F35]/95 backdrop-blur-md border-t-2 border-[#4A3F35] py-4 px-4 z-50 shadow-2xl">
+      <div
+        aria-hidden={hideSticky}
+        className={`fixed bottom-0 left-0 right-0 bg-[#4A3F35]/95 backdrop-blur-md border-t-2 border-[#4A3F35] py-4 px-4 z-50 shadow-2xl transition-all duration-300 ease-out ${
+          hideSticky ? "translate-y-full opacity-0 pointer-events-none" : "translate-y-0 opacity-100"
+        }`}
+      >
         <div className="max-w-lg mx-auto">
           <a href="#buy">
             <Button
