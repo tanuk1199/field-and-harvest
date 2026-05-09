@@ -32,11 +32,15 @@ const VARIANTS = [
   {
     id: "44047033663531",
     label: "3 Carriers",
-    price: 143,
+    price: 139,
     compareAt: 240,
-    badge: "Family Stack — Save 40%",
+    badge: "Family Stack — Save 42%",
   },
 ] as const
+
+const EBOOK_ENDLESS_HARVEST = "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/Screenshot2025-12-16at4.44.33PM.png?v=1765921684"
+const EBOOK_HARVEST_KEEPERS = "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20251216_1649_HarvestGuideDisplay_simple_compose_01kcmj6ptjeb3afvd79hez40np.png?v=1765922044"
+const FREE_SHIPPING_THRESHOLD = 85
 
 const cartPermalink = (variantId: string) =>
   `https://fieldandharvestco.com/cart/${variantId}:1?checkout`
@@ -49,6 +53,7 @@ export default function TheSaturdayToolPage() {
   const compareSubtotal = variant.compareAt
   const savings = compareSubtotal - subtotal
   const savingsPct = Math.round(((compareSubtotal - subtotal) / compareSubtotal) * 100)
+  const freeShippingUnlocked = subtotal >= FREE_SHIPPING_THRESHOLD
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
@@ -372,18 +377,78 @@ export default function TheSaturdayToolPage() {
                 </div>
               </div>
 
-              {/* Free guides reminder */}
-              <div className="bg-[#F4EFE3] rounded-lg p-4 flex items-start gap-3">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#DDA15E]/30 flex items-center justify-center text-base">
-                  🎁
-                </div>
-                <div className="min-w-0">
-                  <p className="text-sm font-bold text-foreground leading-tight">2 Free Gardening Guides Included</p>
-                  <p className="text-xs text-foreground/70 mt-1 leading-relaxed">
-                    The Endless Harvest ($18) + Harvest Keeper&apos;s Handbook ($15). Auto-added at checkout.
+              {/* Gift stack — actual ebook covers */}
+              <div className="bg-[#F4EFE3] rounded-2xl border border-[#D4C4B0] p-4 md:p-5">
+                <div className="flex items-center justify-between gap-2 mb-3">
+                  <p className="text-[11px] uppercase tracking-wider font-bold text-[#4A3F35]">
+                    Free Gift Stack — $33 Value
                   </p>
+                  <span className="text-[10px] uppercase tracking-wider font-bold text-white bg-[#C86F4C] px-2 py-0.5 rounded">Included</span>
                 </div>
+
+                <div className="flex items-end gap-3">
+                  {/* Book 1 — Endless Harvest */}
+                  <div className="flex-1 flex flex-col items-center">
+                    <div className="relative w-full aspect-[3/4] rounded-md overflow-hidden bg-white shadow-md ring-1 ring-[#D4C4B0]">
+                      <img
+                        src={EBOOK_ENDLESS_HARVEST}
+                        alt="The Endless Harvest gardening guide cover"
+                        className="absolute inset-0 w-full h-full object-cover"
+                      />
+                    </div>
+                    <p className="text-[11px] font-bold text-foreground mt-2 leading-tight text-center">The Endless Harvest</p>
+                    <p className="text-[10px] text-muted-foreground leading-tight">$18 value</p>
+                  </div>
+
+                  {/* Plus */}
+                  <div className="flex-shrink-0 w-7 h-7 rounded-full bg-white shadow-sm border border-[#D4C4B0] flex items-center justify-center text-[#4A3F35] font-bold text-sm mb-7">
+                    +
+                  </div>
+
+                  {/* Book 2 — Harvest Keeper's Handbook */}
+                  <div className="flex-1 flex flex-col items-center">
+                    <div className="relative w-full aspect-[3/4] rounded-md overflow-hidden bg-white shadow-md ring-1 ring-[#D4C4B0]">
+                      <img
+                        src={EBOOK_HARVEST_KEEPERS}
+                        alt="Harvest Keeper's Handbook cover"
+                        className="absolute inset-0 w-full h-full object-cover"
+                      />
+                    </div>
+                    <p className="text-[11px] font-bold text-foreground mt-2 leading-tight text-center">Harvest Keeper&apos;s Handbook</p>
+                    <p className="text-[10px] text-muted-foreground leading-tight">$15 value</p>
+                  </div>
+                </div>
+
+                <p className="text-[11px] text-foreground/70 mt-3 leading-relaxed text-center">
+                  Both digital guides auto-added at checkout. Yours to keep — even if you return.
+                </p>
               </div>
+
+              {/* Free shipping unlock — appears when subtotal hits $85+ */}
+              {freeShippingUnlocked ? (
+                <div className="bg-[#E8F1E2] border-2 border-[#5A7A4A] rounded-lg p-3.5 flex items-center gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#5A7A4A] flex items-center justify-center text-white font-bold text-sm">
+                    ✓
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-sm font-bold text-[#3F5C32] leading-tight">Free Shipping Unlocked</p>
+                    <p className="text-[11px] text-[#3F5C32]/80 mt-0.5 leading-relaxed">
+                      Your bundle ships free — automatically applied at checkout.
+                    </p>
+                  </div>
+                </div>
+              ) : (
+                <div className="bg-background border border-dashed border-border rounded-lg p-3.5 flex items-center gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-muted flex items-center justify-center text-muted-foreground font-bold text-sm">
+                    🚚
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-xs text-foreground leading-snug">
+                      Add <span className="font-bold">2 Carriers</span> or more to unlock <span className="font-bold">free shipping</span>.
+                    </p>
+                  </div>
+                </div>
+              )}
 
               {/* Subtotal + savings */}
               <div className="border-t border-border pt-5">
