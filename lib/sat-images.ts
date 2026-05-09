@@ -34,7 +34,7 @@ export const satImages = {
 
   // ── PRODUCT GALLERY (6 images — first one shown by default;
   //                     click any thumbnail to swap into main) ──
-  productImage1: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20251217_2358_Garden_Harvest_Portrait_remix_01kcqx5km5f8cst2nx2pyssx0q.png?v=1767094820",
+  productImage1: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260509_050908_126f7e8a-ba44-4b74-ad59-1ae8fdb4c7a1.png?v=1778304065",
   productImage2: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20251215_0105_Quick-ReleaseBadgeDesign_remix_01kcg9qjyre8psjsmn24ardmhq.png?v=1766034098",
   productImage3: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20251217_2356_Abundant_Harvest_Apron_remix_01kcqx1s10fbm81vz1t5emcq6y_9faf4a7b-ae01-41f0-b66a-f4a91ed7c7c2.png?v=1766034113",
   productImage4: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20251214_2351_ApronwithGardenBackground_remix_01kcg5gbwne8eb5pketsv0ckyj.png?v=1766034057",
