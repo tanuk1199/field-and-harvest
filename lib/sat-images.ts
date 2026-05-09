@@ -25,9 +25,9 @@ export const satImages = {
   heroImage: "https://cdn.shopify.com/s/files/1/0736/5279/7743/files/20260131_1316_Image_Generation_remix_01kgam7xv8fkavdabc3nxxhjh7.png?v=1769974800",
 
   // ── LISTICLE REASON IMAGES ────────────────────────────────
-  reason1Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20260201_1633_Image_Generation_remix_01kgdhzb5nf1g8wz6q6eymvv6m.png?v=1769981770",       // Year-round — ⚠️ swap candidate (4-season collage or fall/winter shot)
+  reason1Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260509_041140_7982c5b4-a70c-4a0b-a41f-4f424d79a655.png?v=1778300941",       // Year-round — ⚠️ swap candidate (4-season collage or fall/winter shot)
   reason2Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20251215_0105_Quick-ReleaseBadgeDesign_remix_01kcg9qjyre8psjsmn24ardmhq.png?v=1766034098", // One trip — drop-chute / convenience
-  reason3Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/Grange_hero_image_1_6.png?v=1769981762",                                                  // Hands free — ⚠️ swap candidate (leash + coffee + pruners combo)
+  reason3Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260509_043122_38b8a2cf-2458-4f05-888e-3a9d88fa5a28.png?v=1778301179",                                                  // Hands free — ⚠️ swap candidate (leash + coffee + pruners combo)
   reason4Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20260201_1633_Image_Generation_remix_01kgdhykz1e4pb8gg9pyx1231h.png?v=1769981766",        // All-day comfort — Zero-Gravity harness
   reason5Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20260201_1641_Image_Generation_remix_01kgdjcqnee5d9w8721g22c54a.png?v=1769982157",        // Stays clean — ⚠️ swap candidate (yard cleanup, wet leaves, etc.)
   reason6Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20260201_1643_Image_Generation_remix_01kgdjgd8deat9ykzt5zkedtsn.png?v=1769982391",        // Risk-free — lifetime warranty
