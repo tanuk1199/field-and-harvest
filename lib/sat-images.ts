@@ -22,7 +22,7 @@ export const satImages = {
 
   // ── HERO SECTION ──────────────────────────────────────────
   // ⚠️ Swap candidate — apron on the back-door peg, boots underneath, morning light.
-  heroImage: "https://cdn.shopify.com/s/files/1/0736/5279/7743/files/20260131_1316_Image_Generation_remix_01kgam7xv8fkavdabc3nxxhjh7.png?v=1769974800",
+  heroImage: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260509_041128_83a39649-befb-46c3-9dd2-da072c3073d8.png?v=1778302264",
 
   // ── LISTICLE REASON IMAGES ────────────────────────────────
   reason1Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260509_041140_7982c5b4-a70c-4a0b-a41f-4f424d79a655.png?v=1778300941",       // Year-round — ⚠️ swap candidate (4-season collage or fall/winter shot)
