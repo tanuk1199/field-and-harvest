@@ -87,7 +87,7 @@ export default function TheSaturdayToolPage() {
       <div className="bg-primary text-center py-3 px-4 shadow-sm">
         <p className="text-sm md:text-base font-medium">
           <span className="text-[#DDA15E] font-bold uppercase tracking-wide">SAVE UP TO 46%</span>{" "}
-          <span className="text-primary-foreground uppercase tracking-wide">+ 2 FREE YARDWORK GUIDES — LIMITED TIME</span>
+          <span className="text-primary-foreground uppercase tracking-wide">+ 2 FREE YARDWORK GUIDES</span>
         </p>
       </div>
 
@@ -108,7 +108,7 @@ export default function TheSaturdayToolPage() {
 
         {/* Offer badge */}
         <div className="mt-5 text-center">
-          <span className="inline-block bg-[#DDA15E]/20 rounded-md py-2 px-4 font-bold text-sm text-foreground">Save Up to 46% + 2 Free Yardwork Guides ($33 Value)</span>
+          <span className="inline-block bg-[#DDA15E]/20 rounded-md py-2 px-4 font-bold text-sm text-foreground">Save Up to 46% + 2 Free Yardwork Guides</span>
         </div>
 
         {/* Main headline */}

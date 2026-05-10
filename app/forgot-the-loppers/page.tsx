@@ -102,7 +102,7 @@ export default function ForgotTheLoppersPage() {
       <div className="bg-primary text-center py-3 px-4 shadow-sm">
         <p className="text-sm md:text-base font-medium">
           <span className="text-[#DDA15E] font-bold uppercase tracking-wide">SAVE UP TO 46%</span>{" "}
-          <span className="text-primary-foreground uppercase tracking-wide">+ 2 FREE YARDWORK GUIDES — LIMITED TIME</span>
+          <span className="text-primary-foreground uppercase tracking-wide">+ 2 FREE YARDWORK GUIDES</span>
         </p>
       </div>
 
