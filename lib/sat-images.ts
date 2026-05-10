@@ -48,8 +48,12 @@ export const satImages = {
   benefitIcon4: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/5.png?v=1769840199",   // Water drop — Dry-Wear
 
   // ── FREE EBOOK COVERS (auto-added at checkout) ───────────
-  ebookEndlessHarvest: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/Screenshot2025-12-16at4.44.33PM.png?v=1765921684",
-  ebookHarvestKeepers: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20251216_1649_HarvestGuideDisplay_simple_compose_01kcmj6ptjeb3afvd79hez40np.png?v=1765922044",
+  // Yardwork-coded guides (replaces the harvest gardening guides
+  // for the Saturday-tool / Forgot-the-Loppers landers).
+  // Slot 1: The Saturday Property Guide  ($18) — month-by-month yard plan
+  // Slot 2: The Tool Care Manual          ($15) — sharpen, store, last
+  ebookEndlessHarvest: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260510_172049_60655980-fdd4-4023-adc1-fe36326de769.png?v=1778433768",
+  ebookHarvestKeepers: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260510_172057_64ca6d7c-ae3b-410b-a1d1-97d929679c7f.png?v=1778433765",
 
 } as const
 

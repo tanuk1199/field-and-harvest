@@ -87,7 +87,7 @@ export default function TheSaturdayToolPage() {
       <div className="bg-primary text-center py-3 px-4 shadow-sm">
         <p className="text-sm md:text-base font-medium">
           <span className="text-[#DDA15E] font-bold uppercase tracking-wide">SAVE UP TO 46%</span>{" "}
-          <span className="text-primary-foreground uppercase tracking-wide">+ 2 FREE GARDENING GUIDES — LIMITED TIME</span>
+          <span className="text-primary-foreground uppercase tracking-wide">+ 2 FREE YARDWORK GUIDES — LIMITED TIME</span>
         </p>
       </div>
 
@@ -108,7 +108,7 @@ export default function TheSaturdayToolPage() {
 
         {/* Offer badge */}
         <div className="mt-5 text-center">
-          <span className="inline-block bg-[#DDA15E]/20 rounded-md py-2 px-4 font-bold text-sm text-foreground">Save Up to 46% + 2 Free Gardening Guides ($33 Value)</span>
+          <span className="inline-block bg-[#DDA15E]/20 rounded-md py-2 px-4 font-bold text-sm text-foreground">Save Up to 46% + 2 Free Yardwork Guides ($33 Value)</span>
         </div>
 
         {/* Main headline */}
@@ -281,7 +281,7 @@ export default function TheSaturdayToolPage() {
       <section className="max-w-lg mx-auto px-4 pt-12 pb-4">
         <div className="text-center mb-8">
           <Badge className="bg-[#F4EFE3] text-[#4A3F35] hover:bg-[#F4EFE3] border border-[#D4C4B0] text-xs font-bold mb-5 px-4 py-1.5">
-            Up to 46% OFF + 2 Free Gardening Guides — Limited Time
+            Up to 46% OFF + 2 Free Yardwork Guides — Limited Time
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance leading-tight">
             The Carrier You&apos;ll Find Ten Years From Now Still Hanging Where You Left It
@@ -306,7 +306,7 @@ export default function TheSaturdayToolPage() {
         {/* Product card */}
         <div className="bg-card border-2 border-border rounded-2xl overflow-hidden shadow-lg">
           <div className="bg-gradient-to-r from-primary to-primary/90 text-primary-foreground text-center py-3 px-4">
-            <p className="text-sm font-bold tracking-wide">UP TO 46% OFF + 2 FREE GARDENING GUIDES — WHILE SUPPLIES LAST</p>
+            <p className="text-sm font-bold tracking-wide">UP TO 46% OFF + 2 FREE YARDWORK GUIDES — WHILE SUPPLIES LAST</p>
           </div>
 
           <div className="p-5">
@@ -512,7 +512,7 @@ export default function TheSaturdayToolPage() {
                   <div className="relative flex-1 aspect-[3/4] rounded-md overflow-hidden bg-white shadow-md ring-1 ring-[#D4C4B0]">
                     <SatAsset
                       name="ebookEndlessHarvest"
-                      alt="The Endless Harvest gardening guide cover"
+                      alt="The Saturday Property Guide cover"
                       className="absolute inset-0 w-full h-full object-cover"
                       fallbackClassName="absolute inset-0 w-full h-full flex items-center justify-center text-2xl"
                     />
@@ -523,7 +523,7 @@ export default function TheSaturdayToolPage() {
                   <div className="relative flex-1 aspect-[3/4] rounded-md overflow-hidden bg-white shadow-md ring-1 ring-[#D4C4B0]">
                     <SatAsset
                       name="ebookHarvestKeepers"
-                      alt="Harvest Keeper's Handbook cover"
+                      alt="The Tool Care Manual cover"
                       className="absolute inset-0 w-full h-full object-cover"
                       fallbackClassName="absolute inset-0 w-full h-full flex items-center justify-center text-2xl"
                     />
@@ -533,12 +533,12 @@ export default function TheSaturdayToolPage() {
                 {/* Text row — mirrors the image flex so titles sit under the right covers */}
                 <div className="flex gap-3 mt-3">
                   <div className="flex-1 px-2 text-center">
-                    <p className="text-[11px] font-bold text-foreground leading-tight">The Endless Harvest</p>
+                    <p className="text-[11px] font-bold text-foreground leading-tight">The Saturday Property Guide</p>
                     <p className="text-[10px] text-muted-foreground leading-tight mt-0.5">$18 value</p>
                   </div>
                   <div className="flex-shrink-0 w-7" aria-hidden="true" />
                   <div className="flex-1 px-2 text-center">
-                    <p className="text-[11px] font-bold text-foreground leading-tight">Harvest Keeper&apos;s Handbook</p>
+                    <p className="text-[11px] font-bold text-foreground leading-tight">The Tool Care Manual</p>
                     <p className="text-[10px] text-muted-foreground leading-tight mt-0.5">$15 value</p>
                   </div>
                 </div>
@@ -687,7 +687,7 @@ export default function TheSaturdayToolPage() {
               How does the discount + 2 free guides offer work?
             </AccordionTrigger>
             <AccordionContent className="text-foreground/80 leading-relaxed pb-5">
-              You get up to 46% off the Grange Carrier (39% off a single, 44% off the 2-pack, 46% off the 3-pack) plus two free gardening guides — The Endless Harvest ($18 value) and the Harvest Keeper&apos;s Handbook for produce storage ($15 value). Total $33 in free guides, automatically added at checkout. The discount is already reflected in the price below. The offer runs while supplies last on this season&apos;s inventory. Once it ends, pricing returns to standard.
+              You get up to 46% off the Grange Carrier (39% off a single, 44% off the 2-pack, 46% off the 3-pack) plus two free yardwork guides — The Saturday Property Guide ($18 value), a month-by-month yard plan, and The Tool Care Manual ($15 value), the no-fluff handbook for sharpening, storing, and getting decades out of your hand tools. Total $33 in free guides, automatically added at checkout. The discount is already reflected in the price below. The offer runs while supplies last on this season&apos;s inventory. Once it ends, pricing returns to standard.
             </AccordionContent>
           </AccordionItem>
 
@@ -732,7 +732,7 @@ export default function TheSaturdayToolPage() {
               What&apos;s included?
             </AccordionTrigger>
             <AccordionContent className="text-foreground/80 leading-relaxed pb-5">
-              The Grange Carrier comes with the Zero-Gravity Cross-Back Harness, Quick-Release Drop-Chute, deep tool sheaths for pruning shears, a hidden waterproof phone pocket, The Endless Harvest gardening guide ($18 value), and the Harvest Keeper&apos;s Handbook for produce storage ($15 value). Plus the lifetime warranty on materials and craftsmanship.
+              The Grange Carrier comes with the Zero-Gravity Cross-Back Harness, Quick-Release Drop-Chute, deep tool sheaths for pruning shears, a hidden waterproof phone pocket, The Saturday Property Guide ($18 value), and The Tool Care Manual ($15 value). Plus the lifetime warranty on materials and craftsmanship.
             </AccordionContent>
           </AccordionItem>
 
