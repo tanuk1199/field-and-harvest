@@ -117,7 +117,7 @@ export default function TheSaturdayToolPage() {
             The Saturday Tool That Lives <span className="text-[#C86F4C]">By Your Back Door</span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground mt-4 leading-relaxed text-pretty max-w-md mx-auto">
-            Yard cleanup, weeding, deadheading, leaf piles, eggs from the coop, the harvest at noon. Pockets that don&apos;t quit. Hands that stay free. The apron 22,000+ owners stopped putting away after they bought it.
+            Yard cleanup, weeding, deadheading, leaf piles, eggs from the coop, the harvest at noon. Pockets that don&apos;t quit. Hands that stay free. The carrier 22,000+ owners stopped putting away after they bought it.
           </p>
         </div>
 
@@ -157,7 +157,7 @@ export default function TheSaturdayToolPage() {
             <span className="text-xs font-bold text-muted-foreground">01</span>
           </div>
           <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-6 text-balance leading-tight">
-            January twigs. October leaves. July tomatoes. Same apron.
+            January twigs. October leaves. July tomatoes. Same carrier.
           </h3>
 
           <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
@@ -165,7 +165,7 @@ export default function TheSaturdayToolPage() {
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
-            Most garden aprons get pulled out for two months in summer and forgotten the rest of the year. This one isn&apos;t built like that. Storm-twigs in March. First weeds in April. Tomatoes and basil in July. Acorns and leaves in October. Kindling runs in December. Same apron, same pockets, same one-trip-instead-of-five. <span className="font-bold text-foreground">It earns the hook by your back door because it works for whatever the yard hands you that day.</span>
+            Most garden aprons get pulled out for two months in summer and forgotten the rest of the year. This carrier isn&apos;t built like that. Storm-twigs in March. First weeds in April. Tomatoes and basil in July. Acorns and leaves in October. Kindling runs in December. Same carrier, same pockets, same one-trip-instead-of-five. <span className="font-bold text-foreground">It earns the hook by your back door because it works for whatever the yard hands you that day.</span>
           </p>
         </div>
 
@@ -186,7 +186,7 @@ export default function TheSaturdayToolPage() {
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
-            Most aprons turn into a small wrestling match every time you need to empty them. You squat, you crouch, you tip them out by hand. The Grange Carrier doesn&apos;t. The bottom is a Quick-Release Drop-Chute — pull the strap, the floor opens, the entire load drops in a second. Onto the compost pile. Onto the kitchen counter. Into the yard-waste bag. <span className="font-bold text-foreground">No bending. No tipping. No second trip.</span> It&apos;s the part of the apron everyone shows their friends first.
+            Most aprons turn into a small wrestling match every time you need to empty them. You squat, you crouch, you tip them out by hand. The Grange Carrier doesn&apos;t. The bottom is a Quick-Release Drop-Chute — pull the strap, the floor opens, the entire load drops in a second. Onto the compost pile. Onto the kitchen counter. Into the yard-waste bag. <span className="font-bold text-foreground">No bending. No tipping. No second trip.</span> It&apos;s the part of the carrier everyone shows their friends first.
           </p>
         </div>
 
@@ -249,7 +249,7 @@ export default function TheSaturdayToolPage() {
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
-            Wet leaves, sap, mud, tomato juice, sticky weed roots, the eternal mystery of pinecones in the dryer. Cotton aprons soak through in minutes and transfer everything to the clothes underneath. The Dry-Wear barrier lines the entire pouch and blocks moisture on contact. A quick wipe-down and the apron is ready for the next session — leaf cleanup at 9, harvest at noon, walking the dog at 6. <span className="font-bold text-foreground">Garden, yard, kitchen. Same shirt.</span>
+            Wet leaves, sap, mud, tomato juice, sticky weed roots, the eternal mystery of pinecones in the dryer. Cotton aprons soak through in minutes and transfer everything to the clothes underneath. The Dry-Wear barrier lines the entire pouch and blocks moisture on contact. A quick wipe-down and the carrier is ready for the next session — leaf cleanup at 9, harvest at noon, walking the dog at 6. <span className="font-bold text-foreground">Garden, yard, kitchen. Same shirt.</span>
           </p>
         </div>
 
@@ -270,7 +270,7 @@ export default function TheSaturdayToolPage() {
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
-            Lifetime warranty covers the canvas, stitching, hardware, and harness against defects in materials and craftsmanship. 60-day trial means you can wear it through a full month of weekends. If it&apos;s not the apron you want hanging by the door every Saturday, send it back. We cover return shipping. No restocking fee. No fine print. <span className="font-bold text-foreground">Zero risk. Just the apron.</span>
+            Lifetime warranty covers the canvas, stitching, hardware, and harness against defects in materials and craftsmanship. 60-day trial means you can wear it through a full month of weekends. If it&apos;s not the carrier you want hanging by the door every Saturday, send it back. We cover return shipping. No restocking fee. No fine print. <span className="font-bold text-foreground">Zero risk. Just the carrier.</span>
           </p>
         </div>
       </section>
@@ -284,7 +284,7 @@ export default function TheSaturdayToolPage() {
             Up to 46% OFF + 2 Free Gardening Guides — Limited Time
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance leading-tight">
-            The Apron You&apos;ll Find Ten Years From Now Still Hanging Where You Left It
+            The Carrier You&apos;ll Find Ten Years From Now Still Hanging Where You Left It
           </h2>
           <p className="text-lg text-muted-foreground mb-6 text-pretty leading-relaxed max-w-md mx-auto">
             22,000+ owners stopped putting theirs away after they bought it. Used for harvest, weeding, yard cleanup, leaf hauls, kindling runs, pet and chicken chores. Built once. Backed for life.
@@ -723,7 +723,7 @@ export default function TheSaturdayToolPage() {
               What if I don&apos;t like it?
             </AccordionTrigger>
             <AccordionContent className="text-foreground/80 leading-relaxed pb-5">
-              Full 60-day money-back guarantee. Wear it for a full month of weekends. If it&apos;s not the apron you want hanging by the door every Saturday, return it for a complete refund. We cover return shipping. No restocking fee. No forms. No hoops.
+              Full 60-day money-back guarantee. Wear it for a full month of weekends. If it&apos;s not the carrier you want hanging by the door every Saturday, return it for a complete refund. We cover return shipping. No restocking fee. No forms. No hoops.
             </AccordionContent>
           </AccordionItem>
 

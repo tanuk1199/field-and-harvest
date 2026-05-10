@@ -123,7 +123,7 @@ export default function ForgotTheLoppersPage() {
             One Pass Through The Yard. <span className="text-[#C86F4C]">Instead Of Five.</span>
           </h1>
           <p className="text-base md:text-lg text-foreground/70 mt-4 leading-relaxed text-pretty max-w-md mx-auto">
-            The apron that holds the loppers, the gloves, the coffee, the basket, the eggs, the rake, and whatever else your yard&apos;s about to make you walk back for.
+            The carrier that holds the loppers, the gloves, the coffee, the basket, the eggs, the rake, and whatever else your yard&apos;s about to make you walk back for.
           </p>
         </div>
 
@@ -211,7 +211,7 @@ export default function ForgotTheLoppersPage() {
 
         {/* Closer line under the list */}
         <p className="text-center text-base text-foreground/80 mt-8 font-medium leading-relaxed max-w-sm mx-auto">
-          Or you put on the apron once, and your Saturday list <span className="font-bold">shrinks by half.</span>
+          Or you put on the carrier once, and your Saturday list <span className="font-bold">shrinks by half.</span>
         </p>
       </section>
 
@@ -220,7 +220,7 @@ export default function ForgotTheLoppersPage() {
           ============================================ */}
       <section className="max-w-lg mx-auto px-4 py-12">
         <div className="text-center mb-6">
-          <p className="text-[11px] uppercase tracking-widest font-bold text-[#C86F4C] mb-2">The Apron</p>
+          <p className="text-[11px] uppercase tracking-widest font-bold text-[#C86F4C] mb-2">The Carrier</p>
           <h2 className="text-3xl md:text-4xl font-black text-foreground leading-tight text-balance uppercase">
             Here&apos;s What Goes <span className="text-[#C86F4C]">In The Pocket Instead.</span>
           </h2>
@@ -248,7 +248,7 @@ export default function ForgotTheLoppersPage() {
       <section className="max-w-lg mx-auto px-4 pt-12 pb-4">
         <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-black text-foreground mb-3 leading-tight text-balance uppercase">
-            One Apron. <span className="text-[#C86F4C]">Twelve Fewer Laps.</span>
+            One Carrier. <span className="text-[#C86F4C]">Twelve Fewer Laps.</span>
           </h2>
           <p className="text-base text-foreground/70 leading-relaxed max-w-md mx-auto">
             22,000+ owners. 4.8 stars. Backed for life. The thing that earns its hook by the back door.
@@ -495,7 +495,7 @@ export default function ForgotTheLoppersPage() {
             badge: "DROP-CHUTE",
             head: "One pull. The whole load empties in a second.",
             img: "reason1Image" as const,
-            body: "The bottom of the apron is a Quick-Release Drop-Chute. Pull the strap, the floor opens, the entire load drops in a second — onto the compost pile, the kitchen counter, or the yard-waste bag. No bending. No tipping.",
+            body: "The bottom of the carrier is a Quick-Release Drop-Chute. Pull the strap, the floor opens, the entire load drops in a second — onto the compost pile, the kitchen counter, or the yard-waste bag. No bending. No tipping.",
           },
           {
             badge: "600D CANVAS",
@@ -507,7 +507,7 @@ export default function ForgotTheLoppersPage() {
             badge: "60-DAY TRIAL",
             head: "If it's not the one, full refund.",
             img: "reason3Image" as const,
-            body: "Wear it for a full month of weekends. If it's not the apron you want hanging by the back door every Saturday, send it back. Lifetime warranty on canvas, stitching, hardware, and harness. We cover return shipping. No restocking fee.",
+            body: "Wear it for a full month of weekends. If it's not the carrier you want hanging by the back door every Saturday, send it back. Lifetime warranty on canvas, stitching, hardware, and harness. We cover return shipping. No restocking fee.",
           },
         ].map((r, i) => (
           <div key={i} className="bg-card rounded-2xl p-6 md:p-8 border border-border shadow-sm">
@@ -645,7 +645,7 @@ export default function ForgotTheLoppersPage() {
               What if I don&apos;t like it?
             </AccordionTrigger>
             <AccordionContent className="text-foreground/80 leading-relaxed pb-5">
-              Full 60-day money-back guarantee. Wear it for a full month of weekends. If it&apos;s not the apron you want hanging by the door every Saturday, return it for a complete refund. We cover return shipping. No restocking fee.
+              Full 60-day money-back guarantee. Wear it for a full month of weekends. If it&apos;s not the carrier you want hanging by the door every Saturday, return it for a complete refund. We cover return shipping. No restocking fee.
             </AccordionContent>
           </AccordionItem>
 
