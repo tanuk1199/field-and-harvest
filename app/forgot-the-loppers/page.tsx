@@ -51,25 +51,20 @@ const cartPermalink = (variantId: string) => {
 }
 
 // The 12 trips — ordered from "everyone's done this" → "uncomfortably specific" → "callback to the lol"
-const TRIPS: { icon: keyof typeof tripKeyType; copy: string }[] = [
-  { icon: "tripIcon1",  copy: "Going back for the loppers." },
-  { icon: "tripIcon2",  copy: "Going back for the loppers. Again." },
-  { icon: "tripIcon3",  copy: "Going back for the gloves you took off to scratch your nose." },
-  { icon: "tripIcon4",  copy: "Going back for the coffee." },
-  { icon: "tripIcon5",  copy: "Going back for the basket you didn't bring." },
-  { icon: "tripIcon6",  copy: "Going back for the eggs you forgot to grab from the coop." },
-  { icon: "tripIcon7",  copy: "Going back for the phone, which is somehow on the porch." },
-  { icon: "tripIcon8",  copy: "Going back for the rake you put down ten minutes ago and lost." },
-  { icon: "tripIcon9",  copy: "Going back for the mail." },
-  { icon: "tripIcon10", copy: "Going back to find the kid who wandered off three trips ago." },
-  { icon: "tripIcon11", copy: "Going back to grab the second pair of pruners. (You don't own a second pair.)" },
-  { icon: "tripIcon12", copy: "Going back for nothing. You just forgot why you went inside." },
-]
-// Type bridge for the icon keys above
-const tripKeyType = {
-  tripIcon1:1,tripIcon2:1,tripIcon3:1,tripIcon4:1,tripIcon5:1,tripIcon6:1,
-  tripIcon7:1,tripIcon8:1,tripIcon9:1,tripIcon10:1,tripIcon11:1,tripIcon12:1,
-} as const
+const TRIPS = [
+  "Going back for the loppers.",
+  "Going back for the loppers. Again.",
+  "Going back for the gloves you took off to scratch your nose.",
+  "Going back for the coffee.",
+  "Going back for the basket you didn't bring.",
+  "Going back for the eggs you forgot to grab from the coop.",
+  "Going back for the phone, which is somehow on the porch.",
+  "Going back for the rake you put down ten minutes ago and lost.",
+  "Going back for the mail.",
+  "Going back to find the kid who wandered off three trips ago.",
+  "Going back to grab the second pair of pruners. (You don't own a second pair.)",
+  "Going back for nothing. You just forgot why you went inside.",
+] as const
 
 export default function ForgotTheLoppersPage() {
   const [variantIdx, setVariantIdx] = useState<number>(0)
@@ -127,21 +122,14 @@ export default function ForgotTheLoppersPage() {
           </p>
         </div>
 
-        {/* Comic panels — single column on mobile so they read like an ad sequence */}
-        <div className="space-y-3">
-          {(["heroPanel1", "heroPanel2", "heroPanel3", "heroPanel4", "heroPanel5", "heroPanel6"] as const).map((name, i) => (
-            <div
-              key={name}
-              className="relative w-full aspect-[16/9] rounded-xl overflow-hidden bg-[#F4EDD9] border-2 border-[#2D150B]/15 shadow-sm"
-            >
-              <FtlAsset
-                name={name}
-                alt={`Comic panel ${i + 1}`}
-                className="w-full h-full object-cover"
-                fallbackClassName="w-full h-full flex items-center justify-center text-5xl"
-              />
-            </div>
-          ))}
+        {/* Hero anchor image — the comic itself, no gallery stack */}
+        <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-[#F4EDD9] border-2 border-[#2D150B]/15 shadow-md">
+          <FtlAsset
+            name="heroPanel1"
+            alt="One pass through the yard instead of five"
+            className="w-full h-full object-cover"
+            fallbackClassName="w-full h-full flex items-center justify-center text-6xl"
+          />
         </div>
 
         {/* Hero CTA */}
@@ -172,7 +160,6 @@ export default function ForgotTheLoppersPage() {
           ============================================ */}
       <section className="max-w-lg mx-auto px-4 py-12">
         <div className="text-center mb-8">
-          <p className="text-[11px] uppercase tracking-widest font-bold text-[#C86F4C] mb-2">The Saturday Rerun</p>
           <h2 className="text-3xl md:text-4xl font-black text-foreground leading-tight text-balance uppercase">
             12 Trips You&apos;ll Stop Making
           </h2>
@@ -181,28 +168,24 @@ export default function ForgotTheLoppersPage() {
           </p>
         </div>
 
-        <ol className="space-y-3">
-          {TRIPS.map((trip, i) => (
+        <ol className="space-y-2">
+          {TRIPS.map((copy, i) => (
             <li
               key={i}
               className="bg-card border-2 border-[#2D150B]/12 rounded-xl shadow-sm overflow-hidden flex items-stretch"
             >
-              {/* Trip number + icon column */}
-              <div className="flex-shrink-0 w-20 sm:w-24 bg-[#FFF6E0] border-r-2 border-[#2D150B]/10 flex flex-col items-center justify-center py-4 gap-1">
-                <span className="text-[10px] uppercase tracking-widest font-bold text-foreground/50">Trip</span>
-                <span className="text-2xl font-black text-foreground leading-none">{String(i + 1).padStart(2, "0")}</span>
-                <FtlAsset
-                  name={trip.icon as keyof typeof tripKeyType}
-                  alt={`Trip ${i + 1} icon`}
-                  className="w-7 h-7 object-contain mt-1"
-                  fallbackClassName="text-xl mt-1"
-                />
+              {/* Trip number — stamped */}
+              <div className="flex-shrink-0 w-16 sm:w-20 bg-[#FFF6E0] border-r-2 border-[#2D150B]/10 flex flex-col items-center justify-center py-3">
+                <span className="text-[9px] uppercase tracking-widest font-bold text-foreground/50">Trip</span>
+                <span className="text-3xl sm:text-4xl font-black text-foreground leading-none mt-0.5">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
               </div>
 
               {/* Copy column */}
               <div className="flex-1 px-4 py-4 flex items-center">
-                <p className="text-base sm:text-lg text-foreground leading-snug font-medium text-pretty">
-                  {trip.copy}
+                <p className="text-base sm:text-lg text-foreground leading-snug font-bold text-pretty">
+                  {copy}
                 </p>
               </div>
             </li>
