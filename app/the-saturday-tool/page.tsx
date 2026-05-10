@@ -470,10 +470,25 @@ export default function TheSaturdayToolPage() {
                 </div>
               </div>
 
-              {/* Checkout CTA */}
+              {/* Checkout CTA — fires Meta Pixel AddToCart on click */}
               <a
                 href={cartPermalink(variant.id)}
                 className="block"
+                onClick={() => {
+                  if (typeof window !== "undefined" && (window as { fbq?: (...args: unknown[]) => void }).fbq) {
+                    (window as { fbq: (...args: unknown[]) => void }).fbq("track", "AddToCart", {
+                      content_ids: [variant.id, ...EBOOK_VARIANTS],
+                      content_type: "product",
+                      content_name: `Grange Carrier — ${variant.label}`,
+                      contents: [
+                        { id: variant.id, quantity: 1, item_price: variant.price },
+                        ...EBOOK_VARIANTS.map((id) => ({ id, quantity: 1, item_price: 0 })),
+                      ],
+                      value: variant.price,
+                      currency: "USD",
+                    })
+                  }
+                }}
               >
                 <Button
                   size="lg"
