@@ -512,7 +512,7 @@ export default function TheSaturdayToolPage() {
                   <div className="relative flex-1 aspect-[3/4] rounded-md overflow-hidden bg-white shadow-md ring-1 ring-[#D4C4B0]">
                     <SatAsset
                       name="ebookEndlessHarvest"
-                      alt="The Saturday Property Guide cover"
+                      alt="The One-Pass Yard cover"
                       className="absolute inset-0 w-full h-full object-cover"
                       fallbackClassName="absolute inset-0 w-full h-full flex items-center justify-center text-2xl"
                     />
@@ -523,7 +523,7 @@ export default function TheSaturdayToolPage() {
                   <div className="relative flex-1 aspect-[3/4] rounded-md overflow-hidden bg-white shadow-md ring-1 ring-[#D4C4B0]">
                     <SatAsset
                       name="ebookHarvestKeepers"
-                      alt="The Tool Care Manual cover"
+                      alt="The Yard Tool Audit cover"
                       className="absolute inset-0 w-full h-full object-cover"
                       fallbackClassName="absolute inset-0 w-full h-full flex items-center justify-center text-2xl"
                     />
@@ -533,12 +533,12 @@ export default function TheSaturdayToolPage() {
                 {/* Text row — mirrors the image flex so titles sit under the right covers */}
                 <div className="flex gap-3 mt-3">
                   <div className="flex-1 px-2 text-center">
-                    <p className="text-[11px] font-bold text-foreground leading-tight">The Saturday Property Guide</p>
+                    <p className="text-[11px] font-bold text-foreground leading-tight">The One-Pass Yard</p>
                     <p className="text-[10px] text-muted-foreground leading-tight mt-0.5">$18 value</p>
                   </div>
                   <div className="flex-shrink-0 w-7" aria-hidden="true" />
                   <div className="flex-1 px-2 text-center">
-                    <p className="text-[11px] font-bold text-foreground leading-tight">The Tool Care Manual</p>
+                    <p className="text-[11px] font-bold text-foreground leading-tight">The Yard Tool Audit</p>
                     <p className="text-[10px] text-muted-foreground leading-tight mt-0.5">$15 value</p>
                   </div>
                 </div>
@@ -687,7 +687,7 @@ export default function TheSaturdayToolPage() {
               How does the discount + 2 free guides offer work?
             </AccordionTrigger>
             <AccordionContent className="text-foreground/80 leading-relaxed pb-5">
-              You get up to 46% off the Grange Carrier (39% off a single, 44% off the 2-pack, 46% off the 3-pack) plus two free yardwork guides — The Saturday Property Guide ($18 value), a month-by-month yard plan, and The Tool Care Manual ($15 value), the no-fluff handbook for sharpening, storing, and getting decades out of your hand tools. Total $33 in free guides, automatically added at checkout. The discount is already reflected in the price below. The offer runs while supplies last on this season&apos;s inventory. Once it ends, pricing returns to standard.
+              You get up to 46% off the Grange Carrier (39% off a single, 44% off the 2-pack, 46% off the 3-pack) plus two free yardwork guides — The One-Pass Yard ($18 value), the routes and pocket loadouts that turn five Saturday trips into one, and The Yard Tool Audit ($15 value), the once-a-season tool check that catches dull blades, loose handles, and gear about to fail. Total $33 in free guides, automatically added at checkout. The discount is already reflected in the price below. The offer runs while supplies last on this season&apos;s inventory. Once it ends, pricing returns to standard.
             </AccordionContent>
           </AccordionItem>
 
@@ -732,7 +732,7 @@ export default function TheSaturdayToolPage() {
               What&apos;s included?
             </AccordionTrigger>
             <AccordionContent className="text-foreground/80 leading-relaxed pb-5">
-              The Grange Carrier comes with the Zero-Gravity Cross-Back Harness, Quick-Release Drop-Chute, deep tool sheaths for pruning shears, a hidden waterproof phone pocket, The Saturday Property Guide ($18 value), and The Tool Care Manual ($15 value). Plus the lifetime warranty on materials and craftsmanship.
+              The Grange Carrier comes with the Zero-Gravity Cross-Back Harness, Quick-Release Drop-Chute, deep tool sheaths for pruning shears, a hidden waterproof phone pocket, The One-Pass Yard ($18 value), and The Yard Tool Audit ($15 value). Plus the lifetime warranty on materials and craftsmanship.
             </AccordionContent>
           </AccordionItem>
 
