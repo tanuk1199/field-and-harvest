@@ -33,7 +33,7 @@ export default function LandingPage() {
       >
         <p className="text-[11px] sm:text-xs md:text-sm font-bold tracking-wide text-white uppercase leading-snug">
           <span className="inline-block mr-1.5">&#10047;</span>
-          Father&apos;s Day Special — Order by June 15th for Guaranteed Delivery
+          Father&apos;s Day Special: Order by June 15th for Guaranteed Delivery
           <span className="inline-block ml-1.5">&#10047;</span>
         </p>
       </div>
@@ -116,7 +116,7 @@ export default function LandingPage() {
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
-            Standard trimmer handles force him forward over the head. Twenty minutes in, his lower back is locked and Saturday is a write-off. The Plumb-Set&trade; — our fixed grip angle — lifts his off-hand 9 inches above the factory loop so his spine stays plumb and both hands share the load. <span className="font-bold text-foreground">He stands upright the whole pass. No hunch, no ache.</span>
+            Standard trimmer handles force him forward over the head. Twenty minutes in, his lower back is locked and Saturday is a write-off. The Plumb-Set&trade;, our fixed grip angle, lifts his off-hand 9 inches above the factory loop so his spine stays plumb and both hands share the load. <span className="font-bold text-foreground">He stands upright the whole pass. No hunch, no ache.</span>
           </p>
         </div>
 
@@ -177,7 +177,7 @@ export default function LandingPage() {
             <span className="text-xs font-bold text-muted-foreground">04</span>
           </div>
           <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance leading-tight">
-            Six feet tall or five-foot-six — it dials in to him
+            Six feet tall or five-foot-six. It dials in to him.
           </h3>
           <p className="text-sm font-bold uppercase tracking-wide text-[#C86F4C] mb-6">
             Slide-and-set position, universal shaft fit
@@ -188,7 +188,7 @@ export default function LandingPage() {
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
-            The Hold-Fast&trade; bracket slides up or down the shaft so he sets the grip exactly where his off-hand falls at chest height. Fits 26mm and 28mm shafts — STIHL, Echo, Husqvarna, Ryobi, EGO, BLACK+DECKER, gas or battery. <span className="font-bold text-foreground">One handle, dialed in to him.</span>
+            The Hold-Fast&trade; bracket slides up or down the shaft so he sets the grip exactly where his off-hand falls at chest height. Fits 26mm and 28mm shafts, which covers STIHL, Echo, Husqvarna, Ryobi, EGO, BLACK+DECKER, gas or battery. <span className="font-bold text-foreground">One handle, dialed in to him.</span>
           </p>
         </div>
 
@@ -212,7 +212,7 @@ export default function LandingPage() {
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
-            Try it for sixty days. If it doesn&apos;t save his back, full refund — we cover return shipping. After that it&apos;s covered for life: if the bracket wears, the grip separates, or the shaft bends under normal use, we replace it. <span className="font-bold text-foreground">You&apos;re giving him the last trimmer handle he&apos;ll ever buy.</span>
+            Try it for sixty days. If it doesn&apos;t save his back, full refund. We cover return shipping. After that it&apos;s covered for life: if the bracket wears, the grip separates, or the shaft bends under normal use, we replace it. <span className="font-bold text-foreground">You&apos;re giving him the last trimmer handle he&apos;ll ever buy.</span>
           </p>
         </div>
       </section>
@@ -408,7 +408,7 @@ export default function LandingPage() {
               Will it fit his trimmer?
             </AccordionTrigger>
             <AccordionContent className="text-foreground/80 leading-relaxed pb-5">
-              If he&apos;s using a string trimmer, weed eater, or weed wacker with a straight or curved shaft and a loop handle, it fits. The Hold-Fast&trade; bracket adjusts for 26mm and 28mm shafts — the standard range covering most STIHL, Echo, Husqvarna, Ryobi, EGO, Greenworks, and BLACK+DECKER models, gas or battery.
+              If he&apos;s using a string trimmer, weed eater, or weed wacker with a straight or curved shaft and a loop handle, it fits. The Hold-Fast&trade; bracket adjusts for 26mm and 28mm shafts, the standard range covering most STIHL, Echo, Husqvarna, Ryobi, EGO, Greenworks, and BLACK+DECKER models, gas or battery.
             </AccordionContent>
           </AccordionItem>
 
@@ -417,7 +417,7 @@ export default function LandingPage() {
               Will it arrive before Father&apos;s Day?
             </AccordionTrigger>
             <AccordionContent className="text-foreground/80 leading-relaxed pb-5">
-              Orders are processed within 1 business day. Standard shipping is 3–5 business days. Order by June 15th to be safe — most orders placed by Monday of that week land in time.
+              Orders are processed within 1 business day. Standard shipping is 3-5 business days. Order by June 15th to be safe. Most orders placed by Monday of that week land in time.
             </AccordionContent>
           </AccordionItem>
 
@@ -435,7 +435,7 @@ export default function LandingPage() {
               What if it doesn&apos;t save his back?
             </AccordionTrigger>
             <AccordionContent className="text-foreground/80 leading-relaxed pb-5">
-              He has 60 days to try it on his own yard. If his back doesn&apos;t feel the difference, full refund — we cover return shipping. No restocking fee, no questions. You&apos;re not risking a thing.
+              He has 60 days to try it on his own yard. If his back doesn&apos;t feel the difference, full refund. We cover return shipping. No restocking fee, no questions. You&apos;re not risking a thing.
             </AccordionContent>
           </AccordionItem>
 
