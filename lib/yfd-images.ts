@@ -23,7 +23,7 @@ export const yfdImages = {
   reason2Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/productimage.png?v=1778558991", // Durability / Hold-Fast bracket
   reason3Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/0512_5.gif?v=1778560234", // 3-minute install
   reason4Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/0512_3.gif?v=1778560037", // Adjustable — reuses hero (shows handle on real trimmer at user's height)
-  reason5Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/white_potted_flat_lay.png?v=1778560029", // Guarantee / lifetime — calm flat lay
+  reason5Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260512_054912_54f8385d-d7ae-4ba4-8844-aef29e50a3dc.png?v=1778565243", // Guarantee / lifetime — calm flat lay
 
   // ── PRODUCT SECTION ──────────────────────────────────────
   productMain: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/productimage.png?v=1778558991",
@@ -31,8 +31,6 @@ export const yfdImages = {
   productThumb2: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/0512_3.gif?v=1778560037",
   productThumb3: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/productimage.png?v=1778558991",
   productThumb4: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/easytoinstall.png?v=1778558990",
-  productThumb5: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/white_potted_flat_lay.png?v=1778560029",
-  productThumb6: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/manholdingtrimmer.png?v=1778560333",
 
   // ── PRODUCT BENEFIT ICONS (reused from main fd-images) ───
   benefitIcon1: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/2.png?v=1769840199",
@@ -60,8 +58,6 @@ export const yfdFallbacks = {
   productThumb2: "2",
   productThumb3: "3",
   productThumb4: "4",
-  productThumb5: "5",
-  productThumb6: "6",
 
   benefitIcon1: "🧍",
   benefitIcon2: "🔩",

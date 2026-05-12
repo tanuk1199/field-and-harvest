@@ -1,3 +1,6 @@
+"use client"
+
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Star } from "lucide-react"
@@ -11,7 +14,12 @@ import { YfdAsset } from "@/components/yfd-asset"
 
 const PDP_URL = "https://fieldandharvestco.com/products/the-yeoman-handle"
 
+const PRODUCT_THUMBS = ["productThumb1", "productThumb2", "productThumb3", "productThumb4"] as const
+type GalleryKey = "productMain" | (typeof PRODUCT_THUMBS)[number]
+
 export default function LandingPage() {
+  const [activeImage, setActiveImage] = useState<GalleryKey>("productMain")
+
   return (
     <div className="min-h-screen bg-background">
       {/* ============================================
@@ -251,14 +259,21 @@ export default function LandingPage() {
 
           <div className="p-5">
             <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-4">
-              <YfdAsset name="productMain" alt="The Yeoman Handle" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+              <YfdAsset name={activeImage} alt="The Yeoman Handle" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
             </div>
 
-            <div className="grid grid-cols-6 gap-1.5 mb-5">
-              {(["productThumb1", "productThumb2", "productThumb3", "productThumb4", "productThumb5", "productThumb6"] as const).map((name, i) => (
-                <div key={i} className="relative aspect-square rounded-md border-2 border-border bg-muted hover:border-primary transition-colors cursor-pointer overflow-hidden">
+            <div className="grid grid-cols-4 gap-1.5 mb-5">
+              {PRODUCT_THUMBS.map((name, i) => (
+                <button
+                  key={name}
+                  type="button"
+                  onClick={() => setActiveImage(name)}
+                  aria-label={`Show product view ${i + 1}`}
+                  aria-pressed={activeImage === name}
+                  className={`relative aspect-square rounded-md border-2 bg-muted transition-colors cursor-pointer overflow-hidden p-0 ${activeImage === name ? "border-primary" : "border-border hover:border-primary/60"}`}
+                >
                   <YfdAsset name={name} alt={`Product view ${i + 1}`} className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-[10px] text-muted-foreground font-bold" />
-                </div>
+                </button>
               ))}
             </div>
 
