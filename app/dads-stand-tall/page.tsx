@@ -28,7 +28,7 @@ export default function LandingPage() {
       <div className="bg-primary text-center py-3 px-4 shadow-sm">
         <p className="text-sm md:text-base font-medium">
           <span className="text-[#DDA15E] font-bold uppercase tracking-wide">Save Up To 36% Off</span>{" "}
-          <span className="text-primary-foreground uppercase tracking-wide">+ 2 Free Gardening Guides</span>
+          <span className="text-primary-foreground uppercase tracking-wide">+ 2 Free Yardwork Guides</span>
         </p>
       </div>
 
@@ -63,7 +63,7 @@ export default function LandingPage() {
 
         {/* Sale badge */}
         <div className="mt-5 text-center">
-          <span className="inline-block bg-[#DDA15E]/20 rounded-md py-2 px-4 font-bold text-sm text-foreground whitespace-nowrap">Save Up To 36% + 2 Free Gardening Guides</span>
+          <span className="inline-block bg-[#DDA15E]/20 rounded-md py-2 px-4 font-bold text-sm text-foreground whitespace-nowrap">Save Up To 36% + 2 Free Yardwork Guides</span>
         </div>
 
         {/* Main headline */}
@@ -254,7 +254,7 @@ export default function LandingPage() {
 
         <div className="bg-card border-2 border-border rounded-2xl overflow-hidden shadow-lg">
           <div className="bg-gradient-to-r from-primary to-primary/90 text-primary-foreground text-center py-3 px-4">
-            <p className="text-sm font-bold tracking-wide">Today: Up To 36% Off + 2 Free Gardening Guides</p>
+            <p className="text-sm font-bold tracking-wide">Today: Up To 36% Off + 2 Free Yardwork Guides</p>
           </div>
 
           <div className="p-5">
@@ -475,7 +475,7 @@ export default function LandingPage() {
               size="lg"
               className="w-full bg-[#C86F4C] hover:bg-[#C86F4C]/90 text-white font-bold py-6 text-base rounded-lg shadow-lg transition-all"
             >
-              Save Up To 36% + 2 Free Gardening Guides &rarr;
+              Save Up To 36% + 2 Free Yardwork Guides &rarr;
             </Button>
           </a>
         </div>

@@ -26,7 +26,10 @@ export const rwfdImages = {
   reason5Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/Untitleddesign_85.png?v=1774199057",                  // Guarantee — clean product flat lay
 
   // ── PRODUCT SECTION (4-thumb gallery matching Shopify gallery order) ──
-  productMain:   "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/Untitleddesign_86.png?v=1774199057",
+  // productMain is a dedicated hero shot for the listicle's product showcase —
+  // intentionally different from productThumb1 so the default state shows the hero.
+  // Clicking any thumb swaps in that thumb's Shopify gallery image.
+  productMain:   "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/rootwork_hero.png?v=1778620505",
   productThumb1: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/Untitleddesign_86.png?v=1774199057",
   productThumb2: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/Untitleddesign_85.png?v=1774199057",
   productThumb3: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/ChatGPTImageMar22_2026_11_56_08AM.png?v=1774199057",
