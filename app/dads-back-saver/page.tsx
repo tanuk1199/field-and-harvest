@@ -86,7 +86,7 @@ export default function LandingPage() {
             ))}
           </div>
           <p className="text-sm text-foreground font-medium">
-            4.8 stars <span className="text-muted-foreground mx-1">&bull;</span> 8,000+ reviews <span className="text-muted-foreground mx-1">&bull;</span> 8,000+ trimmers upgraded
+            4.8 stars <span className="text-muted-foreground mx-1">&bull;</span> 800 reviews <span className="text-muted-foreground mx-1">&bull;</span> 20,000 trimmers upgraded
           </p>
         </div>
       </section>
@@ -239,7 +239,7 @@ export default function LandingPage() {
               ))}
             </div>
             <p className="text-sm text-foreground font-medium">
-              4.8 stars <span className="text-muted-foreground mx-1.5">|</span> 8,000+ reviews
+              4.8 stars <span className="text-muted-foreground mx-1.5">|</span> 800 reviews <span className="text-muted-foreground mx-1.5">|</span> 20,000 trimmers upgraded
             </p>
           </div>
         </div>
@@ -315,7 +315,7 @@ export default function LandingPage() {
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance leading-tight">
             What Dads Are Saying
           </h2>
-          <p className="text-sm text-muted-foreground">4.8 out of 5 from 8,000+ reviews</p>
+          <p className="text-sm text-muted-foreground">4.8 out of 5 from 800 reviews</p>
         </div>
 
         <div className="space-y-4">
