@@ -79,8 +79,8 @@ export default function LandingPage() {
         </a>
 
         {/* Social proof */}
-        <div className="mt-5 flex items-center justify-center gap-3 flex-wrap">
-          <div className="flex gap-0.5">
+        <div className="mt-5 text-center">
+          <div className="flex justify-center gap-0.5 mb-2">
             {[...Array(5)].map((_, i) => (
               <Star key={i} className="w-5 h-5 fill-[#FDB913] text-[#FDB913]" />
             ))}
@@ -232,8 +232,8 @@ export default function LandingPage() {
             One handle. Two free yardwork guides. A lifetime warranty. This Father&apos;s Day, give him something he&apos;ll thank you for every time he walks the yard.
           </p>
 
-          <div className="flex items-center justify-center gap-3 mb-8 flex-wrap">
-            <div className="flex gap-0.5">
+          <div className="mb-8 text-center">
+            <div className="flex justify-center gap-0.5 mb-2">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-4 h-4 fill-[#FDB913] text-[#FDB913]" />
               ))}
