@@ -15,8 +15,8 @@ export const rwfdImages = {
   logo: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/Copy_of_COMFORT_CRADLE_Logos_5.png?v=1765838330",
 
   // ── HERO SECTION ──────────────────────────────────────────
-  // Lead Shopify product shot — clean product render
-  heroImage: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/Untitleddesign_86.png?v=1774199057",
+  // Above-the-fold hero (first image after the header)
+  heroImage: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260512_215736_fc05af54-8a58-4458-9ea7-28c48f4d96fc.png?v=1778623305",
 
   // ── LISTICLE REASON IMAGES ────────────────────────────────
   reason1Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/bad_weed_pull.gif?v=1778622148",                                                              // Back-saving — anti-pattern: bending/breaking root
