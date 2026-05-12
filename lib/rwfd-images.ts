@@ -19,11 +19,11 @@ export const rwfdImages = {
   heroImage: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/Untitleddesign_86.png?v=1774199057",
 
   // ── LISTICLE REASON IMAGES ────────────────────────────────
-  reason1Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/ChatGPTImageMar22_2026_11_56_08AM.png?v=1774199057",  // Back-saving — standing posture
-  reason2Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/ChatGPTImageMar22_2026_11_54_45AM.png?v=1774199057",  // Durable — reinforced steel detail
-  reason3Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/ChatGPTImageMar22_2026_11_55_11AM.png?v=1774199057",  // Time-saving — action shot
-  reason4Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/ChatGPTImageMar22_2026_12_14_11PM.png?v=1774199057",  // No kneeling — wide stance/use
-  reason5Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/Untitleddesign_85.png?v=1774199057",                  // Guarantee — clean product flat lay
+  reason1Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/bad_weed_pull.gif?v=1778622148",                                                              // Back-saving — anti-pattern: bending/breaking root
+  reason2Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/ChatGPTImageMar22_2026_12_14_11PM.png?v=1774199057",                                          // Durable — reinforced steel detail
+  reason3Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/good_weed_pull.gif?v=1778622149",                                                             // Time-saving — clean stand-up pull
+  reason4Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20260203_0145_ImageGeneration_remix_01kgh3z2wtfmwsxwcbfa06z6gx.png?v=1770102116",             // No kneeling — standing-only use
+  reason5Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260512_212416_083af4b7-56d2-4e47-932d-6532723ba1e2.png?v=1778621361",                    // Guarantee — calm product hero
 
   // ── PRODUCT SECTION (4-thumb gallery matching Shopify gallery order) ──
   // productMain is a dedicated hero shot for the listicle's product showcase —
