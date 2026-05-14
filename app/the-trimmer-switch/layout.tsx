@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     url: "https://explore.fieldandharvestco.com/the-trimmer-switch",
     images: [
       {
-        url: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/0512_3.gif?v=1778560037",
+        url: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/0512_4.gif?v=1778560127",
         alt: "The Yeoman Handle attached to a string trimmer",
       },
     ],
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: "The Trimmer Handle Homeowners Are Switching To",
     description: "5 reasons trimmer owners are making the switch. Save Up To 43% Off + 2 Free Yardwork Guides.",
     images: [
-      "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/0512_3.gif?v=1778560037",
+      "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/0512_4.gif?v=1778560127",
     ],
   },
 }

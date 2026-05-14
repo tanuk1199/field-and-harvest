@@ -2,9 +2,9 @@
 // IMAGE ASSET MAP — Yeoman Handle: The Trimmer Switch (Evergreen)
 // (Route: /the-trimmer-switch)
 // ============================================================
-// Pulled from Shopify on 2026-05-13 — product gid 7914273374251.
-// Evergreen utility listicle — no Father's Day framing.
-// Mirrors the winning ad's "I changed my handle" swap moment.
+// Slot mapping mirrors lib/yfd-images.ts exactly (per
+// feedback_listicle-image-slot-reuse.md — same product, same
+// slots, same images; only the listicle copy changes).
 // ============================================================
 
 export const ttsImages = {
@@ -13,14 +13,14 @@ export const ttsImages = {
   logo: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/Copy_of_COMFORT_CRADLE_Logos_5.png?v=1765838330",
 
   // ── HERO SECTION ──────────────────────────────────────────
-  // The swap moment — animated demo to mirror the ad's opening line
-  heroImage: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/0512_3.gif?v=1778560037",
+  // Man holding the trimmer with the Yeoman attached — animated swap-moment hero
+  heroImage: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/0512_4.gif?v=1778560127",
 
   // ── LISTICLE REASON IMAGES ────────────────────────────────
-  reason1Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/0512_5.gif?v=1778560234",      // Back-saving — animated demo of standing upright
-  reason2Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/productimage.png?v=1778558991", // Durability — Hold-Fast bracket
-  reason3Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/easytoinstall.png?v=1778558990", // 3-minute install
-  reason4Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/manholdingtrimmer.png?v=1778560333", // Adjustable — handle at a user's chest height
+  reason1Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/check_mark.png?v=1778562973",      // Back-saving
+  reason2Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/productimage.png?v=1778558991", // Durability / Hold-Fast bracket
+  reason3Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/0512_5.gif?v=1778560234", // 3-minute install
+  reason4Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/0512_3.gif?v=1778560037", // Adjustable
   reason5Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260512_054912_54f8385d-d7ae-4ba4-8844-aef29e50a3dc.png?v=1778565243", // Guarantee / lifetime
 
   // ── PRODUCT SECTION ──────────────────────────────────────
@@ -43,7 +43,7 @@ export const ttsImages = {
 export const ttsFallbacks = {
 
   logo: "FIELD & HARVEST CO.",
-  heroImage: "🔧",
+  heroImage: "🌾",
 
   reason1Image: "🧍",
   reason2Image: "🔩",
