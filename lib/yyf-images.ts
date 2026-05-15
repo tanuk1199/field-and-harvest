@@ -19,7 +19,7 @@ export const yyfImages = {
 
   // ── HERO SECTION ──────────────────────────────────────────
   // Hero: dad wearing the Yoke with trimmer hanging from Quick-Hitch
-  heroImage: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/using_harness_2.gif?v=1778815787",
+  heroImage: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/Using_Harness.gif?v=1778815786",
 
   // ── LISTICLE REASON IMAGES ────────────────────────────────
   reason1Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/before_and_after.png?v=1778817805",  // Back-saving / Crossbeam — load split across both shoulders
