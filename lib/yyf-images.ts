@@ -19,21 +19,21 @@ export const yyfImages = {
 
   // ── HERO SECTION ──────────────────────────────────────────
   // Hero: dad wearing the Yoke with trimmer hanging from Quick-Hitch
-  heroImage: "",
+  heroImage: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/using_harness_2.gif?v=1778815787",
 
   // ── LISTICLE REASON IMAGES ────────────────────────────────
-  reason1Image: "",  // Back-saving / Crossbeam — load split across both shoulders
-  reason2Image: "",  // Durability / Quick-Hitch + Oxford-weave nylon
-  reason3Image: "",  // Three-second clip-in install
-  reason4Image: "",  // Adjustable — strap range on multiple body types
-  reason5Image: "",  // Guarantee / lifetime — flat lay
+  reason1Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/before_and_after.png?v=1778817805",  // Back-saving / Crossbeam — load split across both shoulders
+  reason2Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/bladeonblackcoverpad.png?v=1778737547",  // Durability / Quick-Hitch + Oxford-weave nylon
+  reason3Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/Attaching_clip.gif?v=1778815787",  // Three-second clip-in install
+  reason4Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/attaching_harness.gif?v=1778815786",  // Adjustable — strap range on multiple body types
+  reason5Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260515_040736_c8eaa8f8-751f-4243-a117-143df4747283.png?v=1778818841",  // Guarantee / lifetime — flat lay
 
   // ── PRODUCT SECTION ──────────────────────────────────────
-  productMain: "",
-  productThumb1: "",
-  productThumb2: "",
-  productThumb3: "",
-  productThumb4: "",
+  productMain: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/YeomanYokeHero.png?v=1778815824",
+  productThumb1: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/FlatLay3.png?v=1778733592",
+  productThumb2: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/bladeonblackcoverpad.png?v=1778737547",
+  productThumb3: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/brokentwigonpadding.png?v=1778737545",
+  productThumb4: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/FlatLay1.png?v=1778733579",
 
   // ── PRODUCT BENEFIT ICONS (reused from yfd-images) ───────
   benefitIcon1: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/2.png?v=1769840199",
