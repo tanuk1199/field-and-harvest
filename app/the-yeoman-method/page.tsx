@@ -83,7 +83,7 @@ export default function YeomanMethodPage() {
           {/* Left: copy */}
           <div className="order-2 md:order-1">
             <p className="text-[11px] md:text-xs font-bold tracking-[0.2em] uppercase text-[#C86F4C] mb-4">
-              For Yardsmen Over 50
+              For Men Over 50 Who Do Their Own Yards
             </p>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-[1.05] tracking-tight text-balance mb-6">
               The 3-Minute Fix For Trimmer Back That{" "}
@@ -141,7 +141,7 @@ export default function YeomanMethodPage() {
       <section className="border-y border-border bg-[#F3EBDD]/50">
         <div className="max-w-3xl mx-auto px-4 py-6 text-center">
           <p className="text-xs md:text-sm font-medium text-muted-foreground tracking-wide leading-relaxed">
-            <span className="font-bold text-foreground">4,000+</span> yardsmen over 50
+            <span className="font-bold text-foreground">4,000+</span> men over 50 who do their own yards
             <span className="mx-2 md:mx-3 opacity-40">·</span>
             <span className="font-bold text-foreground">4.8&#9733;</span> across 1,200+ verified reviews
             <span className="mx-2 md:mx-3 opacity-40">·</span>
@@ -394,7 +394,7 @@ export default function YeomanMethodPage() {
             Verified Buyers
           </p>
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight mb-12 text-balance text-center">
-            What 4,000+ yardsmen over 50 <span className="italic">are saying</span>
+            What 4,000+ men over 50 <span className="italic">are saying</span>
           </h2>
 
           <div className="space-y-8">
@@ -493,7 +493,7 @@ export default function YeomanMethodPage() {
             No tools beyond <span className="italic">the one in the box</span>
           </h2>
           <p className="text-base md:text-lg text-muted-foreground mb-10">
-            Most yardsmen finish the install in under three minutes. Some take five. Nobody takes more.
+            Most men finish the install in under three minutes. Some take five. Nobody takes more.
           </p>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -549,7 +549,7 @@ export default function YeomanMethodPage() {
           Vs. The Alternatives
         </p>
         <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight mb-10 text-balance">
-          How yardsmen used to solve this
+          How men used to solve this
         </h2>
 
         <div className="overflow-hidden rounded-2xl border border-border shadow-sm">
@@ -687,7 +687,7 @@ export default function YeomanMethodPage() {
         </div>
 
         <p className="text-center text-xs md:text-sm text-muted-foreground mt-6 max-w-xl mx-auto">
-          Why most yardsmen choose the pair: one for your trimmer, one for the shed when the next one needs it. Or one for you, one for your brother / father / son who&rsquo;s about to learn the hard way.
+          Why most buyers choose the pair: one for your trimmer, one for the shed when the next one needs it. Or one for you, one for your brother / father / son who&rsquo;s about to learn the hard way.
         </p>
       </section>
 
@@ -717,7 +717,7 @@ export default function YeomanMethodPage() {
               After 60 days, the lifetime warranty kicks in. If any component fails &mdash; ever &mdash; we replace it.
             </p>
             <p className="text-foreground font-semibold">
-              We&rsquo;ve watched four thousand yardsmen over fifty stop complaining about Sunday back pain after one Saturday with the Yeoman. The math is on our side. We&rsquo;re happy to take the risk.
+              We&rsquo;ve watched four thousand men over fifty stop complaining about Sunday back pain after one Saturday with the Yeoman. The math is on our side. We&rsquo;re happy to take the risk.
             </p>
           </div>
 
@@ -765,7 +765,7 @@ export default function YeomanMethodPage() {
           Common Questions
         </p>
         <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight mb-10 text-balance">
-          Questions yardsmen ask <span className="italic">before they buy</span>
+          Questions buyers ask <span className="italic">before they order</span>
         </h2>
 
         <Accordion type="single" collapsible className="space-y-3">
@@ -788,7 +788,7 @@ export default function YeomanMethodPage() {
             },
             {
               q: "Can I take it off when I'm not using it?",
-              a: "Yes. It loosens in under a minute. Some yardsmen leave it on permanently. Others remove it for storage. Both are fine.",
+              a: "Yes. It loosens in under a minute. Some men leave it on permanently. Others remove it for storage. Both are fine.",
             },
             {
               q: "Why isn't this just standard equipment from the trimmer manufacturers?",
