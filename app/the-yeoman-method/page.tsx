@@ -55,11 +55,11 @@ export default function YeomanMethodPage() {
           ============================================ */}
       <div className="bg-primary text-center py-3 px-4">
         <p className="text-[11px] sm:text-xs md:text-sm font-medium uppercase tracking-wide text-primary-foreground leading-snug">
-          <span className="text-[#DDA15E] font-bold">Lifetime Warranty</span>
+          <span className="text-[#DDA15E] font-bold">+ 2 Free Yardwork Guides</span>
+          <span className="mx-2 opacity-50">·</span>
+          <span>Lifetime Warranty</span>
           <span className="mx-2 opacity-50">·</span>
           <span>60-Day Money-Back</span>
-          <span className="mx-2 opacity-50">·</span>
-          <span>Free US Shipping</span>
         </p>
       </div>
 
@@ -97,7 +97,7 @@ export default function YeomanMethodPage() {
             <div className="flex flex-wrap gap-x-4 gap-y-2 text-[11px] md:text-xs font-medium text-muted-foreground uppercase tracking-wider mb-7">
               <span className="flex items-center gap-1.5"><Check className="w-3.5 h-3.5 text-[#C86F4C]" /> Lifetime Warranty</span>
               <span className="flex items-center gap-1.5"><Check className="w-3.5 h-3.5 text-[#C86F4C]" /> 60-Day Money-Back</span>
-              <span className="flex items-center gap-1.5"><Check className="w-3.5 h-3.5 text-[#C86F4C]" /> Universal Fit</span>
+              <span className="flex items-center gap-1.5"><Check className="w-3.5 h-3.5 text-[#C86F4C]" /> + 2 Free Guides</span>
             </div>
 
             <a href={PDP_URL}>
@@ -121,9 +121,9 @@ export default function YeomanMethodPage() {
             </div>
           </div>
 
-          {/* Right: hero image */}
+          {/* Right: hero image — square */}
           <div className="order-1 md:order-2">
-            <div className="relative w-full aspect-[4/5] md:aspect-[3/4] rounded-2xl overflow-hidden shadow-xl bg-muted">
+            <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-xl bg-muted">
               <YmAsset
                 name="heroImage"
                 alt="The Yeoman Handle bolted onto a string trimmer, used in upright posture"
@@ -477,6 +477,33 @@ export default function YeomanMethodPage() {
                 <p className="text-base md:text-lg text-foreground/85 leading-relaxed">{item}</p>
               </li>
             ))}
+
+            {/* Bonus ebooks block */}
+            <li className="pt-4 mt-2 border-t border-border">
+              <p className="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-[#C86F4C] mb-3">
+                Plus &mdash; Free With Every Order
+              </p>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 mt-1 w-5 h-5 rounded bg-[#DDA15E] flex items-center justify-center">
+                    <span className="text-[10px] font-bold text-foreground">PDF</span>
+                  </div>
+                  <div>
+                    <p className="text-base text-foreground font-semibold leading-snug">The Saturday Yard Routine</p>
+                    <p className="text-xs md:text-sm text-muted-foreground leading-snug">A 12-page guide to cutting Saturday yard time in half without cutting corners.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 mt-1 w-5 h-5 rounded bg-[#DDA15E] flex items-center justify-center">
+                    <span className="text-[10px] font-bold text-foreground">PDF</span>
+                  </div>
+                  <div>
+                    <p className="text-base text-foreground font-semibold leading-snug">The Back-Saver Field Manual</p>
+                    <p className="text-xs md:text-sm text-muted-foreground leading-snug">15 small mechanical fixes that add up to a Sunday morning without back pain.</p>
+                  </div>
+                </div>
+              </div>
+            </li>
           </ul>
         </div>
       </section>
@@ -629,7 +656,7 @@ export default function YeomanMethodPage() {
             <p className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-1">$39</p>
             <p className="text-sm text-muted-foreground mb-5">1 Handle</p>
             <ul className="space-y-2 text-sm text-foreground/80 mb-7 flex-1">
-              <li className="flex gap-2"><Check className="w-4 h-4 text-[#C86F4C] flex-shrink-0 mt-0.5" /> Free US shipping</li>
+              <li className="flex gap-2"><Check className="w-4 h-4 text-[#C86F4C] flex-shrink-0 mt-0.5" /> + 2 Free Yardwork Guides</li>
               <li className="flex gap-2"><Check className="w-4 h-4 text-[#C86F4C] flex-shrink-0 mt-0.5" /> Lifetime warranty</li>
               <li className="flex gap-2"><Check className="w-4 h-4 text-[#C86F4C] flex-shrink-0 mt-0.5" /> 60-day money-back</li>
             </ul>
@@ -652,7 +679,7 @@ export default function YeomanMethodPage() {
             </div>
             <p className="text-sm text-muted-foreground mb-5">2 Handles &mdash; Save $9</p>
             <ul className="space-y-2 text-sm text-foreground/80 mb-7 flex-1">
-              <li className="flex gap-2"><Check className="w-4 h-4 text-[#C86F4C] flex-shrink-0 mt-0.5" /> Free US shipping</li>
+              <li className="flex gap-2"><Check className="w-4 h-4 text-[#C86F4C] flex-shrink-0 mt-0.5" /> + 2 Free Yardwork Guides</li>
               <li className="flex gap-2"><Check className="w-4 h-4 text-[#C86F4C] flex-shrink-0 mt-0.5" /> Lifetime warranty on both</li>
               <li className="flex gap-2"><Check className="w-4 h-4 text-[#C86F4C] flex-shrink-0 mt-0.5" /> 60-day money-back</li>
               <li className="flex gap-2"><Check className="w-4 h-4 text-[#C86F4C] flex-shrink-0 mt-0.5" /> One for your shed</li>
@@ -673,7 +700,7 @@ export default function YeomanMethodPage() {
             </div>
             <p className="text-sm text-muted-foreground mb-5">4 Handles &mdash; Save $27</p>
             <ul className="space-y-2 text-sm text-foreground/80 mb-7 flex-1">
-              <li className="flex gap-2"><Check className="w-4 h-4 text-[#C86F4C] flex-shrink-0 mt-0.5" /> Free US shipping</li>
+              <li className="flex gap-2"><Check className="w-4 h-4 text-[#C86F4C] flex-shrink-0 mt-0.5" /> + 2 Free Yardwork Guides</li>
               <li className="flex gap-2"><Check className="w-4 h-4 text-[#C86F4C] flex-shrink-0 mt-0.5" /> Lifetime warranty on all</li>
               <li className="flex gap-2"><Check className="w-4 h-4 text-[#C86F4C] flex-shrink-0 mt-0.5" /> 60-day money-back</li>
               <li className="flex gap-2"><Check className="w-4 h-4 text-[#C86F4C] flex-shrink-0 mt-0.5" /> Gifts for the men in your life</li>
@@ -740,8 +767,8 @@ export default function YeomanMethodPage() {
             <div className="flex items-center gap-3 bg-card border-2 border-border rounded-xl px-5 py-3">
               <Package className="w-6 h-6 text-[#C86F4C]" />
               <div className="text-left">
-                <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground leading-tight">Free US</p>
-                <p className="text-sm font-bold text-foreground leading-tight">Shipping</p>
+                <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground leading-tight">+ 2 Free</p>
+                <p className="text-sm font-bold text-foreground leading-tight">Yardwork Guides</p>
               </div>
             </div>
           </div>
@@ -800,7 +827,7 @@ export default function YeomanMethodPage() {
             },
             {
               q: "How long does shipping take?",
-              a: "Free US shipping, typically arrives in 5–9 business days. Tracking sent within 24 hours of order.",
+              a: "Standard US shipping is $9.95 and typically arrives in 5–9 business days. Orders over $85 ship free. Tracking sent within 24 hours of order.",
             },
           ].map((item, i) => (
             <AccordionItem
@@ -839,7 +866,7 @@ export default function YeomanMethodPage() {
             </Button>
           </a>
           <p className="text-xs md:text-sm text-background/60 mt-5 uppercase tracking-wider">
-            60-Day Money-Back &middot; Lifetime Warranty &middot; Free US Shipping
+            60-Day Money-Back &middot; Lifetime Warranty &middot; + 2 Free Yardwork Guides
           </p>
         </div>
       </section>
@@ -872,7 +899,7 @@ export default function YeomanMethodPage() {
               The Yeoman Handle
             </p>
             <p className="text-xs text-muted-foreground leading-tight">
-              From $39 &middot; Lifetime Warranty
+              From $39 &middot; + 2 Free Yardwork Guides
             </p>
           </div>
           <a href={PDP_URL} className="flex-shrink-0">
