@@ -1,11 +1,11 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "The Yeoman Handle™ — Finish Your Yard Without Taking A Break | Field & Harvest Co.",
-  description: "6 reasons trimmer owners are finishing the whole yard in one continuous pass. No water break at minute 35, no hand-switching, no bent-over slowdown. Save Up To 43% Off + 2 Free Yardwork Guides. Lifetime warranty, 60-day money-back.",
+  title: "The Yeoman Handle™ — The Weed Wacker Attachment Saving Men Hours On Saturday | Field & Harvest Co.",
+  description: "6 reasons this weed wacker attachment cuts 20-30 minutes off Saturday yard work. No water break at minute 25, no hand-switching at 35, no bent-over slowdown at 45. Save Up To 43% Off + 2 Free Yardwork Guides. Lifetime warranty, 60-day money-back.",
   openGraph: {
-    title: "Finish Your Yard Without Taking A Break",
-    description: "6 reasons trimmer owners are finishing in one continuous pass. Save Up To 43% Off + 2 Free Yardwork Guides.",
+    title: "The Weed Wacker Attachment Saving Men Hours On Saturday",
+    description: "6 reasons this attachment cuts 20-30 minutes off Saturday yard work. Save Up To 43% Off + 2 Free Yardwork Guides.",
     type: "website",
     url: "https://explore.fieldandharvestco.com/finish-without-breaks",
     images: [
@@ -17,8 +17,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Finish Your Yard Without Taking A Break",
-    description: "6 reasons trimmer owners are finishing in one continuous pass. Save Up To 43% Off + 2 Free Yardwork Guides.",
+    title: "The Weed Wacker Attachment Saving Men Hours On Saturday",
+    description: "6 reasons this attachment cuts 20-30 minutes off Saturday yard work. Save Up To 43% Off + 2 Free Yardwork Guides.",
     images: [
       "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/0512_4.gif?v=1778560127",
     ],

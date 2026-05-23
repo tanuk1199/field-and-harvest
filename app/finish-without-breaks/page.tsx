@@ -53,10 +53,10 @@ export default function LandingPage() {
 
         <div className="mt-5 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground leading-tight text-balance tracking-tight">
-            6 Reasons Trimmer Owners Are <span className="text-[#C86F4C]">Finishing The Yard In One Pass</span>
+            6 Reasons This Weed Wacker Attachment Is <span className="text-[#C86F4C]">Saving Men Hours On Saturday</span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground mt-4 leading-relaxed text-pretty max-w-md mx-auto">
-            Water break at minute 25. Hand switch at minute 35. A stretch at minute 45. A factory trimmer handle slows you down in three different ways. The Yeoman bolts onto the trimmer you already own and fixes all three. One pass, no breaks.
+            Water break at minute 25. Hand switch at minute 35. A stretch at minute 45. A factory weed wacker handle slows you down in three different ways and adds 20 to 30 minutes to every Saturday. The Yeoman bolts onto the trimmer you already own and fixes all three. Hours back into the weekend.
           </p>
         </div>
 
@@ -65,7 +65,7 @@ export default function LandingPage() {
             size="lg"
             className="w-full mt-8 bg-[#C86F4C] hover:bg-[#C86F4C]/90 text-white font-bold py-7 text-lg rounded-lg shadow-lg transition-all hover:shadow-xl"
           >
-            Finish In One Pass &rarr;
+            Save Hours On Saturday &rarr;
           </Button>
         </a>
 
