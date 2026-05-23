@@ -18,11 +18,11 @@ export const fwbImages = {
   heroImage: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/0512_4.gif?v=1778560127",
 
   // ── LISTICLE REASON IMAGES (6 reasons) ────────────────────
-  reason1Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/productimage.png?v=1778558991",      // Grip — Hold-Fast (hands don't quit)
+  reason1Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260523_052417_b534b17b-378d-4fc6-9106-babc363d4ccd.png?v=1779513919",      // Grip — Hold-Fast (hands don't quit)
   reason2Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/check_mark.png?v=1778562973",       // Posture — Plumb-Set (back doesn't quit)
   reason3Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/0512_3.gif?v=1778560037",           // Reach extension — cover more per swing
-  reason4Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/manholdingtrimmer.png?v=1778560333", // One continuous pass — no breaks
-  reason5Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/easytoinstall.png?v=1778558990",    // Three-minute install — start today
+  reason4Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/0512_4.gif?v=1778560127", // One continuous pass — no breaks
+  reason5Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/0512_5.gif?v=1778560234",    // Three-minute install — start today
   reason6Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260512_054912_54f8385d-d7ae-4ba4-8844-aef29e50a3dc.png?v=1778565243", // Guarantee / lifetime warranty
 
   // ── PRODUCT SECTION ──────────────────────────────────────
