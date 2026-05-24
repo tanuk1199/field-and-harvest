@@ -23,7 +23,7 @@ export const tmhImages = {
   reason2Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260523_052417_b534b17b-378d-4fc6-9106-babc363d4ccd.png?v=1779513919", // Stop bending — Plumb-Set posture
   reason3Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/0512_3.gif?v=1778560037",            // Reach extension — built for your arms
   reason4Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/0512_5.gif?v=1778560234",            // Adjustability — dials in to your height
-  reason5Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/productimage.png?v=1778558991",     // Build / Hold-Fast bracket
+  reason5Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260516_062652_e50e7e76-973b-4064-8a34-bc3b0500d150_1.png?v=1779592226",     // Build / Hold-Fast bracket
   reason6Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260512_054912_54f8385d-d7ae-4ba4-8844-aef29e50a3dc.png?v=1778565243", // Guarantee / lifetime warranty
 
   // ── PRODUCT SECTION ──────────────────────────────────────
