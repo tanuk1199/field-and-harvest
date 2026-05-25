@@ -25,9 +25,9 @@ export const pabImages = {
   problem3Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260525_033500_39b107ae-2e77-4536-9cf5-6fa314074244.png?v=1779681791",            // Limited reach — more passes / compound load
 
   // ── SOLUTION SECTION IMAGES (3 Yeoman fixes paired to problems) ──
-  solution1Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260523_052417_b534b17b-378d-4fc6-9106-babc363d4ccd.png?v=1779513919", // Plumb-Set lifts grip 9 inches
-  solution2Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/0512_5.gif?v=1778560234",            // Hold-Fast oval grip cuts force 40%
-  solution3Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/easytoinstall.png?v=1778558990",     // Forward extension covers more ground
+  solution1Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/0512_5.gif?v=1778560234", // Plumb-Set lifts grip 9 inches (moved from old solution2)
+  solution2Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/0512_4.gif?v=1778560127",            // Hold-Fast oval grip cuts force 40% (moved from hero)
+  solution3Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/0512_3.gif?v=1778560037",     // Forward extension covers more ground
 
   // ── PRODUCT SECTION ──────────────────────────────────────
   productMain: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260512_053705_702ffc4f-a3cc-4cb1-81e8-c862cccc10d5.png?v=1778564569",
