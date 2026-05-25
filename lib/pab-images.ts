@@ -20,7 +20,7 @@ export const pabImages = {
   heroImage: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/0512_4.gif?v=1778560127",
 
   // ── PROBLEM SECTION IMAGES (3 reasons WHY your back hurts) ──
-  problem1Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260525_033500_a93b36cc-8d18-4160-a529-4340e5732a4a.png?v=1779680355",  // Grip too low — forces forward bend
+  problem1Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260525_040825_da04a560-eb1e-4805-8514-5027004a9a2f.png?v=1779682310",  // Grip too low — forces forward bend
   problem2Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260525_034228_d2c28ec3-bc7f-4420-a8a7-2ff08a52c029.jpg?v=1779680597",      // Round grip — exhausts forearm
   problem3Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260525_033500_39b107ae-2e77-4536-9cf5-6fa314074244.png?v=1779681791",            // Limited reach — more passes / compound load
 
