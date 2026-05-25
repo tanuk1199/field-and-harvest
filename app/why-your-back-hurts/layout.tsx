@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Why Your Back Hurts After Weed Eating — And The 3-Minute Fix | Field & Harvest Co.",
-  description: "Your back doesn't hurt because you're getting old. It hurts because your weed wacker is built wrong. 3 reasons why factory handles wreck your back and how the Yeoman fixes all three. Save Up To 43% Off + 2 Free Yardwork Guides.",
+  description: "Your weed wacker handle is the problem, not your back. 3 reasons the factory handle is wrecking your back and how the Yeoman fixes all three in a 3-minute bolt-on. Save Up To 43% Off + 2 Free Yardwork Guides.",
   openGraph: {
     title: "Why Your Back Hurts After Weed Eating",
     description: "3 reasons your weed wacker is wrecking your back and the 3-minute fix that ends it. Save Up To 43% Off + 2 Free Yardwork Guides.",

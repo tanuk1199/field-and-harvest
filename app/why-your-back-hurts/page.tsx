@@ -53,10 +53,10 @@ export default function LandingPage() {
 
         <div className="mt-5 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground leading-tight text-balance tracking-tight">
-            Your Back Doesn&apos;t Hurt Because You&apos;re Getting Old. <span className="text-[#C86F4C]">Your Weed Wacker Is Built Wrong.</span>
+            Your Weed Wacker Handle Is The Problem. <span className="text-[#C86F4C]">Not Your Back.</span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground mt-4 leading-relaxed text-pretty max-w-md mx-auto">
-            Every Saturday after weed eating, your lower back locks up by Sunday morning. You blame your age. It&apos;s not your age. Here are 3 reasons the factory handle on your weed wacker is the cause, and the 3-minute bolt-on that fixes all of them.
+            Every Saturday after weed eating, your lower back locks up by Sunday morning. Most men blame the trimming. The trimming isn&apos;t the problem. The factory handle is. Here are 3 reasons it&apos;s wrecking your back and the 3-minute bolt-on that fixes all of them.
           </p>
         </div>
 
