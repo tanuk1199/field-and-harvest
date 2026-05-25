@@ -17,7 +17,7 @@ export const pabImages = {
   // ── HERO SECTION ──────────────────────────────────────────
   // Hero — animated swap-moment placeholder. Ideal asset: hunched-over
   // operator silhouette / side-profile spinal flexion visualization
-  heroImage: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/0512_4.gif?v=1778560127",
+  heroImage: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260525_043355_27a0bd97-130c-4349-b236-fc334383f7de.png?v=1779683808",
 
   // ── PROBLEM SECTION IMAGES (3 reasons WHY your back hurts) ──
   problem1Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260525_040825_da04a560-eb1e-4805-8514-5027004a9a2f.png?v=1779682310",  // Grip too low — forces forward bend
