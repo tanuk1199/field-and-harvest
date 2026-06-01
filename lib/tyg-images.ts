@@ -19,9 +19,9 @@ export const tygImages = {
   heroImage: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/0512_4.gif?v=1778560127",
 
   // ── LISTICLE REASON IMAGES (6 reasons) ───────────────────
-  reason1Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/manholdingtrimmer.png?v=1778560333", // He'll actually use it
-  reason2Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/easytoinstall.png?v=1778558990",     // Fits his trimmer (compatibility)
-  reason3Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/0512_3.gif?v=1778560037",            // Saves his back (Plumb-Set demo)
+  reason1Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/check_mark.png?v=1778562973",        // Saves his back (Plumb-Set — primary purchase driver, image mirrored from /the-trimmer-switch reason1)
+  reason2Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/manholdingtrimmer.png?v=1778560333", // He'll actually use it (anti-generic-gift)
+  reason3Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/easytoinstall.png?v=1778558990",     // Fits his trimmer (compatibility reassurance)
   reason4Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/0512_5.gif?v=1778560234",            // 3-minute install
   reason5Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/productimage.png?v=1778558991",      // Built to last / Hold-Fast
   reason6Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260512_054912_54f8385d-d7ae-4ba4-8844-aef29e50a3dc.png?v=1778565243", // 60-day trial guarantee
@@ -49,8 +49,8 @@ export const tygFallbacks = {
   heroImage: "🎁",
 
   reason1Image: "🧍",
-  reason2Image: "🔧",
-  reason3Image: "🧍",
+  reason2Image: "🧍",
+  reason3Image: "🔧",
   reason4Image: "⏱️",
   reason5Image: "🔩",
   reason6Image: "🛡️",

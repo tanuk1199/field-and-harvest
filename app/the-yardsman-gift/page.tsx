@@ -86,13 +86,37 @@ export default function LandingPage() {
           ============================================ */}
       <section className="max-w-lg mx-auto px-4 py-12 space-y-10">
 
-        {/* Reason 1 — He'll actually use it (anti-generic-gift) */}
+        {/* Reason 1 — BACK-SAVING (the actual purchase driver, image mirrored from /the-trimmer-switch reason 1) */}
+        <div className="bg-card rounded-2xl p-8 border border-border shadow-sm">
+          <div className="flex items-center justify-between mb-4">
+            <Badge variant="secondary" className="text-xs uppercase tracking-wider font-bold bg-transparent">
+              Saves The Back He Won&apos;t Mention
+            </Badge>
+            <span className="text-xs font-bold text-muted-foreground">01</span>
+          </div>
+          <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance leading-tight">
+            He stops hunching over the trimmer. You stop watching him hurt.
+          </h3>
+          <p className="text-sm font-bold uppercase tracking-wide text-[#C86F4C] mb-6">
+            The Plumb-Set&trade; Geometry
+          </p>
+
+          <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
+            <TygAsset name="reason1Image" alt="Standing upright with the Yeoman Handle, no more hunching" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+          </div>
+
+          <p className="text-foreground/80 text-pretty leading-relaxed text-base">
+            This is the real gift. The Sunday morning back he won&apos;t complain about. The Saturday afternoon when he doesn&apos;t sit on the porch halfway through. Standard trimmer handles force him forward over the head. Twenty minutes in, his lower back is locked. The Plumb-Set&trade;, our fixed grip angle, lifts his off-hand 9 inches above the factory loop so his spine stays plumb and both hands share the load. <span className="font-bold text-foreground">He stands upright the entire pass. No hunch, no ache, no excuse not to finish the yard.</span>
+          </p>
+        </div>
+
+        {/* Reason 2 — He'll actually use it (anti-generic-gift) */}
         <div className="bg-card rounded-2xl p-8 border border-border shadow-sm">
           <div className="flex items-center justify-between mb-4">
             <Badge variant="secondary" className="text-xs uppercase tracking-wider font-bold bg-transparent">
               The Gift He&apos;ll Reach For
             </Badge>
-            <span className="text-xs font-bold text-muted-foreground">01</span>
+            <span className="text-xs font-bold text-muted-foreground">02</span>
           </div>
           <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance leading-tight">
             He&apos;ll actually use this. Not like the last tie.
@@ -102,7 +126,7 @@ export default function LandingPage() {
           </p>
 
           <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
-            <TygAsset name="reason1Image" alt="A man using his trimmer with the Yeoman Handle attached" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+            <TygAsset name="reason2Image" alt="A man using his trimmer with the Yeoman Handle attached" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
@@ -110,13 +134,13 @@ export default function LandingPage() {
           </p>
         </div>
 
-        {/* Reason 2 — Fits his trimmer (compatibility reassurance for nervous gift-buyers) */}
+        {/* Reason 3 — Fits his trimmer (compatibility reassurance for nervous gift-buyers) */}
         <div className="bg-card rounded-2xl p-8 border border-border shadow-sm">
           <div className="flex items-center justify-between mb-4">
             <Badge variant="secondary" className="text-xs uppercase tracking-wider font-bold bg-transparent">
               Fits The Trimmer He Already Owns
             </Badge>
-            <span className="text-xs font-bold text-muted-foreground">02</span>
+            <span className="text-xs font-bold text-muted-foreground">03</span>
           </div>
           <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance leading-tight">
             You don&apos;t need to know what brand his trimmer is.
@@ -126,35 +150,11 @@ export default function LandingPage() {
           </p>
 
           <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
-            <TygAsset name="reason2Image" alt="The Yeoman Handle fits any major trimmer brand" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+            <TygAsset name="reason3Image" alt="The Yeoman Handle fits any major trimmer brand" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
             The biggest worry with a tool gift: will it actually fit his stuff? The Yeoman bolts onto every major brand on the market, gas or battery, straight shaft or curved. No measuring, no asking him, no risk of returning the wrong thing. <span className="font-bold text-foreground">If he has a string trimmer, this fits it.</span>
-          </p>
-        </div>
-
-        {/* Reason 3 — Saves his back (the real gift — the thing he won't admit he needs) */}
-        <div className="bg-card rounded-2xl p-8 border border-border shadow-sm">
-          <div className="flex items-center justify-between mb-4">
-            <Badge variant="secondary" className="text-xs uppercase tracking-wider font-bold bg-transparent">
-              Saves The Back He Won&apos;t Mention
-            </Badge>
-            <span className="text-xs font-bold text-muted-foreground">03</span>
-          </div>
-          <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance leading-tight">
-            The Sunday morning back he won&apos;t complain about. Fixed.
-          </h3>
-          <p className="text-sm font-bold uppercase tracking-wide text-[#C86F4C] mb-6">
-            The Plumb-Set&trade; Geometry
-          </p>
-
-          <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
-            <TygAsset name="reason3Image" alt="Standing upright with the Yeoman Handle, no more hunching" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
-          </div>
-
-          <p className="text-foreground/80 text-pretty leading-relaxed text-base">
-            He won&apos;t tell you his lower back is locked the morning after he trims. He doesn&apos;t want to admit yard work is wearing him down. The Plumb-Set&trade; lifts his off-hand 9 inches above the factory loop so he stands upright the entire pass. Spine plumb. Both hands sharing the load. <span className="font-bold text-foreground">He&apos;ll feel the difference the first Saturday and won&apos;t know how to thank you.</span>
           </p>
         </div>
 
