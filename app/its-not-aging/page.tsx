@@ -99,7 +99,7 @@ export default function LandingPage() {
 
         <div className="space-y-5 text-[17px] md:text-lg leading-[1.8] text-foreground/85">
 
-          {/* Opening recognition — broken into 3 blocks */}
+          {/* Opening recognition */}
           <p>
             Most homeowners over 50 who still do their own yard finish the front, walk inside, and tell their wife the back is <em>fine</em>.
           </p>
@@ -112,7 +112,16 @@ export default function LandingPage() {
             By the next weekend, the pain has become something you plan around instead of something you treat.
           </p>
 
-          {/* "Not what you think" — broken into 2 blocks */}
+          {/* Deeper amplification — the things you stopped doing */}
+          <p>
+            You stop offering to help with the boxes when the grandkids visit. You let the front yard go a little longer than it should. You sleep on your side because your back makes you, not because you want to.
+          </p>
+
+          <p>
+            None of it is dramatic enough to talk about. All of it adds up to a life that has quietly shrunk around an injury you have never named.
+          </p>
+
+          {/* "Not what you think" */}
           <p>
             That pain is not aging. It is not weakness. It is not the price of refusing to hire someone.
           </p>
@@ -121,7 +130,7 @@ export default function LandingPage() {
             It is the part of the trimmer nobody has ever told you to look at &mdash; <span className="font-semibold text-foreground">the factory grip.</span>
           </p>
 
-          {/* The mechanism — broken into 3 blocks of 2 sentences */}
+          {/* The mechanism explanation */}
           <p>
             The grip on every standard string trimmer in America is sized for an average man to hold at his hip while leaning forward to see the cut line. That lean is what happens to your spine for 20, 30, 40 minutes a week.
           </p>
@@ -134,6 +143,49 @@ export default function LandingPage() {
             The pain that follows is not your spine breaking down. It is your spine telling you it has been asked to do something it was never built to do, every Saturday, for as long as you have owned the trimmer.
           </p>
 
+        </div>
+
+        {/* ============================================
+            INFOGRAPHIC — Biomechanics callout w/ bar chart + yard hours
+            ============================================ */}
+        <aside className="my-14 bg-card border border-border rounded-lg overflow-hidden shadow-sm">
+          <div className="bg-foreground/[0.03] border-b border-border px-6 md:px-8 py-4">
+            <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-semibold text-muted-foreground">
+              The Biomechanics Of The Bend
+            </p>
+          </div>
+
+          <div className="p-6 md:p-8">
+            <h3 className="font-display text-2xl md:text-3xl font-semibold text-foreground leading-[1.2] mb-8 text-balance">
+              When you bend forward 30 degrees, the compressive load on your lumbar spine roughly doubles. At 45 degrees, it triples.
+            </h3>
+
+            <div className="space-y-5 mb-8">
+              <BiomechRow label="Standing upright" lbs="~100 lb" widthPct={28} tone="muted" />
+              <BiomechRow label="30&deg; forward flexion" lbs="~200 lb" widthPct={56} tone="warning" />
+              <BiomechRow label="45&deg; forward flexion" lbs="~300+ lb" widthPct={86} tone="alert" />
+            </div>
+
+            <div className="border-t border-border pt-6">
+              <p className="text-base md:text-lg text-foreground/85 leading-[1.7]">
+                The average homeowner trims for <strong className="text-foreground">30 to 40 minutes a week</strong> during growing season. Over a decade of yard care, that adds up to <strong className="text-foreground">more than 100 hours</strong> of forward-bent spine load &mdash; at roughly twice the compressive force the spine handles standing upright.
+              </p>
+            </div>
+
+            <p className="text-xs md:text-sm text-muted-foreground italic mt-5">
+              Spine load values based on Nachemson&apos;s lumbar disc pressure research, refined across modern biomechanics literature.
+            </p>
+          </div>
+        </aside>
+
+        <div className="space-y-5 text-[17px] md:text-lg leading-[1.8] text-foreground/85">
+
+          {/* Customer voice anchor #1 */}
+          <CustomerQuote
+            quote="Six hours of string trimming this week. Crippled me for days. At 46 it is not going to get easier. Solve a problem and you get my money."
+            attribution="A customer wrote this in last spring's post-purchase survey"
+          />
+
           {/* Pull-quote moment — the reframe */}
           <blockquote className="my-14 text-center">
             <p className="font-display text-3xl md:text-4xl font-semibold italic text-foreground leading-[1.15] text-balance">
@@ -141,9 +193,7 @@ export default function LandingPage() {
             </p>
           </blockquote>
 
-          {/* Failed solutions — now survey-anchored (ibuprofen / lumbar belt /
-              heating pad / chiropractor — from the 2026-05-31 "drawer of
-              palliatives" survey signal). Broken into 4 blocks. */}
+          {/* Failed solutions — survey-anchored (drawer of palliatives) */}
           <p>
             Every solution sold for it treats the back, not the bend.
           </p>
@@ -160,7 +210,13 @@ export default function LandingPage() {
             None of them stop the bending. So the pain comes back. And after enough of that, you stop expecting a fix.
           </p>
 
-          {/* Brand POV — "we built it" — broken into 3 blocks */}
+          {/* Customer voice anchor #2 */}
+          <CustomerQuote
+            quote="I had been treating my back for years. Nobody had ever told me to treat the trimmer."
+            attribution="From a customer email, summer 2025"
+          />
+
+          {/* Brand POV — "we built it" */}
           <p>
             <span className="font-semibold text-foreground">That is why we built the Yeoman Handle.</span>
           </p>
@@ -173,7 +229,7 @@ export default function LandingPage() {
             They were all built to help the body survive it. So we built one that does not let it happen in the first place.
           </p>
 
-          {/* Mechanism — broken into 3 blocks */}
+          {/* Mechanism reveal */}
           <p>
             The Yeoman clamps onto the shaft of the trimmer you already own and raises the grip to chest height.
           </p>
@@ -192,6 +248,31 @@ export default function LandingPage() {
           </p>
 
         </div>
+
+        {/* ============================================
+            F&H TRUST STRIP — proof at the conversion edge
+            ============================================ */}
+        <aside className="my-12 bg-card border border-border rounded-lg py-6 px-4 md:px-8 shadow-sm">
+          <div className="grid grid-cols-3 gap-2 md:gap-8 text-center">
+            <div>
+              <p className="font-display text-2xl md:text-4xl font-bold text-foreground leading-none mb-1.5">20,000</p>
+              <p className="text-[9px] md:text-xs uppercase tracking-wider text-muted-foreground font-semibold leading-tight">trimmers retrofitted</p>
+            </div>
+            <div className="border-x border-border px-2">
+              <p className="font-display text-2xl md:text-4xl font-bold text-foreground leading-none mb-1.5">4.8 &#9733;</p>
+              <p className="text-[9px] md:text-xs uppercase tracking-wider text-muted-foreground font-semibold leading-tight">across 800 reviews</p>
+            </div>
+            <div>
+              <p className="font-display text-2xl md:text-4xl font-bold text-foreground leading-none mb-1.5">60-Day</p>
+              <p className="text-[9px] md:text-xs uppercase tracking-wider text-muted-foreground font-semibold leading-tight">trial + lifetime warranty</p>
+            </div>
+          </div>
+        </aside>
+
+        {/* Bridge paragraph — softens the genre shift into the listicle */}
+        <p className="text-base md:text-lg text-foreground/80 leading-[1.8] italic font-display text-center pt-6 max-w-xl mx-auto">
+          Below are the five things the people who have made the switch are reporting back to us. We did not write these for the page. We pulled them from the reviews and emails and survey replies we get every week.
+        </p>
 
       </article>
 
@@ -614,5 +695,63 @@ function Polaroid({ name, alt, rotate }: { name: PolaroidName; alt: string; rota
         />
       </div>
     </div>
+  )
+}
+
+/* ---------------------- BIOMECH BAR ROW ---------------------- */
+
+function BiomechRow({
+  label,
+  lbs,
+  widthPct,
+  tone,
+}: {
+  label: string
+  lbs: string
+  widthPct: number
+  tone: "muted" | "warning" | "alert"
+}) {
+  const fill =
+    tone === "alert"
+      ? "bg-[#C86F4C]"
+      : tone === "warning"
+      ? "bg-[#DDA15E]"
+      : "bg-foreground/55"
+
+  return (
+    <div>
+      <div className="flex justify-between items-baseline mb-2 gap-3">
+        <span
+          className="text-sm md:text-base font-semibold text-foreground"
+          dangerouslySetInnerHTML={{ __html: label }}
+        />
+        <span className="font-display text-base md:text-lg font-bold text-foreground tabular-nums whitespace-nowrap">
+          {lbs}
+        </span>
+      </div>
+      <div className="w-full h-3 bg-muted/60 rounded-full overflow-hidden">
+        <div
+          className={`h-full rounded-full ${fill}`}
+          style={{ width: `${widthPct}%` }}
+        />
+      </div>
+    </div>
+  )
+}
+
+/* ---------------------- CUSTOMER QUOTE BLOCK ---------------------- */
+
+function CustomerQuote({ quote, attribution }: { quote: string; attribution: string }) {
+  return (
+    <aside className="my-10 md:my-12">
+      <div className="pl-5 md:pl-7 border-l-2 border-[#C86F4C]">
+        <p className="font-display text-xl md:text-2xl italic text-foreground/90 leading-[1.45] mb-3 text-balance">
+          &ldquo;{quote}&rdquo;
+        </p>
+        <p className="text-[11px] md:text-xs uppercase tracking-[0.15em] font-semibold text-muted-foreground">
+          &mdash;&nbsp;&nbsp;{attribution}
+        </p>
+      </div>
+    </aside>
   )
 }
