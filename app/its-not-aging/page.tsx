@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Star } from "lucide-react"
@@ -20,6 +20,24 @@ type GalleryKey = "productMain" | (typeof PRODUCT_THUMBS)[number]
 
 export default function LandingPage() {
   const [activeImage, setActiveImage] = useState<GalleryKey>("productMain")
+  const [showStickyCta, setShowStickyCta] = useState(false)
+  const listicleSentinelRef = useRef<HTMLDivElement>(null)
+
+  // Sticky CTA stays hidden during the editorial body. Reveals when the
+  // listicle intro enters the viewport — that's the point the reader has
+  // moved from "warming" into "evaluation," and an always-visible CTA
+  // earns its keep without breaking the advertorial register above.
+  useEffect(() => {
+    if (!listicleSentinelRef.current) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setShowStickyCta(true)
+      },
+      { rootMargin: "0px 0px -25% 0px" },
+    )
+    observer.observe(listicleSentinelRef.current)
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <div className="min-h-screen bg-background">
@@ -39,17 +57,6 @@ export default function LandingPage() {
       <header className="py-3 px-4 flex items-center justify-center bg-card">
         <InpAsset name="logo" alt="Field & Harvest Co." className="h-7 md:h-10 w-auto object-contain" fallbackClassName="text-2xl md:text-3xl font-bold text-primary tracking-tight" />
       </header>
-
-      {/* ============================================
-          EDITORIAL SECTION STRIP — frames the piece as a Field Note
-          ============================================ */}
-      <div className="border-y border-border/60 bg-card py-3 px-4">
-        <div className="max-w-3xl mx-auto text-center text-[10px] md:text-xs text-muted-foreground">
-          <span className="uppercase tracking-[0.2em] font-semibold">A Field Note</span>
-          <span className="mx-3 text-border">·</span>
-          <span className="italic font-display text-sm md:text-base">On the back pain from weed eating</span>
-        </div>
-      </div>
 
       {/* ============================================
           HERO — Left-aligned headline + dek + image placeholder
@@ -278,9 +285,9 @@ export default function LandingPage() {
 
       {/* ============================================
           LISTICLE SECTION INTRO — same headline as /the-trimmer-switch.
-          By this point the reader is warmed up; give them the exact
-          listicle hook that closes warm UGC traffic.
+          Sentinel above triggers the sticky CTA reveal.
           ============================================ */}
+      <div ref={listicleSentinelRef} aria-hidden="true" className="h-px" />
       <section className="max-w-2xl mx-auto px-4 pt-4 pb-2 text-center">
         <div className="text-center pb-10">
           <span className="text-muted-foreground/60 text-sm tracking-[0.6em] inline-block select-none" aria-hidden="true">* * *</span>
@@ -751,11 +758,17 @@ export default function LandingPage() {
       </section>
 
       {/* ============================================
-          STICKY CTA
+          STICKY CTA — hidden during editorial body, slides up when
+          listicle enters viewport (IntersectionObserver sentinel above)
           ============================================ */}
-      <div className="fixed bottom-0 left-0 right-0 bg-[#4A3F35]/95 backdrop-blur-md border-t-2 border-[#4A3F35] py-4 px-4 z-50 shadow-2xl">
+      <div
+        className={`fixed bottom-0 left-0 right-0 bg-[#4A3F35]/95 backdrop-blur-md border-t-2 border-[#4A3F35] py-4 px-4 z-50 shadow-2xl transition-transform duration-500 ease-out ${
+          showStickyCta ? "translate-y-0" : "translate-y-full"
+        }`}
+        aria-hidden={!showStickyCta}
+      >
         <div className="max-w-lg mx-auto">
-          <a href={PDP_URL}>
+          <a href={PDP_URL} tabIndex={showStickyCta ? 0 : -1}>
             <Button
               size="lg"
               className="w-full bg-[#C86F4C] hover:bg-[#C86F4C]/90 text-white font-bold py-6 text-base rounded-lg shadow-lg transition-all"
