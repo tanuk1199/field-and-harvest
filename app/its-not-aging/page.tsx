@@ -66,23 +66,22 @@ export default function LandingPage() {
       </article>
 
       {/* ============================================
-          EDITORIAL HERO IMAGE — swap via inp-images.ts (editorialHero)
+          EDITORIAL HERO — Polaroid grid (TWS recognition pattern)
+          or single image via editorialHero override
           ============================================ */}
       <div className="max-w-2xl mx-auto px-4 pt-6 pb-2">
         {getInpImage("editorialHero") ? (
           <div className="relative w-full aspect-[16/10] rounded-lg overflow-hidden bg-muted shadow-md">
-            <InpAsset name="editorialHero" alt="Editorial hero" className="w-full h-full object-cover" fallbackClassName="" />
+            <InpAsset name="editorialHero" alt="Editorial hero" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-5xl" />
           </div>
         ) : (
-          <div className="relative w-full aspect-[16/10] rounded-lg border-2 border-dashed border-border bg-muted/40 flex items-center justify-center px-6">
-            <div className="text-center">
-              <p className="text-xs md:text-sm uppercase tracking-[0.2em] font-semibold text-muted-foreground mb-2">
-                Editorial Hero Image
-              </p>
-              <p className="text-xs md:text-sm italic text-muted-foreground font-display">
-                Swap via <span className="font-mono not-italic">lib/inp-images.ts</span> &middot; <span className="font-mono not-italic">editorialHero</span>
-              </p>
-            </div>
+          <div className="grid grid-cols-3 gap-2.5 md:gap-4">
+            <Polaroid name="yardsman1" alt="A Saturday yardsman" rotate="-3deg" />
+            <Polaroid name="yardsman2" alt="Trimming the yard" rotate="2deg" />
+            <Polaroid name="yardsman3" alt="Doing the edges" rotate="-2deg" />
+            <Polaroid name="yardsman4" alt="Working in the yard" rotate="3deg" />
+            <Polaroid name="yardsman5" alt="The aftermath of a Saturday" rotate="-1deg" />
+            <Polaroid name="yardsman6" alt="In the yard" rotate="2deg" />
           </div>
         )}
       </div>
@@ -93,11 +92,9 @@ export default function LandingPage() {
           ============================================ */}
       <article className="max-w-2xl mx-auto px-4 pb-16">
 
-        {/* Editorial divider */}
-        <div className="flex items-center justify-center gap-3 py-12">
-          <span className="h-px w-12 bg-border" aria-hidden="true" />
-          <span className="text-[#C86F4C] text-xs">&#10047;</span>
-          <span className="h-px w-12 bg-border" aria-hidden="true" />
+        {/* Editorial divider — three asterisks (classic typographer's break) */}
+        <div className="text-center py-12">
+          <span className="text-muted-foreground/60 text-sm tracking-[0.6em] inline-block select-none" aria-hidden="true">* * *</span>
         </div>
 
         <div className="space-y-5 text-[17px] md:text-lg leading-[1.8] text-foreground/85">
@@ -196,16 +193,21 @@ export default function LandingPage() {
 
         </div>
 
-        {/* Transition to the listicle — larger, serif, presence */}
-        <div className="flex items-center justify-center gap-3 pt-16 pb-2">
-          <span className="h-px w-12 bg-border" aria-hidden="true" />
-          <span className="text-[#C86F4C] text-xs">&#10047;</span>
-          <span className="h-px w-12 bg-border" aria-hidden="true" />
-        </div>
-        <p className="text-lg md:text-xl text-foreground/85 italic text-center font-display leading-snug pt-6">
-          Below &mdash; five things homeowners who have made the switch are reporting after their first month.
-        </p>
       </article>
+
+      {/* ============================================
+          LISTICLE SECTION INTRO — same headline as /the-trimmer-switch.
+          By this point the reader is warmed up; give them the exact
+          listicle hook that closes warm UGC traffic.
+          ============================================ */}
+      <section className="max-w-2xl mx-auto px-4 pt-4 pb-2 text-center">
+        <div className="text-center pb-10">
+          <span className="text-muted-foreground/60 text-sm tracking-[0.6em] inline-block select-none" aria-hidden="true">* * *</span>
+        </div>
+        <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground leading-tight text-balance">
+          5 Reasons Trimmer Owners Are Making The Switch
+        </h2>
+      </section>
 
       {/* ============================================
           LISTICLE — 5 reasons (shared body from /the-trimmer-switch)
@@ -588,6 +590,28 @@ export default function LandingPage() {
             </Button>
           </a>
         </div>
+      </div>
+    </div>
+  )
+}
+
+/* ---------------------- POLAROID COMPONENT ---------------------- */
+
+type PolaroidName = "yardsman1" | "yardsman2" | "yardsman3" | "yardsman4" | "yardsman5" | "yardsman6"
+
+function Polaroid({ name, alt, rotate }: { name: PolaroidName; alt: string; rotate: string }) {
+  return (
+    <div
+      className="bg-white p-1.5 pb-3 md:p-2 md:pb-4 shadow-lg transition-transform duration-300 hover:rotate-0"
+      style={{ transform: `rotate(${rotate})` }}
+    >
+      <div className="relative w-full aspect-square overflow-hidden bg-muted">
+        <InpAsset
+          name={name}
+          alt={alt}
+          className="w-full h-full object-cover"
+          fallbackClassName="w-full h-full flex items-center justify-center text-3xl"
+        />
       </div>
     </div>
   )

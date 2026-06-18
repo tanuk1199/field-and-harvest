@@ -21,12 +21,21 @@ export const inpImages = {
   // Atmospheric image of a man holding the trimmer with the Yeoman attached
   heroImage: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/0512_4.gif?v=1778560127",
 
-  // ── EDITORIAL HERO IMAGE (SWAP LATER) ─────────────────────
-  // Lives above the lead-in body. When empty, page renders a dashed
-  // placeholder card. Paste a Shopify CDN URL here to swap it in.
-  // Ideal: empathy / recognition image (man straightening up wincing,
-  // or a yardsman silhouette) — NOT a product reveal.
+  // ── EDITORIAL HERO IMAGE (SINGLE-IMAGE OVERRIDE) ──────────
+  // When set, the page renders a single full-width 16:10 image
+  // INSTEAD of the Polaroid grid below. Leave empty to use the
+  // 6-shot Polaroid grid (TWS recognition-imagery pattern).
   editorialHero: "",
+
+  // ── POLAROID GRID (DEFAULT HERO VISUAL) ────────────────────
+  // 6 yardsman recognition shots — same library used by the TWS
+  // advertorial's hero grid. Replace any individual URL to swap.
+  yardsman1: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260516_063011_2872d290-64fc-44a3-9637-1fd2e2796126.png?v=1778913146",
+  yardsman2: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260516_060133_4a6e7ef6-0020-48a5-83b4-261acd637816.png?v=1778912387",
+  yardsman3: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260516_060339_178c24b4-18bc-4e23-88cc-f3d1424ae77a.png?v=1778912387",
+  yardsman4: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260516_060531_f824b12d-f79f-43ed-ae17-23cc0bebb492.png?v=1778912386",
+  yardsman5: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260516_062652_e50e7e76-973b-4064-8a34-bc3b0500d150.png?v=1778913146",
+  yardsman6: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/hf_20260516_062730_c936964c-e537-4e28-af1c-7b687905c004.png?v=1778913299",
 
   // ── LISTICLE REASON IMAGES (shared with /the-trimmer-switch) ────
   reason1Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/check_mark.png?v=1778562973",
@@ -56,7 +65,13 @@ export const inpFallbacks = {
 
   logo: "FIELD & HARVEST CO.",
   heroImage: "🌾",
-  editorialHero: "",
+  editorialHero: "🌿",
+  yardsman1: "🧑‍🌾",
+  yardsman2: "🧑‍🌾",
+  yardsman3: "🧑‍🌾",
+  yardsman4: "🧑‍🌾",
+  yardsman5: "🧑‍🌾",
+  yardsman6: "🧑‍🌾",
 
   reason1Image: "🧍",
   reason2Image: "🔩",
