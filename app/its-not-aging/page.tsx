@@ -11,6 +11,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { InpAsset } from "@/components/inp-asset"
+import { getInpImage } from "@/lib/inp-images"
 
 const PDP_URL = "https://fieldandharvestco.com/products/the-yeoman-handle"
 
@@ -51,34 +52,55 @@ export default function LandingPage() {
       </div>
 
       {/* ============================================
-          HERO — Editorial headline + dek (NO image — gives the
-          headline space and stays out of the product reveal)
+          HERO — Left-aligned headline + dek + image placeholder
           ============================================ */}
-      <article className="max-w-2xl mx-auto px-4 pt-14 pb-6 md:pt-20 md:pb-10">
-        <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.05] text-foreground text-balance text-center mb-8 tracking-tight">
+      <article className="max-w-2xl mx-auto px-4 pt-12 pb-4 md:pt-16 md:pb-6">
+        <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.05] text-foreground text-balance mb-7 tracking-tight">
           The Back Pain From Weed Eating You Have Learned To Live With{" "}
           <em className="italic font-medium text-[#C86F4C]">Might Not Have To Be Permanent.</em>
         </h1>
 
-        <p className="font-display text-xl md:text-2xl text-foreground/75 leading-[1.4] text-center text-balance italic max-w-xl mx-auto">
+        <p className="font-display text-xl md:text-2xl text-foreground/75 leading-[1.4] italic">
           You have been told it is age. You have been told it is wear. You have been told it is what 60 feels like. None of those things are the cause.
         </p>
       </article>
 
       {/* ============================================
-          EDITORIAL BODY — ~380 words, paced for a reader
-          (Stage 2 register, one pull-quote moment, kill line)
+          EDITORIAL HERO IMAGE — swap via inp-images.ts (editorialHero)
+          ============================================ */}
+      <div className="max-w-2xl mx-auto px-4 pt-6 pb-2">
+        {getInpImage("editorialHero") ? (
+          <div className="relative w-full aspect-[16/10] rounded-lg overflow-hidden bg-muted shadow-md">
+            <InpAsset name="editorialHero" alt="Editorial hero" className="w-full h-full object-cover" fallbackClassName="" />
+          </div>
+        ) : (
+          <div className="relative w-full aspect-[16/10] rounded-lg border-2 border-dashed border-border bg-muted/40 flex items-center justify-center px-6">
+            <div className="text-center">
+              <p className="text-xs md:text-sm uppercase tracking-[0.2em] font-semibold text-muted-foreground mb-2">
+                Editorial Hero Image
+              </p>
+              <p className="text-xs md:text-sm italic text-muted-foreground font-display">
+                Swap via <span className="font-mono not-italic">lib/inp-images.ts</span> &middot; <span className="font-mono not-italic">editorialHero</span>
+              </p>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* ============================================
+          EDITORIAL BODY — ~410 words, paced for a reader
+          (Stage 2 register, brand-POV UMS intro, pull-quote, kill line)
           ============================================ */}
       <article className="max-w-2xl mx-auto px-4 pb-16">
 
         {/* Editorial divider */}
-        <div className="flex items-center justify-center gap-3 py-10">
+        <div className="flex items-center justify-center gap-3 py-12">
           <span className="h-px w-12 bg-border" aria-hidden="true" />
           <span className="text-[#C86F4C] text-xs">&#10047;</span>
           <span className="h-px w-12 bg-border" aria-hidden="true" />
         </div>
 
-        <div className="space-y-6 text-[17px] md:text-lg leading-[1.75] text-foreground/85">
+        <div className="space-y-8 text-[17px] md:text-lg leading-[1.8] text-foreground/85">
 
           <p>
             Most homeowners over 50 who still do their own yard finish the front, walk inside, and tell their wife the back is <em>fine</em>. By Sunday morning the lower back is locked. By Monday the brace is back on. By the next weekend, the pain has become something you plan around instead of something you treat.
@@ -93,7 +115,7 @@ export default function LandingPage() {
           </p>
 
           {/* Pull-quote moment — the reframe */}
-          <blockquote className="my-12 text-center">
+          <blockquote className="my-14 text-center">
             <p className="font-display text-3xl md:text-4xl font-semibold italic text-foreground leading-[1.15] text-balance">
               It is not your back. It is the bend.
             </p>
@@ -104,22 +126,26 @@ export default function LandingPage() {
           </p>
 
           <p>
-            <span className="font-semibold text-foreground">The Yeoman Handle is the only tool we know of that stops the bend instead of treating the back.</span> It clamps onto the shaft of the trimmer you already own and raises the grip to chest height. Both hands meet where they want to meet. Your spine stays vertical. The trimmer still trims. The bend does not happen.
+            <span className="font-semibold text-foreground">That is why we built the Yeoman Handle.</span> We had spent years watching homeowners try every brace, every stretch, every longer trimmer on the shelf, and none of them stopped the bending. They were all built to help the body survive it. So we built one that does not let it happen in the first place.
           </p>
 
-          <p className="font-display text-xl md:text-2xl italic text-foreground leading-snug pt-2 text-balance">
+          <p>
+            The Yeoman clamps onto the shaft of the trimmer you already own and raises the grip to chest height. Both hands meet where they want to meet. Your spine stays vertical. The trimmer still trims. <span className="font-semibold text-foreground">The bend does not happen.</span>
+          </p>
+
+          <p className="font-display text-xl md:text-2xl italic text-foreground leading-snug pt-4 text-balance">
             Every other solution made you better at bending. This one stops you from bending in the first place.
           </p>
 
         </div>
 
-        {/* Transition to the listicle */}
-        <div className="flex items-center justify-center gap-3 pt-14 pb-2">
+        {/* Transition to the listicle — larger, serif, presence */}
+        <div className="flex items-center justify-center gap-3 pt-16 pb-2">
           <span className="h-px w-12 bg-border" aria-hidden="true" />
           <span className="text-[#C86F4C] text-xs">&#10047;</span>
           <span className="h-px w-12 bg-border" aria-hidden="true" />
         </div>
-        <p className="text-xs md:text-sm text-muted-foreground italic text-center font-display max-w-md mx-auto pt-3">
+        <p className="text-lg md:text-xl text-foreground/85 italic text-center font-display leading-snug pt-6">
           Below &mdash; five things homeowners who have made the switch are reporting after their first month.
         </p>
       </article>

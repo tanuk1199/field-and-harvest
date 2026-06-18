@@ -21,6 +21,13 @@ export const inpImages = {
   // Atmospheric image of a man holding the trimmer with the Yeoman attached
   heroImage: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/0512_4.gif?v=1778560127",
 
+  // ── EDITORIAL HERO IMAGE (SWAP LATER) ─────────────────────
+  // Lives above the lead-in body. When empty, page renders a dashed
+  // placeholder card. Paste a Shopify CDN URL here to swap it in.
+  // Ideal: empathy / recognition image (man straightening up wincing,
+  // or a yardsman silhouette) — NOT a product reveal.
+  editorialHero: "",
+
   // ── LISTICLE REASON IMAGES (shared with /the-trimmer-switch) ────
   reason1Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/check_mark.png?v=1778562973",
   reason2Image: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/productimage.png?v=1778558991",
@@ -49,6 +56,7 @@ export const inpFallbacks = {
 
   logo: "FIELD & HARVEST CO.",
   heroImage: "🌾",
+  editorialHero: "",
 
   reason1Image: "🧍",
   reason2Image: "🔩",
