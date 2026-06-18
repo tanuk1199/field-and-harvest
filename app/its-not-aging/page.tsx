@@ -100,18 +100,41 @@ export default function LandingPage() {
           <span className="h-px w-12 bg-border" aria-hidden="true" />
         </div>
 
-        <div className="space-y-8 text-[17px] md:text-lg leading-[1.8] text-foreground/85">
+        <div className="space-y-5 text-[17px] md:text-lg leading-[1.8] text-foreground/85">
 
+          {/* Opening recognition — broken into 3 blocks */}
           <p>
-            Most homeowners over 50 who still do their own yard finish the front, walk inside, and tell their wife the back is <em>fine</em>. By Sunday morning the lower back is locked. By Monday the brace is back on. By the next weekend, the pain has become something you plan around instead of something you treat.
+            Most homeowners over 50 who still do their own yard finish the front, walk inside, and tell their wife the back is <em>fine</em>.
           </p>
 
           <p>
-            That pain is not aging. It is not weakness. It is not the price of refusing to hire someone. It is the part of the trimmer nobody has ever told you to look at &mdash; <span className="font-semibold text-foreground">the factory grip.</span>
+            By Sunday morning the lower back is locked. By Monday the heating pad is back out.
           </p>
 
           <p>
-            The grip on every standard string trimmer in America is sized for an average man to hold at his hip while leaning forward to see the cut line. That lean is what happens to your spine for 20, 30, 40 minutes a week. A 30 degree forward bend at the lumbar your body was never built to repeat. After enough years your back stops absorbing it cleanly. The pain that follows is not your spine breaking down. It is your spine telling you it has been asked to do something it was never built to do, every Saturday, for as long as you have owned the trimmer.
+            By the next weekend, the pain has become something you plan around instead of something you treat.
+          </p>
+
+          {/* "Not what you think" — broken into 2 blocks */}
+          <p>
+            That pain is not aging. It is not weakness. It is not the price of refusing to hire someone.
+          </p>
+
+          <p>
+            It is the part of the trimmer nobody has ever told you to look at &mdash; <span className="font-semibold text-foreground">the factory grip.</span>
+          </p>
+
+          {/* The mechanism — broken into 3 blocks of 2 sentences */}
+          <p>
+            The grip on every standard string trimmer in America is sized for an average man to hold at his hip while leaning forward to see the cut line. That lean is what happens to your spine for 20, 30, 40 minutes a week.
+          </p>
+
+          <p>
+            A 30 degree forward bend at the lumbar your body was never built to repeat. After enough years your back stops absorbing it cleanly.
+          </p>
+
+          <p>
+            The pain that follows is not your spine breaking down. It is your spine telling you it has been asked to do something it was never built to do, every Saturday, for as long as you have owned the trimmer.
           </p>
 
           {/* Pull-quote moment — the reframe */}
@@ -121,19 +144,53 @@ export default function LandingPage() {
             </p>
           </blockquote>
 
+          {/* Failed solutions — now survey-anchored (ibuprofen / lumbar belt /
+              heating pad / chiropractor — from the 2026-05-31 "drawer of
+              palliatives" survey signal). Broken into 4 blocks. */}
           <p>
-            Every solution sold for it treats the back, not the bend. The brace supports your spine while it bends the wrong way. The chiropractor adjusts it after it has bent the wrong way. The stretching loosens what the bend will tighten again on Saturday. The longer trimmer just changes the angle of the bend. None of them stop the bending. So the pain comes back. And after enough of that, you stop expecting a fix.
+            Every solution sold for it treats the back, not the bend.
           </p>
 
           <p>
-            <span className="font-semibold text-foreground">That is why we built the Yeoman Handle.</span> We had spent years watching homeowners try every brace, every stretch, every longer trimmer on the shelf, and none of them stopped the bending. They were all built to help the body survive it. So we built one that does not let it happen in the first place.
+            The ibuprofen dulls the signal. The lumbar belt supports your spine while it bends the wrong way.
           </p>
 
           <p>
-            The Yeoman clamps onto the shaft of the trimmer you already own and raises the grip to chest height. Both hands meet where they want to meet. Your spine stays vertical. The trimmer still trims. <span className="font-semibold text-foreground">The bend does not happen.</span>
+            The heating pad loosens what the bend will tighten right back up on Saturday. The chiropractor adjusts it after it has bent the wrong way.
           </p>
 
-          <p className="font-display text-xl md:text-2xl italic text-foreground leading-snug pt-4 text-balance">
+          <p>
+            None of them stop the bending. So the pain comes back. And after enough of that, you stop expecting a fix.
+          </p>
+
+          {/* Brand POV — "we built it" — broken into 3 blocks */}
+          <p>
+            <span className="font-semibold text-foreground">That is why we built the Yeoman Handle.</span>
+          </p>
+
+          <p>
+            We had spent years watching homeowners cycle through every belt, every heating pad, every chiropractor visit, every bottle of ibuprofen, and none of them stopped the bending.
+          </p>
+
+          <p>
+            They were all built to help the body survive it. So we built one that does not let it happen in the first place.
+          </p>
+
+          {/* Mechanism — broken into 3 blocks */}
+          <p>
+            The Yeoman clamps onto the shaft of the trimmer you already own and raises the grip to chest height.
+          </p>
+
+          <p>
+            Both hands meet where they want to meet. Your spine stays vertical. The trimmer still trims.
+          </p>
+
+          <p>
+            <span className="font-semibold text-foreground">The bend does not happen.</span>
+          </p>
+
+          {/* Kill line */}
+          <p className="font-display text-xl md:text-2xl italic text-foreground leading-snug pt-6 text-balance">
             Every other solution made you better at bending. This one stops you from bending in the first place.
           </p>
 
