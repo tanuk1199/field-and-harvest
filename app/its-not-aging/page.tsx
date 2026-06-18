@@ -597,6 +597,99 @@ export default function LandingPage() {
       </section>
 
       {/* ============================================
+          FROM THE COMMENT SECTION — cold-objection FAQ
+          Sourced verbatim from Meta ad comment patterns
+          (Facebook comment scrape, 2026-06-18)
+          ============================================ */}
+      <section className="max-w-lg mx-auto px-4 pt-12 pb-8">
+        <div className="text-center mb-10">
+          <p className="text-[10px] md:text-xs uppercase tracking-[0.25em] font-semibold text-muted-foreground mb-3">
+            From The Comment Section
+          </p>
+          <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-3 text-balance leading-[1.15]">
+            What People Ask Us Most
+          </h2>
+          <p className="text-base text-muted-foreground text-pretty max-w-md mx-auto italic font-display">
+            Pulled from the questions that come up most often under our ads. Real questions, straight answers.
+          </p>
+        </div>
+
+        <Accordion type="single" collapsible className="space-y-4">
+          <AccordionItem value="cs-1" className="bg-card border-2 border-border rounded-lg px-6 shadow-sm">
+            <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline py-5">
+              Doesn&apos;t my weed eater already come with a shoulder strap? Why would I need this?
+            </AccordionTrigger>
+            <AccordionContent className="text-foreground/80 leading-relaxed pb-5">
+              A shoulder strap moves the trimmer&apos;s weight onto your shoulder. It does not change the angle your spine is bent at while you trim. The factory grip still puts your off-hand at your hip and forces you to lean forward to see the cut line &mdash; that lean is the lumbar load. The strap helps with weight. The Yeoman stops the bend. They do different jobs, and most users end up using both.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="cs-2" className="bg-card border-2 border-border rounded-lg px-6 shadow-sm">
+            <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline py-5">
+              Can&apos;t I just slide the D-handle that came with my trimmer up the shaft?
+            </AccordionTrigger>
+            <AccordionContent className="text-foreground/80 leading-relaxed pb-5">
+              You can, and a lot of people try this first. The problem is that the D-handle is one grip point &mdash; moving it just changes where one hand sits. The Yeoman gives you a <strong>second grip at chest height</strong>, so both hands meet where your body actually wants them. That two-hand contact at the right height is what keeps your spine vertical. Sliding the factory D-handle no matter where you put it still leaves you reaching for the trigger one-handed, and that reach initiates the lean.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="cs-3" className="bg-card border-2 border-border rounded-lg px-6 shadow-sm">
+            <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline py-5">
+              I have a curved-shaft (or bullhorn / bicycle handle) trimmer. Do I still need this?
+            </AccordionTrigger>
+            <AccordionContent className="text-foreground/80 leading-relaxed pb-5">
+              A curved shaft reduces the forward bend but does not eliminate it &mdash; most curved-shaft users still report 15 to 20 degrees of forward flexion at the lumbar. Factory bullhorn handles work <em>if</em> they happen to sit at your chest height, but most are set for an average frame. The Yeoman locks at the height your body actually requires, which is why people switch to it even from bullhorn-equipped trimmers.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="cs-4" className="bg-card border-2 border-border rounded-lg px-6 shadow-sm">
+            <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline py-5">
+              Is this actually a real company? I&apos;ve been burned by ads like this before.
+            </AccordionTrigger>
+            <AccordionContent className="text-foreground/80 leading-relaxed pb-5">
+              Fair skepticism. The fastest way to check us: Field &amp; Harvest Co. is the brand on the box, the warranty, and the customer-service email. Every Yeoman is backed by a <strong>60-day money-back guarantee</strong> and a <strong>lifetime warranty</strong> against bracket wear, grip separation, or shaft bending under normal use. If something goes wrong, you have a real company to email &mdash; not an anonymous seller account that disappears next month.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="cs-5" className="bg-card border-2 border-border rounded-lg px-6 shadow-sm">
+            <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline py-5">
+              I&apos;m 5&apos;2 (or 6&apos;4). Will it fit me?
+            </AccordionTrigger>
+            <AccordionContent className="text-foreground/80 leading-relaxed pb-5">
+              Yes. The Yeoman slides up and down the shaft and locks at the height where your off-hand naturally falls when you are standing fully upright. A 5&apos;2 user sets it lower. A 6&apos;4 user sets it higher. The factory grip is sized for an average 5&apos;9 frame and never fit the rest of the population &mdash; the Yeoman is the part that dials in to whoever is actually holding the trimmer. (One handle, one trimmer, can serve two people in the same house at different settings.)
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="cs-6" className="bg-card border-2 border-border rounded-lg px-6 shadow-sm">
+            <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline py-5">
+              Does raising my grip put my arm closer to the hot muffler?
+            </AccordionTrigger>
+            <AccordionContent className="text-foreground/80 leading-relaxed pb-5">
+              Honest answer: on some <em>gas</em> trimmer models, raising your off-hand brings the muffler closer to the elbow. The fix is a small adjustment to where you lock the Yeoman on the shaft &mdash; usually moving it 1 to 2 inches up from your first setting clears the muffler entirely. On battery and brushless trimmers the question does not come up because there is no hot muffler. If yours is gas and the muffler position becomes an issue, email us and we will walk you through the adjustment.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="cs-7" className="bg-card border-2 border-border rounded-lg px-6 shadow-sm">
+            <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline py-5">
+              Does it work for edging?
+            </AccordionTrigger>
+            <AccordionContent className="text-foreground/80 leading-relaxed pb-5">
+              Yes &mdash; the Yeoman stays locked on the shaft when you rotate the trimmer 90 degrees for edging. Some users prefer to leave the factory D-handle installed for edging specifically and rely on the Yeoman for trimming; you can run both handles on the same shaft if you like. Either way, the bend reduction transfers to edging too &mdash; which matters because edging is the worst angle on the spine for most users.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="cs-8" className="bg-card border-2 border-border rounded-lg px-6 shadow-sm">
+            <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline py-5">
+              Isn&apos;t this just a Darwin&apos;s Grip knockoff?
+            </AccordionTrigger>
+            <AccordionContent className="text-foreground/80 leading-relaxed pb-5">
+              Darwin&apos;s Grip is an older entry in the auxiliary-handle category and a fine product if it is working for you. The Yeoman Handle is a different build with our own bracket geometry, our 60-day trial, and a lifetime warranty. If you have had a Darwin slip on the shaft on you, or you want a longer warranty backing the part, the Yeoman is built for that. If your Darwin is still gripping after five years, keep using it.
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      </section>
+
+      {/* ============================================
           FAQ
           ============================================ */}
       <section className="max-w-lg mx-auto px-4 pt-8 pb-32">
