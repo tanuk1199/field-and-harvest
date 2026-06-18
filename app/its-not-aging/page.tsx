@@ -40,51 +40,89 @@ export default function LandingPage() {
       </header>
 
       {/* ============================================
-          HERO — Title-case headline + atmospheric image
+          EDITORIAL SECTION STRIP — frames the piece as a Field Note
           ============================================ */}
-      <section className="max-w-2xl mx-auto px-4 pt-12 pb-10">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-[1.15] text-balance text-center mb-10">
-          The Back Pain From Weed Eating You Have Learned To Live With Might Not Have To Be Permanent.
-        </h1>
-
-        <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg bg-muted">
-          <InpAsset name="heroImage" alt="The Yeoman Handle attached to a string trimmer" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+      <div className="border-y border-border/60 bg-card py-3 px-4">
+        <div className="max-w-3xl mx-auto text-center text-[10px] md:text-xs text-muted-foreground">
+          <span className="uppercase tracking-[0.2em] font-semibold">A Field Note</span>
+          <span className="mx-3 text-border">·</span>
+          <span className="italic font-display text-sm md:text-base">On the back pain from weed eating</span>
         </div>
-      </section>
+      </div>
 
       {/* ============================================
-          LEAD-IN COPY — ~290 words, UMP / UMS warming
-          (Stage 2 register — stake-claim open, fewer blocks)
+          HERO — Editorial headline + dek (NO image — gives the
+          headline space and stays out of the product reveal)
           ============================================ */}
-      <section className="max-w-2xl mx-auto px-4 pb-14">
-        <div className="space-y-5 text-foreground/85 leading-[1.7] text-base md:text-lg">
+      <article className="max-w-2xl mx-auto px-4 pt-14 pb-6 md:pt-20 md:pb-10">
+        <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.05] text-foreground text-balance text-center mb-8 tracking-tight">
+          The Back Pain From Weed Eating You Have Learned To Live With{" "}
+          <em className="italic font-medium text-[#C86F4C]">Might Not Have To Be Permanent.</em>
+        </h1>
 
-          <p className="text-xl md:text-2xl font-bold text-foreground leading-snug">
-            Your back is not the problem. Your trimmer is.
+        <p className="font-display text-xl md:text-2xl text-foreground/75 leading-[1.4] text-center text-balance italic max-w-xl mx-auto">
+          You have been told it is age. You have been told it is wear. You have been told it is what 60 feels like. None of those things are the cause.
+        </p>
+      </article>
+
+      {/* ============================================
+          EDITORIAL BODY — ~380 words, paced for a reader
+          (Stage 2 register, one pull-quote moment, kill line)
+          ============================================ */}
+      <article className="max-w-2xl mx-auto px-4 pb-16">
+
+        {/* Editorial divider */}
+        <div className="flex items-center justify-center gap-3 py-10">
+          <span className="h-px w-12 bg-border" aria-hidden="true" />
+          <span className="text-[#C86F4C] text-xs">&#10047;</span>
+          <span className="h-px w-12 bg-border" aria-hidden="true" />
+        </div>
+
+        <div className="space-y-6 text-[17px] md:text-lg leading-[1.75] text-foreground/85">
+
+          <p>
+            Most homeowners over 50 who still do their own yard finish the front, walk inside, and tell their wife the back is <em>fine</em>. By Sunday morning the lower back is locked. By Monday the brace is back on. By the next weekend, the pain has become something you plan around instead of something you treat.
           </p>
 
           <p>
-            The grip on every standard string trimmer in America is sized for an average man to hold at his hip while leaning forward to see the cut line. That lean is what happens to your spine for 20, 30, 40 minutes a week. A 30 degree forward bend at the lumbar your body was never built to repeat. After enough years, it hurts. Not because your back gave up. Because your spine has been asked to do something it was never built to do, every Saturday, for as long as you have owned the trimmer.
-          </p>
-
-          <p className="text-foreground font-semibold">
-            That is not aging. That is not weakness. That is a design flaw in the tool that has been wrecking backs across the country since the day the trimmer was invented.
+            That pain is not aging. It is not weakness. It is not the price of refusing to hire someone. It is the part of the trimmer nobody has ever told you to look at &mdash; <span className="font-semibold text-foreground">the factory grip.</span>
           </p>
 
           <p>
-            Every solution sold for it treats the back, not the bend. The brace supports your spine while it bends the wrong way. The chiropractor adjusts it after it has bent the wrong way. The longer trimmer just changes the angle of the bend. None of them stop the bending. So the pain comes back. And after enough of that, you stop expecting a fix.
+            The grip on every standard string trimmer in America is sized for an average man to hold at his hip while leaning forward to see the cut line. That lean is what happens to your spine for 20, 30, 40 minutes a week. A 30 degree forward bend at the lumbar your body was never built to repeat. After enough years your back stops absorbing it cleanly. The pain that follows is not your spine breaking down. It is your spine telling you it has been asked to do something it was never built to do, every Saturday, for as long as you have owned the trimmer.
+          </p>
+
+          {/* Pull-quote moment — the reframe */}
+          <blockquote className="my-12 text-center">
+            <p className="font-display text-3xl md:text-4xl font-semibold italic text-foreground leading-[1.15] text-balance">
+              It is not your back. It is the bend.
+            </p>
+          </blockquote>
+
+          <p>
+            Every solution sold for it treats the back, not the bend. The brace supports your spine while it bends the wrong way. The chiropractor adjusts it after it has bent the wrong way. The stretching loosens what the bend will tighten again on Saturday. The longer trimmer just changes the angle of the bend. None of them stop the bending. So the pain comes back. And after enough of that, you stop expecting a fix.
           </p>
 
           <p>
-            The Yeoman Handle is the only tool we know of that stops the bend instead of treating the back. It clamps onto the shaft of the trimmer you already own and raises the grip to chest height. Your spine stays vertical. The trimmer still trims. The bend does not happen.
+            <span className="font-semibold text-foreground">The Yeoman Handle is the only tool we know of that stops the bend instead of treating the back.</span> It clamps onto the shaft of the trimmer you already own and raises the grip to chest height. Both hands meet where they want to meet. Your spine stays vertical. The trimmer still trims. The bend does not happen.
           </p>
 
-          <p className="text-foreground font-semibold">
+          <p className="font-display text-xl md:text-2xl italic text-foreground leading-snug pt-2 text-balance">
             Every other solution made you better at bending. This one stops you from bending in the first place.
           </p>
 
         </div>
-      </section>
+
+        {/* Transition to the listicle */}
+        <div className="flex items-center justify-center gap-3 pt-14 pb-2">
+          <span className="h-px w-12 bg-border" aria-hidden="true" />
+          <span className="text-[#C86F4C] text-xs">&#10047;</span>
+          <span className="h-px w-12 bg-border" aria-hidden="true" />
+        </div>
+        <p className="text-xs md:text-sm text-muted-foreground italic text-center font-display max-w-md mx-auto pt-3">
+          Below &mdash; five things homeowners who have made the switch are reporting after their first month.
+        </p>
+      </article>
 
       {/* ============================================
           LISTICLE — 5 reasons (shared body from /the-trimmer-switch)
