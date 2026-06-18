@@ -40,83 +40,47 @@ export default function LandingPage() {
       </header>
 
       {/* ============================================
-          HERO — Problem-framing headline + atmospheric image
+          HERO — Title-case headline + atmospheric image
           ============================================ */}
-      <section className="max-w-2xl mx-auto px-4 pt-10 pb-8">
-        <div className="text-center mb-8">
-          <p className="text-xs md:text-sm uppercase tracking-widest font-semibold text-[#C86F4C] mb-4">
-            Field &amp; Harvest Co. &middot; Yardwork Editorial
-          </p>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight text-balance tracking-tight">
-            The back pain from weed eating you have learned to live with might not have to be permanent.
-          </h1>
-        </div>
+      <section className="max-w-2xl mx-auto px-4 pt-12 pb-10">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-[1.15] text-balance text-center mb-10">
+          The Back Pain From Weed Eating You Have Learned To Live With Might Not Have To Be Permanent.
+        </h1>
 
-        <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg bg-muted mb-2">
+        <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg bg-muted">
           <InpAsset name="heroImage" alt="The Yeoman Handle attached to a string trimmer" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
         </div>
-        <p className="text-xs text-muted-foreground text-center italic mb-8">
-          Field &amp; Harvest editorial. A look at why every solution on the shelf is missing the cause.
-        </p>
       </section>
 
       {/* ============================================
-          LEAD-IN COPY — 600-word UMP / UMS warming
-          (Stage 2 awareness register — permission to hope, no hype)
+          LEAD-IN COPY — ~290 words, UMP / UMS warming
+          (Stage 2 register — stake-claim open, fewer blocks)
           ============================================ */}
-      <section className="max-w-2xl mx-auto px-4 pb-12">
-        <div className="space-y-6 text-foreground/85 leading-relaxed text-base md:text-lg">
+      <section className="max-w-2xl mx-auto px-4 pb-14">
+        <div className="space-y-5 text-foreground/85 leading-[1.7] text-base md:text-lg">
+
+          <p className="text-xl md:text-2xl font-bold text-foreground leading-snug">
+            Your back is not the problem. Your trimmer is.
+          </p>
 
           <p>
-            Most homeowners doing their own yard work have been told the same three things about the back pain that hits after every weed eating session. That it is just aging. That it is what 55, or 60, or 65 feels like. That they should think about hiring someone else to do the yard.
+            The grip on every standard string trimmer in America is sized for an average man to hold at his hip while leaning forward to see the cut line. That lean is what happens to your spine for 20, 30, 40 minutes a week. A 30 degree forward bend at the lumbar your body was never built to repeat. After enough years, it hurts. Not because your back gave up. Because your spine has been asked to do something it was never built to do, every Saturday, for as long as you have owned the trimmer.
           </p>
 
           <p className="text-foreground font-semibold">
-            None of those things are true.
+            That is not aging. That is not weakness. That is a design flaw in the tool that has been wrecking backs across the country since the day the trimmer was invented.
           </p>
 
           <p>
-            The reason it feels true is that everything you have tried has confirmed it. The brace at the hardware store helped for two weeks. The chiropractor adjustment lasted four days. The stretching routine your doctor recommended undid itself in 20 minutes of edging the front yard. The longer trimmer your nephew suggested just bent you over at a slightly different angle. After enough of these you stop trying. You stop expecting a fix. You start telling yourself this is just what your back is going to feel like now.
+            Every solution sold for it treats the back, not the bend. The brace supports your spine while it bends the wrong way. The chiropractor adjusts it after it has bent the wrong way. The longer trimmer just changes the angle of the bend. None of them stop the bending. So the pain comes back. And after enough of that, you stop expecting a fix.
           </p>
 
           <p>
-            That is the back pain you have learned to live with. It is also what nobody on the hardware store shelf is built to fix.
-          </p>
-
-          <p>
-            The cause is hidden in plain sight on every string trimmer sold in America. The grip on a standard trimmer is sized for an average sized man to hold at his hip while leaning forward to see the cut line. That lean is what is happening to your spine for 20, or 30, or 40 minutes a week. A 30 degree forward bend at the lumbar that your body was never designed to absorb repeatedly. After enough years your back stops absorbing it cleanly. The pain that follows is not your spine breaking down. It is your spine telling you it has been asked to do something it was not built to do, every weekend, for as long as you have owned the trimmer.
+            The Yeoman Handle is the only tool we know of that stops the bend instead of treating the back. It clamps onto the shaft of the trimmer you already own and raises the grip to chest height. Your spine stays vertical. The trimmer still trims. The bend does not happen.
           </p>
 
           <p className="text-foreground font-semibold">
-            That is not your fault. That is not your age. That is not your weakness. It is a design flaw in the tool, and it has been doing this to backs across the country since the day the trimmer was invented.
-          </p>
-
-          <p>
-            The reason every solution you tried has failed is that every solution you tried is treating the bending. The brace supports your spine while it bends the wrong way. The chiropractor adjusts your spine after it has bent the wrong way. The stretching makes your spine more able to recover from bending the wrong way. The longer trimmer changes the angle of the bend but does not stop it.
-          </p>
-
-          <p className="text-xl md:text-2xl font-bold text-foreground py-2">
-            None of them stop the bending.
-          </p>
-
-          <p>
-            The bending is what is wrong. The bending is what was wrong from the day you bought the trimmer. The bending is what will continue to be wrong every Saturday for the rest of your life unless something interrupts it directly.
-          </p>
-
-          <p>
-            There is nothing on the shelves of a hardware store that interrupts it directly. The entire industry has assumed that bending is part of using a weed eater. So the entire industry sells you ways to survive the bend, not ways to stop it.
-          </p>
-
-          <p>
-            The Yeoman Handle is the only tool we know of that addresses the bending instead of the back. It does not support your spine. It does not strengthen your core. It does not stretch anything. It clamps onto the shaft of the trimmer you already own and raises the grip up to chest height. Both hands meet where your hands actually want to be. Your spine stays vertical. The trimmer still trims. The bending does not happen.
-          </p>
-
-          <p className="text-foreground font-semibold border-l-4 border-[#C86F4C] pl-4 italic">
             Every other solution made you better at bending. This one stops you from bending in the first place.
-          </p>
-
-          <p>
-            Below are the five things real homeowners who have made the switch are reporting after their first month. Read through them. If any of them sound like the back pain you have learned to live with, you are probably wrong about the cause. And it might not have to be permanent.
           </p>
 
         </div>
