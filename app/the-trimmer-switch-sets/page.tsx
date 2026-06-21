@@ -327,7 +327,7 @@ export default function LandingPage() {
                 <Star key={i} className="w-3.5 h-3.5 fill-[#FDB913] text-[#FDB913]" />
               ))}
             </div>
-            <p className="text-sm font-bold text-foreground mb-2">&ldquo;Best $39 I&apos;ve spent on yard equipment in years.&rdquo;</p>
+            <p className="text-sm font-bold text-foreground mb-2">&ldquo;Best money I&apos;ve spent on yard equipment in years.&rdquo;</p>
             <p className="text-sm text-foreground/75 leading-relaxed mb-3">
               I&apos;ve been trimming the same yard for 18 years and never thought my back was the problem until this thing showed up. Bolted on my old Echo in under five minutes. First Saturday I finished the whole yard upright and walked away without wincing. I keep wondering why nobody made this years ago.
             </p>
@@ -380,7 +380,7 @@ export default function LandingPage() {
             </div>
             <p className="text-sm font-bold text-foreground mb-2">&ldquo;My doctor said stop trimming. This handle let me keep going.&rdquo;</p>
             <p className="text-sm text-foreground/75 leading-relaxed mb-3">
-              After my second back episode my doctor told me to give up the trimmer. I&apos;m 67 and I refuse to hire someone to do my own yard. Came across this online, bolted it on the Stihl, and finished the front yard last Saturday standing up the whole time. Best $39 I&apos;ve spent on the yard since the trimmer itself.
+              After my second back episode my doctor told me to give up the trimmer. I&apos;m 67 and I refuse to hire someone to do my own yard. Came across this online, bolted it on the Stihl, and finished the front yard last Saturday standing up the whole time. Best money I&apos;ve spent on the yard since the trimmer itself.
             </p>
             <div className="flex items-center gap-2">
               <span className="text-xs font-bold text-foreground">Robert P.</span>
