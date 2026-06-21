@@ -42,16 +42,6 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* ============================================
-          PROMOTIONAL BANNER
-          ============================================ */}
-      <div className="bg-primary text-center py-3 px-4 shadow-sm">
-        <p className="text-sm md:text-base font-medium">
-          <span className="text-[#DDA15E] font-bold uppercase tracking-wide">Save Up To 43% Off</span>{" "}
-          <span className="text-primary-foreground uppercase tracking-wide">+ 2 Free Yardwork Guides</span>
-        </p>
-      </div>
-
-      {/* ============================================
           HEADER — Logo
           ============================================ */}
       <header className="py-3 px-4 flex items-center justify-center bg-card">
@@ -61,7 +51,16 @@ export default function LandingPage() {
       {/* ============================================
           HERO — Left-aligned headline + dek + image placeholder
           ============================================ */}
-      <article className="max-w-2xl mx-auto px-4 pt-12 pb-4 md:pt-16 md:pb-6">
+      <article className="max-w-2xl mx-auto px-4 pt-6 pb-4 md:pt-8 md:pb-6">
+        {/* Article chrome — breadcrumb */}
+        <nav className="text-[11px] md:text-xs text-muted-foreground mb-5" aria-label="Breadcrumb">
+          <a href="/" className="hover:text-foreground">Home</a>
+          <span className="mx-1.5">&rsaquo;</span>
+          <span>Field Notes</span>
+          <span className="mx-1.5">&rsaquo;</span>
+          <span className="text-foreground/70">Weed Eating &amp; Your Back</span>
+        </nav>
+
         <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.05] text-foreground text-balance mb-7 tracking-tight">
           Weed Eating Does Not Have To Wreck Your Back.{" "}
           <em className="italic font-medium text-[#C86F4C]">It Was Never The Work &mdash; It Is The Position Your Trimmer Forces You Into.</em>
@@ -70,6 +69,14 @@ export default function LandingPage() {
         <p className="font-display text-xl md:text-2xl text-foreground/75 leading-[1.4] italic">
           You do the yard, your back pays for it, you recover, and you do it again &mdash; and somewhere you stopped asking whether it had to be that way. It does not.
         </p>
+
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted-foreground mt-6 pt-5 border-t border-border">
+          <span className="font-semibold text-foreground/80">By the Field &amp; Harvest Team</span>
+          <span aria-hidden="true">&middot;</span>
+          <span>Published April 2025</span>
+          <span aria-hidden="true">&middot;</span>
+          <span>6 min read</span>
+        </div>
       </article>
 
       {/* ============================================
@@ -716,15 +723,6 @@ export default function LandingPage() {
             </AccordionTrigger>
             <AccordionContent className="text-foreground/80 leading-relaxed pb-5">
               Three minutes with the included allen key. Slide the Yeoman onto the shaft at chest height, tighten the bolt. No drilling, no cutting, no zip ties. You don&apos;t even have to remove the factory handle if you don&apos;t want to. If you can change a battery, you can install this.
-            </AccordionContent>
-          </AccordionItem>
-
-          <AccordionItem value="item-3" className="bg-card border-2 border-border rounded-lg px-6 shadow-sm">
-            <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline py-5">
-              How is this different from the cheap handles on Amazon?
-            </AccordionTrigger>
-            <AccordionContent className="text-foreground/80 leading-relaxed pb-5">
-              Two things: build and geometry. The Hold-Fast&trade; bracket grips the shaft on two opposite faces with reinforced steel. The $15 versions use a single contact point that slips after a few uses. The Plumb-Set&trade; is a fixed 9-inch lift at the exact angle where your spine stays plumb. Cheap versions bolt on wherever and let you figure out the rest. You&apos;re paying for the engineering, not a stamped tube with foam.
             </AccordionContent>
           </AccordionItem>
 
