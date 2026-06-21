@@ -1,13 +1,13 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "The back pain from weed eating you have learned to live with might not have to be permanent | Field & Harvest Co.",
-  description: "Most back pain from weed eating is not what you think it is. It is one specific design flaw in the trimmer. Here is what we know about how to fix it. Save Up To 43% Off + 2 Free Yardwork Guides.",
+  title: "Weed Eating Doesn’t Have To Wreck Your Back — Here’s Why It Has Been | Field & Harvest Co.",
+  description: "Most men think a sore back is just part of weed eating. It isn’t — it’s the position your trimmer forces you into. Why it’s been hurting, and why it doesn’t have to. Save Up To 43% Off + 2 Free Yardwork Guides.",
   openGraph: {
-    title: "The back pain from weed eating you have learned to live with might not have to be permanent.",
-    description: "Most back pain from weed eating is not what you think it is. It is one specific design flaw in the trimmer.",
+    title: "Weed Eating Doesn’t Have To Wreck Your Back",
+    description: "It was never the work. It’s the position your trimmer forces you into — and it doesn’t have to be that way.",
     type: "website",
-    url: "https://explore.fieldandharvestco.com/its-not-aging",
+    url: "https://explore.fieldandharvestco.com/it-doesnt-have-to-hurt",
     images: [
       {
         url: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/0512_4.gif?v=1778560127",
@@ -17,8 +17,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "The back pain from weed eating you have learned to live with might not have to be permanent.",
-    description: "Most back pain from weed eating is not what you think it is.",
+    title: "Weed Eating Doesn’t Have To Wreck Your Back",
+    description: "It was never the work. It’s the position your trimmer forces you into.",
     images: [
       "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/0512_4.gif?v=1778560127",
     ],
