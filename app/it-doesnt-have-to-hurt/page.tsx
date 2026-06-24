@@ -42,6 +42,16 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* ============================================
+          PROMOTIONAL BANNER
+          ============================================ */}
+      <div className="bg-primary text-center py-3 px-4 shadow-sm">
+        <p className="text-sm md:text-base font-medium">
+          <span className="text-[#DDA15E] font-bold uppercase tracking-wide">Save Up To 43% Off</span>{" "}
+          <span className="text-primary-foreground uppercase tracking-wide">+ 2 Free Yardwork Guides</span>
+        </p>
+      </div>
+
+      {/* ============================================
           HEADER — Logo
           ============================================ */}
       <header className="py-3 px-4 flex items-center justify-center bg-card">
@@ -51,16 +61,7 @@ export default function LandingPage() {
       {/* ============================================
           HERO — Left-aligned headline + dek + image placeholder
           ============================================ */}
-      <article className="max-w-2xl mx-auto px-4 pt-6 pb-4 md:pt-8 md:pb-6">
-        {/* Article chrome — breadcrumb */}
-        <nav className="text-[11px] md:text-xs text-muted-foreground mb-5" aria-label="Breadcrumb">
-          <a href="/" className="hover:text-foreground">Home</a>
-          <span className="mx-1.5">&rsaquo;</span>
-          <span>Field Notes</span>
-          <span className="mx-1.5">&rsaquo;</span>
-          <span className="text-foreground/70">Weed Eating &amp; Your Back</span>
-        </nav>
-
+      <article className="max-w-2xl mx-auto px-4 pt-12 pb-4 md:pt-16 md:pb-6">
         <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.05] text-foreground text-balance mb-7 tracking-tight">
           Weed Eating Does Not Have To Wreck Your Back.{" "}
           <em className="italic font-medium text-[#C86F4C]">It Was Never The Work &mdash; It Is The Position Your Trimmer Forces You Into.</em>
@@ -69,14 +70,6 @@ export default function LandingPage() {
         <p className="font-display text-xl md:text-2xl text-foreground/75 leading-[1.4] italic">
           You do the yard, your back pays for it, you recover, and you do it again &mdash; and somewhere you stopped asking whether it had to be that way. It does not.
         </p>
-
-        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted-foreground mt-6 pt-5 border-t border-border">
-          <span className="font-semibold text-foreground/80">By the Field &amp; Harvest Team</span>
-          <span aria-hidden="true">&middot;</span>
-          <span>Published April 2025</span>
-          <span aria-hidden="true">&middot;</span>
-          <span>6 min read</span>
-        </div>
       </article>
 
       {/* ============================================
