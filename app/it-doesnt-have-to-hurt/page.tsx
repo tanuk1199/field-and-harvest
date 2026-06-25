@@ -20,7 +20,7 @@ type GalleryKey = "productMain" | (typeof PRODUCT_THUMBS)[number]
 
 export default function LandingPage() {
   const [activeImage, setActiveImage] = useState<GalleryKey>("productMain")
-  const [showStickyCta, setShowStickyCta] = useState(false)
+  const [showStickyCta, setShowStickyCta] = useState(true)
   const listicleSentinelRef = useRef<HTMLDivElement>(null)
 
   // Sticky CTA stays hidden during the editorial body. Reveals when the
@@ -63,8 +63,8 @@ export default function LandingPage() {
           ============================================ */}
       <article className="max-w-2xl mx-auto px-4 pt-12 pb-4 md:pt-16 md:pb-6">
         <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.05] text-foreground text-balance mb-7 tracking-tight">
-          Weed Eating Does Not Have To Wreck Your Back.{" "}
-          <em className="italic font-medium text-[#C86F4C]">It Was Never The Work &mdash; It Is The Position Your Trimmer Forces You Into.</em>
+          Most Men Think Weed Eating Has To Wreck Their Back.{" "}
+          <span className="bg-accent text-accent-foreground px-1.5 py-0.5 box-decoration-clone leading-[1.3]">It Doesn&apos;t.</span>
         </h1>
 
         <p className="font-display text-xl md:text-2xl text-foreground/75 leading-[1.4] italic">
