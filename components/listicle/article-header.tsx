@@ -10,7 +10,7 @@ const defaultHeadline: ReactNode = (
 
 const defaultIntro: ReactNode = (
   <>
-    <span className="font-bold">If you’re over 50 and still do your own trimming, read this before your next Saturday.</span> The reason your back locks up after 20 minutes is not your age and it is not the engine. It is the handle the trimmer came with, and there is a fix most guys have never heard of.
+    <span className="font-bold">If you’re over 50 and still do your own trimming, read this before your next Saturday.</span> Your back does not lock up because of your age. It is the handle the trimmer came with, and there is a fix most guys have never heard of.
   </>
 )
 
@@ -23,7 +23,7 @@ export function ArticleHeader({
 } = {}) {
   return (
     <header className="mx-auto max-w-5xl px-4 pt-6 pb-5 sm:pt-12 sm:pb-6">
-      <h1 className="text-balance text-center font-serif text-[1.65rem] font-semibold leading-[1.08] tracking-[-0.02em] sm:text-5xl sm:leading-[1.1] sm:tracking-tight md:text-6xl">
+      <h1 className="text-balance text-center font-serif text-[1.95rem] font-semibold leading-[1.08] tracking-[-0.02em] sm:text-[3.4rem] sm:leading-[1.08] sm:tracking-tight md:text-[4rem]">
         {headline}
       </h1>
 
