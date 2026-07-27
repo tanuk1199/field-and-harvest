@@ -30,33 +30,40 @@ export default function LandingPage() {
   const [igHeadline, setIgHeadline] = useState<"control" | "challenger" | null>(null)
 
   useEffect(() => {
-    let settled = false
-    const resolve = () => {
-      if (settled) return
-      settled = true
+    let applied = false // true once a real Intelligems group has been read
+    const readGroup = (): boolean => {
       try {
         const ig = window as unknown as {
           igData?: { user?: { getTestGroup: (id: string) => { isControl?: boolean } | null } }
         }
         const group = ig.igData?.user?.getTestGroup(IG_EXPERIMENT_ID)
-        setIgHeadline(group && group.isControl === false ? "challenger" : "control")
+        if (group) {
+          applied = true
+          setIgHeadline(group.isControl === false ? "challenger" : "control")
+          return true
+        }
       } catch {
-        setIgHeadline("control")
+        /* fall through to fallback */
       }
+      return false
     }
+    const onReady = () => readGroup()
     const w = window as unknown as { igData?: { user?: unknown }; onIgReady?: unknown }
-    if (w.igData?.user) {
-      resolve()
-    } else if (Array.isArray(w.onIgReady)) {
-      ;(w.onIgReady as Array<() => void>).push(resolve)
-    } else if (typeof w.onIgReady === "function") {
-      w.onIgReady = [w.onIgReady as () => void, resolve]
-    } else {
-      w.onIgReady = resolve
+    // Read immediately if Intelligems is already loaded...
+    if (w.igData?.user) readGroup()
+    // ...and always re-read when it signals ready (so it overrides the fallback below).
+    if (Array.isArray(w.onIgReady)) w.onIgReady.push(onReady)
+    else if (typeof w.onIgReady === "function") w.onIgReady = [w.onIgReady as () => void, onReady]
+    else w.onIgReady = onReady
+    window.addEventListener("ig:ready", onReady)
+    // Reveal control if Intelligems hasn't resolved yet — but a later resolve still wins.
+    const timer = window.setTimeout(() => {
+      if (!applied) setIgHeadline((prev) => prev ?? "control")
+    }, 1500)
+    return () => {
+      window.clearTimeout(timer)
+      window.removeEventListener("ig:ready", onReady)
     }
-    // Fallback so the headline is never stuck hidden if Intelligems is slow or blocked.
-    const timer = window.setTimeout(resolve, 1500)
-    return () => window.clearTimeout(timer)
   }, [])
 
   return (
