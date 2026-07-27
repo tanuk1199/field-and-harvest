@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Script from "next/script"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -15,59 +15,16 @@ import { TtsAsset } from "@/components/tts-asset"
 
 const PDP_URL = "https://fieldandharvestco.com/products/the-yeoman-handle"
 
-// Intelligems headline A/B test — control vs back-pain challenger.
-// Bucketing + attribution handled by the Intelligems bundle (org 10aa6a118122).
-const IG_EXPERIMENT_ID = "8455feac-e09b-46ca-b1f0-ebe0b9ac2fb0"
-
 const PRODUCT_THUMBS = ["productThumb1", "productThumb2", "productThumb3", "productThumb4"] as const
 type GalleryKey = "productMain" | (typeof PRODUCT_THUMBS)[number]
 
 export default function LandingPage() {
   const [activeImage, setActiveImage] = useState<GalleryKey>("productMain")
 
-  // Intelligems: which headline this visitor sees.
-  // null = unresolved (headline hidden to prevent a control->challenger flash).
-  const [igHeadline, setIgHeadline] = useState<"control" | "challenger" | null>(null)
-
-  useEffect(() => {
-    let applied = false // true once a real Intelligems group has been read
-    const readGroup = (): boolean => {
-      try {
-        const ig = window as unknown as {
-          igData?: { user?: { getTestGroup: (id: string) => { isControl?: boolean } | null } }
-        }
-        const group = ig.igData?.user?.getTestGroup(IG_EXPERIMENT_ID)
-        if (group) {
-          applied = true
-          setIgHeadline(group.isControl === false ? "challenger" : "control")
-          return true
-        }
-      } catch {
-        /* fall through to fallback */
-      }
-      return false
-    }
-    const onReady = () => readGroup()
-    const w = window as unknown as { igData?: { user?: unknown }; onIgReady?: unknown }
-    // Read immediately if Intelligems is already loaded...
-    if (w.igData?.user) readGroup()
-    // ...and always re-read when it signals ready (so it overrides the fallback below).
-    if (Array.isArray(w.onIgReady)) w.onIgReady.push(onReady)
-    else if (typeof w.onIgReady === "function") w.onIgReady = [w.onIgReady as () => void, onReady]
-    else w.onIgReady = onReady
-    window.addEventListener("ig:ready", onReady)
-    // Reveal control if Intelligems hasn't resolved yet — but a later resolve still wins.
-    const timer = window.setTimeout(() => {
-      if (!applied) setIgHeadline((prev) => prev ?? "control")
-    }, 1500)
-    return () => {
-      window.clearTimeout(timer)
-      window.removeEventListener("ig:ready", onReady)
-    }
-  }, [])
-
   return (
     <div className="min-h-screen bg-background">
+      {/* Intelligems bundle — buckets the visitor, applies the challenger headline edit,
+          and sets the apex cookie for store-side revenue attribution. */}
       <Script
         src="https://cdn.intelligems.io/esm/10aa6a118122/bundle.js"
         type="module"
@@ -103,17 +60,11 @@ export default function LandingPage() {
         </div>
 
         <div className="mt-5 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground leading-tight text-balance tracking-tight">
-            {igHeadline === "challenger" ? (
-              <>
-                5 Reasons Trimmer Owners With Back Pain Are{" "}
-                <span className="text-[#C86F4C]">Using This To Do The Yard Pain Free</span>
-              </>
-            ) : (
-              <>
-                5 Reasons Trimmer Owners Are <span className="text-[#C86F4C]">Making The Switch</span>
-              </>
-            )}
+          <h2
+            id="hero-headline"
+            className="text-4xl md:text-5xl font-bold text-foreground leading-tight text-balance tracking-tight"
+          >
+            5 Reasons Trimmer Owners Are <span className="text-[#C86F4C]">Making The Switch</span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground mt-4 leading-relaxed text-pretty max-w-md mx-auto">
             After 20 minutes of trimming your back is locked, your shoulder is hot, and Saturday is a write-off. The Yeoman bolts onto the trimmer you already own and lets you stand upright the whole pass. No new tool, no drilling, no zip ties.
