@@ -103,10 +103,7 @@ export default function LandingPage() {
         </div>
 
         <div className="mt-5 text-center">
-          <h2
-            className="text-4xl md:text-5xl font-bold text-foreground leading-tight text-balance tracking-tight"
-            style={{ visibility: igHeadline ? "visible" : "hidden" }}
-          >
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground leading-tight text-balance tracking-tight">
             {igHeadline === "challenger" ? (
               <>
                 5 Reasons Trimmer Owners With Back Pain Are{" "}
