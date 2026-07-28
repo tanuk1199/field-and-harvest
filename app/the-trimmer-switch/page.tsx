@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Script from "next/script"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -34,6 +34,45 @@ type GalleryKey = "productMain" | (typeof PRODUCT_THUMBS)[number]
 
 export default function LandingPage() {
   const [activeImage, setActiveImage] = useState<GalleryKey>("productMain")
+
+  // Cross-domain identity carry for Intelligems.
+  // The org runs with cookies OFF (`should_use_cookies: false`), so the visitor id lives in
+  // localStorage, which is origin-scoped: explore.fieldandharvestco.com and the apex store do
+  // NOT share it. The bundle only auto-appends its `igId` / `igTg` params on its OWN cross-host
+  // redirect experiences, never on ordinary CTA links, so store-side sessions started from this
+  // page were being issued a FRESH visitor id and every product view / ATC / checkout / order
+  // fell outside the test. Decorate store-bound links at click time (capture phase runs before
+  // the browser reads href for navigation) so the store adopts the same visitor id.
+  useEffect(() => {
+    const decorate = (event: Event) => {
+      const target = event.target as HTMLElement | null
+      const anchor = target?.closest?.("a") as HTMLAnchorElement | null
+      if (!anchor?.href) return
+
+      let url: URL
+      try {
+        url = new URL(anchor.href, window.location.href)
+      } catch {
+        return
+      }
+      if (url.hostname === window.location.hostname) return
+      if (!url.hostname.endsWith("fieldandharvestco.com")) return
+      if (url.searchParams.has("igId")) return
+
+      const igId = (window as unknown as { igData?: { user?: { igId?: string } } }).igData?.user?.igId
+      if (!igId) return
+
+      url.searchParams.set("igId", igId)
+      anchor.href = url.href
+    }
+
+    document.addEventListener("click", decorate, true)
+    document.addEventListener("auxclick", decorate, true)
+    return () => {
+      document.removeEventListener("click", decorate, true)
+      document.removeEventListener("auxclick", decorate, true)
+    }
+  }, [])
 
   return (
     <div className="min-h-screen bg-background">
