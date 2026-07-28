@@ -15,6 +15,20 @@ import { TtsAsset } from "@/components/tts-asset"
 
 const PDP_URL = "https://fieldandharvestco.com/products/the-yeoman-handle"
 
+// Intelligems context block. On the Shopify store this is set by the theme snippet's
+// Liquid <script> that ships alongside the bundle; that Liquid can't run on this Vercel
+// lander, so we set the equivalent page-context globals statically (non-product page).
+// Without these the bundle still buckets + applies edits, but has no session context to
+// fire its tracking/exposure events against. Must run before the bundle (afterInteractive) loads.
+if (typeof window !== "undefined") {
+  const w = window as unknown as Record<string, unknown>
+  w.Shopify = w.Shopify || { theme: { id: 136737161259, role: "main" } }
+  w._template = w._template || { directory: "", name: "index", suffix: "" }
+  w.__productIdFromTemplate = w.__productIdFromTemplate ?? null
+  w.__plpCollectionIdFromTemplate = w.__plpCollectionIdFromTemplate ?? null
+  w.igProductData = w.igProductData || {}
+}
+
 const PRODUCT_THUMBS = ["productThumb1", "productThumb2", "productThumb3", "productThumb4"] as const
 type GalleryKey = "productMain" | (typeof PRODUCT_THUMBS)[number]
 
