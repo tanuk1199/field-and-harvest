@@ -117,7 +117,7 @@ export default function LandingPage() {
             id="hero-headline"
             className="text-4xl md:text-5xl font-bold text-foreground leading-tight text-balance tracking-tight"
           >
-            5 Reasons Trimmer Owners Are <span className="text-[#C86F4C]">Making The Switch</span>
+            5 Reasons Trimmer Owners With Back Pain Are <span className="text-[#C86F4C]">Using This To Do The Yard Pain Free</span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground mt-4 leading-relaxed text-pretty max-w-md mx-auto">
             After 20 minutes of trimming your back is locked, your shoulder is hot, and Saturday is a write-off. The Yeoman bolts onto the trimmer you already own and lets you stand upright the whole pass. No new tool, no drilling, no zip ties.
