@@ -15,10 +15,10 @@ import { TtsAsset } from "@/components/tts-asset"
 
 const PDP_URL = "https://fieldandharvestco.com/products/the-yeoman-handle"
 
-// Layout Test 1, arm A (control). Middleware serves this file at /the-trimmer-switch for half
-// of visitors and rewrites the other half to /the-trimmer-switch-v2. Hardcoded per file rather
-// than read from the cookie, so the tag can never disagree with the layout actually rendered.
-const LAYOUT_VARIANT = "test1-a"
+// Layout Test 1, arm B (challenger). Served by REWRITE at /the-trimmer-switch, never at its own
+// URL for real traffic. Hardcoded per file rather than read from the cookie, so the tag can
+// never disagree with the layout actually rendered.
+const LAYOUT_VARIANT = "test1-b"
 
 // Intelligems context block. On the Shopify store this is set by the theme snippet's
 // Liquid <script> that ships alongside the bundle; that Liquid can't run on this Vercel
@@ -40,14 +40,6 @@ type GalleryKey = "productMain" | (typeof PRODUCT_THUMBS)[number]
 export default function LandingPage() {
   const [activeImage, setActiveImage] = useState<GalleryKey>("productMain")
 
-  // Cross-domain identity carry for Intelligems.
-  // The org runs with cookies OFF (`should_use_cookies: false`), so the visitor id lives in
-  // localStorage, which is origin-scoped: explore.fieldandharvestco.com and the apex store do
-  // NOT share it. The bundle only auto-appends its `igId` / `igTg` params on its OWN cross-host
-  // redirect experiences, never on ordinary CTA links, so store-side sessions started from this
-  // page were being issued a FRESH visitor id and every product view / ATC / checkout / order
-  // fell outside the test. Decorate store-bound links at click time (capture phase runs before
-  // the browser reads href for navigation) so the store adopts the same visitor id.
   // Tag the session so Clarity can filter recordings, scroll depth and click maps by arm.
   // Both arms serve at the same URL, so this tag is the only thing that separates them.
   // The queue stub mirrors Clarity's own snippet, so this call is buffered if it runs before
@@ -128,38 +120,50 @@ export default function LandingPage() {
       {/* ============================================
           HERO — Swap moment
           ============================================ */}
-      <section className="max-w-lg mx-auto px-4 py-8">
-        <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg bg-muted">
-          <TtsAsset name="heroImage" alt="The Yeoman Handle attached to a string trimmer" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
-        </div>
-
-        <div className="mt-5 text-center">
-          <span className="inline-block bg-[#DDA15E]/20 rounded-md py-2 px-4 font-bold text-sm text-foreground whitespace-nowrap">Save Up To 43% + 2 Free Yardwork Guides</span>
-        </div>
-
-        <div className="mt-5 text-center">
+      {/* LAYOUT TEST 1, ARM B — above-the-fold restructure.
+          Goal: land one complete thought above the fold. On arm A the average fold cuts the
+          headline mid-sentence, so the promise ("Yard Pain Free") falls below the cut and only
+          53% of visitors reach the CTA. Reference for this shape is the Maison Pure lander,
+          which puts the full headline and image above the fold and reads 74% to the CTA.
+          Changes vs arm A:
+          1. Headline moved ABOVE the image, so the argument leads and text paints first.
+          2. "Save Up To 43% + 2 Free Yardwork Guides" badge removed. It was duplicate copy of
+             the promo bar two blocks above it and cost a full block of height.
+          3. Headline 36/48px down to 32/38px, line-height 1.15.
+          4. Hero image scaled to 90% width, aspect held at 4:3.
+          5. Subhead 18/20px down to 17/20px, leading-snug, capped at max-w-sm on mobile.
+          6. Vertical rhythm tightened (section py-8 to py-6, button py-7 to py-6) to pull the
+             CTA and review line up.
+          Everything below this section is byte-identical to arm A. */}
+      <section className="max-w-lg mx-auto px-4 py-6">
+        <div className="text-center">
           <h2
             id="hero-headline"
-            className="text-4xl md:text-5xl font-bold text-foreground leading-tight text-balance tracking-tight"
+            className="text-[2rem] md:text-[2.375rem] font-bold text-foreground leading-[1.15] text-balance tracking-tight"
           >
             5 Reasons Trimmer Owners With Back Pain Are <span className="text-[#C86F4C]">Using This To Do The Yard Pain Free</span>
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground mt-4 leading-relaxed text-pretty max-w-md mx-auto">
-            After 20 minutes of trimming your back is locked, your shoulder is hot, and Saturday is a write-off. The Yeoman bolts onto the trimmer you already own and lets you stand upright the whole pass. No new tool, no drilling, no zip ties.
-          </p>
         </div>
+
+        <div className="relative w-[90%] mx-auto aspect-[4/3] rounded-2xl overflow-hidden shadow-lg bg-muted mt-4">
+          <TtsAsset name="heroImage" alt="The Yeoman Handle attached to a string trimmer" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+        </div>
+
+        <p className="text-[1.0625rem] md:text-xl text-muted-foreground mt-6 leading-snug text-pretty max-w-sm md:max-w-md mx-auto text-center">
+          After 20 minutes of trimming your back is locked, your shoulder is hot, and Saturday is a write-off. The Yeoman bolts onto the trimmer you already own and lets you stand upright the whole pass. No new tool, no drilling, no zip ties.
+        </p>
 
         <a href={PDP_URL}>
           <Button
             size="lg"
-            className="w-full mt-8 bg-[#C86F4C] hover:bg-[#C86F4C]/90 text-white font-bold py-7 text-lg rounded-lg shadow-lg transition-all hover:shadow-xl"
+            className="w-full mt-6 bg-[#C86F4C] hover:bg-[#C86F4C]/90 text-white font-bold py-6 text-lg rounded-lg shadow-lg transition-all hover:shadow-xl"
           >
             Make The Switch &rarr;
           </Button>
         </a>
 
-        <div className="mt-5 text-center">
-          <div className="flex justify-center gap-0.5 mb-2">
+        <div className="mt-4 text-center">
+          <div className="flex justify-center gap-0.5 mb-1.5">
             {[...Array(5)].map((_, i) => (
               <Star key={i} className="w-5 h-5 fill-[#FDB913] text-[#FDB913]" />
             ))}
