@@ -36,7 +36,7 @@ export default function LandingPage() {
           HEADER — Logo
           ============================================ */}
       <header className="py-3 px-4 flex items-center justify-center bg-card">
-        <TtsAsset name="logo" alt="Field & Harvest Co." className="h-7 md:h-10 w-auto object-contain" fallbackClassName="text-2xl md:text-3xl font-bold text-primary tracking-tight" />
+        <TtsAsset eager name="logo" alt="Field & Harvest Co." className="h-7 md:h-10 w-auto object-contain" fallbackClassName="text-2xl md:text-3xl font-bold text-primary tracking-tight" />
       </header>
 
       {/* ============================================
@@ -44,7 +44,7 @@ export default function LandingPage() {
           ============================================ */}
       <section className="max-w-lg mx-auto px-4 py-8">
         <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg bg-muted">
-          <TtsAsset name="heroImage" alt="The Yeoman Handle attached to a string trimmer" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+          <TtsAsset eager name="heroImage" alt="The Yeoman Handle attached to a string trimmer" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
         </div>
 
         <div className="mt-5 text-center">
