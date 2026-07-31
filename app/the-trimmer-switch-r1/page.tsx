@@ -15,11 +15,11 @@ import { TtsAsset } from "@/components/tts-asset"
 
 const PDP_URL = "https://fieldandharvestco.com/products/the-yeoman-handle"
 
-// Test 2, arm A (control). Middleware serves this file at /the-trimmer-switch for half of
-// visitors and rewrites the other half to /the-trimmer-switch-r1. Hardcoded per file rather
-// than read from the cookie, so the tag can never disagree with the layout actually rendered.
-// Test 1 (the above-the-fold layout test) was killed; its arms were test1-a / test1-b.
-const LAYOUT_VARIANT = "test2-a"
+// Test 2, arm B (challenger). This file is served BY REWRITE at /the-trimmer-switch for half of
+// visitors, so the URL, ad links and attribution are identical to arm A. It is a byte-for-byte
+// copy of the control page except for the Reason 1 card below and this constant. Hardcoded per
+// file rather than read from the cookie, so the tag can never disagree with what rendered.
+const LAYOUT_VARIANT = "test2-b"
 
 // Intelligems context block. On the Shopify store this is set by the theme snippet's
 // Liquid <script> that ships alongside the bundle; that Liquid can't run on this Vercel
@@ -176,7 +176,12 @@ export default function LandingPage() {
           ============================================ */}
       <section className="max-w-lg mx-auto px-4 py-12 space-y-10">
 
-        {/* Reason 1 — Back-saving / The Plumb-Set */}
+        {/* Reason 1 — TEST 2 ARM B. The only content difference from the control page.
+            Cause-first rebuild: back pain named in the headline, the cause chain stated before any
+            product language, the terracotta line carries the five-brand CF003 proof instead of
+            Plumb-Set jargon, the image shows the low grip causing the bend rather than the happy
+            ending, and the trademark is deferred to the last sentence so it names something already
+            explained instead of introducing jargon cold. */}
         <div id="reason-1" className="bg-card rounded-2xl p-8 border border-border shadow-sm">
           <div className="flex items-center justify-between mb-4">
             <Badge variant="secondary" className="text-xs uppercase tracking-wider font-bold bg-transparent">
@@ -185,18 +190,22 @@ export default function LandingPage() {
             <span className="text-xs font-bold text-muted-foreground">01</span>
           </div>
           <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance leading-tight">
-            Stop hunching over your trimmer for the rest of summer
+            Every brand&apos;s grip sits too low. That&apos;s your back pain.
           </h3>
           <p className="text-sm font-bold uppercase tracking-wide text-[#C86F4C] mb-6">
-            The Plumb-Set&trade; Geometry
+            STIHL. Echo. Ryobi. EGO. Husqvarna.
           </p>
 
           <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
-            <TtsAsset name="reason1Image" alt="Standing upright with the Yeoman Handle" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+            <img
+              src="/reason1-low-grip.png"
+              alt="A man bent forward over a string trimmer, his support hand down on the low factory loop handle"
+              className="w-full h-full object-cover"
+            />
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
-            Standard trimmer handles force you forward over the head. Twenty minutes in, your lower back is locked. The Plumb-Set&trade;, our fixed grip angle, lifts your off-hand 9 inches above the factory loop so your spine stays plumb and both hands share the load. <span className="font-bold text-foreground">You stand upright the whole pass. No hunch, no ache.</span>
+            It doesn&apos;t matter which one is in your shed. They all put the grip below your natural reach, so you fold forward to hold it and stay folded the whole pass. Twenty minutes in, your lower back is locked. The Yeoman clamps onto that same shaft and extends the grip out to meet your hand. That fixed angle is the Plumb-Set&trade;, and it means <span className="font-bold text-foreground">you stay standing, because there is nothing left to bend down to.</span>
           </p>
         </div>
 
