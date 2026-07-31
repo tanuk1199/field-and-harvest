@@ -176,7 +176,7 @@ export default function LandingPage() {
       <section className="max-w-lg mx-auto px-4 py-12 space-y-10">
 
         {/* Reason 1 — Back-saving / The Plumb-Set */}
-        <div className="bg-card rounded-2xl p-8 border border-border shadow-sm">
+        <div id="reason-1" className="bg-card rounded-2xl p-8 border border-border shadow-sm">
           <div className="flex items-center justify-between mb-4">
             <Badge variant="secondary" className="text-xs uppercase tracking-wider font-bold bg-transparent">
               Back-Saving
@@ -200,7 +200,7 @@ export default function LandingPage() {
         </div>
 
         {/* Reason 2 — Durability / Hold-Fast */}
-        <div className="bg-card rounded-2xl p-8 border border-border shadow-sm">
+        <div id="reason-2" className="bg-card rounded-2xl p-8 border border-border shadow-sm">
           <div className="flex items-center justify-between mb-4">
             <Badge variant="secondary" className="text-xs uppercase tracking-wider font-bold bg-transparent">
               Built To Last
@@ -224,7 +224,7 @@ export default function LandingPage() {
         </div>
 
         {/* Reason 3 — Easy install */}
-        <div className="bg-card rounded-2xl p-8 border border-border shadow-sm">
+        <div id="reason-3" className="bg-card rounded-2xl p-8 border border-border shadow-sm">
           <div className="flex items-center justify-between mb-4">
             <Badge variant="secondary" className="text-xs uppercase tracking-wider font-bold bg-transparent">
               Three-Minute Install
@@ -248,7 +248,7 @@ export default function LandingPage() {
         </div>
 
         {/* Reason 4 — Adjustable */}
-        <div className="bg-card rounded-2xl p-8 border border-border shadow-sm">
+        <div id="reason-4" className="bg-card rounded-2xl p-8 border border-border shadow-sm">
           <div className="flex items-center justify-between mb-4">
             <Badge variant="secondary" className="text-xs uppercase tracking-wider font-bold bg-transparent">
               Dials In To You
@@ -272,7 +272,7 @@ export default function LandingPage() {
         </div>
 
         {/* Reason 5 — Guarantee */}
-        <div className="bg-card rounded-2xl p-8 border border-border shadow-sm">
+        <div id="reason-5" className="bg-card rounded-2xl p-8 border border-border shadow-sm">
           <div className="flex items-center justify-between mb-4">
             <Badge variant="secondary" className="text-xs uppercase tracking-wider font-bold bg-transparent">
               Risk-Free
