@@ -19,7 +19,7 @@ import { NextResponse, type NextRequest } from "next/server"
  * page rather than failing the request.
  */
 
-const TEST_ENABLED = true
+const TEST_ENABLED = false
 
 const COOKIE = "fh_lt"
 const ARM_A = "test1-a"
