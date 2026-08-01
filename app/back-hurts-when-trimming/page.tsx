@@ -1,6 +1,7 @@
 "use client"
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { useEffect } from "react"
 import { Check, Star } from "lucide-react"
 
 // ============================================================
@@ -20,6 +21,12 @@ import { Check, Star } from "lucide-react"
 // ============================================================
 
 const PDP_URL = "https://fieldandharvestco.com/products/the-yeoman-handle"
+
+// Page tag carried through to the store on every outbound click, so an order
+// that started here is distinguishable in Shopify from one that started on any
+// other lander. Deliberately NOT `lt`, which means "layout test arm" on
+// /the-trimmer-switch and would pollute the Test 2 read.
+const LANDER_TAG = "bhwt"
 const CTA_LABEL = "CHECK AVAILABILITY >>"
 const OFFER_TEXT = "Save Up To 43% + 2 Free Yardwork Guides"
 const SOCIAL_PROOF = "4.8 stars • 800 reviews • 40,000+ trimmers upgraded"
@@ -54,12 +61,12 @@ const PAGE_THEME = {
 } as React.CSSProperties
 
 const IMAGES = {
-  author: "/bhwt-author-walt.png",
-  handOnBack: "/bhwt-hand-on-back.png",
-  brandRack: "/bhwt-brand-rack.png",
-  spineLeverage: "/bhwt-bends-loads.png",
-  uprightSenior: "/bhwt-verified-72.png",
-  flatlay: "/bhwt-flatlay.png",
+  author: "/bhwt-author-walt.webp",
+  handOnBack: "/bhwt-hand-on-back.webp",
+  brandRack: "/bhwt-brand-rack.webp",
+  spineLeverage: "/bhwt-bends-loads.webp",
+  uprightSenior: "/bhwt-verified-72.webp",
+  flatlay: "/bhwt-flatlay.webp",
   // &width= is honoured on Shopify stills. It does nothing on animated GIFs,
   // which is why the demo is left bare and sits at the very bottom.
   manHoldingTrimmer:
@@ -273,6 +280,31 @@ function Stars() {
 }
 
 export default function BackHurtsWhenTrimming() {
+  // Capture phase runs before the browser reads href for navigation, so the
+  // param is on the URL by the time the click navigates. Wrapped so a failure
+  // can never break the page.
+  useEffect(() => {
+    const decorate = (event: Event) => {
+      try {
+        const anchor = (event.target as HTMLElement | null)?.closest?.("a") as HTMLAnchorElement | null
+        if (!anchor?.href) return
+        const url = new URL(anchor.href, window.location.href)
+        if (url.hostname === window.location.hostname) return
+        if (!url.hostname.endsWith("fieldandharvestco.com")) return
+        if (!url.searchParams.has("lp")) url.searchParams.set("lp", LANDER_TAG)
+        anchor.href = url.href
+      } catch {
+        // Tagging must never break navigation.
+      }
+    }
+    document.addEventListener("click", decorate, true)
+    document.addEventListener("auxclick", decorate, true)
+    return () => {
+      document.removeEventListener("click", decorate, true)
+      document.removeEventListener("auxclick", decorate, true)
+    }
+  }, [])
+
   return (
     <div style={PAGE_THEME} className="min-h-screen bg-background text-foreground">
       {/* Breadcrumb only. No logo: a brand mark at the top tells a Learn More

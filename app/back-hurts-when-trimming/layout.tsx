@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     url: "https://explore.fieldandharvestco.com/back-hurts-when-trimming",
     images: [
       {
-        url: "https://explore.fieldandharvestco.com/bhwt-hand-on-back.png",
+        url: "https://explore.fieldandharvestco.com/bhwt-hand-on-back.webp",
         alt: "Older man straightening up with a hand pressed to his lower back after trimming",
       },
     ],
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "5 Reasons Your Back Hurts When Trimming",
     description: "Why it is not just your age, and what actually stops it.",
-    images: ["https://explore.fieldandharvestco.com/bhwt-hand-on-back.png"],
+    images: ["https://explore.fieldandharvestco.com/bhwt-hand-on-back.webp"],
   },
 }
 
