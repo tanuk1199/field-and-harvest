@@ -208,7 +208,7 @@ const REASONS: Reason[] = [
     number: "2",
     heading: "Twenty minutes bent at the waist would hurt a 25-year-old",
     image: IMAGES.spineLeverage,
-    alt: "A chiropractor pointing to the loaded lower back of a hinged-forward skeleton. Caption reads: bends loads your lower back. It is a leverage problem, not a strength problem.",
+    alt: "A chiropractor pointing to the loaded lower back of a hinged-forward skeleton. Caption reads: the bend loads your lower back. It is a leverage problem, not a strength problem.",
     body: (
       <>
         <p>
