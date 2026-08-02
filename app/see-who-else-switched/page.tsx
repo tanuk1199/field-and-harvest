@@ -105,41 +105,49 @@ const CLIPS = [
 // declared skeptic. All verbatim from the Customer Voice Bank.
 const REVIEWS = [
   {
+    chip: "Age 72",
     tag: "Age 72",
     quote:
       "I am 72 years old, using my big still weed eater hurt my back after about 20 minutes. I just finished about 1 hr. And my back is just fine! Wish I would have bought this years ago.",
   },
   {
+    chip: "6 ft 4, back surgery",
     tag: "6'4, back surgery in 2005",
     quote:
       "This thing is a lifesaver. 6'4 and this thing kept me from bending over. Major back surgery in 2005 and first time I could weed eat with no pain. Easy to install. Took 3 minutes.",
   },
   {
+    chip: "Age 46",
     tag: "Age 46",
     quote:
       "6 hours of string trimming this week, crippled me for days. At 46 it's not going to get easier. Solve a problem you get my money.",
   },
   {
+    chip: "Works a grounds crew",
     tag: "Grounds crew, large property",
     quote:
       "Should have bought this a long time ago. Definitely makes weed eating a breeze. No more slouching and hurting my back. I use this all the time on a grounds crew on a large scale property.",
   },
   {
+    chip: "Started out skeptical",
     tag: "Started out skeptical",
     quote:
       "I was skeptical that anything could make weedeating easier. I was wrong. I was able to weedeat my entire yard including around my pond, (2 hrs of weedeating) and my back did not get tight or hurt. I usually do half one day then half another.",
   },
   {
+    chip: "6 ft 7",
     tag: "6'7",
     quote:
       "I am 6'7 and this has saved my back. Ever since they quit making extended shaft weed eaters. I've suffered from intense back pain. But this simple device is awesome.",
   },
   {
+    chip: "Multiple back surgeries",
     tag: "Multiple back surgeries",
     quote:
       "I've had multiple back surgeries this part. such a backsaver. Don't dread doing the weed eating now.",
   },
   {
+    chip: "Age 65",
     tag: "Age 65, edging weekly",
     quote:
       "Why did I wait to order this? I have 3-4 hours of mowing and edging every week. Edging at 65 was a painful experience, being bent over for an hour. Not anymore!",
@@ -212,9 +220,9 @@ function VideoWall({ innerRef }: { innerRef: React.RefObject<HTMLElement | null>
   return (
     <section ref={innerRef} className="mt-8 rounded-lg bg-[#3D332A] px-5 py-8 sm:px-7">
       <h2 className="text-center text-sm font-bold uppercase tracking-[0.2em] text-[#E8DFD2]">
-        Five More, Same Handle
+        Five Of Them, Filming Their Own Yards
       </h2>
-      <p className="mt-2 text-center text-sm text-[#B8AA98]">Their own yards. Their own trimmers. Nothing staged.</p>
+      <p className="mt-2 text-center text-sm text-[#B8AA98]">Their own trimmers. Nothing staged.</p>
       <div className="mt-6 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {CLIPS.map((clip, i) => (
           <div key={clip.poster} className="relative aspect-[9/16] w-[46%] shrink-0 snap-start overflow-hidden rounded-md bg-black sm:w-[31%]">
@@ -251,6 +259,7 @@ export default function SeeWhoElseSwitched() {
   const ctaRef = useRef<HTMLElement | null>(null)
   const [pastWall, setPastWall] = useState(false)
   const [ctaVisible, setCtaVisible] = useState(false)
+  const [showAllReviews, setShowAllReviews] = useState(false)
 
   useEffect(() => {
     if (typeof IntersectionObserver === "undefined") return
@@ -373,24 +382,56 @@ export default function SeeWhoElseSwitched() {
 
           <section className="mt-14">
             <h2 className="text-pretty text-2xl font-bold leading-snug tracking-tight text-foreground sm:text-3xl">
-              Nothing Like Him, Same Result
+              Eight Of The 40,000
             </h2>
             <p className="mt-2 text-base leading-relaxed text-muted-foreground">
-              Deliberately picked because they have nothing in common. Different ages, different heights, different
-              backs, different machines.
+              All verified buyers, picked because they have nothing in common with each other.
             </p>
-            <div className="mt-7 flex flex-col gap-5">
-              {REVIEWS.map((r) => (
-                <blockquote key={r.tag} className="border-l-4 border-primary bg-muted p-5">
+
+            {/* The argument, in one glance. Eight stacked cards bury it.
+                Derived from REVIEWS so a chip can never describe somebody who is
+                not actually quoted below. */}
+            <div className="mt-6 rounded-lg border border-border bg-muted p-4 sm:p-5">
+              <p className="text-xs font-bold uppercase tracking-widest text-primary">
+                The eight men quoted below
+              </p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {REVIEWS.map((r) => (
+                  <span
+                    key={r.chip}
+                    className="rounded-full border border-border bg-card px-3 py-1.5 text-sm font-semibold text-foreground"
+                  >
+                    {r.chip}
+                  </span>
+                ))}
+              </div>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                Nothing in common except the handle.
+              </p>
+            </div>
+
+            <div className="mt-7 grid gap-4 sm:grid-cols-2">
+              {(showAllReviews ? REVIEWS : REVIEWS.slice(0, 4)).map((r) => (
+                <blockquote key={r.tag} className="flex flex-col border-l-4 border-primary bg-muted p-4">
                   <p className="text-xs font-bold uppercase tracking-widest text-primary">{r.tag}</p>
-                  <p className="mt-2 text-base italic leading-relaxed text-muted-foreground">{r.quote}</p>
-                  <footer className="mt-3 flex flex-wrap items-center gap-3">
-                    <cite className="text-sm font-bold not-italic text-foreground">Verified Buyer</cite>
+                  <p className="mt-2 text-sm italic leading-relaxed text-muted-foreground sm:text-base">{r.quote}</p>
+                  <footer className="mt-3 flex flex-wrap items-center gap-2">
+                    <cite className="text-xs font-bold not-italic text-foreground">Verified Buyer</cite>
                     <Stars />
                   </footer>
                 </blockquote>
               ))}
             </div>
+
+            {!showAllReviews ? (
+              <button
+                type="button"
+                onClick={() => setShowAllReviews(true)}
+                className="mt-5 w-full rounded-md border-2 border-foreground bg-card px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-foreground transition-colors hover:bg-muted"
+              >
+                Read {REVIEWS.length - 4} More &darr;
+              </button>
+            ) : null}
           </section>
 
           {/* One block, as generalisation. They already have the mechanism. */}
