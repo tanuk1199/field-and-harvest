@@ -33,7 +33,7 @@ const OFFER_TEXT = "Save Up To 43% Off + 2 Free Yardwork Guides"
 const SOCIAL_PROOF = "4.8 stars • 800 reviews • 40,000+ trimmers upgraded"
 
 const HEADLINE_MAIN = "5 Reasons One Handle Ends The Back Pain Caused By Every Trimmer Brand"
-const HEADLINE_BRACKET = "(And Why Buying Another Trimmer Will Not)"
+const HEADLINE_BRACKET = "(And Why Buying Another Trimmer Will Not Fix The Pain)"
 
 const PAGE_THEME = {
   "--background": "oklch(1 0 0)",
@@ -60,6 +60,9 @@ const IMAGES = {
   uprightSenior: "/bhwt-verified-72.webp",
   manHoldingTrimmer:
     "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/manholdingtrimmer.png?v=1778560333&width=900",
+  // Real customer fitting the clamp with the allen key. Shopify negotiates this
+  // to animated webp at ~1.4MB for browsers; &width= does nothing on GIFs.
+  installGif: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/0512_5.gif?v=1778560234",
 }
 
 const CLIPS = [
@@ -164,10 +167,10 @@ function ComparisonTable() {
   )
 }
 
-function VideoWall({ innerRef }: { innerRef: React.RefObject<HTMLElement | null> }) {
+function VideoWall() {
   const [playing, setPlaying] = useState<number | null>(null)
   return (
-    <section ref={innerRef} className="mt-14 rounded-lg bg-[#3D332A] px-5 py-8 sm:px-7">
+    <section className="mt-14 rounded-lg bg-[#3D332A] px-5 py-8 sm:px-7">
       <h2 className="text-center text-sm font-bold uppercase tracking-[0.2em] text-[#E8DFD2]">See It In Action</h2>
       <p className="mt-2 text-center text-sm text-[#B8AA98]">Real customers, their own yards, their own trimmers.</p>
       <div className="mt-6 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
@@ -268,8 +271,8 @@ const REASONS: Reason[] = [
   {
     number: "4",
     heading: "One clamp fits the machine you already own",
-    image: IMAGES.manHoldingTrimmer,
-    alt: "A man standing fully upright, back straight, hand out on the raised Yeoman grip while trimming a lawn edge",
+    image: IMAGES.installGif,
+    alt: "A customer fitting the Yeoman Handle to his trimmer shaft with the included allen key",
     body: (
       <>
         <p>
@@ -293,19 +296,23 @@ const REASONS: Reason[] = [
   },
   {
     number: "5",
-    heading: "You are risking a handle, not another machine",
+    heading: "It sets to your reach. The factory one was set for nobody.",
     image: IMAGES.uprightSenior,
     alt: "A 72-year-old verified buyer standing fully upright in his yard holding a trimmer fitted with the Yeoman Handle, beside his five-star review",
     body: (
       <>
         <p>
-          The last trimmer you bought did not come with a promise about your back. This does. Bolt it on, work a full
-          Saturday the way you normally would, and if your back cannot tell the difference inside 60 days you get a full
-          refund. You do not even have to send it back.
+          This is the part that decides whether the bend actually goes away. A grip only removes the bend if it sits
+          where your hand naturally falls, and yours is not where the next man&apos;s is.
         </p>
         <p>
-          The <strong className="font-bold text-foreground">Hold-Fast&trade;</strong> bracket carries a lifetime
-          warranty on top of that, which is longer than the warranty on the machine it clamps to.
+          The factory loop is fixed in one position, chosen for an average nobody actually is. The Yeoman slides up and
+          down the shaft and locks wherever you set it, so a man at five foot six and a man at six foot four get the same
+          result from the same part.
+        </p>
+        <p>
+          <strong className="font-bold text-foreground">It also means one handle can serve a household.</strong> Loosen
+          the bolt, slide it, tighten it, and it is set for whoever picked the trimmer up today.
         </p>
       </>
     ),
@@ -390,7 +397,7 @@ function Stars() {
 }
 
 export default function OneHandleEveryBrand() {
-  const wallRef = useRef<HTMLElement | null>(null)
+  const reasonsRef = useRef<HTMLDivElement | null>(null)
   const ctaRef = useRef<HTMLElement | null>(null)
   const [pastWall, setPastWall] = useState(false)
   const [ctaVisible, setCtaVisible] = useState(false)
@@ -398,14 +405,16 @@ export default function OneHandleEveryBrand() {
   useEffect(() => {
     if (typeof IntersectionObserver === "undefined") return
     const obs: IntersectionObserver[] = []
-    if (wallRef.current) {
+    // Fires the moment the last listicle reason scrolls off the top, so the
+    // bar is available from the testimonials onward.
+    if (reasonsRef.current) {
       const o = new IntersectionObserver(
         ([e]) => {
           if (!e.isIntersecting && e.boundingClientRect.top < 0) setPastWall(true)
         },
         { threshold: 0 },
       )
-      o.observe(wallRef.current)
+      o.observe(reasonsRef.current)
       obs.push(o)
     }
     if (ctaRef.current) {
@@ -485,10 +494,10 @@ export default function OneHandleEveryBrand() {
 
           <ComparisonTable />
 
-          <CtaButton className="mt-8" note={`${OFFER_TEXT}. 60-day trial, lifetime warranty.`} />
-          <p className="mt-4 text-center text-sm text-muted-foreground">{SOCIAL_PROOF}</p>
-
-          <div className="mt-14 flex flex-col gap-14">
+          {/* No CTA here. "Check availability" is the wrong ask of a man who
+              should still be reading, and it is the moment consumption breaks.
+              The comparison runs straight into reason 1. */}
+          <div ref={reasonsRef} className="mt-14 flex flex-col gap-14">
             {REASONS.map((r) => (
               <section key={r.number}>
                 <img src={r.image} alt={r.alt} loading="lazy" decoding="async" className="aspect-[3/2] w-full rounded-sm object-cover" />
@@ -502,7 +511,7 @@ export default function OneHandleEveryBrand() {
             ))}
           </div>
 
-          <VideoWall innerRef={wallRef} />
+          <VideoWall />
 
           <section className="mt-14">
             <h2 className="text-pretty text-2xl font-bold leading-snug tracking-tight text-foreground sm:text-3xl">
@@ -523,19 +532,66 @@ export default function OneHandleEveryBrand() {
             </div>
           </section>
 
-          <section ref={ctaRef} className="mt-12">
-            <img
-              src={IMAGES.flatlay}
-              alt="The Yeoman Handle laid on a concrete path beside worn leather gloves, secateurs and a pot of basil"
-              loading="lazy"
-              decoding="async"
-              className="aspect-square w-full rounded-sm bg-muted object-cover"
-            />
-            <p className="mt-7 text-center text-base font-bold uppercase tracking-wide text-foreground">
-              Today: {OFFER_TEXT}
-            </p>
-            <CtaButton className="mt-6" note="Fits 26mm and 28mm shafts across every major brand, gas or battery." />
-            <p className="mt-4 text-center text-sm text-muted-foreground">{SOCIAL_PROOF}</p>
+          {/* Product block, not an advertorial card. This traffic is already
+              product-aware, so it reads as a branded showcase: image beside the
+              details rather than a full-bleed photo with a headline under it. */}
+          <section ref={ctaRef} className="mt-14">
+            <div className="overflow-hidden rounded-lg border-2 border-foreground">
+              <div className="flex flex-col sm:flex-row">
+                <div className="bg-muted sm:w-2/5 sm:shrink-0">
+                  <img
+                    src={IMAGES.flatlay}
+                    alt="The Yeoman Handle laid on a concrete path beside worn leather gloves, secateurs and a pot of basil"
+                    loading="lazy"
+                    decoding="async"
+                    className="aspect-square w-full object-cover"
+                  />
+                </div>
+
+                <div className="flex flex-col justify-center p-5 sm:w-3/5 sm:p-6">
+                  <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary">
+                    Field &amp; Harvest Co.
+                  </p>
+                  <h2 className="mt-1.5 text-2xl font-bold leading-tight tracking-tight text-foreground sm:text-3xl">
+                    The Yeoman Handle&trade;
+                  </h2>
+
+                  <div className="mt-2.5 flex flex-wrap items-center gap-2">
+                    <Stars />
+                    <span className="text-sm text-muted-foreground">4.8 from 800 reviews</span>
+                  </div>
+
+                  <div className="mt-4 flex items-baseline gap-2.5">
+                    <span className="text-3xl font-bold text-foreground">$39</span>
+                    <span className="text-base text-muted-foreground line-through">$60</span>
+                  </div>
+
+                  <ul className="mt-4 flex flex-col gap-1.5">
+                    {[
+                      "Fits 26 and 28mm shafts, gas or battery",
+                      "Three minutes, allen key included",
+                      "60-day trial, lifetime warranty",
+                    ].map((f) => (
+                      <li key={f} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+                        <span>{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <a
+                    href={PDP_URL}
+                    className="mt-5 inline-block rounded-md bg-primary px-6 py-4 text-center text-base font-bold uppercase tracking-wide text-primary-foreground shadow-md transition-colors hover:bg-primary/90 sm:text-lg"
+                  >
+                    {CTA_LABEL}
+                  </a>
+                </div>
+              </div>
+
+              <p className="border-t-2 border-foreground bg-foreground px-5 py-2.5 text-center text-xs font-bold uppercase tracking-wide text-background">
+                {OFFER_TEXT}
+              </p>
+            </div>
           </section>
 
           <section className="mt-12">
