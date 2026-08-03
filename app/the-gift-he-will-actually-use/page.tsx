@@ -71,6 +71,10 @@ const IMAGES = {
   leverage: "/bhwt-bends-loads.webp",
   brandRack: "/bhwt-brand-rack.webp",
   clampDetail: "/gift-clamp-detail.webp",
+  // Reason 4 infographic. Source is 1024x688 (1.488), so the 3:2 reason frame
+  // crops ~2.7px off top and bottom and no callout is touched. Any replacement
+  // here must be 3:2 or the labels will get cut.
+  notCheapKind: "/gift-not-cheap-kind.webp",
   flatlay: "/bhwt-flatlay.webp",
   // Real customer footage. Shopify negotiates the GIF to animated webp at
   // ~3.2MB for browsers; it sits at the very bottom and is lazy loaded.
@@ -251,8 +255,8 @@ const REASONS: Reason[] = [
   {
     number: "4",
     heading: "Not the cheap kind.",
-    image: IMAGES.clampDetail,
-    alt: "Close view of the machined aluminum clamp on the Yeoman Handle, its bolts, the quick-release lever and the included allen key",
+    image: IMAGES.notCheapKind,
+    alt: "Labelled diagram of the Yeoman Handle clamped to a trimmer shaft. Callouts read: machined aluminum, precision-built for strength and durability; grips two opposite faces, reinforced bracket stays locked in place season after season; lifetime warranty, stronger than the trimmer it clamps to. A side panel contrasts it against cheap alternatives: stamped steel single-face grip, prone to slipping and loosening, a short-term fix that ends up in the trash.",
     body: (
       <>
         <p>
