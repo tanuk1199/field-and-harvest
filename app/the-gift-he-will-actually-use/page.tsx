@@ -76,8 +76,10 @@ const IMAGES = {
   // ~3.2MB for browsers; it sits at the very bottom and is lazy loaded.
   trimmingGif: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/0512_4.gif?v=1778560127",
   installGif: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/0512_5.gif?v=1778560234",
-  manHoldingTrimmer:
-    "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/manholdingtrimmer.png?v=1778560333&width=900",
+  // Six real customer photos in one grid. Replaces the AI-rendered lifestyle shot
+  // that sat here: the claim in the heading is 40,000 real people, so the proof
+  // under it has to look like real people's own yards and garages.
+  ugcGrid: "/gift-ugc-grid.webp",
 }
 
 const CLIPS = [
@@ -501,11 +503,13 @@ export default function TheGiftHeWillActuallyUse() {
               That Is Why 40,000+ Of These Have Been Bolted Onto Trimmers People Already Owned
             </h2>
             <img
-              src={IMAGES.manHoldingTrimmer}
-              alt="A man standing fully upright, back straight, hand out on the raised Yeoman grip while trimming a lawn edge"
+              src={IMAGES.ugcGrid}
+              alt="Six photos from customers: men trimming their own lawns and fence lines standing upright with the Yeoman Handle fitted, and two holding the handle up to the camera in the garage"
+              width={1168}
+              height={880}
               loading="lazy"
               decoding="async"
-              className="mt-6 aspect-[4/3] w-full rounded-sm bg-muted object-cover"
+              className="mt-6 h-auto w-full rounded-sm bg-muted"
             />
             <p className="mt-7 text-lg leading-relaxed text-foreground sm:text-xl">
               The grip does not have to sit down there. Move it out to where his hand already falls and there is nothing
