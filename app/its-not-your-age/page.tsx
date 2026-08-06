@@ -135,7 +135,7 @@ export default function LandingPage() {
             id="hero-headline"
             className="text-4xl md:text-5xl font-bold text-foreground leading-tight text-balance tracking-tight"
           >
-            5 Reasons The Back Pain Isn&apos;t Your Age. <span className="text-[#C86F4C]">It&apos;s The Handle On Your Trimmer.</span>
+            It Wasn&apos;t Your Age. It Was The Handle. <span className="text-[#C86F4C]">Here&apos;s What 40,000 Trimmers Switched To.</span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground mt-4 leading-relaxed text-pretty max-w-md mx-auto">
             Whatever shape your back is in, notice what keeps setting it back: the one afternoon a week you spend folded over a trimmer. Twenty minutes bent over a grip that sits too low, and the bend never lets your back settle.
