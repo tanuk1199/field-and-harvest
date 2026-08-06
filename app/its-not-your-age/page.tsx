@@ -284,7 +284,7 @@ export default function LandingPage() {
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
-            That is a verified buyer, and he did not change anything about himself. He changed the handle. Bolt it on, work a full Saturday, and if your back doesn&apos;t feel the difference you get a full refund, and you don&apos;t even have to send it back. <span className="font-bold text-foreground">You are not being asked to believe anything about your back. Only to test a handle.</span>
+            That is a verified buyer, and he did not change anything about himself. He changed the handle. Bolt it on, work a full Saturday, and if your back doesn&apos;t feel the difference you get a full refund, and <span className="font-bold text-foreground">you don&apos;t even have to send it back.</span>
           </p>
         </div>
       </section>
