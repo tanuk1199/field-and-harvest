@@ -184,7 +184,7 @@ export default function LandingPage() {
           </p>
 
           <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
-            <img src="/its-not-your-age-reason2.png" alt="A man folded forward over his string trimmer, reaching down to the low factory grip" className="w-full h-full object-cover" />
+            <img src="/its-not-your-age-reason1.jpg" alt="Three string trimmers from different brands racked on a garage wall, every factory loop grip mounted low on the shaft" className="w-full h-full object-cover" />
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
@@ -208,7 +208,7 @@ export default function LandingPage() {
           </p>
 
           <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
-            <TtsAsset name="reason4Image" alt="The Yeoman Handle extending the grip out to the hand" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+            <TtsAsset name="reason1Image" alt="Side by side: folded over the trimmer with the low factory grip, then standing upright with the Yeoman Handle fitted" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
@@ -225,18 +225,18 @@ export default function LandingPage() {
             <span className="text-xs font-bold text-muted-foreground">03</span>
           </div>
           <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance leading-tight">
-            Tighten it once and it holds through the season
+            Machined aluminum, built to outlast the trimmer
           </h3>
           <p className="text-sm font-bold uppercase tracking-wide text-[#C86F4C] mb-6">
-            The Hold-Fast&trade; bracket
+            Stronger than the tool it clamps to
           </p>
 
           <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
-            <TtsAsset name="reason1Image" alt="The Hold-Fast bracket clamped to a trimmer shaft" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+            <img src="/its-not-your-age-reason3.jpg" alt="Close view of the machined aluminum Hold-Fast bracket clamped to a trimmer shaft, with callouts for machined aluminum, reinforced bracket, stays put and lifetime warranty" className="w-full h-full object-cover" />
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
-            Most aftermarket clamps are thin stamped steel that flex under torque and back off after a few sessions. The Hold-Fast&trade; is reinforced steel with a dual-contact pad that grips the shaft on two opposite faces, so the pressure spreads instead of fatiguing one point. <span className="font-bold text-foreground">Tighten it once with the allen key and it stays there, through vibration, thick brush and a full season.</span>
+            The Hold-Fast&trade; bracket is machined aluminum with a reinforced clamp that grips the shaft on two opposite faces, so the holding pressure spreads across the shaft instead of loading a single point. No creep, no rattle, no stopping mid-job to re-tighten it. <span className="font-bold text-foreground">Move it to your next machine ten years from now and it will still hold.</span>
           </p>
         </div>
 
@@ -256,7 +256,7 @@ export default function LandingPage() {
           </p>
 
           <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
-            <TtsAsset name="productThumb2" alt="The Yeoman Handle bracket fitted to a standard trimmer shaft" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+            <TtsAsset name="reason3Image" alt="Tightening the Yeoman Handle onto a trimmer shaft with the included allen key" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
