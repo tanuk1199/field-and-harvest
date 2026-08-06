@@ -188,7 +188,7 @@ export default function LandingPage() {
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
-            It doesn&apos;t matter which one is in your shed. Every brand mounts the loop handle low on the shaft, well below where your hand naturally sits, so you fold forward to reach it and stay folded for the whole pass. Hinge at the hips and hold it, and your lower back carries your whole upper body on a long lever. That is why you can feel fine all week and one afternoon puts you straight back to the start. <span className="font-bold text-foreground">You never chose that posture. The tool chose it for you, the day you bought it.</span>
+            It doesn&apos;t matter which one is in your shed. Every brand mounts the loop handle low on the shaft, well below where your hand naturally sits, so you fold forward to reach it and stay folded for the whole pass. Hinge at the hips and hold it, and your lower back carries your whole upper body on a long lever. <span className="font-bold text-foreground">That is why you can feel fine all week, and one afternoon puts you straight back to the start.</span>
           </p>
         </div>
 
