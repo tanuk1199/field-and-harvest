@@ -138,7 +138,7 @@ export default function LandingPage() {
             5 Reasons The Back Pain Isn&apos;t Your Age. <span className="text-[#C86F4C]">It&apos;s The Handle On Your Trimmer.</span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground mt-4 leading-relaxed text-pretty max-w-md mx-auto">
-            Whatever shape your back is in, notice what keeps setting it back: the one afternoon a week you spend folded over a trimmer. That is not the years catching up with you. It is twenty minutes bent over a grip that sits too low, and the bend never lets your back settle.
+            Whatever shape your back is in, notice what keeps setting it back: the one afternoon a week you spend folded over a trimmer. Twenty minutes bent over a grip that sits too low, and the bend never lets your back settle.
           </p>
         </div>
 
@@ -158,47 +158,23 @@ export default function LandingPage() {
             ))}
           </div>
           <p className="text-sm text-foreground font-medium">
-            4.8 stars <span className="text-muted-foreground mx-1">&bull;</span> 800 reviews <span className="text-muted-foreground mx-1">&bull;</span> 20,000 trimmers upgraded
+            4.8 stars <span className="text-muted-foreground mx-1">&bull;</span> 800 reviews <span className="text-muted-foreground mx-1">&bull;</span> 40,000+ trimmers upgraded
           </p>
         </div>
       </section>
 
       {/* ============================================
-          LISTICLE | 5 reasons, the age-to-handle belief chain
+          LISTICLE | 1 cause block + 4 product points (PRODUCT-AWARE)
           ============================================ */}
       <section className="max-w-lg mx-auto px-4 py-12 space-y-10">
 
-        {/* Reason 1 | The diagnostic: it only hurts on trim day */}
+        {/* Reason 1 */}
         <div id="reason-1" className="bg-card rounded-2xl p-8 border border-border shadow-sm">
           <div className="flex items-center justify-between mb-4">
             <Badge variant="secondary" className="text-xs uppercase tracking-wider font-bold bg-transparent">
-              The Aggravator
+              The Cause
             </Badge>
             <span className="text-xs font-bold text-muted-foreground">01</span>
-          </div>
-          <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance leading-tight">
-            Every trim day undoes a week of feeling better
-          </h3>
-          <p className="text-sm font-bold uppercase tracking-wide text-[#C86F4C] mb-6">
-            It never gets the chance to recover
-          </p>
-
-          <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
-            <TtsAsset name="reason1Image" alt="Standing upright with the Yeoman Handle" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
-          </div>
-
-          <p className="text-foreground/80 text-pretty leading-relaxed text-base">
-            Maybe your back is genuinely worn, and nobody here will tell you it is in your head. But watch the pattern: you feel better all week, then one afternoon bent over the trimmer drops you right back to the start. <span className="font-bold text-foreground">It is not that your back cannot recover. The bend just never lets it.</span>
-          </p>
-        </div>
-
-        {/* Reason 2 | The real cause: every brand mounts the grip low */}
-        <div id="reason-2" className="bg-card rounded-2xl p-8 border border-border shadow-sm">
-          <div className="flex items-center justify-between mb-4">
-            <Badge variant="secondary" className="text-xs uppercase tracking-wider font-bold bg-transparent">
-              The Real Cause
-            </Badge>
-            <span className="text-xs font-bold text-muted-foreground">02</span>
           </div>
           <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance leading-tight">
             Every brand puts the grip below your reach
@@ -208,65 +184,87 @@ export default function LandingPage() {
           </p>
 
           <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
-            {/* Page-isolated override: local image, not the shared tts-images reason2 slot */}
             <img src="/its-not-your-age-reason2.png" alt="A man folded forward over his string trimmer, reaching down to the low factory grip" className="w-full h-full object-cover" />
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
-            It doesn&apos;t matter which one is in your shed. Every brand mounts the loop handle low on the shaft, well below where your hand naturally sits, so you fold forward to reach it and stay folded for the whole pass. <span className="font-bold text-foreground">You never chose that posture. The tool chose it for you, the day you bought it.</span>
+            It doesn&apos;t matter which one is in your shed. Every brand mounts the loop handle low on the shaft, well below where your hand naturally sits, so you fold forward to reach it and stay folded for the whole pass. Hinge at the hips and hold it, and your lower back carries your whole upper body on a long lever. That is why you can feel fine all week and one afternoon puts you straight back to the start. <span className="font-bold text-foreground">You never chose that posture. The tool chose it for you, the day you bought it.</span>
           </p>
         </div>
 
-        {/* Reason 3 | Geometry not fitness: the bend would hurt anyone */}
-        <div id="reason-3" className="bg-card rounded-2xl p-8 border border-border shadow-sm">
-          <div className="flex items-center justify-between mb-4">
-            <Badge variant="secondary" className="text-xs uppercase tracking-wider font-bold bg-transparent">
-              Geometry, Not Fitness
-            </Badge>
-            <span className="text-xs font-bold text-muted-foreground">03</span>
-          </div>
-          <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance leading-tight">
-            Twenty minutes bent at the waist would hurt a 25-year-old
-          </h3>
-          <p className="text-sm font-bold uppercase tracking-wide text-[#C86F4C] mb-6">
-            It&apos;s a leverage problem, not a strength problem
-          </p>
-
-          <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
-            {/* Page-isolated override: local image, not the shared tts-images reason3 slot */}
-            <img src="/its-not-your-age-reason3.png" alt="A chiropractor pointing to the loaded lower-back curve on a skeleton spine model" className="w-full h-full object-cover" />
-          </div>
-
-          <p className="text-foreground/80 text-pretty leading-relaxed text-base">
-            Hinge forward at the hips and hold it, and your lower back carries your whole upper body on a long lever. That is hard on a spine at any age. Hand that same low trimmer to a twenty-five year old for an hour of fence line and he will be sore too, he just recovers by Sunday and never connects the two. <span className="font-bold text-foreground">You feel it longer, so you blamed the years instead of the angle.</span>
-          </p>
-        </div>
-
-        {/* Reason 4 | The fix: change the handle, not your body */}
-        <div id="reason-4" className="bg-card rounded-2xl p-8 border border-border shadow-sm">
+        {/* Reason 2 */}
+        <div id="reason-2" className="bg-card rounded-2xl p-8 border border-border shadow-sm">
           <div className="flex items-center justify-between mb-4">
             <Badge variant="secondary" className="text-xs uppercase tracking-wider font-bold bg-transparent">
               The Fix
             </Badge>
-            <span className="text-xs font-bold text-muted-foreground">04</span>
+            <span className="text-xs font-bold text-muted-foreground">02</span>
           </div>
           <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance leading-tight">
             Change the handle, not what you expect from your body
           </h3>
           <p className="text-sm font-bold uppercase tracking-wide text-[#C86F4C] mb-6">
-            The Plumb-Set&trade; . 3 minutes . no drilling
+            The Plumb-Set&trade; grip angle
           </p>
 
           <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
-            <TtsAsset name="reason4Image" alt="Adjustable handle position for any height" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+            <TtsAsset name="reason4Image" alt="The Yeoman Handle extending the grip out to the hand" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
-            The Yeoman clamps onto the same shaft and extends the grip out to meet your hand where it already is, so there is nothing left to bend down to. That fixed angle is the Plumb-Set&trade;, and the Hold-Fast&trade; bracket slides to wherever your hand falls, which is why two people of different heights can share one. It fits 26mm and 28mm shafts across STIHL, Echo, Husqvarna, Ryobi, EGO and BLACK+DECKER, gas or battery. <span className="font-bold text-foreground">Three minutes with the included allen key, no drilling, no cutting.</span>
+            The Yeoman clamps onto the same shaft and extends the grip out to meet your hand where it already is, so there is nothing left to bend down to. That fixed angle is the Plumb-Set&trade;. <span className="font-bold text-foreground">The bend is gone, so there is nothing left loading your lower back.</span>
           </p>
         </div>
 
-        {/* Reason 5 | The proof: 72-year-old buyer + risk reversal */}
+        {/* Reason 3 */}
+        <div id="reason-3" className="bg-card rounded-2xl p-8 border border-border shadow-sm">
+          <div className="flex items-center justify-between mb-4">
+            <Badge variant="secondary" className="text-xs uppercase tracking-wider font-bold bg-transparent">
+              Built To Hold
+            </Badge>
+            <span className="text-xs font-bold text-muted-foreground">03</span>
+          </div>
+          <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance leading-tight">
+            Tighten it once and it holds through the season
+          </h3>
+          <p className="text-sm font-bold uppercase tracking-wide text-[#C86F4C] mb-6">
+            The Hold-Fast&trade; bracket
+          </p>
+
+          <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
+            <TtsAsset name="reason1Image" alt="The Hold-Fast bracket clamped to a trimmer shaft" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+          </div>
+
+          <p className="text-foreground/80 text-pretty leading-relaxed text-base">
+            Most aftermarket clamps are thin stamped steel that flex under torque and back off after a few sessions. The Hold-Fast&trade; is reinforced steel with a dual-contact pad that grips the shaft on two opposite faces, so the pressure spreads instead of fatiguing one point. <span className="font-bold text-foreground">Tighten it once with the allen key and it stays there, through vibration, thick brush and a full season.</span>
+          </p>
+        </div>
+
+        {/* Reason 4 */}
+        <div id="reason-4" className="bg-card rounded-2xl p-8 border border-border shadow-sm">
+          <div className="flex items-center justify-between mb-4">
+            <Badge variant="secondary" className="text-xs uppercase tracking-wider font-bold bg-transparent">
+              Three Minutes
+            </Badge>
+            <span className="text-xs font-bold text-muted-foreground">04</span>
+          </div>
+          <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance leading-tight">
+            It goes on the trimmer already in your shed
+          </h3>
+          <p className="text-sm font-bold uppercase tracking-wide text-[#C86F4C] mb-6">
+            26mm and 28mm . gas or battery
+          </p>
+
+          <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
+            <TtsAsset name="productThumb2" alt="The Yeoman Handle bracket fitted to a standard trimmer shaft" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+          </div>
+
+          <p className="text-foreground/80 text-pretty leading-relaxed text-base">
+            It fits 26mm and 28mm shafts across STIHL, Echo, Husqvarna, Ryobi, EGO and BLACK+DECKER, gas or battery. The bracket slides to wherever your hand naturally falls, which is why two people of different heights can share one. <span className="font-bold text-foreground">Three minutes with the included allen key. No drilling, no cutting, and nothing you have to do differently.</span>
+          </p>
+        </div>
+
+        {/* Reason 5 */}
         <div id="reason-5" className="bg-card rounded-2xl p-8 border border-border shadow-sm">
           <div className="flex items-center justify-between mb-4">
             <Badge variant="secondary" className="text-xs uppercase tracking-wider font-bold bg-transparent">
@@ -275,19 +273,18 @@ export default function LandingPage() {
             <span className="text-xs font-bold text-muted-foreground">05</span>
           </div>
           <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance leading-tight">
-            A 72-year-old just did an hour and his back is fine
+            An hour of trimming, and his back was fine
           </h3>
           <p className="text-sm font-bold uppercase tracking-wide text-[#C86F4C] mb-6">
             60-day trial &amp; lifetime warranty
           </p>
 
           <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
-            {/* Page-isolated override: local image (baked verified-buyer review), not the shared tts-images reason5 slot */}
-            <img src="/its-not-your-age-reason5.png" alt="A 72-year-old man standing upright after an hour of trimming with the Yeoman Handle, verified-buyer review overlaid" className="w-full h-full object-cover" />
+            <img src="/its-not-your-age-reason5.png" alt="A verified buyer standing upright after an hour of trimming with the Yeoman Handle, review overlaid" className="w-full h-full object-cover" />
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
-            That is a verified buyer, and he did not get younger, he changed the handle. Bolt it on, work a full Saturday, and if your back doesn&apos;t feel the difference you get a full refund, and you don&apos;t even have to send it back. <span className="font-bold text-foreground">You are not betting on your age. You are testing a handle.</span>
+            That is a verified buyer, and he did not change anything about himself. He changed the handle. Bolt it on, work a full Saturday, and if your back doesn&apos;t feel the difference you get a full refund, and you don&apos;t even have to send it back. <span className="font-bold text-foreground">You are not being asked to believe anything about your back. Only to test a handle.</span>
           </p>
         </div>
       </section>
@@ -314,7 +311,7 @@ export default function LandingPage() {
               ))}
             </div>
             <p className="text-sm text-foreground font-medium">
-              4.8 stars <span className="text-muted-foreground mx-1.5">|</span> 800 reviews <span className="text-muted-foreground mx-1.5">|</span> 20,000 trimmers upgraded
+              4.8 stars <span className="text-muted-foreground mx-1.5">|</span> 800 reviews <span className="text-muted-foreground mx-1.5">|</span> 40,000+ trimmers upgraded
             </p>
           </div>
         </div>
