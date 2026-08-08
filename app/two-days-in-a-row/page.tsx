@@ -970,7 +970,7 @@ export default function TwoDaysInARow() {
             <AccordionContent className="text-foreground/80 leading-relaxed pb-5">
               Ask your doctor or pharmacist before you start. We are not able to answer that for you and we would
               not want to. Bring the label with you: every dose is printed on it, so they can see exactly what you
-              are asking about instead of guessing at a blend.
+              are asking about instead of guessing at a total.
             </AccordionContent>
           </AccordionItem>
 
