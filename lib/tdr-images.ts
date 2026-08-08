@@ -81,7 +81,11 @@ export const tdrImages = {
   // 02 milligrams on the label are not milligrams in your blood. DIAGRAM.
   reason2Image: `${CDN}supp-mg-chart.png?width=800`,
   // 03 inflammation runs down two roads, COX and 5-LOX. DIAGRAM.
-  reason3Image: `${CDN}supp-two-roads.png?width=800`,
+  // v2, supplied by Tobenna 2026-08-08. Cleaner illustration and the labels
+  // are sharper: "where common pain relievers work" against "where boswellia
+  // AKBA works". Same asset runs as lox_image on the PDP so the two surfaces
+  // show the same diagram. supp-two-roads.png (v1) is superseded.
+  reason3Image: `${CDN}supp-two-roads-v2.png?width=800`,
   // 04 two capsules in a working hand at the kitchen window. PHOTO.
   reason4Image: `${CDN}supp-palm-hand-capsules.png?width=800`,
   // 05 two actives, two timelines. DIAGRAM.
