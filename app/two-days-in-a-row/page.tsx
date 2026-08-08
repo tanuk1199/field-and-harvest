@@ -48,6 +48,16 @@ import { TdrAsset } from "@/components/tdr-asset"
 // Where a competitor practice has to be named, name it as something
 // he can go and CHECK, never as us being cleverer.
 //
+// ⛔ THE HEADLINE IS TOBENNA'S, VERBATIM, AND IT IS AN OWNER
+// OVERRIDE. "Manage the pain" is a drug claim on a dietary
+// supplement and it was flagged twice; he chose it both times and
+// that is the decision. DO NOT soften it to "soreness" and do not
+// paraphrase it. Two things follow from it rather than from taste:
+// the reason kickers must keep carrying hard structure-function
+// language (01 is verbatim "supports a healthy inflammatory
+// response associated with physical overexertion"), and the FDA
+// disclaimer in the footer is not optional on this page.
+//
 // ⚠ The ten week ladder in 04 is a PROTOCOL timeline, never an
 // OUTCOME one. Each step says what the actives are doing and what he
 // should do. It never says what he will feel by a given week.
@@ -220,7 +230,7 @@ export default function TwoDaysInARow() {
           HERO
           ============================================ */}
       <section className="max-w-lg mx-auto px-4 py-8">
-        <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg bg-muted">
+        <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-lg bg-muted">
           <TdrAsset
             name="heroImage"
             alt="A weathered working hand holding a bottle of Field and Harvest Co Turmeric Curcumin Complex outdoors"
@@ -247,7 +257,7 @@ export default function TwoDaysInARow() {
             className="text-4xl md:text-5xl font-bold text-foreground leading-tight text-balance tracking-tight"
           >
             5 Ways Field &amp; Harvest Turmeric Helps Men Over 50{" "}
-            <span className="text-[#C86F4C]">Work Full Days Without Losing The Next One</span>
+            <span className="text-[#C86F4C]">Manage The Pain And Recovery Time From Working Full Days</span>
           </h2>
 
           {/* Product-aware subhead: name what he does, name the cost he is
@@ -296,11 +306,10 @@ export default function TwoDaysInARow() {
             Supports a healthy inflammatory response associated with physical overexertion
           </p>
 
-          <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-[#F2E9DA] mb-6 shadow-md">
+          <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-[#F2E9DA] mb-6 shadow-md">
             <TdrAsset
               name="reason1Image"
               alt="Chart comparing how long soreness lasts after the same day of work at 35 versus at 62"
-              fit="contain"
               className="w-full h-full"
               fallbackClassName="w-full h-full flex items-center justify-center text-4xl"
             />
@@ -330,11 +339,10 @@ export default function TwoDaysInARow() {
             1,000mg you do not absorb is 0mg. If the last bottle did nothing, this is why.
           </p>
 
-          <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-[#F2E9DA] mb-6 shadow-md">
+          <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-[#F2E9DA] mb-6 shadow-md">
             <TdrAsset
               name="reason2Image"
               alt="Chart illustrating that the milligrams printed on a label are not the milligrams that reach the blood"
-              fit="contain"
               className="w-full h-full"
               fallbackClassName="w-full h-full flex items-center justify-center text-4xl"
             />
@@ -381,11 +389,10 @@ export default function TwoDaysInARow() {
 
           <div className="space-y-5">
             <figure className="rounded-xl overflow-hidden bg-[#2E2219] border border-[#4A3F35]">
-              <div className="aspect-[4/3] bg-[#F2E9DA]">
+              <div className="aspect-square bg-[#F2E9DA]">
                 <TdrAsset
                   name="bandImage1"
                   alt="Diagram comparing raw curcumin powder against a phytosome complex that wraps the curcumin in a fat the body already absorbs"
-                  fit="contain"
                   className="w-full h-full"
                   fallbackClassName="w-full h-full flex items-center justify-center text-4xl"
                 />
@@ -396,11 +403,10 @@ export default function TwoDaysInARow() {
             </figure>
 
             <figure className="rounded-xl overflow-hidden bg-[#2E2219] border border-[#4A3F35]">
-              <div className="aspect-[4/3] bg-[#F2E9DA]">
+              <div className="aspect-square bg-[#F2E9DA]">
                 <TdrAsset
                   name="bandImage2"
                   alt="Table comparing absorption approach, black pepper content, the 5-LOX pathway and dose disclosure across the category"
-                  fit="contain"
                   className="w-full h-full"
                   fallbackClassName="w-full h-full flex items-center justify-center text-4xl"
                 />
@@ -442,11 +448,10 @@ export default function TwoDaysInARow() {
             Boswellia standardized to 30% AKBA, for the road curcumin does not reach either
           </p>
 
-          <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-[#F2E9DA] mb-6 shadow-md">
+          <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-[#F2E9DA] mb-6 shadow-md">
             <TdrAsset
               name="reason3Image"
               alt="Diagram of the COX pathway and the separate 5-LOX pathway that boswellia AKBA acts on"
-              fit="contain"
               className="w-full h-full"
               fallbackClassName="w-full h-full flex items-center justify-center text-4xl"
             />
@@ -483,7 +488,7 @@ export default function TwoDaysInARow() {
             One dose with breakfast, and an honest read on what the first ten weeks look like
           </p>
 
-          <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
+          <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
             <TdrAsset
               name="reason4Image"
               alt="Two turmeric capsules resting in a weathered working hand at a farmhouse kitchen window"
@@ -578,11 +583,10 @@ export default function TwoDaysInARow() {
             Every dose printed. No blends. Nothing you have to take on trust.
           </p>
 
-          <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-[#F2E9DA] mb-6 shadow-md">
+          <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-[#F2E9DA] mb-6 shadow-md">
             <TdrAsset
               name="reason6Image"
               alt="The bottle with each of the four actives called out by name and dose: curcumin phytosome 500mg, boswellia serrata 30 percent AKBA 100mg, ginger extract 100mg, vitamin D3 2000 IU"
-              fit="contain"
               className="w-full h-full"
               fallbackClassName="w-full h-full flex items-center justify-center text-4xl"
             />
@@ -786,7 +790,6 @@ export default function TwoDaysInARow() {
           <TdrAsset
             name="guaranteeSeal"
             alt="Field and Harvest Co 90 day money back guarantee"
-            fit="contain"
             className="w-full h-full"
             fallbackClassName="text-5xl"
           />

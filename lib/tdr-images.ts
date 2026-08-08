@@ -6,17 +6,22 @@
 // the Yeoman fleet. Every asset comes from the supplement library
 // uploaded to Shopify Files as supp-*.png on 2026-08-07/08.
 //
-// ⚠ RATIOS, and this is the trap on this page. Almost every asset
-// in the supplement library is 1:1 (the infographics) and the field
-// photography is 9:16. NOTHING is 3:2, which is the ratio the
-// sibling listicle templates use for their reason frames. Dropping
-// a 1:1 diagram into a 3:2 object-cover frame crops roughly a third
-// of the height and takes the headline and the axis labels with it.
+// ⚠ RATIOS. Almost every asset in the supplement library is 1:1
+// (the infographics) and the field photography is 9:16. NOTHING is
+// 3:2, which is the ratio the sibling listicle templates use for
+// their reason frames. Dropping a 1:1 diagram into a 3:2 cover frame
+// crops a third of the height and takes the chart headline and the
+// axis labels with it.
 //
-// So this page uses a 4:3 reason frame and TdrAsset takes a `fit`
-// prop: diagrams render `contain` on a warm ground so the whole
-// chart survives, photographs render `cover`. If you swap an asset
-// into a slot, check which of the two it is.
+// So THIS PAGE USES SQUARE FRAMES for the hero, every reason and both
+// dark-band figures. The assets are exactly 1024x1024, so cover fills
+// edge to edge with zero crop and zero letterboxing. It briefly used
+// a 4:3 frame with `contain`, which worked but padded every diagram
+// with dead ground down both sides for no reason.
+//
+// TdrAsset still takes a `fit` prop and the logo still needs
+// `contain`. If you ever put a non-square asset in a reason slot,
+// either crop it to 1:1 first or set fit="contain" on that one.
 //
 // ⚠ Every URL carries &width=. Do not remove it. It is what makes
 // Shopify negotiate webp, and it is the difference between this
