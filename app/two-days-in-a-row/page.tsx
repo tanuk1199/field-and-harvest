@@ -297,15 +297,11 @@ export default function TwoDaysInARow() {
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
-            Physical work creates micro-stress in muscle and connective tissue and your body answers with an
-            inflammatory process. That is not a malfunction, that is the repair crew showing up, and the crew
-            still shows up on time. What changed is how long it takes them to pack up and leave. At 35 the work
-            started Saturday and finished Saturday night. At 62 it starts Saturday and is still running Tuesday.{" "}
-            <span className="font-bold text-foreground">
-              Your body has not stopped repairing itself. It is just taking longer to finish.
-            </span>{" "}
-            You are not really counting how much it hurts. You are counting what it costs you: the Sunday you
-            write off, the second job you do not get to, the phone call to your son you would rather not make.
+            Hard work sets off an inflammatory process. Not a malfunction. That is the repair crew turning up,
+            and they still turn up on time.{" "}
+            <span className="font-bold text-foreground">What changed is how long they take to leave.</span>{" "}
+            So you are not counting how much it hurts. You are counting what it costs: the Sunday you write off,
+            the job you never get back to, the call to your son.
           </p>
         </div>
 
@@ -335,15 +331,11 @@ export default function TwoDaysInARow() {
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
-            If you have tried turmeric before and felt nothing, that was not you and it probably was not the
-            turmeric either. Curcumin barely crosses from the gut into the blood on its own. The industry&rsquo;s
-            answer for twenty five years has been a few milligrams of black pepper extract, sold on an absorption
-            figure that traces back to one crossover trial in eight people published in 1998, with an author whose
-            company sold the pepper. It has never been independently replicated.{" "}
-            <span className="font-bold text-foreground">
-              Our bottle says 500mg where most say 1,000. That is the fight we want.
-            </span>{" "}
-            You were not gullible and your body is not broken. You were sold a delivery problem.
+            Curcumin barely crosses from the gut into the blood on its own. The industry&rsquo;s answer for twenty
+            five years has been a few milligrams of black pepper, sold on a figure from one 1998 trial in eight
+            people, with an author whose company sold the pepper. Never independently replicated.{" "}
+            <span className="font-bold text-foreground">So our bottle says 500mg where most say 1,000.</span>{" "}
+            You were not gullible. You were sold a delivery problem.
           </p>
         </div>
       </section>
@@ -449,15 +441,11 @@ export default function TwoDaysInARow() {
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
-            The COX pathway is the one common over-the-counter pain relievers act on, and it is also where
-            curcumin does much of its work. The 5-LOX pathway is a separate route and neither of those reaches
-            it. That is what the boswellia is doing in here, standardized to 30% AKBA, which is the compound that
-            acts on 5-LOX specifically rather than whatever happened to be in the plant.{" "}
-            <span className="font-bold text-foreground">
-              Most boswellia on the shelf is not standardized for it at all.
-            </span>{" "}
-            It is also the faster of the two actives, which matters when the thing you want back first is the
-            morning after.
+            Common pain relievers work the COX pathway. So does curcumin, mostly. The 5-LOX pathway is a separate
+            road and neither reaches it.{" "}
+            <span className="font-bold text-foreground">That is what the boswellia is for</span>, standardized to
+            30% AKBA, the compound that acts on it. Most on the shelf is not standardized at all, and it is the
+            faster of the two actives.
           </p>
         </div>
 
@@ -493,13 +481,13 @@ export default function TwoDaysInARow() {
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base mb-7">
-            If you have never swallowed a daily pill in your life, this is about the most we would ask of you.
-            Both capsules at once, with food. Sixty to a bottle, which is thirty days.{" "}
+            If you have never taken a daily pill in your life, this is the most we would ask. Both at once, with
+            food.{" "}
             <span className="font-bold text-foreground">
-              Put it next to the coffee and it takes care of itself.
+              Put the bottle next to the coffee and it takes care of itself.
             </span>{" "}
-            No pill organiser, no midday dose to remember on a job, nothing that makes you feel like a patient
-            about it.
+            No organiser, no midday dose to remember on a job, nothing that makes you feel like a patient about
+            it.
           </p>
 
           {/* THE TEN WEEK LADDER */}
@@ -558,8 +546,8 @@ export default function TwoDaysInARow() {
           </div>
 
           <p className="mt-6 text-foreground/80 text-pretty leading-relaxed text-base">
-            Every other bottle in this aisle puts a date on it. We would rather tell you how the two actives
-            behave and let you judge it against your own last season.{" "}
+            Every other bottle in this aisle puts a date on it. We would rather show you how the two actives
+            behave.{" "}
             <span className="font-bold text-foreground">
               Individual results vary, and anyone promising you a specific week is guessing.
             </span>
@@ -592,13 +580,12 @@ export default function TwoDaysInARow() {
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
-            Curcumin phytosome 500mg, boswellia at 30% AKBA 100mg, ginger 100mg, vitamin D3 2,000 IU. Other
-            ingredients: vegetarian capsule, rice flour. That is the whole list, printed, rather than a total
-            hidden inside a proprietary blend. Third party tested, made in a GMP certified facility, and no black
-            pepper extract in any form.{" "}
+            Curcumin phytosome 500mg. Boswellia at 30% AKBA 100mg. Ginger 100mg. Vitamin D3 2,000 IU. Other
+            ingredients: vegetarian capsule, rice flour. That is the whole list, printed, not a total hidden
+            inside a blend.{" "}
             <span className="font-bold text-foreground">
-              Take it every day for two months. If your working weeks do not feel any different, email us inside
-              ninety days and we will refund you and you keep the bottles.
+              Take it daily for two months. If your working weeks do not feel any different, email us inside
+              ninety days. We refund you and you keep the bottles.
             </span>
           </p>
         </div>
