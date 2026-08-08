@@ -419,7 +419,7 @@ export default function TwoDaysInARow() {
           There is no video wall here and that is not an oversight:
           no footage of this product exists.
           ============================================ */}
-      <section className="bg-[#3D332A] py-11 md:py-14">
+      <section className="bg-[#3D332A] py-10 md:py-12">
         <div className="max-w-lg mx-auto px-4">
           <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#DDA15E] mb-3">
             Read The Label Differently
@@ -432,19 +432,14 @@ export default function TwoDaysInARow() {
             The second number decides whether anything happens, and nobody prints it.
           </p>
 
-          <figure className="rounded-xl overflow-hidden bg-[#2E2219] border border-[#4A3F35]">
-            <div className="aspect-square bg-[#F2E9DA]">
-              <TdrAsset
-                name="bandImage1"
-                alt="Diagram comparing raw curcumin powder against a phytosome complex that wraps the curcumin in a fat the body already absorbs"
-                className="w-full h-full"
-                fallbackClassName="w-full h-full flex items-center justify-center text-4xl"
-              />
-            </div>
-            <figcaption className="px-5 py-3.5 text-[11px] uppercase tracking-wider leading-relaxed text-[#A89682]">
-              The phytosome wraps the curcumin in a fat the body already knows how to absorb.
-            </figcaption>
-          </figure>
+          <div className="mx-auto aspect-square w-full max-w-[252px] overflow-hidden rounded-xl border border-[#4A3F35] bg-[#F2E9DA]">
+            <TdrAsset
+              name="bandImage1"
+              alt="Diagram comparing raw curcumin powder against a phytosome complex that wraps the curcumin in a fat the body already absorbs"
+              className="w-full h-full"
+              fallbackClassName="w-full h-full flex items-center justify-center text-4xl"
+            />
+          </div>
         </div>
 
         {/* TEXT PULL-QUOTE CAROUSEL.
@@ -454,7 +449,7 @@ export default function TwoDaysInARow() {
             and deliberately short: this is scan-level proof, the full stories
             live in the reviews section further down. Breaks the max-w-lg column
             so the cards run off the right edge and read as scrollable. */}
-        <div className="mt-9">
+        <div className="mt-7">
           <div className="max-w-lg mx-auto px-4 flex items-baseline justify-between gap-3 mb-3">
             <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#DDA15E]">
               Men who do their own work
@@ -471,14 +466,14 @@ export default function TwoDaysInARow() {
               {PULL_QUOTES.map((q) => (
                 <figure
                   key={q.who + q.quote.slice(0, 12)}
-                  className="w-[78%] shrink-0 snap-start rounded-xl border border-[#4A3F35] bg-[#2E2219] p-5 sm:w-[54%]"
+                  className="w-[76%] shrink-0 snap-start rounded-xl border border-[#4A3F35] bg-[#2E2219] p-4 sm:w-[52%]"
                 >
                   <div className="mb-2.5 flex gap-0.5" aria-hidden="true">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="h-3.5 w-3.5 fill-[#FDB913] text-[#FDB913]" />
                     ))}
                   </div>
-                  <blockquote className="text-[15px] leading-relaxed text-[#F0E6D2]">
+                  <blockquote className="text-[14px] leading-relaxed text-[#F0E6D2]">
                     &ldquo;{q.quote}&rdquo;
                   </blockquote>
                   <figcaption className="mt-3 text-[10px] font-bold uppercase tracking-[0.14em] text-[#A89682]">
@@ -494,7 +489,7 @@ export default function TwoDaysInARow() {
           <a href={PDP_URL}>
             <Button
               size="lg"
-              className="w-full mt-7 bg-[#C86F4C] hover:bg-[#C86F4C]/90 text-white font-bold py-6 text-base rounded-lg shadow-lg"
+              className="w-full mt-6 bg-[#C86F4C] hover:bg-[#C86F4C]/90 text-white font-bold py-5 text-base rounded-lg shadow-lg"
             >
               Check Availability &raquo;
             </Button>
