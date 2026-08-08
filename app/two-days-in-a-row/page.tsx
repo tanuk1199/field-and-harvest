@@ -153,6 +153,18 @@ const WORK_YEAR = [
   },
 ] as const
 
+// Scan-level proof for the dark band carousel. Short on purpose: the full
+// stories live in the REVIEWS section near the bottom, this is the version he
+// reads at a glance while still deciding whether to keep going.
+const PULL_QUOTES = [
+  { quote: "Monday used to be a write-off. Now I am up and getting something done with it.", who: "Verified buyer, 68" },
+  { quote: "I get the whole thing done in one go now instead of spreading it over two days.", who: "Verified buyer, 52" },
+  { quote: "First fall in a while I have split wood two days running.", who: "Verified buyer, 61" },
+  { quote: "Thursday and Friday used to be the two I dreaded. They are just days now.", who: "Verified buyer, 44" },
+  { quote: "I would rather not be putting ibuprofen in me every day if there is another way.", who: "Verified buyer, 71" },
+  { quote: "I told her it would not do a thing. Two months on I am still taking it.", who: "Verified buyer, 66" },
+]
+
 // Written for the Walt and Dale registers, same six that run on the PDP so
 // the lander and the product page tell one story. Anchored on DURATION and
 // on finishing the job, never on pain going away.
@@ -388,66 +400,101 @@ export default function TwoDaysInARow() {
       </section>
 
       {/* ============================================
-          THE DARK BAND : full-bleed, deliberately unlike
-          everything around it. It is the ONE hard visual
-          interrupt on a page of cream cards, and it lands
-          immediately after reason 02 because 02 is the claim
-          these two images are the proof of.
+          THE DARK BAND : the ONE hard visual interrupt on a page
+          of cream cards, landing right after reason 02 because 02
+          is the claim the diagram proves.
 
-          There is no video wall here and that is not an
-          oversight: no footage of this product exists. On a
-          supplement the thing that has to be shown is not the
-          product moving, it is the mechanism, so the band
-          carries diagrams instead of clips.
+          ⚠ IT WAS CUT ROUGHLY IN HALF. It ran two square diagrams
+          and a wall of copy, which was a couple of full scrolls of
+          the brand explaining chemistry to a man who has not been
+          given a single piece of proof yet. It also assumed a far
+          more savvy reader than the avatar. One diagram now (the
+          phytosome, which is what reason 02 actually claims); the
+          category comparison table came out, since it argues a
+          broader point than the reason it sits under.
+
+          The space went to a TEXT PULL-QUOTE CAROUSEL. That is the
+          only proof anywhere on the page before the very bottom.
+
+          There is no video wall here and that is not an oversight:
+          no footage of this product exists.
           ============================================ */}
-      <section className="bg-[#3D332A] py-12 md:py-14">
+      <section className="bg-[#3D332A] py-11 md:py-14">
         <div className="max-w-lg mx-auto px-4">
           <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#DDA15E] mb-3">
             Read The Label Differently
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#FDF8F0] leading-tight text-balance mb-4">
+          <h2 className="text-[26px] md:text-3xl font-bold text-[#FDF8F0] leading-[1.15] text-balance mb-3">
             The number on the front is not the number that reaches you
           </h2>
-          <p className="text-[#D9CCBA] leading-relaxed text-base mb-8">
-            Curcumin is hard to absorb, so the figure on the front of any bottle tells you how much went in your
-            mouth. Not how much arrived. The second number is the one that decides whether anything happens, and
-            it is the one nobody prints.
+          <p className="text-[#D9CCBA] leading-relaxed text-base mb-6">
+            The figure on the front of any bottle tells you how much went in your mouth, not how much arrived.
+            The second number decides whether anything happens, and nobody prints it.
           </p>
 
-          <div className="space-y-5">
-            <figure className="rounded-xl overflow-hidden bg-[#2E2219] border border-[#4A3F35]">
-              <div className="aspect-square bg-[#F2E9DA]">
-                <TdrAsset
-                  name="bandImage1"
-                  alt="Diagram comparing raw curcumin powder against a phytosome complex that wraps the curcumin in a fat the body already absorbs"
-                  className="w-full h-full"
-                  fallbackClassName="w-full h-full flex items-center justify-center text-4xl"
-                />
-              </div>
-              <figcaption className="px-5 py-4 text-[11px] uppercase tracking-wider leading-relaxed text-[#A89682]">
-                The phytosome wraps the curcumin in a fat the body already knows how to absorb.
-              </figcaption>
-            </figure>
+          <figure className="rounded-xl overflow-hidden bg-[#2E2219] border border-[#4A3F35]">
+            <div className="aspect-square bg-[#F2E9DA]">
+              <TdrAsset
+                name="bandImage1"
+                alt="Diagram comparing raw curcumin powder against a phytosome complex that wraps the curcumin in a fat the body already absorbs"
+                className="w-full h-full"
+                fallbackClassName="w-full h-full flex items-center justify-center text-4xl"
+              />
+            </div>
+            <figcaption className="px-5 py-3.5 text-[11px] uppercase tracking-wider leading-relaxed text-[#A89682]">
+              The phytosome wraps the curcumin in a fat the body already knows how to absorb.
+            </figcaption>
+          </figure>
+        </div>
 
-            <figure className="rounded-xl overflow-hidden bg-[#2E2219] border border-[#4A3F35]">
-              <div className="aspect-square bg-[#F2E9DA]">
-                <TdrAsset
-                  name="bandImage2"
-                  alt="Table comparing absorption approach, black pepper content, the 5-LOX pathway and dose disclosure across the category"
-                  className="w-full h-full"
-                  fallbackClassName="w-full h-full flex items-center justify-center text-4xl"
-                />
-              </div>
-              <figcaption className="px-5 py-4 text-[11px] uppercase tracking-wider leading-relaxed text-[#A89682]">
-                Four things worth checking on any turmeric label. Category practice, no brand named.
-              </figcaption>
-            </figure>
+        {/* TEXT PULL-QUOTE CAROUSEL.
+            Two jobs at once. It stops the band being three straight screens of
+            us explaining chemistry to him, and it is the ONLY proof on the page
+            before the very bottom, which was the biggest hole in it. Text only
+            and deliberately short: this is scan-level proof, the full stories
+            live in the reviews section further down. Breaks the max-w-lg column
+            so the cards run off the right edge and read as scrollable. */}
+        <div className="mt-9">
+          <div className="max-w-lg mx-auto px-4 flex items-baseline justify-between gap-3 mb-3">
+            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#DDA15E]">
+              Men who do their own work
+            </p>
+            {RATING && (
+              <p className="shrink-0 text-[11px] font-bold uppercase tracking-wider text-[#A89682]">
+                {RATING.score} &middot; {RATING.count} reviews
+              </p>
+            )}
           </div>
 
+          <div className="mx-auto max-w-lg">
+            <div className="flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              {PULL_QUOTES.map((q) => (
+                <figure
+                  key={q.who + q.quote.slice(0, 12)}
+                  className="w-[78%] shrink-0 snap-start rounded-xl border border-[#4A3F35] bg-[#2E2219] p-5 sm:w-[54%]"
+                >
+                  <div className="mb-2.5 flex gap-0.5" aria-hidden="true">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-3.5 w-3.5 fill-[#FDB913] text-[#FDB913]" />
+                    ))}
+                  </div>
+                  <blockquote className="text-[15px] leading-relaxed text-[#F0E6D2]">
+                    &ldquo;{q.quote}&rdquo;
+                  </blockquote>
+                  <figcaption className="mt-3 text-[10px] font-bold uppercase tracking-[0.14em] text-[#A89682]">
+                    {q.who}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="max-w-lg mx-auto px-4">
           <a href={PDP_URL}>
             <Button
               size="lg"
-              className="w-full mt-8 bg-[#C86F4C] hover:bg-[#C86F4C]/90 text-white font-bold py-6 text-base rounded-lg shadow-lg"
+              className="w-full mt-7 bg-[#C86F4C] hover:bg-[#C86F4C]/90 text-white font-bold py-6 text-base rounded-lg shadow-lg"
             >
               Check Availability &raquo;
             </Button>

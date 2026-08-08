@@ -96,6 +96,11 @@ export const tdrImages = {
   // The wedge, proved twice. Sits immediately after reason 02
   // because 02 is the claim these two images are the proof of.
   bandImage1: `${CDN}supp-form-matters.png?width=800`,
+  // ⚠ CURRENTLY UNUSED. The band was cut to one diagram; this one argues a
+  // broader category point than the reason it sat under, and it was the
+  // second full scroll of a section that was already too long. Kept mapped
+  // in case it earns a slot of its own later. It IS the corrected table
+  // (v2), not the one with the false 10mg piperine row.
   bandImage2: `${CDN}supp-vs-table-v2.png?width=800`,
 
   // ── CLOSING STRIP ───────────────────────────────────────
