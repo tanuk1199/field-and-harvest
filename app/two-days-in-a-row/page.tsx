@@ -252,9 +252,13 @@ export default function TwoDaysInARow() {
               smaller on its own line because a display headline cannot carry
               a bracketed clause inline at this size. Do not paraphrase it and
               do not move it into the subhead. */}
+          {/* It is a long headline by design, so it is set smaller and given a
+              wider measure than the template default. At text-4xl inside the
+              max-w-lg column it ran to six lines on a phone and swallowed the
+              fold. -mx-3 buys back the section padding on mobile only. */}
           <h2
             id="hero-headline"
-            className="text-4xl md:text-5xl font-bold text-foreground leading-tight text-balance tracking-tight"
+            className="-mx-3 text-[29px] leading-[1.12] sm:mx-0 md:text-[38px] md:leading-[1.08] font-bold text-foreground text-balance tracking-tight"
           >
             5 Ways Field &amp; Harvest Turmeric Helps Men Over 50{" "}
             <span className="text-[#C86F4C]">Manage The Pain And Recovery Time From Working Full Days</span>
