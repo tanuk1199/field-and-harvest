@@ -648,7 +648,7 @@ export default function TwoDaysInARow() {
             It carries the risk for ninety days instead of handing it to you
           </h3>
           <p className="text-sm font-bold uppercase tracking-wide text-[#C86F4C] mb-6">
-            Every dose printed. No blends. Nothing you have to take on trust.
+            Every dose printed on its own line. Nothing you have to take on trust.
           </p>
 
           <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-[#F2E9DA] mb-6 shadow-md">
@@ -662,8 +662,8 @@ export default function TwoDaysInARow() {
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
             Curcumin phytosome 500mg. Boswellia at 30% AKBA 100mg. Ginger 100mg. Vitamin D3 2,000 IU. Other
-            ingredients: vegetarian capsule, rice flour. That is the whole list, printed, not a total hidden
-            inside a blend.{" "}
+            ingredients: vegetarian capsule, rice flour. That is the whole list, printed on its own line rather
+            than rolled into one combined total.{" "}
             <span className="font-bold text-foreground">
               Take it daily for two months. If your working weeks do not feel any different, email us inside
               ninety days. We refund you and you keep the bottles.
@@ -827,7 +827,7 @@ export default function TwoDaysInARow() {
               <div className="bg-[#F4EFE3] rounded-lg p-3.5">
                 <p className="text-xs text-foreground font-bold leading-snug">Nothing to look up or take on trust</p>
                 <p className="mt-1 text-[11px] text-foreground/60 leading-snug">
-                  No black pepper, no blends, every dose printed
+                  No black pepper, every dose printed on its own line
                 </p>
               </div>
               <div className="bg-[#F4EFE3] rounded-lg p-3.5">
