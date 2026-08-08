@@ -21,6 +21,31 @@
 // ⚠ Every URL carries &width=. Do not remove it. It is what makes
 // Shopify negotiate webp, and it is the difference between this
 // page and the ~8.4MB problem documented in CLAUDE.md.
+//
+// ⛔ TWO ASSETS ARE BANNED FROM THIS PAGE AND FROM THE PDP. Both are
+// AI renders that invented product facts, and both were caught only
+// by reading them at full size after they were already live:
+//
+//   supp-vs-table.png     states "PIPERINE CONTENT / Field and
+//     Harvest Co. / 10 mg per dose". We contain zero piperine, and
+//     the figure is DOUBLE the competitor column, so the table argued
+//     the exact opposite of the page it sat on. Replaced by
+//     supp-vs-table-v2.png, which was verified cell by cell against
+//     the native HTML table on the PDP.
+//
+//   supp-facts-panel.png  prints an Other Ingredients line of
+//     "Hypromellose, Microcrystalline Cellulose, Rice Flour,
+//     Magnesium Stearate, Silicon Dioxide" against copy that says
+//     "vegetarian capsule, rice flour, that is the entire list", and
+//     puts Vitamin D3 2000 IU at 100% DV when it is roughly 250%.
+//     There is no locked formula and no supplier, so no rendered
+//     Supplement Facts panel can be trusted. Reason 06 uses
+//     supp-callout.png instead, which was checked against
+//     2-formulation.md and is accurate.
+//
+// RULE: a diagram may illustrate a CONCEPT (two pathways, powder vs
+// phytosome, the recovery curve). It may not assert a SPEC until
+// there is a real label to check it against.
 // ============================================================
 
 const CDN = "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/"
@@ -46,14 +71,14 @@ export const tdrImages = {
   reason4Image: `${CDN}supp-palm-hand-capsules.png?width=800`,
   // 05 two actives, two timelines. DIAGRAM.
   reason5Image: `${CDN}supp-two-timelines.png?width=800`,
-  // 06 the supplement facts panel, every dose printed. DIAGRAM.
-  reason6Image: `${CDN}supp-facts-panel.png?width=800`,
+  // 06 the four actives called out against the bottle, with doses. DIAGRAM.
+  reason6Image: `${CDN}supp-callout.png?width=800`,
 
   // ── DARK BAND ───────────────────────────────────────────
   // The wedge, proved twice. Sits immediately after reason 02
   // because 02 is the claim these two images are the proof of.
   bandImage1: `${CDN}supp-form-matters.png?width=800`,
-  bandImage2: `${CDN}supp-vs-table.png?width=800`,
+  bandImage2: `${CDN}supp-vs-table-v2.png?width=800`,
 
   // ── CLOSING STRIP ───────────────────────────────────────
   // Headcount and context on the way into the buy box. All 9:16.

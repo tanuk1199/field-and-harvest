@@ -491,7 +491,7 @@ export default function TwoDaysInARow() {
           <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-[#F2E9DA] mb-6 shadow-md">
             <TdrAsset
               name="reason6Image"
-              alt="The supplement facts panel showing every dose printed with no proprietary blend"
+              alt="The bottle with each of the four actives called out by name and dose: curcumin phytosome 500mg, boswellia serrata 30 percent AKBA 100mg, ginger extract 100mg, vitamin D3 2000 IU"
               fit="contain"
               className="w-full h-full"
               fallbackClassName="w-full h-full flex items-center justify-center text-4xl"
