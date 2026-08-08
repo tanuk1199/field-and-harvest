@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 
 const OG_IMAGE =
-  "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/supp-hand-bottle.png?width=1200"
+  "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/supp-hero-hand-outdoor.png?width=1200"
 
 export const metadata: Metadata = {
   title:
