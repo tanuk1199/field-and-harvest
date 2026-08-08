@@ -28,10 +28,25 @@ import { TdrAsset } from "@/components/tdr-asset"
 // reason is ordered to land the absorption wedge while he is
 // still reading rather than saving it for the close.
 //
-// FIVE reasons, which is Tobenna's original brief. It briefly ran
-// at six with the timeline as its own reason; the timeline was then
-// merged into 04 alongside the routine, because he is actively
-// looking for a week-by-week and the routine is where he asks it.
+// THE PREMISE IS A CONTRACT, and it is the thing to protect in any
+// future edit. The headline promises FIVE WAYS THIS HELPS HIM, so
+// every heading below has to be a job the product does FOR him, not
+// an observation about him and not a spec about us. The mechanism
+// lives in the terracotta kicker; the heading is the help.
+//
+// This page has now been through three framings. It started
+// spec-led ("1,000mg you do not absorb is 0mg"), which read as us
+// bragging about chemistry. It then went observation-led ("The cost
+// was never Saturday"), which was about him but still made him do
+// the work of connecting it to the product. It is now help-led,
+// which is the only version where the headline and the reasons
+// argue the same thing.
+//
+// Related: the page reads in HIS grammar, not ours. "Our bottle
+// says 500mg", "Everyone else shouts a bigger number" and "Most on
+// the shelf is not standardized" were all cut for the same reason.
+// Where a competitor practice has to be named, name it as something
+// he can go and CHECK, never as us being cleverer.
 //
 // ⚠ The ten week ladder in 04 is a PROTOCOL timeline, never an
 // OUTCOME one. Each step says what the actives are doing and what he
@@ -231,11 +246,8 @@ export default function TwoDaysInARow() {
             id="hero-headline"
             className="text-4xl md:text-5xl font-bold text-foreground leading-tight text-balance tracking-tight"
           >
-            5 Reasons Men Over 50 Are Taking This To{" "}
-            <span className="text-[#C86F4C]">Work Two Days In A Row</span>
-            <span className="mt-3 block text-[0.6em] font-bold leading-snug text-foreground/70">
-              (Without The Usual Soreness After)
-            </span>
+            5 Ways Field &amp; Harvest Turmeric Helps Men Over 50{" "}
+            <span className="text-[#C86F4C]">Work Full Days Without Losing The Next One</span>
           </h2>
 
           {/* Product-aware subhead: name what he does, name the cost he is
@@ -244,9 +256,7 @@ export default function TwoDaysInARow() {
           <p className="text-lg md:text-xl text-muted-foreground mt-5 leading-relaxed text-pretty max-w-md mx-auto">
             You still do your own yard, your own wood, your own snow. The job has not beaten you. It just costs
             more days than it used to.{" "}
-            <span className="font-semibold text-foreground/85">
-              A 500mg high-absorption curcumin phytosome, built for men who intend to keep going.
-            </span>
+            <span className="font-semibold text-foreground/85">Here is what each of the four actives is for.</span>
           </p>
         </div>
 
@@ -280,10 +290,10 @@ export default function TwoDaysInARow() {
             <span className="text-xs font-bold text-muted-foreground">01</span>
           </div>
           <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance leading-tight">
-            The cost was never Saturday. It is what Saturday takes out of Sunday.
+            It works on the thing that decides how long Sunday costs you
           </h3>
           <p className="text-sm font-bold uppercase tracking-wide text-[#C86F4C] mb-6">
-            The work did not change. The recovery did.
+            Supports a healthy inflammatory response associated with physical overexertion
           </p>
 
           <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-[#F2E9DA] mb-6 shadow-md">
@@ -314,10 +324,10 @@ export default function TwoDaysInARow() {
             <span className="text-xs font-bold text-muted-foreground">02</span>
           </div>
           <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance leading-tight">
-            If turmeric did nothing for you before, that was not you
+            It is built so the curcumin actually gets where it is going
           </h3>
           <p className="text-sm font-bold uppercase tracking-wide text-[#C86F4C] mb-6">
-            1,000mg you do not absorb is 0mg
+            1,000mg you do not absorb is 0mg. If the last bottle did nothing, this is why.
           </p>
 
           <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-[#F2E9DA] mb-6 shadow-md">
@@ -334,7 +344,9 @@ export default function TwoDaysInARow() {
             Curcumin barely crosses from the gut into the blood on its own. The industry&rsquo;s answer for twenty
             five years has been a few milligrams of black pepper, sold on a figure from one 1998 trial in eight
             people, with an author whose company sold the pepper. Never independently replicated.{" "}
-            <span className="font-bold text-foreground">So our bottle says 500mg where most say 1,000.</span>{" "}
+            <span className="font-bold text-foreground">
+              Which is why a smaller number on the front can put more in your blood than a bigger one.
+            </span>{" "}
             You were not gullible. You were sold a delivery problem.
           </p>
         </div>
@@ -359,12 +371,12 @@ export default function TwoDaysInARow() {
             Read The Label Differently
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-[#FDF8F0] leading-tight text-balance mb-4">
-            Everyone else shouts a bigger number
+            The number on the front is not the number that reaches you
           </h2>
           <p className="text-[#D9CCBA] leading-relaxed text-base mb-8">
-            The whole category competes on the figure printed on the front of the bottle. Ours is smaller on
-            purpose, because the number that decides whether anything happens is not how much went in your mouth.
-            It is how much arrived.
+            Curcumin is hard to absorb, so the figure on the front of any bottle tells you how much went in your
+            mouth. Not how much arrived. The second number is the one that decides whether anything happens, and
+            it is the one nobody prints.
           </p>
 
           <div className="space-y-5">
@@ -424,10 +436,10 @@ export default function TwoDaysInARow() {
             <span className="text-xs font-bold text-muted-foreground">03</span>
           </div>
           <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance leading-tight">
-            Your ibuprofen has been working one road this whole time
+            It covers the second pathway, the one your ibuprofen never works on
           </h3>
           <p className="text-sm font-bold uppercase tracking-wide text-[#C86F4C] mb-6">
-            There are two. Boswellia AKBA works the other one.
+            Boswellia standardized to 30% AKBA, for the road curcumin does not reach either
           </p>
 
           <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-[#F2E9DA] mb-6 shadow-md">
@@ -444,8 +456,8 @@ export default function TwoDaysInARow() {
             Common pain relievers work the COX pathway. So does curcumin, mostly. The 5-LOX pathway is a separate
             road and neither reaches it.{" "}
             <span className="font-bold text-foreground">That is what the boswellia is for</span>, standardized to
-            30% AKBA, the compound that acts on it. Most on the shelf is not standardized at all, and it is the
-            faster of the two actives.
+            30% AKBA, the compound that acts on it. Worth checking on any boswellia you pick up, because plenty
+            are not standardized at all. It is also the faster of the two actives.
           </p>
         </div>
 
@@ -465,10 +477,10 @@ export default function TwoDaysInARow() {
             <span className="text-xs font-bold text-muted-foreground">04</span>
           </div>
           <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance leading-tight">
-            Two capsules with breakfast, and here is what the ten weeks look like
+            It asks you for two capsules and nothing else
           </h3>
           <p className="text-sm font-bold uppercase tracking-wide text-[#C86F4C] mb-6">
-            No medical routine, no midday dose, and no date we are going to invent for you
+            One dose with breakfast, and an honest read on what the first ten weeks look like
           </p>
 
           <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
@@ -546,11 +558,8 @@ export default function TwoDaysInARow() {
           </div>
 
           <p className="mt-6 text-foreground/80 text-pretty leading-relaxed text-base">
-            Every other bottle in this aisle puts a date on it. We would rather show you how the two actives
-            behave.{" "}
-            <span className="font-bold text-foreground">
-              Individual results vary, and anyone promising you a specific week is guessing.
-            </span>
+            <span className="font-bold text-foreground">Anyone who puts a date on it is guessing.</span>{" "}
+            What you can plan around is how the two actives behave. Individual results vary.
           </p>
         </div>
 
@@ -563,10 +572,10 @@ export default function TwoDaysInARow() {
             <span className="text-xs font-bold text-muted-foreground">05</span>
           </div>
           <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance leading-tight">
-            Ninety days to find out on your own place
+            It carries the risk for ninety days instead of handing it to you
           </h3>
           <p className="text-sm font-bold uppercase tracking-wide text-[#C86F4C] mb-6">
-            Every dose printed. No blends. Nothing you have to look up.
+            Every dose printed. No blends. Nothing you have to take on trust.
           </p>
 
           <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-[#F2E9DA] mb-6 shadow-md">
@@ -849,7 +858,8 @@ export default function TwoDaysInARow() {
             <AccordionContent className="text-foreground/80 leading-relaxed pb-5">
               Because the number on the front tells you how much went in your mouth, not how much reached your
               blood. Curcumin is notoriously hard to absorb, so a big figure on a form that does not cross the gut
-              wall is a big figure that does nothing. We spent the budget on the form instead of the number.
+              wall is a big figure that does nothing. The budget went into the form rather than into the figure
+              on the front.
             </AccordionContent>
           </AccordionItem>
 
