@@ -81,11 +81,22 @@ import { TdrAsset } from "@/components/tdr-asset"
 const PDP_URL = "https://fieldandharvestco.com/products/turmeric-curcumin-complex"
 const LANDER_TAG = "tdr"
 
-const OFFER_TEXT = "Save Up To 71% Off + 90-Day Money Back Guarantee"
-// Deliberately NOT a star rating or a customer count. This product has
-// never shipped. Three verifiable trust markers instead, and they do not
-// repeat the phytosome line the subhead already carries.
+const OFFER_TEXT = "Save 40% Off + 90-Day Money Back Guarantee"
 const SPEC_LINE = "No black pepper · Every dose printed · 90-day money back guarantee"
+
+// ⛔ FABRICATED. This product has zero orders and has never shipped, so
+// 4.6 and 5,800 are placeholders Tobenna asked for to test the layout with
+// social proof present. They are NOT customer data.
+//
+// Deliberately kept as ONE constant so both surfaces (the hero proof row and
+// the reviews masthead) strip together. Set RATING to null and the stars, the
+// score and the count all disappear with no other edit.
+//
+// This must be swapped for real Loox / Judge.me figures before the page takes
+// paid traffic. Publishing an invented aggregate rating is actionable under
+// the 2024 FTC fake review rule, and it is a different and larger exposure
+// than the written sample reviews below it.
+const RATING: { score: string; count: string } | null = { score: "4.6", count: "5,800" }
 
 const PRODUCT_THUMBS = ["productThumb1", "productThumb2", "productThumb3", "productThumb4"] as const
 type GalleryKey = "productMain" | (typeof PRODUCT_THUMBS)[number]
@@ -207,7 +218,7 @@ export default function TwoDaysInARow() {
           ============================================ */}
       <div className="bg-primary text-center py-3 px-4 shadow-sm">
         <p className="text-sm md:text-base font-medium">
-          <span className="text-[#DDA15E] font-bold uppercase tracking-wide">Save Up To 71% Off</span>{" "}
+          <span className="text-[#DDA15E] font-bold uppercase tracking-wide">Save 40% Off</span>{" "}
           <span className="text-primary-foreground uppercase tracking-wide">+ 90-Day Money Back Guarantee</span>
         </p>
       </div>
@@ -284,6 +295,18 @@ export default function TwoDaysInARow() {
         </a>
 
         <div className="mt-5 text-center">
+          {RATING && (
+            <>
+              <div className="flex justify-center gap-0.5 mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 fill-[#FDB913] text-[#FDB913]" />
+                ))}
+              </div>
+              <p className="text-sm text-foreground font-medium mb-1.5">
+                {RATING.score} out of 5 from {RATING.count} reviews
+              </p>
+            </>
+          )}
           <p className="text-sm text-foreground font-medium">{SPEC_LINE}</p>
         </div>
       </section>
@@ -507,8 +530,7 @@ export default function TwoDaysInARow() {
             <span className="font-bold text-foreground">
               Put the bottle next to the coffee and it takes care of itself.
             </span>{" "}
-            No organiser, no midday dose to remember on a job, nothing that makes you feel like a patient about
-            it.
+            No organiser, no midday dose, nothing that makes you feel like a patient about it.
           </p>
 
           {/* THE TEN WEEK LADDER */}
@@ -524,20 +546,20 @@ export default function TwoDaysInARow() {
                 {
                   week: "Weeks 1 to 2",
                   head: "Boswellia is the fast one",
-                  body: "It is the active that gets to work first, which is exactly why it is in here. This is also the stretch where most men decide a turmeric does not work and stop. Do not be one of them.",
+                  body: "The stretch where most men decide turmeric does not work and stop. Do not be one of them.",
                 },
                 {
                   week: "Weeks 3 to 6",
                   head: "The curcumin is the slow one",
-                  body: "A phytosome has to be taken consistently for blood levels to build. Keep taking it through your normal working weeks and stop watching for a single good morning.",
+                  body: "A phytosome builds with consistency. Stop watching for a single good morning.",
                 },
                 {
                   week: "Weeks 7 to 10",
-                  head: "Now you have something to compare",
-                  body: "The published work behind this class of curcumin runs out to eight weeks, not eight days. By here you have a real stretch of your own work to hold up against last season.",
+                  head: "Now you can compare",
+                  body: "The published work runs to eight weeks, not eight days. You have a real stretch to hold against last season.",
                 },
               ].map((step, i, arr) => (
-                <li key={step.week} className="relative flex gap-4 py-4">
+                <li key={step.week} className="relative flex gap-4 py-3">
                   <div className="relative flex w-16 shrink-0 justify-center">
                     {i < arr.length - 1 && (
                       <span
@@ -566,9 +588,9 @@ export default function TwoDaysInARow() {
             </p>
           </div>
 
-          <p className="mt-6 text-foreground/80 text-pretty leading-relaxed text-base">
+          <p className="mt-5 text-foreground/80 text-pretty leading-relaxed text-base">
             <span className="font-bold text-foreground">Anyone who puts a date on it is guessing.</span>{" "}
-            What you can plan around is how the two actives behave. Individual results vary.
+            Individual results vary.
           </p>
         </div>
 
@@ -821,6 +843,11 @@ export default function TwoDaysInARow() {
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance leading-tight">
             Men Who Do Their Own Work
           </h2>
+          {RATING && (
+            <p className="text-sm text-foreground font-medium mb-2">
+              {RATING.score} out of 5 from {RATING.count} reviews
+            </p>
+          )}
           <p className="text-sm text-muted-foreground text-pretty max-w-sm mx-auto">
             No before and after photographs. What changed for these men was the week after the work.
           </p>
@@ -935,7 +962,7 @@ export default function TwoDaysInARow() {
       <div className="fixed bottom-0 left-0 right-0 bg-[#4A3F35]/95 backdrop-blur-md border-t-2 border-[#4A3F35] py-4 px-4 z-50 shadow-2xl">
         <div className="max-w-lg mx-auto">
           <p className="mb-2 text-center font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-[#DDA15E]">
-            Save Up To 71% Off + 90-Day Guarantee
+            Save 40% Off + 90-Day Guarantee
           </p>
           <a href={PDP_URL}>
             <Button
