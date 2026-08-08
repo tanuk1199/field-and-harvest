@@ -54,8 +54,9 @@ const LANDER_TAG = "tdr"
 
 const OFFER_TEXT = "Save Up To 71% Off + 90-Day Money Back Guarantee"
 // Deliberately NOT a star rating or a customer count. This product has
-// never shipped. These are the three verifiable specs instead.
-const SPEC_LINE = "500mg phytosome · Boswellia at 30% AKBA · Every dose printed"
+// never shipped. Three verifiable trust markers instead, and they do not
+// repeat the phytosome line the subhead already carries.
+const SPEC_LINE = "No black pepper · Every dose printed · 90-day money back guarantee"
 
 const PRODUCT_THUMBS = ["productThumb1", "productThumb2", "productThumb3", "productThumb4"] as const
 type GalleryKey = "productMain" | (typeof PRODUCT_THUMBS)[number]
@@ -173,27 +174,33 @@ export default function TwoDaysInARow() {
         </div>
 
         <div className="mt-5 text-center">
+          {/* Tobenna's headline, verbatim. The parenthetical is HIS and is
+              part of the promise, so it stays in the H1; it is only set
+              smaller on its own line because a display headline cannot carry
+              a bracketed clause inline at this size. Do not paraphrase it and
+              do not move it into the subhead. */}
           <h2
             id="hero-headline"
             className="text-4xl md:text-5xl font-bold text-foreground leading-tight text-balance tracking-tight"
           >
             6 Reasons Men Over 50 Are Taking This To{" "}
             <span className="text-[#C86F4C]">Work Two Days In A Row</span>
+            <span className="mt-3 block text-[0.6em] font-bold leading-snug text-foreground/70">
+              (Without The Usual Soreness After)
+            </span>
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground mt-4 leading-relaxed text-pretty max-w-md mx-auto">
-            Without the usual soreness after. Field &amp; Harvest Turmeric Curcumin Complex, a 500mg
-            high-absorption phytosome.
+
+          {/* Product-aware subhead: name what he does, name the cost he is
+              already counting, then the product and the promise. No routine
+              detail above the fold, that is reason 04's job. */}
+          <p className="text-lg md:text-xl text-muted-foreground mt-5 leading-relaxed text-pretty max-w-md mx-auto">
+            You still do your own yard, your own wood, your own snow. The job has not beaten you. It just costs
+            more days than it used to.{" "}
+            <span className="font-semibold text-foreground/85">
+              A 500mg high-absorption curcumin phytosome, built for men who intend to keep going.
+            </span>
           </p>
         </div>
-
-        {/* NO LEAD BLOCK. This traffic is product-aware and does not read a
-            lead, so the fold goes headline, spec line, button. The spec line
-            is the only thing that earns space here: it scans as a spec rather
-            than as prose, and the form is the one thing he checks before the
-            price. Everything else lives in the reasons. */}
-        <p className="mt-5 max-w-md mx-auto text-center text-base font-semibold leading-snug text-foreground/80">
-          Two capsules with breakfast. 60 vegetarian capsules to the bottle, which is a month.
-        </p>
 
         <a href={PDP_URL}>
           <Button

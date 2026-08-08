@@ -56,9 +56,19 @@ export const tdrImages = {
   logo: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/Copy_of_COMFORT_CRADLE_Logos_5.png?v=1765838330&width=400",
 
   // ── HERO ────────────────────────────────────────────────
-  // Weathered working hand holding the bottle. Avatar and product
-  // in one frame, which is what a product-aware fold needs.
-  heroImage: `${CDN}supp-hand-bottle.png?width=900`,
+  // Weathered working hand holding the bottle outdoors. Avatar and
+  // product in one frame, which is what a product-aware fold needs.
+  //
+  // ⚠ PACK VARIANT. The renders in the library carry TWO different
+  // label lockups and only one is right. The correct pack sets the
+  // actives on ONE line, "BOSWELLIA · GINGER · VITAMIN D3". Several
+  // renders stack them on three lines instead, which is not the pack.
+  // supp-hand-bottle.png is one of the stacked ones and shipped here
+  // by mistake. Vertical stack, do NOT use as a hero: supp-hand-bottle,
+  // supp-window-mug, supp-truck-dash, supp-workbench, supp-three-bottles.
+  // Horizontal and correct: supp-hero-hand-outdoor, supp-bottle-clean,
+  // supp-benefit-panel, supp-callout.
+  heroImage: `${CDN}supp-hero-hand-outdoor.png?width=900`,
 
   // ── REASONS ─────────────────────────────────────────────
   // 01 the recovery tax chart: same work at 35 vs at 62. DIAGRAM.
