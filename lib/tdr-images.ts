@@ -80,6 +80,9 @@ export const tdrImages = {
   // 04 two capsules in a working hand at the kitchen window. PHOTO.
   reason4Image: `${CDN}supp-palm-hand-capsules.png?width=800`,
   // 05 two actives, two timelines. DIAGRAM.
+  // ⚠ CURRENTLY UNUSED. The ten week ladder inside reason 04 took this
+  // job and does it better, because it also says what to DO in each
+  // stretch. Kept mapped in case a future variant wants the diagram.
   reason5Image: `${CDN}supp-two-timelines.png?width=800`,
   // 06 the four actives called out against the bottle, with doses. DIAGRAM.
   reason6Image: `${CDN}supp-callout.png?width=800`,

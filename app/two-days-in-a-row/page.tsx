@@ -28,12 +28,16 @@ import { TdrAsset } from "@/components/tdr-asset"
 // reason is ordered to land the absorption wedge while he is
 // still reading rather than saving it for the close.
 //
-// SIX reasons, not the five in the brief. The added one is 05,
-// the honest timeline. Boswellia moves first and the curcumin
-// work runs to eight weeks, and the whole category promises
-// "2 to 4 weeks". Saying it plainly before the click is both
-// the differentiator and the fix for the week-two quit, which
-// is the biggest churn risk on a slow-acting SKU.
+// FIVE reasons, which is Tobenna's original brief. It briefly ran
+// at six with the timeline as its own reason; the timeline was then
+// merged into 04 alongside the routine, because he is actively
+// looking for a week-by-week and the routine is where he asks it.
+//
+// ⚠ The ten week ladder in 04 is a PROTOCOL timeline, never an
+// OUTCOME one. Each step says what the actives are doing and what he
+// should do. It never says what he will feel by a given week.
+// "Reduces pain and stiffness in 2 to 4 weeks" is lifted off a live
+// competitor page and is exactly the disease claim that is banned.
 //
 // CLAIMS DISCIPLINE, this is a dietary supplement:
 //   - structure-function only. Never "reduces pain", "relieves",
@@ -61,12 +65,56 @@ const SPEC_LINE = "No black pepper · Every dose printed · 90-day money back gu
 const PRODUCT_THUMBS = ["productThumb1", "productThumb2", "productThumb3", "productThumb4"] as const
 type GalleryKey = "productMain" | (typeof PRODUCT_THUMBS)[number]
 
-const FIELD_TILES = [
-  { name: "field1", caption: "String trimming", alt: "A man working a fence line with a string trimmer" },
-  { name: "field2", caption: "Splitting and hauling", alt: "A man splitting firewood on a block outside a barn" },
-  { name: "field3", caption: "Clearing leaves", alt: "A man clearing autumn leaves with a backpack blower" },
-  { name: "field4", caption: "Beds and planting", alt: "A man kneeling to work a garden bed" },
-  { name: "field5", caption: "Shovelling in the cold", alt: "A man shovelling a driveway at dawn in winter" },
+// THE WORK YEAR almanac. This replaced a plain photo carousel, which was the
+// generic answer and argued nothing.
+//
+// The section's real claim comes straight from 1-positioning.md: "Seasonality
+// is why the list matters. Trimming is March through October. Firewood is
+// fall. Shoveling is December through February. Anchoring the brand to the
+// work rather than to the lawn buys twelve months of acquisition instead of
+// eight." A carousel cannot say that. A ruled almanac year CAN, and it says it
+// in one glance: five tasks, and between them they fill all twelve columns.
+//
+// The device is also on-subject rather than decorative. Field & Harvest is a
+// farm-almanac brand, and a month ledger is a real almanac artifact.
+const MONTHS = ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"] as const
+
+const WORK_YEAR = [
+  {
+    photo: "field1",
+    task: "String trimming",
+    span: "March to October",
+    months: [2, 3, 4, 5, 6, 7, 8, 9],
+    alt: "A man working a fence line with a string trimmer",
+  },
+  {
+    photo: "field4",
+    task: "Beds and planting",
+    span: "March to June, September to October",
+    months: [2, 3, 4, 5, 8, 9],
+    alt: "A man kneeling to work a garden bed",
+  },
+  {
+    photo: "field2",
+    task: "Firewood",
+    span: "September to December",
+    months: [8, 9, 10, 11],
+    alt: "A man splitting firewood on a block outside a barn",
+  },
+  {
+    photo: "field3",
+    task: "Leaves",
+    span: "October to November",
+    months: [9, 10],
+    alt: "A man clearing autumn leaves with a backpack blower",
+  },
+  {
+    photo: "field5",
+    task: "Snow",
+    span: "December to February",
+    months: [11, 0, 1],
+    alt: "A man shovelling a driveway at dawn in winter",
+  },
 ] as const
 
 // Written for the Walt and Dale registers, same six that run on the PDP so
@@ -183,7 +231,7 @@ export default function TwoDaysInARow() {
             id="hero-headline"
             className="text-4xl md:text-5xl font-bold text-foreground leading-tight text-balance tracking-tight"
           >
-            6 Reasons Men Over 50 Are Taking This To{" "}
+            5 Reasons Men Over 50 Are Taking This To{" "}
             <span className="text-[#C86F4C]">Work Two Days In A Row</span>
             <span className="mt-3 block text-[0.6em] font-bold leading-snug text-foreground/70">
               (Without The Usual Soreness After)
@@ -207,7 +255,7 @@ export default function TwoDaysInARow() {
             size="lg"
             className="w-full mt-8 bg-[#C86F4C] hover:bg-[#C86F4C]/90 text-white font-bold py-7 text-lg rounded-lg shadow-lg transition-all hover:shadow-xl"
           >
-            See The Offer &rarr;
+            Check Availability &raquo;
           </Button>
         </a>
 
@@ -232,10 +280,10 @@ export default function TwoDaysInARow() {
             <span className="text-xs font-bold text-muted-foreground">01</span>
           </div>
           <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance leading-tight">
-            The work did not change. The recovery did.
+            The cost was never Saturday. It is what Saturday takes out of Sunday.
           </h3>
           <p className="text-sm font-bold uppercase tracking-wide text-[#C86F4C] mb-6">
-            You are not counting how much it hurts. You are counting how many days it costs.
+            The work did not change. The recovery did.
           </p>
 
           <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-[#F2E9DA] mb-6 shadow-md">
@@ -255,7 +303,9 @@ export default function TwoDaysInARow() {
             started Saturday and finished Saturday night. At 62 it starts Saturday and is still running Tuesday.{" "}
             <span className="font-bold text-foreground">
               Your body has not stopped repairing itself. It is just taking longer to finish.
-            </span>
+            </span>{" "}
+            You are not really counting how much it hurts. You are counting what it costs you: the Sunday you
+            write off, the second job you do not get to, the phone call to your son you would rather not make.
           </p>
         </div>
 
@@ -268,10 +318,10 @@ export default function TwoDaysInARow() {
             <span className="text-xs font-bold text-muted-foreground">02</span>
           </div>
           <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance leading-tight">
-            1,000mg you do not absorb is 0mg
+            If turmeric did nothing for you before, that was not you
           </h3>
           <p className="text-sm font-bold uppercase tracking-wide text-[#C86F4C] mb-6">
-            A phytosome, not powder with black pepper
+            1,000mg you do not absorb is 0mg
           </p>
 
           <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-[#F2E9DA] mb-6 shadow-md">
@@ -292,7 +342,8 @@ export default function TwoDaysInARow() {
             company sold the pepper. It has never been independently replicated.{" "}
             <span className="font-bold text-foreground">
               Our bottle says 500mg where most say 1,000. That is the fight we want.
-            </span>
+            </span>{" "}
+            You were not gullible and your body is not broken. You were sold a delivery problem.
           </p>
         </div>
       </section>
@@ -361,7 +412,7 @@ export default function TwoDaysInARow() {
               size="lg"
               className="w-full mt-8 bg-[#C86F4C] hover:bg-[#C86F4C]/90 text-white font-bold py-6 text-base rounded-lg shadow-lg"
             >
-              See The Offer &rarr;
+              Check Availability &raquo;
             </Button>
           </a>
         </div>
@@ -381,10 +432,10 @@ export default function TwoDaysInARow() {
             <span className="text-xs font-bold text-muted-foreground">03</span>
           </div>
           <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance leading-tight">
-            Boswellia AKBA works a pathway ibuprofen never touches
+            Your ibuprofen has been working one road this whole time
           </h3>
           <p className="text-sm font-bold uppercase tracking-wide text-[#C86F4C] mb-6">
-            Inflammation does not run down one road. It runs down two.
+            There are two. Boswellia AKBA works the other one.
           </p>
 
           <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-[#F2E9DA] mb-6 shadow-md">
@@ -404,23 +455,32 @@ export default function TwoDaysInARow() {
             acts on 5-LOX specifically rather than whatever happened to be in the plant.{" "}
             <span className="font-bold text-foreground">
               Most boswellia on the shelf is not standardized for it at all.
-            </span>
+            </span>{" "}
+            It is also the faster of the two actives, which matters when the thing you want back first is the
+            morning after.
           </p>
         </div>
 
-        {/* Reason 4 : the ease objection. He has never taken a daily pill. */}
+        {/* Reason 4 : the routine AND the ten-week ladder, merged.
+            He is actively looking for a week-by-week, so withholding it just
+            sends him to a competitor page that will happily invent one.
+            ⚠ It is a PROTOCOL timeline, never an OUTCOME timeline. Each step
+            says what the actives are doing and what HE should do. Nothing here
+            says what he will feel by a given week: "reduces pain and stiffness
+            in 2 to 4 weeks" is lifted off a live competitor page and is the
+            exact disease claim 3-mechanism.md bans. */}
         <div id="reason-4" className="bg-card rounded-2xl p-8 border border-border shadow-sm">
           <div className="flex items-center justify-between mb-4">
             <Badge variant="secondary" className="text-xs uppercase tracking-wider font-bold bg-transparent">
-              The Whole Routine
+              The Routine And The Timeline
             </Badge>
             <span className="text-xs font-bold text-muted-foreground">04</span>
           </div>
           <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance leading-tight">
-            Two capsules with breakfast. That is the whole routine.
+            Two capsules with breakfast, and here is what the ten weeks look like
           </h3>
           <p className="text-sm font-bold uppercase tracking-wide text-[#C86F4C] mb-6">
-            No morning and evening split to keep track of
+            No medical routine, no midday dose, and no date we are going to invent for you
           </p>
 
           <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
@@ -432,67 +492,93 @@ export default function TwoDaysInARow() {
             />
           </div>
 
-          <p className="text-foreground/80 text-pretty leading-relaxed text-base">
+          <p className="text-foreground/80 text-pretty leading-relaxed text-base mb-7">
             If you have never swallowed a daily pill in your life, this is about the most we would ask of you.
-            Both capsules at once, with food, and a meal with some fat in it helps it along. Sixty vegetarian
-            capsules to a bottle, which is thirty days.{" "}
+            Both capsules at once, with food. Sixty to a bottle, which is thirty days.{" "}
             <span className="font-bold text-foreground">
               Put it next to the coffee and it takes care of itself.
+            </span>{" "}
+            No pill organiser, no midday dose to remember on a job, nothing that makes you feel like a patient
+            about it.
+          </p>
+
+          {/* THE TEN WEEK LADDER */}
+          <div className="overflow-hidden rounded-xl border-2 border-[#2D2118]/15 bg-[#FBF6EC]">
+            <div className="bg-[#241A13] px-4 py-2.5">
+              <span className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-[#F0E6D2]">
+                What is actually happening
+              </span>
+            </div>
+
+            <ol className="px-4 py-1">
+              {[
+                {
+                  week: "Weeks 1 to 2",
+                  head: "Boswellia is the fast one",
+                  body: "It is the active that gets to work first, which is exactly why it is in here. This is also the stretch where most men decide a turmeric does not work and stop. Do not be one of them.",
+                },
+                {
+                  week: "Weeks 3 to 6",
+                  head: "The curcumin is the slow one",
+                  body: "A phytosome has to be taken consistently for blood levels to build. Keep taking it through your normal working weeks and stop watching for a single good morning.",
+                },
+                {
+                  week: "Weeks 7 to 10",
+                  head: "Now you have something to compare",
+                  body: "The published work behind this class of curcumin runs out to eight weeks, not eight days. By here you have a real stretch of your own work to hold up against last season.",
+                },
+              ].map((step, i, arr) => (
+                <li key={step.week} className="relative flex gap-4 py-4">
+                  <div className="relative flex w-16 shrink-0 justify-center">
+                    {i < arr.length - 1 && (
+                      <span
+                        className="absolute left-1/2 top-4 h-full w-px -translate-x-1/2 bg-[#2D2118]/15"
+                        aria-hidden="true"
+                      />
+                    )}
+                    <span
+                      className="relative z-10 mt-1 h-3 w-3 rounded-full border-2 border-[#C0653F] bg-[#FBF6EC]"
+                      aria-hidden="true"
+                    />
+                  </div>
+                  <div className="min-w-0 flex-1 -ml-10">
+                    <p className="font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-[#C0653F]">
+                      {step.week}
+                    </p>
+                    <p className="mt-1 text-[15px] font-bold leading-snug text-foreground">{step.head}</p>
+                    <p className="mt-1 text-sm leading-relaxed text-foreground/75">{step.body}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+
+            <p className="border-t-2 border-[#2D2118]/15 bg-[#F4EFE3] px-4 py-3 text-center font-mono text-[10px] font-bold uppercase leading-relaxed tracking-[0.14em] text-[#2D2118]">
+              The ninety day guarantee runs past all of it
+            </p>
+          </div>
+
+          <p className="mt-6 text-foreground/80 text-pretty leading-relaxed text-base">
+            Every other bottle in this aisle puts a date on it. We would rather tell you how the two actives
+            behave and let you judge it against your own last season.{" "}
+            <span className="font-bold text-foreground">
+              Individual results vary, and anyone promising you a specific week is guessing.
             </span>
           </p>
         </div>
 
-        {/* Reason 5 : THE ADDED ONE. The honest timeline. This is the
-            anti-hype reason and it is the fix for the week-two quit. */}
+        {/* Reason 5 : transparency and risk reversal, so the page closes on it */}
         <div id="reason-5" className="bg-card rounded-2xl p-8 border border-border shadow-sm">
-          <div className="flex items-center justify-between mb-4">
-            <Badge variant="secondary" className="text-xs uppercase tracking-wider font-bold bg-transparent">
-              What To Expect
-            </Badge>
-            <span className="text-xs font-bold text-muted-foreground">05</span>
-          </div>
-          <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance leading-tight">
-            We will not promise you a date
-          </h3>
-          <p className="text-sm font-bold uppercase tracking-wide text-[#C86F4C] mb-6">
-            Two actives, two timelines
-          </p>
-
-          <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-[#F2E9DA] mb-6 shadow-md">
-            <TdrAsset
-              name="reason5Image"
-              alt="Timeline diagram showing boswellia acting over the first weeks and curcumin phytosome running out to eight weeks"
-              fit="contain"
-              className="w-full h-full"
-              fallbackClassName="w-full h-full flex items-center justify-center text-4xl"
-            />
-          </div>
-
-          <p className="text-foreground/80 text-pretty leading-relaxed text-base">
-            Every other bottle in this aisle puts a number on it. We would rather tell you how the two actives
-            actually behave. Boswellia is the faster of the pair. The published work behind this class of
-            curcumin runs out to eight weeks, not eight days.{" "}
-            <span className="font-bold text-foreground">
-              Take it daily through a working season and judge it against your own last season, not against next
-              Tuesday.
-            </span>{" "}
-            That is also why the guarantee runs ninety days instead of thirty.
-          </p>
-        </div>
-
-        {/* Reason 6 : transparency and risk reversal, so the page closes on it */}
-        <div id="reason-6" className="bg-card rounded-2xl p-8 border border-border shadow-sm">
           <div className="flex items-center justify-between mb-4">
             <Badge variant="secondary" className="text-xs uppercase tracking-wider font-bold bg-transparent">
               Nothing Hidden
             </Badge>
-            <span className="text-xs font-bold text-muted-foreground">06</span>
+            <span className="text-xs font-bold text-muted-foreground">05</span>
           </div>
           <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance leading-tight">
-            Every dose printed. No blends. Ninety days to decide.
+            Ninety days to find out on your own place
           </h3>
           <p className="text-sm font-bold uppercase tracking-wide text-[#C86F4C] mb-6">
-            Four ingredients and nothing you have to look up
+            Every dose printed. No blends. Nothing you have to look up.
           </p>
 
           <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-[#F2E9DA] mb-6 shadow-md">
@@ -519,34 +605,91 @@ export default function TwoDaysInARow() {
       </section>
 
       {/* ============================================
-          CLOSING STRIP : the work it was built around. Context
-          and headcount on the way into the buy box, no CTA (the
-          showcase directly below carries one; two buttons back
-          to back is noise).
+          THE WORK YEAR : an almanac ledger, not a carousel. Five
+          tasks, and between them they fill all twelve columns.
+          The bars ARE the argument, so nothing here is decoration.
+          No CTA (the showcase directly below carries one; two
+          buttons back to back is noise).
           ============================================ */}
-      <section className="bg-[#F4EFE3] py-12">
+      <section className="bg-[#EFE4D2] py-12">
         <div className="max-w-lg mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground leading-tight text-balance mb-3">
             It is not the yard. It is the position the yard puts you in.
           </h2>
-          <p className="text-foreground/75 leading-relaxed text-base mb-6">
+          <p className="text-foreground/75 leading-relaxed text-base">
             Trimming, splitting, hauling, shovelling. Every one of these holds you in sustained forward flexion or
-            holds a machine out away from your body, and the lower back carries the cost. That is the work this
-            was built around.
+            holds a machine out away from your body, and the lower back carries the cost.
           </p>
-          <div className="flex gap-2.5 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-            {FIELD_TILES.map((t) => (
-              <figure
-                key={t.name}
-                className="relative aspect-[3/4] w-[44%] shrink-0 overflow-hidden rounded-lg bg-muted sm:w-[30%]"
+
+          <div className="mt-7 overflow-hidden rounded-xl border-2 border-[#2D2118]/15 bg-[#FBF6EC] shadow-sm">
+            {/* masthead */}
+            <div className="flex items-baseline justify-between gap-3 bg-[#241A13] px-4 py-2.5">
+              <span className="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-[#F0E6D2]">
+                The work year
+              </span>
+              <span className="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-[#DDA15E]">
+                No off season
+              </span>
+            </div>
+
+            {/* month rule, aligned to the same 56px photo gutter as the rows */}
+            <div className="flex items-center gap-3 border-b border-[#2D2118]/15 px-4 pb-1.5 pt-3">
+              <div className="w-14 shrink-0" aria-hidden="true" />
+              <div className="grid flex-1 grid-cols-12 gap-px" aria-hidden="true">
+                {MONTHS.map((m, i) => (
+                  <span key={`${m}-${i}`} className="text-center font-mono text-[9px] font-bold text-[#8A7866]">
+                    {m}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* one row per task */}
+            {WORK_YEAR.map((row) => (
+              <div
+                key={row.task}
+                className="flex items-center gap-3 border-b border-dashed border-[#2D2118]/12 px-4 py-3 last:border-b-0"
               >
-                <TdrAsset name={t.name} alt={t.alt} className="h-full w-full" />
-                <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 to-transparent px-2.5 pb-2 pt-6 text-[10px] font-bold uppercase tracking-wider text-white">
-                  {t.caption}
-                </figcaption>
-              </figure>
+                <div className="h-14 w-14 shrink-0 overflow-hidden rounded-md bg-muted">
+                  <TdrAsset name={row.photo} alt={row.alt} className="h-full w-full" />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <div className="mb-1.5 flex items-baseline justify-between gap-2">
+                    <p className="truncate text-[13px] font-bold uppercase tracking-wide text-foreground">
+                      {row.task}
+                    </p>
+                    <p className="shrink-0 font-mono text-[9px] uppercase tracking-wider text-[#8A7866]">
+                      {row.months.length} mo
+                    </p>
+                  </div>
+                  <div
+                    className="grid grid-cols-12 gap-px"
+                    role="img"
+                    aria-label={`${row.task}: ${row.span}`}
+                  >
+                    {MONTHS.map((m, i) => (
+                      <span
+                        key={`${row.task}-${i}`}
+                        className={`h-2.5 rounded-[1px] ${
+                          (row.months as readonly number[]).includes(i) ? "bg-[#C0653F]" : "bg-[#2D2118]/10"
+                        }`}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
             ))}
+
+            {/* the point of the whole table */}
+            <p className="border-t-2 border-[#2D2118]/15 bg-[#F4EFE3] px-4 py-3 text-center font-mono text-[10px] font-bold uppercase leading-relaxed tracking-[0.14em] text-[#2D2118]">
+              Twelve columns. Five tasks. Not one empty month.
+            </p>
           </div>
+
+          <p className="mt-5 text-foreground/75 leading-relaxed text-base">
+            Most turmeric is sold as a lawn-season thing. Your back does not get a lawn season.{" "}
+            <span className="font-bold text-foreground">That is the work this was built around.</span>
+          </p>
         </div>
       </section>
 
@@ -598,24 +741,30 @@ export default function TwoDaysInARow() {
               ))}
             </div>
 
+            {/* Outcome first, spec second. The ingredient is the proof, not
+                the pitch: he does not buy a phytosome, he buys the Sunday. */}
             <div className="grid grid-cols-2 gap-3 mb-5">
               <div className="bg-[#F4EFE3] rounded-lg p-3.5">
-                <p className="text-xs text-foreground font-semibold leading-snug">
-                  500mg high-absorption curcumin phytosome, not standard powder
+                <p className="text-xs text-foreground font-bold leading-snug">Built for the day after</p>
+                <p className="mt-1 text-[11px] text-foreground/60 leading-snug">
+                  500mg high-absorption curcumin phytosome
                 </p>
               </div>
               <div className="bg-[#F4EFE3] rounded-lg p-3.5">
-                <p className="text-xs text-foreground font-semibold leading-snug">
-                  Boswellia standardized to 30% AKBA for the 5-LOX pathway
+                <p className="text-xs text-foreground font-bold leading-snug">Covers the road ibuprofen misses</p>
+                <p className="mt-1 text-[11px] text-foreground/60 leading-snug">
+                  Boswellia standardized to 30% AKBA
                 </p>
               </div>
               <div className="bg-[#F4EFE3] rounded-lg p-3.5">
-                <p className="text-xs text-foreground font-semibold leading-snug">
-                  No black pepper, no proprietary blends, every dose printed
+                <p className="text-xs text-foreground font-bold leading-snug">Nothing to look up or take on trust</p>
+                <p className="mt-1 text-[11px] text-foreground/60 leading-snug">
+                  No black pepper, no blends, every dose printed
                 </p>
               </div>
               <div className="bg-[#F4EFE3] rounded-lg p-3.5">
-                <p className="text-xs text-foreground font-semibold leading-snug">
+                <p className="text-xs text-foreground font-bold leading-snug">Ninety days on your own place</p>
+                <p className="mt-1 text-[11px] text-foreground/60 leading-snug">
                   Third party tested in a GMP certified facility
                 </p>
               </div>
@@ -626,7 +775,7 @@ export default function TwoDaysInARow() {
                 size="lg"
                 className="w-full bg-[#C86F4C] hover:bg-[#C86F4C]/90 text-white font-bold py-6 text-base rounded-lg shadow-lg"
               >
-                See The Offer &rarr;
+                Check Availability &raquo;
               </Button>
             </a>
           </div>
@@ -647,7 +796,7 @@ export default function TwoDaysInARow() {
           />
         </div>
         <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3 leading-tight text-balance">
-          Ninety days to decide
+          Try it on a season of your own work
         </h2>
         <p className="text-base text-foreground/75 leading-relaxed max-w-md mx-auto">
           Take it every day for two months. If you get to the end of the second bottle and your working weeks do
@@ -781,12 +930,15 @@ export default function TwoDaysInARow() {
           ============================================ */}
       <div className="fixed bottom-0 left-0 right-0 bg-[#4A3F35]/95 backdrop-blur-md border-t-2 border-[#4A3F35] py-4 px-4 z-50 shadow-2xl">
         <div className="max-w-lg mx-auto">
+          <p className="mb-2 text-center font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-[#DDA15E]">
+            Save Up To 71% Off + 90-Day Guarantee
+          </p>
           <a href={PDP_URL}>
             <Button
               size="lg"
               className="w-full bg-[#C86F4C] hover:bg-[#C86F4C]/90 text-white font-bold py-6 text-sm sm:text-base rounded-lg shadow-lg transition-all whitespace-normal leading-snug"
             >
-              Save Up To 71% + 90-Day Guarantee &rarr;
+              Check Availability &raquo;
             </Button>
           </a>
         </div>
