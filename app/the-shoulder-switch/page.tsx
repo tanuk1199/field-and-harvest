@@ -94,8 +94,14 @@ export default function LandingPage() {
           <h2 className="text-4xl md:text-5xl font-bold text-foreground leading-tight text-balance tracking-tight">
             5 Reasons Why Thousands Of Men Are Using This <span className="text-[#C86F4C]">For Shoulder Support Doing Yardwork</span>
           </h2>
+          {/* Subhead blends BOTH angles, in card order, set 2026-08-08. The belt
+              reframe leads because it is now reason 01 and because it is the
+              angle the new static batch runs on; the age exoneration closes it
+              and hands off to reason 02. Do not let the belt half drift into
+              "it is heavy" (see the Rig vocabulary rule): the contrast between
+              the weight and the holding IS the argument. */}
           <p className="text-lg md:text-xl text-muted-foreground mt-4 leading-relaxed text-pretty max-w-md mx-auto">
-            It was never your age. Forty minutes of holding a machine out on the same side would finish a 25 year old too.
+            Nobody puts on a lifting belt because they are broken. They put it on before they load something. It was never your age either. It is forty minutes of holding a machine out on one side.
           </p>
         </div>
 
@@ -120,39 +126,27 @@ export default function LandingPage() {
           ============================================ */}
       <section className="max-w-lg mx-auto px-4 py-12 space-y-10">
 
-        {/* Reason 1 — THE AGE REFUTATION. Carried over from the problem-aware
-            page, which led on "why it is not just your age". Refutes age,
-            never assigns it, per the CF030 rule. */}
+        {/* CARDS 01 AND 02 WERE SWAPPED 2026-08-08 at Tobenna's direction.
+            The category reframe (weight belt) now leads and the age refutation
+            follows it. Two reasons this is the right order: the belt is Pillar 1
+            in Positioning and Mechanism.md ("if you cut everything else, keep
+            this"), and it is the angle the new static batch runs on, so the
+            first card message-matches the ad. The age card still refutes age and
+            never assigns it, per the CF030 rule, it just does it second.
+
+            ⚠ The `id` attributes stay POSITIONAL (reason-1 is the first card on
+            the page, whatever it says) so any future onsite/split test targeting
+            a slot keeps working. The YrsAsset KEY NAMES were deliberately NOT
+            renamed, same convention as the keys 3/5 swap in yrs-images.ts:
+            read the card, not the key name. */}
+
+        {/* Card 01 — the category reframe. Pillar 1. */}
         <div id="reason-1" className="bg-card rounded-2xl p-8 border border-border shadow-sm">
-          <div className="flex items-center justify-between mb-4">
-            <Badge variant="secondary" className="text-xs uppercase tracking-wider font-bold bg-transparent">
-              Not Your Age
-            </Badge>
-            <span className="text-xs font-bold text-muted-foreground">01</span>
-          </div>
-          <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance leading-tight">
-            Forty minutes of that hold would finish a 25 year old
-          </h3>
-          <p className="text-sm font-bold uppercase tracking-wide text-[#C86F4C] mb-6">
-            It is a position, not a birthday
-          </p>
-
-          <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
-            <YrsAsset name="reason1Image" alt="A clinician pointing at the shoulder joint of an anatomical skeleton with the arm held out extended, the joint highlighted" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
-          </div>
-
-          <p className="text-foreground/80 text-pretty leading-relaxed text-base">
-            The machine is not heavy. Held against your chest you could carry it all day. Held out where the head has to reach, on the same side, without setting it down, it stops being ten pounds. That is a static one-sided hold, and it does not care how old you are. <span className="font-bold text-foreground">Nothing about that is your age. It is where the weight sits.</span>
-          </p>
-        </div>
-
-        {/* Reason 2 — the category reframe */}
-        <div id="reason-2" className="bg-card rounded-2xl p-8 border border-border shadow-sm">
           <div className="flex items-center justify-between mb-4">
             <Badge variant="secondary" className="text-xs uppercase tracking-wider font-bold bg-transparent">
               Not A Brace
             </Badge>
-            <span className="text-xs font-bold text-muted-foreground">02</span>
+            <span className="text-xs font-bold text-muted-foreground">01</span>
           </div>
           <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance leading-tight">
             Closer to a weight belt than a medical brace
@@ -167,6 +161,30 @@ export default function LandingPage() {
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
             Nobody at the gym calls a lifting belt medical equipment. You put it on before the heavy set, not after you pull something. The Rig works the same way and is built the same way: something you wear because you are about to load the joint, not because you already did. <span className="font-bold text-foreground">You are not injured. You are working.</span>
+          </p>
+        </div>
+
+        {/* Card 02 — the age refutation. Refutes age, never assigns it. */}
+        <div id="reason-2" className="bg-card rounded-2xl p-8 border border-border shadow-sm">
+          <div className="flex items-center justify-between mb-4">
+            <Badge variant="secondary" className="text-xs uppercase tracking-wider font-bold bg-transparent">
+              Not Your Age
+            </Badge>
+            <span className="text-xs font-bold text-muted-foreground">02</span>
+          </div>
+          <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance leading-tight">
+            Forty minutes of that hold would finish a 25 year old
+          </h3>
+          <p className="text-sm font-bold uppercase tracking-wide text-[#C86F4C] mb-6">
+            It is a position, not a birthday
+          </p>
+
+          <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
+            <YrsAsset name="reason1Image" alt="A man in a work shirt in side profile with his arm held out holding a trimmer, an orange heat bloom over the shoulder where the load lands" className="w-full h-full object-cover" fallbackClassName="w-full h-full flex items-center justify-center text-4xl" />
+          </div>
+
+          <p className="text-foreground/80 text-pretty leading-relaxed text-base">
+            The machine is not heavy. Held against your chest you could carry it all day. Held out where the head has to reach, on the same side, without setting it down, it stops being ten pounds. That is a static one-sided hold, and it does not care how old you are. <span className="font-bold text-foreground">Nothing about that is your age. It is where the weight sits.</span>
           </p>
         </div>
 
