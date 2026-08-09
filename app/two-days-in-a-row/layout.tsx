@@ -5,11 +5,11 @@ const OG_IMAGE =
 
 export const metadata: Metadata = {
   title:
-    "5 Ways Turmeric Helps Men Over 50 Manage Pain And Recovery Time | Field & Harvest Co.",
+    "5 Ways Turmeric Helps Men Over 50 Finish The Yard In One Go | Field & Harvest Co.",
   description:
-    "5 ways Field & Harvest Turmeric helps men over 50 manage the pain and recovery time from working full days. A 500mg high-absorption curcumin phytosome with boswellia at 30% AKBA. No black pepper, every dose printed on its own line. Save 40% Off, 90-day money back guarantee.",
+    "5 ways Field & Harvest Turmeric helps men over 50 finish the yard in one go instead of spreading it over two days. A 500mg high-absorption curcumin phytosome with boswellia at 30% AKBA. No black pepper, every dose printed on its own line. Save 40% Off, 90-day money back guarantee.",
   openGraph: {
-    title: "5 Ways Turmeric Helps Men Over 50 Manage Pain And Recovery Time",
+    title: "5 Ways Turmeric Helps Men Over 50 Finish The Yard In One Go",
     description:
       "1,000mg you do not absorb is 0mg. A 500mg high-absorption phytosome, plus boswellia AKBA for the pathway ibuprofen never touches. Save 40% Off + 90-day guarantee.",
     type: "website",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "5 Ways Turmeric Helps Men Over 50 Manage Pain And Recovery Time",
+    title: "5 Ways Turmeric Helps Men Over 50 Finish The Yard In One Go",
     description:
       "1,000mg you do not absorb is 0mg. A 500mg high-absorption phytosome, plus boswellia AKBA. Save 40% Off + 90-day guarantee.",
     images: [OG_IMAGE],

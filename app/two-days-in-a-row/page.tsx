@@ -23,10 +23,12 @@ import { TdrAsset } from "@/components/tdr-asset"
 // THE FRAME: the wound is DURATION, not severity. He does not
 // count how much it hurts, he counts how many days it costs him
 // (survey: 413 say a few hours, 515 a day or two, 83 most of the
-// week, 52 never fully recover before the next session). So the
-// promise the headline makes is two days in a row, and every
-// reason is ordered to land the absorption wedge while he is
-// still reading rather than saving it for the close.
+// week, 52 never fully recover before the next session). That is
+// still what reasons 01 to 05 argue. The HOOK on top of it is the
+// unfinished job, because that is the symptom he notices and the
+// one the ads sell. Every reason is ordered to land the absorption
+// wedge while he is still reading rather than saving it for the
+// close.
 //
 // THE PREMISE IS A CONTRACT, and it is the thing to protect in any
 // future edit. The headline promises FIVE WAYS THIS HELPS HIM, so
@@ -48,15 +50,32 @@ import { TdrAsset } from "@/components/tdr-asset"
 // Where a competitor practice has to be named, name it as something
 // he can go and CHECK, never as us being cleverer.
 //
-// ⛔ THE HEADLINE IS TOBENNA'S, VERBATIM, AND IT IS AN OWNER
-// OVERRIDE. "Manage the pain" is a drug claim on a dietary
-// supplement and it was flagged twice; he chose it both times and
-// that is the decision. DO NOT soften it to "soreness" and do not
-// paraphrase it. Two things follow from it rather than from taste:
-// the reason kickers must keep carrying hard structure-function
-// language (01 is verbatim "supports a healthy inflammatory
-// response associated with physical overexertion"), and the FDA
-// disclaimer in the footer is not optional on this page.
+// ⛔ THE HEADLINE WAS REWRITTEN TO THE FIN ANGLE 2026-08-09, ON
+// TOBENNA'S INSTRUCTION, AND THE REASON MATTERS MORE THAN THE WORDS.
+// The three statics taking the most spend on this SKU are all TOF and
+// all FIN: "MOST MEN NO LONGER FINISH THE YARD IN ONE GO", "HALF THE
+// YARD IS NOT THE YARD", "How Much Of Your Own Yard Do You Still
+// Finish?". The page was BILL-framed (duration, the day after) while
+// the ads hook on FINISHING, so the argument was right and only the
+// first screen was wrong.
+//
+// The hook is FIN, the cause underneath is BILL. Two of the three ads
+// point at the day after as the reason he stops, which is exactly what
+// reasons 01 to 05 already argue. That is why only the H1, the subhead
+// and reason 01 moved and nothing below them was touched.
+//
+// "Finish the yard in one go" and "spreading it over two days" are the
+// buyer's own words twice over: the first is verbatim off the ad, the
+// second is verbatim off REVIEWS[1] on this same page.
+//
+// The previous H1 was "...Manage The Pain And Recovery Time From
+// Working Full Days", an owner override that carried a drug claim
+// ("manage the pain") and a zero-occurrence corpus word ("recovery").
+// The FIN rewrite is better scented AND drops both. Do not restore it.
+// The reason kickers still carry the hard structure-function language
+// (01 is verbatim "supports a healthy inflammatory response associated
+// with physical overexertion"), and the FDA disclaimer in the footer is
+// not optional on this page.
 //
 // ⚠ The ten week ladder in 04 is a PROTOCOL timeline, never an
 // OUTCOME one. Each step says what the actives are doing and what he
@@ -284,15 +303,17 @@ export default function TwoDaysInARow() {
             className="-mx-3 text-[29px] leading-[1.12] sm:mx-0 md:text-[38px] md:leading-[1.08] font-bold text-foreground text-balance tracking-tight"
           >
             5 Ways Field &amp; Harvest Turmeric Helps Men Over 50{" "}
-            <span className="text-[#C86F4C]">Manage The Pain And Recovery Time From Working Full Days</span>
+            <span className="text-[#C86F4C]">Finish The Yard In One Go Instead Of Spreading It Over Two Days</span>
           </h2>
 
-          {/* Product-aware subhead: name what he does, name the cost he is
-              already counting, then the product and the promise. No routine
-              detail above the fold, that is reason 04's job. */}
+          {/* Product-aware subhead: name what he does, then ANSWER the question
+              the ads pose and refuse to answer ("almost none of them ask why",
+              "the men who stop early are rarely stopping because of the work"),
+              then hand into the reasons. No routine detail above the fold,
+              that is reason 04's job. */}
           <p className="text-lg md:text-xl text-muted-foreground mt-5 leading-relaxed text-pretty max-w-md mx-auto">
-            You still do your own yard, your own wood, your own snow. The job has not beaten you. It just costs
-            more days than it used to.{" "}
+            You still do your own yard, your own wood, your own snow. The job has not beaten you. You stop early
+            because of what the last hour costs you the next morning, not because the work got harder.{" "}
             <span className="font-semibold text-foreground/85">Here is what each of the four actives is for.</span>
           </p>
         </div>
@@ -334,12 +355,12 @@ export default function TwoDaysInARow() {
         <div id="reason-1" className="bg-card rounded-2xl p-8 border border-border shadow-sm">
           <div className="flex items-center justify-between mb-4">
             <Badge variant="secondary" className="text-xs uppercase tracking-wider font-bold bg-transparent">
-              The Recovery Tax
+              Why You Stop Early
             </Badge>
             <span className="text-xs font-bold text-muted-foreground">01</span>
           </div>
           <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance leading-tight">
-            It works on the thing that decides how long Sunday costs you
+            It works on the reason you stop before the job is done
           </h3>
           <p className="text-sm font-bold uppercase tracking-wide text-[#C86F4C] mb-6">
             Supports a healthy inflammatory response associated with physical overexertion
@@ -358,8 +379,8 @@ export default function TwoDaysInARow() {
             Hard work sets off an inflammatory process. Not a malfunction. That is the repair crew turning up,
             and they still turn up on time.{" "}
             <span className="font-bold text-foreground">What changed is how long they take to leave.</span>{" "}
-            So you are not counting how much it hurts. You are counting what it costs: the Sunday you write off,
-            the job you never get back to, the call to your son.
+            So you are not counting how much it hurts. You are counting what it costs: the half of the yard you
+            never get back to, the Sunday you write off, the call to your son.
           </p>
         </div>
 
