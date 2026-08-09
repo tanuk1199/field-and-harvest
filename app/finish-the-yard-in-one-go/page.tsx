@@ -197,12 +197,64 @@ const FIELD = [
   { src: `${CDN}supp-field-snow.png?width=420`, alt: "A man shovelling snow from a driveway", label: "Snow" },
 ]
 
-function CtaButton({ note, className = "" }: { note?: string; className?: string }) {
+/**
+ * CLARITY SESSION TAGS.
+ *
+ * Clarity itself is installed globally in the repo root `app/layout.tsx`, so it
+ * is already recording this route. What it cannot do on its own is tell you
+ * WHICH route a session was on in a way you can segment by, or how far into the
+ * ARGUMENT the reader got. Raw scroll percentage is already in the dashboard and
+ * is not the useful unit here: 30% of a long page is a number, "reached the
+ * reveal" is a finding.
+ *
+ * The queue stub mirrors Clarity's own snippet, so a call that fires before the
+ * script has loaded is buffered rather than lost. That matters because Clarity is
+ * `afterInteractive` in the root layout and this effect can run first.
+ *
+ * Tags set by this page:
+ *   lander          "fyo"                 filter every session on this route
+ *   lander_build    "fyo-prose-first"     which structural build they saw
+ *   fyo_reached     hook | reasons | wedge | reveal | reviews | cta   (multi-value)
+ *   fyo_cta         inline | closing | sticky
+ * Plus a Clarity `upgrade` on any CTA click, which forces that session to be
+ * retained so the ones that converted are actually watchable.
+ */
+function tagClarity(...args: unknown[]) {
+  try {
+    const w = window as unknown as { clarity?: { (...a: unknown[]): void; q?: unknown[] } }
+    if (!w.clarity) {
+      const stub = function (...a: unknown[]) {
+        ;(stub.q = stub.q || []).push(a)
+      } as { (...a: unknown[]): void; q?: unknown[] }
+      w.clarity = stub
+    }
+    w.clarity!(...args)
+  } catch {
+    // Tagging must never break the page.
+  }
+}
+
+// Bumped whenever the page's STRUCTURE changes, not its wording. Sessions before
+// 2026-08-09 carry no tag at all, so they are separable from these by absence.
+// "prose-first" is the build where the hook moved above the fold and the survey
+// ledger moved below it.
+const LANDER_BUILD = "fyo-prose-first"
+
+function CtaButton({
+  note,
+  className = "",
+  slot,
+}: {
+  note?: string
+  className?: string
+  slot: "inline" | "closing"
+}) {
   return (
     <div className={className}>
       <div className="flex justify-center">
         <a
           href={PDP_URL}
+          data-fyo-cta={slot}
           className="inline-block w-full max-w-md rounded-md bg-primary px-8 py-5 text-center text-lg font-bold uppercase tracking-wide text-primary-foreground shadow-md transition-colors hover:bg-primary/90 sm:text-xl"
         >
           {CTA_LABEL}
@@ -479,12 +531,63 @@ export default function FinishTheYardInOneGo() {
     return () => obs.forEach((o) => o.disconnect())
   }, [])
 
+  // Identify the route and the structural build for Clarity segmentation.
+  useEffect(() => {
+    tagClarity("set", "lander", LANDER_TAG)
+    tagClarity("set", "lander_build", LANDER_BUILD)
+  }, [])
+
+  // READ DEPTH BY SECTION, not by percentage. Each section is tagged once, the
+  // first time it genuinely arrives on screen, then unobserved. Because Clarity
+  // accepts repeat `set` calls on one key as a multi-value tag, a session ends up
+  // carrying every stage it actually reached, so you can filter on "reached the
+  // reveal" rather than reading a scroll number and guessing what was on screen.
+  //
+  // ⚠ USE rootMargin, NOT A PERCENTAGE THRESHOLD. This first shipped as
+  // `threshold: 0.35` and the `reasons` tag NEVER FIRED: that wall is about
+  // 4,000px tall, so 35% of it is ~1,400px and cannot fit in an 844px viewport,
+  // which makes the threshold physically uncrossable. A percentage threshold is
+  // only safe on elements shorter than the viewport. Shrinking the root's bottom
+  // edge by 25% instead means `isIntersecting` flips exactly when the element's
+  // top enters the upper three quarters of the screen, which is a real crossing
+  // event and behaves identically for a short section and a very tall one.
+  useEffect(() => {
+    if (typeof IntersectionObserver === "undefined") return
+    const nodes = Array.from(document.querySelectorAll<HTMLElement>("[data-fyo-section]"))
+    if (!nodes.length) return
+    const seen = new Set<string>()
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (!e.isIntersecting) continue
+          const name = e.target instanceof HTMLElement ? e.target.dataset.fyoSection : undefined
+          if (!name || seen.has(name)) continue
+          seen.add(name)
+          tagClarity("set", "fyo_reached", name)
+          io.unobserve(e.target)
+        }
+      },
+      { threshold: 0, rootMargin: "0px 0px -25% 0px" },
+    )
+    nodes.forEach((n) => io.observe(n))
+    return () => io.disconnect()
+  }, [])
+
   // Tag store-bound links so PDP traffic reads back to this route.
   useEffect(() => {
     const decorate = (event: Event) => {
       try {
         const anchor = (event.target as HTMLElement | null)?.closest?.("a") as HTMLAnchorElement | null
         if (!anchor?.href) return
+
+        // Which CTA carried the click, and force-retain the session so the ones
+        // that actually converted are watchable rather than sampled away.
+        const slot = anchor.dataset.fyoCta
+        if (slot) {
+          tagClarity("set", "fyo_cta", slot)
+          tagClarity("upgrade", "fyo-cta-click")
+        }
+
         const url = new URL(anchor.href, window.location.href)
         if (url.hostname === window.location.hostname) return
         if (!url.hostname.endsWith("fieldandharvestco.com")) return
@@ -556,7 +659,7 @@ export default function FinishTheYardInOneGo() {
 
               So the hook goes first. This paragraph is the sentence that makes
               him recognise himself, and it is now what he reads at second one. */}
-          <div className="mt-8 flex flex-col gap-5">
+          <div data-fyo-section="hook" className="mt-8 flex flex-col gap-5">
             <p className="text-xl leading-relaxed text-foreground sm:text-2xl">
               There was a year, and you probably could not name it, when the yard stopped being one afternoon. Now it is
               a Saturday morning and then whatever is left of Tuesday, and you have quietly rearranged your week around
@@ -613,7 +716,7 @@ export default function FinishTheYardInOneGo() {
             </p>
           </div>
 
-          <div className="mt-12 flex flex-col gap-14">
+          <div data-fyo-section="reasons" className="mt-12 flex flex-col gap-14">
             {REASONS.map((reason) => (
               <section key={reason.number}>
                 {reason.image ? (
@@ -641,7 +744,7 @@ export default function FinishTheYardInOneGo() {
               principle as the video-wall rule in the workspace CLAUDE.md: one
               full-bleed dark surface, placed where the core claim needs
               proving. It carries no button. It is a proof, not a close. */}
-          <section className="mt-14 rounded-lg bg-[#1E150F] px-5 py-9 sm:px-8">
+          <section data-fyo-section="wedge" className="mt-14 rounded-lg bg-[#1E150F] px-5 py-9 sm:px-8">
             <p className="text-center text-xs font-bold uppercase tracking-[0.2em] text-[#C0653F]">The whole wedge</p>
             <h2 className="mt-3 text-balance text-center text-2xl font-bold leading-snug tracking-tight text-[#FBF6EC] sm:text-3xl">
               1,000mg you do not absorb is 0mg
@@ -661,7 +764,7 @@ export default function FinishTheYardInOneGo() {
           </section>
 
           {/* THE REVEAL. First mention of the product on the page. */}
-          <section ref={revealRef} className="mt-14 border-t-4 border-foreground pt-10">
+          <section ref={revealRef} data-fyo-section="reveal" className="mt-14 border-t-4 border-foreground pt-10">
             <h2 className="text-pretty text-3xl font-bold leading-snug tracking-tight text-foreground sm:text-4xl">
               So We Built The Turmeric Nobody Was Building For A Man Who Has A Job To Finish
             </h2>
@@ -701,7 +804,7 @@ export default function FinishTheYardInOneGo() {
             </p>
           </section>
 
-          <section className="mt-14">
+          <section data-fyo-section="reviews" className="mt-14">
             <h2 className="text-pretty text-2xl font-bold leading-snug tracking-tight text-foreground sm:text-3xl">
               They Were Counting Days Too
             </h2>
@@ -725,7 +828,7 @@ export default function FinishTheYardInOneGo() {
           </section>
 
           {/* FIRST BUTTON ON THE PAGE. Everything above it is selling. */}
-          <section ref={ctaRef} className="mt-12">
+          <section ref={ctaRef} data-fyo-section="cta" className="mt-12">
             <img
               src={IMAGES.heroHand}
               alt="A weathered working hand holding a bottle of Field and Harvest Co Turmeric Curcumin Complex outdoors"
@@ -737,6 +840,7 @@ export default function FinishTheYardInOneGo() {
               Today: {OFFER_TEXT}
             </p>
             <CtaButton
+              slot="inline"
               className="mt-6"
               note="Click the button above to check current availability and whether today's discount is still running."
             />
@@ -836,7 +940,7 @@ export default function FinishTheYardInOneGo() {
             <p className="mt-4 text-center text-base font-bold uppercase tracking-wide text-foreground">
               {OFFER_TEXT}
             </p>
-            <CtaButton className="mt-6" />
+            <CtaButton slot="closing" className="mt-6" />
             <p className="mt-4 text-center text-sm text-muted-foreground">
               60 vegetarian capsules &middot; No black pepper extract &middot; 90 days to decide
             </p>
@@ -855,6 +959,7 @@ export default function FinishTheYardInOneGo() {
           <p className="hidden min-w-0 flex-1 text-sm font-bold leading-snug text-foreground sm:block">{OFFER_TEXT}</p>
           <a
             href={PDP_URL}
+            data-fyo-cta="sticky"
             tabIndex={pastReveal && !ctaVisible ? 0 : -1}
             className="w-full rounded-md bg-primary px-6 py-3.5 text-center text-base font-bold uppercase tracking-wide text-primary-foreground shadow-md transition-colors hover:bg-primary/90 sm:w-auto"
           >
