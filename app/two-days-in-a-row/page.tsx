@@ -366,10 +366,14 @@ export default function TwoDaysInARow() {
             Supports a healthy inflammatory response associated with physical overexertion
           </p>
 
-          <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-[#F2E9DA] mb-6 shadow-md">
+          {/* The one photograph in the argument run. See lib/tdr-images.ts
+              for why this slot is a photo and 02, 03 and the band are not.
+              bg-muted rather than the #F2E9DA diagram ground, same as the
+              other photo slot in reason 04. */}
+          <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
             <TdrAsset
               name="reason1Image"
-              alt="Chart comparing how long soreness lasts after the same day of work at 35 versus at 62"
+              alt="A man in his sixties standing in his own yard with one hand on his lower back and the string trimmer still in the other, half the fence line cut short and half still uncut"
               className="w-full h-full"
               fallbackClassName="w-full h-full flex items-center justify-center text-4xl"
             />

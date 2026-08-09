@@ -76,8 +76,38 @@ export const tdrImages = {
   heroImage: `${CDN}supp-hero-hand-outdoor.png?width=900`,
 
   // ── REASONS ─────────────────────────────────────────────
-  // 01 the recovery tax chart: same work at 35 vs at 62. DIAGRAM.
-  reason1Image: `${CDN}supp-recovery-tax.png?width=800`,
+  // 01 the man at the line where he stopped. PHOTO.
+  //
+  // ⚠ THIS SLOT IS DELIBERATELY THE ONLY PHOTOGRAPH IN THE ARGUMENT
+  // RUN, AND IT USED TO BE A CHART. Reasons 01, 02, the dark band and
+  // 03 all carried full-width diagrams back to back, so the page went
+  // hero photo, chart, chart, diagram, diagram with nothing but body
+  // copy between them. Meanwhile the only five photographs of men
+  // actually doing the work (field1 to field5) render as 56px chips in
+  // the almanac. The humans were there, they were just thumbnails.
+  //
+  // 01 is the RECOGNITION reason ("It works on the reason you stop
+  // before the job is done"). 02, 03 and the band are MECHANISM
+  // reasons and legitimately need diagrams. So this is the slot that
+  // gives, and swapping it breaks the four-square wall.
+  //
+  // Cast to the register of the winning FIN statics: traces of the
+  // work and the unfinished job, no smiling model, no bottle in frame.
+  // Generated gpt_image_2 1:1 1k/medium 2026-08-09, originals in
+  // ~/Downloads/FH Turmeric Reason01 2026-08-09/.
+  //
+  // ⛔ A generated person may sit under a RECOGNITION claim and never
+  // under a PROOF claim. This product has zero orders, so there are no
+  // real customers to photograph. Never put an invented face beside a
+  // review, a count or a testimonial.
+  //
+  // The r01-d-porch-step alternate was rejected on copy grounds, not
+  // craft: the man reads defeated and the page says "The job has not
+  // beaten you" two screens above it.
+  //
+  // supp-recovery-tax.png (the 35 vs 62 chart this replaced) still
+  // runs on the PDP as ump_image, where it has room to be read.
+  reason1Image: `${CDN}supp-stopped-at-the-line.png?width=800`,
   // 02 milligrams on the label are not milligrams in your blood. DIAGRAM.
   reason2Image: `${CDN}supp-mg-chart.png?width=800`,
   // 03 inflammation runs down two roads, COX and 5-LOX. DIAGRAM.
@@ -134,7 +164,7 @@ export type TdrImageKey = keyof typeof tdrImages
 const fallbacks: Record<TdrImageKey, string> = {
   logo: "Field & Harvest Co.",
   heroImage: "🫙",
-  reason1Image: "📉",
+  reason1Image: "🪓",
   reason2Image: "📊",
   reason3Image: "🛣️",
   reason4Image: "💊",
