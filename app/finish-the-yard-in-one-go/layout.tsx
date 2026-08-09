@@ -18,6 +18,9 @@ export const metadata: Metadata = {
     description:
       "Of 1,085 men asked how long it takes to get right after a long session, 515 said a day or two and 83 said most of the week. The single largest thing they do about it is nothing at all.",
     type: "article",
+    // Kept in step with the visible byline date. If one moves, move both, or a
+    // share preview contradicts the page it links to.
+    publishedTime: "2026-03-14",
     url: "https://explore.fieldandharvestco.com/finish-the-yard-in-one-go",
     images: [
       {

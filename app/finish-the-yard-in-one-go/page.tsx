@@ -251,8 +251,9 @@ const REASONS: Reason[] = [
           Nothing about that changed.{" "}
           <strong className="font-bold text-foreground">What changed is how long it takes to clear.</strong> Same
           afternoon, same machine, same fence line, and where it used to be gone by the evening it now sits with you
-          into Monday. Of 1,085 men we asked, 515 said a day or two, 83 said most of the week, and 52 said they never
-          fully get right before the next session comes round.
+          into Monday. Add up those answers at the top of the page and that is the whole finding:{" "}
+          <strong className="font-bold text-foreground">six men in ten are paying a day or more</strong> for one
+          afternoon of work.
         </p>
       </>
     ),
@@ -505,7 +506,7 @@ export default function FinishTheYardInOneGo() {
             <div className="flex flex-col">
               <span className="text-sm font-bold text-foreground">By Walt Brenner</span>
               <span className="text-xs uppercase tracking-wide text-muted-foreground">
-                Field &amp; Harvest Co. &middot; 8 August 2026
+                Field &amp; Harvest Co. &middot; 14 March 2026
               </span>
             </div>
           </div>
