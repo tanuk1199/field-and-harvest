@@ -173,6 +173,17 @@ const IMAGES = {
   guaranteeSeal: `${CDN}supp-guarantee-seal.png?width=320`,
 } as const
 
+// The duration distribution, as figures rather than as a sentence. Real, from
+// the post-purchase survey, 1,085 responses to the duration question. These four
+// sum to 1,063; the remainder is unusable answers, so do NOT present the four as
+// a complete partition of 1,085 or add a "total" row.
+const SURVEY = [
+  { n: "413", label: "a few hours" },
+  { n: "515", label: "a day or two" },
+  { n: "83", label: "most of the week" },
+  { n: "52", label: "never fully right" },
+]
+
 // The work year, not a photo carousel. All 9:16. The claim these five make
 // together is the seasonality argument from 1-positioning.md: trimming is
 // March through October, firewood is fall, shoveling is December through
@@ -527,33 +538,26 @@ export default function FinishTheYardInOneGo() {
             </div>
           </div>
 
-          {/* MASTHEAD PROOF. First-party survey data, not a volume claim and not
-              a rating, because this SKU has neither. Both denominators are
-              stated: the duration question ran on 1,085 responses and the
-              prior-solution question on 387, and they are different questions,
-              which is why the numbers are not mixed into one total. */}
-          <div className="mt-8 border-l-4 border-primary bg-muted p-5 sm:p-6">
-            <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
-              What 1,085 men told us
-            </p>
-            <p className="mt-3 text-base leading-relaxed text-muted-foreground sm:text-lg">
-              We asked men who do their own physical work how long it takes to get right after a long session.{" "}
-              <strong className="font-bold text-foreground">
-                413 said a few hours. 515 said a day or two. 83 said most of the week. 52 said they never fully get
-                right before the next one comes round.
-              </strong>{" "}
-              Asked separately what they had already tried about it, the single largest answer, out of 387 responses,
-              was nothing at all.
-            </p>
-            {RATING ? (
-              <p className="mt-3 text-sm text-muted-foreground">
-                {RATING.score} out of 5 from {RATING.count} reviews
-              </p>
-            ) : null}
-          </div>
+          {/* ⚠ PROSE FIRST. THIS ORDER IS THE FIX FOR THE BIGGEST MEASURED
+              PROBLEM ON THE PAGE, DO NOT PUT A BLOCK BACK ABOVE IT.
 
+              The survey data used to sit here, directly under the byline, and
+              Clarity showed the average fold landing on its last line: the
+              reader's entire first screen was a headline, a byline and a wall of
+              statistics, with NOT ONE LINE OF PROSE above the fold. Only 44.19%
+              of arrivals ever reached the first sentence of the article, and
+              half of everyone who scrolled at all was gone between 5% and 10%.
+
+              Two things were wrong and only one of them was the design. The
+              block was ALSO in the wrong place in the argument: statistics are
+              evidence, and evidence cannot land before there is a claim to
+              support. He had been told nothing yet, so the numbers had nothing
+              to attach to.
+
+              So the hook goes first. This paragraph is the sentence that makes
+              him recognise himself, and it is now what he reads at second one. */}
           <div className="mt-8 flex flex-col gap-5">
-            <p className="text-lg leading-relaxed text-foreground sm:text-xl">
+            <p className="text-xl leading-relaxed text-foreground sm:text-2xl">
               There was a year, and you probably could not name it, when the yard stopped being one afternoon. Now it is
               a Saturday morning and then whatever is left of Tuesday, and you have quietly rearranged your week around
               a job that used to be over by lunch.
@@ -562,6 +566,46 @@ export default function FinishTheYardInOneGo() {
               Almost nobody asks why. It gets filed under getting older, which is the one explanation that comes with
               nothing you can do about it, so the asking stops there.
             </p>
+          </div>
+
+          {/* THE SURVEY LEDGER. Moved down out of the masthead and rebuilt as a
+              scannable figure row rather than a paragraph with bold numerals,
+              which is what it was. Four statistics inside running prose is a
+              wall on a phone; four figures with labels under them is read in
+              about two seconds.
+
+              Both denominators are printed and they are NOT merged: the duration
+              question ran on 1,085 responses and the prior-solution question on
+              387. They are different questions. */}
+          <div className="mt-9 border-l-4 border-primary bg-muted p-5 sm:p-6">
+            <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+              So we asked 1,085 men who do their own work
+            </p>
+            <p className="mt-2 text-base font-bold leading-snug text-foreground sm:text-lg">
+              How long does it take you to get right after a long session?
+            </p>
+            <dl className="mt-5 grid grid-cols-2 gap-x-4 gap-y-4 sm:grid-cols-4">
+              {SURVEY.map((s) => (
+                <div key={s.label} className="min-w-0">
+                  <dt className="text-2xl font-bold leading-none tracking-tight text-foreground sm:text-3xl">
+                    {s.n}
+                  </dt>
+                  <dd className="mt-1.5 text-sm leading-snug text-muted-foreground">{s.label}</dd>
+                </div>
+              ))}
+            </dl>
+            <p className="mt-5 border-t border-border pt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
+              Asked separately what they had already tried about it, the single largest answer, out of 387 responses,{" "}
+              <strong className="font-bold text-foreground">was nothing at all.</strong>
+            </p>
+            {RATING ? (
+              <p className="mt-3 text-sm text-muted-foreground">
+                {RATING.score} out of 5 from {RATING.count} reviews
+              </p>
+            ) : null}
+          </div>
+
+          <div className="mt-9 flex flex-col gap-5">
             <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
               It is worth asking. There are five things going on, four of them have nothing to do with your age, and the
               fifth is not the one you think.{" "}
