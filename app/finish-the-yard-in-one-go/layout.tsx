@@ -10,11 +10,11 @@ const OG_IMAGE =
 
 export const metadata: Metadata = {
   title:
-    "5 Reasons Men Over 50 Can No Longer Finish The Yard In One Go | Field & Harvest Co.",
+    "5 Reasons Men Over 50 Can No Longer Finish The Job In One Go | Field & Harvest Co.",
   description:
-    "Most men over 50 have stopped finishing the yard in one go, and almost none of them ask why. We asked 1,085 men who do their own physical work how long it takes to get right afterwards. Here is what the answers said, and the simple fix almost none of them have tried.",
+    "Most men over 50 have stopped finishing the job in one go, and almost none of them ask why. We asked 1,085 men who do their own physical work how long it takes to get right afterwards. Here is what the answers said, and the simple fix almost none of them have tried.",
   openGraph: {
-    title: "5 Reasons Men Over 50 Can No Longer Finish The Yard In One Go",
+    title: "5 Reasons Men Over 50 Can No Longer Finish The Job In One Go",
     description:
       "Of 1,085 men asked how long it takes to get right after a long session, 515 said a day or two and 83 said most of the week. The single largest thing they do about it is nothing at all.",
     type: "article",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "5 Reasons Men Over 50 Can No Longer Finish The Yard In One Go",
+    title: "5 Reasons Men Over 50 Can No Longer Finish The Job In One Go",
     description:
       "515 of 1,085 men said a day or two. 83 said most of the week. The largest single answer for what they do about it was nothing at all.",
     images: [OG_IMAGE],

@@ -79,7 +79,23 @@ const OFFER_TEXT = "40% Off Your First Bottle + 90 Days To Decide"
 // page disappears cleanly, if that is ever wanted.
 const RATING: { score: string; count: string } | null = { score: "4.6", count: "5,800" }
 
-const HEADLINE_MAIN = "5 Reasons Men Over 50 Can No Longer Finish The Yard In One Go"
+// ⚠ "THE JOB", NOT "THE YARD", AND THAT IS A DELIBERATE OWNER CALL (2026-08-09).
+// Two reasons, both good. (1) EVERGREEN: "the yard" reads as mowing season, and
+// this SKU is meant to run twelve months (trimming March to October, firewood in
+// the fall, shoveling December to February). (2) PDP MATCH: the Turmeric PDP uses
+// "job" five times against "yard" twice, and the positioning one-liner in
+// 1-positioning.md is literally "sold to a man who has a job to finish".
+// "Job" is also on the avatar's own word list alongside "work" and "yard".
+//
+// The BODY deliberately still says "yard" throughout, and that is not an
+// oversight: the H1 makes the broad, year-round promise and the evidence
+// underneath stays concrete and visual. Broad promise, specific proof.
+//
+// Known cost, accepted: the in-season creative says "MOST MEN NO LONGER FINISH
+// THE YARD IN ONE GO", so the H1 no longer echoes the ad word for word. The slug
+// and the breadcrumb also still say yard. If the arrival ever needs re-tightening,
+// match the ADS to this line rather than reverting the page.
+const HEADLINE_MAIN = "5 Reasons Men Over 50 Can No Longer Finish The Job In One Go"
 const HEADLINE_BRACKET = "(And The Simple Fix Almost None Of Them Have Tried)"
 
 const PAGE_THEME = {
