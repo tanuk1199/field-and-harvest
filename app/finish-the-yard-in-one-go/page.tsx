@@ -71,6 +71,13 @@ const CTA_LABEL = "CHECK AVAILABILITY >>"
 // deadline, no countdown. Nothing on this page expires.
 const OFFER_TEXT = "40% Off Your First Bottle + 90 Days To Decide"
 
+// The sticky bar's commercial line. Real numbers: one bottle is $29.99 against a
+// flat $49.99 compare, which is a true 40%, and the guarantee is 90 days. No
+// invented urgency and no deadline, same as everywhere else on this page.
+const STICKY_PRICE = "1 Bottle $29.99"
+const STICKY_COMPARE = "$49.99"
+const STICKY_SUB = "40% off · 90 days to decide"
+
 // 4.6 / 5,800 is a placeholder figure and it is OWNER-LOCKED. It runs on the
 // Turmeric PDP and on /two-days-in-a-row, and this page carries the same
 // numbers so all three surfaces agree. Recorded here once as fact: Tobenna
@@ -236,9 +243,10 @@ function tagClarity(...args: unknown[]) {
 
 // Bumped whenever the page's STRUCTURE changes, not its wording. Sessions before
 // 2026-08-09 carry no tag at all, so they are separable from these by absence.
-// "prose-first" is the build where the hook moved above the fold and the survey
-// ledger moved below it.
-const LANDER_BUILD = "fyo-prose-first"
+// "prose-first" was the build where the hook moved above the fold. This one,
+// "sticky-always-on", is the build where the CTA stopped being gated at 65.8%
+// scroll, which is the change that actually matters.
+const LANDER_BUILD = "fyo-sticky-always-on"
 
 function CtaButton({
   note,
@@ -497,38 +505,34 @@ const FAQS = [
 ]
 
 export default function FinishTheYardInOneGo() {
-  const revealRef = useRef<HTMLElement | null>(null)
   const ctaRef = useRef<HTMLElement | null>(null)
-  const [pastReveal, setPastReveal] = useState(false)
   const [ctaVisible, setCtaVisible] = useState(false)
 
-  // The bar is EARNED, not default. There is nothing to click until the five
-  // reasons, the wedge and the reveal have all run; from that point a button
-  // follows the reader so a decision made at review three does not require a
-  // hunt back up the page. Suppressed while a real CTA section is on screen so
-  // it never doubles up.
+  // ⚠⚠ THE STICKY BAR IS VISIBLE FROM LOAD. IT USED TO BE "EARNED" AND THAT WAS
+  // THE SINGLE BIGGEST DEFECT ON THIS PAGE. DO NOT RE-GATE IT.
+  //
+  // The earned-CTA discipline was ported from /trimming-wrecks-your-back, where
+  // the idea is that nothing is clickable until the argument, the product and
+  // the proof have all run. That is a good instinct on a 9,185px page. This page
+  // is 12,866px, and the same rule pushed the gate to 65.8% scroll, with the
+  // first on-page button not visible until 71.6%.
+  //
+  // Measured against real traffic: 1 of 26 sessions reached 65% and ZERO reached
+  // 75%. So at most one session in twenty-six ever had a button on screen, and
+  // the Clarity click map shows exactly one CTA click on the entire page. The
+  // page was not failing to persuade anyone. It was not offering.
+  //
+  // That also explains why two structural fixes above the fold read as no-ops:
+  // neither touched the binding constraint.
+  //
+  // The bar is now suppressed ONLY while a real CTA section is on screen, so it
+  // never doubles up. Precedent for un-gating: /its-not-aging did the same thing.
   useEffect(() => {
-    const reveal = revealRef.current
     const cta = ctaRef.current
-    if (typeof IntersectionObserver === "undefined") return
-
-    const obs: IntersectionObserver[] = []
-    if (reveal) {
-      const o = new IntersectionObserver(
-        ([e]) => {
-          if (!e.isIntersecting && e.boundingClientRect.top < 0) setPastReveal(true)
-        },
-        { threshold: 0 },
-      )
-      o.observe(reveal)
-      obs.push(o)
-    }
-    if (cta) {
-      const o = new IntersectionObserver(([e]) => setCtaVisible(e.isIntersecting), { threshold: 0.2 })
-      o.observe(cta)
-      obs.push(o)
-    }
-    return () => obs.forEach((o) => o.disconnect())
+    if (!cta || typeof IntersectionObserver === "undefined") return
+    const o = new IntersectionObserver(([e]) => setCtaVisible(e.isIntersecting), { threshold: 0.2 })
+    o.observe(cta)
+    return () => o.disconnect()
   }, [])
 
   // Identify the route and the structural build for Clarity segmentation.
@@ -764,7 +768,7 @@ export default function FinishTheYardInOneGo() {
           </section>
 
           {/* THE REVEAL. First mention of the product on the page. */}
-          <section ref={revealRef} data-fyo-section="reveal" className="mt-14 border-t-4 border-foreground pt-10">
+          <section data-fyo-section="reveal" className="mt-14 border-t-4 border-foreground pt-10">
             <h2 className="text-pretty text-3xl font-bold leading-snug tracking-tight text-foreground sm:text-4xl">
               So We Built The Turmeric Nobody Was Building For A Man Who Has A Job To Finish
             </h2>
@@ -948,20 +952,35 @@ export default function FinishTheYardInOneGo() {
         </section>
       </main>
 
-      {/* Earned sticky bar */}
+      {/* STICKY OFFER BAR, VISIBLE FROM LOAD.
+          The price is on it deliberately. The old bar's only content was a
+          button, and its offer line was `hidden sm:block`, so on a phone it
+          carried no commercial information at all. A price and a struck compare
+          is what makes a page read as somewhere you can buy rather than
+          somewhere you can read, and it is the cheapest version of that signal.
+          It is also the only always-visible commerce on the page until the
+          embedded buy box lands. */}
       <div
-        aria-hidden={!(pastReveal && !ctaVisible)}
-        className={`fixed inset-x-0 bottom-0 z-50 border-t border-black/10 bg-white/95 px-4 py-3 shadow-[0_-4px_16px_rgba(0,0,0,0.12)] backdrop-blur transition-transform duration-300 ${
-          pastReveal && !ctaVisible ? "translate-y-0" : "translate-y-full"
+        aria-hidden={ctaVisible}
+        className={`fixed inset-x-0 bottom-0 z-50 border-t border-black/10 bg-white/95 px-4 py-2.5 shadow-[0_-4px_16px_rgba(0,0,0,0.12)] backdrop-blur transition-transform duration-300 ${
+          ctaVisible ? "translate-y-full" : "translate-y-0"
         }`}
       >
         <div className="mx-auto flex max-w-3xl items-center gap-3">
-          <p className="hidden min-w-0 flex-1 text-sm font-bold leading-snug text-foreground sm:block">{OFFER_TEXT}</p>
+          <div className="min-w-0 flex-1">
+            <p className="flex items-baseline gap-1.5 whitespace-nowrap text-[15px] font-bold leading-none text-foreground sm:text-lg">
+              <span>{STICKY_PRICE}</span>
+              <span className="text-sm font-normal text-muted-foreground line-through">{STICKY_COMPARE}</span>
+            </p>
+            <p className="mt-1 truncate text-[11px] leading-tight text-muted-foreground sm:text-xs">
+              {STICKY_SUB}
+            </p>
+          </div>
           <a
             href={PDP_URL}
             data-fyo-cta="sticky"
-            tabIndex={pastReveal && !ctaVisible ? 0 : -1}
-            className="w-full rounded-md bg-primary px-6 py-3.5 text-center text-base font-bold uppercase tracking-wide text-primary-foreground shadow-md transition-colors hover:bg-primary/90 sm:w-auto"
+            tabIndex={ctaVisible ? -1 : 0}
+            className="shrink-0 rounded-md bg-primary px-4 py-3 text-center text-[13px] font-bold uppercase tracking-wide text-primary-foreground shadow-md transition-colors hover:bg-primary/90 sm:px-6 sm:py-3.5 sm:text-base"
           >
             {CTA_LABEL}
           </a>
