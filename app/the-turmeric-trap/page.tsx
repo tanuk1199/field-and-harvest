@@ -447,13 +447,29 @@ function Cta({ note, className = "", slot }: { note?: string; className?: string
 // no count, no deadline. Nothing on this page expires and no stock count is real.
 function InlineLink({ children, slot }: { children: React.ReactNode; slot: string }) {
   return (
+    // ⭐ POINTER EMOJI, not the bare arrow it shipped with (Tobenna, 2026-08-12: make it clearly
+    // clickable). A `→` set in the same weight and colour as the text beside it reads as
+    // punctuation, so on a page of six one-sentence paragraphs the links were disappearing into
+    // the prose. 👉 is a glyph nothing else on the page uses, it is the DR convention already
+    // running in this store's primary text, and it survives at any type size.
+    //
+    // ⚠ IT IS NOT A BUTTON, ON PURPOSE. This is a publisher-mastheaded advertorial and a row of
+    // six buttons through the body is the same defect as the price rail that was removed: it
+    // stops reading as editorial. The pointer plus a thick underline is the most clickable an
+    // element can be while still reading as a jump link inside an article.
+    //
+    // `aria-hidden` on the emoji so a screen reader announces the sentence, not "backhand index
+    // pointing right". `no-underline` on the span so the rule does not run under the glyph.
     <p className="mt-6">
       <a
         href={PDP_URL}
         data-ttt-cta={slot}
-        className="text-base font-bold text-primary underline decoration-2 underline-offset-4 hover:opacity-80 sm:text-lg"
+        className="group inline-flex items-baseline gap-2 text-base font-bold text-primary hover:opacity-80 sm:text-lg"
       >
-        &rarr; {children}
+        <span aria-hidden="true" className="shrink-0 no-underline">
+          👉
+        </span>
+        <span className="underline decoration-2 underline-offset-4 group-hover:decoration-[3px]">{children}</span>
       </a>
     </p>
   )
