@@ -506,7 +506,7 @@ export default function The1998Study() {
             thousand times. You can look it up in about twenty seconds.
           </P>
 
-          <InlineLink slot="cta-1-form">👉 See the turmeric that does not need black pepper</InlineLink>
+          <InlineLink slot="cta-1-form">See the turmeric that does not need black pepper</InlineLink>
 
           {/* ---------- WHAT THE PAPER ACTUALLY SAYS ----------
               ⚠ EVERY FIGURE IN THIS SECTION IS FROM THE PAPER'S OWN ABSTRACT. Verified before
@@ -612,7 +612,7 @@ export default function The1998Study() {
           </P>
           <P>It might. Nobody has shown it.</P>
 
-          <InlineLink slot="cta-2-instead">👉 See what is in this one instead</InlineLink>
+          <InlineLink slot="cta-2-instead">See what is in this one instead</InlineLink>
 
           {/* ---------- THE HONEST MIDDLE. This is the section that makes the page credible.
               A page that says "black pepper is a scam" is arguing past what the evidence supports
@@ -719,7 +719,7 @@ export default function The1998Study() {
             caption="One road covered, the other one not. That is the gap the second active is in the formula for."
           />
 
-          <InlineLink slot="cta-3-panel">👉 See the full panel, dose by dose</InlineLink>
+          <InlineLink slot="cta-3-panel">See the full panel, dose by dose</InlineLink>
 
           {/* ---------- WHAT TO EXPECT: PROTOCOL, NOT OUTCOME ----------
               ⚠ Every line says what the actives are doing and what HE should do. Not one says what
