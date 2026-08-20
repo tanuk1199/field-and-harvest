@@ -41,7 +41,7 @@ export const reasons: ReasonData[] = [
   },
   {
     number: 3,
-    title: 'At sixty, black pepper is doing something nobody mentioned',
+    title: 'If you are sixty and still working, black pepper is doing something nobody mentioned',
     titleAccent: 'It slows your clearance, not just curcumin',
     image: '/bpp-r4-the-pill-organiser-1x1.png',
     imageAlt: 'A weekly pill organiser and prescription bottles on a kitchen counter beside work gloves',

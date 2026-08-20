@@ -94,10 +94,10 @@ const headline = (
 const intro = (
   <>
     <span className="font-bold">
-      If you took turmeric for a month and felt nothing, it was probably not the turmeric.
+      You still do your own work, and you tried turmeric for what it costs you. A month in, nothing.
     </span>{' '}
-    Nearly every bottle adds a few milligrams of black pepper and prints a very large absorption number. Both
-    come from the same place.
+    It was probably not the turmeric. Nearly every bottle adds a few milligrams of black pepper and prints a very
+    large absorption number, and both come from the same place.
   </>
 )
 

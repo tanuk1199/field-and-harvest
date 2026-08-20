@@ -60,7 +60,7 @@ export function BonusReason() {
 
         {/* Intro copy */}
         <p className="mt-4 max-w-2xl text-lg leading-relaxed text-pretty">
-          Seriously, go and get it. It takes about a minute and you do not have to take our word for any of this. Four things to look for on the back.
+          Kitchen cupboard, garage shelf, wherever it ended up. It takes about a minute and you do not have to take our word for any of this. Four things to look for on the back.
         </p>
 
         {/* Ingredient table */}
