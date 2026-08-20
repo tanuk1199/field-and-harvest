@@ -111,7 +111,7 @@ export function BonusReason() {
           <div className="inline-flex items-center gap-2 rounded-full border border-primary bg-card px-5 py-2 text-card-foreground">
             <FlaskConical className="h-4 w-4 text-primary" aria-hidden="true" />
             <span className="text-xs font-semibold tracking-[0.12em] uppercase sm:text-sm">
-              Engineered, Not Stamped.
+              Check Yours, Then Check Ours.
             </span>
           </div>
         </div>
@@ -119,7 +119,7 @@ export function BonusReason() {
         {/* CTA */}
         <div className="mt-6 flex justify-center">
           <CtaButton
-            label="See How It Works"
+            label="See What Is In Ours"
             location="bonus-section"
             className="w-full sm:w-auto"
           />
