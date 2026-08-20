@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title:
     "5 Reasons Men Use Field & Harvest Turmeric For Stiff Joints And Knees | Field & Harvest Co.",
   description:
-    "5 reasons men are using Field & Harvest Turmeric to fight stiff joints, knee pain and poor mobility. A 500mg high-absorption curcumin phytosome with boswellia at 30% AKBA. No black pepper, every dose printed on its own line. Save 40% Off, 90-day money back guarantee.",
+    "5 reasons men are using Field & Harvest Turmeric to fight stiff joints, knee pain and poor mobility. The knee is what decides when you stop, not the work and not your age. A 500mg high-absorption curcumin phytosome with boswellia at 30% AKBA. No black pepper, every dose printed on its own line. Save 40% Off, 90-day money back guarantee.",
   openGraph: {
     title: "5 Reasons Men Use Field & Harvest Turmeric For Stiff Joints And Knees",
     description:

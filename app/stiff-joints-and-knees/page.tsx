@@ -332,8 +332,9 @@ export default function StiffJointsAndKnees() {
               then hand into the reasons. No routine detail above the fold,
               that is reason 04's job. */}
           <p className="text-lg md:text-xl text-muted-foreground mt-5 leading-relaxed text-pretty max-w-md mx-auto">
-            The knees on the way up the porch steps. The first ten minutes out of bed. Getting off one knee at the
-            garden bed and having to think about it.{" "}
+            The knee is what decides when you stop. Not the work, and not your age. It is also the porch steps, the
+            first ten minutes out of bed, and getting off one knee at the garden bed and having to think about
+            it.{" "}
             <span className="font-semibold text-foreground/85">Here is what each of the four actives is for.</span>
           </p>
         </div>
@@ -380,7 +381,7 @@ export default function StiffJointsAndKnees() {
             <span className="text-xs font-bold text-muted-foreground">01</span>
           </div>
           <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance leading-tight">
-            It works on the thing that decides how long the stiffness lasts
+            It works on the thing that decides when you stop
           </h3>
           <p className="text-sm font-bold uppercase tracking-wide text-[#C86F4C] mb-6">
             Supports a healthy inflammatory response associated with physical overexertion
@@ -400,10 +401,11 @@ export default function StiffJointsAndKnees() {
           </div>
 
           <p className="text-foreground/80 text-pretty leading-relaxed text-base">
-            Physical work sets off an inflammatory process in muscle and connective tissue. Not a malfunction. That
-            is the repair crew turning up, and at sixty they still turn up on time.{" "}
+            Physical work sets off an inflammatory process in the joint and the tissue around it. Not a malfunction.
+            That is the repair crew turning up, and at sixty they still turn up on time.{" "}
             <span className="font-bold text-foreground">What changed is how long they take to leave.</span>{" "}
-            It is why kneeling is fine and standing back up is the part you plan around.
+            So the knee is not what hurts at the end of the job. It is what decides there is no end of the job,
+            because you stopped halfway and finished it Sunday instead.
           </p>
         </div>
 
