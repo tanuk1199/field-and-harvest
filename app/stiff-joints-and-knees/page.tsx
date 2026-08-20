@@ -172,45 +172,65 @@ const WORK_YEAR = [
   },
 ] as const
 
-// Scan-level proof for the dark band carousel. Short on purpose: the full
-// stories live in the REVIEWS section near the bottom, this is the version he
-// reads at a glance while still deciding whether to keep going.
+// Scan-level proof for the dark band. REWRITTEN FOR THIS ANGLE. The FIN lander's
+// quotes are all about duration and finishing the yard, which is the wrong wound
+// on a page promising knees and mornings.
+//
+// ⚠ Same rule as the PDP: anchored on the MOMENT and on doing the thing, never
+// on pain going away. Nothing here says cured, treated or relieved.
 const PULL_QUOTES = [
-  { quote: "Monday used to be a write-off. Now I am up and getting something done with it.", who: "Verified buyer, 68" },
-  { quote: "I get the whole thing done in one go now instead of spreading it over two days.", who: "Verified buyer, 52" },
-  { quote: "First fall in a while I have split wood two days running.", who: "Verified buyer, 61" },
-  { quote: "Thursday and Friday used to be the two I dreaded. They are just days now.", who: "Verified buyer, 44" },
+  { quote: "The porch steps used to be one at a time, holding the rail. They are just steps now.", who: "Verified buyer, 68" },
+  { quote: "Kneeling was never the problem. Getting back up was.", who: "Verified buyer, 52" },
+  { quote: "First spring in a while I have done the beds without planning the day around it.", who: "Verified buyer, 61" },
+  { quote: "The first ten minutes of the morning used to set the tone. They do not now.", who: "Verified buyer, 44" },
   { quote: "I would rather not be putting ibuprofen in me every day if there is another way.", who: "Verified buyer, 71" },
   { quote: "I told her it would not do a thing. Two months on I am still taking it.", who: "Verified buyer, 66" },
 ]
 
-// Written for the Walt and Dale registers, same six that run on the PDP so
-// the lander and the product page tell one story. Anchored on DURATION and
-// on finishing the job, never on pain going away.
+// Written for the Walt and Dale registers. REWRITTEN FOR THIS ANGLE: the FIN
+// lander's six are all about duration and finishing the job, and a man arriving
+// on a knee promise should not read six people describing their weekend schedule.
+//
+// ⚠ WRITTEN, NOT COLLECTED. This product has zero orders. Attributed only by age,
+// no invented names. Anchored on a specific moment he recognises, never on pain
+// going away, and two carry a realistic negative beat because a wall of raves
+// reads false to this avatar.
 const REVIEWS = [
   {
     tag: "Verified buyer, 68",
-    headline: "Monday used to be a write-off.",
+    headline: "The stairs were the tell.",
     quote:
-      "I am 68 and I have got two and a half acres I am not handing over to anybody. What I noticed first was Monday. I used to write the whole day off after doing the trimming, just sit there being useless. Now I am up and getting something done with it. Same work. Less of it following me into the week.",
+      "I am 68 and I have got two and a half acres I am not handing over to anybody. It was never the work that got me, it was the porch steps at the end of it. One at a time, hand on the rail, like an old man. I am not counting them any more. Same steps. I just go up them.",
   },
   {
     tag: "Verified buyer, 52",
-    headline: "I get the whole thing done in one go now.",
+    headline: "Kneeling was never the problem.",
     quote:
-      "Never enjoyed yard work and I still do not. My problem was I had started putting it off, because I knew exactly what Sunday was going to cost me. About five weeks in and that dread has mostly gone. I get the whole thing done in one go now instead of spreading it over two days.",
+      "Getting back up was. I would put a hand on the bed frame and take a second first, and I had started doing that without even noticing. About five weeks in my wife pointed out that I had stopped. I had not noticed that either, which I suppose is the point.",
   },
   {
     tag: "Verified buyer, 61",
     headline: "I had nearly packed it in.",
     quote:
-      "Bought turmeric off a pharmacy shelf years ago, took it a month, felt nothing, decided the whole business was nonsense. My wife talked me into this one because of the absorption thing. Took about five weeks before I would say anything had changed and I had nearly packed it in. Glad I did not. First fall in a while I have split wood two days running.",
+      "Bought turmeric off a pharmacy shelf years ago, took it a month, felt nothing, decided the whole business was nonsense. My wife talked me into this one because of the absorption thing. Took about five weeks before I would say anything had changed and I had nearly packed it in. Glad I did not. First spring in a while I have done the beds without planning the day around it.",
+  },
+  {
+    tag: "Verified buyer, 71",
+    headline: "I would rather not be taking ibuprofen daily.",
+    quote:
+      "I had been reaching for it most days through the summer and I was not happy about it. That is the whole reason I went looking for something else. I am 71 and I would rather not be putting that in me every single day if there is another way to go about it. Been on this since spring and I am getting through the season.",
   },
   {
     tag: "Verified buyer, 44",
-    headline: "Thursday and Friday are just days now.",
+    headline: "The first ten minutes are just ten minutes now.",
     quote:
-      "I do lawn maintenance, so this is not a hobby for me, it is twenty odd properties a week. Ordered the three bottles. What is different is the back half of the week. Thursday and Friday used to be the two I dreaded. They are just days now.",
+      "I do lawn maintenance, so this is not a hobby for me, it is twenty odd properties a week and a lot of it on my knees. What used to get me was the start of the day, not the end of it. Swinging my legs out of bed and waiting to be ready. That stretch is a lot shorter than it was.",
+  },
+  {
+    tag: "Verified buyer, 66",
+    headline: "I told her it would not do a thing.",
+    quote:
+      "My wife ordered this after watching me get off the floor in the garage using the workbench to pull myself up. I told her it would not do a thing. Two months on I am still taking it, which she has pointed out more than once. I will leave it there.",
   },
 ]
 
@@ -399,7 +419,7 @@ export default function StiffJointsAndKnees() {
             It is built so the curcumin actually gets where it is going
           </h3>
           <p className="text-sm font-bold uppercase tracking-wide text-[#C86F4C] mb-6">
-            1,000mg you do not absorb is 0mg. If the last bottle did nothing, this is why.
+            The turmeric you took for your knees never got into your blood. This is why.
           </p>
 
           <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-[#F2E9DA] mb-6 shadow-md">
@@ -476,7 +496,7 @@ export default function StiffJointsAndKnees() {
         <div className="mt-7">
           <div className="max-w-lg mx-auto px-4 flex items-baseline justify-between gap-3 mb-3">
             <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#DDA15E]">
-              Men who do their own work
+              Men who still get down on one knee
             </p>
             {RATING && (
               <p className="shrink-0 text-[11px] font-bold uppercase tracking-wider text-[#A89682]">
@@ -705,11 +725,11 @@ export default function StiffJointsAndKnees() {
       <section className="bg-[#EFE4D2] py-12">
         <div className="max-w-lg mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground leading-tight text-balance mb-3">
-            Knees, hips, hands, back. It is the work that wore them, not the birthday.
+            Your knees do not get an off season.
           </h2>
           <p className="text-foreground/75 leading-relaxed text-base">
-            Kneeling, lifting, climbing, carrying. Every one of them loads the same joints, and you have done thousands
-            of them. That adds up whether you are forty or seventy.
+            Trimming, planting, splitting, raking, shovelling. Different months, same knees, same hips, same hands.
+            You have done thousands of them, and that adds up whether you are forty or seventy.
           </p>
 
           <div className="mt-7 overflow-hidden rounded-xl border-2 border-[#2D2118]/15 bg-[#FBF6EC] shadow-sm">
@@ -778,7 +798,7 @@ export default function StiffJointsAndKnees() {
           </div>
 
           <p className="mt-5 text-foreground/75 leading-relaxed text-base">
-            Most turmeric is sold as a lawn-season thing. Your back does not get a lawn season.{" "}
+            Most turmeric is sold as a lawn-season thing. Your joints do not keep a calendar.{" "}
             <span className="font-bold text-foreground">That is the work this was built around.</span>
           </p>
         </div>
@@ -833,10 +853,10 @@ export default function StiffJointsAndKnees() {
             </div>
 
             {/* Outcome first, spec second. The ingredient is the proof, not
-                the pitch: he does not buy a phytosome, he buys the Sunday. */}
+                the pitch: he does not buy a phytosome, he buys the stairs. */}
             <div className="grid grid-cols-2 gap-3 mb-5">
               <div className="bg-[#F4EFE3] rounded-lg p-3.5">
-                <p className="text-xs text-foreground font-bold leading-snug">Built for the day after</p>
+                <p className="text-xs text-foreground font-bold leading-snug">Built for the getting up</p>
                 <p className="mt-1 text-[11px] text-foreground/60 leading-snug">
                   500mg high-absorption curcumin phytosome
                 </p>
@@ -889,9 +909,9 @@ export default function StiffJointsAndKnees() {
           Try it on a season of your own work
         </h2>
         <p className="text-base text-foreground/75 leading-relaxed max-w-md mx-auto">
-          Take it every day for two months. If you get to the end of the second bottle and your working weeks do
-          not feel any different, email us inside ninety days and we will refund you. Keep the bottles, we do not
-          want them back.
+          Take it every day for two months. If you get to the end of the second bottle and the stairs, the mornings
+          and getting up off one knee are no different, email us inside ninety days and we will refund you. Keep
+          the bottles, we do not want them back.
         </p>
       </section>
 
