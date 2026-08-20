@@ -5,12 +5,37 @@ export interface ReasonData {
   number: number
   title: string
   titleAccent?: string
+  /** Body copy. Wrap a phrase in **double asterisks** to bold it. See `emphasise`. */
   paragraphs: string[]
   bullets: string[]
   image: string
   imageAlt: string
   imageAspect?: string
   cta?: string
+}
+
+/**
+ * ⭐ SCAN ANCHORS. Reason bodies are short but they still read as a wall on a
+ * phone, and a solution-aware reader skims before he commits. Bolding two or
+ * three phrases per paragraph gives his eye somewhere to land and carries the
+ * argument on its own if he reads nothing else.
+ *
+ * `lib/bpp-reasons.ts` is a .ts data file and cannot hold JSX, so emphasis is
+ * marked inline with **double asterisks** and resolved here. Odd-indexed
+ * segments of a split on `**` are the emphasised ones.
+ *
+ * ⚠ KEEP IT TO 2-3 PER PARAGRAPH. Bold everything and nothing is bold.
+ */
+function emphasise(text: string) {
+  return text.split('**').map((seg, i) =>
+    i % 2 === 1 ? (
+      <strong key={i} className="font-semibold text-foreground">
+        {seg}
+      </strong>
+    ) : (
+      seg
+    ),
+  )
 }
 
 /**
@@ -53,7 +78,7 @@ export function Reason({ data }: { data: ReasonData }) {
 
         <div className="space-y-4 text-base leading-relaxed text-pretty text-foreground/90 md:mt-4">
           {data.paragraphs.map((p, i) => (
-            <p key={i}>{p}</p>
+            <p key={i}>{emphasise(p)}</p>
           ))}
         </div>
 
