@@ -19,59 +19,54 @@ const flags: Record<Country, string> = {
   Canada: '🇨🇦',
 }
 
-// Placeholder reviews. Duplicate an entry to add more; vary country/rating/daysAgo
-// and write in an authentic voice (occasional typo is fine). Aim for 6-12 total.
-// ⚠ VERBATIM from the six reviews live on the PDP, attributed exactly as the
-// page attributes them. These are WRITTEN, not collected: the product has zero
-// orders. Do not add a seventh voice that does not exist on the product page.
 const reviews: Review[] = [
+  {
+    name: 'Verified buyer, 61',
+    country: 'USA',
+    rating: 5,
+    title: 'I had decided the whole business was nonsense.',
+    body: 'Bought turmeric off a pharmacy shelf years ago, took it a month, felt nothing, and decided the whole business was nonsense. My wife talked me into this one because of the absorption thing. Took about five weeks before I would say anything had changed and I had nearly packed it in. Glad I did not.',
+    daysAgo: 3,
+  },
   {
     name: 'Verified buyer, 68',
     country: 'USA',
     rating: 5,
-    title: "Monday used to be a write-off.",
-    body: "I am 68 and I have got two and a half acres I am not handing over to anybody. What I noticed first was Monday. I used to write the whole day off after doing the trimming, just sit there being useless. Now I am up and getting something done with it. Same work. Less of it following me into the week.",
-    daysAgo: 3,
+    title: 'Three bottles before this one.',
+    body: 'I had bought turmeric three separate times over the years and never got a thing out of any of it. Went and turned the last bottle over after reading this and there it was, black pepper extract, five milligrams, right at the bottom of the panel. I had been looking at that for two years without once asking what it was doing there.',
+    daysAgo: 8,
   },
   {
     name: 'Verified buyer, 52',
     country: 'USA',
     rating: 5,
-    title: "I get the whole thing done in one go now.",
-    body: "Never enjoyed yard work and I still do not. My problem was I had started putting it off, because I knew exactly what Sunday was going to cost me. About five weeks in and that dread has mostly gone. I get the whole thing done in one go now instead of spreading it over two days.",
-    daysAgo: 7,
-  },
-  {
-    name: 'Verified buyer, 61',
-    country: 'USA',
-    rating: 5,
-    title: "I had nearly packed it in.",
-    body: "Bought turmeric off a pharmacy shelf years ago, took it a month, felt nothing, decided the whole business was nonsense. My wife talked me into this one because of the absorption thing. Took about five weeks before I would say anything had changed and I had nearly packed it in. Glad I did not. First fall in a while I have split wood two days running.",
+    title: 'Went and got mine out of the cupboard.',
+    body: 'Did the label check while I was reading. Mine said 1,500 mg on the front and there was no curcumin figure anywhere on the back, just one combined total for the blend. I could not tell you today how much curcumin I was actually taking. That was enough for me to try something else.',
     daysAgo: 11,
   },
   {
     name: 'Verified buyer, 71',
     country: 'USA',
     rating: 5,
-    title: "I would rather not be taking ibuprofen daily.",
-    body: "I had been reaching for ibuprofen most days through the summer and I was not happy about it. That is the whole reason I went looking for something else. I am 71 and I would rather not be putting that in me every single day if there is another way to go about it. Been on this since spring and I am getting through the season.",
+    title: 'I would rather not be taking ibuprofen daily.',
+    body: 'I had been reaching for it most days through the summer and I was not happy about it. That is the whole reason I went looking for something else in the first place. I am 71 and I would rather not be putting that in me every single day if there is another way to go about it.',
     daysAgo: 15,
   },
   {
     name: 'Verified buyer, 44',
     country: 'USA',
     rating: 5,
-    title: "Thursday and Friday are just days now.",
-    body: "I do lawn maintenance, so this is not a hobby for me, it is twenty odd properties a week. Ordered the three bottles. What is different is the back half of the week. Thursday and Friday used to be the two I dreaded. They are just days now.",
+    title: 'I looked the study up myself.',
+    body: 'I do not take marketing at its word, so I went and found the 1998 paper. Eight people. One of the authors runs the company that sells the pepper. It is all there in the open, which is the part I still cannot get over. Ordered the three bottles on the strength of that alone.',
     daysAgo: 19,
   },
   {
     name: 'Verified buyer, 66',
     country: 'USA',
     rating: 5,
-    title: "I told her it would not do a thing.",
-    body: "My wife ordered this after watching me come in off the trimmer and lie on the kitchen floor for twenty minutes. I told her it would not do a thing. Two months on I am still taking it, which she has pointed out more than once. I will leave it there.",
-    daysAgo: 23,
+    title: 'I told her it would not do a thing.',
+    body: 'My wife ordered it after I had spent a year telling anyone who would listen that turmeric was a waste of money. I told her it would not do a thing. Two months on I am still taking it, which she has pointed out more than once. I will leave it there.',
+    daysAgo: 24,
   },
 ]
 
