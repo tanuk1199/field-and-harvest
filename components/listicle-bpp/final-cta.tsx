@@ -9,10 +9,12 @@ const PRODUCT_URL = 'https://fieldandharvestco.com/products/turmeric-curcumin-co
 export function FinalCta() {
   return (
     <section className="mx-auto max-w-5xl px-4 py-12">
-      <h2 className="mb-8 text-center font-serif text-4xl font-semibold uppercase tracking-tight sm:text-5xl">
-        Turmeric That Was Built
-        <br />
-        To Actually Get In
+      {/* three explicit lines. Left to wrap on its own at 390px this broke into
+          four with "IN" orphaned on the last one. */}
+      <h2 className="mb-8 text-center font-serif text-[2rem] font-semibold uppercase leading-[1.05] tracking-tight sm:text-5xl sm:leading-tight">
+        <span className="block">Turmeric That Was</span>
+        <span className="block">Built To Actually</span>
+        <span className="block">Get In</span>
       </h2>
 
       <div className="grid items-stretch gap-6 rounded-2xl border border-border bg-card p-4 sm:p-6 md:grid-cols-2">

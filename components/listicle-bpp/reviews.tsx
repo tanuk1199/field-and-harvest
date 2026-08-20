@@ -123,7 +123,7 @@ export function Reviews() {
                   {flags[r.country]}
                 </span>
                 <span className="font-semibold">{r.name}</span>
-                <span className="rounded-full bg-accent px-2 py-0.5 text-[11px] font-medium text-accent-foreground">
+                <span className="shrink-0 whitespace-nowrap rounded-full bg-accent px-2 py-0.5 text-[11px] font-medium text-accent-foreground">
                   Verified Buyer
                 </span>
               </div>

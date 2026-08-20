@@ -14,29 +14,29 @@ const ingredients: Ingredient[] = [
     icon: Droplets,
     name: 'Find the curcumin',
     sub: 'Step one',
-    does: 'It should have its own milligram figure, on its own line. Not turmeric. Curcumin.',
-    evidence: 'Often only a combined total for the whole blend.',
+    does: 'Its own milligram figure, on its own line. Not turmeric. Curcumin.',
+    evidence: 'Usually just one total for the whole blend.',
   },
   {
     icon: Sprout,
     name: 'Look for the pepper',
     sub: 'Step two',
-    does: 'Piperine, black pepper extract, or a branded pepper name. Usually about 5 mg.',
-    evidence: 'Printed as a feature, not as a caution.',
+    does: 'Piperine or a branded pepper name. Usually about 5 mg.',
+    evidence: 'Printed as a feature, not a caution.',
   },
   {
     icon: Sparkles,
     name: 'Check the form',
     sub: 'Step three',
-    does: 'Look for a named form. Phytosome, or a branded ingredient with a dossier behind it.',
-    evidence: 'Powder, extract and 95% curcuminoids are all raw curcumin.',
+    does: 'A named form with a dossier behind it. Phytosome, not powder.',
+    evidence: '95% curcuminoids is still raw curcumin.',
   },
   {
     icon: Coffee,
     name: 'Count the lines',
     sub: 'Step four',
-    does: 'Every active should be listed separately with its own dose beside it.',
-    evidence: 'One combined weight tells you nothing about what is in there.',
+    does: 'Every active listed separately, with its own dose.',
+    evidence: 'One combined weight tells you nothing.',
   },
 ]
 
@@ -60,13 +60,14 @@ export function BonusReason() {
 
         {/* Intro copy */}
         <p className="mt-4 max-w-2xl text-lg leading-relaxed text-pretty">
-          Kitchen cupboard, garage shelf, wherever it ended up. It takes about a minute and you do not have to take our word for any of this. Four things to look for on the back.
+          Kitchen cupboard, garage shelf, wherever it ended up. Four things to look for on the back, and you do not have to take our word for any of it.
         </p>
 
         {/* Ingredient table */}
         <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-card text-card-foreground shadow-sm">
-          {/* Header */}
-          <div className="grid grid-cols-[minmax(7.5rem,1fr)_2fr] bg-secondary text-secondary-foreground">
+          {/* Header. Desktop only: on mobile the rows are a single column, so a
+              two-column header labels columns that are not there. */}
+          <div className="hidden sm:grid sm:grid-cols-[minmax(7.5rem,1fr)_2fr] bg-secondary text-secondary-foreground">
             <div className="px-4 py-3 text-xs font-semibold tracking-[0.15em] uppercase sm:text-sm">
               Component
             </div>
@@ -81,22 +82,20 @@ export function BonusReason() {
             return (
               <div
                 key={item.name}
-                className={`grid grid-cols-[minmax(7.5rem,1fr)_2fr] ${
-                  i > 0 ? 'border-t border-border' : ''
-                }`}
+                className={`${i > 0 ? 'border-t border-border' : ''} px-4 py-4 sm:grid sm:grid-cols-[minmax(7.5rem,1fr)_2fr] sm:gap-0 sm:px-0 sm:py-0`}
               >
-                <div className="flex flex-col items-center justify-center gap-2 border-r border-border px-3 py-6 text-center">
-                  <Icon className="h-7 w-7 text-primary" aria-hidden="true" />
-                  <span className="font-serif text-base font-semibold leading-tight">
+                <div className="flex items-center gap-2.5 sm:flex-col sm:justify-center sm:gap-2 sm:border-r sm:border-border sm:px-3 sm:py-6 sm:text-center">
+                  <Icon className="h-5 w-5 shrink-0 text-primary sm:h-7 sm:w-7" aria-hidden="true" />
+                  <span className="font-serif text-[17px] font-semibold leading-tight sm:text-base">
                     {item.name}
                   </span>
-                  <span className="text-[11px] font-semibold tracking-[0.1em] text-primary uppercase">
+                  <span className="text-[10px] font-semibold tracking-[0.1em] text-primary uppercase sm:text-[11px]">
                     {item.sub}
                   </span>
                 </div>
-                <div className="px-4 py-6">
-                  <p className="text-base leading-relaxed text-pretty">{item.does}</p>
-                  <p className="mt-2 text-xs leading-snug text-muted-foreground">
+                <div className="mt-1.5 sm:mt-0 sm:px-4 sm:py-6">
+                  <p className="text-[15px] leading-snug text-pretty sm:text-base sm:leading-relaxed">{item.does}</p>
+                  <p className="mt-1 text-[12px] leading-snug text-muted-foreground sm:mt-2 sm:text-xs">
                     <span className="font-semibold uppercase tracking-wide">On the label:</span>{' '}
                     {item.evidence}
                   </p>
@@ -106,18 +105,8 @@ export function BonusReason() {
           })}
         </div>
 
-        {/* Peer-reviewed badge */}
-        <div className="mt-8 flex justify-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-primary bg-card px-5 py-2 text-card-foreground">
-            <FlaskConical className="h-4 w-4 text-primary" aria-hidden="true" />
-            <span className="text-xs font-semibold tracking-[0.12em] uppercase sm:text-sm">
-              Check Yours, Then Check Ours.
-            </span>
-          </div>
-        </div>
-
         {/* CTA */}
-        <div className="mt-6 flex justify-center">
+        <div className="mt-7 flex justify-center">
           <CtaButton
             label="See What Is In Ours"
             location="bonus-section"
