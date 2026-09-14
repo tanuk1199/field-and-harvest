@@ -15,7 +15,7 @@ const ingredients: Ingredient[] = [
     name: 'Pine needles',
     sub: 'Underfoot',
     does: 'Long, thin, matted into the grass in a layer you cannot rake cleanly.',
-    evidence: 'A mower blade cuts them and leaves them where they were. The mat underneath is last year&rsquo;s.',
+    evidence: 'A mower blade cuts them and leaves them where they were. The mat underneath is last year’s.',
   },
   {
     icon: Sprout,
@@ -33,7 +33,7 @@ const ingredients: Ingredient[] = [
   },
   {
     icon: Coffee,
-    name: 'Last weekend&rsquo;s pile',
+    name: 'Last weekend’s pile',
     sub: 'By the beds',
     does: 'The one you blew into a corner and did not bag.',
     evidence: 'A blower never picked anything up. That is the part still waiting.',
