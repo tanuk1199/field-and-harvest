@@ -80,7 +80,7 @@ const theme = {
   '--font-serif': "'Cormorant Garamond', ui-serif, Georgia, serif",
 } as CSSProperties
 
-// ⚠ THE ACCENT SPAN IS THE SHORT HALF, ALWAYS. The template colours whatever
+// ⚠ THE ACCENT SPAN IS THE SHORT HALF, ALWAYS. The template colors whatever
 // sits in the span, so a long accent inverts the emphasis and reads as a broken
 // layout rather than a highlight. Tobenna's line named the rake, the blower and
 // the bending; all three are kept, with the accent held to the closing clause.

@@ -37,7 +37,7 @@ const rows: Row[] = [
     icon: Coffee,
     label: 'Gas, cord or battery',
     brand: { text: 'None, you push it', mark: 'check' },
-    alt1: { text: 'Yes, and the neighbours know', mark: 'x' },
+    alt1: { text: 'Yes, and the neighbors know', mark: 'x' },
     alt2: { text: 'None', mark: 'check' },
   },
 ]

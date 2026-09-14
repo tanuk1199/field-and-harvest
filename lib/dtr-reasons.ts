@@ -78,7 +78,7 @@ export const reasons: ReasonData[] = [
     title: 'Use it for a full fall before you decide anything',
     titleAccent: 'Sixty days, shipping both ways',
     image: 'https://cdn.shopify.com/s/files/1/0651/8299/0379/files/ysp-autumn-full-season.png?v=1789416096',
-    imageAlt: 'A man pushing the Yeoman Sweep across a leaf covered lawn in full autumn colour, hopper loaded with maple leaves',
+    imageAlt: 'A man pushing the Yeoman Sweep across a leaf covered lawn in full autumn color, hopper loaded with maple leaves',
     paragraphs: ['This is a fall tool, so a two week window would be worth nothing. **Take it through the whole season.** If it has not taken the bending out of your yard cleanup, tell us inside sixty days. We refund you in full, **with free shipping both ways**. Three 300 liter yard bags, the One-Pass Yard guide, the Tool Audit checklist: all of it comes free in the box, and **you keep it either way.**'],
     bullets: ['60 days, not 14, because this is a seasonal tool', 'Free shipping out and free shipping back', '$77 of gear included, yours to keep regardless'],
   },
