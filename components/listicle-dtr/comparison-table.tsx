@@ -44,7 +44,7 @@ const rows: Row[] = [
 
 function CellBlock({ cell, strong }: { cell: Cell; strong?: boolean }) {
   return (
-    <div className="flex h-full items-start justify-center gap-0.5 px-0.5 py-2 text-center md:gap-1 md:px-2 md:py-4">
+    <div className="flex h-full items-start justify-start gap-1 py-2 pl-2 pr-1 text-left md:gap-1.5 md:py-4 md:pl-3 md:pr-2">
       {cell.mark === 'check' && (
         <Check className="mt-0.5 h-3 w-3 shrink-0 text-primary md:h-4 md:w-4" aria-hidden="true" />
       )}
@@ -74,13 +74,13 @@ export function ComparisonTable() {
             The Yeoman Sweep
           </span>
         </div>
-        <div className="flex items-end justify-center px-0.5 pb-2 md:px-1 md:pb-3">
-          <span className="text-center font-serif text-[11px] leading-tight text-primary sm:text-xl">
+        <div className="flex items-end justify-start pb-2 pl-2 pr-1 md:pb-3 md:pl-3 md:pr-2">
+          <span className="text-left font-serif text-[11px] leading-tight text-primary sm:text-xl">
             A leaf blower
           </span>
         </div>
-        <div className="flex items-end justify-center px-0.5 pb-2 md:px-1 md:pb-3">
-          <span className="text-center font-serif text-[11px] leading-tight text-primary sm:text-xl">
+        <div className="flex items-end justify-start pb-2 pl-2 pr-1 md:pb-3 md:pl-3 md:pr-2">
+          <span className="text-left font-serif text-[11px] leading-tight text-primary sm:text-xl">
             A rakes
           </span>
         </div>
