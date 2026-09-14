@@ -95,10 +95,10 @@ const headline = (
 const intro = (
   <>
     <span className="font-bold">
-      You already own a rake, and probably a blower, and the yard still takes the whole weekend.
+      You own a rake. You probably own a blower. The yard still takes the whole weekend.
     </span>{' '}
-    Neither of them picks anything up. One gathers and one relocates, and both of them end the same way, with you
-    on your knees holding a bag open.
+    Neither one picks anything up. One gathers, the other moves it. Both finish with you on your knees, holding a
+    bag open.
   </>
 )
 

@@ -123,7 +123,7 @@ export function ComparisonTable() {
       </div>
 
       <p className="mt-5 text-sm text-muted-foreground sm:text-base">
-        A rake gathers and a blower moves. Neither one picks anything up, which is why both of them end with you on your knees holding a bag open. Only one column on this table ends with the debris already in a hopper.</p>
+        Two of these three columns finish in exactly the same place: a pile still on the ground, you kneeling next to it. Only one finishes with the lawn clear.</p>
     </section>
   )
 }

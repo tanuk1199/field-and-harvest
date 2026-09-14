@@ -62,7 +62,7 @@ export const reasons: ReasonData[] = [
     titleAccent: 'Sixty days, shipping both ways',
     image: 'https://cdn.shopify.com/s/files/1/0651/8299/0379/files/ysp-gift-bags-autumn.png?v=1789296227',
     imageAlt: 'Three 300 liter yard bags standing open on a lawn in autumn',
-    paragraphs: ['This is a fall tool, so a two week window would be worth nothing. **Take it through the whole season.** If it has not taken the bending out of your yard cleanup, tell us inside sixty days and we refund you in full, **with free shipping both ways**. Three 300 liter yard bags, the One-Pass Yard guide and the Tool Audit checklist come free in the box, and **you keep all of it either way.**'],
+    paragraphs: ['This is a fall tool, so a two week window would be worth nothing. **Take it through the whole season.** If it has not taken the bending out of your yard cleanup, tell us inside sixty days. We refund you in full, **with free shipping both ways**. Three 300 liter yard bags, the One-Pass Yard guide, the Tool Audit checklist: all of it comes free in the box, and **you keep it either way.**'],
     bullets: ['60 days, not 14, because this is a seasonal tool', 'Free shipping out and free shipping back', '$77 of gear included, yours to keep regardless'],
   },
 ]
