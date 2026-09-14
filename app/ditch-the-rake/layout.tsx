@@ -8,11 +8,11 @@ const OG_IMAGE =
   "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/ysp-guarantee.png?width=1200"
 
 export const metadata: Metadata = {
-  title: "5 Reasons Homeowners Are Ditching The Rake This Fall | Field & Harvest Co.",
+  title: "6 Reasons Homeowners Are Ditching The Rake This Fall | Field & Harvest Co.",
   description:
     "A rake gathers and a blower relocates. Neither one picks anything up, which is why both end with you on your knees holding a bag open. Here is what a push lawn sweeper does instead, including the acorns and pine needles a mower cannot mulch. Save up to 22%, 60-day money back guarantee.",
   openGraph: {
-    title: "5 Reasons Homeowners Are Ditching The Rake This Fall",
+    title: "6 Reasons Homeowners Are Ditching The Rake This Fall",
     description:
       "A rake gathers. A blower moves. Neither picks anything up. What the Yeoman Sweep does instead, in one walk.",
     type: "article",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "5 Reasons Homeowners Are Ditching The Rake This Fall",
+    title: "6 Reasons Homeowners Are Ditching The Rake This Fall",
     description: "A rake gathers. A blower moves. Neither picks anything up.",
     images: [OG_IMAGE],
   },

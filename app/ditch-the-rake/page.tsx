@@ -86,7 +86,7 @@ const theme = {
 // the bending; all three are kept, with the accent held to the closing clause.
 const headline = (
   <>
-    5 Reasons Homeowners Are Switching To This Lawn Tool And Ditching The Rake,{' '}
+    6 Reasons Homeowners Are Switching To This Lawn Tool And Ditching The Rake,{' '}
     <span className="text-primary">The Leaf Blower And The Painful Bending</span>
   </>
 )
