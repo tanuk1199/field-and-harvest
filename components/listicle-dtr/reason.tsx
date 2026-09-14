@@ -11,6 +11,9 @@ export interface ReasonData {
   image: string
   imageAlt: string
   imageAspect?: string
+  /** Optional silent autoplaying loop. When present it replaces the still. */
+  video?: string
+  poster?: string
   cta?: string
 }
 
@@ -61,6 +64,20 @@ export function Reason({ data }: { data: ReasonData }) {
       </h2>
 
       <figure className="overflow-hidden rounded-xl border border-border">
+        {data.video ? (
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster={data.poster}
+            aria-label={data.imageAlt}
+            className={`${data.imageAspect ?? 'aspect-square'} h-full w-full object-cover`}
+          >
+            <source src={data.video} type="video/mp4" />
+          </video>
+        ) : (
         <Image
           src={data.image || '/placeholder.svg'}
           alt={data.imageAlt}
@@ -68,6 +85,7 @@ export function Reason({ data }: { data: ReasonData }) {
           height={1000}
           className={`${data.imageAspect ?? 'aspect-square'} h-full w-full object-cover`}
         />
+        )}
       </figure>
 
       <div>

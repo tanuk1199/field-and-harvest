@@ -26,6 +26,16 @@ import { reasons } from '@/lib/dtr-reasons'
 // isolated copy at `components/listicle-dtr/*` plus `lib/dtr-reasons.ts`.
 // Never point a second product at another product's set.
 //
+// ⛔ THE COMPARISON TABLE IS THE CANONICAL ONE, NOT THE BLACK-PEPPER FORK.
+// The first build cloned components/listicle-bpp/*, and that page had rewritten
+// the table's mobile layout (130 lines -> 192): a solid header band with the row
+// label on its own full-width line, instead of the 4-column grid with the
+// bordered, highlighted winner column that /the-only-trimmer-handle renders.
+// It read as a different table on a phone. comparison-table.tsx here is rebuilt
+// from components/listicle/comparison-table.tsx, the canonical file.
+// ⚠ When cloning this template, clone the TEMPLATE, not another live page. Live
+// pages carry their own per-page surgery.
+//
 // ⭐ SOLUTION-AWARE, and the comparison is the reason the template was chosen.
 // The buyer already owns a rake and a blower and is deciding between tools, not
 // learning that leaves exist. The above-fold table is Sweep vs blower vs rake,
@@ -78,7 +88,7 @@ const theme = {
 const headline = (
   <>
     5 Reasons Homeowners Are Switching To This Lawn Tool And Ditching The Rake,{' '}
-    <span className="text-primary">The Blower And The Bending</span>
+    <span className="text-primary">The Leaf Blower And The Painful Bending</span>
   </>
 )
 

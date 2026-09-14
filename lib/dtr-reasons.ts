@@ -30,6 +30,8 @@ export const reasons: ReasonData[] = [
     image: 'https://cdn.shopify.com/s/files/1/0651/8299/0379/files/ysp-tile-driveway.png?v=1789356608',
     imageAlt: 'Dry leaves ahead of a sweeper on a concrete driveway with clean concrete behind it',
     paragraphs: ['Gas, cord or battery, a blower does one thing: **it relocates the problem to a spot you then have to kneel next to.** You are not buying horsepower. You are buying the half of the job that happens **after** the pile exists, and that half has always been done by hand. The Sweep skips the pile entirely. There is nothing to come back to, because the debris went into a **7 cubic foot hopper** while you were still walking.'],
+    video: 'https://cdn.shopify.com/videos/c/vp/63817aa5985948238541d9baa0548dcb/63817aa5985948238541d9baa0548dcb.HD-1080p-7.2Mbps-94335551.mp4',
+    poster: 'https://cdn.shopify.com/s/files/1/0651/8299/0379/files/preview_images/63817aa5985948238541d9baa0548dcb.thumbnail.0000000000.jpg?v=1789378221',
     bullets: ['No pile to bag afterwards', 'Nothing to start, refuel or charge', 'Quiet enough that the neighbours do not know'],
   },
   {
@@ -39,6 +41,8 @@ export const reasons: ReasonData[] = [
     image: 'https://cdn.shopify.com/s/files/1/0651/8299/0379/files/ysp-demo-leaves-poster.png?v=1789377426',
     imageAlt: 'A push lawn sweeper clearing leaves off a lawn at walking pace',
     paragraphs: ['Blow the leaves into a pile. Rake what the blower missed. Then **bend down, forty or fifty times, scooping armfuls into a bag that will not stay open.** Then do it again next Saturday because more came down overnight. That is **four separate motions to move leaves about twenty feet**. If your back hurts from bending and raking leaves, that is the part this removes. Not the walking. **The bending.**'],
+    video: 'https://cdn.shopify.com/videos/c/vp/dc92eeff97654bedb1a78b932149c493/dc92eeff97654bedb1a78b932149c493.HD-1080p-4.8Mbps-94336431.mp4',
+    poster: 'https://cdn.shopify.com/s/files/1/0651/8299/0379/files/preview_images/dc92eeff97654bedb1a78b932149c493.thumbnail.0000000000.jpg?v=1789378867',
     bullets: ['You walk, it lifts, the hopper fills behind you', 'The hopper comes off on four buckles at waist height', 'Three 300 liter bags come in the box, so bagging is solved before you start'],
   },
   {
@@ -48,6 +52,8 @@ export const reasons: ReasonData[] = [
     image: 'https://cdn.shopify.com/s/files/1/0651/8299/0379/files/ysp-build.png?v=1789378302',
     imageAlt: 'Everything in the box laid out: core unit, push frame, hopper, hardware and guide',
     paragraphs: ['Nothing on it is powered. **The wheels turn the brushes, and they turn them fast: one turn of the wheels spins the brushes five times.** So you walk at a normal pace and the brushes are moving quick enough to flick debris up off the grass. **Ten brush heights** adjust from a handle at the side, so you can change it between the flat part of the lawn and the rough part without going to find a tool. **It weighs 29.77 lb and you supply the power. If pushing a mower is already too much, this will be too.**'],
+    video: 'https://cdn.shopify.com/videos/c/vp/c9bd6065364f43f6b82be7185e42f2bb/c9bd6065364f43f6b82be7185e42f2bb.HD-1080p-3.3Mbps-94336178.mp4',
+    poster: 'https://cdn.shopify.com/s/files/1/0651/8299/0379/files/preview_images/c9bd6065364f43f6b82be7185e42f2bb.thumbnail.0000000000.jpg?v=1789378677',
     bullets: ['No gas, no cords, no battery, nothing to service', 'Ten V-brush heights, set from the side by hand', 'Metal frame, and the core arrives assembled'],
   },
   {
