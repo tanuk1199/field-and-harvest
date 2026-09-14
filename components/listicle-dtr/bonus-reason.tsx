@@ -13,9 +13,9 @@ const ingredients: Ingredient[] = [
   {
     icon: Droplets,
     name: 'Pine needles',
-    sub: 'Look down',
+    sub: 'Underfoot',
     does: 'Long, thin, matted into the grass in a layer you cannot rake cleanly.',
-    evidence: 'A mower blade cuts them and leaves them exactly where they were.',
+    evidence: 'A mower blade cuts them and leaves them where they were. The mat underneath is last year&rsquo;s.',
   },
   {
     icon: Sprout,
@@ -48,19 +48,19 @@ export function BonusReason() {
         <div className="inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-1.5 text-secondary-foreground">
           <Star className="h-4 w-4 fill-primary text-primary" aria-hidden="true" />
           <span className="text-sm font-semibold tracking-[0.15em] uppercase">
-            Do This <span className="text-primary">Now</span>
+            Check It <span className="text-primary">Yourself</span>
           </span>
         </div>
 
         {/* Headline */}
         <h2 className="mt-5 font-serif text-3xl font-semibold leading-[1.1] tracking-tight text-balance sm:text-4xl md:text-5xl">
-          Go And Look At Your Own Lawn{' '}
-          <span className="text-primary">Before You Read On</span>
+          Four Things Are On Your Lawn Right Now. Two Of Them Have Been There{' '}
+          <span className="text-primary">Since Last Fall</span>
         </h2>
 
         {/* Intro copy */}
         <p className="mt-4 max-w-2xl text-lg leading-relaxed text-pretty">
-          Stand at the back door and look at the grass. Four things are on it right now, and you do not have to take our word for a single one of them.
+          You do not have to go outside to know this. Four things are on the grass right now, two of them left over from last year, and you can confirm every one of them the next time you walk the yard.
         </p>
 
         {/* Ingredient table */}
