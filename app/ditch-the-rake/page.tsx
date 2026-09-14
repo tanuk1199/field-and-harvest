@@ -3,7 +3,6 @@ import { AnnouncementBar } from '@/components/listicle-dtr/announcement-bar'
 import { ArticleHeader } from '@/components/listicle-dtr/article-header'
 import { ComparisonTable } from '@/components/listicle-dtr/comparison-table'
 import { Reason } from '@/components/listicle-dtr/reason'
-import { BonusReason } from '@/components/listicle-dtr/bonus-reason'
 import { Timeline } from '@/components/listicle-dtr/timeline'
 import { FinalCta } from '@/components/listicle-dtr/final-cta'
 import { Guarantee } from '@/components/listicle-dtr/guarantee'
@@ -114,9 +113,6 @@ export default function Page() {
         {reasons.map((reason) => (
           <div key={reason.number}>
             <Reason data={reason} />
-            {/* The guided lawn check sends him to look at the exact debris
-                reason 1 just named, so it lands directly after it. */}
-            {reason.number === 1 && <BonusReason />}
           </div>
         ))}
 
