@@ -1,3 +1,23 @@
+// These are VERBATIM published reviews from owners of push lawn sweepers, taken
+// from Push Lawn Sweeper/research/voc/reviews.json. The Sweep has zero orders,
+// so the template's invented "Verified Buyer" wall and its 4.6 / 5,800 masthead
+// were both stripped.
+//
+// ⭐ THE HEADING IS THE LOAD-BEARING PART. It says what PUSH SWEEPER OWNERS say,
+// not what OUR customers say, which is what keeps this a category-testimony
+// block rather than a review wall for a product nobody has bought yet. Same
+// device as "What men actually say about turmeric" on /the-turmeric-trap.
+// Change the heading to imply these people own a Yeoman Sweep and the section
+// becomes something else entirely.
+//
+// ⛔ DO NOT RE-ADD A DISCLAIMER PARAGRAPH UNDER THE HEADING. One shipped here
+// reading "The Yeoman Sweep is new and has no reviews of its own yet, so we are
+// not going to show you any... people who bought a different machine", and the
+// owner killed it on sight. It announced an absence and told the reader to
+// discount the quotes before reading them. Claims discipline is an INTERNAL
+// writing constraint, never customer-facing copy: apply it by what you omit and
+// by how the heading is worded, not by apologising in the body. The small
+// per-card line is the attribution and it is sufficient.
 import { Star, Quote } from 'lucide-react'
 
 // ⛔⛔ THE YEOMAN SWEEP HAS ZERO COLLECTED REVIEWS. No invented testimonial and
@@ -70,12 +90,8 @@ export function Reviews() {
     <section className="mx-auto max-w-5xl px-4 py-14" aria-labelledby="reviews-heading">
       <div className="text-center">
         <h2 id="reviews-heading" className="font-serif text-3xl font-semibold sm:text-4xl">
-          What People Who Own One <span className="text-primary">Say About Sweeping Instead Of Raking</span>
+          What Push Sweeper Owners Say <span className="text-primary">About Giving Up The Rake</span>
         </h2>
-        <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-          The Yeoman Sweep is new and has no reviews of its own yet, so we are not going to show you any. These are
-          published reviews of push lawn sweepers, written by people who bought a different machine.
-        </p>
       </div>
 
       <div className="mt-10 grid gap-4 sm:grid-cols-2">
