@@ -114,10 +114,9 @@ export default function Page() {
         {reasons.map((reason) => (
           <div key={reason.number}>
             <Reason data={reason} />
-            {/* The guided lawn check lands after reason 2, once the blower is
-                dead and before the bending argument, so he goes and looks at the
-                pile the blower left. */}
-            {reason.number === 2 && <BonusReason />}
+            {/* The guided lawn check sends him to look at the exact debris
+                reason 1 just named, so it lands directly after it. */}
+            {reason.number === 1 && <BonusReason />}
           </div>
         ))}
 

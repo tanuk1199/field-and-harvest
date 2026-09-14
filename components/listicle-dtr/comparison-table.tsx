@@ -23,8 +23,8 @@ const rows: Row[] = [
     icon: Droplets,
     label: 'Picks it up off the ground',
     brand: { text: 'Into a 7 cu ft hopper', mark: 'check' },
-    alt1: { text: 'No', mark: 'x' },
-    alt2: { text: 'No', mark: 'x' },
+    alt1: { text: 'Never lifts a thing', mark: 'x' },
+    alt2: { text: 'Only your hands do', mark: 'x' },
   },
   {
     icon: ShieldCheck,

@@ -2,6 +2,12 @@ import { type ReasonData } from '@/components/listicle-dtr/reason'
 
 // 5 reasons for /ditch-the-rake. SOLUTION-AWARE page for The Yeoman Sweep.
 //
+// ⭐ ORDER IS SET BY AWARENESS. This page takes solution-aware traffic off
+// statics that already show the machine, so the product cannot wait until
+// reason 4 the way it did in the first build. Reason 2 is now the machine
+// actually working. Reasons 3 and 4 then say why the tools he already owns
+// cannot do it, which lands better once he has seen the thing that can.
+//
 // ⭐ EACH REASON PROVES A DIFFERENT THING. The failure mode on the last two
 // listicles in this repo was proving ONE thing five times. Here: 1 is the debris
 // a mower cannot handle, 2 kills the blower, 3 is the bending, 4 is the machine,
@@ -25,6 +31,17 @@ export const reasons: ReasonData[] = [
   },
   {
     number: 2,
+    title: 'It lifts the debris off the grass while you are still walking',
+    titleAccent: 'No motor. The wheels drive the brushes',
+    image: 'https://cdn.shopify.com/s/files/1/0651/8299/0379/files/ysp-build.png?v=1789378302',
+    imageAlt: 'Everything in the box laid out: core unit, push frame, hopper, hardware and guide',
+    paragraphs: ['Nothing on it is powered. **The wheels turn the brushes, and they turn them fast: one turn of the wheels spins the brushes five times.** So you walk at a normal pace and the brushes are moving quick enough to flick debris up off the grass. **Ten brush heights** adjust from a handle at the side, so you can change it between the flat part of the lawn and the rough part without going to find a tool. **It weighs 29.77 lb and you supply the power. If pushing a mower is already too much, this will be too.**'],
+    video: 'https://cdn.shopify.com/videos/c/vp/c9bd6065364f43f6b82be7185e42f2bb/c9bd6065364f43f6b82be7185e42f2bb.HD-1080p-3.3Mbps-94336178.mp4',
+    poster: 'https://cdn.shopify.com/s/files/1/0651/8299/0379/files/preview_images/c9bd6065364f43f6b82be7185e42f2bb.thumbnail.0000000000.jpg?v=1789378677',
+    bullets: ['No gas, no cords, no battery, nothing to service', 'Ten V-brush heights, set from the side by hand', 'Metal frame, and the core arrives assembled'],
+  },
+  {
+    number: 3,
     title: 'A blower moves the pile. It has never picked anything up',
     titleAccent: 'The job starts after the pile exists',
     image: 'https://cdn.shopify.com/s/files/1/0651/8299/0379/files/ysp-tile-driveway.png?v=1789356608',
@@ -35,7 +52,7 @@ export const reasons: ReasonData[] = [
     bullets: ['No pile to bag afterwards', 'Nothing to start, refuel or charge', 'Quiet enough that the neighbours do not know'],
   },
   {
-    number: 3,
+    number: 4,
     title: 'It is not the raking people mind. It is the forty times you bend down after it',
     titleAccent: 'Four motions become one walk',
     image: 'https://cdn.shopify.com/s/files/1/0651/8299/0379/files/ysp-demo-leaves-poster.png?v=1789377426',
@@ -44,17 +61,6 @@ export const reasons: ReasonData[] = [
     video: 'https://cdn.shopify.com/videos/c/vp/dc92eeff97654bedb1a78b932149c493/dc92eeff97654bedb1a78b932149c493.HD-1080p-4.8Mbps-94336431.mp4',
     poster: 'https://cdn.shopify.com/s/files/1/0651/8299/0379/files/preview_images/dc92eeff97654bedb1a78b932149c493.thumbnail.0000000000.jpg?v=1789378867',
     bullets: ['You walk, it lifts, the hopper fills behind you', 'The hopper comes off on four buckles at waist height', 'Three 300 liter bags come in the box, so bagging is solved before you start'],
-  },
-  {
-    number: 4,
-    title: 'There is no motor in it, and that is the point',
-    titleAccent: 'The wheels drive the brushes',
-    image: 'https://cdn.shopify.com/s/files/1/0651/8299/0379/files/ysp-build.png?v=1789378302',
-    imageAlt: 'Everything in the box laid out: core unit, push frame, hopper, hardware and guide',
-    paragraphs: ['Nothing on it is powered. **The wheels turn the brushes, and they turn them fast: one turn of the wheels spins the brushes five times.** So you walk at a normal pace and the brushes are moving quick enough to flick debris up off the grass. **Ten brush heights** adjust from a handle at the side, so you can change it between the flat part of the lawn and the rough part without going to find a tool. **It weighs 29.77 lb and you supply the power. If pushing a mower is already too much, this will be too.**'],
-    video: 'https://cdn.shopify.com/videos/c/vp/c9bd6065364f43f6b82be7185e42f2bb/c9bd6065364f43f6b82be7185e42f2bb.HD-1080p-3.3Mbps-94336178.mp4',
-    poster: 'https://cdn.shopify.com/s/files/1/0651/8299/0379/files/preview_images/c9bd6065364f43f6b82be7185e42f2bb.thumbnail.0000000000.jpg?v=1789378677',
-    bullets: ['No gas, no cords, no battery, nothing to service', 'Ten V-brush heights, set from the side by hand', 'Metal frame, and the core arrives assembled'],
   },
   {
     number: 5,
