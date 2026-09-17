@@ -53,7 +53,7 @@ const INK = "#1A1A1A"
 const BODY = "#3E3E3E"
 const PAPER = "#F7F5F1"
 const DARK = "#14181F"      // announcement bar, e.g. Deep Cocoa #2D150B
-const CTA = "#D9911A"        // the ONE accent, CTA button only
+const CTA = "#C0653F"        // matches the PDP add-to-cart button (--sup-terra) exactly
 const GOLD = "#E8A33D"           // review stars
 const RULE = "#D8D2C8"
 const MUTE = "#8A8378"
@@ -71,7 +71,9 @@ const H1 = "6 Reasons Thousands Of Homeowners Are Putting Solar Lights On Every 
 const STANDFIRST = "Here is why they are going up around the house before the clocks go back."
 
 // Hero media directly under the standfirst. image | video | none
-const HERO = { kind: "image", src: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/nwl-10-night-backyard-dog_37855872-c2d2-4779-836e-698119fe49fa.png?width=1100", poster: "", alt: "A woman at a back door at night with the yard lit and her dog visible on the grass" } as const
+// No hero media. Reason 1 opens on the motion-sensor clip directly beneath, and a still of the
+// same argument above it was the same point made twice.
+const HERO = { kind: "none" } as const
 
 type Media = { kind: "image"; src: string; alt: string } | { kind: "video"; src: string; poster: string; alt: string } | { kind: "none" }
 
@@ -179,9 +181,11 @@ export default function Page() {
           {STANDFIRST}
         </p>
 
-        <div className="mt-6">
-          <MediaBlock m={HERO} eager />
-        </div>
+        {HERO.kind !== "none" ? (
+          <div className="mt-6">
+            <MediaBlock m={HERO} eager />
+          </div>
+        ) : null}
 
         {REASONS.map((r) => (
           <section key={r.n} className="mt-7">
