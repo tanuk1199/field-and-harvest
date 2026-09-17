@@ -50,7 +50,12 @@ const MUTE = "#8A8378"
 const LOGO = "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/Copy_of_COMFORT_CRADLE_Logos_5.png?width=260"
 const LOGO_ALT = "Field & Harvest Co."
 
-const ANNOUNCEMENT = "Early Fall Sale · Save Up To 28% · 60 Nights To Decide · 1-Year Warranty On All Orders" // one line, the offer, e.g. Buy One, Get One Free
+// Two lines, deliberately a PYRAMID: the top is short and loud, the bottom is
+// longer and quieter. Deviation from the extracted listicle-2, which ships a
+// single line. Owner's call: one long line wrapped badly and read as saying too
+// much. Keep the top line SHORTER than the bottom or the shape inverts.
+const ANNOUNCEMENT_1 = "Early Fall Sale · Save Up To 28%"
+const ANNOUNCEMENT_2 = "60 Nights To Decide · 1-Year Warranty On All Orders" // one line, the offer, e.g. Buy One, Get One Free
 const H1 = "5 Reasons Homeowners Are Putting This Solar Light On Every Side Of The House"                     // numbered, specific, a contract with the reasons
 const STANDFIRST = "Most people who buy one of these end up buying another. Once the first dark spot is handled you start noticing the next one. Here is what makes this particular light worth putting on the drive, the side gate and the shed, not just the one corner."     // 40-70 words at solution/product aware, 80-150 at problem aware
 
@@ -121,8 +126,11 @@ export default function Page() {
   return (
     <div className="min-h-screen font-sans" style={{ backgroundColor: PAPER, color: BODY }}>
       <div className="px-4 py-2.5 text-center" style={{ backgroundColor: DARK }}>
-        <p className="mx-auto max-w-[92%] font-sans text-[10.5px] font-extrabold uppercase leading-[1.4] tracking-[0.06em] text-white sm:text-[12px] sm:tracking-[0.08em]">
-          {ANNOUNCEMENT}
+        <p className="mx-auto max-w-[94%] font-sans text-[11px] font-extrabold uppercase leading-[1.3] tracking-[0.09em] text-white sm:text-[13.5px] sm:tracking-[0.13em]">
+          {ANNOUNCEMENT_1}
+        </p>
+        <p className="mx-auto mt-[3px] max-w-[94%] font-sans text-[9px] font-semibold uppercase leading-[1.3] tracking-[0.06em] text-white/60 sm:text-[10.5px] sm:tracking-[0.09em]">
+          {ANNOUNCEMENT_2}
         </p>
       </div>
 
