@@ -50,9 +50,9 @@ const MUTE = "#8A8378"
 const LOGO = "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/Copy_of_COMFORT_CRADLE_Logos_5.png?width=260"
 const LOGO_ALT = "Field & Harvest Co."
 
-const ANNOUNCEMENT = "Multi-Packs Save Up To 28% · 60 Nights To Decide · 1-Year Warranty" // one line, the offer, e.g. Buy One, Get One Free
+const ANNOUNCEMENT = "Early Fall Sale · Save Up To 28% · 60 Nights To Decide · 1-Year Warranty On All Orders" // one line, the offer, e.g. Buy One, Get One Free
 const H1 = "5 Reasons Homeowners Are Putting This Solar Light On Every Side Of The House"                     // numbered, specific, a contract with the reasons
-const STANDFIRST = "Most people who buy one of these end up buying another. Not because the first one disappointed them, but because once one dark spot is handled you notice the next one. Here is what makes this particular light worth putting on the drive, the side gate, the shed and the back step rather than just the one corner that finally annoyed you enough."     // 40-70 words at solution/product aware, 80-150 at problem aware
+const STANDFIRST = "Most people who buy one of these end up buying another. Once the first dark spot is handled you start noticing the next one. Here is what makes this particular light worth putting on the drive, the side gate and the shed, not just the one corner."     // 40-70 words at solution/product aware, 80-150 at problem aware
 
 // Hero media directly under the standfirst. image | video | none
 const HERO = { kind: "image", src: "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/nwl-21-hyperreal-triggered_2dbde218-95bb-44f0-bc60-805cd5e881dd.png?width=1100", poster: "", alt: "A solar security light triggering as a man walks a path beside a house at night" } as const
@@ -78,9 +78,9 @@ const REVIEWS: { title: string; body: string; name: string }[] = [
 ]
 
 const CTA_CARD = {
-  headline: "Cover the drive, the gate and the back step. Multi-packs save up to 28%.",
+  headline: "Cover the drive, the gate and the back step. Save up to 28% in the Early Fall Sale.",
   guarantee: "60 Nights To Decide. Full Refund If It Is Not Right.",
-  button: "Check Availability",
+  button: "Shop The Early Fall Sale",
   urgency1: "1-Year Warranty On Every Light",
   urgency2: "Free Shipping On Orders Over $85",
 }
