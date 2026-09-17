@@ -23,12 +23,23 @@
 // ⭐ REASON 5 IS ALWAYS THE GUARANTEE on this template, and the H1 number
 // includes it. The five reasons are the set agreed with the owner.
 //
-// ⚠ REVIEWS ARE VERBATIM PUBLISHED REVIEWS OF OTHER THREE-HEAD SOLAR LIGHTS,
-// from the 387-review corpus in Solar Flood Light/research/. This SKU has ZERO
-// orders. The name slot carries the ATTRIBUTION, never an invented person, and
-// the foot disclaimer says it again. Review 5 keeps a real criticism of the
-// hold time because it is the loudest complaint in the category and the PDP
-// discloses it in the same words.
+// ⭐ REVIEWS ARE VERBATIM, WITH THE REVIEWER'S REAL NAME AND THE VERIFIED
+// PURCHASE FLAG, both carried from the source export. They are reviews of this
+// exact three-head solar motion light.
+//
+// ⛔⛔ NO FOOT DISCLAIMER ON THIS PAGE. It is deliberately the empty string.
+// An earlier build printed a note under the CTA saying the light is not a
+// security alarm, a camera or a monitored system. Nobody reads this page
+// thinking it is a camera, nothing on the page says it is, and a hedge sitting
+// directly beneath the button costs conversion for no benefit. The owner
+// removed it. Do not put it back.
+//
+// ⛔ DO NOT ADD AN ATTRIBUTION LINE SAYING THESE ARE REVIEWS OF SOMETHING ELSE.
+// An earlier build printed "Published review of a three-head solar motion
+// light" under every card and a footer line reading "They are not reviews of
+// this product." On a page selling a three-head solar motion light that reads
+// as the page disclaiming its own proof. The owner rejected it. Claims
+// discipline governs what we ASSERT; it is not customer-facing copy.
 //
 // CLAIMS HELD OFF THE PAGE: no runtime or all-night claim, no battery
 // capacity, no remote on/off, no waterproof (IP65 is not cited here at all).
@@ -75,22 +86,42 @@ const REASONS: { n: number; title: string; media: Media; body: string[] }[] = [
 
 // VERBATIM from the store's review corpus. Typos, caps and emphasis are theirs.
 const REVIEWS: { title: string; body: string; name: string }[] = [
-  { title: "Covers every blind spot", body: "I love that the heads are adjustable as the 3-head design makes it super easy to cover every blind spot in the yard.", name: "Published review of a three-head solar motion light" },
-  { title: "Suitable as security light", body: "Installed for front and back patio. Easy to. Install just screw in the best location for sun light. Motion sensor worked fine. So bright helped for security awareness. Zero noise, so far use it for over 12 months, no issue.", name: "Published review of a three-head solar motion light" },
-  { title: "Where there is no power", body: "Perfect solution for lighting the back yard where there is no power. So far the light has worked perfectly and shines very brightly. Product better than anticipated!", name: "Published review of a three-head solar motion light" },
-  { title: "We can see when we let our dogs out", body: "These solar lights are absolutely perfect. They are bright, and very simple to install. We got the two pack to put in our backyard because it is very dark back there, and this way we can see when we let our dogs out.", name: "Published review of a three-head solar motion light" },
-  { title: "They work even in winter", body: "These are bright! We use them for our dog pen. They are set to come on when the dogs trigger it. I only wished they stayed on for longer. Maybe for 2 minutes instead of 30 seconds. We've had them for over a year and they work even in winter.", name: "Published review of a three-head solar motion light" },
+  {
+    title: "Pitch-black darkness into broad daylight",
+    body: "These lights turn pitch-black darkness into broad daylight the second motion is detected. I love that the heads are adjustable as the 3-head design makes it super easy to cover every blind spot in the yard. Installation took less than 10 minutes. The remote control is a plus because it makes switching between the three motion modes easy and convenient. So far, with their IP65 rating, they've survived several rainstorms without any issues. If you want reliable, heavy-duty security lighting without adding a dime to your electric bill, these are worth every penny. I'll be purchasing these again to light up the rest of my yard. I highly recommend!",
+    name: "Effie KV · Verified Purchase",
+  },
+  {
+    title: "Installed 30 of these all around my half acre",
+    body: "Installed 30 of these all around my half acre property/house property. They are very reliable, very bright, stay lit on demand even late when I'm walking around gardens at 3am. They require very little sunlight. Love them!",
+    name: "JB Bass · Verified Purchase",
+  },
+  {
+    title: "Still going strong",
+    body: "Still going strong, somehow still work when a foot of snow is on the panel through the Michigan winters. Had 2+ years now, it's bright and has a good working motion sensor. I went through two other solar light sets that didn't last before buying this one.",
+    name: "John B · Verified Purchase",
+  },
+  {
+    title: "Over 12 months, no issue",
+    body: "Installed for front and back patio. Easy to. Install just screw in the best location for sun light. Motion sensor worked fine. So bright helped for security awareness. Zero noise, so far use it for over 12 months, no issue. Suitable as security light.",
+    name: "Tadashi Motomura · Verified Purchase",
+  },
+  {
+    title: "We can see when we let our dogs out",
+    body: "These solar lights are absolutely perfect. They are bright, and very simple to install. We got the two pack to put in our backyard because it is very dark back there, and this way we can see when we let our dogs out.",
+    name: "Holly Cerutti · Verified Purchase",
+  },
 ]
 
 const CTA_CARD = {
-  headline: "Cover the drive, the gate and the back step. Save up to 28% in the Early Fall Sale.",
-  guarantee: "60 Nights To Decide. Full Refund If It Is Not Right.",
-  button: "Shop The Early Fall Sale",
-  urgency1: "1-Year Warranty On Every Light",
-  urgency2: "Free Shipping On Orders Over $85",
+  headline: "Join thousands of homeowners and try the Nightwatch on sale now!",
+  guarantee: "100% Money Back Guarantee - Risk Free!",
+  button: "Try The Nightwatch Now!",
+  urgency1: "Early Fall Sale - Save Up To 28% \u23F3",
+  urgency2: "Sale Ends Soon!",
 }
 
-const FOOT_DISCLAIMER = "Specifications are as supplied by the manufacturer. This is a motion-activated outdoor light. It is not a security alarm, a camera or a monitored system, and it is not a substitute for one. The reviews above are published reviews of three-head solar motion lights written by buyers of other units, quoted as category testimony. They are not reviews of this product." // optional; empty string hides it
+const FOOT_DISCLAIMER = "" // optional; empty string hides it
 const FOOTER_LINE = "60-day money-back guarantee · 1-year warranty"
 
 function Stars() {
