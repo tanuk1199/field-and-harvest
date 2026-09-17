@@ -67,7 +67,7 @@ const LOGO_ALT = "Field & Harvest Co."
 // much. Keep the top line SHORTER than the bottom or the shape inverts.
 const ANNOUNCEMENT_1 = "Early Fall Sale · Save Up To 28%"
 const ANNOUNCEMENT_2 = "60 Nights To Decide · 1-Year Warranty On All Orders" // one line, the offer, e.g. Buy One, Get One Free
-const H1 = "5 Reasons Homeowners Are Putting This Solar Light On Every Side Of The House"                     // numbered, specific, a contract with the reasons
+const H1 = "5 Reasons Homeowners Are Putting This Solar Light On Every Side Of The House This\u00A0Fall"                     // numbered, specific, a contract with the reasons
 const STANDFIRST = "Most people who buy one of these end up buying another. Once the first dark spot is handled you start noticing the next one. Here is what makes this particular light worth putting on the drive, the side gate and the shed, not just the one corner."     // 40-70 words at solution/product aware, 80-150 at problem aware
 
 // Hero media directly under the standfirst. image | video | none
