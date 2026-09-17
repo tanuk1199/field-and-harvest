@@ -9,13 +9,13 @@ const OG_IMAGE =
 
 export const metadata: Metadata = {
   title:
-    "5 Reasons Homeowners Are Lighting The Corner Nobody Can See Into | Field & Harvest Co.",
+    "5 Reasons Homeowners Are Replacing Wired Floodlights With This Solar Light | Field & Harvest Co.",
   description:
-    "Most houses are not unlit. They are lit where it was easy to wire, and dark everywhere a cable could not go. Three heads, 270 degrees of coverage and no electrician. 60 nights to decide, 1-year warranty, multi-packs up to 28% off.",
+    "How much ground one fixture covers, where you are allowed to put it, what putting it up costs, and who is still standing behind it in month seven. Three heads, 270 degrees of coverage, no electrician. 60 nights to decide, 1-year warranty, multi-packs up to 28% off.",
   openGraph: {
-    title: "5 Reasons Homeowners Are Lighting The Corner Nobody Can See Into",
+    title: "5 Reasons Homeowners Are Replacing Wired Floodlights With This Solar Light",
     description:
-      "A porch light lights the porch. It was never going to reach the corner. Three heads, 270 degrees, nothing to wire.",
+      "Three heads you aim yourself, 270 degrees of coverage, and four screws instead of an electrician.",
     type: "article",
     url: "https://explore.fieldandharvestco.com/light-the-whole-corner",
     images: [
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "5 Reasons Homeowners Are Lighting The Corner Nobody Can See Into",
-    description: "A porch light lights the porch. It was never going to reach the corner.",
+    title: "5 Reasons Homeowners Are Replacing Wired Floodlights With This Solar Light",
+    description: "Three heads you aim yourself. 270 degrees. No electrician.",
     images: [OG_IMAGE],
   },
 }

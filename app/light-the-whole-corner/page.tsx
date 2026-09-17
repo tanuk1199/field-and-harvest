@@ -29,12 +29,19 @@ import { reasons } from '@/lib/nwl-reasons'
 // another product's set would render that product. This route ships a full
 // isolated copy at components/listicle-nwl/* plus lib/nwl-reasons.ts.
 //
-// ⭐ PRODUCT-AWARE AND BROAD, on the owner's instruction. He already knows solar
-// motion lights exist. Each reason is therefore a DISTINCT ANGLE rather than
-// five angles on one theme: coverage, off-grid placement, the season, the
-// install, and the risk reversal. The above-fold table is the decision he is
-// actually having, which is this against a wired floodlight and against a
-// cheap single-head solar light.
+// ⭐⭐ PRODUCT-AWARE AND BROAD, AND THE H1 HAS TO CARRY THAT, NOT JUST THE
+// REASONS. The first build shipped the five agreed reason headlines under an
+// H1 reading "The One Corner Nobody Can See Into" and an intro about the dark
+// part of the property. That is the SECURITY / blind-spot hook, which is the
+// PROBLEM-AWARE lane the owner explicitly ruled out ("problem-aware would be
+// like security, and we would have to be really aggressive with fear-style
+// creatives, which our videos won't support"). The reasons were right and the
+// frame around them was the angle we had already rejected.
+//
+// The H1 now names the PRODUCT and the ENEMY the comparison table names, and
+// the intro presumes he is already shopping and frames the decision criteria,
+// which are the table's own four rows. Each reason is a DISTINCT ANGLE:
+// coverage, off-grid placement, the season, the install, the risk reversal.
 //
 // FIVE TEMPLATE DEVICES DELIBERATELY REMOVED:
 //   1. The announcement-bar countdown. Nothing on this page expires.
@@ -81,17 +88,17 @@ const theme = {
 
 const headline = (
   <>
-    5 Reasons Homeowners Are Putting This Solar Light On The One Corner{' '}
-    <span className="text-primary">Nobody Can See Into</span>.
+    5 Reasons Homeowners Are Replacing Wired Floodlights With{' '}
+    <span className="text-primary">This Three-Head Solar Light</span>.
   </>
 )
 
 const intro = (
   <>
-    <strong>You can name the dark part of your property without going outside.</strong> The side
-    gate. The far end of the drive. Past where the porch light gives up. Most houses are not unlit,
-    they are lit in the places that were easy to wire, and dark everywhere a cable could not
-    sensibly go.
+    <strong>You already know you want a light out there.</strong> The question is which one, and
+    that comes down to how much ground a single fixture covers, where you are actually allowed to
+    put it, what putting it up costs you, and whether anybody is still standing behind it in month
+    seven.
   </>
 )
 
