@@ -65,7 +65,7 @@ const LOGO_ALT = "Field & Harvest Co."
 // longer and quieter. Deviation from the extracted listicle-2, which ships a
 // single line. Owner's call: one long line wrapped badly and read as saying too
 // much. Keep the top line SHORTER than the bottom or the shape inverts.
-const ANNOUNCEMENT_1 = "Early Fall Sale · Save Up To 28%"
+const ANNOUNCEMENT_1 = "Early Fall Sale · Save Up To 47%"
 const ANNOUNCEMENT_2 = "60 Nights To Decide · 1-Year Warranty On All Orders" // one line, the offer, e.g. Buy One, Get One Free
 const H1 = "6 Reasons Thousands Of Homeowners Are Putting Solar Lights On Every Side Of The House This\u00A0Fall"
 const STANDFIRST = "Here is why they are going up around the house before the clocks go back."
@@ -120,7 +120,7 @@ const CTA_CARD = {
   headline: "Join thousands of homeowners and try the Nightwatch on sale now!",
   guarantee: "100% Money Back Guarantee - Risk Free!",
   button: "Try The Nightwatch Now!",
-  urgency1: "Early Fall Sale - Save Up To 28% \u23F3",
+  urgency1: "Early Fall Sale - Save Up To 47% \u23F3",
   urgency2: "Sale Ends Soon!",
 }
 
