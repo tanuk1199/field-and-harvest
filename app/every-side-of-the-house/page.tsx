@@ -1,3 +1,7 @@
+"use client"
+
+import { useEffect, useRef, useState } from "react"
+
 // ============================================================
 // /every-side-of-the-house : THE NIGHTWATCH SOLAR LIGHT
 // Built on listicle-2 (Funnels/templates/listicle-2), the plain advertorial
@@ -116,6 +120,12 @@ const REVIEWS: { title: string; body: string; name: string }[] = [
   },
 ]
 
+const STICKY = {
+  offer: "Early Fall Sale \u00b7 Up To 47% Off",
+  sub: "From $59 \u00b7 60 nights to try it",
+  button: "Shop Now",
+}
+
 const CTA_CARD = {
   headline: "Join thousands of homeowners and try the Nightwatch on sale now!",
   guarantee: "100% Money Back Guarantee - Risk Free!",
@@ -157,6 +167,34 @@ function MediaBlock({ m, eager }: { m: Media; eager?: boolean }) {
 }
 
 export default function Page() {
+  // Sticky CTA: arms once reason 3 has scrolled off the top, and steps aside
+  // while the real CTA card is on screen so the two never stack.
+  const gateRef = useRef<HTMLDivElement | null>(null)
+  const ctaRef = useRef<HTMLDivElement | null>(null)
+  const [passed, setPassed] = useState(false)
+  const [ctaOnScreen, setCtaOnScreen] = useState(false)
+
+  useEffect(() => {
+    const g = gateRef.current
+    const c = ctaRef.current
+    // threshold 0 only. A fractional threshold never fires on an element
+    // taller than the viewport.
+    const io1 = g
+      ? new IntersectionObserver(([e]) => setPassed(e.boundingClientRect.top < 0), { threshold: 0 })
+      : null
+    const io2 = c
+      ? new IntersectionObserver(([e]) => setCtaOnScreen(e.isIntersecting), { threshold: 0 })
+      : null
+    if (io1 && g) io1.observe(g)
+    if (io2 && c) io2.observe(c)
+    return () => {
+      io1?.disconnect()
+      io2?.disconnect()
+    }
+  }, [])
+
+  const showSticky = passed && !ctaOnScreen
+
   return (
     <div className="min-h-screen font-sans" style={{ backgroundColor: PAPER, color: BODY }}>
       <div className="px-4 py-2.5 text-center" style={{ backgroundColor: DARK }}>
@@ -196,6 +234,7 @@ export default function Page() {
             {r.body.map((p, i) => (
               <p key={i} className="mt-3 text-[15.5px] leading-[1.72]">{p}</p>
             ))}
+            {r.n === 3 ? <div ref={gateRef} aria-hidden className="h-px w-full" /> : null}
           </section>
         ))}
 
@@ -210,7 +249,7 @@ export default function Page() {
           ))}
         </div>
 
-        <div className="mt-9 border bg-white px-6 py-9 text-center sm:px-10" style={{ borderColor: RULE }}>
+        <div ref={ctaRef} className="mt-9 border bg-white px-6 py-9 text-center sm:px-10" style={{ borderColor: RULE }}>
           <p className="text-[13.5px] font-extrabold uppercase leading-[1.5] tracking-[0.02em]" style={{ color: INK }}>{CTA_CARD.headline}</p>
           <p className="mt-3 text-[13.5px] font-bold" style={{ color: INK }}>{CTA_CARD.guarantee}</p>
           <a href={PDP} className="mt-6 inline-block w-full rounded-[3px] px-8 py-4 text-[16px] font-extrabold uppercase tracking-[0.03em] text-white transition-transform hover:-translate-y-0.5 sm:text-[17px]" style={{ backgroundColor: CTA }}>
@@ -232,6 +271,27 @@ export default function Page() {
           © {new Date().getFullYear()} {LOGO_ALT} · {FOOTER_LINE}
         </p>
       </footer>
+
+      {showSticky ? <div aria-hidden className="h-[76px]" /> : null}
+
+      <div
+        className={`fixed inset-x-0 bottom-0 z-50 border-t px-4 py-3 transition-transform duration-200 ${showSticky ? "translate-y-0" : "translate-y-full"}`}
+        style={{ backgroundColor: PAPER, borderColor: RULE, boxShadow: "0 -6px 20px rgba(0,0,0,.10)" }}
+      >
+        <div className="mx-auto flex max-w-[640px] items-center gap-3">
+          <div className="min-w-0 flex-1">
+            <p className="truncate text-[12px] font-extrabold uppercase tracking-[0.03em]" style={{ color: INK }}>{STICKY.offer}</p>
+            <p className="truncate text-[11.5px]" style={{ color: MUTE }}>{STICKY.sub}</p>
+          </div>
+          <a
+            href={PDP}
+            className="shrink-0 rounded-[3px] px-5 py-3 text-[13px] font-extrabold uppercase tracking-[0.03em] text-white sm:px-7 sm:text-[14px]"
+            style={{ backgroundColor: CTA }}
+          >
+            {STICKY.button}
+          </a>
+        </div>
+      </div>
     </div>
   )
 }
