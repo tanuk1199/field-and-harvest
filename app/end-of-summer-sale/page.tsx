@@ -42,10 +42,10 @@ const SEASON = {
   name: "End Of Summer Sale",
   bannerHeadline: "END OF SUMMER SALE",
   bannerOffer: "UP TO 61% OFF + 2 FREE YARDWORK GUIDES",
-  endsShort: "Ends Sept 21",
-  endsLong: "September 21",
+  endsShort: "Ends Sept 30",
+  endsLong: "September 30",
   // Used in running prose. Keep it a real calendar fact, never a countdown.
-  endsClause: "when summer does, on September 21",
+  endsClause: "September 30, the last day of the month",
   jobLine: "There is one more month of growth in the yard, and then it stops.",
 } as const
 
@@ -79,7 +79,7 @@ const CTA_LABEL = "SHOP THE END OF SUMMER SALE >>"
 //
 // ⚠️ WHEN THE SALE ENDS: draft the duplicate, or raise its prices. Do NOT leave
 // it live at $34.99, because the page tells the buyer the price goes back up on
-// September 21 and that has to be true the next time this runs.
+// September 30 and that has to be true the next time this runs.
 //
 // ⚠️ Its SKUs are IDENTICAL to the control's on purpose (fulfilment safety), so
 // a SKU-level report merges the two funnels. Read this funnel by PRODUCT, by the
@@ -135,7 +135,7 @@ const SHIPPING_NOTE = "Flat $9.95 shipping. Free on orders over $85."
 // ---------- HERO ----------
 const HEADLINE_EYEBROW = `The Yeoman Handle™ · ${SEASON.name}`
 const HEADLINE_MAIN = "40,000 Trimmer Owners Swapped The Handle."
-const HEADLINE_ACCENT = "Until Summer Ends, Yours Is $34.99."
+const HEADLINE_ACCENT = "Until September 30, Yours Is $34.99."
 const HERO_SUB =
   "The factory grip sits too low on every brand, and that is what puts your back in the bend. This one moves the grip out to where your hand already is. Three minutes with an allen key."
 const HERO_PROOF = "4.8 · 800 reviews"
@@ -918,7 +918,7 @@ export default function EndOfSummerSale() {
                   How long does the {SEASON.name} run?
                 </AccordionTrigger>
                 <AccordionContent className="text-base leading-relaxed text-muted-foreground">
-                  Until {SEASON.endsLong}, which is the last day of summer. The sale price is the price on this page, so
+                  Until {SEASON.endsLong}, the last day of the month. The sale price is the price on this page, so
                   there is no code to type in and nothing to remember at checkout. After that the handle goes back to
                   its regular price of {money(39.99)} for a single and {money(79.99)} for the three-pack.
                 </AccordionContent>
