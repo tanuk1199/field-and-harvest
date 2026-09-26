@@ -260,14 +260,13 @@ export default function BeforeItSellsOutPage() {
         </div>
 
         <div className="mt-5 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground leading-tight text-balance tracking-tight">
+          <h1 className="text-[32px] md:text-[42px] font-bold text-foreground leading-tight text-balance tracking-tight">
             6 Reasons Smart Homeowners Are Grabbing <span className="text-[#C86F4C]">The Yeoman Sweep</span> Before It{" "}
             <span className="text-[#C86F4C]">Sells Out Again This Fall</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mt-4 leading-relaxed text-pretty max-w-md mx-auto">
-            The leaves are about to come down, and the 30 inch is already gone. The homeowners getting ahead of it are
-            putting a Sweep in the garage now, so this fall is one walk across the lawn instead of every Saturday on
-            their knees with a bag.
+            The leaves are about to come down and the 30 inch is already gone. Get a Sweep in the garage now, and this
+            fall is one walk across the lawn instead of every Saturday on your knees with a bag.
           </p>
         </div>
 
