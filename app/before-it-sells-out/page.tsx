@@ -59,6 +59,8 @@ const IMG = {
   guarantee: `${CDN}/ysp-guarantee.png?v=1789377996&width=800`,
   lineup: `${CDN}/hf_20260913_101034_9213e557-24f3-41c3-91db-12e8aa266632.png?v=1789294280&width=800`,
   tipHopper: `${CDN}/hf_20260913_083634_da088230-c66f-464c-8f68-ca03117a3a8d.png?v=1789288880&width=800`,
+  // Owner 2026-09-26: the in-the-box flat-lay reads better on reason 5 than the deck-height clip.
+  inTheBox: `${CDN}/hf_20260913_082757_f4ddb284-c224-4671-9d86-dfa6a91f1749.png?v=1789288897&width=800`,
   studioOrange: `${CDN}/hf_20260913_102755_d44b5095-5280-481f-83f8-3c36ab1e921a.png?v=1789295464&width=800`,
   leaning: `${CDN}/hf_20260913_083010_76904481-e3e4-4022-afad-cd7455fc471b.png?v=1789288659&width=800`,
   studioCream: `${CDN}/hf_20260913_102755_b739b898-2a79-427a-beb1-a85a19e1dc69.png?v=1789295464&width=800`,
@@ -134,9 +136,9 @@ const REASONS: Reason[] = [
   {
     badge: "FAST FREE SHIPPING",
     title: "Have it at your door and set up before the first big leaf drop",
-    video: CLIP.deckHeight,
-    alt: "A hand moving the orange height lever on the side of the sweeper deck through its notched positions",
-    body: "It ships free from our US warehouse, so it is on its way to you, not crossing an ocean while your leaves come down. The core arrives assembled. Attach the push frame and the hopper, set the brush height on the lever at the side by hand, and most people are done in about fifteen minutes.",
+    image: IMG.inTheBox,
+    alt: "Everything in the Yeoman Sweep box laid out: assembled core, push frame, hopper, hardware and guide",
+    body: "It ships free from our US warehouse, so it is on its way to you, not crossing an ocean while your leaves come down. The core arrives assembled. You attach the push frame and the hopper, and most people are done in about fifteen minutes with a screwdriver.",
     highlight: "Order this week and it can be clearing your lawn the same weekend it lands.",
     eta: true,
   },
