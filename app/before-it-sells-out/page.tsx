@@ -104,8 +104,8 @@ const REASONS: Reason[] = [
   {
     badge: "IN STOCK NOW",
     title: "Get yours in the garage before it sells out again this fall",
-    video: CLIP.sweeping,
-    alt: "The Yeoman Sweep lifting a lawn full of leaves into the hopper at walking pace",
+    image: IMG.hero,
+    alt: "A man pushing the Yeoman Sweep across a leaf covered lawn in full autumn color, hopper loaded with maple leaves",
     body: "A leaf tool sells in one window: the few weeks when the leaves actually come down. That window is opening now, and the 30 inch has already sold out. The 21 and 26 inch are in stock today and shipping from our US warehouse.",
     highlight: "Order now and it is ready for the first big drop, not on your wish list while the leaves pile up.",
   },
@@ -237,12 +237,20 @@ export default function BeforeItSellsOutPage() {
       {/* HERO */}
       <section className="max-w-lg mx-auto px-4 py-8">
         <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg bg-muted">
-          <img
-            src={IMG.hero}
-            alt="A man pushing the Yeoman Sweep across a leaf covered lawn in full autumn color, hopper loaded with maple leaves"
+          {/* Owner 2026-09-26: traffic arrives off STATICS, so the first screen shows the machine
+              working. The sweeping loop is the hero; the autumn still moved down to reason 1. */}
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            poster={CLIP.sweeping.poster}
+            aria-label="The Yeoman Sweep lifting a lawn full of leaves into the hopper at walking pace"
             className="w-full h-full object-cover"
-            fetchPriority="high"
-          />
+          >
+            <source src={CLIP.sweeping.src} type="video/mp4" />
+          </video>
         </div>
 
         <div className="mt-5 text-center">
