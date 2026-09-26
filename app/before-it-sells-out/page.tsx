@@ -50,26 +50,48 @@ const REVIEW_COUNT = "3,783+"
 const CDN = "https://cdn.shopify.com/s/files/1/0651/8299/0379/files"
 const IMG = {
   logo: `${CDN}/Copy_of_COMFORT_CRADLE_Logos_5.png?v=1765838330&width=240`,
+  // ⭐ REASON + HERO MEDIA IS THE /ditch-the-rake SET, EXACTLY. Owner, 2026-09-26: "not using
+  // the same GIFs and images I have on the very winning page." Each clip carries the same
+  // argument here that it carries there. Never use a *-poster.png as a still: it is a frame of
+  // a video and reads as a video that will not play (that was the bug on the first build).
   hero: `${CDN}/ysp-autumn-full-season.png?v=1789416096&width=900`,
-  lineup: `${CDN}/hf_20260913_101034_9213e557-24f3-41c3-91db-12e8aa266632.png?v=1789294280&width=800`,
-  demo: `${CDN}/ysp-demo-leaves-poster.png?v=1789377426&width=800`,
-  tipHopper: `${CDN}/hf_20260913_083634_da088230-c66f-464c-8f68-ca03117a3a8d.png?v=1789288880&width=800`,
   sweetgum: `${CDN}/ysp-sweetgum-real-lawn.png?v=1789416734&width=800`,
-  inTheBox: `${CDN}/hf_20260913_082757_f4ddb284-c224-4671-9d86-dfa6a91f1749.png?v=1789288897&width=800`,
   guarantee: `${CDN}/ysp-guarantee.png?v=1789377996&width=800`,
+  lineup: `${CDN}/hf_20260913_101034_9213e557-24f3-41c3-91db-12e8aa266632.png?v=1789294280&width=800`,
+  tipHopper: `${CDN}/hf_20260913_083634_da088230-c66f-464c-8f68-ca03117a3a8d.png?v=1789288880&width=800`,
   studioOrange: `${CDN}/hf_20260913_102755_d44b5095-5280-481f-83f8-3c36ab1e921a.png?v=1789295464&width=800`,
   leaning: `${CDN}/hf_20260913_083010_76904481-e3e4-4022-afad-cd7455fc471b.png?v=1789288659&width=800`,
   studioCream: `${CDN}/hf_20260913_102755_b739b898-2a79-427a-beb1-a85a19e1dc69.png?v=1789295464&width=800`,
   bags: `${CDN}/hf_20260913_101452_c8d88ebd-34cb-4c04-af56-e5728e21c54c.png?v=1789294546&width=800`,
-  deckHeight: `${CDN}/ysp-deck-height-poster.png?v=1789427760&width=800`,
-  driveway: `${CDN}/ysp-tile-driveway.png?v=1789356608&width=800`,
   studioAngle: `${CDN}/hf_20260913_102022_03eb4095-9fa0-49f3-9694-fad1622a0020.png?v=1789295464&width=800`,
+}
+
+// The four autoplay loops from /ditch-the-rake, same files and same posters.
+const VID = "https://cdn.shopify.com/videos/c/vp"
+const CLIP = {
+  sweeping: {
+    src: `${VID}/c9bd6065364f43f6b82be7185e42f2bb/c9bd6065364f43f6b82be7185e42f2bb.HD-1080p-3.3Mbps-94336178.mp4`,
+    poster: `${CDN}/preview_images/c9bd6065364f43f6b82be7185e42f2bb.thumbnail.0000000000.jpg?v=1789378677`,
+  },
+  blower: {
+    src: `${VID}/63817aa5985948238541d9baa0548dcb/63817aa5985948238541d9baa0548dcb.HD-1080p-7.2Mbps-94335551.mp4`,
+    poster: `${CDN}/preview_images/63817aa5985948238541d9baa0548dcb.thumbnail.0000000000.jpg?v=1789378221`,
+  },
+  bending: {
+    src: `${VID}/dc92eeff97654bedb1a78b932149c493/dc92eeff97654bedb1a78b932149c493.HD-1080p-4.8Mbps-94336431.mp4`,
+    poster: `${CDN}/preview_images/dc92eeff97654bedb1a78b932149c493.thumbnail.0000000000.jpg?v=1789378867`,
+  },
+  deckHeight: {
+    src: `${VID}/c6004505a087401ca2c3b1c22c01c106/c6004505a087401ca2c3b1c22c01c106.HD-1080p-2.5Mbps-94399442.mp4`,
+    poster: `${CDN}/ysp-deck-height-poster.png?v=1789427760`,
+  },
 }
 
 type Reason = {
   badge: string
   title: string
-  image: string
+  image?: string
+  video?: { src: string; poster: string }
   alt: string
   body: string
   highlight: string
@@ -80,24 +102,24 @@ const REASONS: Reason[] = [
   {
     badge: "IN STOCK NOW",
     title: "Get yours in the garage before it sells out again this fall",
-    image: IMG.lineup,
-    alt: "The Yeoman Sweep in all three sizes lined up on an autumn lawn",
+    video: CLIP.sweeping,
+    alt: "The Yeoman Sweep lifting a lawn full of leaves into the hopper at walking pace",
     body: "A leaf tool sells in one window: the few weeks when the leaves actually come down. That window is opening now, and the 30 inch has already sold out. The 21 and 26 inch are in stock today and shipping from our US warehouse.",
     highlight: "Order now and it is ready for the first big drop, not on your wish list while the leaves pile up.",
   },
   {
     badge: "ONE-WALK CLEANUP",
     title: "Clear the whole lawn in one walk instead of losing every fall weekend",
-    image: IMG.demo,
-    alt: "The Yeoman Sweep lifting leaves off a lawn at walking pace",
+    video: CLIP.blower,
+    alt: "A leaf blower scattering a pile of leaves across the lawn",
     body: "Blow it into a pile, rake what the blower missed, bend down, bag it. Four motions for every pile, every Saturday until the trees are bare. The Sweep has no motor: the wheels drive three V-brushes, and one turn of the wheels spins them five times, so they flick leaves up into a 7 cu ft hopper at your normal walking pace.",
     highlight: "You walk, it lifts, and the hopper fills behind you.",
   },
   {
     badge: "BACK-SAVING",
     title: "Stop bending down forty times a Saturday for the rest of the fall",
-    image: IMG.tipHopper,
-    alt: "A man tipping the Yeoman Sweep hopper full of leaves into a yard bag while standing",
+    video: CLIP.bending,
+    alt: "A man bent double scooping armfuls of leaves into a bag",
     body: "It is not the raking people mind. It is the forty or fifty times you bend down after it, scooping armfuls into a bag that will not stay open. The Sweep never makes a pile, so there is nothing to kneel next to. The hopper lifts off on four buckles and you tip it out standing up.",
     highlight: "If your back hurts from bending and raking leaves, this is the part it takes away.",
   },
@@ -112,9 +134,9 @@ const REASONS: Reason[] = [
   {
     badge: "FAST FREE SHIPPING",
     title: "Have it at your door and set up before the first big leaf drop",
-    image: IMG.inTheBox,
-    alt: "Everything in the Yeoman Sweep box laid out: assembled core, push frame, hopper, hardware and guide",
-    body: "It ships free from our US warehouse, so it is on its way to you, not crossing an ocean while your leaves come down. The core arrives assembled. You attach the push frame and the hopper, and most people are done in about fifteen minutes with a screwdriver.",
+    video: CLIP.deckHeight,
+    alt: "A hand moving the orange height lever on the side of the sweeper deck through its notched positions",
+    body: "It ships free from our US warehouse, so it is on its way to you, not crossing an ocean while your leaves come down. The core arrives assembled. Attach the push frame and the hopper, set the brush height on the lever at the side by hand, and most people are done in about fifteen minutes.",
     highlight: "Order this week and it can be clearing your lawn the same weekend it lands.",
     eta: true,
   },
@@ -132,8 +154,8 @@ const THUMBS = [
   { src: IMG.studioOrange, alt: "The Yeoman Sweep, three-quarter studio view" },
   { src: IMG.leaning, alt: "A homeowner with the Yeoman Sweep on a finished autumn lawn" },
   { src: IMG.bags, alt: "Three free 300 liter yard bags filled with leaves" },
-  { src: IMG.deckHeight, alt: "Setting the brush height on the side of the deck" },
-  { src: IMG.driveway, alt: "The Yeoman Sweep clearing leaves off a driveway" },
+  { src: IMG.lineup, alt: "The Yeoman Sweep in all three sizes on an autumn lawn" },
+  { src: IMG.tipHopper, alt: "Tipping a full hopper of leaves into a yard bag, standing up" },
   { src: IMG.studioAngle, alt: "The Yeoman Sweep, front angle studio view" },
 ]
 
@@ -277,7 +299,22 @@ export default function BeforeItSellsOutPage() {
             <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-6 text-balance leading-tight">{r.title}</h3>
 
             <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
-              <img src={r.image} alt={r.alt} className="w-full h-full object-cover" loading="lazy" />
+              {r.video ? (
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  poster={r.video.poster}
+                  aria-label={r.alt}
+                  className="w-full h-full object-cover"
+                >
+                  <source src={r.video.src} type="video/mp4" />
+                </video>
+              ) : (
+                <img src={r.image} alt={r.alt} className="w-full h-full object-cover" loading="lazy" />
+              )}
             </div>
 
             <p className="text-foreground/80 text-pretty leading-relaxed text-base">
