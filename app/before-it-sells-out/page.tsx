@@ -255,7 +255,7 @@ export default function BeforeItSellsOutPage() {
 
         <div className="mt-5 text-center">
           <span className="inline-block bg-[#DDA15E]/20 rounded-md py-2 px-4 font-bold text-sm text-foreground">
-            Fall Prep: Up To {MAX_OFF} Off + Up To {FREE_GEAR} Of Free Gear
+            Fall Prep: Up To {MAX_OFF} Off + {FREE_GEAR} Of Free Gear
           </span>
         </div>
 
@@ -350,7 +350,7 @@ export default function BeforeItSellsOutPage() {
             The Leaves Are Coming. Get Yours While It Is Still In Stock.
           </h2>
           <p className="text-lg text-muted-foreground mb-6 text-pretty leading-relaxed max-w-md mx-auto">
-            Up to {MAX_OFF} off, up to {FREE_GEAR} of free gear, and free shipping from our US warehouse. The 30 inch is
+            Up to {MAX_OFF} off, {FREE_GEAR} of free gear, and free shipping from our US warehouse. The 30 inch is
             gone. Get set up before the 21 and 26 inch go the same way.
           </p>
 
@@ -365,7 +365,7 @@ export default function BeforeItSellsOutPage() {
         <div className="bg-card border-2 border-border rounded-2xl overflow-hidden shadow-lg">
           <div className="bg-gradient-to-r from-primary to-primary/90 text-primary-foreground text-center py-3 px-4">
             <p className="text-sm font-bold tracking-wide uppercase">
-              Fall Prep: Save Up To {MAX_OFF} + Up To {FREE_GEAR} Of Free Gear
+              Fall Prep: Save Up To {MAX_OFF} + {FREE_GEAR} Of Free Gear
             </p>
           </div>
 
