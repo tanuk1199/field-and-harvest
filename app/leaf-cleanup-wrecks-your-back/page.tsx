@@ -560,7 +560,7 @@ export default function LeafCleanupWrecksYourBack() {
               alt="A homeowner standing fully upright with his hands resting on the Yeoman Sweep on a cleared fall lawn"
               loading="lazy"
               decoding="async"
-              className="aspect-[3/2] w-full rounded-sm object-cover"
+              className="aspect-square w-full rounded-sm object-cover"
             />
             <p className="mt-7 text-center text-base font-bold uppercase tracking-wide text-foreground">
               Today: {OFFER_TEXT}
