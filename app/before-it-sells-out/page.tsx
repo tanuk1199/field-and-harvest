@@ -27,8 +27,8 @@ import { trackCtaClick } from "@/lib/tracking"
 //   21 in $199.99 vs $249.99 = 20%   26 in $299.99 vs $379.99 = 21%
 //   30 in $349.99 vs $449.99 = 22%  SOLD OUT (available: false)
 // MAX_OFF is computed on IN-STOCK sizes only, so the banner is true on a unit he can buy.
-// Free gear values are the PDP's own: bags $50, One-Pass Yard $15, Tool Audit $12,
-// spare V-brush set $55 (26 and 30 only). 26 in total = $132.
+// Free gear values are the PDP's own: bags $50, One-Pass Yard $15, Tool Audit $12.
+// OWNER 2026-09-29: the spare V-brush set ($55) is OUT OF STOCK and cut from the offer, so every size now gets $77.
 // If the 30 in comes back, MAX_OFF can go to 22% and reason 1 / FAQ 2 need a rewrite.
 //
 // ETA mirrors the PDP section setting (eta_days = 5 in product.the-yeoman-sweep.json),
@@ -42,7 +42,7 @@ import { trackCtaClick } from "@/lib/tracking"
 
 const PDP_URL = "https://fieldandharvestco.com/products/the-yeoman-sweep"
 const MAX_OFF = "21%"
-const FREE_GEAR = "$132"
+const FREE_GEAR = "$77"
 const ETA_DAYS = 5
 const RATING = "4.7"
 const REVIEW_COUNT = "3,783+"
@@ -165,7 +165,6 @@ const GIFTS = [
   { name: "3 x 300L yard bags", value: "$50" },
   { name: "One-Pass Yard guide", value: "$15" },
   { name: "Tool Audit checklist", value: "$12" },
-  { name: "Spare V-brush set (26 in)", value: "$55" },
 ]
 
 const REVIEWS = [
@@ -483,7 +482,7 @@ export default function BeforeItSellsOutPage() {
             },
             {
               q: "Which size should I get?",
-              a: "The 26 inch suits an average suburban yard, and it is the one that comes with the free spare V-brush set. The 21 inch is built for small yards and quick touch-ups. The 30 inch has already sold out this fall.",
+              a: "The 26 inch suits an average suburban yard, with a wider sweep for fewer passes. The 21 inch is built for small yards and quick touch-ups. The 30 inch has already sold out this fall.",
             },
             {
               q: "Is it hard to push?",

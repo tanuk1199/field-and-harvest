@@ -34,8 +34,8 @@ const PDP_URL = "https://fieldandharvestco.com/products/the-yeoman-sweep"
 const LANDER_TAG = "lcw"
 const CTA_LABEL = "CHECK AVAILABILITY >>"
 // Live 2026-09-28: 21 in $199.99/$249.99 (20%), 26 in $299.99/$379.99 (21%), 30 in sold out.
-// $132 = the 26 in free gear (bags $50, One-Pass Yard $15, Tool Audit $12, V-brush set $55).
-const OFFER_TEXT = "Save Up To 21% + $132 Of Free Gear"
+// $77 = free gear on every size (bags $50, One-Pass Yard $15, Tool Audit $12). The $55 V-brush set was cut 2026-09-29, out of stock.
+const OFFER_TEXT = "Save Up To 21% + $77 Of Free Gear"
 const SOCIAL_PROOF = "4.7 stars • 3,783+ reviews • 60 days to decide"
 
 const HEADLINE_MAIN = "3 Reasons Your Back Hurts After Fall Leaf Cleanup"
@@ -277,7 +277,7 @@ const SOLUTIONS = [
   "It changes the job instead of treating you, which is what reason 3 never did",
   "The hopper lifts off on four buckles and you tip it into the bag standing up",
   "Picks up leaves, pine needles, acorns, sweetgum balls, twigs and clippings",
-  "60 days to decide, free shipping both ways, and $132 of free gear with the 26 inch",
+  "60 days to decide, free shipping both ways, and $77 of free gear with every size",
 ]
 
 const REVIEWS = [

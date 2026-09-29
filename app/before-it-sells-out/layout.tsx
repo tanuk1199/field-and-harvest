@@ -9,7 +9,7 @@ const TITLE = "6 Reasons Smart Homeowners Are Grabbing The Yeoman Sweep Before I
 export const metadata: Metadata = {
   title: `${TITLE} | Field & Harvest Co.`,
   description:
-    "The leaves are about to come down and the 30 inch has already sold out. One walk replaces blow, rake, bend and bag. Save up to 21%, $132 of free gear, free shipping from our US warehouse and 60 days to decide.",
+    "The leaves are about to come down and the 30 inch has already sold out. One walk replaces blow, rake, bend and bag. Save up to 21%, $77 of free gear, free shipping from our US warehouse and 60 days to decide.",
   openGraph: {
     title: TITLE,
     description: "One walk replaces blow, rake, bend and bag. Get set up before the first big leaf drop.",
