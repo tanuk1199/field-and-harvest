@@ -751,6 +751,19 @@ export default function EarlyBlackFridaySweep() {
                           </button>
                         )
                       })}
+                      {/* The 30 in, sold out (owner 2026-10-18). Shown, never selectable. */}
+                      <div
+                        aria-disabled="true"
+                        className="flex w-full cursor-not-allowed items-center justify-between gap-3 rounded-lg border-2 border-dashed border-border bg-muted/40 p-4 text-left opacity-60"
+                      >
+                        <span className="flex min-w-0 items-center gap-3">
+                          <span className="flex h-5 w-5 shrink-0 rounded-full border-2 border-border" aria-hidden="true" />
+                          <span className="block text-base font-bold leading-tight text-muted-foreground line-through">30 in</span>
+                        </span>
+                        <span className="shrink-0 rounded bg-foreground/80 px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-background">
+                          Sold out
+                        </span>
+                      </div>
                     </div>
                   </div>
 
