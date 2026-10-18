@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Check, Leaf, Play, ShieldCheck, Star, Wind, X } from "lucide-react"
-import { SALE_END } from "./sale"
+import { SALE_END, SALE_END_SHORT, SELL_OUT_LINE } from "./sale"
 
 // ============================================================
 // /early-black-friday-sweep : The Yeoman Sweep
@@ -40,8 +40,18 @@ import { SALE_END } from "./sale"
 //   from a US warehouse. Delivery estimate is today + 5 days, nothing else.
 //   Rating 4.7 / 3,783+ is owner-locked on the Sweep PDP.
 //
-// THE SALE END DATE IS THE OWNER'S CALL and lives in ./sale.ts. Every date
-// on this page reads from SALE_END.
+// THE SALE END DATE IS THE OWNER'S CALL and lives in ./sale.ts: October 31,
+// ending early if stock sells out first (owner, 2026-10-18). Every date on
+// this page reads from SALE_END / SALE_END_SHORT / SELL_OUT_LINE.
+//
+// WHY THE SALE RUNS NOW (owner, 2026-10-18): stock will not last to Black
+// Friday, so the Black Friday price is moved up and opened now. Carried in
+// HERO_SUB and the "why now" band. Anchored on the one sourced fact: the
+// 30 in is already sold out.
+//
+// H1 is the owner-locked "World's First" line from the live Sweep PDP
+// (h1_main in product.the-yeoman-sweep.json), word for word, split into
+// main + accent the same way /early-black-friday-access does.
 //
 // IMAGERY: public/ holds no Sweep imagery. Every image and clip below is a
 // Sweep asset already on the Shopify CDN and already wired into the live
@@ -118,17 +128,18 @@ const SEASON = {
   name: SALE_NAME,
   bannerHeadline: "EARLY BLACK FRIDAY ACCESS",
   bannerOffer: `UP TO ${MAX_OFF}% OFF + ${FREE_GEAR} OF FREE GEAR`,
-  endsShort: `Ends ${SALE_END}`,
+  endsShort: `Ends ${SALE_END_SHORT}`,
   endsLong: SALE_END,
+  sellOut: SELL_OUT_LINE,
   jobLine: "The leaves come down once a year, and the big drop is here now.",
 } as const
 
 // ---------- HERO ----------
 const HEADLINE_EYEBROW = `The Yeoman Sweep · ${SEASON.name}`
-const HEADLINE_MAIN = "Early Black Friday Access Is Open On The Yeoman Sweep."
-const HEADLINE_ACCENT = `Up To ${MAX_OFF}% Off Until ${SALE_END}.`
+const HEADLINE_MAIN = "The World's First Lawn Tool That Ends The Raking, Leaf Blowing"
+const HEADLINE_ACCENT = "And The Painful Bending."
 const HERO_SUB =
-  "One walk across the lawn and the leaves are in the hopper, not in a pile you bend over all Saturday. The wheels drive the brushes, so there is nothing to start, fuel or charge."
+  "By the time Black Friday comes around, these will be sold out. The 30 in already is. So we moved our Black Friday price up and opened it now, so you get the best deal of the year while there is still a Sweep to buy."
 const HERO_PROOF = `${RATING} · ${REVIEW_COUNT} reviews`
 const SOCIAL_PROOF = `${RATING} stars • ${REVIEW_COUNT} reviews • ${FREE_GEAR} of free gear with every size`
 
@@ -479,7 +490,7 @@ export default function EarlyBlackFridaySweep() {
               </span>
             </div>
 
-            <JumpCta className="pt-1" note={`60 days to decide · Ships free · Sale ends ${SEASON.endsLong}`} />
+            <JumpCta className="pt-1" note={`60 days to decide · Ships free · Sale ends ${SEASON.endsLong}, or sooner if stock sells out`} />
           </div>
 
           <div className="lg:order-2">
@@ -518,10 +529,15 @@ export default function EarlyBlackFridaySweep() {
 
           {/* SEASONAL TOUCHPOINT 4: the timing argument, stated once, as a reason. */}
           <section className="mt-8 rounded-lg border-2 border-primary bg-primary/5 p-5 sm:p-6">
-            <p className="text-xs font-bold uppercase tracking-widest text-primary">Why now</p>
+            <p className="text-xs font-bold uppercase tracking-widest text-primary">Why Black Friday came early</p>
             <p className="mt-2 text-base leading-relaxed text-foreground sm:text-lg">
+              Black Friday is our best price of the year, and the Sweep will not last until then. The 30 in is already
+              gone. So we are giving you the Black Friday deal now, before the rest sells out: up to {MAX_OFF}% off
+              plus {FREE_GEAR} of free gear on the 21 in and the 26 in.
+            </p>
+            <p className="mt-3 text-base leading-relaxed text-foreground sm:text-lg">
               {SEASON.jobLine} Get the Sweep in the garage now and every leaf left this fall goes into the hopper
-              instead of into a pile. The {SEASON.name} price runs until {SEASON.endsLong}.
+              instead of into a pile. The {SEASON.name} price runs until {SEASON.endsLong}. {SEASON.sellOut}
             </p>
             <JumpCta className="mt-5" />
             <p className="mt-4 text-center text-sm text-muted-foreground">{SOCIAL_PROOF}</p>
@@ -805,7 +821,7 @@ export default function EarlyBlackFridaySweep() {
 
               {/* SEASONAL TOUCHPOINT 6: the footer of the buy box. */}
               <p className="border-t-2 border-foreground bg-foreground px-5 py-2.5 text-center text-xs font-bold uppercase tracking-wide text-background">
-                {SEASON.name} price holds until {SEASON.endsLong}
+                {SEASON.name} price holds until {SEASON.endsLong}, or until stock sells out
               </p>
             </div>
           </section>
@@ -821,7 +837,7 @@ export default function EarlyBlackFridaySweep() {
                 {/* SEASONAL TOUCHPOINT 7: the trial outlives the sale. */}
                 <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
                   You have 60 days to decide, with a full refund either way and free shipping both ways. The sale price
-                  ends {SEASON.endsLong}. Your 60 days start the day it arrives, so the deadline is on the price and never
+                  ends {SEASON.endsLong}, or sooner if stock sells out first. Your 60 days start the day it arrives, so the deadline is on the price and never
                   on the decision.
                 </p>
               </div>
@@ -839,7 +855,8 @@ export default function EarlyBlackFridaySweep() {
                   How long does {SEASON.name} run?
                 </AccordionTrigger>
                 <AccordionContent className="text-base leading-relaxed text-muted-foreground">
-                  Until {SEASON.endsLong}. The sale price is the price on this page, so there is no code to type in and
+                  Until {SEASON.endsLong}. {SEASON.sellOut} We opened it early because the Sweep will not
+                  last until Black Friday, so this is the Black Friday price, now. The sale price is the price on this page, so there is no code to type in and
                   nothing to remember at checkout. That is up to {MAX_OFF}% off, plus the yard bags and both guides free
                   with every size.
                 </AccordionContent>
@@ -923,7 +940,7 @@ export default function EarlyBlackFridaySweep() {
       <footer className="border-t border-border pb-28 pt-8 sm:pb-8">
         <div className="mx-auto max-w-3xl px-5">
           <p className="text-center text-xs leading-relaxed text-muted-foreground">
-            &copy; 2026 Field &amp; Harvest Co. {SEASON.name} pricing ends {SEASON.endsLong}.
+            &copy; 2026 Field &amp; Harvest Co. {SEASON.name} pricing ends {SEASON.endsLong}, or sooner if stock sells out.
           </p>
         </div>
       </footer>
