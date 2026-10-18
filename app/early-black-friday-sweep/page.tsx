@@ -49,17 +49,19 @@ import { SALE_END, SALE_END_SHORT } from "./sale"
 // Sweep pages (/before-it-sells-out, /leaf-cleanup-wrecks-your-back). No
 // Handle image survives on this page and nothing was generated.
 //
-// BUY LINK: the buy box points at the real Sweep PDP with ?variant=<id>,
-// not at a cart permalink. The PDP's own add-to-cart is what puts the free
-// yard bags into the cart as a zeroed line, so going through it is the
-// path that is known to deliver the gift. A direct /cart/ permalink would
-// need the bags variant added by hand and has not been verified.
+// BUY LINK: STRAIGHT TO CHECKOUT (owner, Tobe, 2026-10-18: "it goes straight
+// to checkout. It doesn't go to the product page"). A Shopify cart permalink,
+// /cart/<sweep variant>:1,<yard bags variant>:1, adds the chosen Sweep AND the
+// free yard bags and opens checkout. The bags line is zeroed by the store's
+// automatic discount. Verified at a real checkout 2026-10-18: 26 in totals
+// $299.99 and 21 in totals $229.99, "3 Bags" shown Free on both.
 // ============================================================
 
 const LANDER_TAG = "ebfs"
 const SALE_NAME = "Early Black Friday Access"
 const CTA_LABEL = "CLAIM EARLY BLACK FRIDAY ACCESS >>"
-const PDP_URL = "https://fieldandharvestco.com/products/the-yeoman-sweep"
+const STORE_URL = "https://fieldandharvestco.com"
+const BAGS_VARIANT = "45281541652523" // 3 x 300L yard bags, the gift_always_variant on the Sweep PDP
 const ETA_DAYS = 5
 
 const RATING = "4.7"
@@ -269,7 +271,7 @@ function money(n: number) {
 }
 
 function buyUrl(size: Size) {
-  return `${PDP_URL}?variant=${size.variantId}`
+  return `${STORE_URL}/cart/${size.variantId}:1,${BAGS_VARIANT}:1`
 }
 
 function useEta() {
@@ -403,6 +405,10 @@ export default function EarlyBlackFridaySweep() {
         if (url.hostname === window.location.hostname) return
         if (!url.hostname.endsWith("fieldandharvestco.com")) return
         if (!url.searchParams.has("lp")) url.searchParams.set("lp", LANDER_TAG)
+        // Carry the ad's UTMs through to checkout.
+        new URLSearchParams(window.location.search).forEach((v, k) => {
+          if (k.startsWith("utm_") && !url.searchParams.has(k)) url.searchParams.set(k, v)
+        })
         anchor.href = url.href
       } catch {
         // Tagging must never break navigation.
@@ -419,8 +425,15 @@ export default function EarlyBlackFridaySweep() {
   function fireBuyClick() {
     try {
       const w = window as unknown as { fbq?: (...a: unknown[]) => void; clarity?: (...a: unknown[]) => void }
-      // A custom event, not AddToCart: the cart add happens on the PDP, where
-      // the store pixel already fires the real AddToCart.
+      // The PDP is skipped, so its AddToCart never fires: fire it here. The
+      // store checkout fires InitiateCheckout and Purchase itself.
+      w.fbq?.("track", "AddToCart", {
+        content_ids: [size.variantId],
+        content_type: "product",
+        content_name: `The Yeoman Sweep / ${size.label}`,
+        value: size.price,
+        currency: "USD",
+      })
       w.fbq?.("trackCustom", "BuyBoxClick", {
         page: LANDER_TAG,
         content_ids: [size.variantId],
@@ -653,7 +666,7 @@ export default function EarlyBlackFridaySweep() {
 
           {/* ============================================================
               THE BUY BOX. Size picker, free gear, subtotal, then one link
-              to the real Sweep PDP with the chosen variant preselected.
+              straight to checkout with the chosen size and the free yard bags.
               ============================================================ */}
           <section ref={buyRef} id="buy" className="mt-14 scroll-mt-4">
             <div className="overflow-hidden rounded-lg border-2 border-foreground">
