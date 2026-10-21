@@ -27,7 +27,8 @@ import { trackCtaClick } from "@/lib/tracking"
 //   21 in $199.99 vs $249.99 = 20%   26 in $299.99 vs $379.99 = 21%
 //   30 in $349.99 vs $449.99 = 22%  SOLD OUT (available: false)
 // MAX_OFF is computed on IN-STOCK sizes only, so the banner is true on a unit he can buy.
-// Free gear values are the PDP's own: bags $50, One-Pass Yard $15, Tool Audit $12.
+// Free gear values are the PDP's own: 2 year warranty $50, One-Pass Yard $15, Tool Audit $12.
+// OWNER 2026-10-21: the 3 x 300L yard bags can no longer be sourced; replaced by a free 2 year warranty at the same $50.
 // OWNER 2026-09-29: the spare V-brush set ($55) is OUT OF STOCK and cut from the offer, so every size now gets $77.
 // If the 30 in comes back, MAX_OFF can go to 22% and reason 1 / FAQ 2 need a rewrite.
 //
@@ -66,6 +67,9 @@ const IMG = {
   studioCream: `${CDN}/hf_20260913_102755_b739b898-2a79-427a-beb1-a85a19e1dc69.png?v=1789295464&width=800`,
   bags: `${CDN}/hf_20260913_101452_c8d88ebd-34cb-4c04-af56-e5728e21c54c.png?v=1789294546&width=800`,
   studioAngle: `${CDN}/hf_20260913_102022_03eb4095-9fa0-49f3-9694-fad1622a0020.png?v=1789295464&width=800`,
+  warranty: `${CDN}/ysp-gift-2yr-warranty.png?v=1792570468&width=800`,
+  swathLane: `${CDN}/ysp-gallery-swath-lane.png?v=1792570471&width=800`,
+  brushMacro: `${CDN}/ysp-gallery-brush-macro.png?v=1792570474&width=800`,
 }
 
 // The four autoplay loops from /ditch-the-rake, same files and same posters.
@@ -155,14 +159,14 @@ const REASONS: Reason[] = [
 const THUMBS = [
   { src: IMG.studioOrange, alt: "The Yeoman Sweep, three-quarter studio view" },
   { src: IMG.leaning, alt: "A homeowner with the Yeoman Sweep on a finished autumn lawn" },
-  { src: IMG.bags, alt: "Three free 300 liter yard bags filled with leaves" },
+  { src: IMG.swathLane, alt: "Overhead view of the Yeoman Sweep leaving a clean lane through autumn leaves" },
   { src: IMG.lineup, alt: "The Yeoman Sweep in all three sizes on an autumn lawn" },
-  { src: IMG.tipHopper, alt: "Tipping a full hopper of leaves into a yard bag, standing up" },
+  { src: IMG.brushMacro, alt: "Close-up of the Yeoman Sweep brushes lifting leaves off the grass" },
   { src: IMG.studioAngle, alt: "The Yeoman Sweep, front angle studio view" },
 ]
 
 const GIFTS = [
-  { name: "3 x 300L yard bags", value: "$50" },
+  { name: "2 year warranty", value: "$50" },
   { name: "One-Pass Yard guide", value: "$15" },
   { name: "Tool Audit checklist", value: "$12" },
 ]
@@ -407,6 +411,7 @@ export default function BeforeItSellsOutPage() {
               <p className="bg-[#F4EFE3] px-4 py-2 text-xs font-bold uppercase tracking-wider text-[#4A3F35]">
                 Included free with your Sweep
               </p>
+              <img src={IMG.warranty} alt="Free 2 year warranty on the Yeoman Sweep" className="w-full aspect-square object-cover" loading="lazy" />
               <ul className="divide-y divide-border">
                 {GIFTS.map((g) => (
                   <li key={g.name} className="flex items-center justify-between px-4 py-2.5 text-sm">
