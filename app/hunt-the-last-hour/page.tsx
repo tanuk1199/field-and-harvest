@@ -44,7 +44,7 @@ import { trackCtaClick } from "@/lib/tracking"
 // ============================================================
 
 const PDP_URL = "https://fieldandharvestco.com/products/the-bunkhouse-diesel-heater"
-// SAVE is only used by the banner, which is the PDP banner verbatim.
+// SAVE is the banner's dollar saving (PDP banner verbatim) and the sticky button's offer. Never a price.
 const SAVE = "$161"
 const SALE_NAME = "Halloween Sale"
 
@@ -472,12 +472,12 @@ export default function HuntTheLastHourPage() {
       {/* STICKY CTA */}
       <div className="fixed bottom-0 left-0 right-0 bg-[#4A3F35]/95 backdrop-blur-md border-t-2 border-[#4A3F35] py-4 px-4 z-50 shadow-2xl">
         <div className="max-w-lg mx-auto">
-          <a {...cta("sticky", "Hunt Till Dark")}>
+          <a {...cta("sticky", `Hunt Till Dark: ${SAVE} Off`)}>
             <Button
               size="lg"
               className="w-full bg-[#C86F4C] hover:bg-[#C86F4C]/90 text-white font-bold py-7 text-lg rounded-lg mb-2.5 shadow-lg transition-all hover:shadow-xl"
             >
-              Hunt Till Dark
+              <span className="whitespace-nowrap">Hunt Till Dark: {SAVE} Off</span>
             </Button>
           </a>
           <p className="text-center text-xs text-white/80 font-semibold">
