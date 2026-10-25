@@ -120,7 +120,7 @@ const REASONS: Reason[] = [
     badge: "ONE TRIP IN",
     title: "One box, one handle, fuel tank built in",
     image: IMG.carry,
-    alt: "A hunter carrying the Bunkhouse by its top handle toward his blind, fuel cap on top",
+    alt: "A hunter using both hands, one on the top handle and one steadying the side, to set the Bunkhouse down on a stump beside his blind",
     body: "There is no propane bottle to haul and nothing to plumb together in the dark. The tank, the heater and the controls are one unit, 18 by 12 by 16 inches and 21.8 pounds, with a carry handle on top. Fill it with diesel at home and carry it in.",
     highlight: "It goes from the truck to the blind in one trip.",
   },
