@@ -26,7 +26,7 @@ import { trackCtaClick } from "@/lib/tracking"
 //
 // OFFER, read live off /products/the-bunkhouse-diesel-heater.json on 2026-10-25:
 //   $289.00 vs compare $450.00 = save $161 (36%). Free 1 year warranty (display
-//   only, $30 value, same as the PDP strip). 30 day money back. Free US shipping.
+//   only, $30 value, same as the PDP strip). 30 day money back. Ships Free From USA (owner wording 2026-10-25, use exactly).
 // OWNER REVISION 2026-10-25: NO PRICE anywhere on the page except the banner's $ off figure.
 // The banner is a port of the PDP's theme snippet snippets/fh-bunkhouse-promo-bar.liquid (read
 // live off Horizon MAIN 136737161259): same text, gradient, type and the rolling countdown to the
@@ -130,7 +130,7 @@ const REASONS: Reason[] = [
     image: IMG.guarantee,
     alt: "The Bunkhouse Diesel Heater with a 30 day money back guarantee seal and a free 1 year warranty plaque",
     body: "Cheap diesel heaters are sold by people you can never reach again. The Bunkhouse comes with a free 1 year warranty and a real team at Field & Harvest that answers. Take it out for your next cold sit, with 30 days to decide and a full refund either way.",
-    highlight: "Free US shipping, and the warranty is included at no charge.",
+    highlight: "Ships Free From USA, and the warranty is included at no charge.",
   },
 ]
 
@@ -195,7 +195,7 @@ const FAQS = [
   },
   {
     q: "What if something goes wrong with it?",
-    a: "You have a free 1 year warranty and a real team at Field & Harvest behind it, plus 30 days to decide with a full refund either way. Shipping is free in the US.",
+    a: "You have a free 1 year warranty and a real team at Field & Harvest behind it, plus 30 days to decide with a full refund either way. Ships Free From USA.",
   },
 ]
 
@@ -314,9 +314,10 @@ export default function HuntTheLastHourPage() {
           </Button>
         </a>
 
-        <p className="mt-4 text-center text-sm text-foreground font-medium">
-          30 days to decide
-          <span className="text-muted-foreground mx-2">&bull;</span> Free US shipping
+        <p className="mt-4 flex flex-wrap items-center justify-center gap-x-2 text-center text-sm text-foreground font-medium">
+          <span className="whitespace-nowrap">30 days to decide</span>
+          <span className="text-muted-foreground">&bull;</span>
+          <span className="whitespace-nowrap">Ships Free From USA</span>
         </p>
       </section>
 
@@ -347,13 +348,13 @@ export default function HuntTheLastHourPage() {
       <section className="max-w-lg mx-auto px-4 pt-12 pb-4">
         <div className="text-center mb-8">
           <Badge className="bg-[#F4EFE3] text-[#4A3F35] hover:bg-[#F4EFE3] border border-[#D4C4B0] text-xs font-bold mb-5 px-4 py-1.5">
-            30 Days To Decide + Free US Shipping
+            30 Days To Decide + Ships Free From USA
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance leading-tight">
             Sit Till Dark This Season
           </h2>
           <p className="text-lg text-muted-foreground mb-6 text-pretty leading-relaxed max-w-md mx-auto">
-            A free 1 year warranty, 30 days to decide and free shipping. Get it in the truck before your next cold
+            A free 1 year warranty and 30 days to decide, and it Ships Free From USA. Get it in the truck before your next cold
             sit.
           </p>
         </div>
@@ -480,10 +481,14 @@ export default function HuntTheLastHourPage() {
               <span className="whitespace-nowrap">Hunt Till Dark: {SAVE} Off</span>
             </Button>
           </a>
-          <p className="text-center text-xs text-white/80 font-semibold">
-            Free 1 Year Warranty <span className="text-white/50 mx-1">&bull;</span> 30 Days To Decide{" "}
-            <span className="text-white/50 mx-1">&bull;</span> Free US Shipping
-          </p>
+          {/* Owner wording "Ships Free From USA" made the row too long for one line at 360-390px,
+              so it is two fixed centred lines: no dangling bullet, nothing dropped. */}
+          <div className="text-center text-xs text-white/80 font-semibold leading-snug">
+            <p className="whitespace-nowrap">
+              Free 1 Year Warranty <span className="text-white/50 mx-1">&bull;</span> 30 Days To Decide
+            </p>
+            <p className="whitespace-nowrap">Ships Free From USA</p>
+          </div>
         </div>
       </div>
     </div>
