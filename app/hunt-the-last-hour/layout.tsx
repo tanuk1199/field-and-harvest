@@ -8,7 +8,7 @@ const TITLE = "7 Reasons The Bunkhouse Lets You Hunt The Last Hour Instead Of Dr
 export const metadata: Metadata = {
   title: `${TITLE} | Field & Harvest Co.`,
   description:
-    "Warm, dry air in the blind about three minutes after you start it. The exhaust goes outside, it runs off 12V, and the fuel tank is built in. Save $161, free 1 year warranty, 30 days to decide.",
+    "Warm, dry air in the blind about three minutes after you start it. The exhaust goes outside, it runs off 12V, and the fuel tank is built in. Free 1 year warranty and 30 days to decide.",
   openGraph: {
     title: TITLE,
     description: "Warm, dry air in the blind, so you are still in your chair when the deer start moving.",

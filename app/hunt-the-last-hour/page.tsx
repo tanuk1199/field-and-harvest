@@ -1,9 +1,9 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Star, Flame, Wind, Battery, Package } from "lucide-react"
+import { Star, Flame, Wind, Battery, Package, ShieldCheck } from "lucide-react"
 import {
   Accordion,
   AccordionContent,
@@ -27,7 +27,12 @@ import { trackCtaClick } from "@/lib/tracking"
 // OFFER, read live off /products/the-bunkhouse-diesel-heater.json on 2026-10-25:
 //   $289.00 vs compare $450.00 = save $161 (36%). Free 1 year warranty (display
 //   only, $30 value, same as the PDP strip). 30 day money back. Free US shipping.
-// SALE_NAME says Halloween: rename after Oct 31, same as the PDP promo bar.
+// OWNER REVISION 2026-10-25: NO PRICE anywhere on the page except the banner's $ off figure.
+// The banner is a port of the PDP's theme snippet snippets/fh-bunkhouse-promo-bar.liquid (read
+// live off Horizon MAIN 136737161259): same text, gradient, type and the rolling countdown to the
+// visitor's local midnight. SALE_NAME says Halloween: rename after Oct 31, same as the PDP bar.
+// The big warranty block is now a thin strip. Reason 3, 5 and 6 images were regenerated in
+// Higgsfield with no text (Diesel Heater/product-images/2026-10-25-htlh/).
 //
 // No rating row: the Bunkhouse has no owner-supplied rating. No ETA line: the
 // shipping time is unconfirmed (Diesel Heater/brain/OPEN.md item 1).
@@ -39,8 +44,7 @@ import { trackCtaClick } from "@/lib/tracking"
 // ============================================================
 
 const PDP_URL = "https://fieldandharvestco.com/products/the-bunkhouse-diesel-heater"
-const PRICE = "$289"
-const COMPARE = "$450"
+// SAVE is only used by the banner, which is the PDP banner verbatim.
 const SAVE = "$161"
 const SALE_NAME = "Halloween Sale"
 
@@ -50,17 +54,16 @@ const IMG = {
   hero: "/htlh-hero-blind.webp",
   blind: `${CDN}/bunkhouse-13-inuse-hunting-blind.png?width=800`,
   thermostat: `${CDN}/bunkhouse-22-info-thermostat.png?width=800`,
-  vsPropane: `${CDN}/bunkhouse-26-info-vs-propane.png?width=800`,
+  vsPropane: "/htlh-r3-dry-vs-propane.webp",
   exhaust: `${CDN}/bunkhouse-20-detail-exhaust-outside.png?width=800`,
-  controls: `${CDN}/bunkhouse-25-info-control-your-way.png?width=800`,
-  carry: `${CDN}/bunkhouse-24-info-carry.png?width=800`,
+  battery: "/htlh-r5-12v-battery.webp",
+  carry: "/htlh-r6-carry-handle.webp",
   guarantee: `${CDN}/bunkhouse-pdp-guarantee-seal.png?width=800`,
   studio: `${CDN}/bunkhouse-03-studio-dark-premium.png?width=800`,
   carryYard: `${CDN}/bunkhouse-16-inuse-carry-across-yard.png?width=800`,
   coAlarm: `${CDN}/bunkhouse-21-co-alarm-feature.png?width=800`,
   fuelWindow: `${CDN}/bunkhouse-11-detail-fuel-window.png?width=800`,
   handle: `${CDN}/bunkhouse-18-detail-handle-and-cap.png?width=800`,
-  warranty: `${CDN}/bunkhouse-gift-1yr-warranty.png?width=800`,
 }
 
 type Reason = {
@@ -93,7 +96,7 @@ const REASONS: Reason[] = [
     badge: "DRY HEAT",
     title: "No water running down the walls like a Buddy heater",
     image: IMG.vsPropane,
-    alt: "Side by side: the Bunkhouse venting its exhaust outside with dry air inside, against a propane heater with fumes and water on everything",
+    alt: "The same hunting blind twice: dry and warm with the Bunkhouse and its exhaust pipe running out through the wall, and dripping wet with a propane heater",
     body: "A propane heater burns inside the blind with you, and burning propane makes water. Hunters who run one every season say the same thing: wet walls, wet gear, wet gloves. The Bunkhouse burns diesel and sends its exhaust outside, so the only thing that comes into the blind is hot, dry air.",
     highlight: "Dry gloves and dry walls, all the way to dark.",
   },
@@ -108,8 +111,8 @@ const REASONS: Reason[] = [
   {
     badge: "RUNS OFF 12V",
     title: "It runs off a 12V battery, not a generator in the woods",
-    image: IMG.controls,
-    alt: "Control the Bunkhouse your way: phone app, remote or the LCD panel",
+    image: IMG.battery,
+    alt: "The Bunkhouse on a pickup tailgate in snowy timber, plugged into a 12V battery box, a hunting blind behind",
     body: "Diesel makes the heat. The battery only runs the fan, the fuel pump and the controls, and once it is lit that is about 2 to 3 amps on 12V. Hook it to your truck, a deep cycle battery or a power station. Low-voltage protection is built in.",
     highlight: "No generator noise in the timber and no cord run out to the stand.",
   },
@@ -117,7 +120,7 @@ const REASONS: Reason[] = [
     badge: "ONE TRIP IN",
     title: "One box, one handle, fuel tank built in",
     image: IMG.carry,
-    alt: "A man carrying the Bunkhouse by its handle, fuel tank on board",
+    alt: "A hunter carrying the Bunkhouse by its top handle toward his blind, fuel cap on top",
     body: "There is no propane bottle to haul and nothing to plumb together in the dark. The tank, the heater and the controls are one unit, 18 by 12 by 16 inches and 21.8 pounds, with a carry handle on top. Fill it with diesel at home and carry it in.",
     highlight: "It goes from the truck to the blind in one trip.",
   },
@@ -139,8 +142,6 @@ const THUMBS = [
   { src: IMG.fuelWindow, alt: "The fuel window on the side of the built-in tank" },
   { src: IMG.handle, alt: "The carry handle and fuel cap on top of the Bunkhouse" },
 ]
-
-const GIFTS = [{ name: "1 year warranty", value: "$30" }]
 
 const REVIEWS = [
   {
@@ -198,6 +199,55 @@ const FAQS = [
   },
 ]
 
+// Port of snippets/fh-bunkhouse-promo-bar.liquid. Same markup, CSS and clock as the PDP.
+function PromoBar() {
+  const [t, setT] = useState({ h: "00", m: "00", s: "00" })
+  useEffect(() => {
+    const pad = (n: number) => (n < 10 ? "0" : "") + n
+    const tick = () => {
+      const now = new Date()
+      const end = new Date(now)
+      end.setHours(24, 0, 0, 0)
+      const sec = Math.max(0, Math.floor((end.getTime() - now.getTime()) / 1000))
+      setT({ h: pad(Math.floor(sec / 3600)), m: pad(Math.floor((sec % 3600) / 60)), s: pad(sec % 60) })
+    }
+    tick()
+    const id = setInterval(tick, 1000)
+    return () => clearInterval(id)
+  }, [])
+  return (
+    <div className="fhb-promo" role="region" aria-label="Sale">
+      <div className="fhb-promo-in">
+        <span className="fhb-promo-txt">
+          <b>{SALE_NAME.toUpperCase()}</b>
+          <i>|</i>
+          <span className="fhb-promo-sub">{SAVE} OFF + FREE 1 YEAR WARRANTY 🎃</span>
+        </span>
+        <span className="fhb-promo-clock">
+          <span className="fhb-u"><b>00</b><small>DAYS</small></span><em>:</em>
+          <span className="fhb-u"><b>{t.h}</b><small>HRS</small></span><em>:</em>
+          <span className="fhb-u"><b>{t.m}</b><small>MIN</small></span><em>:</em>
+          <span className="fhb-u"><b>{t.s}</b><small>SEC</small></span>
+        </span>
+      </div>
+      <style>{`
+  .fhb-promo { background: linear-gradient(90deg, #241A13 0%, #4A2A16 45%, #C0653F 100%); color: #FBF6EC; }
+  .fhb-promo-in { max-width: 1200px; margin: 0 auto; padding: 8px 16px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .fhb-promo-txt { font: 600 13px/1.3 var(--font-body--family, Inter, sans-serif); letter-spacing: .04em; text-align: left; min-width: 0; }
+  .fhb-promo-clock { flex: none; }
+  .fhb-promo-txt b { font-weight: 800; letter-spacing: .06em; }
+  .fhb-promo-txt i { font-style: normal; opacity: .6; margin: 0 10px; }
+  .fhb-promo-clock { display: inline-flex; align-items: flex-start; gap: 4px; }
+  .fhb-promo-clock em { font-style: normal; font-weight: 700; line-height: 26px; opacity: .8; }
+  .fhb-u { display: inline-flex; flex-direction: column; align-items: center; }
+  .fhb-u b { background: rgba(251,246,236,.14); border: 1px solid rgba(251,246,236,.25); border-radius: 4px; min-width: 32px; padding: 3px 4px; text-align: center; font: 700 15px/1.2 var(--font-body--family, Inter, sans-serif); font-variant-numeric: tabular-nums; }
+  .fhb-u small { font-size: 8px; letter-spacing: .1em; opacity: .75; margin-top: 2px; }
+  @media (max-width: 749px) { .fhb-promo-in { gap: 8px; padding: 8px 10px; } .fhb-promo-txt { flex: 1 1 auto; text-align: center; font-size: 10px; letter-spacing: 0; white-space: nowrap; } .fhb-promo-txt b { display: block; font-size: 14px; margin-bottom: 2px; } .fhb-promo-txt i { display: none; } .fhb-promo-sub { display: block; } .fhb-promo-clock { gap: 3px; } .fhb-u b { min-width: 23px; font-size: 11px; padding: 3px 2px; } .fhb-promo-clock em { line-height: 22px; } .fhb-u small { font-size: 7px; } }
+      `}</style>
+    </div>
+  )
+}
+
 function Stars({ size = "w-5 h-5" }: { size?: string }) {
   return (
     <div className="flex gap-0.5">
@@ -218,15 +268,8 @@ export default function HuntTheLastHourPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* PROMOTIONAL BANNER */}
-      <div className="bg-primary text-center py-3 px-4 shadow-sm">
-        <p className="text-sm md:text-base font-medium">
-          <span className="text-[#DDA15E] font-bold uppercase tracking-wide">
-            {SALE_NAME}: {SAVE} Off
-          </span>{" "}
-          <span className="text-primary-foreground uppercase tracking-wide">+ Free 1 Year Warranty</span>
-        </p>
-      </div>
+      {/* PROMOTIONAL BANNER: the PDP promo bar, ported */}
+      <PromoBar />
 
       {/* HEADER */}
       <header className="py-3 px-4 flex items-center justify-center bg-card">
@@ -258,7 +301,7 @@ export default function HuntTheLastHourPage() {
 
         <div className="mt-5 text-center">
           <span className="inline-block bg-[#DDA15E]/20 rounded-md py-2 px-4 font-bold text-sm text-foreground">
-            Save {SAVE} + Free 1 Year Warranty
+            Free 1 Year Warranty + 30 Days To Decide
           </span>
         </div>
 
@@ -272,8 +315,7 @@ export default function HuntTheLastHourPage() {
         </a>
 
         <p className="mt-4 text-center text-sm text-foreground font-medium">
-          {PRICE} <span className="text-muted-foreground line-through ml-1">{COMPARE}</span>
-          <span className="text-muted-foreground mx-2">&bull;</span> 30 days to decide
+          30 days to decide
           <span className="text-muted-foreground mx-2">&bull;</span> Free US shipping
         </p>
       </section>
@@ -311,15 +353,15 @@ export default function HuntTheLastHourPage() {
             Sit Till Dark This Season
           </h2>
           <p className="text-lg text-muted-foreground mb-6 text-pretty leading-relaxed max-w-md mx-auto">
-            {PRICE} instead of {COMPARE}, a free 1 year warranty and free shipping. Get it in the truck before your
-            next cold sit.
+            A free 1 year warranty, 30 days to decide and free shipping. Get it in the truck before your next cold
+            sit.
           </p>
         </div>
 
         <div className="bg-card border-2 border-border rounded-2xl overflow-hidden shadow-lg">
           <div className="bg-gradient-to-r from-primary to-primary/90 text-primary-foreground text-center py-3 px-4">
             <p className="text-sm font-bold tracking-wide uppercase">
-              {SALE_NAME}: Save {SAVE} + Free 1 Year Warranty
+              Free 1 Year Warranty + 30 Days To Decide
             </p>
           </div>
 
@@ -344,14 +386,6 @@ export default function HuntTheLastHourPage() {
               ))}
             </div>
 
-            <div className="flex items-baseline justify-center gap-3 mb-5">
-              <span className="text-3xl font-bold text-foreground">{PRICE}</span>
-              <span className="text-lg text-muted-foreground line-through">{COMPARE}</span>
-              <span className="text-xs font-bold uppercase tracking-wider text-white bg-[#C86F4C] px-2 py-1 rounded">
-                Save {SAVE}
-              </span>
-            </div>
-
             <div className="grid grid-cols-2 gap-3 mb-5">
               {[
                 { Icon: Flame, text: "Warm in about 3 minutes, 2 to 8 kW" },
@@ -366,22 +400,9 @@ export default function HuntTheLastHourPage() {
               ))}
             </div>
 
-            <div className="rounded-lg border border-[#D4C4B0] mb-5 overflow-hidden">
-              <p className="bg-[#F4EFE3] px-4 py-2 text-xs font-bold uppercase tracking-wider text-[#4A3F35]">
-                Included free with your Bunkhouse
-              </p>
-              <img src={IMG.warranty} alt="Free 1 year warranty on the Bunkhouse Diesel Heater" className="w-full aspect-square object-cover" loading="lazy" />
-              <ul className="divide-y divide-border">
-                {GIFTS.map((g) => (
-                  <li key={g.name} className="flex items-center justify-between px-4 py-2.5 text-sm">
-                    <span className="font-semibold text-foreground">{g.name}</span>
-                    <span>
-                      <span className="text-muted-foreground line-through mr-2">{g.value}</span>
-                      <span className="font-bold text-[#C86F4C]">FREE</span>
-                    </span>
-                  </li>
-                ))}
-              </ul>
+            <div className="mb-5 flex items-center justify-center gap-2 rounded-md border border-[#D4C4B0] bg-[#F4EFE3] px-3 py-2">
+              <ShieldCheck className="w-4 h-4 text-[#C86F4C]" />
+              <p className="text-xs font-bold uppercase tracking-wider text-[#4A3F35]">Free 1 year warranty included</p>
             </div>
 
             <a {...cta("product-card", "Get The Bunkhouse")}>
@@ -451,12 +472,12 @@ export default function HuntTheLastHourPage() {
       {/* STICKY CTA */}
       <div className="fixed bottom-0 left-0 right-0 bg-[#4A3F35]/95 backdrop-blur-md border-t-2 border-[#4A3F35] py-4 px-4 z-50 shadow-2xl">
         <div className="max-w-lg mx-auto">
-          <a {...cta("sticky", `Hunt Till Dark: Save ${SAVE}`)}>
+          <a {...cta("sticky", "Hunt Till Dark")}>
             <Button
               size="lg"
               className="w-full bg-[#C86F4C] hover:bg-[#C86F4C]/90 text-white font-bold py-7 text-lg rounded-lg mb-2.5 shadow-lg transition-all hover:shadow-xl"
             >
-              Hunt Till Dark: Save {SAVE}
+              Hunt Till Dark
             </Button>
           </a>
           <p className="text-center text-xs text-white/80 font-semibold">
