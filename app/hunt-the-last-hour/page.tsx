@@ -481,14 +481,10 @@ export default function HuntTheLastHourPage() {
               <span className="whitespace-nowrap">Hunt Till Dark: {SAVE} Off</span>
             </Button>
           </a>
-          {/* Owner wording "Ships Free From USA" made the row too long for one line at 360-390px,
-              so it is two fixed centred lines: no dangling bullet, nothing dropped. */}
-          <div className="text-center text-xs text-white/80 font-semibold leading-snug">
-            <p className="whitespace-nowrap">
-              Free 1 Year Warranty <span className="text-white/50 mx-1">&bull;</span> 30 Days To Decide
-            </p>
-            <p className="whitespace-nowrap">Ships Free From USA</p>
-          </div>
+          {/* Owner 2026-10-25: one line, "30 Days To Decide" dropped from the sticky only (it stays elsewhere). */}
+          <p className="whitespace-nowrap text-center text-xs text-white/80 font-semibold">
+            Free 1 Year Warranty <span className="text-white/50 mx-1">&bull;</span> Ships Free From USA
+          </p>
         </div>
       </div>
     </div>
