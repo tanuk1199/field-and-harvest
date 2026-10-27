@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
 import { PRODUCT_URL } from '@/components/listicle-gpw/cta-button'
-import { SALE_NAME, SAVE, PRICE, COMPARE_AT } from '@/components/listicle-gpw/sale'
+import { SALE_NAME, SAVE } from '@/components/listicle-gpw/sale'
 import { trackCtaClick } from '@/lib/tracking'
 
 export function FinalCta() {
@@ -35,7 +35,7 @@ export function FinalCta() {
             {SAVE} Off + Free 1 Year Warranty
           </p>
           <p className="mt-2 text-sm text-muted-foreground">
-            {PRICE}, down from {COMPARE_AT}. The wand, trigger gun, hose, gutter hook, two angled extensions and six spray tips, for the pressure washer you already own.
+            The wand, trigger gun, hose, gutter hook, two angled extensions and six spray tips, for the pressure washer you already own.
           </p>
 
           <a

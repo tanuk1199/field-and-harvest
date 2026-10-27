@@ -38,7 +38,7 @@ export const reasons: ReasonData[] = [
     paragraphs: [
       'A crew takes the ladder off your hands and hands you a bill instead. The gutters fill again every fall and the north side greens up every spring, so you wait for a date, write the check and do it again next year. The Gable hangs on your garage wall and comes down the day you decide.',
     ],
-    bullets: ['$149 during the Halloween Sale', 'Yours for every fall after this one', 'No booking, no waiting on a date'],
+    bullets: ['$101 off during the Halloween Sale', 'Yours for every fall after this one', 'No booking, no waiting on a date'],
     cta: 'See The Gable',
   },
   {
