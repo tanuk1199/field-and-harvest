@@ -37,7 +37,7 @@ export function FinalCta() {
             {SAVE} Off + Free 1 Year Warranty
           </p>
           <p className="mt-2 text-sm text-muted-foreground">
-            Vented diesel heat for the blind. Warm in about 3 minutes, runs off 12V, fuel tank built in.
+            Vented diesel heat for the blind, so you are still in your chair at last light. Warm in about 3 minutes, runs off 12V, fuel tank built in.
           </p>
 
           <a

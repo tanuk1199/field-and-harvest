@@ -10,12 +10,12 @@ export const reasons: ReasonData[] = [
   {
     number: 1,
     title: 'The heater sits outside the blind.',
-    titleAccent: 'Only the warm air comes in.',
+    titleAccent: 'The fumes never run you out early.',
     image: '/htlh-hero-blind.webp',
     imageAspect: 'aspect-[4/3]',
     imageAlt: 'The Bunkhouse Diesel Heater on a snowy rock outside a camo hunting blind, a warm-air hose running into the blind',
     paragraphs: [
-      'A propane blind heater burns its fuel right beside your chair, so everything it makes stays in the blind with you. The Bunkhouse stands outside on the ground and runs a warm-air hose in, or sits inside with its exhaust pipe run out through the wall. The fumes leave through the pipe. You keep the heat.',
+      'A propane blind heater burns its fuel right beside your chair, so everything it makes stays in the blind with you. The Bunkhouse stands outside on the ground and runs a warm-air hose in, or sits inside with its exhaust pipe run out through the wall. The fumes leave through the pipe. You keep the heat. Nothing in the air pushes you out of the blind before the light goes.',
     ],
     bullets: [
       'Exhaust pipe and muffler come in the box',
@@ -26,11 +26,11 @@ export const reasons: ReasonData[] = [
   {
     number: 2,
     title: 'No water running down the walls.',
-    titleAccent: 'Dry gloves, dry glass, dry gear.',
+    titleAccent: 'Nothing wet sends you home before dark.',
     image: '/htlh-r3-dry-vs-propane.webp',
     imageAlt: 'The same hunting blind twice: warm and dry with the Bunkhouse and its exhaust pipe out through the wall, and dripping wet with a propane heater',
     paragraphs: [
-      'Burning propane makes water, and in a closed blind it has nowhere to go. Hunters who run one every season describe the same morning: wet walls, a fogged window, damp gloves. The Bunkhouse vents its exhaust outside, so the moisture leaves with it and the air coming in is hot and dry.',
+      'Burning propane makes water, and in a closed blind it has nowhere to go. Hunters who run one every season describe the same morning: wet walls, a fogged window, damp gloves. The Bunkhouse vents its exhaust outside, so the moisture leaves with it and the air coming in is hot and dry. You sit dry, so you sit till dark.',
     ],
     bullets: [
       'A clear window to glass the field',
@@ -41,11 +41,11 @@ export const reasons: ReasonData[] = [
   {
     number: 3,
     title: 'Warm air moves through the whole blind.',
-    titleAccent: 'Your feet sit in it too.',
+    titleAccent: 'Cold feet stop ending the sit.',
     image: `${CDN}/bunkhouse-13-inuse-hunting-blind.png?width=1000`,
     imageAlt: 'A hunter glassing a frosted field at dusk from a wooden blind, the Bunkhouse on the floor beside him with its exhaust pipe running out through the wall',
     paragraphs: [
-      'A propane blind heater warms what sits in front of its face. The Bunkhouse blows heated air into the blind, so the air itself turns warm, corner to corner, and your boots are in it as much as your hands. It puts out up to 8 kW and turns down to 2 kW, so a small blind stays comfortable.',
+      'A propane blind heater warms what sits in front of its face. The Bunkhouse blows heated air into the blind, so the air itself turns warm, corner to corner, and your boots are in it as much as your hands. It puts out up to 8 kW and turns down to 2 kW, so a small blind stays comfortable. Hand warmers keep your fingers warm, but your toes still quit first, and that is when most hunters walk out. With warm air at your boots, you are still in the chair when the light goes.',
     ],
     bullets: [
       'Up to 8 kW, turns down to 2 kW',
@@ -57,11 +57,11 @@ export const reasons: ReasonData[] = [
   {
     number: 4,
     title: 'No little bottles to swap in the dark.',
-    titleAccent: 'The fuel tank is built in.',
+    titleAccent: 'Nothing to change when the deer start moving.',
     image: '/htlh-r6-carry-handle.webp',
     imageAlt: 'A hunter setting the Bunkhouse down on a stump beside his blind, one hand on the top handle',
     paragraphs: [
-      'Propane rides in small bottles that run low mid-sit, and a cold bottle loses pressure right when the temperature drops. The Bunkhouse carries its own diesel tank. Fill it at home, carry the whole unit in by its handle in one trip, and keep your hands on the bow or the rifle instead of a valve.',
+      'Propane rides in small bottles that run low mid-sit, and a cold bottle loses pressure right when the temperature drops. The Bunkhouse carries its own diesel tank. Fill it at home, carry the whole unit in by its handle in one trip, and keep your hands on the bow or the rifle instead of a valve. When the deer start moving at last light, you are watching the field, not changing a bottle.',
     ],
     bullets: [
       'Fuel tank built into the unit',
@@ -72,11 +72,11 @@ export const reasons: ReasonData[] = [
   {
     number: 5,
     title: 'Warm about three minutes after you start it.',
-    titleAccent: 'Then it holds the temperature you set.',
+    titleAccent: 'Then it holds steady till last light.',
     image: '/stph-r5-remote-thermostat.webp',
     imageAlt: 'A hand holding the Bunkhouse remote in a cabin, the heater on the floor with its exhaust pipe running out through the wall',
     paragraphs: [
-      'Start it from the remote, the phone app or the panel and the blind is warm in about 3 minutes. The built-in thermostat holds the temperature you pick, so nobody is reaching down to turn a knob up and down all morning. Set it once and keep your eyes on the field.',
+      'Start it from the remote, the phone app or the panel and the blind is warm in about 3 minutes. The built-in thermostat holds the temperature you pick, so nobody is reaching down to turn a knob up and down all morning. Set it once and keep your eyes on the field. The blind stays just as warm at last light as it was when you sat down.',
     ],
     bullets: [
       'Remote, phone app or 6-button panel',
@@ -87,11 +87,11 @@ export const reasons: ReasonData[] = [
   {
     number: 6,
     title: 'It runs off a 12V battery.',
-    titleAccent: 'No generator in the timber.',
+    titleAccent: 'Your truck battery keeps you out there, no generator.',
     image: '/htlh-r5-12v-battery.webp',
     imageAlt: 'The Bunkhouse on a pickup tailgate in snowy timber, plugged into a 12V battery box, a hunting blind behind',
     paragraphs: [
-      'Diesel makes the heat. The battery only runs the fan, the fuel pump and the controls, about 2 to 3 amps on 12V once it is lit. Hook it to your truck, a deep cycle battery or a power station, and the woods stay quiet.',
+      'Diesel makes the heat. The battery only runs the fan, the fuel pump and the controls, about 2 to 3 amps on 12V once it is lit. Hook it to your truck, a deep cycle battery or a power station, and the woods stay quiet. The heat stays on until the last light is gone, and so do you.',
     ],
     bullets: ['Runs on 12V or 24V', 'About 2 to 3 amps once it is lit', 'Low-voltage protection built in'],
     cta: 'Stay Out Till Dark',
