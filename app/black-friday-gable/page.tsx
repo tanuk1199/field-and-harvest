@@ -43,16 +43,21 @@ const CDN = "https://cdn.shopify.com/s/files/1/0651/8299/0379/files"
 const img = (f: string, w = 900) => `${CDN}/${f}?width=${w}`
 
 const THEME = {
-  accent: "#F26419",
-  accentInk: "#FFFFFF",
-  bg: "#0E0F11",
-  panel: "#17181B",
-  line: "#2A2C30",
-  heroGlow: "#3A1A08",
+  // Black Friday: black ground, gold accent, black text on gold buttons.
+  // Same palette as the /early-black-friday-* pages.
+  accent: "#F2B53A",
+  accentInk: "#0A0A0A",
+  bg: "#000000",
+  panel: "#111111",
+  line: "#2A2A2A",
+  heroGlow: "#2E2208",
 }
 
 const SALE = {
-  barText: "EARLY ACCESS BLACK FRIDAY SALE · $101 OFF",
+  // PromoBar: a port of the PDP promo bar (snippets/fh-bunkhouse-promo-bar.liquid).
+  // The $ figure is computed from the tiers (UP TO only when sizes differ).
+  bannerName: "EARLY ACCESS BLACK FRIDAY SALE",
+  bannerTail: "FREE 1 YEAR WARRANTY",
   name: "Early Access Black Friday Sale",
   saveChip: "SAVE $101",
   stickyLine: "$101 off · Black Friday",
@@ -275,6 +280,68 @@ function checkoutUrl(t: Tier) {
   return `${STORE}/cart/${lines}?attributes[lp]=${LANDER_TAG}`
 }
 
+// The PDP promo bar (snippets/fh-bunkhouse-promo-bar.liquid), same layout and
+// function: SALE NAME | $X OFF + tail, and a DAYS/HRS/MIN/SEC clock that runs to
+// the visitor's local midnight. Colours follow THEME.
+function PromoBar() {
+  const [t, setT] = useState({ h: "00", m: "00", s: "00" })
+  useEffect(() => {
+    const pad = (n: number) => (n < 10 ? "0" : "") + n
+    const tick = () => {
+      const now = new Date()
+      const end = new Date(now)
+      end.setHours(24, 0, 0, 0)
+      const sec = Math.max(0, Math.floor((end.getTime() - now.getTime()) / 1000))
+      setT({ h: pad(Math.floor(sec / 3600)), m: pad(Math.floor((sec % 3600) / 60)), s: pad(sec % 60) })
+    }
+    tick()
+    const id = setInterval(tick, 1000)
+    return () => clearInterval(id)
+  }, [])
+  const saves = BUY.tiers.filter((x) => !x.soldOut && x.compareAt > x.price).map((x) => x.compareAt - x.price)
+  const max = saves.length ? Math.max(...saves) : 0
+  const off = max > 0 ? `${Math.min(...saves) < max ? "UP TO " : ""}${money(max)} OFF + ` : ""
+  const units: [string, string][] = [["00", "DAYS"], [t.h, "HRS"], [t.m, "MIN"], [t.s, "SEC"]]
+  return (
+    <div className="sbd-promo" role="region" aria-label="Sale">
+      <div className="sbd-promo-in">
+        <span className="sbd-promo-txt">
+          <b>{SALE.bannerName}</b>
+          <i>|</i>
+          <span className="sbd-promo-sub">
+            {off}
+            {SALE.bannerTail}
+          </span>
+        </span>
+        <span className="sbd-promo-clock">
+          {units.map(([v, l], i) => (
+            <span key={l} className="contents">
+              {i > 0 && <em>:</em>}
+              <span className="sbd-u">
+                <b>{v}</b>
+                <small>{l}</small>
+              </span>
+            </span>
+          ))}
+        </span>
+      </div>
+      <style>{`
+  .sbd-promo { background: linear-gradient(90deg, #000 0%, ${THEME.panel} 45%, ${THEME.heroGlow} 100%); color: #FBF6EC; border-bottom: 1px solid ${THEME.accent}59; }
+  .sbd-promo-in { max-width: 1200px; margin: 0 auto; padding: 8px 16px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .sbd-promo-txt { font: 600 13px/1.3 ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; letter-spacing: .04em; text-align: left; min-width: 0; }
+  .sbd-promo-txt b { font-weight: 800; letter-spacing: .06em; color: ${THEME.accent}; }
+  .sbd-promo-txt i { font-style: normal; opacity: .6; margin: 0 10px; }
+  .sbd-promo-clock { flex: none; display: inline-flex; align-items: flex-start; gap: 4px; }
+  .sbd-promo-clock em { font-style: normal; font-weight: 700; line-height: 26px; opacity: .8; }
+  .sbd-u { display: inline-flex; flex-direction: column; align-items: center; }
+  .sbd-u b { background: ${THEME.accent}24; border: 1px solid ${THEME.accent}73; border-radius: 4px; min-width: 32px; padding: 3px 4px; text-align: center; font: 700 15px/1.2 ui-sans-serif, system-ui, -apple-system, Arial, sans-serif; font-variant-numeric: tabular-nums; color: #FBF6EC; }
+  .sbd-u small { font-size: 8px; letter-spacing: .1em; opacity: .75; margin-top: 2px; }
+  @media (max-width: 749px) { .sbd-promo-in { gap: 8px; padding: 8px 10px; } .sbd-promo-txt { flex: 1 1 auto; text-align: center; font-size: 10px; letter-spacing: 0; white-space: nowrap; } .sbd-promo-txt b { display: block; font-size: 12px; margin-bottom: 2px; } .sbd-promo-txt i { display: none; } .sbd-promo-sub { display: block; } .sbd-promo-clock { gap: 3px; } .sbd-u b { min-width: 23px; font-size: 11px; padding: 3px 2px; } .sbd-promo-clock em { line-height: 22px; } .sbd-u small { font-size: 7px; } }
+      `}</style>
+    </div>
+  )
+}
+
 function Stars({ size = 16 }: { size?: number }) {
   return (
     <span className="inline-flex gap-0.5" aria-hidden="true">
@@ -385,10 +452,8 @@ export default function SaleBuyboxPage() {
 
   return (
     <div className="min-h-screen text-white antialiased" style={vars}>
-      {/* 1. Sale bar */}
-      <div className="px-4 py-3 text-center text-xs font-semibold uppercase tracking-[0.12em] sm:text-sm" style={{ background: THEME.accent }}>
-        {SALE.barText}
-      </div>
+      {/* 1. Sale bar: the PDP promo bar */}
+      <PromoBar />
 
       {/* 2. Hero */}
       <section
@@ -436,7 +501,7 @@ export default function SaleBuyboxPage() {
               <div className="flex items-center gap-3">
                 <span
                   className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-lg font-bold"
-                  style={{ background: THEME.accent }}
+                  style={{ background: THEME.accent, color: THEME.accentInk }}
                 >
                   {r.name.charAt(0).toUpperCase()}
                 </span>
@@ -507,7 +572,7 @@ export default function SaleBuyboxPage() {
                   <div
                     key={ci}
                     className={`flex min-w-0 items-center justify-center border-l px-1 py-4 text-center ${ri < COMPARE.rows.length - 1 ? "border-b" : ""}`}
-                    style={{ borderColor: ci === 0 ? "rgba(255,255,255,0.18)" : THEME.line, background: ci === 0 ? THEME.accent : THEME.panel }}
+                    style={{ borderColor: ci === 0 ? "rgba(0,0,0,0.15)" : THEME.line, background: ci === 0 ? THEME.accent : THEME.panel }}
                   >
                     <Mark v={v} strong={ci === 0} />
                   </div>
@@ -592,7 +657,7 @@ export default function SaleBuyboxPage() {
           <ul className="mt-4 space-y-2.5">
             {BUY.checks.map((c) => (
               <li key={c} className="flex items-start gap-3 text-base">
-                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full" style={{ background: THEME.accent }}>
+                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full" style={{ background: THEME.accent, color: THEME.accentInk }}>
                   <Check className="h-4 w-4" strokeWidth={3} />
                 </span>
                 {c}
@@ -624,7 +689,7 @@ export default function SaleBuyboxPage() {
                   {(t.badge || t.soldOut) && (
                     <span
                       className="absolute -top-3 right-5 rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-[0.1em]"
-                      style={{ background: t.soldOut ? "#5A5C62" : THEME.accent }}
+                      style={{ background: t.soldOut ? "#5A5C62" : THEME.accent, color: t.soldOut ? "#fff" : THEME.accentInk }}
                     >
                       {t.soldOut ? "Sold out" : t.badge}
                     </span>
@@ -632,7 +697,7 @@ export default function SaleBuyboxPage() {
                   <div className="grid grid-cols-[2rem_1fr_auto] items-start gap-3">
                     <span
                       className="mt-1 flex h-7 w-7 items-center justify-center rounded-full border-2"
-                      style={{ borderColor: active ? THEME.accent : "#5A5C62", background: active ? THEME.accent : "transparent" }}
+                      style={{ borderColor: active ? THEME.accent : "#5A5C62", background: active ? THEME.accent : "transparent", color: THEME.accentInk }}
                     >
                       {active && <Check className="h-4 w-4" strokeWidth={3} />}
                     </span>
@@ -647,7 +712,7 @@ export default function SaleBuyboxPage() {
                   </div>
                   <div className="mt-3 flex items-center justify-between gap-3 pl-11">
                     <span className="text-xs font-bold uppercase tracking-[0.14em] text-[#9A9DA5]">{t.meta}</span>
-                    <span className="rounded-full px-3 py-1 text-sm font-bold uppercase tracking-[0.08em]" style={{ background: THEME.accent }}>
+                    <span className="rounded-full px-3 py-1 text-sm font-bold uppercase tracking-[0.08em]" style={{ background: THEME.accent, color: THEME.accentInk }}>
                       Save {money(t.compareAt - t.price)}
                     </span>
                   </div>
@@ -708,7 +773,7 @@ export default function SaleBuyboxPage() {
                     className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left text-base font-bold"
                   >
                     <span>{f.q}</span>
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full" style={{ background: THEME.accent }}>
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full" style={{ background: THEME.accent, color: THEME.accentInk }}>
                       {open ? <Minus className="h-5 w-5" strokeWidth={3} /> : <Plus className="h-5 w-5" strokeWidth={3} />}
                     </span>
                   </button>
@@ -747,7 +812,7 @@ export default function SaleBuyboxPage() {
       {/* 12. Sticky bar: hidden while the buy box is on screen */}
       <div
         className={`fixed inset-x-0 bottom-0 z-50 border-t px-5 py-3 transition-transform duration-300 ${buyVisible ? "translate-y-full" : "translate-y-0"}`}
-        style={{ borderColor: THEME.line, background: "rgba(14,15,17,0.97)" }}
+        style={{ borderColor: THEME.line, background: "rgba(0,0,0,0.96)" }}
       >
         <div className="mx-auto flex max-w-xl items-center justify-between gap-4">
           <div className="min-w-0">
