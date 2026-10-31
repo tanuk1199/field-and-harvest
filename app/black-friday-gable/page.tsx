@@ -1,0 +1,773 @@
+"use client"
+
+import { useEffect, useRef, useState } from "react"
+import { Archivo } from "next/font/google"
+import { Award, BadgeDollarSign, Check, ChevronLeft, ChevronRight, Minus, Plus, Star, Truck, X } from "lucide-react"
+
+// ============================================================
+// /black-friday-gable : The Gable Pressure Washer Wand
+// EARLY ACCESS BLACK FRIDAY SALE. First build on the template
+// Funnels/templates/sale-buybox-dark-1 (extracted 2026-10-31 from the
+// IronRidge push-sweeper sale page, owner's mobile screenshots).
+//
+// Section order (the template's, do not reorder):
+//   1 sale bar            7 how it works (image + 4 numbered steps)
+//   2 dark hero + CTA     8 BUY BOX: gallery, checks, tier cards,
+//   3 review carousel       trust strip, add-to-cart permalink
+//   4 "what it handles"   9 guarantee card
+//     intro + 2x2 tiles  10 FAQ
+//   5 comparison table   11 closing sale band + CTA, footer
+//   6 verdict line       12 sticky price bar (hidden over the buy box)
+//
+// Every CTA scrolls to #buy except the add-to-cart button, which is a
+// Shopify cart permalink straight to checkout. That click fires Meta
+// AddToCart because the PDP is skipped.
+//
+// ALL COPY AND DATA LIVE IN THE CONFIG BLOCK BELOW. The JSX under it is
+// the template and does not change between products.
+// ============================================================
+
+const display = Archivo({ subsets: ["latin"], weight: ["800", "900"] })
+
+// ===== CONFIG =====
+// Live price read off /products/the-gable-pressure-washer-wand.json 2026-10-31:
+//   67994210271275  FH-GABLE-24  $149.00 / $250.00  save $101
+// Facts: Pressure Washer Wand/brain/CANON.md (real unit: screw-together
+// stainless sections, brass couplers, 6 tips, gutter hook, 4,000 PSI).
+// Not US-shipped: no "US shipping" and no delivery date anywhere.
+// No rating row: the Gable has no owner-supplied rating or count.
+
+const LANDER_TAG = "bfg"
+const STORE = "https://fieldandharvestco.com"
+const CDN = "https://cdn.shopify.com/s/files/1/0651/8299/0379/files"
+const img = (f: string, w = 900) => `${CDN}/${f}?width=${w}`
+
+const THEME = {
+  accent: "#F26419",
+  accentInk: "#FFFFFF",
+  bg: "#0E0F11",
+  panel: "#17181B",
+  line: "#2A2C30",
+  heroGlow: "#3A1A08",
+}
+
+const SALE = {
+  barText: "EARLY ACCESS BLACK FRIDAY SALE · $101 OFF",
+  name: "Early Access Black Friday Sale",
+  saveChip: "SAVE $101",
+  stickyLine: "$101 off · Black Friday",
+}
+
+// null = no rating row anywhere. Never fill with an invented number.
+const RATING: { score: string; count: string } | null = null
+const HERO_TRUST = "FREE 1 YEAR WARRANTY · 30 DAYS TO DECIDE"
+
+const HERO = {
+  headline: "Clean the gutters and the second story without the ladder",
+  sub: "No ladder. No crew. Both feet on the grass.",
+  image: img("gable-03-studio-wand-dark.png", 1000),
+  imageAlt: "The Gable pressure washer wand at full length, stainless sections with brass couplers",
+  cta: "Claim my $101 off",
+  note: "Now $149 · Free shipping · 30-day money-back guarantee",
+}
+
+type Review = { name: string; title: string; body: string; photo?: string }
+const REVIEWS_EYEBROW = "Verified buyers"
+const REVIEWS_TITLE = "Homeowners who put the ladder away"
+// Verbatim 5-star Verified Purchase reviews, real names, from the main
+// listing (same set as /no-ladder-no-crew). Not edited.
+const REVIEWS: Review[] = [
+  {
+    name: "Theo",
+    title: "So Happy it Kept Me Off a Ladder",
+    body: "Fantastic product. well made. high quality. performs beyond how I expected. Can't say enough. Good high pressure at full extension. Kept my feet on the ground and off a ladder.",
+  },
+  {
+    name: "Christopher J.",
+    title: "Made washing the house almost pleasant",
+    body: "Just finished washing the house using this extended wand. All I can say is why didn't I get this 20 years ago. So much safer than a ladder to reach the gables, and does a better job than just pointing the short wand at it and hoping for the best.",
+  },
+  {
+    name: "john morris",
+    title: "Built very very sturdy",
+    body: "It can extend to 24 feet and the pressure coming out the end is amazing, clean gutters from the ground without using a ladder. Would recommend it for anyone.",
+  },
+  {
+    name: "Christopher Rolbiecki",
+    title: "Works great",
+    body: "Allows me to reach the gutters and siding on the backside of my home which is 22ft tall to the eves without using a ladder.",
+  },
+  {
+    name: "Taz",
+    title: "It works",
+    body: "I use it to clean the gutters and it was very high cause I’m in a townhouse and my room is on top of the garage and it did a great job. A lot of dirt came down. My husband was not on a ladder and it was very safe to do.",
+  },
+  {
+    name: "paula eperesi",
+    title: "It works!!",
+    body: "Cleaned siding, soffit &fascia & gutters. It worked. No ladder involved.",
+  },
+]
+
+const HANDLES = {
+  eyebrow: "If it's above your head",
+  title: "Gutters, siding, soffits? From the lawn.",
+  body: "Packed second-story gutters, green siding on the north side, soffits and fascia, gable peaks and dormers, high windows and the trim nobody can reach.",
+  tiles: [
+    { label: "Second-story gutters", image: img("gable-07-inuse-gutter-from-ground.png", 600) },
+    { label: "Soffits and fascia", image: img("gable-08-inuse-soffit.png", 600) },
+    { label: "Siding, top to bottom", image: img("gable-09-siding-clean-line.png", 600) },
+    { label: "Gables and dormer peaks", image: img("gable-15-inuse-dormer-peak.png", 600) },
+  ],
+}
+
+type Cell = "yes" | "no" | string
+const COMPARE = {
+  titleWhite: "Why the Gable beats",
+  titleAccent: "the ladder and the crew",
+  sub: "The Gable does from the lawn what a ladder makes you climb for and a crew bills you for.",
+  columns: ["THE GABLE", "A LADDER", "HIRING A PRO"] as const,
+  rows: [
+    { label: "Both feet stay on the grass", cells: ["yes", "no", "yes"] as Cell[] },
+    { label: "Done the day you pick", cells: ["yes", "Sort of", "no"] as Cell[] },
+    { label: "No moving it every few feet", cells: ["yes", "no", "yes"] as Cell[] },
+    { label: "Flushes the gutters out", cells: ["yes", "By hand", "yes"] as Cell[] },
+    { label: "Paid once, yours to keep", cells: ["yes", "yes", "no"] as Cell[] },
+    { label: "Runs on the washer you own", cells: ["yes", "no", "no"] as Cell[] },
+  ],
+  verdictPlain: "A ladder puts you up there. A crew sends you a bill.",
+  verdictBold: "The Gable does it from the lawn, and it's yours.",
+}
+
+const HOW = {
+  eyebrow: "24 ft reach · rated up to 4,000 PSI",
+  title: "How it works",
+  image: img("gable-23-studio-flatlay-kit-dark.png", 1000),
+  imageAlt: "Everything in the box: stainless wand sections, trigger gun, hose, three bent extensions and six spray tips",
+  steps: [
+    { title: "Screw the sections together", body: "Stainless steel sections join with brass couplers, up to the full 24 feet." },
+    { title: "Click it onto your washer", body: "A brass quick-connect at the end, rated up to 4,000 PSI." },
+    { title: "Pick the tip for the job", body: "Six color-coded spray tips ride on the grip, wide for siding, narrow for packed gutters." },
+    { title: "Hook the gutter and walk the line", body: "The bent gutter hook drops in and flushes it out while you stand on the lawn." },
+  ],
+}
+
+type Tier = {
+  key: string
+  name: string
+  blurb: string
+  meta: string
+  price: number
+  compareAt: number
+  variantId: string
+  badge?: string
+  soldOut?: boolean
+}
+const BUY = {
+  gallery: [
+    { src: img("gable-01-hero-gable-badges.png", 1000), alt: "Cleaning a second-story gutter from the lawn with the Gable" },
+    { src: img("gable-18-info-gutter-hook.png", 1000), alt: "The gutter hook flushing leaves out of the gutter" },
+    { src: img("gable-21-info-whats-included.png", 1000), alt: "What's included in the box" },
+    { src: img("gable-05-flatlay-whats-in-the-box.png", 1000), alt: "The full kit laid out on wood" },
+    { src: img("gable-15-inuse-dormer-peak.png", 1000), alt: "Washing the dormer peak from the driveway" },
+    { src: img("gable-14-couple-on-the-lawn.png", 1000), alt: "A couple on the lawn with the Gable" },
+  ],
+  productName: "The Gable Pressure Washer Wand",
+  checks: [
+    "Reaches 24 ft, both feet on the grass",
+    "Gutter hook and 3 bent extensions included",
+    "6 spray tips ride right on the grip",
+    "Rated up to 4,000 PSI",
+  ],
+  chooseLabel: "Your kit",
+  appliedLabel: "Black Friday price applied",
+  tiers: [
+    {
+      key: "24ft",
+      name: "24 FT KIT",
+      blurb: "Everything in the box for the whole second story.",
+      meta: "24-FT REACH",
+      price: 149,
+      compareAt: 250,
+      variantId: "67994210271275",
+    },
+  ] as Tier[],
+  // Extra $0 lines added to every checkout (e.g. a free gift variant). None here:
+  // the Gable's warranty is display only.
+  freeLines: [] as string[],
+  trust: [
+    { icon: "truck", title: "Free shipping", sub: "On this order" },
+    { icon: "money", title: "30-day guarantee", sub: "Full money back" },
+    { icon: "award", title: "1-year warranty", sub: "Included free" },
+  ],
+  ctaPrefix: "ADD TO CART",
+  ctaNote: "Early Access Black Friday Sale · Free shipping",
+}
+
+const GUARANTEE = {
+  image: img("gable-pdp-guarantee-seal.png", 500),
+  imageAlt: "30 day money back guarantee seal",
+  title: "Try it for 30 days",
+  body: "Take it to every gutter and every wall on the house. Thirty days to decide, with a full refund either way.",
+}
+
+const FAQ: { q: string; a: string }[] = [
+  {
+    q: "Will it fit my pressure washer?",
+    a: "It clicks on with a brass quick-connect and is rated up to 4,000 PSI, so it runs on the washer already in your garage.",
+  },
+  {
+    q: "Can I control it at the full 24 feet?",
+    a: "Plant your feet, keep both hands on the foam grip and let the spray do the climbing. Screw on only as many sections as the job needs, and start with a wide tip.",
+  },
+  {
+    q: "Does it need assembly?",
+    a: "The stainless sections screw together with brass couplers in a couple of minutes. It comes apart again for the garage wall.",
+  },
+  {
+    q: "Will it hurt my siding?",
+    a: "The tip sets the strength. Use a wide tip on siding and soffits and save the narrow jet for packed gutters.",
+  },
+  {
+    q: "What comes in the box?",
+    a: "The wand, trigger gun and hose, three bent extension wands including the gutter hook, and six color-coded spray tips.",
+  },
+  {
+    q: "What if it doesn't suit my house?",
+    a: "You have 30 days to decide with a full refund either way, and a free 1 year warranty on top.",
+  },
+]
+
+const CLOSE = {
+  eyebrow: "Early Access Black Friday Sale",
+  title: "$101 off the Gable",
+  note: "Now $149 · 30-day money-back guarantee · Free shipping",
+  cta: "Claim my $101 off",
+}
+
+const STICKY = { priceLine: "NOW $149", cta: "GET MINE" }
+
+const FOOTER = {
+  brand: "Field & Harvest Co",
+  links: [
+    { label: "Refund policy", href: `${STORE}/policies/refund-policy` },
+    { label: "Shipping", href: `${STORE}/policies/shipping-policy` },
+  ],
+}
+// ===== END CONFIG =====
+
+function money(n: number) {
+  return Number.isInteger(n) ? `$${n}` : `$${n.toFixed(2)}`
+}
+
+function track(...args: unknown[]) {
+  const w = window as unknown as { fbq?: (...a: unknown[]) => void }
+  w.fbq?.(...args)
+}
+
+function clarity(...args: unknown[]) {
+  const w = window as unknown as { clarity?: (...a: unknown[]) => void }
+  w.clarity?.(...args)
+}
+
+function checkoutUrl(t: Tier) {
+  const lines = [`${t.variantId}:1`, ...BUY.freeLines.map((id) => `${id}:1`)].join(",")
+  return `${STORE}/cart/${lines}?attributes[lp]=${LANDER_TAG}`
+}
+
+function Stars({ size = 16 }: { size?: number }) {
+  return (
+    <span className="inline-flex gap-0.5" aria-hidden="true">
+      {Array.from({ length: 5 }).map((_, i) => (
+        <Star key={i} width={size} height={size} className="fill-[#F5B301] text-[#F5B301]" />
+      ))}
+    </span>
+  )
+}
+
+function JumpCta({ label, className = "" }: { label: string; className?: string }) {
+  return (
+    <a
+      href="#buy"
+      onClick={() => clarity("set", `${LANDER_TAG}_cta`, "jump")}
+      className={`block w-full rounded-2xl py-5 text-center text-lg font-extrabold uppercase tracking-wide shadow-lg transition active:scale-[0.99] ${className}`}
+      style={{ background: THEME.accent, color: THEME.accentInk }}
+    >
+      {label}
+    </a>
+  )
+}
+
+function Eyebrow({ children }: { children: React.ReactNode }) {
+  return (
+    <p className="text-xs font-bold uppercase tracking-[0.18em] sm:text-sm" style={{ color: THEME.accent }}>
+      {children}
+    </p>
+  )
+}
+
+function H2({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+  return (
+    <h2 className={`${display.className} text-[28px] font-black uppercase leading-[1.02] tracking-[-0.02em] sm:text-4xl ${className}`}>
+      {children}
+    </h2>
+  )
+}
+
+function Mark({ v, strong }: { v: Cell; strong?: boolean }) {
+  if (v === "yes")
+    return (
+      <span
+        className="mx-auto flex h-8 w-8 items-center justify-center rounded-full"
+        style={{ background: strong ? "#fff" : "#3A3C42" }}
+      >
+        <Check className="h-5 w-5" strokeWidth={3} style={{ color: strong ? THEME.accent : "#C9CBD1" }} />
+      </span>
+    )
+  if (v === "no")
+    return (
+      <span className="mx-auto flex h-8 w-8 items-center justify-center rounded-full bg-[#2E3036]">
+        <X className="h-5 w-5 text-[#9A9DA5]" strokeWidth={3} />
+      </span>
+    )
+  return <span className="text-sm text-[#9A9DA5]">{v}</span>
+}
+
+function TrustIcon({ name }: { name: string }) {
+  const cls = "mx-auto h-7 w-7"
+  const style = { color: THEME.accent }
+  if (name === "truck") return <Truck className={cls} style={style} />
+  if (name === "money") return <BadgeDollarSign className={cls} style={style} />
+  return <Award className={cls} style={style} />
+}
+
+export default function SaleBuyboxPage() {
+  const [tierIdx, setTierIdx] = useState(() => Math.max(0, BUY.tiers.findIndex((t) => !t.soldOut)))
+  const [slide, setSlide] = useState(0)
+  const [openFaq, setOpenFaq] = useState<number | null>(0)
+  const [buyVisible, setBuyVisible] = useState(false)
+  const buyRef = useRef<HTMLElement | null>(null)
+
+  const tier = BUY.tiers[tierIdx]
+  const lowest = BUY.tiers.filter((t) => !t.soldOut).reduce((m, t) => Math.min(m, t.price), Infinity)
+
+  useEffect(() => {
+    clarity("set", "lander", LANDER_TAG)
+    const el = buyRef.current
+    if (!el) return
+    const io = new IntersectionObserver(([e]) => setBuyVisible(e.isIntersecting), { threshold: 0 })
+    io.observe(el)
+    return () => io.disconnect()
+  }, [])
+
+  function go(delta: number) {
+    setSlide((s) => (s + delta + BUY.gallery.length) % BUY.gallery.length)
+  }
+
+  function fireAddToCart() {
+    try {
+      track("track", "AddToCart", {
+        content_ids: [tier.variantId],
+        content_type: "product",
+        value: tier.price,
+        currency: "USD",
+      })
+      track("trackCustom", "BuyBoxClick", { page: LANDER_TAG, tier: tier.key })
+      clarity("set", `${LANDER_TAG}_checkout`, tier.key)
+      clarity("upgrade", `${LANDER_TAG}-checkout-click`)
+    } catch {}
+  }
+
+  const vars = {
+    "--accent": THEME.accent,
+    background: THEME.bg,
+  } as React.CSSProperties
+
+  return (
+    <div className="min-h-screen text-white antialiased" style={vars}>
+      {/* 1. Sale bar */}
+      <div className="px-4 py-3 text-center text-xs font-semibold uppercase tracking-[0.12em] sm:text-sm" style={{ background: THEME.accent }}>
+        {SALE.barText}
+      </div>
+
+      {/* 2. Hero */}
+      <section
+        className="px-5 pb-12 pt-8 text-center"
+        style={{ background: `radial-gradient(120% 80% at 50% 100%, ${THEME.heroGlow} 0%, ${THEME.bg} 70%)` }}
+      >
+        <div className="mx-auto max-w-xl">
+          {RATING ? (
+            <p className="flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-[#D5D7DC] sm:text-sm">
+              <Stars /> {RATING.score} · {RATING.count}
+            </p>
+          ) : (
+            <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#D5D7DC] sm:text-sm">{HERO_TRUST}</p>
+          )}
+          <h1 className={`${display.className} mt-4 text-[34px] font-black uppercase leading-[0.98] tracking-[-0.025em] sm:text-5xl`}>
+            {HERO.headline}
+          </h1>
+          <p className="mt-4 text-lg font-bold sm:text-xl">{HERO.sub}</p>
+          <img src={HERO.image} alt={HERO.imageAlt} fetchPriority="high" className="mx-auto mt-6 aspect-square w-full max-w-sm object-contain" />
+          <span
+            className="mt-6 inline-block rounded-full border-2 px-5 py-1.5 text-base font-semibold uppercase tracking-[0.08em]"
+            style={{ borderColor: THEME.accent, color: THEME.accent }}
+          >
+            {SALE.saveChip}
+          </span>
+          <JumpCta label={HERO.cta} className="mt-5" />
+          <p className="mt-4 text-sm text-[#A9ACB4]">{HERO.note}</p>
+        </div>
+      </section>
+
+      {/* 3. Review carousel */}
+      <section className="py-12" style={{ background: THEME.bg }}>
+        <div className="mx-auto max-w-5xl px-5">
+          <Eyebrow>{REVIEWS_EYEBROW}</Eyebrow>
+          <H2 className="mt-2">{REVIEWS_TITLE}</H2>
+          <p className="mt-2 text-sm text-[#9A9DA5]">Swipe for more →</p>
+        </div>
+        <div className="mt-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 [scrollbar-width:none]">
+          {REVIEWS.map((r) => (
+            <article
+              key={r.name}
+              className="w-[82%] max-w-sm shrink-0 snap-start rounded-2xl border p-5"
+              style={{ background: THEME.panel, borderColor: THEME.line }}
+            >
+              <div className="flex items-center gap-3">
+                <span
+                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-lg font-bold"
+                  style={{ background: THEME.accent }}
+                >
+                  {r.name.charAt(0).toUpperCase()}
+                </span>
+                <div className="min-w-0 flex-1">
+                  <p className="truncate font-bold">{r.name}</p>
+                  <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#9A9DA5]">Verified buyer</p>
+                </div>
+                <Stars size={14} />
+              </div>
+              <h3 className={`${display.className} mt-4 text-lg font-extrabold uppercase leading-tight`}>{r.title}</h3>
+              <p className="mt-2 text-[15px] leading-relaxed text-[#C9CBD1]">{r.body}</p>
+              {r.photo && <img src={r.photo} alt="" loading="lazy" className="mt-4 aspect-[4/3] w-full rounded-xl object-cover" />}
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* 4. What it handles */}
+      <section className="px-5 py-14" style={{ background: THEME.panel }}>
+        <div className="mx-auto max-w-3xl">
+          <Eyebrow>{HANDLES.eyebrow}</Eyebrow>
+          <H2 className="mt-2">{HANDLES.title}</H2>
+          <p className="mt-4 text-base leading-relaxed text-[#C9CBD1]">{HANDLES.body}</p>
+          <div className="mt-8 grid grid-cols-2 gap-x-4 gap-y-6">
+            {HANDLES.tiles.map((t) => (
+              <figure key={t.label} className="min-w-0 text-center">
+                <img src={t.image} alt={t.label} loading="lazy" className="aspect-square w-full rounded-xl object-cover" />
+                <figcaption className={`${display.className} mt-3 text-base font-extrabold leading-tight`}>{t.label}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5 + 6. Comparison + verdict */}
+      <section className="px-5 py-14" style={{ background: THEME.bg }}>
+        <div className="mx-auto max-w-3xl text-center">
+          <H2>
+            {COMPARE.titleWhite} <span style={{ color: THEME.accent }}>{COMPARE.titleAccent}</span>
+          </H2>
+          <p className="mx-auto mt-3 max-w-xl text-base text-[#C9CBD1]">{COMPARE.sub}</p>
+        </div>
+        <div className="mx-auto mt-8 max-w-3xl overflow-hidden rounded-2xl border" style={{ borderColor: THEME.line }}>
+          <div className="grid grid-cols-[1.35fr_1fr_1fr_1fr]">
+            <div className="border-b" style={{ borderColor: THEME.line, background: THEME.panel }} />
+            {COMPARE.columns.map((c, i) => (
+              <div
+                key={c}
+                className="flex min-w-0 items-center justify-center border-b border-l px-1 py-4 text-center text-[11px] font-bold uppercase leading-tight tracking-[0.08em] sm:text-sm"
+                style={{
+                  borderColor: THEME.line,
+                  background: i === 0 ? THEME.accent : THEME.panel,
+                  color: i === 0 ? THEME.accentInk : "#9A9DA5",
+                }}
+              >
+                {c}
+              </div>
+            ))}
+            {COMPARE.rows.map((row, ri) => (
+              <div key={row.label} className="contents">
+                <div
+                  className={`flex min-w-0 items-center px-3 py-4 text-left text-sm leading-snug sm:text-base ${ri < COMPARE.rows.length - 1 ? "border-b" : ""}`}
+                  style={{ borderColor: THEME.line, background: THEME.panel }}
+                >
+                  {row.label}
+                </div>
+                {row.cells.map((v, ci) => (
+                  <div
+                    key={ci}
+                    className={`flex min-w-0 items-center justify-center border-l px-1 py-4 text-center ${ri < COMPARE.rows.length - 1 ? "border-b" : ""}`}
+                    style={{ borderColor: ci === 0 ? "rgba(255,255,255,0.18)" : THEME.line, background: ci === 0 ? THEME.accent : THEME.panel }}
+                  >
+                    <Mark v={v} strong={ci === 0} />
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+        <p className="mx-auto mt-8 max-w-xl text-center text-lg leading-snug text-[#A9ACB4]">
+          {COMPARE.verdictPlain} <strong className="text-white">{COMPARE.verdictBold}</strong>
+        </p>
+      </section>
+
+      {/* 7. How it works */}
+      <section className="px-5 py-14" style={{ background: THEME.panel }}>
+        <div className="mx-auto max-w-3xl">
+          <Eyebrow>{HOW.eyebrow}</Eyebrow>
+          <H2 className="mt-2">{HOW.title}</H2>
+          <img src={HOW.image} alt={HOW.imageAlt} loading="lazy" className="mt-6 aspect-square w-full rounded-2xl object-cover" />
+          <ol className="mt-8 space-y-6">
+            {HOW.steps.map((s, i) => (
+              <li key={s.title} className="grid grid-cols-[2.25rem_1fr] gap-2">
+                <span className={`${display.className} text-2xl font-black`} style={{ color: THEME.accent }}>
+                  {i + 1}.
+                </span>
+                <div className="min-w-0">
+                  <p className="text-lg font-bold leading-snug">{s.title}</p>
+                  <p className="mt-1 text-base leading-relaxed text-[#C9CBD1]">{s.body}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* 8. Buy box */}
+      <section id="buy" ref={buyRef} className="scroll-mt-4 px-5 py-12" style={{ background: THEME.bg }}>
+        <div className="mx-auto max-w-xl">
+          <div className="relative overflow-hidden rounded-2xl bg-white">
+            <img src={BUY.gallery[slide].src} alt={BUY.gallery[slide].alt} className="aspect-square w-full object-cover" />
+            <span className="absolute right-3 top-3 rounded-full bg-black/70 px-3 py-1 text-xs font-bold">
+              {slide + 1} / {BUY.gallery.length}
+            </span>
+            <button
+              type="button"
+              aria-label="Previous image"
+              onClick={() => go(-1)}
+              className="absolute left-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-xl bg-black/45"
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </button>
+            <button
+              type="button"
+              aria-label="Next image"
+              onClick={() => go(1)}
+              className="absolute right-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-xl bg-black/70"
+            >
+              <ChevronRight className="h-6 w-6" />
+            </button>
+          </div>
+          <div className="mt-3 flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none]">
+            {BUY.gallery.map((g, i) => (
+              <button
+                key={g.src}
+                type="button"
+                aria-label={`Show image ${i + 1}`}
+                onClick={() => setSlide(i)}
+                className="h-16 w-16 shrink-0 overflow-hidden rounded-lg border-2"
+                style={{ borderColor: i === slide ? THEME.accent : "transparent" }}
+              >
+                <img src={g.src.replace(/width=\d+/, "width=160")} alt="" loading="lazy" className="h-full w-full object-cover" />
+              </button>
+            ))}
+          </div>
+
+          {RATING && (
+            <p className="mt-6 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-[#D5D7DC]">
+              <Stars size={14} /> {RATING.score} · {RATING.count}
+            </p>
+          )}
+          <h2 className={`${display.className} mt-5 text-[28px] font-black uppercase leading-[1.02] tracking-[-0.02em]`}>{BUY.productName}</h2>
+          <ul className="mt-4 space-y-2.5">
+            {BUY.checks.map((c) => (
+              <li key={c} className="flex items-start gap-3 text-base">
+                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full" style={{ background: THEME.accent }}>
+                  <Check className="h-4 w-4" strokeWidth={3} />
+                </span>
+                {c}
+              </li>
+            ))}
+          </ul>
+
+          <p className="mt-7 text-sm font-bold uppercase tracking-[0.14em]">{BUY.chooseLabel}</p>
+          <p className="mt-2 text-sm font-bold uppercase tracking-[0.14em]" style={{ color: THEME.accent }}>
+            {BUY.appliedLabel}
+          </p>
+          <div className="mt-4 space-y-4" role="radiogroup" aria-label={BUY.chooseLabel}>
+            {BUY.tiers.map((t, i) => {
+              const active = i === tierIdx
+              return (
+                <button
+                  key={t.key}
+                  type="button"
+                  role="radio"
+                  aria-checked={active}
+                  disabled={t.soldOut}
+                  onClick={() => setTierIdx(i)}
+                  className="relative block w-full rounded-2xl border-2 p-5 text-left disabled:opacity-45"
+                  style={{
+                    borderColor: active ? THEME.accent : THEME.line,
+                    background: active ? THEME.heroGlow : THEME.panel,
+                  }}
+                >
+                  {(t.badge || t.soldOut) && (
+                    <span
+                      className="absolute -top-3 right-5 rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-[0.1em]"
+                      style={{ background: t.soldOut ? "#5A5C62" : THEME.accent }}
+                    >
+                      {t.soldOut ? "Sold out" : t.badge}
+                    </span>
+                  )}
+                  <div className="grid grid-cols-[2rem_1fr_auto] items-start gap-3">
+                    <span
+                      className="mt-1 flex h-7 w-7 items-center justify-center rounded-full border-2"
+                      style={{ borderColor: active ? THEME.accent : "#5A5C62", background: active ? THEME.accent : "transparent" }}
+                    >
+                      {active && <Check className="h-4 w-4" strokeWidth={3} />}
+                    </span>
+                    <div className="min-w-0">
+                      <p className={`${display.className} text-xl font-black uppercase leading-tight`}>{t.name}</p>
+                      <p className="mt-1 text-[15px] leading-snug text-[#C9CBD1]">{t.blurb}</p>
+                    </div>
+                    <div className="text-right">
+                      <p className={`${display.className} text-xl font-black`}>{money(t.price)}</p>
+                      <p className="text-sm text-[#9A9DA5] line-through">{money(t.compareAt)}</p>
+                    </div>
+                  </div>
+                  <div className="mt-3 flex items-center justify-between gap-3 pl-11">
+                    <span className="text-xs font-bold uppercase tracking-[0.14em] text-[#9A9DA5]">{t.meta}</span>
+                    <span className="rounded-full px-3 py-1 text-sm font-bold uppercase tracking-[0.08em]" style={{ background: THEME.accent }}>
+                      Save {money(t.compareAt - t.price)}
+                    </span>
+                  </div>
+                </button>
+              )
+            })}
+          </div>
+
+          <div className="mt-5 grid grid-cols-3 overflow-hidden rounded-2xl border" style={{ borderColor: THEME.line, background: THEME.panel }}>
+            {BUY.trust.map((b, i) => (
+              <div key={b.title} className={`px-2 py-4 text-center ${i ? "border-l" : ""}`} style={{ borderColor: THEME.line }}>
+                <TrustIcon name={b.icon} />
+                <p className="mt-2 text-sm font-bold leading-tight">{b.title}</p>
+                <p className="mt-1 text-xs leading-tight text-[#9A9DA5]">{b.sub}</p>
+              </div>
+            ))}
+          </div>
+
+          <a
+            href={checkoutUrl(tier)}
+            onClick={fireAddToCart}
+            className="mt-5 flex w-full items-center justify-center gap-3 rounded-2xl py-5 text-center text-base font-extrabold uppercase tracking-wide shadow-lg sm:text-lg"
+            style={{ background: THEME.accent, color: THEME.accentInk }}
+          >
+            <span>
+              {BUY.ctaPrefix}
+              {BUY.tiers.length > 1 ? ` · ${tier.name}` : ""}
+            </span>
+            <span className="opacity-60">|</span>
+            <span>{money(tier.price)}</span>
+          </a>
+          <p className="mt-3 text-center text-sm text-[#9A9DA5]">{BUY.ctaNote}</p>
+        </div>
+      </section>
+
+      {/* 9. Guarantee */}
+      <section className="px-5 py-12" style={{ background: THEME.panel }}>
+        <div className="mx-auto max-w-xl rounded-2xl border p-8 text-center" style={{ borderColor: THEME.line, background: THEME.bg }}>
+          <img src={GUARANTEE.image} alt={GUARANTEE.imageAlt} loading="lazy" className="mx-auto h-32 w-32 rounded-xl object-cover" />
+          <h2 className={`${display.className} mt-5 text-2xl font-black uppercase leading-tight`}>{GUARANTEE.title}</h2>
+          <p className="mt-3 text-base leading-relaxed text-[#C9CBD1]">{GUARANTEE.body}</p>
+        </div>
+      </section>
+
+      {/* 10. FAQ */}
+      <section className="px-5 py-14" style={{ background: THEME.bg }}>
+        <div className="mx-auto max-w-xl">
+          <H2>Frequently asked questions</H2>
+          <div className="mt-6 space-y-3">
+            {FAQ.map((f, i) => {
+              const open = openFaq === i
+              return (
+                <div key={f.q} className="rounded-2xl border" style={{ borderColor: THEME.line, background: THEME.panel }}>
+                  <button
+                    type="button"
+                    aria-expanded={open}
+                    onClick={() => setOpenFaq(open ? null : i)}
+                    className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left text-base font-bold"
+                  >
+                    <span>{f.q}</span>
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full" style={{ background: THEME.accent }}>
+                      {open ? <Minus className="h-5 w-5" strokeWidth={3} /> : <Plus className="h-5 w-5" strokeWidth={3} />}
+                    </span>
+                  </button>
+                  {open && <p className="px-5 pb-5 text-base leading-relaxed text-[#C9CBD1]">{f.a}</p>}
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* 11. Close + footer */}
+      <section
+        className="px-5 pb-28 pt-14 text-center"
+        style={{ background: `radial-gradient(120% 90% at 50% 100%, ${THEME.heroGlow} 0%, ${THEME.bg} 65%)` }}
+      >
+        <div className="mx-auto max-w-xl">
+          <Eyebrow>{CLOSE.eyebrow}</Eyebrow>
+          <H2 className="mt-3">{CLOSE.title}</H2>
+          <p className="mt-3 text-base text-[#C9CBD1]">{CLOSE.note}</p>
+          <JumpCta label={CLOSE.cta} className="mt-6" />
+          <p className="mt-8 text-sm text-[#9A9DA5]">
+            © {FOOTER.brand}
+            {FOOTER.links.map((l) => (
+              <span key={l.label}>
+                {" · "}
+                <a href={l.href} className="underline">
+                  {l.label}
+                </a>
+              </span>
+            ))}
+          </p>
+        </div>
+      </section>
+
+      {/* 12. Sticky bar: hidden while the buy box is on screen */}
+      <div
+        className={`fixed inset-x-0 bottom-0 z-50 border-t px-5 py-3 transition-transform duration-300 ${buyVisible ? "translate-y-full" : "translate-y-0"}`}
+        style={{ borderColor: THEME.line, background: "rgba(14,15,17,0.97)" }}
+      >
+        <div className="mx-auto flex max-w-xl items-center justify-between gap-4">
+          <div className="min-w-0">
+            <p className={`${display.className} text-xl font-black uppercase leading-tight`}>
+              {BUY.tiers.length > 1 ? `FROM ${money(lowest)}` : STICKY.priceLine}
+            </p>
+            <p className="text-sm font-bold" style={{ color: THEME.accent }}>
+              {SALE.stickyLine}
+            </p>
+          </div>
+          <a
+            href="#buy"
+            onClick={() => clarity("set", `${LANDER_TAG}_cta`, "sticky")}
+            className="shrink-0 rounded-2xl px-6 py-4 text-base font-extrabold uppercase tracking-wide"
+            style={{ background: THEME.accent, color: THEME.accentInk }}
+          >
+            {STICKY.cta}
+          </a>
+        </div>
+      </div>
+    </div>
+  )
+}
