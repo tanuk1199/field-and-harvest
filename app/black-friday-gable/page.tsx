@@ -13,15 +13,15 @@ import { Award, BadgeDollarSign, Check, ChevronLeft, ChevronRight, Minus, Plus, 
 // Section order (the template's, do not reorder):
 //   1 sale bar            7 how it works (image + 4 numbered steps)
 //   2 dark hero + CTA     8 BUY BOX: gallery, checks, tier cards,
-//   3 review carousel       trust strip, add-to-cart permalink
+//   3 review carousel       trust strip, product-page link
 //   4 "what it handles"   9 guarantee card
 //     intro + 2x2 tiles  10 FAQ
 //   5 comparison table   11 closing sale band + CTA, footer
 //   6 verdict line       12 sticky price bar (hidden over the buy box)
 //
-// Every CTA scrolls to #buy except the add-to-cart button, which is a
-// Shopify cart permalink straight to checkout. That click fires Meta
-// AddToCart because the PDP is skipped.
+// Every CTA scrolls to #buy except the CHECK AVAILABILITY button, which
+// links to the product page with the chosen variant (?variant=<id>&lp=<tag>).
+// The PDP's own add to cart fires Meta AddToCart, so this page does not.
 //
 // ALL COPY AND DATA LIVE IN THE CONFIG BLOCK BELOW. The JSX under it is
 // the template and does not change between products.
@@ -197,15 +197,13 @@ const BUY = {
       variantId: "67994210271275",
     },
   ] as Tier[],
-  // Extra $0 lines added to every checkout (e.g. a free gift variant). None here:
-  // the Gable's warranty is display only.
-  freeLines: [] as string[],
   trust: [
     { icon: "truck", title: "Free shipping", sub: "On this order" },
     { icon: "money", title: "30-day guarantee", sub: "Full money back" },
     { icon: "award", title: "1-year warranty", sub: "Included free" },
   ],
-  ctaPrefix: "ADD TO CART",
+  pdpHandle: "the-gable-pressure-washer-wand",
+  ctaPrefix: "CHECK AVAILABILITY",
   ctaNote: "Early Access Black Friday Sale · Free shipping",
 }
 
@@ -275,9 +273,8 @@ function clarity(...args: unknown[]) {
   w.clarity?.(...args)
 }
 
-function checkoutUrl(t: Tier) {
-  const lines = [`${t.variantId}:1`, ...BUY.freeLines.map((id) => `${id}:1`)].join(",")
-  return `${STORE}/cart/${lines}?attributes[lp]=${LANDER_TAG}`
+function productUrl(t: Tier) {
+  return `${STORE}/products/${BUY.pdpHandle}?variant=${t.variantId}&lp=${LANDER_TAG}`
 }
 
 // The PDP promo bar (snippets/fh-bunkhouse-promo-bar.liquid), same layout and
@@ -431,17 +428,11 @@ export default function SaleBuyboxPage() {
     setSlide((s) => (s + delta + BUY.gallery.length) % BUY.gallery.length)
   }
 
-  function fireAddToCart() {
+  function fireBuyClick() {
     try {
-      track("track", "AddToCart", {
-        content_ids: [tier.variantId],
-        content_type: "product",
-        value: tier.price,
-        currency: "USD",
-      })
       track("trackCustom", "BuyBoxClick", { page: LANDER_TAG, tier: tier.key })
-      clarity("set", `${LANDER_TAG}_checkout`, tier.key)
-      clarity("upgrade", `${LANDER_TAG}-checkout-click`)
+      clarity("set", `${LANDER_TAG}_pdp`, tier.key)
+      clarity("upgrade", `${LANDER_TAG}-pdp-click`)
     } catch {}
   }
 
@@ -732,8 +723,8 @@ export default function SaleBuyboxPage() {
           </div>
 
           <a
-            href={checkoutUrl(tier)}
-            onClick={fireAddToCart}
+            href={productUrl(tier)}
+            onClick={fireBuyClick}
             className="mt-5 flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-2xl px-3 py-5 text-center text-[15px] font-extrabold uppercase tracking-normal shadow-lg sm:gap-3 sm:text-lg sm:tracking-wide"
             style={{ background: THEME.accent, color: THEME.accentInk }}
           >

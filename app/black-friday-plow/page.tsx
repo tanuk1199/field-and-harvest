@@ -10,9 +10,9 @@ import { Award, BadgeDollarSign, Check, ChevronLeft, ChevronRight, Minus, Plus, 
 // Funnels/templates/sale-buybox-dark-1, cloned from /black-friday-gable.
 // Only the CONFIG block differs from that page.
 //
-// Every CTA scrolls to #buy except the add-to-cart button, which is a
-// Shopify cart permalink straight to checkout. That click fires Meta
-// AddToCart because the PDP is skipped.
+// Every CTA scrolls to #buy except the CHECK AVAILABILITY button, which
+// links to the product page with the chosen variant (?variant=<id>&lp=<tag>).
+// The PDP's own add to cart fires Meta AddToCart, so this page does not.
 // ============================================================
 
 const display = Archivo({ subsets: ["latin"], weight: ["800", "900"] })
@@ -183,14 +183,13 @@ const BUY = {
       variantId: "68013794164779",
     },
   ] as Tier[],
-  // The 1 year warranty is display only, nothing extra goes in the cart.
-  freeLines: [] as string[],
   trust: [
     { icon: "truck", title: "Free shipping", sub: "On this order" },
     { icon: "money", title: "30-day guarantee", sub: "Full money back" },
     { icon: "award", title: "1-year warranty", sub: "Included free" },
   ],
-  ctaPrefix: "ADD TO CART",
+  pdpHandle: "the-yeoman-plow",
+  ctaPrefix: "CHECK AVAILABILITY",
   ctaNote: "Early Access Black Friday Sale · Free shipping",
 }
 
@@ -220,7 +219,7 @@ const FAQ: { q: string; a: string }[] = [
   },
   {
     q: "How do I get the Black Friday price?",
-    a: "It's the price on this page, so there's no code to type. The add to cart button takes you straight to checkout with $91 off already applied.",
+    a: "It's the price on this page and on the product page, so there's no code to type. The $91 off is already applied.",
   },
   {
     q: "What if it doesn't suit my driveway?",
@@ -260,9 +259,8 @@ function clarity(...args: unknown[]) {
   w.clarity?.(...args)
 }
 
-function checkoutUrl(t: Tier) {
-  const lines = [`${t.variantId}:1`, ...BUY.freeLines.map((id) => `${id}:1`)].join(",")
-  return `${STORE}/cart/${lines}?attributes[lp]=${LANDER_TAG}`
+function productUrl(t: Tier) {
+  return `${STORE}/products/${BUY.pdpHandle}?variant=${t.variantId}&lp=${LANDER_TAG}`
 }
 
 // The PDP promo bar (snippets/fh-bunkhouse-promo-bar.liquid), same layout and
@@ -416,17 +414,11 @@ export default function SaleBuyboxPage() {
     setSlide((s) => (s + delta + BUY.gallery.length) % BUY.gallery.length)
   }
 
-  function fireAddToCart() {
+  function fireBuyClick() {
     try {
-      track("track", "AddToCart", {
-        content_ids: [tier.variantId],
-        content_type: "product",
-        value: tier.price,
-        currency: "USD",
-      })
       track("trackCustom", "BuyBoxClick", { page: LANDER_TAG, tier: tier.key })
-      clarity("set", `${LANDER_TAG}_checkout`, tier.key)
-      clarity("upgrade", `${LANDER_TAG}-checkout-click`)
+      clarity("set", `${LANDER_TAG}_pdp`, tier.key)
+      clarity("upgrade", `${LANDER_TAG}-pdp-click`)
     } catch {}
   }
 
@@ -717,8 +709,8 @@ export default function SaleBuyboxPage() {
           </div>
 
           <a
-            href={checkoutUrl(tier)}
-            onClick={fireAddToCart}
+            href={productUrl(tier)}
+            onClick={fireBuyClick}
             className="mt-5 flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-2xl px-3 py-5 text-center text-[15px] font-extrabold uppercase tracking-normal shadow-lg sm:gap-3 sm:text-lg sm:tracking-wide"
             style={{ background: THEME.accent, color: THEME.accentInk }}
           >
