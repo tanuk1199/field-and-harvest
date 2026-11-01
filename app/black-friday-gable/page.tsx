@@ -732,8 +732,6 @@ export default function SaleBuyboxPage() {
               {BUY.ctaPrefix}
               {BUY.tiers.length > 1 ? ` · ${tier.name}` : ""}
             </span>
-            <span className="opacity-60">|</span>
-            <span>{money(tier.price)}</span>
           </a>
           <p className="mt-3 text-center text-sm text-[#9A9DA5]">{BUY.ctaNote}</p>
         </div>
