@@ -7,7 +7,7 @@ const OG_IMAGE =
 export const metadata: Metadata = {
   title: "6 Reasons Homeowners Clean Their Gutters With The Gable Instead Of A Ladder Or A Crew | Field & Harvest Co.",
   description:
-    "A ladder puts you up there with a pressure washer in your hands. A crew sends a bill every fall. The Gable is a 24 ft wand for the pressure washer you already own, so you flush the gutters and wash the second story from the lawn. Halloween Sale: $101 off + free 1 year warranty.",
+    "A ladder puts you up there with a pressure washer in your hands. A crew sends a bill every fall. The Gable is a 24 ft wand for the pressure washer you already own, so you flush the gutters and wash the second story from the lawn. Early Access Black Friday Sale: $101 off + free 1 year warranty.",
   openGraph: {
     title: "6 Reasons Homeowners Are Putting Away The Ladder And Skipping The Crew",
     description: "Second-story gutters and siding from the lawn, on the pressure washer you already own.",

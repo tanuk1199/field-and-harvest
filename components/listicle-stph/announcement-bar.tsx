@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react'
 
 // Port of snippets/fh-bunkhouse-promo-bar.liquid, same as /hunt-the-last-hour.
 // Same text, gradient, type and rolling countdown to the visitor's local midnight.
-// SALE_NAME is the one place the sale is named: rename it after Oct 31, with the PDP bar.
+// SALE_NAME is the one place the sale is named: Early Access Black Friday Sale since 2026-11-01, matching the PDP bar.
 // SAVE is the PDP banner's dollar figure ($450 - $289). It is the only money figure on the page.
-export const SALE_NAME = 'Halloween Sale'
+export const SALE_NAME = 'Early Access Black Friday Sale'
 export const SAVE = '$161'
 
 export function AnnouncementBar() {
@@ -30,7 +30,7 @@ export function AnnouncementBar() {
         <span className="fhb-promo-txt">
           <b>{SALE_NAME.toUpperCase()}</b>
           <i>|</i>
-          <span className="fhb-promo-sub">{SAVE} OFF + FREE 1 YEAR WARRANTY 🎃</span>
+          <span className="fhb-promo-sub">{SAVE} OFF + FREE 1 YEAR WARRANTY</span>
         </span>
         <span className="fhb-promo-clock">
           <span className="fhb-u"><b>00</b><small>DAYS</small></span><em>:</em>
@@ -52,6 +52,9 @@ export function AnnouncementBar() {
   .fhb-u b { background: rgba(251,246,236,.14); border: 1px solid rgba(251,246,236,.25); border-radius: 4px; min-width: 32px; padding: 3px 4px; text-align: center; font: 700 15px/1.2 var(--font-body--family, Inter, sans-serif); font-variant-numeric: tabular-nums; }
   .fhb-u small { font-size: 8px; letter-spacing: .1em; opacity: .75; margin-top: 2px; }
   @media (max-width: 749px) { .fhb-promo-in { gap: 8px; padding: 8px 10px; } .fhb-promo-txt { flex: 1 1 auto; text-align: center; font-size: 10px; letter-spacing: 0; white-space: nowrap; } .fhb-promo-txt b { display: block; font-size: 14px; margin-bottom: 2px; } .fhb-promo-txt i { display: none; } .fhb-promo-sub { display: block; } .fhb-promo-clock { gap: 3px; } .fhb-u b { min-width: 23px; font-size: 11px; padding: 3px 2px; } .fhb-promo-clock em { line-height: 22px; } .fhb-u small { font-size: 7px; } }
+  .fhb-promo { background: linear-gradient(90deg, #0B0B0B 0%, #1A1712 55%, #3A2A08 100%); }
+  .fhb-promo-txt b { color: #F2B53A; }
+  @media (max-width: 749px) { .fhb-promo-txt b { font-size: 12px; white-space: normal; } }
       `}</style>
     </div>
   )

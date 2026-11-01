@@ -2,7 +2,7 @@ export function EmailSignup() {
   return (
     <section className="mx-auto max-w-3xl px-4 py-14 text-center">
       <h2 className="font-serif text-3xl font-semibold sm:text-4xl">Not Ready Yet?</h2>
-      <p className="mt-3 text-muted-foreground">Get the Halloween Sale price and the free 1 year warranty sent to your inbox.</p>
+      <p className="mt-3 text-muted-foreground">Get the Early Access Black Friday price and the free 1 year warranty sent to your inbox.</p>
 
       <form
         className="mx-auto mt-6 flex max-w-lg flex-col gap-3 sm:flex-row"

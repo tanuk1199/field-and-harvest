@@ -18,7 +18,7 @@ import { reasons } from '@/lib/gpw-reasons'
 // images and links changed. The table is The Gable vs a ladder vs hiring a pro.
 //
 // Template sections changed, all deliberate:
-//   1. Announcement bar replaced by the PDP's Halloween promo bar (components/listicle-gpw/
+//   1. Announcement bar replaced by the PDP's promo bar (components/listicle-gpw/
 //      promo-bar.tsx, sale name in components/listicle-gpw/sale.ts so it renames in one place).
 //   2. Bonus reason (clinical ingredient table) dropped: there is no formula to tabulate, and the
 //      comparison table already carries the contrast.
