@@ -72,7 +72,7 @@ const HERO = {
   sub: "No ladder. No crew. Both feet on the grass.",
   image: img("gable-03-studio-wand-dark.png", 1000),
   imageAlt: "The Gable pressure washer wand at full length, stainless sections with brass couplers",
-  cta: "Claim my $101 off",
+  cta: "Claim Black Friday Discount",
   note: "Now $149 · Free shipping · 30-day money-back guarantee",
 }
 
@@ -205,7 +205,7 @@ const BUY = {
     { icon: "money", title: "30-day guarantee", sub: "Full money back" },
     { icon: "award", title: "1-year warranty", sub: "Included free" },
   ],
-  ctaPrefix: "ADD TO CART",
+  ctaPrefix: "CLAIM BLACK FRIDAY DISCOUNT",
   ctaNote: "Early Access Black Friday Sale · Free shipping",
 }
 
@@ -247,10 +247,10 @@ const CLOSE = {
   eyebrow: "Early Access Black Friday Sale",
   title: "$101 off the Gable",
   note: "Now $149 · 30-day money-back guarantee · Free shipping",
-  cta: "Claim my $101 off",
+  cta: "Claim Black Friday Discount",
 }
 
-const STICKY = { priceLine: "NOW $149", cta: "GET MINE" }
+const STICKY = { priceLine: "NOW $149", cta: "CLAIM DISCOUNT" }
 
 const FOOTER = {
   brand: "Field & Harvest Co",
@@ -734,7 +734,7 @@ export default function SaleBuyboxPage() {
           <a
             href={checkoutUrl(tier)}
             onClick={fireAddToCart}
-            className="mt-5 flex w-full items-center justify-center gap-3 rounded-2xl py-5 text-center text-base font-extrabold uppercase tracking-wide shadow-lg sm:text-lg"
+            className="mt-5 flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-2xl px-3 py-5 text-center text-[15px] font-extrabold uppercase tracking-normal shadow-lg sm:gap-3 sm:text-lg sm:tracking-wide"
             style={{ background: THEME.accent, color: THEME.accentInk }}
           >
             <span>
