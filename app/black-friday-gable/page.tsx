@@ -119,10 +119,10 @@ const HANDLES = {
   title: "Gutters, siding, soffits? From the lawn.",
   body: "Packed second-story gutters, green siding on the north side, soffits and fascia, gable peaks and dormers, high windows and the trim nobody can reach.",
   tiles: [
-    { label: "Second-story gutters", image: img("gable-07-inuse-gutter-from-ground.png", 600) },
-    { label: "Soffits and fascia", image: img("gable-08-inuse-soffit.png", 600) },
-    { label: "Siding, top to bottom", image: img("gable-09-siding-clean-line.png", 600) },
-    { label: "Gables and dormer peaks", image: img("gable-15-inuse-dormer-peak.png", 600) },
+    { label: "Second-story gutters", image: img("gable-bfg-tile-gutters-brick.png", 600) },
+    { label: "Soffits and fascia", image: img("gable-bfg-tile-soffit-craftsman.png", 600) },
+    { label: "Siding, top to bottom", image: img("gable-bfg-tile-siding-farmhouse.png", 600) },
+    { label: "Gables and dormer peaks", image: img("gable-bfg-tile-peak-capecod.png", 600) },
   ],
 }
 
