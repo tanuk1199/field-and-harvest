@@ -205,7 +205,7 @@ const BUY = {
     { icon: "money", title: "30-day guarantee", sub: "Full money back" },
     { icon: "award", title: "1-year warranty", sub: "Included free" },
   ],
-  ctaPrefix: "CLAIM BLACK FRIDAY DISCOUNT",
+  ctaPrefix: "ADD TO CART",
   ctaNote: "Early Access Black Friday Sale · Free shipping",
 }
 
