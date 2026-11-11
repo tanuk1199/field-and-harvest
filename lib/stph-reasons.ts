@@ -11,9 +11,9 @@ export const reasons: ReasonData[] = [
     number: 1,
     title: 'The heater sits outside the blind.',
     titleAccent: 'The fumes never run you out early.',
-    image: '/htlh-hero-blind.webp',
+    image: '/stph-r1-outside-blind.webp',
     imageAspect: 'aspect-[4/3]',
-    imageAlt: 'The Bunkhouse Diesel Heater on a snowy rock outside a camo hunting blind, a warm-air hose running into the blind',
+    imageAlt: 'The Bunkhouse Diesel Heater on a snowy rock outside a camo ground blind, its black warm-air duct running from the front outlet into the blind and its exhaust pipe pointing away',
     paragraphs: [
       'A propane blind heater burns its fuel right beside your chair, so everything it makes stays in the blind with you. The Bunkhouse stands outside on the ground and runs a warm-air hose in, or sits inside with its exhaust pipe run out through the wall. The fumes leave through the pipe. You keep the heat. Nothing in the air pushes you out of the blind before the light goes.',
     ],
