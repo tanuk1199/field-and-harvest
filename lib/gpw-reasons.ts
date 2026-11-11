@@ -60,9 +60,9 @@ export const reasons: ReasonData[] = [
     image: `${CDN}/gable-20-info-fits-your-washer.png?width=1000`,
     imageAlt: 'The Gable wand connected to a homeowner pressure washer by its quick-connect inlet',
     paragraphs: [
-      'The stainless sections screw together at solid brass couplers, the trigger gun and hose come in the box, and the quick-connect inlet clicks onto your washer. No new machine to buy, nothing to rent and nothing to wait on. Unbox it and wash the same afternoon.',
+      'The stainless sections screw together at solid brass couplers, the hose comes in the box and screws straight into the brass quick-connect under the grip, and the other end goes on your washer. No new machine to buy, nothing to rent and nothing to wait on. Unbox it and wash the same afternoon.',
     ],
-    bullets: ['Stainless sections, brass couplers', 'Trigger gun and hose included', 'Quick-connect inlet onto your washer'],
+    bullets: ['Stainless sections, brass couplers', 'Hose included, screws right on', 'Quick-connect inlet onto your washer'],
   },
   {
     number: 6,

@@ -19,7 +19,7 @@ export function FinalCta() {
         <div className="overflow-hidden rounded-xl">
           <Image
             src="https://cdn.shopify.com/s/files/1/0651/8299/0379/files/gable-21-info-whats-included.png?width=800"
-            alt="Everything in the Gable box: the 24 ft wand, trigger gun and hose, gutter hook, two angled extensions and six spray tips"
+            alt="Everything in the Gable box: the 24 ft wand, hose, gutter hook, two angled extensions and six spray tips"
             width={800}
             height={800}
             className="h-full w-full object-cover"
@@ -35,7 +35,7 @@ export function FinalCta() {
             {SAVE} Off + Free 1 Year Warranty
           </p>
           <p className="mt-2 text-sm text-muted-foreground">
-            The wand, trigger gun, hose, gutter hook, two angled extensions and six spray tips, for the pressure washer you already own.
+            The wand, hose, gutter hook, two angled extensions and six spray tips, for the pressure washer you already own.
           </p>
 
           <a
