@@ -892,8 +892,7 @@ export default function HolidayGiftGrangePage() {
           <a
             href="#buy"
             tabIndex={showSticky ? 0 : -1}
-            className="shrink-0 rounded-md px-5 py-3.5 text-center text-sm font-bold text-[#2E2318] shadow-md transition-colors hover:brightness-95 sm:text-base"
-            style={{ background: WHEAT }}
+            className="shrink-0 rounded-md bg-primary px-5 py-3.5 text-center text-sm font-bold text-primary-foreground shadow-md transition-colors hover:bg-[#924B16] focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-[#DDA15E] sm:text-base"
           >
             Get {dollarsOff(v)} Off
           </a>
