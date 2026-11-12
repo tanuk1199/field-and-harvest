@@ -17,14 +17,12 @@ import { Check, Gift, Layers, Play, Spline, Sprout, Star, X } from "lucide-react
 // + comparison table, buy box with the length x pack picker (all 4
 // variants), guarantee, FAQ, closing image, sticky bar. Self-contained.
 //
-// Media: no video of this product exists yet, so the two clip slots (the
-// brick "bend" band and the set-up wall) carry 9:16 stills cropped from the
-// live PDP gallery and the existing Bower lander images, served from
-// public/hgbp/. MediaTile renders the same box a clip would: to swap in
-// video later, drop hgbp-<id>.mp4 next to hgbp-<id>.webp and set
-// video: true on that entry. Nothing in the layout changes. Clips then
-// behave exactly like the Grange page (muted loops, src only near the
-// viewport, VideoPlay once per clip to Pixel + Clarity).
+// Media: the bend band and the set-up wall carry 7 real creator clips of
+// bendable coir poles (from Bower Poles/reference, 2026-11-11; silent, no
+// price or shop text; sticker, caption and teal-tie clips left out) as
+// 432x768 muted loops, ~2.9 MB total, served from public/hgbp/. They behave
+// exactly like the Grange page (src only near the viewport, VideoPlay once
+// per clip to Pixel + Clarity). Two wall tiles stay stills (video unset).
 // - NO shipping mention anywhere.
 // - The buy button goes to the Bower PDP (variant preselected), never to
 //   cart or checkout. The click decorator adds lp=hgbp + the ad's UTMs.
@@ -131,21 +129,20 @@ const IMAGES = {
   closingAlt: "A shelf of houseplants climbing spiral Bower Poles",
 }
 
-// The two clip slots. No video of this product exists yet, so every entry
-// is a still (9:16, cropped from the live PDP gallery and the Bower lander
-// images). To use a clip, add public/hgbp/hgbp-<id>.mp4 and set video: true.
+// The two clip slots. video: true = public/hgbp/hgbp-<id>.mp4 loop with
+// hgbp-<id>.webp as its poster; without it the webp shows as a still.
 type Clip = { id: string; tag: string; alt: string; video?: boolean }
 const V = "/hgbp"
 const BEND_CLIPS: Clip[] = [
-  { id: "straight-pole-climber-white", tag: "Straight up", alt: "A straight Bower Pole with a Monstera climbing it" },
-  { id: "s-curve-pole-climber-white", tag: "A slow curve", alt: "A Bower Pole bent into a gentle curve with a pothos climbing it" },
-  { id: "spiral-pole-climber-white", tag: "A full spiral", alt: "A Bower Pole bent into a tight spiral with a pothos climbing it" },
-  { id: "hoop-spiral-pole-monstera-room", tag: "Bent into a hoop", alt: "A Bower Pole bent into a hoop and spiral with a Monstera climbing it" },
+  { id: "bend-by-hand", tag: "Bends by hand", alt: "A woman flexing a long coir pole with her hands to show it bends", video: true },
+  { id: "arch-guide-pothos", tag: "Into an arch", alt: "A coir pole bent into an arch over a pot, a hand guiding a pothos vine onto it", video: true },
+  { id: "spiral-zigzag-window", tag: "A spiral and a zigzag", alt: "Two coir poles shaped into a spiral and a zigzag in two pots on a window ledge", video: true },
+  { id: "monstera-spiral-orbit", tag: "A full spiral", alt: "A large Monstera trained up a coir pole bent into a spiral", video: true },
 ]
 const WALL_CLIPS: Clip[] = [
-  { id: "insert-spike-into-soil", tag: "The spike goes in the soil", alt: "A hand pushing a Bower Pole into the soil beside a Monstera" },
-  { id: "tie-stem-to-pole", tag: "Tie the stems on", alt: "Hands tying a Monstera stem to a Bower Pole" },
-  { id: "bend-pole-to-plant", tag: "Bend it to the plant", alt: "Hands bending a Bower Pole into a curve around a young Monstera" },
+  { id: "spike-into-soil", tag: "The spike goes in the soil", alt: "A hand pushing the pointed end of a bent coir pole into the soil beside a Monstera", video: true },
+  { id: "velcro-tie-stem", tag: "Tie the stems on", alt: "A hand with a green Velcro tie roll, then tying a stem to a bent coir pole", video: true },
+  { id: "bent-poles-at-home", tag: "Bend it to the plant", alt: "Coir poles bent at the top with pothos and other plants climbing them at home", video: true },
   { id: "stem-on-coir-macro", tag: "Bark-like coir to grab", alt: "Close up of a stem and new leaf against the coco coir wrap" },
   { id: "shelf-spiral-pole-pothos", tag: "Climbing on the shelf", alt: "A pothos climbing a spiral Bower Pole in a terracotta pot on a shelf" },
 ]
@@ -616,8 +613,8 @@ export default function HolidayGiftBowerPolesPage() {
               The part they will play with first.
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-center text-base leading-relaxed text-[#F3DDBF] sm:text-lg">
-              A bendable metal core runs through every pole. Bend it once and it holds: straight up the middle, a slow
-              curve, a full spiral, a hoop. They can reshape it any time the plant grows.
+              A bendable metal core runs through every pole. Bend it once and it holds: straight up the middle, an arch,
+              a zigzag, a full spiral. They can reshape it any time the plant grows.
             </p>
             <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">
               {BEND_CLIPS.map((c, i) => (
