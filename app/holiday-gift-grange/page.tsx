@@ -182,7 +182,7 @@ const FAQS = [
 // ===== END CONFIG =====
 
 const SALE_NAME = "Early Access Black Friday Sale"
-const CTA_LABEL = "Choose their Carrier"
+const CTA_LABEL = "Check Availability"
 
 function offOf(v: Variant) {
   return Math.floor(Math.round((v.compareAt - v.price) * 100) / 100)
@@ -804,7 +804,7 @@ export default function HolidayGiftGrangePage() {
                     className="mt-5 inline-flex items-center justify-center gap-2.5 rounded-md bg-primary px-6 py-5 text-center text-lg font-bold text-primary-foreground shadow-[0_6px_20px_rgba(122,51,32,0.28)] transition-colors hover:bg-[#924B16] focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-[#DDA15E]"
                   >
                     <Gift className="h-5 w-5" aria-hidden="true" />
-                    Give It For {money(v.price)}
+                    {CTA_LABEL}
                   </a>
 
                   <p className="mt-3 text-center text-xs leading-relaxed text-muted-foreground">
@@ -894,7 +894,7 @@ export default function HolidayGiftGrangePage() {
             tabIndex={showSticky ? 0 : -1}
             className="shrink-0 rounded-md bg-primary px-5 py-3.5 text-center text-sm font-bold text-primary-foreground shadow-md transition-colors hover:bg-[#924B16] focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-[#DDA15E] sm:text-base"
           >
-            Get {dollarsOff(v)} Off
+            {CTA_LABEL}
           </a>
         </div>
       </div>
