@@ -411,7 +411,6 @@ export default function HolidayGiftGrangePage() {
   const [vIdx, setVIdx] = useState(DEFAULT_VARIANT)
 
   const v = VARIANTS[vIdx]
-  const heroV = VARIANTS[DEFAULT_VARIANT]
 
   useEffect(() => {
     if (typeof IntersectionObserver === "undefined") return
@@ -513,15 +512,6 @@ export default function HolidayGiftGrangePage() {
               <Stars />
               <span className="text-sm font-semibold text-foreground">
                 {RATING.score} from {RATING.count} reviews
-              </span>
-            </div>
-
-            <div className="flex flex-wrap items-baseline justify-center gap-x-3 gap-y-1 lg:justify-start">
-              <span className="text-sm font-semibold text-muted-foreground">From</span>
-              <span className="text-3xl font-extrabold text-foreground">{money(heroV.price)}</span>
-              <span className="text-lg text-muted-foreground line-through">{money(heroV.compareAt)}</span>
-              <span className="rounded bg-[#7A3320] px-2 py-0.5 text-xs font-bold text-[#FBEBD3]">
-                Save {dollarsOff(heroV)}
               </span>
             </div>
 
