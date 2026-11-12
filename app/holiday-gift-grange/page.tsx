@@ -183,6 +183,7 @@ const FAQS = [
 
 const SALE_NAME = "Early Access Black Friday Sale"
 const CTA_LABEL = "Choose their Carrier"
+const BUY_LABEL = "Check Availability"
 
 function offOf(v: Variant) {
   return Math.floor(Math.round((v.compareAt - v.price) * 100) / 100)
@@ -410,7 +411,6 @@ export default function HolidayGiftGrangePage() {
   const [vIdx, setVIdx] = useState(DEFAULT_VARIANT)
 
   const v = VARIANTS[vIdx]
-  const heroV = VARIANTS[DEFAULT_VARIANT]
 
   useEffect(() => {
     if (typeof IntersectionObserver === "undefined") return
@@ -512,15 +512,6 @@ export default function HolidayGiftGrangePage() {
               <Stars />
               <span className="text-sm font-semibold text-foreground">
                 {RATING.score} from {RATING.count} reviews
-              </span>
-            </div>
-
-            <div className="flex flex-wrap items-baseline justify-center gap-x-3 gap-y-1 lg:justify-start">
-              <span className="text-sm font-semibold text-muted-foreground">From</span>
-              <span className="text-3xl font-extrabold text-foreground">{money(heroV.price)}</span>
-              <span className="text-lg text-muted-foreground line-through">{money(heroV.compareAt)}</span>
-              <span className="rounded bg-[#7A3320] px-2 py-0.5 text-xs font-bold text-[#FBEBD3]">
-                Save {dollarsOff(heroV)}
               </span>
             </div>
 
@@ -804,7 +795,7 @@ export default function HolidayGiftGrangePage() {
                     className="mt-5 inline-flex items-center justify-center gap-2.5 rounded-md bg-primary px-6 py-5 text-center text-lg font-bold text-primary-foreground shadow-[0_6px_20px_rgba(122,51,32,0.28)] transition-colors hover:bg-[#924B16] focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-[#DDA15E]"
                   >
                     <Gift className="h-5 w-5" aria-hidden="true" />
-                    Give It For {money(v.price)}
+                    {BUY_LABEL}
                   </a>
 
                   <p className="mt-3 text-center text-xs leading-relaxed text-muted-foreground">
@@ -894,7 +885,7 @@ export default function HolidayGiftGrangePage() {
             tabIndex={showSticky ? 0 : -1}
             className="shrink-0 rounded-md bg-primary px-5 py-3.5 text-center text-sm font-bold text-primary-foreground shadow-md transition-colors hover:bg-[#924B16] focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-[#DDA15E] sm:text-base"
           >
-            Get {dollarsOff(v)} Off
+            {CTA_LABEL}
           </a>
         </div>
       </div>
