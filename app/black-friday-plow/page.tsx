@@ -5,7 +5,7 @@ import { Archivo } from "next/font/google"
 import { Award, BadgeDollarSign, Check, ChevronLeft, ChevronRight, Minus, Plus, Star, Truck, X } from "lucide-react"
 
 // ============================================================
-// /black-friday-plow : The Yeoman Plow (38 in wheeled snow pusher)
+// /black-friday-plow : The Yeoman Plow (36 in black wheeled snow pusher; 38 in red sold out)
 // EARLY ACCESS BLACK FRIDAY SALE. Second build on the template
 // Funnels/templates/sale-buybox-dark-1, cloned from /black-friday-gable.
 // Only the CONFIG block differs from that page.
@@ -18,10 +18,12 @@ import { Award, BadgeDollarSign, Check, ChevronLeft, ChevronRight, Minus, Plus, 
 const display = Archivo({ subsets: ["latin"], weight: ["800", "900"] })
 
 // ===== CONFIG =====
-// Live price read off /products/the-yeoman-plow.json 2026-11-01:
-//   68013794164779  FH-SNOW-38  $159.00 / $250.00  save $91
-// Facts: Snow Pusher/brain/CANON.md (38 in blade on wheels, swivels up to
-// 72 degrees, orange poles, assembles in 20 to 30 min with the tools in the box).
+// Live price read off /products/the-yeoman-plow.json 2026-11-13 (owner: 36 in black
+// folded into the Plow, red sold out, $197 / $310 = the old 36% off):
+//   68270519975979  FH-SNOW-36-BLK  $197.00 / $310.00  save $113
+//   68013794164779  FH-SNOW-38      $197.00 / $310.00  SOLD OUT (DENY)
+// Facts: the 36 in kit (frank-kit product/vevor-36in-snow-pusher-black): 36 in powder-coated
+// carbon-steel blade, 7-angle blade, 5-position handle, 3 height levels, 22.04 lb.
 // "Half the time" is owner-supplied (PDP H1 2026-10-26).
 // No rating row: the Plow has no owner-supplied rating or count.
 
@@ -45,8 +47,8 @@ const SALE = {
   bannerName: "EARLY ACCESS BLACK FRIDAY SALE",
   bannerTail: "FREE 1 YEAR WARRANTY",
   name: "Early Access Black Friday Sale",
-  saveChip: "SAVE $91",
-  stickyLine: "$91 off · Black Friday",
+  saveChip: "SAVE $113",
+  stickyLine: "$113 off · Black Friday",
 }
 
 // null = no rating row anywhere. Never fill with an invented number.
@@ -55,11 +57,11 @@ const HERO_TRUST = "FREE 1 YEAR WARRANTY · 30 DAYS TO DECIDE"
 
 const HERO = {
   headline: "Clear the driveway with less back pain and less effort",
-  sub: "A 38-inch blade on wheels. Push the snow, never lift it.",
-  image: img("snowpusher-studio.jpg", "1793065829", 1000),
-  imageAlt: "The Yeoman Plow: a 38-inch red blade on two wheels with an orange push handle",
+  sub: "A 36-inch blade on wheels. Push the snow, never lift it.",
+  image: img("plow36-studio.jpg", "1794550753", 1000),
+  imageAlt: "The Yeoman Plow: a 36-inch black carbon-steel blade on two wheels with a black push handle",
   cta: "Claim Black Friday Discount",
-  note: "Now $159 · Free shipping · 30-day money-back guarantee",
+  note: "Now $197 · Free US shipping · 30-day money-back guarantee",
 }
 
 type Review = { name: string; title: string; body: string; photo?: string }
@@ -105,10 +107,10 @@ const HANDLES = {
   title: "Driveways, walks, the whole run? Pushed clear.",
   body: "Concrete and asphalt driveways, sidewalks and walkways, smooth pavers, the shop apron and the long run out to the road. Light fluff, wet heavy snow and slush.",
   tiles: [
-    { label: "The driveway", image: img("snowpusher-driveway.jpg", "1793065830", 600) },
-    { label: "Sidewalks and walkways", image: img("snowpusher-sidewalk.jpg", "1793065831", 600) },
-    { label: "Wet, heavy snow and slush", image: img("snowpusher-blade-on-concrete.jpg", "1793065834", 600) },
-    { label: "The long run to the road", image: `${SHOP}/plow-vid-7-long-driveway-poster.jpg?v=1793054601&width=600` },
+    { label: "The driveway", image: img("plow36-driveway.jpg", "1794550754", 600) },
+    { label: "Sidewalks and walkways", image: img("plow36-sidewalk.jpg", "1794550755", 600) },
+    { label: "Wet, heavy snow and slush", image: img("plow36-blade-concrete.jpg", "1794550756", 600) },
+    { label: "The long run to the road", image: img("plow36-hero.jpg", "1794550753", 600) },
   ],
 }
 
@@ -131,15 +133,15 @@ const COMPARE = {
 }
 
 const HOW = {
-  eyebrow: "38-inch blade · swivels up to 72°",
+  eyebrow: "36-inch blade · 7-angle adjust",
   title: "How it works",
-  image: img("snowpusher-flatlay.jpg", "1793065830", 1000),
-  imageAlt: "Everything in the box: the blade, two wheels, the push handle, the swivel bracket and the hardware",
+  image: img("plow36-flatlay.jpg", "1794550754", 1000),
+  imageAlt: "Everything in the box: the blade, two wheels, the push handle, the bracket and the hardware",
   steps: [
     { title: "Bolt it together", body: "About 20 to 30 minutes with the tools in the box, quicker with two people." },
-    { title: "Set the blade on the pavement", body: "The curved 38-inch blade sits flat on concrete, asphalt or smooth pavers." },
+    { title: "Set your angle and height", body: "Turn the blade to one of 7 angles and lock the handle into 1 of 5 positions, at the height that fits you." },
     { title: "Push the whole run", body: "The wheels carry the load, so you guide the blade instead of lifting it." },
-    { title: "Swivel to either side", body: "Angle the blade up to 72 degrees and roll the snow off to the side you want." },
+    { title: "Clear it to the side you want", body: "The angled 36-inch blade sends the snow off to one side as you push, on concrete, asphalt or smooth pavers." },
   ],
 }
 
@@ -156,17 +158,18 @@ type Tier = {
 }
 const BUY = {
   gallery: [
-    { src: img("snowpusher-hero.jpg", "1793065828", 1000), alt: "The Yeoman Plow with its warranty seal and badge" },
-    { src: img("snowpusher-push-not-lift.jpg", "1793065833", 1000), alt: "Push, not lift: the Plow beside a standard shovel" },
-    { src: img("snowpusher-driveway.jpg", "1793065830", 1000), alt: "Pushing a driveway clear in front of the garage" },
-    { src: img("snowpusher-sidewalk.jpg", "1793065831", 1000), alt: "Clearing a sidewalk in one pass" },
-    { src: img("snowpusher-turn-photo.jpg", "1793065534", 1000), alt: "The blade swiveled to push snow to the side" },
-    { src: img("snowpusher-flatlay.jpg", "1793065830", 1000), alt: "Everything in the box" },
+    { src: img("plow36-hero.jpg", "1794550753", 1000), alt: "The Yeoman Plow, 36-inch black blade, on a cleared driveway" },
+    { src: img("plow36-demo-pushnotlift.jpg", "1794550757", 1000), alt: "Push, not lift: the Plow beside a standard shovel" },
+    { src: img("plow36-driveway.jpg", "1794550754", 1000), alt: "Pushing a driveway clear in front of the garage" },
+    { src: img("plow36-sidewalk.jpg", "1794550755", 1000), alt: "Clearing a sidewalk in one pass" },
+    { src: img("plow36-angle-infographic.jpg", "1794550755", 1000), alt: "The 7-angle rotatable blade" },
+    { src: img("plow36-studio.jpg", "1794550753", 1000), alt: "The Yeoman Plow, 36-inch black" },
+    { src: img("plow36-flatlay.jpg", "1794550754", 1000), alt: "Everything in the box" },
   ],
   productName: "The Yeoman Plow",
   checks: [
-    "38-inch blade on wheels: push it, never lift it",
-    "Swivels up to 72 degrees to either side",
+    "36-inch carbon-steel blade on wheels: push it, never lift it",
+    "7-angle blade, 5-position handle, 3 height levels",
     "Nothing to charge, fuel or plug in",
     "Assembles with the tools in the box",
   ],
@@ -174,27 +177,37 @@ const BUY = {
   appliedLabel: "Black Friday price applied",
   tiers: [
     {
-      key: "38in",
-      name: "38 IN PLOW",
-      blurb: "Blade, wheels, handle and hardware, ready for the first storm.",
-      meta: "38-INCH PATH",
-      price: 159,
-      compareAt: 250,
+      key: "36in-black",
+      name: "36 IN BLACK PLOW",
+      blurb: "Carbon-steel blade, wheels, handle and hardware, ready for the first storm.",
+      meta: "36-INCH PATH · BLACK",
+      price: 197,
+      compareAt: 310,
+      variantId: "68270519975979",
+    },
+    {
+      key: "38in-red",
+      name: "38 IN RED PLOW",
+      blurb: "The original red Plow.",
+      meta: "38-INCH PATH · RED",
+      price: 197,
+      compareAt: 310,
       variantId: "68013794164779",
+      soldOut: true,
     },
   ] as Tier[],
   trust: [
-    { icon: "truck", title: "Free shipping", sub: "On this order" },
+    { icon: "truck", title: "Free US shipping", sub: "On this order" },
     { icon: "money", title: "30-day guarantee", sub: "Full money back" },
     { icon: "award", title: "1-year warranty", sub: "Included free" },
   ],
   pdpHandle: "the-yeoman-plow",
   ctaPrefix: "CHECK AVAILABILITY",
-  ctaNote: "Early Access Black Friday Sale · Free shipping",
+  ctaNote: "Early Access Black Friday Sale · Free US shipping",
 }
 
 const GUARANTEE = {
-  image: img("snowpusher-guarantee-seal.jpg", "1793065832", 500),
+  image: img("plow36-guarantee.jpg", "1794550758", 500),
   imageAlt: "30 day money back guarantee seal",
   title: "Try it for 30 days",
   body: "Push it through a real storm. Thirty days to decide, with a full refund either way, and a free 1 year warranty on top.",
@@ -207,7 +220,7 @@ const FAQ: { q: string; a: string }[] = [
   },
   {
     q: "Is it hard to push?",
-    a: "Nothing like shoveling. The wheels carry the weight the whole time, so you guide the blade instead of lifting it. The curved blade rolls even wet, heavy snow and slush up and pushes it aside.",
+    a: "Nothing like shoveling. The wheels carry the weight the whole time, so you guide the blade instead of lifting it. The blade pushes even wet, heavy snow and slush aside as you go.",
   },
   {
     q: "Why not just keep the shovel?",
@@ -219,7 +232,7 @@ const FAQ: { q: string; a: string }[] = [
   },
   {
     q: "How do I get the Black Friday price?",
-    a: "It's the price on this page and on the product page, so there's no code to type. The $91 off is already applied.",
+    a: "It's the price on this page and on the product page, so there's no code to type. The $113 off is already applied.",
   },
   {
     q: "What if it doesn't suit my driveway?",
@@ -229,12 +242,12 @@ const FAQ: { q: string; a: string }[] = [
 
 const CLOSE = {
   eyebrow: "Early Access Black Friday Sale",
-  title: "$91 off the Yeoman Plow",
-  note: "Now $159 · 30-day money-back guarantee · Free shipping",
+  title: "$113 off the Yeoman Plow",
+  note: "Now $197 · 30-day money-back guarantee · Free US shipping",
   cta: "Claim Black Friday Discount",
 }
 
-const STICKY = { priceLine: "NOW $159", cta: "CLAIM DISCOUNT" }
+const STICKY = { priceLine: "NOW $197", cta: "CLAIM DISCOUNT" }
 
 const FOOTER = {
   brand: "Field & Harvest Co",
