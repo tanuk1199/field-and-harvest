@@ -19,7 +19,7 @@ const display = Archivo({ subsets: ["latin"], weight: ["800", "900"] })
 
 // ===== CONFIG =====
 // Live price read off /products/the-bunkhouse-diesel-heater.json 2026-11-01:
-//   67983351676971  FH-BUNK-8KW  $289.00 / $450.00  save $161
+//   67983351676971  FH-BUNK-8KW  $297.00 / $458.00  save $161
 // Facts: Diesel Heater/brain/ + the live PDP (exhaust out its own pipe,
 // 8 kW, CO alarm 300/500 ppm owner-supplied, warm in about 3 minutes,
 // 12V/24V at 2-3 A). Ships free from USA (owner). No 110V, tank or run-time claims.
@@ -60,7 +60,7 @@ const HERO = {
   image: img("bunkhouse-03-studio-dark-premium.png", "1792716169", 1000),
   imageAlt: "The Bunkhouse Diesel Heater, studio view",
   cta: "Claim Black Friday Discount",
-  note: "Now $289 · Ships free from USA · 30-day money-back guarantee",
+  note: "Now $297 · Ships free from USA · 30-day money-back guarantee",
 }
 
 type Review = { name: string; title: string; body: string; photo?: string }
@@ -185,8 +185,8 @@ const BUY = {
       name: "8 KW DIESEL HEATER",
       blurb: "Heater, exhaust pipe, muffler, intake pipe and remote.",
       meta: "12V / 24V",
-      price: 289,
-      compareAt: 450,
+      price: 297,
+      compareAt: 458,
       variantId: "67983351676971",
     },
   ] as Tier[],
@@ -237,11 +237,11 @@ const FAQ: { q: string; a: string }[] = [
 const CLOSE = {
   eyebrow: "Early Access Black Friday Sale",
   title: "$161 off the Bunkhouse",
-  note: "Now $289 · 30-day money-back guarantee · Ships free from USA",
+  note: "Now $297 · 30-day money-back guarantee · Ships free from USA",
   cta: "Claim Black Friday Discount",
 }
 
-const STICKY = { priceLine: "NOW $289", cta: "CLAIM DISCOUNT" }
+const STICKY = { priceLine: "NOW $297", cta: "CLAIM DISCOUNT" }
 
 const FOOTER = {
   brand: "Field & Harvest Co",
