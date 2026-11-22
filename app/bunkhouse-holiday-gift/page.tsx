@@ -65,6 +65,7 @@ type Reason = {
 const C = {
   tag: "bhg",
   pdpUrl: "https://fieldandharvestco.com/products/the-bunkhouse-diesel-heater?variant=67983351676971&lp=bhg",
+  // price lives on the PDP only (template product card has no price row)
   offer: { price: 297, compareAt: 458, save: 161 },
   banner: { hi: "Early Access Black Friday", text: "$161 Off + Free 1 Year Warranty" },
   hero: {
@@ -129,7 +130,6 @@ const C = {
       alt: "The Bunkhouse heater with its 30 day money back guarantee and free 1 year warranty seals",
       body: "The Early Access Black Friday Sale is live right now, with $161 off for a limited time. A gift should be a sure thing: the free 1 year warranty covers it for a full year from the day it arrives, and he gets 30 days to try it with a full refund either way. It ships free from the USA, so it isn't crossing an ocean in December.",
       highlight: "Wrap it early and he's warm by the first cold weekend.",
-      cta: "Claim $161 Off For The Holidays",
     },
   ] as Reason[],
   product: {
@@ -150,7 +150,6 @@ const C = {
       { icon: "ShieldCheck", text: "Built-in CO alarm, 300 / 500 ppm" },
       { icon: "Battery", text: "Runs off 12V or 24V power" },
     ] as { icon: IconName; text: string }[],
-    cta: "Give Him The Bunkhouse, $161 Off",
   },
   reviews: {
     headline: "What Buyers Are Saying",
@@ -244,10 +243,7 @@ export default function GiftListiclePage() {
         </div>
 
         <div className="mt-5 text-center">
-          <span className="inline-block bg-[#DDA15E]/20 rounded-md py-2 px-4 font-bold text-sm text-foreground">
-            <Gift className="inline w-4 h-4 mr-1.5 -mt-0.5 text-[#C86F4C]" />
-            {C.saleBadge}
-          </span>
+          <span className="inline-block bg-[#DDA15E]/20 rounded-md py-2 px-4 font-bold text-sm text-foreground">{C.saleBadge}</span>
         </div>
 
         <div className="mt-5 text-center">
@@ -300,16 +296,6 @@ export default function GiftListiclePage() {
               </blockquote>
             )}
 
-            {r.cta && (
-              <a {...cta(`reason-${i + 1}`, r.cta)}>
-                <Button
-                  size="lg"
-                  className="w-full mt-6 bg-[#C86F4C] hover:bg-[#C86F4C]/90 text-white font-bold py-6 text-base rounded-lg shadow-md"
-                >
-                  {r.cta}
-                </Button>
-              </a>
-            )}
           </div>
         ))}
       </section>
@@ -350,12 +336,6 @@ export default function GiftListiclePage() {
               ))}
             </div>
 
-            <div className="flex items-baseline justify-center gap-3 mb-5">
-              <span className="text-3xl font-bold text-foreground">${C.offer.price}</span>
-              <span className="text-lg text-muted-foreground line-through">${C.offer.compareAt}</span>
-              <span className="text-sm font-bold text-white bg-[#C86F4C] rounded px-2 py-0.5">SAVE ${C.offer.save}</span>
-            </div>
-
             <div className="grid grid-cols-2 gap-3 mb-5">
               {C.product.benefits.map(({ icon, text }) => {
                 const Icon = ICONS[icon]
@@ -368,12 +348,13 @@ export default function GiftListiclePage() {
               })}
             </div>
 
-            <a {...cta("product-card", C.product.cta)}>
+            <a {...cta("product-card", "See Full Product Details")}>
               <Button
+                variant="outline"
                 size="lg"
-                className="w-full bg-[#C86F4C] hover:bg-[#C86F4C]/90 text-white font-bold py-6 rounded-lg shadow-md"
+                className="w-full border-2 border-foreground text-foreground font-bold hover:bg-muted bg-transparent py-6 rounded-lg"
               >
-                {C.product.cta}
+                See Full Product Details
               </Button>
             </a>
           </div>

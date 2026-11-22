@@ -65,6 +65,7 @@ type Reason = {
 const C = {
   tag: "ehg",
   pdpUrl: "https://fieldandharvestco.com/products/the-ember-grip-heated-gloves?variant=68101745737771&lp=ehg",
+  // price lives on the PDP only (template product card has no price row)
   offer: { price: 79, compareAt: 125, save: 46 },
   banner: { hi: "Early Access Black Friday", text: "$46 Off + 60-Day Guarantee" },
   hero: {
@@ -133,7 +134,6 @@ const C = {
       alt: "The Ember Grip heated gloves with their 60-day guarantee seal",
       body: "The Early Access Black Friday Sale is live right now, with $46 off a pair for a limited time. There's no size to guess: one size fits most men and women, about 9 inches long and 4.3 inches across the palm. And they get 60 days to try them, with a full refund either way.",
       highlight: "Grab a pair for them, and maybe one for yourself.",
-      cta: "Claim $46 Off For The Holidays",
     },
   ] as Reason[],
   product: {
@@ -154,7 +154,6 @@ const C = {
       { icon: "Battery", text: "3000mAh, up to 5 hours" },
       { icon: "Smartphone", text: "Flip-open thumb and index tips" },
     ] as { icon: IconName; text: string }[],
-    cta: "Give Warm Hands, $46 Off",
   },
   reviews: {
     headline: "What Buyers Are Saying",
@@ -248,10 +247,7 @@ export default function GiftListiclePage() {
         </div>
 
         <div className="mt-5 text-center">
-          <span className="inline-block bg-[#DDA15E]/20 rounded-md py-2 px-4 font-bold text-sm text-foreground">
-            <Gift className="inline w-4 h-4 mr-1.5 -mt-0.5 text-[#C86F4C]" />
-            {C.saleBadge}
-          </span>
+          <span className="inline-block bg-[#DDA15E]/20 rounded-md py-2 px-4 font-bold text-sm text-foreground">{C.saleBadge}</span>
         </div>
 
         <div className="mt-5 text-center">
@@ -304,16 +300,6 @@ export default function GiftListiclePage() {
               </blockquote>
             )}
 
-            {r.cta && (
-              <a {...cta(`reason-${i + 1}`, r.cta)}>
-                <Button
-                  size="lg"
-                  className="w-full mt-6 bg-[#C86F4C] hover:bg-[#C86F4C]/90 text-white font-bold py-6 text-base rounded-lg shadow-md"
-                >
-                  {r.cta}
-                </Button>
-              </a>
-            )}
           </div>
         ))}
       </section>
@@ -354,12 +340,6 @@ export default function GiftListiclePage() {
               ))}
             </div>
 
-            <div className="flex items-baseline justify-center gap-3 mb-5">
-              <span className="text-3xl font-bold text-foreground">${C.offer.price}</span>
-              <span className="text-lg text-muted-foreground line-through">${C.offer.compareAt}</span>
-              <span className="text-sm font-bold text-white bg-[#C86F4C] rounded px-2 py-0.5">SAVE ${C.offer.save}</span>
-            </div>
-
             <div className="grid grid-cols-2 gap-3 mb-5">
               {C.product.benefits.map(({ icon, text }) => {
                 const Icon = ICONS[icon]
@@ -372,12 +352,13 @@ export default function GiftListiclePage() {
               })}
             </div>
 
-            <a {...cta("product-card", C.product.cta)}>
+            <a {...cta("product-card", "See Full Product Details")}>
               <Button
+                variant="outline"
                 size="lg"
-                className="w-full bg-[#C86F4C] hover:bg-[#C86F4C]/90 text-white font-bold py-6 rounded-lg shadow-md"
+                className="w-full border-2 border-foreground text-foreground font-bold hover:bg-muted bg-transparent py-6 rounded-lg"
               >
-                {C.product.cta}
+                See Full Product Details
               </Button>
             </a>
           </div>
