@@ -37,8 +37,6 @@ type Reason = {
   title: string
   image: string
   alt: string
-  /** true = render the whole square image (it carries type); false = 3:2 photo crop */
-  whole?: boolean
   body: string
   highlight: string
   /** verbatim review from the PDP, never paraphrased */
@@ -54,7 +52,8 @@ type Reason = {
 // CANON + research: 1 fingertip heat (ANG_wrong_zone_gloves, the batch angle, belief to beat
 // "they don't heat to the finger tips")  2 5 levels + display  3 hands that still work
 // (grip_and_feel, outdoor_trade_worker)  4 battery + flip-open tips (stay_out_longer, phone_gloves_on).
-// Reason 5 carries sizing, the gift buyer's own worry, with the guarantee.
+// Owner 2026-11-22: FIVE reasons; reason 5 folds the sale, sizing (the gift buyer's own worry) and the
+// guarantee into one; no prices outside the product card; every image whole, none repeated.
 //
 // OFFER, read live off /products/the-ember-grip-heated-gloves.json on 2026-11-21:
 //   variant 68101745737771  1 Pair  $79.00 / $125.00  save $46
@@ -72,10 +71,10 @@ const C = {
     src: img("ember-grip-demo-relief.png", 1000),
     alt: "A man in a winter coat flexing his warm hands in the black Ember Grip heated gloves",
   },
-  saleBadge: "Early Access Black Friday: $79, was $125",
-  h1: { a: "6 Reasons The Ember Grip Gloves Are The", hi1: "Perfect Gift", b: "For Anyone Whose Hands Are", hi2: "Always Cold" },
+  saleBadge: "Save $46 + 60-Day Money-Back Guarantee",
+  h1: { a: "5 Reasons The Ember Grip Gloves Are The", hi1: "Perfect Gift", b: "For Anyone Whose Hands Are", hi2: "Always Cold" },
   intro:
-    "Everybody has one. The rider who comes home with numb fingers, the guy who works outside all winter, the one who's freezing at every game. Regular gloves only hold in the warmth that's already there. Here are six reasons these are the gift they'll wear every cold day.",
+    "Everybody has one. The rider who comes home with numb fingers, the guy who works outside all winter, the one who's freezing at every game. Regular gloves only hold in the warmth that's already there. Here are five reasons these are the gift they'll wear every cold day.",
   heroCta: "Give Warm Hands, $46 Off",
   trustLine: "60 days to decide · 5 heat levels · Rechargeable",
   reasons: [
@@ -83,7 +82,6 @@ const C = {
       badge: "FINGERTIP HEAT",
       title: "Put real heat in every fingertip this winter, not just the back of the hand",
       image: img("ember-grip-comparison-infographic.png"),
-      whole: true,
       alt: "Most heated gloves heat the back of the hand only; the Ember Grip heats all five fingers, the palm and the back of the hand",
       body: "Fingertips go numb first, and that's exactly where most heated gloves leave them cold, with one pad on the back of the hand. The Ember Grip heats all five fingers, the palm and the back of the hand, so the warmth reaches the part that actually hurts.",
       highlight: "Warm fingers, not just a warm wrist.",
@@ -96,7 +94,6 @@ const C = {
       badge: "ONE-BUTTON HEAT",
       title: "Let them dial in the heat with one button, all day long",
       image: img("ember-grip-heat-levels-infographic.png"),
-      whole: true,
       alt: "The five heat levels on the glove's display, from 45°C to 65°C, set with one button",
       body: "One button cycles 5 heat levels, from 113°F to 149°F, and a small display on the cuff shows the level and the battery. Turn it up on the first cold walk out, turn it down once their hands warm up.",
       highlight: "They're in charge of the warmth, not the weather.",
@@ -130,21 +127,11 @@ const C = {
       },
     },
     {
-      badge: "NO-GUESS GIFT",
-      title: "Give them without guessing a size, with 60 days to decide",
-      image: img("ember-grip-sizing-infographic.png"),
-      whole: true,
-      alt: "One size fits most men and women: 9.05 inches long, 4.33 inches across",
-      body: "The hardest part of giving gloves is the size. The Ember Grip is one size that fits most men and women, about 9 inches long and 4.3 inches across the palm. And they get 60 days to try them, with a full refund either way.",
-      highlight: "Nothing to guess and nothing to lose.",
-    },
-    {
       badge: "EARLY ACCESS BLACK FRIDAY",
-      title: "Get them now in the Early Access Black Friday Sale, $46 off",
-      image: img("ember-grip-hero-badges-v2-battery.png"),
-      whole: true,
-      alt: "The Ember Grip heated gloves on a snowy bench: 5 heat levels, all 5 fingers heated, rechargeable battery",
-      body: "The sale is live right now: the Ember Grip gloves are $79 a pair, down from $125, with 60 days to decide included. Get them now and they're charged and ready before the first really cold morning. The sale price is only here for a limited time.",
+      title: "Get them now with $46 off, no size to guess and 60 days to decide",
+      image: img("ember-grip-guarantee-seal.png"),
+      alt: "The Ember Grip heated gloves with their 60-day guarantee seal",
+      body: "The Early Access Black Friday Sale is live right now, with $46 off a pair for a limited time. There's no size to guess: one size fits most men and women, about 9 inches long and 4.3 inches across the palm. And they get 60 days to try them, with a full refund either way.",
       highlight: "Grab a pair for them, and maybe one for yourself.",
       cta: "Claim $46 Off For The Holidays",
     },
@@ -156,11 +143,10 @@ const C = {
     offerBanner: "Early Access Black Friday: $46 Off",
     thumbs: [
       { src: img("ember-grip-flatlay-box.png"), alt: "The Ember Grip gloves and charging cable" },
-      { src: img("ember-grip-heat-zone-infographic.png"), alt: "Heat on both sides of the hand" },
       { src: img("ember-grip-product-detail.png"), alt: "The heat display and button" },
+      { src: img("ember-grip-sizing-infographic.png"), alt: "One size fits most men and women" },
       { src: img("ember-grip-lifestyle-shoveling.png"), alt: "Shoveling the driveway in the Ember Grip gloves" },
       { src: img("ember-grip-lifestyle-ride.png"), alt: "Riding in the Ember Grip gloves" },
-      { src: img("ember-grip-guarantee-seal.png"), alt: "The 60-day guarantee" },
     ],
     benefits: [
       { icon: "Hand", text: "Heat in all 5 fingers and the palm" },
@@ -204,7 +190,7 @@ const C = {
     },
     {
       q: "How long is the sale on?",
-      a: "The Early Access Black Friday Sale is live now for a limited time: $79 a pair, down from $125.",
+      a: "The Early Access Black Friday Sale is live now for a limited time, with $46 off a pair.",
     },
   ],
   sticky: {
@@ -214,7 +200,7 @@ const C = {
 }
 
 // ============================================================
-// PAGE BODY: listicle-1 shape (banner, logo, hero + CTA, 6 reason cards, product card,
+// PAGE BODY: listicle-1 shape (banner, logo, hero + CTA, 5 reason cards, product card,
 // reviews, FAQ, always-on sticky CTA). Everything above this line is copy and config;
 // nothing below it is product-specific. Self-contained on purpose: no shared lib beyond
 // shadcn ui and lib/tracking.
@@ -257,7 +243,7 @@ export default function GiftListiclePage() {
 
       {/* HERO */}
       <section className="max-w-lg mx-auto px-4 py-8">
-        <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg bg-muted">
+        <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-lg bg-muted">
           <img src={C.hero.src} alt={C.hero.alt} className="w-full h-full object-cover" fetchPriority="high" />
         </div>
 
@@ -302,11 +288,9 @@ export default function GiftListiclePage() {
             </div>
             <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-6 text-balance leading-tight">{r.title}</h3>
 
-            {/* Photos run 3:2. Anything carrying type renders whole (square, no crop). */}
-            <div
-              className={`relative w-full ${r.whole ? "aspect-square" : "aspect-[3/2]"} rounded-lg overflow-hidden bg-muted mb-6 shadow-md`}
-            >
-              <img src={r.image} alt={r.alt} className="w-full h-full object-cover" loading="lazy" decoding="async" />
+            {/* Every image renders whole at its own shape (square on these pages). Never crop. */}
+            <div className="relative w-full rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
+              <img src={r.image} alt={r.alt} className="block w-full h-auto" loading="lazy" decoding="async" />
             </div>
 
             <p className="text-foreground/80 text-pretty leading-relaxed text-base">
@@ -350,11 +334,11 @@ export default function GiftListiclePage() {
           </div>
 
           <div className="p-5">
-            <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-4">
-              <img src={C.product.thumbs[mainImg].src} alt={C.product.thumbs[mainImg].alt} className="w-full h-full object-cover" loading="lazy" />
+            <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-white mb-4">
+              <img src={C.product.thumbs[mainImg].src} alt={C.product.thumbs[mainImg].alt} className="w-full h-full object-contain" loading="lazy" />
             </div>
 
-            <div className="grid grid-cols-6 gap-1.5 mb-5">
+            <div className="grid gap-1.5 mb-5" style={{ gridTemplateColumns: `repeat(${C.product.thumbs.length}, minmax(0, 1fr))` }}>
               {C.product.thumbs.map((t, i) => (
                 <button
                   key={t.src}

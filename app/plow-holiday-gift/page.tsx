@@ -37,8 +37,6 @@ type Reason = {
   title: string
   image: string
   alt: string
-  /** true = render the whole square image (it carries type); false = 3:2 photo crop */
-  whole?: boolean
   body: string
   highlight: string
   /** verbatim review from the PDP, never paraphrased */
@@ -49,7 +47,8 @@ type Reason = {
 // ============================================================
 // /plow-holiday-gift : THE YEOMAN PLOW, HOLIDAY GIFT LISTICLE (product aware)
 // Built 2026-11-21 on Funnels/templates/listicle-1 (owner: general gifting listicle, top reasons
-// from the ads + research, warranty/money back = reason 5, Early Access Black Friday = last reason).
+// from the ads + research; owner 2026-11-22: FIVE reasons, the sale + warranty + money back folded into
+// reason 5; no prices outside the product card; every image whole, none repeated).
 //
 // Reasons from what is spending (SemCom-Data/ad-daily, read 2026-11-21) + the research corpus:
 //   1 push_not_lift (the top UGC spender 7588581546181889311: "literally just push the snow")
@@ -74,10 +73,10 @@ const C = {
     src: img("plow36-driveway.jpg", 1000),
     alt: "An older man pushing the black Yeoman Plow down a snowy driveway in front of his garage",
   },
-  saleBadge: "Early Access Black Friday: $197, was $310",
-  h1: { a: "6 Reasons The Yeoman Plow Is The", hi1: "Perfect Gift", b: "For The Man Who Still", hi2: "Shovels His Own Driveway" },
+  saleBadge: "Save $113 + Free 1 Year Warranty",
+  h1: { a: "5 Reasons The Yeoman Plow Is The", hi1: "Perfect Gift", b: "For The Man Who Still", hi2: "Shovels His Own Driveway" },
   intro:
-    "He'd never buy it for himself. He'll be out there at six in the morning with the same old shovel, lifting the whole driveway one scoop at a time. Here are six reasons this is the gift that changes every snowy morning he has left this winter.",
+    "He'd never buy it for himself. He'll be out there at six in the morning with the same old shovel, lifting the whole driveway one scoop at a time. Here are five reasons this is the gift that changes every snowy morning he has left this winter.",
   heroCta: "Give Him The Plow, $113 Off",
   trustLine: "Free 1 year warranty · 30 days to decide · Free US shipping",
   reasons: [
@@ -85,7 +84,6 @@ const C = {
       badge: "BACK-SAVING",
       title: "Give his back a winter off from lifting snow",
       image: img("plow36-demo-pushnotlift.jpg"),
-      whole: true,
       alt: "Push, not lift: the Plow's wheels carry the load while a standard shovel makes you lift every scoop",
       body: "A shovel makes him lift and throw every scoop, the whole length of the drive, storm after storm. The Plow rolls on two wheels and pushes the snow aside, so the wheels carry the load and he walks it down the driveway instead of lifting it.",
       highlight: "Push, not lift, every storm this winter.",
@@ -98,7 +96,6 @@ const C = {
       badge: "TIME-SAVING",
       title: "Get him back inside with his coffee in half the time",
       image: img("plow36-hero.jpg"),
-      whole: true,
       alt: "The Yeoman Plow on a freshly cleared driveway at sunrise",
       body: "The 36-inch blade clears a full-width path on every pass, and he never stops to lift a load and dump it. Down the drive, back up, done. Snow that used to eat the whole morning gets cleared in half the time.",
       highlight: "He's back inside before the coffee gets cold.",
@@ -110,8 +107,8 @@ const C = {
     {
       badge: "ANGLE-ADJUST",
       title: "Let him send the snow wherever he wants it, without turning around",
-      image: img("plow36-sidewalk.jpg"),
-      alt: "The Yeoman Plow clearing a snowy sidewalk along a hedge in one pass",
+      image: img("plow36-angle-infographic.jpg"),
+      alt: "The Plow's 7-angle rotatable blade, seen from behind the handle",
       body: "The blade turns to any of 7 angles, so the snow rolls off to whichever side he picks as he walks. The handle locks into 5 positions at the height that fits him. Driveway, sidewalk, the walk to the mailbox: one pass and the snow is off to the side.",
       highlight: "No more scoop, turn, throw, repeat.",
       quote: {
@@ -128,20 +125,11 @@ const C = {
       highlight: "He grabs it off the garage wall and goes.",
     },
     {
-      badge: "RISK-FREE",
-      title: "Give it knowing it's covered for a full year",
-      image: img("plow36-guarantee.jpg"),
-      whole: true,
-      alt: "The Yeoman Plow with its 30 day money back guarantee seal",
-      body: "A gift should be a sure thing. The Plow comes with a free 1 year warranty, so it's covered for a full year from the day it arrives. And he gets 30 days to try it, with a full refund either way.",
-      highlight: "The only risk is another winter of shoveling.",
-    },
-    {
       badge: "EARLY ACCESS BLACK FRIDAY",
-      title: "Get it now in the Early Access Black Friday Sale, $113 off",
-      image: img("plow36-studio.jpg"),
-      alt: "The black Yeoman Plow on a dark background",
-      body: "The sale is live right now: the Plow is $197, down from $310, with the free 1 year warranty and 30 days to decide included. Shipping is free from our US warehouse, so it's on its way to you instead of crossing an ocean in December. The sale price is only here for a limited time.",
+      title: "Get it now with $113 off and a full year of cover",
+      image: img("plow36-guarantee.jpg"),
+      alt: "The Yeoman Plow with its 30 day money back guarantee seal",
+      body: "The Early Access Black Friday Sale is live right now, with $113 off for a limited time. A gift should be a sure thing: the free 1 year warranty covers it for a full year from the day it arrives, and he gets 30 days to try it with a full refund either way. Shipping is free from our US warehouse, so it isn't crossing an ocean in December.",
       highlight: "Wrap it early and his next storm is his last with a shovel.",
       cta: "Claim $113 Off For The Holidays",
     },
@@ -153,8 +141,6 @@ const C = {
     offerBanner: "Early Access Black Friday: $113 Off",
     thumbs: [
       { src: img("plow36-studio.jpg"), alt: "The Yeoman Plow, 36-inch black" },
-      { src: img("plow36-hero.jpg"), alt: "The Plow on a cleared driveway" },
-      { src: img("plow36-angle-infographic.jpg"), alt: "The 7-angle rotatable blade" },
       { src: img("plow36-sidewalk.jpg"), alt: "Clearing a sidewalk in one pass" },
       { src: img("plow36-flatlay.jpg"), alt: "Everything in the box" },
       { src: img("plow36-assembly.jpg"), alt: "Putting the Plow together in the garage" },
@@ -201,7 +187,7 @@ const C = {
     },
     {
       q: "How long is the sale on?",
-      a: "The Early Access Black Friday Sale is live now for a limited time: $197, down from $310, with free shipping from the USA.",
+      a: "The Early Access Black Friday Sale is live now for a limited time, with $113 off and free shipping from the USA.",
     },
   ],
   sticky: {
@@ -211,7 +197,7 @@ const C = {
 }
 
 // ============================================================
-// PAGE BODY: listicle-1 shape (banner, logo, hero + CTA, 6 reason cards, product card,
+// PAGE BODY: listicle-1 shape (banner, logo, hero + CTA, 5 reason cards, product card,
 // reviews, FAQ, always-on sticky CTA). Everything above this line is copy and config;
 // nothing below it is product-specific. Self-contained on purpose: no shared lib beyond
 // shadcn ui and lib/tracking.
@@ -254,7 +240,7 @@ export default function GiftListiclePage() {
 
       {/* HERO */}
       <section className="max-w-lg mx-auto px-4 py-8">
-        <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg bg-muted">
+        <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-lg bg-muted">
           <img src={C.hero.src} alt={C.hero.alt} className="w-full h-full object-cover" fetchPriority="high" />
         </div>
 
@@ -299,11 +285,9 @@ export default function GiftListiclePage() {
             </div>
             <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-6 text-balance leading-tight">{r.title}</h3>
 
-            {/* Photos run 3:2. Anything carrying type renders whole (square, no crop). */}
-            <div
-              className={`relative w-full ${r.whole ? "aspect-square" : "aspect-[3/2]"} rounded-lg overflow-hidden bg-muted mb-6 shadow-md`}
-            >
-              <img src={r.image} alt={r.alt} className="w-full h-full object-cover" loading="lazy" decoding="async" />
+            {/* Every image renders whole at its own shape (square on these pages). Never crop. */}
+            <div className="relative w-full rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
+              <img src={r.image} alt={r.alt} className="block w-full h-auto" loading="lazy" decoding="async" />
             </div>
 
             <p className="text-foreground/80 text-pretty leading-relaxed text-base">
@@ -347,11 +331,11 @@ export default function GiftListiclePage() {
           </div>
 
           <div className="p-5">
-            <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-4">
-              <img src={C.product.thumbs[mainImg].src} alt={C.product.thumbs[mainImg].alt} className="w-full h-full object-cover" loading="lazy" />
+            <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-white mb-4">
+              <img src={C.product.thumbs[mainImg].src} alt={C.product.thumbs[mainImg].alt} className="w-full h-full object-contain" loading="lazy" />
             </div>
 
-            <div className="grid grid-cols-6 gap-1.5 mb-5">
+            <div className="grid gap-1.5 mb-5" style={{ gridTemplateColumns: `repeat(${C.product.thumbs.length}, minmax(0, 1fr))` }}>
               {C.product.thumbs.map((t, i) => (
                 <button
                   key={t.src}

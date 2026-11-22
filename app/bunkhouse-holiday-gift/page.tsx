@@ -37,8 +37,6 @@ type Reason = {
   title: string
   image: string
   alt: string
-  /** true = render the whole square image (it carries type); false = 3:2 photo crop */
-  whole?: boolean
   body: string
   highlight: string
   /** verbatim review from the PDP, never paraphrased */
@@ -49,7 +47,8 @@ type Reason = {
 // ============================================================
 // /bunkhouse-holiday-gift : THE BUNKHOUSE DIESEL HEATER, HOLIDAY GIFT LISTICLE (product aware)
 // Built 2026-11-21 on Funnels/templates/listicle-1 (owner: general gifting listicle, top reasons
-// from the ads + research, warranty/money back = reason 5, Early Access Black Friday = last reason).
+// from the ads + research; owner 2026-11-22: FIVE reasons, the sale + warranty + money back folded into
+// reason 5; no prices outside the product card; every image whole, none repeated).
 //
 // Reason order comes from what is spending (SemCom-Data/ad-daily, read 2026-11-21):
 //   1 stay_till_dark (blind hunter, top authored spender)   2 work_all_winter (shop)
@@ -72,10 +71,10 @@ const C = {
     src: img("bunkhouse-16-inuse-carry-across-yard.png", 1000),
     alt: "A man carrying the camo Bunkhouse diesel heater across a snowy yard to his shop",
   },
-  saleBadge: "Early Access Black Friday: $297, was $458",
-  h1: { a: "6 Reasons The Bunkhouse Is The", hi1: "Perfect Gift", b: "For The Man Who", hi2: "Asks For Nothing" },
+  saleBadge: "Save $161 + Free 1 Year Warranty",
+  h1: { a: "5 Reasons The Bunkhouse Is The", hi1: "Perfect Gift", b: "For The Man Who", hi2: "Asks For Nothing" },
   intro:
-    "Ask him what he wants and he says nothing. Then he spends every cold weekend in a freezing blind, a shop he can't work in, or a camper that eats propane. Here are six reasons this is the one gift he'll use the first weekend it's out of the box.",
+    "Ask him what he wants and he says nothing. Then he spends every cold weekend in a freezing blind, a shop he can't work in, or a camper that eats propane. Here are five reasons this is the one gift he'll use the first weekend it's out of the box.",
   heroCta: "Give Him The Bunkhouse, $161 Off",
   trustLine: "Free 1 year warranty · 30 days to decide · Ships free from the USA",
   reasons: [
@@ -119,26 +118,16 @@ const C = {
       badge: "THE NEW MODEL",
       title: "Get him the new model, not last year's",
       image: img("bunkhouse-06-layout-unit-and-controls.png"),
-      whole: true,
       alt: "The Bunkhouse heater with its control panel, remote and the Bluetooth app on a phone",
       body: "If he's shopped diesel heaters, he's seen the old ones. This is the updated model: a seven litre tank instead of five, the fresh-air intake built in so there's no extra hose, the exhaust moved off the bottom, and a new Bluetooth controller he runs from his phone or the remote.",
       highlight: "He'll know you did your homework.",
     },
     {
-      badge: "RISK-FREE",
-      title: "Give it knowing it's covered for a full year",
-      image: img("bunkhouse-pdp-guarantee-seal.png"),
-      whole: true,
-      alt: "The Bunkhouse heater with its 30 day money back guarantee and free 1 year warranty seals",
-      body: "A gift should be a sure thing. The Bunkhouse comes with a free 1 year warranty, so it's covered for a full year from the day it arrives. And he gets 30 days to try it, with a full refund either way.",
-      highlight: "The only risk is another winter without it.",
-    },
-    {
       badge: "EARLY ACCESS BLACK FRIDAY",
-      title: "Get it now in the Early Access Black Friday Sale, $161 off",
-      image: img("bunkhouse-03-studio-dark-premium.png"),
-      alt: "The camo Bunkhouse diesel heater on black",
-      body: "The sale is live right now: the Bunkhouse is $297, down from $458, with the free 1 year warranty and 30 days to decide included. It ships free from the USA, so it's on its way to you instead of crossing an ocean in December. The sale price is only here for a limited time.",
+      title: "Get it now with $161 off and a full year of cover",
+      image: img("bunkhouse-pdp-guarantee-seal.png"),
+      alt: "The Bunkhouse heater with its 30 day money back guarantee and free 1 year warranty seals",
+      body: "The Early Access Black Friday Sale is live right now, with $161 off for a limited time. A gift should be a sure thing: the free 1 year warranty covers it for a full year from the day it arrives, and he gets 30 days to try it with a full refund either way. It ships free from the USA, so it isn't crossing an ocean in December.",
       highlight: "Wrap it early and he's warm by the first cold weekend.",
       cta: "Claim $161 Off For The Holidays",
     },
@@ -150,7 +139,6 @@ const C = {
     offerBanner: "Early Access Black Friday: $161 Off",
     thumbs: [
       { src: img("bunkhouse-03-studio-dark-premium.png"), alt: "The Bunkhouse diesel heater" },
-      { src: img("bunkhouse-23-info-dry-heat-safety.png"), alt: "Dry heat, with the exhaust piped outside" },
       { src: img("bunkhouse-26-info-vs-propane.png"), alt: "The Bunkhouse against a propane heater" },
       { src: img("bunkhouse-21-co-alarm-feature.png"), alt: "The built-in CO alarm" },
       { src: img("bunkhouse-22-info-thermostat.png"), alt: "Thermostat and remote" },
@@ -198,7 +186,7 @@ const C = {
     },
     {
       q: "How long is the sale on?",
-      a: "The Early Access Black Friday Sale is live now for a limited time: $297, down from $458, and it ships free from the USA.",
+      a: "The Early Access Black Friday Sale is live now for a limited time, with $161 off and free shipping from the USA.",
     },
   ],
   sticky: {
@@ -208,7 +196,7 @@ const C = {
 }
 
 // ============================================================
-// PAGE BODY: listicle-1 shape (banner, logo, hero + CTA, 6 reason cards, product card,
+// PAGE BODY: listicle-1 shape (banner, logo, hero + CTA, 5 reason cards, product card,
 // reviews, FAQ, always-on sticky CTA). Everything above this line is copy and config;
 // nothing below it is product-specific. Self-contained on purpose: no shared lib beyond
 // shadcn ui and lib/tracking.
@@ -251,7 +239,7 @@ export default function GiftListiclePage() {
 
       {/* HERO */}
       <section className="max-w-lg mx-auto px-4 py-8">
-        <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg bg-muted">
+        <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-lg bg-muted">
           <img src={C.hero.src} alt={C.hero.alt} className="w-full h-full object-cover" fetchPriority="high" />
         </div>
 
@@ -296,11 +284,9 @@ export default function GiftListiclePage() {
             </div>
             <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-6 text-balance leading-tight">{r.title}</h3>
 
-            {/* Photos run 3:2. Anything carrying type renders whole (square, no crop). */}
-            <div
-              className={`relative w-full ${r.whole ? "aspect-square" : "aspect-[3/2]"} rounded-lg overflow-hidden bg-muted mb-6 shadow-md`}
-            >
-              <img src={r.image} alt={r.alt} className="w-full h-full object-cover" loading="lazy" decoding="async" />
+            {/* Every image renders whole at its own shape (square on these pages). Never crop. */}
+            <div className="relative w-full rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
+              <img src={r.image} alt={r.alt} className="block w-full h-auto" loading="lazy" decoding="async" />
             </div>
 
             <p className="text-foreground/80 text-pretty leading-relaxed text-base">
@@ -344,11 +330,11 @@ export default function GiftListiclePage() {
           </div>
 
           <div className="p-5">
-            <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-muted mb-4">
-              <img src={C.product.thumbs[mainImg].src} alt={C.product.thumbs[mainImg].alt} className="w-full h-full object-cover" loading="lazy" />
+            <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-white mb-4">
+              <img src={C.product.thumbs[mainImg].src} alt={C.product.thumbs[mainImg].alt} className="w-full h-full object-contain" loading="lazy" />
             </div>
 
-            <div className="grid grid-cols-6 gap-1.5 mb-5">
+            <div className="grid gap-1.5 mb-5" style={{ gridTemplateColumns: `repeat(${C.product.thumbs.length}, minmax(0, 1fr))` }}>
               {C.product.thumbs.map((t, i) => (
                 <button
                   key={t.src}
