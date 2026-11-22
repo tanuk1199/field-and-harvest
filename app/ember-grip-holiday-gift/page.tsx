@@ -122,8 +122,8 @@ const C = {
       badge: "ALL-MORNING BATTERY",
       title: "Charge them like a phone and wear them all morning",
       image: img("ember-grip-lifestyle-skilift.png"),
-      clip: "ehg-phone-fliptips",
-      alt: "Swiping a phone with the gloves on, then flipping open the thumb and index fingertips",
+      clip: "ehg-charging-both",
+      alt: "Both gloves plugged into one twin Type-C cable, the cuff displays counting up as they charge",
       body: "They run on rechargeable 3000mAh batteries, so there are no hand warmers to keep buying. Up to 5 hours of heat depending on the setting, and they charge on Type-C like a phone. The thumb and index tips flip open, so they can answer a text without taking a glove off.",
       highlight: "Plug them in at night, warm hands in the morning.",
       quote: {
