@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import {
@@ -37,6 +37,8 @@ type Reason = {
   title: string
   image: string
   alt: string
+  /** real UGC loop in public/gift-clips/<clip>.mp4 (+ .webp poster); replaces the still */
+  clip?: string
   body: string
   highlight: string
   /** verbatim review from the PDP, never paraphrased */
@@ -95,7 +97,8 @@ const C = {
       badge: "ONE-BUTTON HEAT",
       title: "Let them dial in the heat with one button, all day long",
       image: img("ember-grip-heat-levels-infographic.png"),
-      alt: "The five heat levels on the glove's display, from 45°C to 65°C, set with one button",
+      clip: "ehg-button-levels",
+      alt: "A gloved hand pressing the button on the cuff as the display steps through the heat levels",
       body: "One button cycles 5 heat levels, from 113°F to 149°F, and a small display on the cuff shows the level and the battery. Turn it up on the first cold walk out, turn it down once their hands warm up.",
       highlight: "They're in charge of the warmth, not the weather.",
       quote: {
@@ -119,7 +122,8 @@ const C = {
       badge: "ALL-MORNING BATTERY",
       title: "Charge them like a phone and wear them all morning",
       image: img("ember-grip-lifestyle-skilift.png"),
-      alt: "A skier at the lift holding his poles in the Ember Grip heated gloves",
+      clip: "ehg-phone-fliptips",
+      alt: "Swiping a phone with the gloves on, then flipping open the thumb and index fingertips",
       body: "They run on rechargeable 3000mAh batteries, so there are no hand warmers to keep buying. Up to 5 hours of heat depending on the setting, and they charge on Type-C like a phone. The thumb and index tips flip open, so they can answer a text without taking a glove off.",
       highlight: "Plug them in at night, warm hands in the morning.",
       quote: {
@@ -145,6 +149,7 @@ const C = {
       { src: img("ember-grip-flatlay-box.png"), alt: "The Ember Grip gloves and charging cable" },
       { src: img("ember-grip-product-detail.png"), alt: "The heat display and button" },
       { src: img("ember-grip-sizing-infographic.png"), alt: "One size fits most men and women" },
+      { src: img("ember-grip-heat-levels-infographic.png"), alt: "5 heat levels, 113°F to 149°F" },
       { src: img("ember-grip-lifestyle-shoveling.png"), alt: "Shoveling the driveway in the Ember Grip gloves" },
       { src: img("ember-grip-lifestyle-ride.png"), alt: "Riding in the Ember Grip gloves" },
     ],
@@ -206,6 +211,62 @@ const C = {
 // ============================================================
 
 const ICONS = { Flame, Clock, ShieldCheck, Battery, Truck, Snowflake, Smartphone, Wrench, Thermometer, Gift, Hand, ArrowRight }
+
+// Muted real-footage loop (the /holiday-gift-grange pattern): webp poster in the HTML, the mp4 only
+// gets a src once it nears the viewport, plays while visible, pauses off screen. VideoPlay fires once
+// per clip to Pixel + Clarity. Reduced motion: poster only.
+const played = new Set<string>()
+function LoopClip({ id, alt }: { id: string; alt: string }) {
+  const ref = useRef<HTMLVideoElement | null>(null)
+  const [armed, setArmed] = useState(false)
+  useEffect(() => {
+    if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return
+    const el = ref.current
+    if (!el || typeof IntersectionObserver === "undefined") {
+      setArmed(true)
+      return
+    }
+    const o = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) {
+          setArmed(true)
+          el.play?.()
+            .then(() => {
+              if (played.has(id)) return
+              played.add(id)
+              try {
+                const w = window as unknown as { fbq?: (...a: unknown[]) => void; clarity?: (...a: unknown[]) => void }
+                w.fbq?.("trackCustom", "VideoPlay", { page: C.tag, clip: id })
+                w.clarity?.("set", "video_play", `${C.tag}-${id}`)
+              } catch {
+                // Never let analytics break playback.
+              }
+            })
+            .catch(() => {})
+        } else {
+          el.pause?.()
+        }
+      },
+      { threshold: 0, rootMargin: "200px 0px" },
+    )
+    o.observe(el)
+    return () => o.disconnect()
+  }, [id])
+  return (
+    <video
+      ref={ref}
+      src={armed ? `/gift-clips/${id}.mp4` : undefined}
+      poster={`/gift-clips/${id}.webp`}
+      muted
+      loop
+      playsInline
+      autoPlay={armed}
+      preload="none"
+      aria-label={alt}
+      className="block w-full aspect-square object-cover"
+    />
+  )
+}
 
 function Stars({ size = "w-4 h-4" }: { size?: string }) {
   return (
@@ -286,7 +347,11 @@ export default function GiftListiclePage() {
 
             {/* Every image renders whole at its own shape (square on these pages). Never crop. */}
             <div className="relative w-full rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
-              <img src={r.image} alt={r.alt} className="block w-full h-auto" loading="lazy" decoding="async" />
+              {r.clip ? (
+                <LoopClip id={r.clip} alt={r.alt} />
+              ) : (
+                <img src={r.image} alt={r.alt} className="block w-full h-auto" loading="lazy" decoding="async" />
+              )}
             </div>
 
             <p className="text-foreground/80 text-pretty leading-relaxed text-base">

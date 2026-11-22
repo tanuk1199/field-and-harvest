@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import {
@@ -37,6 +37,8 @@ type Reason = {
   title: string
   image: string
   alt: string
+  /** real UGC loop in public/gift-clips/<clip>.mp4 (+ .webp poster); replaces the still */
+  clip?: string
   body: string
   highlight: string
   /** verbatim review from the PDP, never paraphrased */
@@ -97,7 +99,8 @@ const C = {
       badge: "TIME-SAVING",
       title: "Get him back inside with his coffee in half the time",
       image: img("plow36-hero.jpg"),
-      alt: "The Yeoman Plow on a freshly cleared driveway at sunrise",
+      clip: "phg-driveway-pass",
+      alt: "From above: one full-width pass up a snowy driveway, bare pavement left behind",
       body: "The 36-inch blade clears a full-width path on every pass, and he never stops to lift a load and dump it. Down the drive, back up, done. Snow that used to eat the whole morning gets cleared in half the time.",
       highlight: "He's back inside before the coffee gets cold.",
       quote: {
@@ -141,6 +144,7 @@ const C = {
     offerBanner: "Early Access Black Friday: $113 Off",
     thumbs: [
       { src: img("plow36-studio.jpg"), alt: "The Yeoman Plow, 36-inch black" },
+      { src: img("plow36-hero.jpg"), alt: "The Plow on a cleared driveway" },
       { src: img("plow36-sidewalk.jpg"), alt: "Clearing a sidewalk in one pass" },
       { src: img("plow36-flatlay.jpg"), alt: "Everything in the box" },
       { src: img("plow36-assembly.jpg"), alt: "Putting the Plow together in the garage" },
@@ -203,6 +207,62 @@ const C = {
 // ============================================================
 
 const ICONS = { Flame, Clock, ShieldCheck, Battery, Truck, Snowflake, Smartphone, Wrench, Thermometer, Gift, Hand, ArrowRight }
+
+// Muted real-footage loop (the /holiday-gift-grange pattern): webp poster in the HTML, the mp4 only
+// gets a src once it nears the viewport, plays while visible, pauses off screen. VideoPlay fires once
+// per clip to Pixel + Clarity. Reduced motion: poster only.
+const played = new Set<string>()
+function LoopClip({ id, alt }: { id: string; alt: string }) {
+  const ref = useRef<HTMLVideoElement | null>(null)
+  const [armed, setArmed] = useState(false)
+  useEffect(() => {
+    if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return
+    const el = ref.current
+    if (!el || typeof IntersectionObserver === "undefined") {
+      setArmed(true)
+      return
+    }
+    const o = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) {
+          setArmed(true)
+          el.play?.()
+            .then(() => {
+              if (played.has(id)) return
+              played.add(id)
+              try {
+                const w = window as unknown as { fbq?: (...a: unknown[]) => void; clarity?: (...a: unknown[]) => void }
+                w.fbq?.("trackCustom", "VideoPlay", { page: C.tag, clip: id })
+                w.clarity?.("set", "video_play", `${C.tag}-${id}`)
+              } catch {
+                // Never let analytics break playback.
+              }
+            })
+            .catch(() => {})
+        } else {
+          el.pause?.()
+        }
+      },
+      { threshold: 0, rootMargin: "200px 0px" },
+    )
+    o.observe(el)
+    return () => o.disconnect()
+  }, [id])
+  return (
+    <video
+      ref={ref}
+      src={armed ? `/gift-clips/${id}.mp4` : undefined}
+      poster={`/gift-clips/${id}.webp`}
+      muted
+      loop
+      playsInline
+      autoPlay={armed}
+      preload="none"
+      aria-label={alt}
+      className="block w-full aspect-square object-cover"
+    />
+  )
+}
 
 function Stars({ size = "w-4 h-4" }: { size?: string }) {
   return (
@@ -283,7 +343,11 @@ export default function GiftListiclePage() {
 
             {/* Every image renders whole at its own shape (square on these pages). Never crop. */}
             <div className="relative w-full rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
-              <img src={r.image} alt={r.alt} className="block w-full h-auto" loading="lazy" decoding="async" />
+              {r.clip ? (
+                <LoopClip id={r.clip} alt={r.alt} />
+              ) : (
+                <img src={r.image} alt={r.alt} className="block w-full h-auto" loading="lazy" decoding="async" />
+              )}
             </div>
 
             <p className="text-foreground/80 text-pretty leading-relaxed text-base">

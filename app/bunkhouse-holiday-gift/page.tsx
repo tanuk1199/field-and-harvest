@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import {
@@ -37,6 +37,8 @@ type Reason = {
   title: string
   image: string
   alt: string
+  /** real UGC loop in public/gift-clips/<clip>.mp4 (+ .webp poster); replaces the still */
+  clip?: string
   body: string
   highlight: string
   /** verbatim review from the PDP, never paraphrased */
@@ -203,6 +205,62 @@ const C = {
 
 const ICONS = { Flame, Clock, ShieldCheck, Battery, Truck, Snowflake, Smartphone, Wrench, Thermometer, Gift, Hand, ArrowRight }
 
+// Muted real-footage loop (the /holiday-gift-grange pattern): webp poster in the HTML, the mp4 only
+// gets a src once it nears the viewport, plays while visible, pauses off screen. VideoPlay fires once
+// per clip to Pixel + Clarity. Reduced motion: poster only.
+const played = new Set<string>()
+function LoopClip({ id, alt }: { id: string; alt: string }) {
+  const ref = useRef<HTMLVideoElement | null>(null)
+  const [armed, setArmed] = useState(false)
+  useEffect(() => {
+    if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return
+    const el = ref.current
+    if (!el || typeof IntersectionObserver === "undefined") {
+      setArmed(true)
+      return
+    }
+    const o = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) {
+          setArmed(true)
+          el.play?.()
+            .then(() => {
+              if (played.has(id)) return
+              played.add(id)
+              try {
+                const w = window as unknown as { fbq?: (...a: unknown[]) => void; clarity?: (...a: unknown[]) => void }
+                w.fbq?.("trackCustom", "VideoPlay", { page: C.tag, clip: id })
+                w.clarity?.("set", "video_play", `${C.tag}-${id}`)
+              } catch {
+                // Never let analytics break playback.
+              }
+            })
+            .catch(() => {})
+        } else {
+          el.pause?.()
+        }
+      },
+      { threshold: 0, rootMargin: "200px 0px" },
+    )
+    o.observe(el)
+    return () => o.disconnect()
+  }, [id])
+  return (
+    <video
+      ref={ref}
+      src={armed ? `/gift-clips/${id}.mp4` : undefined}
+      poster={`/gift-clips/${id}.webp`}
+      muted
+      loop
+      playsInline
+      autoPlay={armed}
+      preload="none"
+      aria-label={alt}
+      className="block w-full aspect-square object-cover"
+    />
+  )
+}
+
 function Stars({ size = "w-4 h-4" }: { size?: string }) {
   return (
     <div className="flex gap-0.5">
@@ -282,7 +340,11 @@ export default function GiftListiclePage() {
 
             {/* Every image renders whole at its own shape (square on these pages). Never crop. */}
             <div className="relative w-full rounded-lg overflow-hidden bg-muted mb-6 shadow-md">
-              <img src={r.image} alt={r.alt} className="block w-full h-auto" loading="lazy" decoding="async" />
+              {r.clip ? (
+                <LoopClip id={r.clip} alt={r.alt} />
+              ) : (
+                <img src={r.image} alt={r.alt} className="block w-full h-auto" loading="lazy" decoding="async" />
+              )}
             </div>
 
             <p className="text-foreground/80 text-pretty leading-relaxed text-base">
