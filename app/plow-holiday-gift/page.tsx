@@ -264,6 +264,73 @@ function LoopClip({ id, alt }: { id: string; alt: string }) {
   )
 }
 
+// The PDP promo bar, copied from /holiday-gift-grange, which is identical to the live PDP bar
+// (fhb-promo on every sale PDP): EARLY ACCESS BLACK FRIDAY SALE | <offer> + clock to local midnight.
+// Text = the PDP's own line for this product (C.banner.text), upper-cased as the PDP prints it.
+function PromoBar() {
+  const [t, setT] = useState({ h: "00", m: "00", s: "00" })
+  useEffect(() => {
+    const pad = (n: number) => (n < 10 ? "0" : "") + n
+    const tick = () => {
+      const now = new Date()
+      const end = new Date(now)
+      end.setHours(24, 0, 0, 0)
+      const sec = Math.max(0, Math.floor((end.getTime() - now.getTime()) / 1000))
+      setT({ h: pad(Math.floor(sec / 3600)), m: pad(Math.floor((sec % 3600) / 60)), s: pad(sec % 60) })
+    }
+    tick()
+    const id = setInterval(tick, 1000)
+    return () => clearInterval(id)
+  }, [])
+  return (
+    <div className="ebf-promo" role="region" aria-label="Sale">
+      <div className="ebf-promo-in">
+        <span className="ebf-promo-txt">
+          <b>EARLY ACCESS BLACK FRIDAY SALE</b>
+          <i>|</i>
+          <span className="ebf-promo-sub">
+            {C.banner.text.toUpperCase()}
+          </span>
+        </span>
+        <span className="ebf-promo-clock" data-ebf-clock>
+          <span className="ebf-u">
+            <b>00</b>
+            <small>DAYS</small>
+          </span>
+          <em>:</em>
+          <span className="ebf-u">
+            <b>{t.h}</b>
+            <small>HRS</small>
+          </span>
+          <em>:</em>
+          <span className="ebf-u">
+            <b>{t.m}</b>
+            <small>MIN</small>
+          </span>
+          <em>:</em>
+          <span className="ebf-u">
+            <b>{t.s}</b>
+            <small>SEC</small>
+          </span>
+        </span>
+      </div>
+      <style>{`
+  .ebf-promo { background: linear-gradient(90deg, #000 0%, #17120a 50%, #4a3208 100%); color: #FBF6EC; border-bottom: 1px solid rgba(242,181,58,.35); }
+  .ebf-promo-in { max-width: 1200px; margin: 0 auto; padding: 8px 16px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .ebf-promo-txt { font: 600 13px/1.3 ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; letter-spacing: .04em; text-align: left; min-width: 0; }
+  .ebf-promo-txt b { font-weight: 800; letter-spacing: .06em; color: #F2B53A; }
+  .ebf-promo-txt i { font-style: normal; opacity: .6; margin: 0 10px; }
+  .ebf-promo-clock { flex: none; display: inline-flex; align-items: flex-start; gap: 4px; }
+  .ebf-promo-clock em { font-style: normal; font-weight: 700; line-height: 26px; opacity: .8; }
+  .ebf-u { display: inline-flex; flex-direction: column; align-items: center; }
+  .ebf-u b { background: rgba(242,181,58,.14); border: 1px solid rgba(242,181,58,.45); border-radius: 4px; min-width: 32px; padding: 3px 4px; text-align: center; font: 700 15px/1.2 ui-sans-serif, system-ui, -apple-system, Arial, sans-serif; font-variant-numeric: tabular-nums; color: #FBF6EC; }
+  .ebf-u small { font-size: 8px; letter-spacing: .1em; opacity: .75; margin-top: 2px; }
+  @media (max-width: 749px) { .ebf-promo-in { gap: 8px; padding: 8px 10px; } .ebf-promo-txt { flex: 1 1 auto; text-align: center; font-size: 10px; letter-spacing: 0; white-space: nowrap; } .ebf-promo-txt b { display: block; font-size: 12px; margin-bottom: 2px; } .ebf-promo-txt i { display: none; } .ebf-promo-sub { display: block; } .ebf-promo-clock { gap: 3px; } .ebf-u b { min-width: 23px; font-size: 11px; padding: 3px 2px; } .ebf-promo-clock em { line-height: 22px; } .ebf-u small { font-size: 7px; } }
+      `}</style>
+    </div>
+  )
+}
+
 function Stars({ size = "w-4 h-4" }: { size?: string }) {
   return (
     <div className="flex gap-0.5">
@@ -284,13 +351,8 @@ export default function GiftListiclePage() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* PROMOTIONAL BANNER */}
-      <div className="bg-primary text-center py-3 px-4 shadow-sm">
-        <p className="text-sm md:text-base font-medium">
-          <span className="text-[#DDA15E] font-bold uppercase tracking-wide">{C.banner.hi}</span>{" "}
-          <span className="text-primary-foreground uppercase tracking-wide">{C.banner.text}</span>
-        </p>
-      </div>
+      {/* PROMO BAR: the PDP's own sale bar */}
+      <PromoBar />
 
       {/* HEADER */}
       <header className="py-3 px-4 flex items-center justify-center bg-card">
