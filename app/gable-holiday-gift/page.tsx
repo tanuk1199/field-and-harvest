@@ -74,7 +74,9 @@ const C = {
   banner: { hi: "Early Access Black Friday", text: "$101 Off + Free 1 Year Warranty" },
   hero: {
     src: img("gable-14-couple-on-the-lawn.png", 1000),
-    alt: "A man on the lawn washing the second story with The Gable wand while his wife watches from the porch",
+    // 3:2 loop, owner 2026-11-22: "use a clip of gutter being clean". livo789-7661946535512395022 21.8-23.7, crop y=240
+    clip: "gbg-hero-gutter-flush",
+    alt: "The curved gutter hook on The Gable wand blasts a dirty gutter clean along the trough",
   },
   saleBadge: "Save $101 + Free 1 Year Warranty",
   h1: { a: "5 Reasons The Gable Wand Is The", hi1: "Perfect Gift", b: "For The Man Who Still", hi2: "Climbs The Ladder" },
@@ -270,6 +272,36 @@ function LoopClip({ id, alt }: { id: string; alt: string }) {
   )
 }
 
+// Optional hero loop (C.hero.clip): 3:2 real UGC, above the fold, so it loads straight away
+// (poster = first frame, then autoplay muted). Reduced motion: poster only. Pages without it keep the still.
+const HERO_CLIP = (C.hero as { clip?: string }).clip
+function HeroClip({ id, alt }: { id: string; alt: string }) {
+  const ref = useRef<HTMLVideoElement | null>(null)
+  const [still, setStill] = useState(false)
+  useEffect(() => {
+    if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) {
+      setStill(true)
+      return
+    }
+    ref.current?.play?.().catch(() => {})
+  }, [])
+  if (still) return <img src={`/gift-clips/${id}.webp`} alt={alt} className="w-full h-full object-cover" />
+  return (
+    <video
+      ref={ref}
+      src={`/gift-clips/${id}.mp4`}
+      poster={`/gift-clips/${id}.webp`}
+      muted
+      loop
+      playsInline
+      autoPlay
+      preload="auto"
+      aria-label={alt}
+      className="block w-full h-full object-cover"
+    />
+  )
+}
+
 // The PDP promo bar, copied from /holiday-gift-grange, which is identical to the live PDP bar
 // (fhb-promo on every sale PDP): EARLY ACCESS BLACK FRIDAY SALE | <offer> + clock to local midnight.
 // Text = the PDP's own line for this product (C.banner.text), upper-cased as the PDP prints it.
@@ -367,9 +399,15 @@ export default function GiftListiclePage() {
 
       {/* HERO */}
       <section className="max-w-lg mx-auto px-4 py-8">
-        <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-lg bg-muted">
-          <img src={C.hero.src} alt={C.hero.alt} className="w-full h-full object-cover" fetchPriority="high" />
-        </div>
+        {HERO_CLIP ? (
+          <div className="relative w-full aspect-[3/2] rounded-2xl overflow-hidden shadow-lg bg-muted">
+            <HeroClip id={HERO_CLIP} alt={C.hero.alt} />
+          </div>
+        ) : (
+          <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-lg bg-muted">
+            <img src={C.hero.src} alt={C.hero.alt} className="w-full h-full object-cover" fetchPriority="high" />
+          </div>
+        )}
 
         <div className="mt-5 text-center">
           <span className="inline-block bg-[#DDA15E]/20 rounded-md py-2 px-4 font-bold text-sm text-foreground">{C.saleBadge}</span>
