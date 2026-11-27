@@ -6,7 +6,7 @@ import { Check, Clock, Droplets, Flame, Leaf, Play, Ruler, ShieldCheck, Snowflak
 
 // ============================================================
 // /early-black-friday-grange : The Grange Carrier
-// EARLY ACCESS BLACK FRIDAY SALE (owner, 2026-10-31).
+// BLACK FRIDAY SALE (owner, 2026-10-31).
 //
 // Same page as /early-black-friday-gable with the Grange's content: a
 // section-for-section copy of /early-black-friday-sweep. Banner, header,
@@ -93,7 +93,7 @@ const STICKY_SUB = "Lifetime warranty · 60 days to decide"
 const RATING: { score: string; count: string } | null = { score: "4.8", count: "800+" } // as the live Grange PDP shows it
 const PROOF_LINE = "Rated 4.8 out of 5 · 800+ reviews · 22,000+ gardeners"
 
-const HEADLINE_MAIN = "Early Access Black Friday Is Open On The Grange Carrier."
+const HEADLINE_MAIN = "The Black Friday Sale Is Open On The Grange Carrier."
 const HEADLINE_ACCENT = "Up To $71 Off, Plus 2 Free Guides."
 const HERO_SUB =
   "Harvest into the pouch with both hands free, then pinch the buckles and the whole harvest slides into the washing bin in one motion. No bucket, no scooping, no trips back to the sink."
@@ -137,7 +137,7 @@ const CLIPS: Clip[] = [
 ]
 
 const WHY_NOW =
-  "We opened our Black Friday price early, while the fall harvest and the cleanup are still in full swing and before the holidays get here. Wear it for the last of the tomatoes and the fall cleanup now, or set one aside as a gift for the gardener in your life. Quantities are limited, and the Early Access price is on this page right now."
+  "Our Black Friday price is live now, while the fall cleanup is still going and before the holidays get here. Wear it for the last of the tomatoes and the fall cleanup now, or set one aside as a gift for the gardener in your life. Quantities are limited, and the Black Friday price is on this page right now."
 
 // The one customer quote the live Grange PDP prints, verbatim.
 type Review = { title: string; quote: string; who: string }
@@ -180,7 +180,7 @@ const GUARANTEE_BODY = [
 ]
 
 const SALE_FAQ =
-  "The Early Access Black Friday price is the price on this page, so there is no code to type and nothing to remember. The buy button takes you straight to checkout with up to $71 off already applied, and both free guides are on the order."
+  "The Black Friday price is the price on this page, so there is no code to type and nothing to remember. The buy button takes you straight to checkout with up to $71 off already applied, and both free guides are on the order."
 const FAQS = [
   {
     q: "What fits in the pouch?",
@@ -202,7 +202,7 @@ const FAQS = [
 
 // ===== END CONFIG =====
 
-const SALE_NAME = "Early Access Black Friday Sale"
+const SALE_NAME = "Black Friday Sale"
 const CTA_LABEL = "CLAIM THE BLACK FRIDAY PRICE >>"
 const STORE_URL = "https://fieldandharvestco.com"
 
@@ -275,7 +275,7 @@ function PromoBar() {
     <div className="ebf-promo" role="region" aria-label="Sale">
       <div className="ebf-promo-in">
         <span className="ebf-promo-txt">
-          <b>EARLY ACCESS BLACK FRIDAY SALE</b>
+          <b>BLACK FRIDAY SALE</b>
           <i>|</i>
           <span className="ebf-promo-sub">
             {BANNER_OFF} + {WARRANTY_LINE}

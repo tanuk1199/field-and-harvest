@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 // Every route needs its own layout.tsx, or it inherits the root's title.
 const OG_IMAGE = "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/ember-grip-demo-relief.png?width=1200"
 const TITLE = "5 Reasons The Ember Grip Gloves Are The Perfect Gift For Anyone Whose Hands Are Always Cold"
-const DESCRIPTION = "Heat in all five fingers, 5 heat levels, rechargeable. Early Access Black Friday: $46 off with 60 days to decide."
+const DESCRIPTION = "Heat in all five fingers, 5 heat levels, rechargeable. Black Friday: $46 off with 60 days to decide."
 
 export const metadata: Metadata = {
   title: `${TITLE} | Field & Harvest Co.`,

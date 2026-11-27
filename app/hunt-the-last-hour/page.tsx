@@ -30,7 +30,7 @@ import { trackCtaClick } from "@/lib/tracking"
 // OWNER REVISION 2026-10-25: NO PRICE anywhere on the page except the banner's $ off figure.
 // The banner is a port of the PDP's theme snippet snippets/fh-bunkhouse-promo-bar.liquid (read
 // live off Horizon MAIN 136737161259): same text, gradient, type and the rolling countdown to the
-// visitor's local midnight. SALE_NAME is the Early Access Black Friday Sale since 2026-11-01, matching the PDP bar.
+// visitor's local midnight. SALE_NAME is the Black Friday Sale since 2026-11-01, matching the PDP bar.
 // The big warranty block is now a thin strip. Reason 3, 5 and 6 images were regenerated in
 // Higgsfield with no text (Diesel Heater/product-images/2026-10-25-htlh/).
 //
@@ -46,7 +46,7 @@ import { trackCtaClick } from "@/lib/tracking"
 const PDP_URL = "https://fieldandharvestco.com/products/the-bunkhouse-diesel-heater"
 // SAVE is the banner's dollar saving (PDP banner verbatim) and the sticky button's offer. Never a price.
 const SAVE = "$161"
-const SALE_NAME = "Early Access Black Friday Sale"
+const SALE_NAME = "Black Friday Sale"
 
 const CDN = "https://cdn.shopify.com/s/files/1/0651/8299/0379/files"
 const IMG = {

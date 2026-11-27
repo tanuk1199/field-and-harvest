@@ -6,7 +6,7 @@ import { Award, BadgeDollarSign, Check, ChevronLeft, ChevronRight, Minus, Plus, 
 
 // ============================================================
 // /black-friday-plow : The Yeoman Plow (36 in black wheeled snow pusher; 38 in red sold out)
-// EARLY ACCESS BLACK FRIDAY SALE. Second build on the template
+// BLACK FRIDAY SALE. Second build on the template
 // Funnels/templates/sale-buybox-dark-1, cloned from /black-friday-gable.
 // Only the CONFIG block differs from that page.
 //
@@ -44,9 +44,9 @@ const THEME = {
 }
 
 const SALE = {
-  bannerName: "EARLY ACCESS BLACK FRIDAY SALE",
+  bannerName: "BLACK FRIDAY SALE",
   bannerTail: "FREE 1 YEAR WARRANTY",
-  name: "Early Access Black Friday Sale",
+  name: "Black Friday Sale",
   saveChip: "SAVE $113",
   stickyLine: "$113 off · Black Friday",
 }
@@ -203,7 +203,7 @@ const BUY = {
   ],
   pdpHandle: "the-yeoman-plow",
   ctaPrefix: "CHECK AVAILABILITY",
-  ctaNote: "Early Access Black Friday Sale · Free US shipping",
+  ctaNote: "Black Friday Sale · Free US shipping",
 }
 
 const GUARANTEE = {
@@ -241,7 +241,7 @@ const FAQ: { q: string; a: string }[] = [
 ]
 
 const CLOSE = {
-  eyebrow: "Early Access Black Friday Sale",
+  eyebrow: "Black Friday Sale",
   title: "$113 off the Yeoman Plow",
   note: "Now $197 · 30-day money-back guarantee · Free US shipping",
   cta: "Claim Black Friday Discount",

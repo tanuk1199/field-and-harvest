@@ -71,7 +71,7 @@ const C = {
   pdpUrl: "https://fieldandharvestco.com/products/the-yeoman-plow?variant=68270519975979&lp=phg",
   // price lives on the PDP only (template product card has no price row)
   offer: { price: 197, compareAt: 310, save: 113 },
-  banner: { hi: "Early Access Black Friday", text: "$113 Off + Free 1 Year Warranty" },
+  banner: { hi: "Black Friday", text: "$113 Off + Free 1 Year Warranty" },
   hero: {
     src: img("plow36-driveway.jpg", 1000),
     alt: "An older man pushing the black Yeoman Plow down a snowy driveway in front of his garage",
@@ -129,19 +129,19 @@ const C = {
       highlight: "He grabs it off the garage wall and goes.",
     },
     {
-      badge: "EARLY ACCESS BLACK FRIDAY",
+      badge: "BLACK FRIDAY SALE",
       title: "Get it now with $113 off and a full year of cover",
       image: img("plow36-guarantee.jpg"),
       alt: "The Yeoman Plow with its 30 day money back guarantee seal",
-      body: "The Early Access Black Friday Sale is live right now, with $113 off for a limited time. A gift should be a sure thing: the free 1 year warranty covers it for a full year from the day it arrives, and he gets 30 days to try it with a full refund either way. Shipping is free from our US warehouse, so it isn't crossing an ocean in December.",
+      body: "The Black Friday Sale is live right now, with $113 off for a limited time. A gift should be a sure thing: the free 1 year warranty covers it for a full year from the day it arrives, and he gets 30 days to try it with a full refund either way. Shipping is free from our US warehouse, so it isn't crossing an ocean in December.",
       highlight: "Wrap it early and his next storm is his last with a shovel.",
     },
   ] as Reason[],
   product: {
     badge: "Free 1 Year Warranty + 30-Day Money Back",
     headline: "The Gift That Retires His Snow Shovel",
-    desc: "The Yeoman Plow: a 36-inch carbon-steel blade on wheels, 7 blade angles and a handle that locks at his height. Early Access Black Friday pricing is live now.",
-    offerBanner: "Early Access Black Friday: $113 Off",
+    desc: "The Yeoman Plow: a 36-inch carbon-steel blade on wheels, 7 blade angles and a handle that locks at his height. Black Friday pricing is live now.",
+    offerBanner: "Black Friday: $113 Off",
     thumbs: [
       { src: img("plow36-studio.jpg"), alt: "The Yeoman Plow, 36-inch black" },
       { src: img("plow36-hero.jpg"), alt: "The Plow on a cleared driveway" },
@@ -190,12 +190,12 @@ const C = {
     },
     {
       q: "How long is the sale on?",
-      a: "The Early Access Black Friday Sale is live now for a limited time, with $113 off and free shipping from the USA.",
+      a: "The Black Friday Sale is live now for a limited time, with $113 off and free shipping from the USA.",
     },
   ],
   sticky: {
     cta: "Get $113 Off His Gift",
-    line: "Early Access Black Friday · Free 1 Year Warranty · Free US Shipping",
+    line: "Black Friday · Free 1 Year Warranty · Free US Shipping",
   },
 }
 
@@ -265,7 +265,7 @@ function LoopClip({ id, alt }: { id: string; alt: string }) {
 }
 
 // The PDP promo bar, copied from /holiday-gift-grange, which is identical to the live PDP bar
-// (fhb-promo on every sale PDP): EARLY ACCESS BLACK FRIDAY SALE | <offer> + clock to local midnight.
+// (fhb-promo on every sale PDP): BLACK FRIDAY SALE | <offer> + clock to local midnight.
 // Text = the PDP's own line for this product (C.banner.text), upper-cased as the PDP prints it.
 function PromoBar() {
   const [t, setT] = useState({ h: "00", m: "00", s: "00" })
@@ -286,7 +286,7 @@ function PromoBar() {
     <div className="ebf-promo" role="region" aria-label="Sale">
       <div className="ebf-promo-in">
         <span className="ebf-promo-txt">
-          <b>EARLY ACCESS BLACK FRIDAY SALE</b>
+          <b>BLACK FRIDAY SALE</b>
           <i>|</i>
           <span className="ebf-promo-sub">
             {C.banner.text.toUpperCase()}

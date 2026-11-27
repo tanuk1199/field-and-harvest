@@ -6,7 +6,7 @@ import { Check, Clock, Droplets, Flame, Leaf, Play, Ruler, ShieldCheck, Snowflak
 
 // ============================================================
 // /early-black-friday-bunkhouse : The Bunkhouse Diesel Heater
-// EARLY ACCESS BLACK FRIDAY SALE (owner, 2026-10-31).
+// BLACK FRIDAY SALE (owner, 2026-10-31).
 //
 // Same page as /early-black-friday-gable with the Bunkhouse's content: a
 // section-for-section copy of /early-black-friday-sweep. Banner, header,
@@ -76,7 +76,7 @@ const STICKY_SUB = "Free 1 year warranty · Ships free from USA"
 const RATING: { score: string; count: string } | null = null // the Bunkhouse PDP shows no rating row
 const PROOF_LINE = "Free 1 year warranty · 30 days to decide · Ships free from USA"
 
-const HEADLINE_MAIN = "Early Access Black Friday Is Open On The Bunkhouse Diesel Heater."
+const HEADLINE_MAIN = "The Black Friday Sale Is Open On The Bunkhouse Diesel Heater."
 const HEADLINE_ACCENT = "Dry Heat In About 3 Minutes. The Fumes Go Out The Pipe."
 const HERO_SUB =
   "Propane and kerosene heaters burn in the room with you. The Bunkhouse sends its exhaust out its own pipe and blows in warm, dry air, so the blind, the camper or the shop stays warm and dry."
@@ -122,7 +122,7 @@ const CLIPS: Clip[] = [
 ]
 
 const WHY_NOW =
-  "We opened our Black Friday price early so you have the heat before the cold nights, not after the first one. Set it up this week and the camper, the shop or the blind is warm and dry the first time you need it. Quantities are limited, and the Early Access price is on this page right now."
+  "Our Black Friday price is live now, so you have the heat for the cold nights ahead, not after the first one. Set it up this week and the camper, the shop or the blind is warm and dry the first time you need it. Quantities are limited, and the Black Friday price is on this page right now."
 
 // Verbatim from the live Bunkhouse PDP review wall (real names, Verified Purchase).
 type Review = { title: string; quote: string; who: string }
@@ -202,7 +202,7 @@ const GUARANTEE_BODY = [
 ]
 
 const SALE_FAQ =
-  "The Early Access Black Friday price is the price on this page, so there is no code to type and nothing to remember. The buy button takes you straight to checkout with $161 off already applied, and the free 1 year warranty comes with it."
+  "The Black Friday price is the price on this page, so there is no code to type and nothing to remember. The buy button takes you straight to checkout with $161 off already applied, and the free 1 year warranty comes with it."
 const FAQS = [
   {
     q: "What powers it?",
@@ -224,7 +224,7 @@ const FAQS = [
 
 // ===== END CONFIG =====
 
-const SALE_NAME = "Early Access Black Friday Sale"
+const SALE_NAME = "Black Friday Sale"
 const CTA_LABEL = "CLAIM THE BLACK FRIDAY PRICE >>"
 const STORE_URL = "https://fieldandharvestco.com"
 
@@ -297,7 +297,7 @@ function PromoBar() {
     <div className="ebf-promo" role="region" aria-label="Sale">
       <div className="ebf-promo-in">
         <span className="ebf-promo-txt">
-          <b>EARLY ACCESS BLACK FRIDAY SALE</b>
+          <b>BLACK FRIDAY SALE</b>
           <i>|</i>
           <span className="ebf-promo-sub">
             {BANNER_OFF} + {WARRANTY_LINE}

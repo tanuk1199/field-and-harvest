@@ -6,7 +6,7 @@ import { Check, Clock, Droplets, Flame, Leaf, Play, Ruler, ShieldCheck, Snowflak
 
 // ============================================================
 // /early-black-friday-plow : The Yeoman Plow
-// EARLY ACCESS BLACK FRIDAY SALE (owner, 2026-10-31).
+// BLACK FRIDAY SALE (owner, 2026-10-31).
 //
 // Same page as /early-black-friday-gable with the Plow's content: a
 // section-for-section copy of /early-black-friday-sweep. Banner, header,
@@ -75,7 +75,7 @@ const STICKY_SUB = "Free 1 year warranty · 30 days to decide"
 const RATING: { score: string; count: string } | null = null // the Plow PDP shows no rating row
 const PROOF_LINE = "Free 1 year warranty · 30 days to decide · Free shipping"
 
-const HEADLINE_MAIN = "Early Access Black Friday Is Open On The Yeoman Plow."
+const HEADLINE_MAIN = "The Black Friday Sale Is Open On The Yeoman Plow."
 const HEADLINE_ACCENT = "Clear The Driveway With Less Back Pain, In Half The Time."
 const HERO_SUB =
   "For anyone whose back can't take another winter of lifting. Push the 38-inch blade across the driveway, the wheels carry the load, and you never scoop or throw at all."
@@ -123,7 +123,7 @@ const CLIPS: Clip[] = [
 ]
 
 const WHY_NOW =
-  "We opened our Black Friday price early so the Plow is in the garage before the first real snow, not on a truck after it. When the storm comes, you push the driveway clear in one motion per pass instead of lifting it one shovelful at a time. Quantities are limited, and the Early Access price is on this page right now."
+  "Our Black Friday price is live now, so the Plow is in the garage before the next real snow, not on a truck after it. When the storm comes, you push the driveway clear in one motion per pass instead of lifting it one shovelful at a time. Quantities are limited, and the Black Friday price is on this page right now."
 
 // Verbatim from the live Yeoman Plow PDP review wall (real names, Verified Purchase).
 type Review = { title: string; quote: string; who: string }
@@ -195,7 +195,7 @@ const GUARANTEE_BODY = [
 ]
 
 const SALE_FAQ =
-  "The Early Access Black Friday price is the price on this page, so there is no code to type and nothing to remember. The buy button takes you straight to checkout with $91 off already applied, and the free 1 year warranty comes with it."
+  "The Black Friday price is the price on this page, so there is no code to type and nothing to remember. The buy button takes you straight to checkout with $91 off already applied, and the free 1 year warranty comes with it."
 const FAQS = [
   {
     q: "Is it hard to push?",
@@ -217,7 +217,7 @@ const FAQS = [
 
 // ===== END CONFIG =====
 
-const SALE_NAME = "Early Access Black Friday Sale"
+const SALE_NAME = "Black Friday Sale"
 const CTA_LABEL = "CLAIM THE BLACK FRIDAY PRICE >>"
 const STORE_URL = "https://fieldandharvestco.com"
 
@@ -290,7 +290,7 @@ function PromoBar() {
     <div className="ebf-promo" role="region" aria-label="Sale">
       <div className="ebf-promo-in">
         <span className="ebf-promo-txt">
-          <b>EARLY ACCESS BLACK FRIDAY SALE</b>
+          <b>BLACK FRIDAY SALE</b>
           <i>|</i>
           <span className="ebf-promo-sub">
             {BANNER_OFF} + {WARRANTY_LINE}

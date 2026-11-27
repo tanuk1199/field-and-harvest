@@ -69,7 +69,7 @@ const C = {
   pdpUrl: "https://fieldandharvestco.com/products/the-bunkhouse-diesel-heater?variant=67983351676971&lp=bhg",
   // price lives on the PDP only (template product card has no price row)
   offer: { price: 297, compareAt: 458, save: 161 },
-  banner: { hi: "Early Access Black Friday", text: "$161 Off + Free 1 Year Warranty" },
+  banner: { hi: "Black Friday", text: "$161 Off + Free 1 Year Warranty" },
   hero: {
     src: img("bunkhouse-16-inuse-carry-across-yard.png", 1000),
     alt: "A man carrying the camo Bunkhouse diesel heater across a snowy yard to his shop",
@@ -126,19 +126,19 @@ const C = {
       highlight: "He'll know you did your homework.",
     },
     {
-      badge: "EARLY ACCESS BLACK FRIDAY",
+      badge: "BLACK FRIDAY SALE",
       title: "Get it now with $161 off and a full year of cover",
       image: img("bunkhouse-pdp-guarantee-seal.png"),
       alt: "The Bunkhouse heater with its 30 day money back guarantee and free 1 year warranty seals",
-      body: "The Early Access Black Friday Sale is live right now, with $161 off for a limited time. A gift should be a sure thing: the free 1 year warranty covers it for a full year from the day it arrives, and he gets 30 days to try it with a full refund either way. It ships free from the USA, so it isn't crossing an ocean in December.",
+      body: "The Black Friday Sale is live right now, with $161 off for a limited time. A gift should be a sure thing: the free 1 year warranty covers it for a full year from the day it arrives, and he gets 30 days to try it with a full refund either way. It ships free from the USA, so it isn't crossing an ocean in December.",
       highlight: "Wrap it early and he's warm by the first cold weekend.",
     },
   ] as Reason[],
   product: {
     badge: "Free 1 Year Warranty + 30-Day Money Back",
     headline: "The Gift He'll Use Every Cold Weekend",
-    desc: "The Bunkhouse Diesel Heater, 8 kW, with everything he needs to set it up in the box. Early Access Black Friday pricing is live now.",
-    offerBanner: "Early Access Black Friday: $161 Off",
+    desc: "The Bunkhouse Diesel Heater, 8 kW, with everything he needs to set it up in the box. Black Friday pricing is live now.",
+    offerBanner: "Black Friday: $161 Off",
     thumbs: [
       { src: img("bunkhouse-03-studio-dark-premium.png"), alt: "The Bunkhouse diesel heater" },
       { src: img("bunkhouse-26-info-vs-propane.png"), alt: "The Bunkhouse against a propane heater" },
@@ -187,12 +187,12 @@ const C = {
     },
     {
       q: "How long is the sale on?",
-      a: "The Early Access Black Friday Sale is live now for a limited time, with $161 off and free shipping from the USA.",
+      a: "The Black Friday Sale is live now for a limited time, with $161 off and free shipping from the USA.",
     },
   ],
   sticky: {
     cta: "Get $161 Off His Gift",
-    line: "Early Access Black Friday · Free 1 Year Warranty · 30 Days To Decide",
+    line: "Black Friday · Free 1 Year Warranty · 30 Days To Decide",
   },
 }
 
@@ -262,7 +262,7 @@ function LoopClip({ id, alt }: { id: string; alt: string }) {
 }
 
 // The PDP promo bar, copied from /holiday-gift-grange, which is identical to the live PDP bar
-// (fhb-promo on every sale PDP): EARLY ACCESS BLACK FRIDAY SALE | <offer> + clock to local midnight.
+// (fhb-promo on every sale PDP): BLACK FRIDAY SALE | <offer> + clock to local midnight.
 // Text = the PDP's own line for this product (C.banner.text), upper-cased as the PDP prints it.
 function PromoBar() {
   const [t, setT] = useState({ h: "00", m: "00", s: "00" })
@@ -283,7 +283,7 @@ function PromoBar() {
     <div className="ebf-promo" role="region" aria-label="Sale">
       <div className="ebf-promo-in">
         <span className="ebf-promo-txt">
-          <b>EARLY ACCESS BLACK FRIDAY SALE</b>
+          <b>BLACK FRIDAY SALE</b>
           <i>|</i>
           <span className="ebf-promo-sub">
             {C.banner.text.toUpperCase()}

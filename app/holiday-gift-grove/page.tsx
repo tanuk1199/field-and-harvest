@@ -156,7 +156,7 @@ const GUARANTEE_BODY = [
 ]
 
 const SALE_FAQ =
-  "The Early Access Black Friday price is already on the product page, so there is no code to type and nothing to remember. Tap the button, pick 1 or 2 Sets and check out with up to $141 off, and both free guides come with the order."
+  "The Black Friday price is already on the product page, so there is no code to type and nothing to remember. Tap the button, pick 1 or 2 Sets and check out with up to $141 off, and both free guides come with the order."
 const FAQS = [
   {
     q: "Who is it for?",
@@ -182,7 +182,7 @@ const FAQS = [
 
 // ===== END CONFIG =====
 
-const SALE_NAME = "Early Access Black Friday Sale"
+const SALE_NAME = "Black Friday Sale"
 const CTA_LABEL = "Choose their Starter Set"
 const BUY_LABEL = "Check Availability"
 
@@ -259,7 +259,7 @@ function PromoBar() {
     <div className="ebf-promo" role="region" aria-label="Sale">
       <div className="ebf-promo-in">
         <span className="ebf-promo-txt">
-          <b>EARLY ACCESS BLACK FRIDAY SALE</b>
+          <b>BLACK FRIDAY SALE</b>
           <i>|</i>
           <span className="ebf-promo-sub">
             {BANNER_OFF} + {WARRANTY_LINE}

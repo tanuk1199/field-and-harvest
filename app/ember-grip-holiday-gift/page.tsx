@@ -69,7 +69,7 @@ const C = {
   pdpUrl: "https://fieldandharvestco.com/products/the-ember-grip-heated-gloves?variant=68101745737771&lp=ehg",
   // price lives on the PDP only (template product card has no price row)
   offer: { price: 79, compareAt: 125, save: 46 },
-  banner: { hi: "Early Access Black Friday", text: "$46 Off + 60-Day Guarantee" },
+  banner: { hi: "Black Friday", text: "$46 Off + 60-Day Guarantee" },
   hero: {
     src: img("ember-grip-demo-relief.png", 1000),
     alt: "A man in a winter coat flexing his warm hands in the black Ember Grip heated gloves",
@@ -132,19 +132,19 @@ const C = {
       },
     },
     {
-      badge: "EARLY ACCESS BLACK FRIDAY",
+      badge: "BLACK FRIDAY SALE",
       title: "Get them now with $46 off, no size to guess and 60 days to decide",
       image: img("ember-grip-guarantee-seal.png"),
       alt: "The Ember Grip heated gloves with their 60-day guarantee seal",
-      body: "The Early Access Black Friday Sale is live right now, with $46 off a pair for a limited time. There's no size to guess: one size fits most men and women, about 9 inches long and 4.3 inches across the palm. And they get 60 days to try them, with a full refund either way.",
+      body: "The Black Friday Sale is live right now, with $46 off a pair for a limited time. There's no size to guess: one size fits most men and women, about 9 inches long and 4.3 inches across the palm. And they get 60 days to try them, with a full refund either way.",
       highlight: "Grab a pair for them, and maybe one for yourself.",
     },
   ] as Reason[],
   product: {
     badge: "60-Day Money Back Guarantee",
     headline: "The Gift They'll Wear Every Cold Day",
-    desc: "The Ember Grip Heated Gloves: heat in all five fingers, the palm and the back of the hand, 5 heat levels and rechargeable batteries. Early Access Black Friday pricing is live now.",
-    offerBanner: "Early Access Black Friday: $46 Off",
+    desc: "The Ember Grip Heated Gloves: heat in all five fingers, the palm and the back of the hand, 5 heat levels and rechargeable batteries. Black Friday pricing is live now.",
+    offerBanner: "Black Friday: $46 Off",
     thumbs: [
       { src: img("ember-grip-flatlay-box.png"), alt: "The Ember Grip gloves and charging cable" },
       { src: img("ember-grip-product-detail.png"), alt: "The heat display and button" },
@@ -194,12 +194,12 @@ const C = {
     },
     {
       q: "How long is the sale on?",
-      a: "The Early Access Black Friday Sale is live now for a limited time, with $46 off a pair.",
+      a: "The Black Friday Sale is live now for a limited time, with $46 off a pair.",
     },
   ],
   sticky: {
     cta: "Get $46 Off Warm Hands",
-    line: "Early Access Black Friday · 60-Day Guarantee · 5 Heat Levels",
+    line: "Black Friday · 60-Day Guarantee · 5 Heat Levels",
   },
 }
 
@@ -269,7 +269,7 @@ function LoopClip({ id, alt }: { id: string; alt: string }) {
 }
 
 // The PDP promo bar, copied from /holiday-gift-grange, which is identical to the live PDP bar
-// (fhb-promo on every sale PDP): EARLY ACCESS BLACK FRIDAY SALE | <offer> + clock to local midnight.
+// (fhb-promo on every sale PDP): BLACK FRIDAY SALE | <offer> + clock to local midnight.
 // Text = the PDP's own line for this product (C.banner.text), upper-cased as the PDP prints it.
 function PromoBar() {
   const [t, setT] = useState({ h: "00", m: "00", s: "00" })
@@ -290,7 +290,7 @@ function PromoBar() {
     <div className="ebf-promo" role="region" aria-label="Sale">
       <div className="ebf-promo-in">
         <span className="ebf-promo-txt">
-          <b>EARLY ACCESS BLACK FRIDAY SALE</b>
+          <b>BLACK FRIDAY SALE</b>
           <i>|</i>
           <span className="ebf-promo-sub">
             {C.banner.text.toUpperCase()}

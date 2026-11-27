@@ -6,7 +6,7 @@ import { Award, BadgeDollarSign, Check, ChevronLeft, ChevronRight, Minus, Plus, 
 
 // ============================================================
 // /black-friday-gable : The Gable Pressure Washer Wand
-// EARLY ACCESS BLACK FRIDAY SALE. First build on the template
+// BLACK FRIDAY SALE. First build on the template
 // Funnels/templates/sale-buybox-dark-1 (extracted 2026-10-31 from the
 // IronRidge push-sweeper sale page, owner's mobile screenshots).
 //
@@ -56,9 +56,9 @@ const THEME = {
 const SALE = {
   // PromoBar: a port of the PDP promo bar (snippets/fh-bunkhouse-promo-bar.liquid).
   // The $ figure is computed from the tiers (UP TO only when sizes differ).
-  bannerName: "EARLY ACCESS BLACK FRIDAY SALE",
+  bannerName: "BLACK FRIDAY SALE",
   bannerTail: "FREE 1 YEAR WARRANTY",
-  name: "Early Access Black Friday Sale",
+  name: "Black Friday Sale",
   saveChip: "SAVE $101",
   stickyLine: "$101 off · Black Friday",
 }
@@ -204,7 +204,7 @@ const BUY = {
   ],
   pdpHandle: "the-gable-pressure-washer-wand",
   ctaPrefix: "CHECK AVAILABILITY",
-  ctaNote: "Early Access Black Friday Sale · Free shipping",
+  ctaNote: "Black Friday Sale · Free shipping",
 }
 
 const GUARANTEE = {
@@ -242,7 +242,7 @@ const FAQ: { q: string; a: string }[] = [
 ]
 
 const CLOSE = {
-  eyebrow: "Early Access Black Friday Sale",
+  eyebrow: "Black Friday Sale",
   title: "$101 off the Gable",
   note: "Now $149 · 30-day money-back guarantee · Free shipping",
   cta: "Claim Black Friday Discount",

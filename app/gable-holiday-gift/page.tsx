@@ -56,7 +56,7 @@ type Reason = {
 // gutters_from_ground, ladder_quitter, keep_him_grounded) + brain/CANON.md:
 //   1 off the ladder (keep_him_grounded, the buyer is often his wife)   2 gutters from the lawn
 //   3 the whole house: siding, soffits, peaks   4 hooks to the washer he owns, screws together
-//   5 Early Access Black Friday: $101 off + free 1 year warranty + 30 day money back
+//   5 Black Friday: $101 off + free 1 year warranty + 30 day money back
 //
 // OFFER, read live off /products/the-gable-pressure-washer-wand.json on 2026-11-22:
 //   67994210271275  $149.00 / $250.00  save $101
@@ -71,7 +71,7 @@ const C = {
   pdpUrl: "https://fieldandharvestco.com/products/the-gable-pressure-washer-wand?variant=67994210271275&lp=gbg",
   // price lives on the PDP only (template product card has no price row)
   offer: { price: 149, compareAt: 250, save: 101 },
-  banner: { hi: "Early Access Black Friday", text: "$101 Off + Free 1 Year Warranty" },
+  banner: { hi: "Black Friday", text: "$101 Off + Free 1 Year Warranty" },
   hero: {
     src: img("gable-14-couple-on-the-lawn.png", 1000),
     // 3:2 loop, owner 2026-11-22: "use a clip of gutter being clean". livo789-7661946535512395022 21.8-23.7, crop y=240
@@ -137,19 +137,19 @@ const C = {
       },
     },
     {
-      badge: "EARLY ACCESS BLACK FRIDAY",
+      badge: "BLACK FRIDAY SALE",
       title: "Get it now with $101 off and a full year of cover",
       image: img("gable-01-hero-gable-badges.png"),
       alt: "The Gable wand at work on a gutter, with the No Ladder Needed seal and the Free 1 Year Warranty plaque",
-      body: "The Early Access Black Friday Sale is live right now, with $101 off for a limited time. A gift should be a sure thing: the free 1 year warranty covers it for a full year, and he gets 30 days to wash the whole house with it and a full refund either way. Shipping is free.",
+      body: "The Black Friday Sale is live right now, with $101 off for a limited time. A gift should be a sure thing: the free 1 year warranty covers it for a full year, and he gets 30 days to wash the whole house with it and a full refund either way. Shipping is free.",
       highlight: "Wrap it now and his next gutter job happens from the lawn.",
     },
   ] as Reason[],
   product: {
     badge: "Free 1 Year Warranty + 30-Day Money Back",
     headline: "The Gift That Keeps Him Off The Ladder",
-    desc: "The Gable Pressure Washer Wand: 24 feet of screw-together stainless with a curved gutter hook and 6 spray tips, for washers up to 4,000 PSI. Early Access Black Friday pricing is live now.",
-    offerBanner: "Early Access Black Friday: $101 Off",
+    desc: "The Gable Pressure Washer Wand: 24 feet of screw-together stainless with a curved gutter hook and 6 spray tips, for washers up to 4,000 PSI. Black Friday pricing is live now.",
+    offerBanner: "Black Friday: $101 Off",
     thumbs: [
       { src: img("gable-15-inuse-dormer-peak.png"), alt: "Washing a dormer peak from the lawn" },
       { src: img("gable-17-info-every-high-spot.png"), alt: "Gutters, soffits, siding and peaks, all from the ground" },
@@ -198,12 +198,12 @@ const C = {
     },
     {
       q: "How long is the sale on?",
-      a: "The Early Access Black Friday Sale is live now for a limited time, with $101 off and free shipping.",
+      a: "The Black Friday Sale is live now for a limited time, with $101 off and free shipping.",
     },
   ],
   sticky: {
     cta: "Get $101 Off His Gift",
-    line: "Early Access Black Friday · Free 1 Year Warranty · Free Shipping",
+    line: "Black Friday · Free 1 Year Warranty · Free Shipping",
   },
 }
 
@@ -303,7 +303,7 @@ function HeroClip({ id, alt }: { id: string; alt: string }) {
 }
 
 // The PDP promo bar, copied from /holiday-gift-grange, which is identical to the live PDP bar
-// (fhb-promo on every sale PDP): EARLY ACCESS BLACK FRIDAY SALE | <offer> + clock to local midnight.
+// (fhb-promo on every sale PDP): BLACK FRIDAY SALE | <offer> + clock to local midnight.
 // Text = the PDP's own line for this product (C.banner.text), upper-cased as the PDP prints it.
 function PromoBar() {
   const [t, setT] = useState({ h: "00", m: "00", s: "00" })
@@ -324,7 +324,7 @@ function PromoBar() {
     <div className="ebf-promo" role="region" aria-label="Sale">
       <div className="ebf-promo-in">
         <span className="ebf-promo-txt">
-          <b>EARLY ACCESS BLACK FRIDAY SALE</b>
+          <b>BLACK FRIDAY SALE</b>
           <i>|</i>
           <span className="ebf-promo-sub">
             {C.banner.text.toUpperCase()}

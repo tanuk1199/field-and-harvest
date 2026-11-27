@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react'
 
 // Port of snippets/fh-bunkhouse-promo-bar.liquid, same as /hunt-the-last-hour.
 // Same text, gradient, type and rolling countdown to the visitor's local midnight.
-// SALE_NAME is the one place the sale is named: Early Access Black Friday Sale since 2026-11-01, matching the PDP bar.
+// SALE_NAME is the one place the sale is named: Black Friday Sale since 2026-11-01, matching the PDP bar.
 // SAVE is the PDP banner's dollar figure ($450 - $289). It is the only money figure on the page.
-export const SALE_NAME = 'Early Access Black Friday Sale'
+export const SALE_NAME = 'Black Friday Sale'
 export const SAVE = '$161'
 
 export function AnnouncementBar() {

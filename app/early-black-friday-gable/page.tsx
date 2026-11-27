@@ -6,7 +6,7 @@ import { Check, Clock, Droplets, Flame, Leaf, Play, Ruler, ShieldCheck, Snowflak
 
 // ============================================================
 // /early-black-friday-gable : The Gable Pressure Washer Wand
-// EARLY ACCESS BLACK FRIDAY SALE (owner, 2026-10-31).
+// BLACK FRIDAY SALE (owner, 2026-10-31).
 //
 // A section-for-section copy of /early-black-friday-sweep (itself a copy
 // of /end-of-summer-sale): banner, header, hero (price above the fold),
@@ -23,7 +23,7 @@ import { Check, Clock, Droplets, Flame, Leaf, Play, Ruler, ShieldCheck, Snowflak
 // BANNER: an inline port of snippets/fh-bunkhouse-promo-bar.liquid
 // (Horizon MAIN 136737161259): the dollar saving computed from compare-at
 // minus price, the warranty, and the DAYS/HRS/MIN/SEC clock to the
-// visitor's local midnight. Reworded as the Early Access Black Friday Sale.
+// visitor's local midnight. Reworded as the Black Friday Sale.
 // No fixed end date is printed anywhere on the page.
 //
 // BUY LINK: straight to checkout. A Shopify cart permalink,
@@ -87,7 +87,7 @@ const STICKY_SUB = "Free 1 year warranty · 30 days to decide"
 const RATING: { score: string; count: string } | null = null // the Gable PDP shows no rating row
 const PROOF_LINE = "Free 1 year warranty · 30 days to decide · Free shipping"
 
-const HEADLINE_MAIN = "Early Access Black Friday Is Open On The Gable Pressure Washer Wand."
+const HEADLINE_MAIN = "The Black Friday Sale Is Open On The Gable Pressure Washer Wand."
 const HEADLINE_ACCENT = "Clean The Gutters From The Lawn, Not The Ladder."
 const HERO_SUB =
   "Gutters, soffits, high siding and gable peaks used to mean a tall ladder or paying a crew. The Gable hooks to the pressure washer you already own and puts the spray up there while you stand on the grass."
@@ -150,7 +150,7 @@ const CLIPS: Clip[] = [
 ]
 
 const WHY_NOW =
-  "We opened our Black Friday price early so you have it before winter, while the last of the leaves are still landing in the gutters. Flush them out from the lawn this weekend instead of hauling the ladder out, and the same wand washes the siding, the soffits and the gable peaks every spring after. Quantities are limited, and the Early Access price is on this page right now."
+  "Our Black Friday price is live now, so you have it before winter, while the last of the leaves are still landing in the gutters. Flush them out from the lawn this weekend instead of hauling the ladder out, and the same wand washes the siding, the soffits and the gable peaks every spring after. Quantities are limited, and the Black Friday price is on this page right now."
 
 // Verbatim from the live Gable PDP review wall (real names, Verified Purchase).
 type Review = { title: string; quote: string; who: string }
@@ -234,7 +234,7 @@ const GUARANTEE_BODY = [
 ]
 
 const SALE_FAQ =
-  "The Early Access Black Friday price is the price on this page, so there is no code to type and nothing to remember. The buy button takes you straight to checkout with $101 off already applied, and the free 1 year warranty comes with it."
+  "The Black Friday price is the price on this page, so there is no code to type and nothing to remember. The buy button takes you straight to checkout with $101 off already applied, and the free 1 year warranty comes with it."
 const FAQS = [
   {
     q: "Can I control it at full length?",
@@ -256,7 +256,7 @@ const FAQS = [
 
 // ===== END CONFIG =====
 
-const SALE_NAME = "Early Access Black Friday Sale"
+const SALE_NAME = "Black Friday Sale"
 const CTA_LABEL = "CLAIM THE BLACK FRIDAY PRICE >>"
 const STORE_URL = "https://fieldandharvestco.com"
 
@@ -329,7 +329,7 @@ function PromoBar() {
     <div className="ebf-promo" role="region" aria-label="Sale">
       <div className="ebf-promo-in">
         <span className="ebf-promo-txt">
-          <b>EARLY ACCESS BLACK FRIDAY SALE</b>
+          <b>BLACK FRIDAY SALE</b>
           <i>|</i>
           <span className="ebf-promo-sub">
             {BANNER_OFF} + {WARRANTY_LINE}

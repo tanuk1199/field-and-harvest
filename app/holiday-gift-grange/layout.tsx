@@ -5,10 +5,10 @@ const IMG = "https://cdn.shopify.com/s/files/1/0651/8299/0379/files/20251217_235
 export const metadata: Metadata = {
   title: "The Holiday Gift For The Gardener · The Grange Carrier | Field & Harvest Co.",
   description:
-    "The holiday gift every gardener wears: The Grange Carrier holds the whole harvest hands free and empties it in one second. Early Access Black Friday, up to $71 off, 2 free guides and a lifetime warranty.",
+    "The holiday gift every gardener wears: The Grange Carrier holds the whole harvest hands free and empties it in one second. Black Friday, up to $71 off, 2 free guides and a lifetime warranty.",
   openGraph: {
     title: "The Holiday Gift For The Gardener · The Grange Carrier",
-    description: "Hands free in the garden, empty in one second. Up to $71 off for Early Access Black Friday.",
+    description: "Hands free in the garden, empty in one second. Up to $71 off for Black Friday.",
     type: "website",
     url: "https://explore.fieldandharvestco.com/holiday-gift-grange",
     images: [{ url: IMG, alt: "A gardener wearing The Grange Carrier" }],

@@ -6,7 +6,7 @@ import { Award, BadgeDollarSign, Check, ChevronLeft, ChevronRight, Minus, Plus, 
 
 // ============================================================
 // /black-friday-bunkhouse : The Bunkhouse Diesel Heater
-// EARLY ACCESS BLACK FRIDAY SALE. Third build on the template
+// BLACK FRIDAY SALE. Third build on the template
 // Funnels/templates/sale-buybox-dark-1, cloned from /black-friday-gable.
 // Only the CONFIG block differs from that page.
 //
@@ -43,9 +43,9 @@ const THEME = {
 }
 
 const SALE = {
-  bannerName: "EARLY ACCESS BLACK FRIDAY SALE",
+  bannerName: "BLACK FRIDAY SALE",
   bannerTail: "FREE 1 YEAR WARRANTY",
-  name: "Early Access Black Friday Sale",
+  name: "Black Friday Sale",
   saveChip: "SAVE $161",
   stickyLine: "$161 off · Black Friday",
 }
@@ -197,7 +197,7 @@ const BUY = {
   ],
   pdpHandle: "the-bunkhouse-diesel-heater",
   ctaPrefix: "CHECK AVAILABILITY",
-  ctaNote: "Early Access Black Friday Sale · Ships free from USA",
+  ctaNote: "Black Friday Sale · Ships free from USA",
 }
 
 const GUARANTEE = {
@@ -235,7 +235,7 @@ const FAQ: { q: string; a: string }[] = [
 ]
 
 const CLOSE = {
-  eyebrow: "Early Access Black Friday Sale",
+  eyebrow: "Black Friday Sale",
   title: "$161 off the Bunkhouse",
   note: "Now $297 · 30-day money-back guarantee · Ships free from USA",
   cta: "Claim Black Friday Discount",
